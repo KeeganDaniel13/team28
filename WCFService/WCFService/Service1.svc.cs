@@ -40,14 +40,17 @@ namespace WCFService
 
         public string getPackage(int id)
         {
+			return null;
         }
 
         public string getPackages()
         {
+			return null;
         }
 
         public string sendQuery(string query)
         {
+			return null;
         }
     }
 }
