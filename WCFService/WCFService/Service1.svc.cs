@@ -45,7 +45,7 @@ namespace WCFService
 
         public string getPackages()
         {
-			return null;
+			return "PACKAGE 1";
         }
 
         public string sendQuery(string query)
