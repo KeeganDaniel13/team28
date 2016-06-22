@@ -59,10 +59,14 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Service1.svc.cs">
@@ -73,6 +77,7 @@
     <Compile Include="SQLConnectors\UserSQL.cs" />
     <Compile Include="SQLConnectors\PackageSQL.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="IRestServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
