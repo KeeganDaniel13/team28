@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project
+namespace Lazarus
 {
 
 
-    public partial class invoices
+    public partial class Invoices
     {
     }
 }

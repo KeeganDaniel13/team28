@@ -66,6 +66,120 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets1\css\bootstrap.css" />
+    <Content Include="assets1\css\bootstrap.min.css" />
+    <Content Include="assets1\css\font-awesome.min.css" />
+    <Content Include="assets1\css\owl.carousel.css" />
+    <Content Include="assets1\css\prettyPhoto.css" />
+    <Content Include="assets1\css\style.css" />
+    <Content Include="assets1\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets1\images\about-us-image.jpg" />
+    <Content Include="assets1\images\about-us.jpg" />
+    <Content Include="assets1\images\causes\cause-culture.jpg" />
+    <Content Include="assets1\images\causes\cause-education.jpg" />
+    <Content Include="assets1\images\causes\cause-hunger.jpg" />
+    <Content Include="assets1\images\causes\cause-rights.jpg" />
+    <Content Include="assets1\images\causes\slider\cause-slider-1.jpg" />
+    <Content Include="assets1\images\causes\slider\cause-slider-2.jpg" />
+    <Content Include="assets1\images\gallery\7610291856_931fb9f461_k.jpg" />
+    <Content Include="assets1\images\gallery\afghani-60798_1280.jpg" />
+    <Content Include="assets1\images\gallery\africa-education.jpg" />
+    <Content Include="assets1\images\gallery\boy-60729_1280.jpg" />
+    <Content Include="assets1\images\gallery\child-207573_1280.jpg" />
+    <Content Include="assets1\images\gallery\children-60654_1280.jpg" />
+    <Content Include="assets1\images\gallery\children-82272_1280.jpg" />
+    <Content Include="assets1\images\gallery\doll-87407_1280.jpg" />
+    <Content Include="assets1\images\gallery\gallery-item-1.jpg" />
+    <Content Include="assets1\images\gallery\girl-62328_1280.jpg" />
+    <Content Include="assets1\images\gallery\human-rights.jpg" />
+    <Content Include="assets1\images\gallery\hunger-682834_1280.jpg" />
+    <Content Include="assets1\images\gallery\old-books-436498_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\7610291856_931fb9f461_k.jpg" />
+    <Content Include="assets1\images\gallery\thumb\afghani-60798_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\africa-education.jpg" />
+    <Content Include="assets1\images\gallery\thumb\boy-60729_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\child-207573_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\children-60654_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\children-82272_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\doll-87407_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\girl-62328_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\human-rights.jpg" />
+    <Content Include="assets1\images\gallery\thumb\hunger-682834_1280.jpg" />
+    <Content Include="assets1\images\gallery\thumb\old-books-436498_1280.jpg" />
+    <Content Include="assets1\images\heading-bg.jpg" />
+    <Content Include="assets1\images\icons\help-icon.png" />
+    <Content Include="assets1\images\icons\make-donation-icon.png" />
+    <Content Include="assets1\images\icons\our-mission-icon.png" />
+    <Content Include="assets1\images\icons\programs-icon.png" />
+    <Content Include="assets1\images\icons\zoom-icon.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="assets1\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="assets1\images\prettyPhoto\default\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\default\sprite.png" />
+    <Content Include="assets1\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="assets1\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="assets1\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="assets1\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="assets1\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="assets1\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="assets1\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="assets1\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="assets1\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="assets1\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="assets1\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="assets1\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="assets1\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="assets1\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="assets1\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="assets1\images\reasons\we-care-about.jpg" />
+    <Content Include="assets1\images\reasons\we-fight-togother.jpg" />
+    <Content Include="assets1\images\sadaka-logo.png" />
+    <Content Include="assets1\images\slider\home-slider-1.jpg" />
+    <Content Include="assets1\images\slider\home-slider-2.jpg" />
+    <Content Include="assets1\images\slider\home-slider-3.png" />
+    <Content Include="assets1\images\sponsors\bus.png" />
+    <Content Include="assets1\images\sponsors\one-world.png" />
+    <Content Include="assets1\images\sponsors\sponsor-taous.jpg" />
+    <Content Include="assets1\images\sponsors\sponsor-unilever.jpg" />
+    <Content Include="assets1\images\sponsors\united-nations.png" />
+    <Content Include="assets1\images\sponsors\wikimedia.png" />
+    <Content Include="assets1\images\sponsors\wikiversity.png" />
+    <Content Include="assets1\images\team\member-1.jpg" />
+    <Content Include="assets1\images\team\member-2.jpg" />
+    <Content Include="assets1\images\team\member-3.jpg" />
+    <Content Include="assets1\images\team\member-4.jpg" />
+    <Content Include="assets1\js\bootstrap.js" />
+    <Content Include="assets1\js\bootstrap.min.js" />
+    <Content Include="assets1\js\jquery-1.11.1.min.js" />
+    <Content Include="assets1\js\jquery.prettyPhoto.js" />
+    <Content Include="assets1\js\main.js" />
+    <Content Include="assets1\js\modernizr-2.6.2.min.js" />
+    <Content Include="assets1\js\owl.carousel.js" />
+    <Content Include="assets1\js\owl.carousel.min.js" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="ItemsOverview.aspx" />
+    <Content Include="Messages.aspx" />
     <Content Include="packages.config" />
     <Content Include="warehousemanager.Master" />
     <Content Include="assets\avatars\.DS_Store" />
@@ -86,6 +200,32 @@
     <Content Include="assets\js\.DS_Store" />
     <Content Include="assets\swf\.DS_Store" />
     <Content Include="assets\.DS_Store" />
+    <Content Include="Client.Master" />
+    <Content Include="assets1\.DS_Store" />
+    <Content Include="assets1\config.rb" />
+    <Content Include="assets1\css\bootstrap.css.map" />
+    <Content Include="assets1\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets1\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets1\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets1\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets1\fonts\FontAwesome.otf" />
+    <Content Include="assets1\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets1\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets1\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets1\images\.DS_Store" />
+    <Content Include="assets1\images\gallery\.DS_Store" />
+    <Content Include="assets1\images\slider\.DS_Store" />
+    <Content Include="assets1\images\Thumbs.db" />
+    <Content Include="assets1\js\.DS_Store" />
+    <Content Include="assets1\sass\.DS_Store" />
+    <Content Include="assets1\sass\partials\.DS_Store" />
+    <Content Include="assets1\sass\partials\_base.scss" />
+    <Content Include="assets1\sass\partials\_layout.scss" />
+    <Content Include="assets1\sass\partials\_module.scss" />
+    <Content Include="assets1\sass\partials\_state.scss" />
+    <Content Include="assets1\sass\partials\_theme.scss" />
+    <Content Include="assets1\sass\partials\_variables.scss" />
+    <Content Include="assets1\sass\style.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,6 +391,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client.Master.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client.Master.designer.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="intelligence.aspx.cs">
       <DependentUpon>intelligence.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,12 +454,26 @@
     <Compile Include="invoices.aspx.designer.cs">
       <DependentUpon>invoices.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ItemsOverview.aspx.cs">
+      <DependentUpon>ItemsOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemsOverview.aspx.designer.cs">
+      <DependentUpon>ItemsOverview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="locationreport.aspx.cs">
       <DependentUpon>locationreport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="locationreport.aspx.designer.cs">
       <DependentUpon>locationreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="relationships.aspx.cs">
