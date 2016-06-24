@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chuck.warehouse">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MicroLatitude"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Warehouse">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".main" />
+        <activity android:name=".login" />
+        <activity android:name=".signup" />
+        <activity android:name=".scanqr" />
+        <activity android:name=".directmessage" />
+        <activity android:name=".clients" />
+        <activity android:name=".inventory" />
+        <activity android:name=".notifications" />
+        <activity android:name=".profile" />
+        <activity
+            android:name=".navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
