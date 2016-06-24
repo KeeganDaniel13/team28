@@ -177,6 +177,7 @@
     <Content Include="assets1\js\owl.carousel.js" />
     <Content Include="assets1\js\owl.carousel.min.js" />
     <Content Include="Checkout.aspx" />
+    <Content Include="clienttransactions.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="ItemsOverview.aspx" />
     <Content Include="Messages.aspx" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
+    </Compile>
+    <Compile Include="clienttransactions.aspx.cs">
+      <DependentUpon>clienttransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clienttransactions.aspx.designer.cs">
+      <DependentUpon>clienttransactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
