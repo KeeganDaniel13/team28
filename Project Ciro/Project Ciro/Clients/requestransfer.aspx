@@ -27,8 +27,8 @@
 <input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
 </div>
 <div class="col-xs-8 col-md-6 form-group">
-    <label>Mail</label>
-<input class="form-control" id="email" name="email" placeholder="Email" type="email" required style="width:400px" />
+    <label>Last Name</label>
+<input class="form-control" id="email" name="email" placeholder="Last Name" type="email" required style="width:400px" />
 </div>
 </div>
 <div class="row">

@@ -29,6 +29,9 @@
 		width: 80%; 
 		display: block
 		}
+         h3{
+              font-family: "Montserrat", arial, sans-serif;
+        }
         .table
         {
             border: 1px solid #ccc;
