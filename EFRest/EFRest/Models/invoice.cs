@@ -11,7 +11,7 @@ namespace EFRest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    [Serializable]
     public partial class invoice
     {
         public int invoice_id { get; set; }

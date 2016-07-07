@@ -13,18 +13,21 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/releaseRequest")]
     public class releaserequestsController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/releaserequests
+        [Route("")]
         public IQueryable<releaserequest> Getreleaserequests()
         {
             return db.releaserequests;
         }
-
+        
         // GET: api/releaserequests/5
         [ResponseType(typeof(releaserequest))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getreleaserequest(int id)
         {
             releaserequest releaserequest = await db.releaserequests.FindAsync(id);
@@ -38,6 +41,7 @@ namespace EFRest.Controllers
 
         // PUT: api/releaserequests/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Putreleaserequest(int id, releaserequest releaserequest)
         {
             if (!ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace EFRest.Controllers
 
         // POST: api/releaserequests
         [ResponseType(typeof(releaserequest))]
+        [Route("")]
         public async Task<IHttpActionResult> Postreleaserequest(releaserequest releaserequest)
         {
             if (!ModelState.IsValid)
@@ -88,6 +93,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/releaserequests/5
         [ResponseType(typeof(releaserequest))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deletereleaserequest(int id)
         {
             releaserequest releaserequest = await db.releaserequests.FindAsync(id);

@@ -13,7 +13,7 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
-    [RoutePrefix("api/User")]
+    [RoutePrefix("api/user")]
     public class usersController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
@@ -27,7 +27,7 @@ namespace EFRest.Controllers
 
         // GET: api/users/5
         [ResponseType(typeof(user))]
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getuser(int id)
         {
             user user = await db.users.FindAsync(id);
@@ -39,8 +39,23 @@ namespace EFRest.Controllers
             return Ok(user);
         }
 
+        [ResponseType(typeof(user))]
+        [Route("{name}")]
+        public async Task<IHttpActionResult> Getuser(string name)
+        {
+            //user user = await db.users.FindAsync(name);
+            user user = db.users.FirstOrDefault<user>(c => c.user_fname.Contains(name));
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
         // PUT: api/users/5
         [ResponseType(typeof(void))]
+        [Route("{Id:int}")]
         public async Task<IHttpActionResult> Putuser(int id, user user)
         {
             if (!ModelState.IsValid)
@@ -76,6 +91,7 @@ namespace EFRest.Controllers
 
         // POST: api/users
         [ResponseType(typeof(user))]
+        [Route("")]
         public async Task<IHttpActionResult> Postuser(user user)
         {
             if (!ModelState.IsValid)

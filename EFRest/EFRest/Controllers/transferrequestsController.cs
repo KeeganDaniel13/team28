@@ -14,11 +14,13 @@ using EFRest;
 
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/transferrequest")]
     public class transferrequestsController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/transferrequests
+        [Route("")]
         public IQueryable<transferrequest> Gettransferrequests()
         {
             return db.transferrequests;
@@ -26,6 +28,7 @@ namespace EFRest.Controllers
 
         // GET: api/transferrequests/5
         [ResponseType(typeof(transferrequest))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Gettransferrequest(int id)
         {
             transferrequest transferrequest = await db.transferrequests.FindAsync(id);
@@ -39,6 +42,7 @@ namespace EFRest.Controllers
 
         // PUT: api/transferrequests/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Puttransferrequest(int id, transferrequest transferrequest)
         {
             if (!ModelState.IsValid)
@@ -74,6 +78,7 @@ namespace EFRest.Controllers
 
         // POST: api/transferrequests
         [ResponseType(typeof(transferrequest))]
+        [Route("")]
         public async Task<IHttpActionResult> Posttransferrequest(transferrequest transferrequest)
         {
             if (!ModelState.IsValid)
@@ -89,6 +94,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/transferrequests/5
         [ResponseType(typeof(transferrequest))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deletetransferrequest(int id)
         {
             transferrequest transferrequest = await db.transferrequests.FindAsync(id);

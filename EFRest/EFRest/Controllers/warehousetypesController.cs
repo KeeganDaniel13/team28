@@ -14,11 +14,13 @@ using EFRest.Models;
 
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/warehousetype")]
     public class warehousetypesController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/warehousetypes
+        [Route("")]
         public IQueryable<warehousetype> Getwarehousetypes()
         {
             return db.warehousetypes;
@@ -26,6 +28,7 @@ namespace EFRest.Controllers
 
         // GET: api/warehousetypes/5
         [ResponseType(typeof(warehousetype))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getwarehousetype(int id)
         {
             warehousetype warehousetype = await db.warehousetypes.FindAsync(id);
@@ -39,6 +42,7 @@ namespace EFRest.Controllers
 
         // PUT: api/warehousetypes/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Putwarehousetype(int id, warehousetype warehousetype)
         {
             if (!ModelState.IsValid)
@@ -74,6 +78,7 @@ namespace EFRest.Controllers
 
         // POST: api/warehousetypes
         [ResponseType(typeof(warehousetype))]
+        [Route("")]
         public async Task<IHttpActionResult> Postwarehousetype(warehousetype warehousetype)
         {
             if (!ModelState.IsValid)
@@ -89,6 +94,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/warehousetypes/5
         [ResponseType(typeof(warehousetype))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deletewarehousetype(int id)
         {
             warehousetype warehousetype = await db.warehousetypes.FindAsync(id);

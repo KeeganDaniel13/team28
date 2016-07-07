@@ -11,7 +11,8 @@ namespace EFRest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    [Serializable]
     public partial class productlog
     {
         public int productlog_id { get; set; }

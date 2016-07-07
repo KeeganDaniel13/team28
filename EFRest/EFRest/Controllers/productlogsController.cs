@@ -13,11 +13,13 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/productlog")]
     public class productlogsController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/productlogs
+        [Route("")]
         public IQueryable<productlog> Getproductlogs()
         {
             return db.productlogs;
@@ -25,6 +27,7 @@ namespace EFRest.Controllers
 
         // GET: api/productlogs/5
         [ResponseType(typeof(productlog))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getproductlog(int id)
         {
             productlog productlog = await db.productlogs.FindAsync(id);
@@ -38,6 +41,7 @@ namespace EFRest.Controllers
 
         // PUT: api/productlogs/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Putproductlog(int id, productlog productlog)
         {
             if (!ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace EFRest.Controllers
 
         // POST: api/productlogs
         [ResponseType(typeof(productlog))]
+        [Route("")]
         public async Task<IHttpActionResult> Postproductlog(productlog productlog)
         {
             if (!ModelState.IsValid)

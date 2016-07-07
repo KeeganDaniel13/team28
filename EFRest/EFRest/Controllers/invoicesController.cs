@@ -12,11 +12,13 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/invoice")]
     public class invoicesController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/invoices
+        [Route("")]
         public IQueryable<invoice> Getinvoices()
         {
             return db.invoices;
@@ -24,6 +26,7 @@ namespace EFRest.Controllers
 
         // GET: api/invoices/5
         [ResponseType(typeof(invoice))]
+        [Route("{id:int}")]
         public IHttpActionResult Getinvoice(int id)
         {
             invoice invoice = db.invoices.Find(id);
@@ -37,6 +40,7 @@ namespace EFRest.Controllers
 
         // PUT: api/invoices/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public IHttpActionResult Putinvoice(int id, invoice invoice)
         {
             if (!ModelState.IsValid)
@@ -72,6 +76,7 @@ namespace EFRest.Controllers
 
         // POST: api/invoices
         [ResponseType(typeof(invoice))]
+        [Route("")]
         public IHttpActionResult Postinvoice(invoice invoice)
         {
             if (!ModelState.IsValid)
@@ -87,6 +92,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/invoices/5
         [ResponseType(typeof(invoice))]
+        [Route("{id:int}")]
         public IHttpActionResult Deleteinvoice(int id)
         {
             invoice invoice = db.invoices.Find(id);

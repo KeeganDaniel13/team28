@@ -13,11 +13,13 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/transferlist")]
     public class transferlistsController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/transferlists
+        [Route("")]
         public IQueryable<transferlist> Gettransferlists()
         {
             return db.transferlists;
@@ -25,6 +27,7 @@ namespace EFRest.Controllers
 
         // GET: api/transferlists/5
         [ResponseType(typeof(transferlist))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Gettransferlist(int id)
         {
             transferlist transferlist = await db.transferlists.FindAsync(id);
@@ -38,6 +41,7 @@ namespace EFRest.Controllers
 
         // PUT: api/transferlists/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Puttransferlist(int id, transferlist transferlist)
         {
             if (!ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace EFRest.Controllers
 
         // POST: api/transferlists
         [ResponseType(typeof(transferlist))]
+        [Route("")]
         public async Task<IHttpActionResult> Posttransferlist(transferlist transferlist)
         {
             if (!ModelState.IsValid)
@@ -88,6 +93,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/transferlists/5
         [ResponseType(typeof(transferlist))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deletetransferlist(int id)
         {
             transferlist transferlist = await db.transferlists.FindAsync(id);

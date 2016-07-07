@@ -13,11 +13,13 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/usertype")]
     public class usertypesController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/usertypes
+        [Route("")]
         public IQueryable<usertype> Getusertypes()
         {
             return db.usertypes;
@@ -25,6 +27,7 @@ namespace EFRest.Controllers
 
         // GET: api/usertypes/5
         [ResponseType(typeof(usertype))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getusertype(int id)
         {
             usertype usertype = await db.usertypes.FindAsync(id);
@@ -38,6 +41,7 @@ namespace EFRest.Controllers
 
         // PUT: api/usertypes/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Putusertype(int id, usertype usertype)
         {
             if (!ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace EFRest.Controllers
 
         // POST: api/usertypes
         [ResponseType(typeof(usertype))]
+        [Route("")]
         public async Task<IHttpActionResult> Postusertype(usertype usertype)
         {
             if (!ModelState.IsValid)
@@ -88,6 +93,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/usertypes/5
         [ResponseType(typeof(usertype))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deleteusertype(int id)
         {
             usertype usertype = await db.usertypes.FindAsync(id);

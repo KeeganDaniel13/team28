@@ -11,7 +11,8 @@ namespace EFRest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    [Serializable]
     public partial class transferrequest
     {
         public int transferrequest_id { get; set; }

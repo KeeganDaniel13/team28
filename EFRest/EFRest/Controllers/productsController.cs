@@ -13,11 +13,13 @@ using EFRest;
 using EFRest.Models;
 namespace EFRest.Controllers
 {
+    [RoutePrefix("api/product")]
     public class productsController : ApiController
     {
         private custommandbEntities db = new custommandbEntities();
 
         // GET: api/products
+        [Route("")]
         public IQueryable<product> Getproducts()
         {
             return db.products;
@@ -25,6 +27,7 @@ namespace EFRest.Controllers
 
         // GET: api/products/5
         [ResponseType(typeof(product))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Getproduct(int id)
         {
             product product = await db.products.FindAsync(id);
@@ -38,6 +41,7 @@ namespace EFRest.Controllers
 
         // PUT: api/products/5
         [ResponseType(typeof(void))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Putproduct(int id, product product)
         {
             if (!ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace EFRest.Controllers
 
         // POST: api/products
         [ResponseType(typeof(product))]
+        [Route("")]
         public async Task<IHttpActionResult> Postproduct(product product)
         {
             if (!ModelState.IsValid)
@@ -88,6 +93,7 @@ namespace EFRest.Controllers
 
         // DELETE: api/products/5
         [ResponseType(typeof(product))]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Deleteproduct(int id)
         {
             product product = await db.products.FindAsync(id);

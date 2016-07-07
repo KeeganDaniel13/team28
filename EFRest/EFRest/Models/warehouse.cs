@@ -11,7 +11,8 @@ namespace EFRest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    [Serializable]
     public partial class warehouse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
