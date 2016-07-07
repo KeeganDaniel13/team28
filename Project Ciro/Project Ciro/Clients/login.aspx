@@ -83,9 +83,9 @@ form button:hover {
 	
 
 		<form class="form">
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<button type="submit" id="login-button">Log in</button>
+			<input type="text" runat="server" id="name" placeholder="Username">
+			<input type="password" runat="server" id="name2" placeholder="Password">
+			<button type="submit" runat="server" onServerClick="loginButton">Log in</button>
             <hr />
             <button type="submit" id="signup-button" style="background-color:#dbd7d7">Sign up</button>
 		</form>
