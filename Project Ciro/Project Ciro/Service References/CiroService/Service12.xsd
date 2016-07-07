@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CiroService.EFDatabase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CiroService.EFDatabase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfproduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="product" nillable="true" type="tns:product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproduct" nillable="true" type="tns:ArrayOfproduct" />
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product_id" type="xs:int" />
+      <xs:element minOccurs="0" name="product_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="product_price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="product_quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="productlogs" nillable="true" type="tns:ArrayOfproductlog" />
+      <xs:element minOccurs="0" name="producttype" nillable="true" type="tns:producttype" />
+      <xs:element minOccurs="0" name="producttype_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="releaserequests" nillable="true" type="tns:ArrayOfreleaserequest" />
+      <xs:element minOccurs="0" name="transferlists" nillable="true" type="tns:ArrayOftransferlist" />
+      <xs:element minOccurs="0" name="transferrequests" nillable="true" type="tns:ArrayOftransferrequest" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="product" nillable="true" type="tns:product" />
+  <xs:complexType name="ArrayOfproductlog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productlog" nillable="true" type="tns:productlog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproductlog" nillable="true" type="tns:ArrayOfproductlog" />
+  <xs:complexType name="productlog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:product" />
+      <xs:element minOccurs="0" name="product_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="productlog_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productlog_id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="productlog" nillable="true" type="tns:productlog" />
+  <xs:complexType name="producttype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="products" nillable="true" type="tns:ArrayOfproduct" />
+      <xs:element minOccurs="0" name="producttype_id" type="xs:int" />
+      <xs:element minOccurs="0" name="producttype_type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="producttype" nillable="true" type="tns:producttype" />
+  <xs:complexType name="ArrayOfreleaserequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="releaserequest" nillable="true" type="tns:releaserequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfreleaserequest" nillable="true" type="tns:ArrayOfreleaserequest" />
+  <xs:complexType name="releaserequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:product" />
+      <xs:element minOccurs="0" name="product_id_releaserequest" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="releaserequest_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="releaserequest_id" type="xs:int" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="user_id_releaserequest" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="releaserequest" nillable="true" type="tns:releaserequest" />
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="invoices" nillable="true" type="tns:ArrayOfinvoice" />
+      <xs:element minOccurs="0" name="products" nillable="true" type="tns:ArrayOfproduct" />
+      <xs:element minOccurs="0" name="releaserequests" nillable="true" type="tns:ArrayOfreleaserequest" />
+      <xs:element minOccurs="0" name="transferrequests" nillable="true" type="tns:ArrayOftransferrequest" />
+      <xs:element minOccurs="0" name="user_email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_fname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_id" type="xs:int" />
+      <xs:element minOccurs="0" name="user_password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_sname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="usertype" nillable="true" type="tns:usertype" />
+      <xs:element minOccurs="0" name="usertype_id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="user" nillable="true" type="tns:user" />
+  <xs:complexType name="ArrayOfinvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="invoice" nillable="true" type="tns:invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfinvoice" nillable="true" type="tns:ArrayOfinvoice" />
+  <xs:complexType name="invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="invoice_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoice_id" type="xs:int" />
+      <xs:element minOccurs="0" name="invoice_total" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="user_id_invoice" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="invoice" nillable="true" type="tns:invoice" />
+  <xs:complexType name="ArrayOftransferrequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="transferrequest" nillable="true" type="tns:transferrequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftransferrequest" nillable="true" type="tns:ArrayOftransferrequest" />
+  <xs:complexType name="transferrequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="package_id_transferrequest" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:product" />
+      <xs:element minOccurs="0" name="transferrequest_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="transferrequest_from" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="transferrequest_id" type="xs:int" />
+      <xs:element minOccurs="0" name="transferrequest_to" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="user_id_transferrequest" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="transferrequest" nillable="true" type="tns:transferrequest" />
+  <xs:complexType name="usertype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="users" nillable="true" type="tns:ArrayOfuser" />
+      <xs:element minOccurs="0" name="usertype_id" type="xs:int" />
+      <xs:element minOccurs="0" name="usertype_type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="usertype" nillable="true" type="tns:usertype" />
+  <xs:complexType name="ArrayOfuser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="user" nillable="true" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfuser" nillable="true" type="tns:ArrayOfuser" />
+  <xs:complexType name="ArrayOftransferlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="transferlist" nillable="true" type="tns:transferlist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftransferlist" nillable="true" type="tns:ArrayOftransferlist" />
+  <xs:complexType name="transferlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:product" />
+      <xs:element minOccurs="0" name="product_id_transferlist" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="transferlist_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="transferlist_from" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="transferlist_id" type="xs:int" />
+      <xs:element minOccurs="0" name="transferlist_to" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="tns:warehouse" />
+      <xs:element minOccurs="0" name="warehouse_id_transferlist" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="transferlist" nillable="true" type="tns:transferlist" />
+  <xs:complexType name="warehouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transferlists" nillable="true" type="tns:ArrayOftransferlist" />
+      <xs:element minOccurs="0" name="warehouse_id" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse_location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse_size" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse_warehousetypeid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="warehousetype" nillable="true" type="tns:warehousetype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="warehouse" nillable="true" type="tns:warehouse" />
+  <xs:complexType name="warehousetype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="warehouses" nillable="true" type="tns:ArrayOfwarehouse" />
+      <xs:element minOccurs="0" name="warehousetype_id" type="xs:int" />
+      <xs:element minOccurs="0" name="warehousetype_type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="warehousetype" nillable="true" type="tns:warehousetype" />
+  <xs:complexType name="ArrayOfwarehouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="warehouse" nillable="true" type="tns:warehouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfwarehouse" nillable="true" type="tns:ArrayOfwarehouse" />
+</xs:schema>

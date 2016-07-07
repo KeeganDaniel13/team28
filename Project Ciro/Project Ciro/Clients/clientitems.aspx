@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/client.Master" AutoEventWireup="true" CodeBehind="clientitems.aspx.cs" Inherits="Project_Ciro.Clients.clientitems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Bootstrap -->
-    <link href="../bootstraps/gentellla//vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../bootstraps/gentellla/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
+
     <style>
           .forms-control {
            border: 1px solid #c6c9cc;
