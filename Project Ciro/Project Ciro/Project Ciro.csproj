@@ -66,6 +66,25 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstraps\client\bootstrap.min.css" />
+    <Content Include="bootstraps\client\login\css\normalize.css" />
+    <Content Include="bootstraps\client\login\css\style.css" />
+    <Content Include="bootstraps\client\login\js\index.js" />
+    <Content Include="bootstraps\client\promt.js" />
+    <Content Include="Clients\clientitems.aspx" />
+    <Content Include="Clients\declarewarehouse.aspx" />
+    <Content Include="Clients\login.aspx" />
+    <Content Include="Clients\payment.aspx" />
+    <Content Include="Clients\requestransfer.aspx" />
+    <Content Include="Clients\viewitem.aspx" />
+    <Content Include="Customs\approvetranfers.aspx" />
+    <Content Include="Customs\rebate.aspx" />
+    <Content Include="Customs\releasedlist.aspx" />
+    <Content Include="Customs\releaserequests.aspx" />
+    <Content Include="Customs\reportwarehouse.aspx" />
+    <Content Include="Customs\viewpayments.aspx" />
+    <Content Include="Customs\viewrelationships.aspx" />
+    <Content Include="Customs\warehouseavailability.aspx" />
     <Content Include="packages.config" />
     <Content Include="admin.Master" />
     <Content Include="warehousemanager.Master" />
@@ -4095,12 +4114,110 @@
     <Compile Include="client.Master.designer.cs">
       <DependentUpon>client.Master</DependentUpon>
     </Compile>
+    <Compile Include="Clients\clientitems.aspx.cs">
+      <DependentUpon>clientitems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\clientitems.aspx.designer.cs">
+      <DependentUpon>clientitems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\declarewarehouse.aspx.cs">
+      <DependentUpon>declarewarehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\declarewarehouse.aspx.designer.cs">
+      <DependentUpon>declarewarehouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\requestransfer.aspx.cs">
+      <DependentUpon>requestransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\requestransfer.aspx.designer.cs">
+      <DependentUpon>requestransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\viewitem.aspx.cs">
+      <DependentUpon>viewitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\viewitem.aspx.designer.cs">
+      <DependentUpon>viewitem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\approvetranfers.aspx.cs">
+      <DependentUpon>approvetranfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\approvetranfers.aspx.designer.cs">
+      <DependentUpon>approvetranfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\rebate.aspx.cs">
+      <DependentUpon>rebate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\rebate.aspx.designer.cs">
+      <DependentUpon>rebate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\releasedlist.aspx.cs">
+      <DependentUpon>releasedlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\releasedlist.aspx.designer.cs">
+      <DependentUpon>releasedlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\releaserequests.aspx.cs">
+      <DependentUpon>releaserequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\releaserequests.aspx.designer.cs">
+      <DependentUpon>releaserequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\reportwarehouse.aspx.cs">
+      <DependentUpon>reportwarehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\reportwarehouse.aspx.designer.cs">
+      <DependentUpon>reportwarehouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\viewpayments.aspx.cs">
+      <DependentUpon>viewpayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\viewpayments.aspx.designer.cs">
+      <DependentUpon>viewpayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\viewrelationships.aspx.cs">
+      <DependentUpon>viewrelationships.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\viewrelationships.aspx.designer.cs">
+      <DependentUpon>viewrelationships.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customs\viewwarehouses.aspx.cs">
       <DependentUpon>viewwarehouses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customs\viewwarehouses.aspx.designer.cs">
       <DependentUpon>viewwarehouses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs\warehouseavailability.aspx.cs">
+      <DependentUpon>warehouseavailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs\warehouseavailability.aspx.designer.cs">
+      <DependentUpon>warehouseavailability.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customs\warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
@@ -4120,7 +4237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\" />
-    <Folder Include="Clients\" />
     <Folder Include="Warehousemanager\" />
   </ItemGroup>
   <PropertyGroup>

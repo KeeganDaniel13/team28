@@ -10,16 +10,39 @@
     <!-- Google Webfonts -->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-	
+	<link href="bootstraps/gentellla/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="bootstraps/client/css/animate.css"/>
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="bootstraps/client/css/icomoon.css"/>
-
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+     <script src="../bootstraps/client/login/js/index.js" type="text/javascript"></script>
+   
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="bootstraps/client/css/style.css"/>
 	<!-- Modernizr JS -->
 	<script src="bootstraps/client/js/modernizr-2.6.2.min.js"></script>
+    <script src="<%= Page.ResolveClientUrl("bootstraps/client/promt.js") %>"></script>
+    <style>
+        .datacentral{ 
+		margin:0 auto; 
+		width: 80%; 
+		display: block
+		}
+        .table
+        {
+            border: 1px solid #ccc;
+            
+            width: 400px;
+        }
+        .table th
+        {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+       
+        </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -70,7 +93,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
-    <footer id="fh5co-footer" style="">
+    <footer id="fh5co-footer" style="position:relative; width:100%; height:250px; left:0px;right:0px">
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-footer-content">
 				<div class="container">
@@ -110,7 +133,7 @@
 						</div>
 
 						<div class="col-md-3 col-sm-12 col-md-pull-9">
-							<div class="fh5co-footer-logo"><a href="index.html">Outline</a></div>
+							<div class="fh5co-footer-logo"><a href="index.html">CIRO</a></div>
 							<p class="fh5co-copyright"><small>&copy; 2015. All Rights Reserved. <br>	by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Images: <a href="http://pexels.com/" target="_blank">Pexels</a></small></p>
 							<p class="fh5co-social-icons">
 								<a href="#"><i class="icon-twitter"></i></a>
