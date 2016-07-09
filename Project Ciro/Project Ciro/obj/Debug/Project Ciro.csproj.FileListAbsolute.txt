@@ -18,3 +18,23 @@ C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.
 C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.dll
 C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.pdb
 C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.csprojResolveAssemblyReference.cache
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\csc.exe
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\vbc.exe
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll.config
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Project Ciro.pdb
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.csprojResolveAssemblyReference.cache
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.dll
+C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.pdb

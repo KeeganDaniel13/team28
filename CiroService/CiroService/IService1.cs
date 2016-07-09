@@ -15,12 +15,16 @@ namespace CiroService
     {
 
         [OperationContract]
-        string GetData(int value);
+        [WebGet(UriTemplate="data",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat =WebMessageFormat.Json)]
+        string GetData();
 
         [OperationContract]
+        [WebInvoke(Method="POST",BodyStyle =WebMessageBodyStyle.Wrapped,RequestFormat = WebMessageFormat.Json,ResponseFormat =WebMessageFormat.Json,UriTemplate ="login")]
         string login(string user, string password);
 
+
         [OperationContract]
+       // [WebGet(UriTemplate ="/listProducts", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         IEnumerable<product> listProduct();
 
         [OperationContract]
