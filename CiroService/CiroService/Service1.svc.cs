@@ -10,6 +10,8 @@ using CiroService.DAL;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using CiroService.JsonObjects;
+using System.Web.Http;
+using System.Web;
 
 namespace CiroService
 {
@@ -17,51 +19,91 @@ namespace CiroService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+
         public string GetData()
         {
-            MessageBox.Show("Data");
             var userAccess = new userController();
-            UserDemo[] user = new UserDemo[2];
-            user[0] = new UserDemo();
-            user[1] = new UserDemo();
-            user[0].Name = userAccess.getRecord(1).user_fname;
-            user[0].id = userAccess.getRecord(1).user_id;
-            user[1].Name = userAccess.getRecord(2).user_fname;
-            user[1].id = userAccess.getRecord(2).user_id;
-            return JsonConvert.SerializeObject(user);
-        }
+            List<UserDemo> users = new List<UserDemo>();
+            List<user> userTable = userAccess.getTable().ToList<user>();
+            foreach (user u in userTable)
+            {
+                users.Add(new UserDemo
+                {
+                    id = u.user_id,
+                    Name = u.user_fname
 
+                });
+            }
+            return JsonConvert.SerializeObject(users);
+        }
+    
         public string login(string name,string password)
         {
             MessageBox.Show("Login");
+           // var clientRequest = new HttpRequest();
+            MessageBox.Show(name);
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-            var user = users.FirstOrDefault<user>(c => c.user_fname.Contains(name) && c.user_password.Contains(password));
-            if (user != null)
+            var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(name) || c.user_email.Equals(name) ) && c.user_password.Equals(password));
+            if (user == null)
             {
-                return "user exists";
+                return "False";
             }
-            return "user doesn't exist";
+            var userType = new usertypeController();
+            string usertype = userType.getRecord(user.usertype_id).usertype_type;
+            return JsonConvert.SerializeObject(new jsonLogin {id=user.user_id,email=user.user_fname+" " + user.user_sname, type=usertype});
         }
 
-        public IEnumerable<product> listProduct()
+        public string clientProducts(string id)
         {
-            MessageBox.Show("Products");
-            var prod = new productController();
-            IEnumerable<product> products = prod.getTable();
-            return products;
+            var productsTable = new productController();
+            
+            List<product> products = productsTable.getTable().Where<product>(p => p.user_id == Convert.ToInt32(id)).ToList<product>();
+            if(products.Count == 0)
+            {
+                return "NON";
+            }
+            List<jsonProduct> sendProducts = new List<jsonProduct>();
+            foreach (product p in products)
+            {
+                sendProducts.Add(new jsonProduct { ID = p.product_id,Name = p.product_name,value = Convert.ToDecimal( p.product_price )});
+            }
+            return JsonConvert.SerializeObject(sendProducts);
         }
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+
+        public string register(string fname, string sname, string email, string password)
         {
-            if (composite == null)
+            var userstable = new userController();
+            
+            var check = userstable.getTable().FirstOrDefault<user>(c => c.user_email.Equals(email));
+            //MessageBox.Show(check.user_fname);
+            if (check != null)
             {
-                throw new ArgumentNullException("composite");
+                return "Email Already Registered";
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            int id = userstable.getTable().Count();
+            user newUser = new user { user_fname = fname, user_email = email, user_sname = sname, user_password = password, usertype_id = 2, user_id = id };
+            userstable.addRecord(newUser);
+            return "Registered";
         }
+       // public IEnumerable<product> listProduct()
+       //{
+       //  MessageBox.Show("Products");
+       // var prod = new productController();
+       //IEnumerable<product> products = prod.getTable();
+       //return products;
+       //}
+       //public CompositeType GetDataUsingDataContract(CompositeType composite)
+       //{
+       //  if (composite == null)
+       // {
+       //    throw new ArgumentNullException("composite");
+       //}
+       // if (composite.BoolValue)
+       //{
+       ///    composite.StringValue += "Suffix";
+        //}
+        //return composite;
+        // }
     }
 }

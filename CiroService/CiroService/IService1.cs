@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using CiroService.EFDatabase;
+using CiroService.JsonObjects;
+using System.Web.Http;
 
 namespace CiroService
 {
@@ -19,16 +21,23 @@ namespace CiroService
         string GetData();
 
         [OperationContract]
-        [WebInvoke(Method="POST",BodyStyle =WebMessageBodyStyle.Wrapped,RequestFormat = WebMessageFormat.Json,ResponseFormat =WebMessageFormat.Json,UriTemplate ="login")]
-        string login(string user, string password);
-
+        [WebGet(BodyStyle =WebMessageBodyStyle.Wrapped,RequestFormat = WebMessageFormat.Json,ResponseFormat =WebMessageFormat.Json,UriTemplate ="login/{name}/{password}")]
+        string login(string name,string password);  
 
         [OperationContract]
+        [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "products/{id}")]
+        string clientProducts(string id);
+
+        [OperationContract]
+        [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "register/{fname}/{sname}/{email}/{password}")]
+        string register(string fname, string sname, string email, string password);
+
+       // [OperationContract]
        // [WebGet(UriTemplate ="/listProducts", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        IEnumerable<product> listProduct();
+       // IEnumerable<product> listProduct();
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        //[OperationContract]
+       // CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
     }

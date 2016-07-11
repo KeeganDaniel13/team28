@@ -90,12 +90,6 @@
     <Content Include="Customs\warehouseavailability.aspx" />
     <Content Include="packages.config" />
     <Content Include="admin.Master" />
-    <Content Include="Service References\CiroService\Project_Ciro.CiroService.CompositeType1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\Project_Ciro.CiroService.product1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -1084,13 +1078,7 @@
     <Content Include="bootstraps\client\sass\_bootstrap-sprockets.scss" />
     <Content Include="bootstraps\client\sass\_bootstrap.scss" />
     <None Include="Service References\CiroService\Service1.wsdl" />
-    <None Include="Service References\CiroService\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\CiroService\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CiroService\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CiroService\Service13.xsd">
@@ -4255,6 +4243,7 @@
     <Compile Include="Customs\warehouseoverview.aspx.designer.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\WebRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CiroService\Reference.cs">
       <AutoGen>True</AutoGen>
