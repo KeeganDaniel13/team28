@@ -42,12 +42,25 @@ namespace CiroService.DAL
 
         public user getRecord(int id)
         {
+<<<<<<< HEAD
             user user = db.users.Find(id);
             if (user == null)
             {
                 return null;
             }
             return user;
+=======
+            user nuser= null ;
+            if (exists(id))
+            {
+                 nuser = db.users.Find(id);
+            }
+            if (nuser == null)
+            {
+                return null;
+            }
+            return nuser;
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
         }
 
         public IEnumerable<user> getTable()

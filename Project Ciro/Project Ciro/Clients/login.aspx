@@ -84,6 +84,7 @@ form button:hover {
 
 		<form class="form">
 			<input type="text" runat="server" id="name" placeholder="Username">
+<<<<<<< HEAD
 			<input type="password" runat="server" id="name2" placeholder="Password">
 			<button type="submit" runat="server" onServerClick="loginButton">Log in</button>
             <hr />
@@ -91,4 +92,15 @@ form button:hover {
 		</form>
 	</div>
          </div>
+=======
+			<input type="password" runat="server" id="password" placeholder="Password">
+			<button type="submit" runat="server" onServerClick="loginButton">Log in</button>
+            <hr />
+            <button type="submit" id="signup-button"  style="background-color:#dbd7d7">Sign up</button>
+		</form>
+	</div>
+         </div>
+
+
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
 </asp:Content>

@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<<<<<<< HEAD
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8"/>
@@ -14,24 +15,45 @@
     <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet" />
     <!-- bootstrap-progressbar -->
     <link href="/bootstraps/gentellla/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"/>
+=======
+    <title></title>
+     <!-- iCheck -->
+    <link href="/bootstraps/gentellla/vendors/iCheck/skins/flat/green.css" rel="stylesheet" />
+    <!-- bootstrap-progressbar -->
+    <link href="/bootstraps/gentellla//vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"/>
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <!-- jVectorMap -->
     <link href="/bootstraps/gentellla/vendors/css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
 
     <!-- Dropzone.js -->
+<<<<<<< HEAD
     <link href="/bootstraps/gentellla/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet"/>
 
     <!-- Bootstrap -->
     <link href="/bootstraps/gentellla/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+=======
+    <link href="/bootstraps/gentellla//vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet"/>
+
+    <!-- Bootstrap -->
+    <link href="/bootstraps/gentellla//vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <!-- Font Awesome -->
     <link href="/bootstraps/gentellla/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 
     <!-- Custom Theme Style -->
     <link href="/bootstraps/gentellla/vendors/css/custom.css" rel="stylesheet" />
+<<<<<<< HEAD
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
      <body class="nav-md" >
+=======
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nav-md">
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -130,7 +152,11 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+<<<<<<< HEAD
                     <img src="vendors/images/img.jpg" alt="">Jack Reacher </img>
+=======
+                    <img src="vendors/images/img.jpg" alt="">Jack Reacher
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -229,6 +255,60 @@
             </div>
         </div>
         <!-- /top navigation -->
+<<<<<<< HEAD
+=======
+         <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Plain Page</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel" style="height:600px;">
+                  <div class="x_title">
+                    <h2>Plain Page</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- /page content -->
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -236,6 +316,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+<<<<<<< HEAD
 
 
 
@@ -324,6 +405,65 @@
     <script src="../bootstraps/gentellla/vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../bootstraps/gentellla/vendors/js/custom.js"></script>
+=======
+    <script src="/bootstraps/gentellla/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Chart.js -->
+    <script src="/bootstraps/gentellla/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="/bootstraps/gentellla/vendors/bernii/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="/bootstraps/gentellla/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="/bootstraps/gentellla/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="/bootstraps/gentellla/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="/bootstraps/gentellla/vendors/Flot/jquery.flot.js"></script>
+    <script src="/bootstraps/gentellla/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="/bootstraps/gentellla/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="/bootstraps/gentellla/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="/bootstraps/gentellla/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Ion.RangeSlider -->
+    <script src="/bootstraps/gentellla/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+    <!-- Bootstrap Colorpicker -->
+    <script src="/bootstraps/gentellla/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    <!-- jquery.inputmask -->
+    <script src="/bootstraps/gentellla/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- jQuery Knob -->
+    <script src="/bootstraps/gentellla/vendors/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- Cropper -->
+    <script src="/bootstraps/gentellla/vendors/cropper/dist/cropper.min.js"></script>
+
+    <!-- bootstrap-progressbar -->
+    <script src="/bootstraps/gentellla/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+         <!-- jQuery -->
+    <script src="/bootstraps/gentellla/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/bootstraps/gentellla/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="/bootstraps/gentellla/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/bootstraps/gentellla/vendors/nprogress/nprogress.js"></script>
+    <!-- Datatables -->
+    <script src="/bootstraps/gentellla/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/bootstraps/gentellla/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/bootstraps/gentellla/bootstraps/gentellla/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/bootstraps/gentellla/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/bootstraps/gentellla/vendors/js/custom.js"></script>
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <!-- Datatables -->
     <script>
       $(document).ready(function() {

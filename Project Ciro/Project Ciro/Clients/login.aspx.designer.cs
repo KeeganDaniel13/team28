@@ -22,12 +22,20 @@ namespace Project_Ciro.Clients {
         protected global::System.Web.UI.HtmlControls.HtmlInputText name;
         
         /// <summary>
+<<<<<<< HEAD
         /// name2 control.
+=======
+        /// password control.
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword name2;
+=======
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     }
 }

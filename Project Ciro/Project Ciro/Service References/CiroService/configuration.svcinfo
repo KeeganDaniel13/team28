@@ -2,9 +2,16 @@
 <configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
   <behaviors />
   <bindings>
+<<<<<<< HEAD
     <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BasicHttpBinding_IService1&quot; /&gt;" bindingType="basicHttpBinding" name="BasicHttpBinding_IService1" />
   </bindings>
   <endpoints>
     <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:50983/Service1.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IService1&quot; contract=&quot;CiroService.IService1&quot; name=&quot;BasicHttpBinding_IService1&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:50983/Service1.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IService1&quot; contract=&quot;CiroService.IService1&quot; name=&quot;BasicHttpBinding_IService1&quot; /&gt;" contractName="CiroService.IService1" name="BasicHttpBinding_IService1" />
+=======
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;SOAPEndPoint&quot; /&gt;" bindingType="basicHttpBinding" name="SOAPEndPoint" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:50983/Service1.svc/soap&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;SOAPEndPoint&quot; contract=&quot;CiroService.IService1&quot; name=&quot;SOAPEndPoint&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:50983/Service1.svc/soap&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;SOAPEndPoint&quot; contract=&quot;CiroService.IService1&quot; name=&quot;SOAPEndPoint&quot; /&gt;" contractName="CiroService.IService1" name="SOAPEndPoint" />
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
   </endpoints>
 </configurationSnapshot>

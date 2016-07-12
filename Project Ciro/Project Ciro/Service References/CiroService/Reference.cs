@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Project_Ciro.CiroService {
+<<<<<<< HEAD
     using System.Runtime.Serialization;
     using System;
     
@@ -1513,11 +1514,16 @@ namespace Project_Ciro.CiroService {
         }
     }
     
+=======
+    
+    
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CiroService.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
+<<<<<<< HEAD
         string GetData(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -1540,6 +1546,24 @@ namespace Project_Ciro.CiroService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<Project_Ciro.CiroService.CompositeType> GetDataUsingDataContractAsync(Project_Ciro.CiroService.CompositeType composite);
+=======
+        string GetData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
+        System.Threading.Tasks.Task<string> GetDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
+        string login(string name, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
+        System.Threading.Tasks.Task<string> loginAsync(string name, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/clientProducts", ReplyAction="http://tempuri.org/IService1/clientProductsResponse")]
+        string clientProducts(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/clientProducts", ReplyAction="http://tempuri.org/IService1/clientProductsResponse")]
+        System.Threading.Tasks.Task<string> clientProductsAsync(string id);
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1569,6 +1593,7 @@ namespace Project_Ciro.CiroService {
                 base(binding, remoteAddress) {
         }
         
+<<<<<<< HEAD
         public string GetData(int value) {
             return base.Channel.GetData(value);
         }
@@ -1599,6 +1624,30 @@ namespace Project_Ciro.CiroService {
         
         public System.Threading.Tasks.Task<Project_Ciro.CiroService.CompositeType> GetDataUsingDataContractAsync(Project_Ciro.CiroService.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+=======
+        public string GetData() {
+            return base.Channel.GetData();
+        }
+        
+        public System.Threading.Tasks.Task<string> GetDataAsync() {
+            return base.Channel.GetDataAsync();
+        }
+        
+        public string login(string name, string password) {
+            return base.Channel.login(name, password);
+        }
+        
+        public System.Threading.Tasks.Task<string> loginAsync(string name, string password) {
+            return base.Channel.loginAsync(name, password);
+        }
+        
+        public string clientProducts(string id) {
+            return base.Channel.clientProducts(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> clientProductsAsync(string id) {
+            return base.Channel.clientProductsAsync(id);
+>>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
         }
     }
 }
