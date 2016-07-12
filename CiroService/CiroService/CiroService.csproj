@@ -96,10 +96,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Services" />
-<<<<<<< HEAD
-=======
     <Reference Include="System.Windows.Forms" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
@@ -178,13 +175,10 @@
     <Compile Include="EFDatabase\warehousetype.cs">
       <DependentUpon>CirODatabase.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\UserDemo.cs" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

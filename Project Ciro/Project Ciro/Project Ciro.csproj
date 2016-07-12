@@ -69,13 +69,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Admin\AddAdministrator.aspx" />
     <Content Include="Admin\Clients.aspx" />
     <Content Include="Admin\COfficalsAddition.aspx" />
     <Content Include="Admin\WarehouseAddition.aspx" />
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Content Include="bootstraps\client\bootstrap.min.css" />
     <Content Include="bootstraps\client\login\css\normalize.css" />
     <Content Include="bootstraps\client\login\css\style.css" />
@@ -97,15 +94,12 @@
     <Content Include="Customs\warehouseavailability.aspx" />
     <Content Include="packages.config" />
     <Content Include="admin.Master" />
-<<<<<<< HEAD
     <Content Include="Service References\CiroService\Project_Ciro.CiroService.CompositeType1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\Project_Ciro.CiroService.product1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -1094,7 +1088,6 @@
     <Content Include="bootstraps\client\sass\_bootstrap-sprockets.scss" />
     <Content Include="bootstraps\client\sass\_bootstrap.scss" />
     <None Include="Service References\CiroService\Service1.wsdl" />
-<<<<<<< HEAD
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1108,14 +1101,6 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Warehouse.Master" />
-=======
-    <None Include="Service References\CiroService\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CiroService\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4146,14 +4131,11 @@
     <Content Include="bootstraps\Sadaka\assets\js\owl.carousel.min.js" />
     <Content Include="Customs\viewwarehouses.aspx" />
     <Content Include="Customs\warehouseoverview.aspx" />
-<<<<<<< HEAD
     <Content Include="Warehousemanager\PackageTransfer.aspx" />
     <Content Include="Warehousemanager\PendingTransfers.aspx" />
     <Content Include="Warehousemanager\Requestedtransfers.aspx" />
     <Content Include="Warehousemanager\TransferHistory.aspx" />
     <Content Include="Warehousemanager\WarehouseItems.aspx" />
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -4164,33 +4146,34 @@
     <Compile Include="admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Admin\AddAdministrator.aspx.cs">
       <DependentUpon>AddAdministrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AddAdministrator.aspx.designer.cs">
       <DependentUpon>AddAdministrator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Clients.aspx.cs">
       <DependentUpon>Clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Clients.aspx.designer.cs">
       <DependentUpon>Clients.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\COfficalsAddition.aspx.cs">
       <DependentUpon>COfficalsAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\COfficalsAddition.aspx.designer.cs">
       <DependentUpon>COfficalsAddition.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WarehouseAddition.aspx.cs">
       <DependentUpon>WarehouseAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\WarehouseAddition.aspx.designer.cs">
       <DependentUpon>WarehouseAddition.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Compile Include="client.Master.cs">
       <DependentUpon>client.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4310,25 +4293,20 @@
     <Compile Include="Customs\warehouseoverview.aspx.designer.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Helpers\WebRequest.cs" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CiroService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Warehouse.Master.cs">
       <DependentUpon>Warehouse.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehouse.Master.designer.cs">
       <DependentUpon>Warehouse.Master</DependentUpon>
     </Compile>
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <Compile Include="warehousemanager.Master.cs">
       <DependentUpon>warehousemanager.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4336,46 +4314,43 @@
     <Compile Include="warehousemanager.Master.designer.cs">
       <DependentUpon>warehousemanager.Master</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Warehousemanager\PackageTransfer.aspx.cs">
       <DependentUpon>PackageTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehousemanager\PackageTransfer.aspx.designer.cs">
       <DependentUpon>PackageTransfer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\PendingTransfers.aspx.cs">
       <DependentUpon>PendingTransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehousemanager\PendingTransfers.aspx.designer.cs">
       <DependentUpon>PendingTransfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\Requestedtransfers.aspx.cs">
       <DependentUpon>Requestedtransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehousemanager\Requestedtransfers.aspx.designer.cs">
       <DependentUpon>Requestedtransfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\TransferHistory.aspx.cs">
       <DependentUpon>TransferHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehousemanager\TransferHistory.aspx.designer.cs">
       <DependentUpon>TransferHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\WarehouseItems.aspx.cs">
       <DependentUpon>WarehouseItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Warehousemanager\WarehouseItems.aspx.designer.cs">
       <DependentUpon>WarehouseItems.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
-=======
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="Warehousemanager\" />
-  </ItemGroup>
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
