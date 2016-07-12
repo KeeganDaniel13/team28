@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/menu/navigation.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/src/main/res/menu/navigation.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/menu/activity_navigation_drawer.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/src/main/res/menu/activity_navigation_drawer.xml"
+    }
+]

@@ -1,0 +1,6 @@
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\bin\DemoWCFRest.dll.config
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\bin\DemoWCFRest.dll
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\bin\DemoWCFRest.pdb
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\obj\Debug\DemoWCFRest.csprojResolveAssemblyReference.cache
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\obj\Debug\DemoWCFRest.dll
+Z:\Documents\Visual Studio 2015\Projects\DemoWCFRest\DemoWCFRest\obj\Debug\DemoWCFRest.pdb

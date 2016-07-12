@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="client.master.cs" Inherits="Project_Ciro.client" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico"/>
+    <!-- Google Webfonts -->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+	<link href="bootstraps/gentellla/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="bootstraps/client/css/animate.css"/>
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="bootstraps/client/css/icomoon.css"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+     <script src="../bootstraps/client/login/js/index.js" type="text/javascript"></script>
+   
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="bootstraps/client/css/style.css"/>
+	<!-- Modernizr JS -->
+	<script src="bootstraps/client/js/modernizr-2.6.2.min.js"></script>
+    <script src="<%= Page.ResolveClientUrl("bootstraps/client/promt.js") %>"></script>
+    <style>
+        .datacentral{ 
+		margin:0 auto; 
+		width: 80%; 
+		display: block
+		}
+         h3{
+              font-family: "Montserrat", arial, sans-serif;
+        }
+        .table
+        {
+            border: 1px solid #ccc;
+            
+            width: 400px;
+        }
+        .table th
+        {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+       
+        </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="fh5co-offcanvass">
+				
+		<ul>
+			
+			<li class="active"><a href="#" data-nav-section="home">Home</a></li>
+			<li><a href="#" data-nav-section="features">Features</a></li>
+			<li><a href="#" data-nav-section="design">Design</a></li>
+			<li><a href="#" data-nav-section="testimonies">Testimonies</a></li>
+			<li><a href="#" data-nav-section="products">Products</a></li>
+			<li><a href="#" data-nav-section="benefits">Benefits</a></li>
+			<li><a href="#" data-nav-section="pricing">Pricing</a></li>
+			<li><a href="#" data-nav-section="faqs">FAQs</a></li>
+		</ul>
+		<h3 class="fh5co-lead">Connect with us</h3>
+		<p class="fh5co-social-icons">
+			<a href="#"><i class="icon-twitter"></i></a>
+			<a href="#"><i class="icon-facebook"></i></a>
+			<a href="#"><i class="icon-instagram"></i></a>
+			<a href="#"><i class="icon-dribbble"></i></a>
+			<a href="#"><i class="icon-youtube"></i></a>
+		</p>
+	</div>
+	
+	<div id="fh5co" class="navbar" style="background-color:#33CCFF;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="#" style= "float:right;" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><span></span> <i></i></a>
+					<a href="#" class="fh5co-nav-toggles3" ><span>Contact</span> <i></i></a>
+					<a href="#" class="fh5co-nav-toggles2"><span>Warehouse</span> <i></i></a>
+					<a href="#" class="fh5co-nav-toggles1"><span>About</span> <i></i></a>
+					<a href="#" class="fh5co-nav-toggles"><span>Home</span> <i></i></a>
+					<a href="index.html" class="navbar-brand"><span>CIRO</span></a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <footer id="fh5co-footer" style="position:relative; width:100%; height:250px; left:0px;right:0px">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-footer-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 col-md-push-3">
+							<h3 class="fh5co-lead">About</h3>
+							<ul>
+								<li><a href="#">Tour</a></li>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">New Features</a></li>
+								<li><a href="#">Contact Us</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-4 col-md-push-3">
+							<h3 class="fh5co-lead">Support</h3>
+							<ul>
+								<li><a href="#">Help Center</a></li>
+								<li><a href="#">Terms of Service</a></li>
+								<li><a href="#">Security</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">More Apps</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-4 col-md-push-3">
+							<h3 class="fh5co-lead">More Links</h3>
+							<ul>
+								<li><a href="#">Feedback</a></li>
+								<li><a href="#">Frequently Ask Questions</a></li>
+								<li><a href="#">Terms of Service</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">More Apps</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3 col-sm-12 col-md-pull-9">
+							<div class="fh5co-footer-logo"><a href="index.html">CIRO</a></div>
+							<p class="fh5co-copyright"><small>&copy; 2015. All Rights Reserved. <br>	by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Images: <a href="http://pexels.com/" target="_blank">Pexels</a></small></p>
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="icon-twitter"></i></a>
+								<a href="#"><i class="icon-facebook"></i></a>
+								<a href="#"><i class="icon-instagram"></i></a>
+								<a href="#"><i class="icon-dribbble"></i></a>
+								<a href="#"><i class="icon-youtube"></i></a>
+							</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+	
+     <!-- jQuery -->
+	<script src="../bootstraps/client/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../bootstraps/client/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../bootstraps/client/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../bootstraps/client/js/jquery.waypoints.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../bootstraps/client/js/jquery.magnific-popup.min.js"></script>
+	<!-- Owl Carousel -->
+	<script src="../bootstraps/client/js/owl.carousel.min.js"></script>
+	<!-- toCount -->
+	<script src="../bootstraps/client/js/jquery.countTo.js"></script>
+	<!-- Main JS -->
+	<script src="../bootstraps/client/js/main.js"></script>
+
+</body>
+</html>

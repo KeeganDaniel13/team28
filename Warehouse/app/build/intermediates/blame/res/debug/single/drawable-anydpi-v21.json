@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_gallery.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_gallery.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_share.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_share.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_manage.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_manage.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_camera.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_camera.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_send.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_send.xml"
+    },
+    {
+        "merged": "/Users/chuck/Downloads/Warehouse/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_slideshow.xml",
+        "source": "/Users/chuck/Downloads/Warehouse/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_slideshow.xml"
+    }
+]
