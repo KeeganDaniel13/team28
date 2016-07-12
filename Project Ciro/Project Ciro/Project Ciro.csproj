@@ -94,12 +94,6 @@
     <Content Include="Customs\warehouseavailability.aspx" />
     <Content Include="packages.config" />
     <Content Include="admin.Master" />
-    <Content Include="Service References\CiroService\Project_Ciro.CiroService.CompositeType1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\Project_Ciro.CiroService.product1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />

@@ -4,11 +4,6 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-<<<<<<< HEAD
-      <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CiroService.EFDatabase" />
-      <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CiroService" />
-=======
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -23,25 +18,17 @@
   <wsdl:message name="IService1_login_OutputMessage">
     <wsdl:part name="parameters" element="tns:loginResponse" />
   </wsdl:message>
-<<<<<<< HEAD
-  <wsdl:message name="IService1_listProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:listProduct" />
-  </wsdl:message>
-  <wsdl:message name="IService1_listProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:listProductResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-=======
   <wsdl:message name="IService1_clientProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:clientProducts" />
   </wsdl:message>
   <wsdl:message name="IService1_clientProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:clientProductsResponse" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
+  </wsdl:message>
+  <wsdl:message name="IService1_register_InputMessage">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="IService1_register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
@@ -52,25 +39,16 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/login" message="tns:IService1_login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/loginResponse" message="tns:IService1_login_OutputMessage" />
     </wsdl:operation>
-<<<<<<< HEAD
-    <wsdl:operation name="listProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listProduct" message="tns:IService1_listProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listProductResponse" message="tns:IService1_listProduct_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
-=======
     <wsdl:operation name="clientProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/clientProducts" message="tns:IService1_clientProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/clientProductsResponse" message="tns:IService1_clientProducts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/register" message="tns:IService1_register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registerResponse" message="tns:IService1_register_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SOAPEndPoint" type="tns:IService1">
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
@@ -90,9 +68,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
-    <wsdl:operation name="listProduct">
-      <soap:operation soapAction="http://tempuri.org/IService1/listProduct" style="document" />
+    <wsdl:operation name="clientProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/clientProducts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -100,12 +77,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
-=======
-    <wsdl:operation name="clientProducts">
-      <soap:operation soapAction="http://tempuri.org/IService1/clientProducts" style="document" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/IService1/register" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -115,13 +88,8 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">
-<<<<<<< HEAD
-    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:50983/Service1.svc" />
-=======
     <wsdl:port name="SOAPEndPoint" binding="tns:SOAPEndPoint">
       <soap:address location="http://localhost:50983/Service1.svc/soap" />
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -5,27 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
+
 using System.Net;
 using System.IO;
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
 namespace Project_Ciro.Clients
 {
     public partial class login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-<<<<<<< HEAD
-        {
-           
-        }
-        protected void loginButton(object sender, EventArgs e)
-        {
-            var client = new CiroService.Service1Client();
-            var a = client.login(name.Value, name2.Value);
-            MessageBox.Show(a);
-=======
-        {     
+        {   
         }
 
         protected void loginButton(object sender, EventArgs e)
@@ -57,7 +45,6 @@ namespace Project_Ciro.Clients
             //}
             //}
             //MessageBox.Show(response);
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
         }
 
     }

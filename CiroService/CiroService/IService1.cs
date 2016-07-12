@@ -6,11 +6,9 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using CiroService.EFDatabase;
-<<<<<<< HEAD
-=======
+
 using CiroService.JsonObjects;
 using System.Web.Http;
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
 
 namespace CiroService
 {
@@ -19,19 +17,6 @@ namespace CiroService
     public interface IService1
     {
 
-        [OperationContract]
-<<<<<<< HEAD
-        string GetData(int value);
-
-        [OperationContract]
-        string login(string user, string password);
-
-        [OperationContract]
-        IEnumerable<product> listProduct();
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-=======
         [WebGet(UriTemplate="data",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat =WebMessageFormat.Json)]
         string GetData();
 
@@ -53,7 +38,6 @@ namespace CiroService
 
         //[OperationContract]
        // CompositeType GetDataUsingDataContract(CompositeType composite);
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959
 
         // TODO: Add your service operations here
     }
