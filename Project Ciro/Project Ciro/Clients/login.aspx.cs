@@ -25,7 +25,7 @@ namespace Project_Ciro.Clients
                 return;
             }
             var serve = new CiroService.Service1Client();
-            MessageBox.Show(serve.login(name.Value,password.Value));
+            MessageBox.Show(serve.login(new CiroService.jsonLoginUser { name="",password=""}));
             //string url = string.Format("http://localhost:50983/Service1.svc/login/{0}/{1}",name.Value,password.Value);// "kmalendegmail.com/chuck";
             //var  serCon =(HttpWebRequest) WebRequest.Create(url) ;
             // WebProxy myProxy = new WebProxy("10.200.254.1:3128", true);

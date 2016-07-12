@@ -1,45 +1,3 @@
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\csc.exe
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\vbc.exe
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll.config
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Project Ciro.pdb
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.dll
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.pdb
-C:\Users\Chuck\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\csc.exe
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\vbc.exe
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll.config
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\Project Ciro.pdb
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.csprojResolveAssemblyReference.cache
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.dll
-C:\Users\Joshua\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.pdb
-=======
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\csc.exe
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -57,7 +15,5 @@ C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Project Ciro.dll
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Project Ciro.pdb
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.csprojResolveAssemblyReference.cache
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.dll
 C:\Users\Tshenolo\team28\Project Ciro\Project Ciro\obj\Debug\Project Ciro.pdb
->>>>>>> 8f6445e3901c44fb9322d5e00765e85cffa47959

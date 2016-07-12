@@ -9,7 +9,163 @@
 //------------------------------------------------------------------------------
 
 namespace Project_Ciro.CiroService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="jsonLoginUser", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class jsonLoginUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegisterUser", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class RegisterUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string passwordField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fname {
+            get {
+                return this.fnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fnameField, value) != true)) {
+                    this.fnameField = value;
+                    this.RaisePropertyChanged("fname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lname {
+            get {
+                return this.lnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lnameField, value) != true)) {
+                    this.lnameField = value;
+                    this.RaisePropertyChanged("lname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.passwordField, value) != true)) {
+                    this.passwordField = value;
+                    this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CiroService.IService1")]
@@ -22,10 +178,10 @@ namespace Project_Ciro.CiroService {
         System.Threading.Tasks.Task<string> GetDataAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
-        string login(string name, string password);
+        string login([System.ServiceModel.MessageParameterAttribute(Name="login")] Project_Ciro.CiroService.jsonLoginUser login1);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
-        System.Threading.Tasks.Task<string> loginAsync(string name, string password);
+        System.Threading.Tasks.Task<string> loginAsync(Project_Ciro.CiroService.jsonLoginUser login);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/clientProducts", ReplyAction="http://tempuri.org/IService1/clientProductsResponse")]
         string clientProducts(string id);
@@ -34,10 +190,10 @@ namespace Project_Ciro.CiroService {
         System.Threading.Tasks.Task<string> clientProductsAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/register", ReplyAction="http://tempuri.org/IService1/registerResponse")]
-        string register(string fname, string sname, string email, string password);
+        string register(Project_Ciro.CiroService.RegisterUser regUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/register", ReplyAction="http://tempuri.org/IService1/registerResponse")]
-        System.Threading.Tasks.Task<string> registerAsync(string fname, string sname, string email, string password);
+        System.Threading.Tasks.Task<string> registerAsync(Project_Ciro.CiroService.RegisterUser regUser);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -75,12 +231,12 @@ namespace Project_Ciro.CiroService {
             return base.Channel.GetDataAsync();
         }
         
-        public string login(string name, string password) {
-            return base.Channel.login(name, password);
+        public string login(Project_Ciro.CiroService.jsonLoginUser login1) {
+            return base.Channel.login(login1);
         }
         
-        public System.Threading.Tasks.Task<string> loginAsync(string name, string password) {
-            return base.Channel.loginAsync(name, password);
+        public System.Threading.Tasks.Task<string> loginAsync(Project_Ciro.CiroService.jsonLoginUser login) {
+            return base.Channel.loginAsync(login);
         }
         
         public string clientProducts(string id) {
@@ -91,12 +247,12 @@ namespace Project_Ciro.CiroService {
             return base.Channel.clientProductsAsync(id);
         }
         
-        public string register(string fname, string sname, string email, string password) {
-            return base.Channel.register(fname, sname, email, password);
+        public string register(Project_Ciro.CiroService.RegisterUser regUser) {
+            return base.Channel.register(regUser);
         }
         
-        public System.Threading.Tasks.Task<string> registerAsync(string fname, string sname, string email, string password) {
-            return base.Channel.registerAsync(fname, sname, email, password);
+        public System.Threading.Tasks.Task<string> registerAsync(Project_Ciro.CiroService.RegisterUser regUser) {
+            return base.Channel.registerAsync(regUser);
         }
     }
 }

@@ -37,14 +37,11 @@ namespace CiroService
             return JsonConvert.SerializeObject(users);
         }
     
-        public string login(string name,string password)
+        public string login(jsonLoginUser login)
         {
-            MessageBox.Show("Login");
-           // var clientRequest = new HttpRequest();
-            MessageBox.Show(name);
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-            var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(name) || c.user_email.Equals(name) ) && c.user_password.Equals(password));
+            var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.password) ) && c.user_password.Equals(login.password));
             if (user == null)
             {
                 return "False";
@@ -71,18 +68,19 @@ namespace CiroService
             return JsonConvert.SerializeObject(sendProducts);
         }
 
-        public string register(string fname, string sname, string email, string password)
+        public string register(RegisterUser regUser)
         {
             var userstable = new userController();
             
-            var check = userstable.getTable().FirstOrDefault<user>(c => c.user_email.Equals(email));
-            //MessageBox.Show(check.user_fname);
+            var check = userstable.getTable().FirstOrDefault<user>(c => c.user_email.Equals(regUser.email));
+            
             if (check != null)
             {
                 return "Email Already Registered";
             }
-            int id = userstable.getTable().Count();
-            user newUser = new user { user_fname = fname, user_email = email, user_sname = sname, user_password = password, usertype_id = 2, user_id = id };
+            
+            user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = 2, user_id = userstable.getTable().Count() };
+    
             userstable.addRecord(newUser);
             return "Registered";
         }

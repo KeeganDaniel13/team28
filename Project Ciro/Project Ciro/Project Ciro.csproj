@@ -1081,6 +1081,7 @@
     <Content Include="bootstraps\client\sass\_bootstrap-mincer.scss" />
     <Content Include="bootstraps\client\sass\_bootstrap-sprockets.scss" />
     <Content Include="bootstraps\client\sass\_bootstrap.scss" />
+    <Content Include="Warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
@@ -1091,10 +1092,6 @@
     <None Include="Service References\CiroService\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CiroService\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Warehouse.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4344,12 +4341,11 @@
       <DependentUpon>WarehouseItems.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CiroService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

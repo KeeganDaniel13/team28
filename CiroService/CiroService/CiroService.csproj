@@ -175,6 +175,7 @@
     <Compile Include="EFDatabase\warehousetype.cs">
       <DependentUpon>CirODatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="JsonObjects\jsonLoginUser.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
