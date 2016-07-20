@@ -94,6 +94,14 @@
     <Property Name="warehouse_size" Type="int" />
     <Property Name="warehouse_warehousetypeid" Type="int" />
   </EntityType>
+  <EntityType Name="warehousestock">
+    <Key>
+      <PropertyRef Name="warehousestock_id" />
+    </Key>
+    <Property Name="warehousestock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id_warehousestock" Type="int" />
+    <Property Name="warehouse_id_warehousestock" Type="int" />
+  </EntityType>
   <EntityType Name="warehousetype">
     <Key>
       <PropertyRef Name="warehousetype_id" />
@@ -146,6 +154,18 @@
       </Principal>
       <Dependent Role="transferrequest">
         <PropertyRef Name="package_id_transferrequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_id_warehousestock">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="warehousestock">
+        <PropertyRef Name="product_id_warehousestock" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -233,6 +253,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="warehouse_id_warehousestock">
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="warehouse_id" />
+      </Principal>
+      <Dependent Role="warehousestock">
+        <PropertyRef Name="warehouse_id_warehousestock" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="warehouse_warehousetypeid">
     <End Role="warehousetype" Type="Self.warehousetype" Multiplicity="0..1" />
     <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
@@ -256,6 +288,7 @@
     <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
     <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
     <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
+    <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
     <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
     <AssociationSet Name="product_id" Association="Self.product_id">
       <End Role="product" EntitySet="product" />
@@ -272,6 +305,10 @@
     <AssociationSet Name="product_id_transferrequest" Association="Self.product_id_transferrequest">
       <End Role="product" EntitySet="product" />
       <End Role="transferrequest" EntitySet="transferrequest" />
+    </AssociationSet>
+    <AssociationSet Name="product_id_warehousestock" Association="Self.product_id_warehousestock">
+      <End Role="product" EntitySet="product" />
+      <End Role="warehousestock" EntitySet="warehousestock" />
     </AssociationSet>
     <AssociationSet Name="producttype_id" Association="Self.producttype_id">
       <End Role="producttype" EntitySet="producttype" />
@@ -300,6 +337,10 @@
     <AssociationSet Name="warehouse_id_transferlist" Association="Self.warehouse_id_transferlist">
       <End Role="warehouse" EntitySet="warehouse" />
       <End Role="transferlist" EntitySet="transferlist" />
+    </AssociationSet>
+    <AssociationSet Name="warehouse_id_warehousestock" Association="Self.warehouse_id_warehousestock">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="warehousestock" EntitySet="warehousestock" />
     </AssociationSet>
     <AssociationSet Name="warehouse_warehousetypeid" Association="Self.warehouse_warehousetypeid">
       <End Role="warehousetype" EntitySet="warehousetype" />

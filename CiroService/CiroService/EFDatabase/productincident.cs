@@ -15,22 +15,20 @@ namespace CiroService.EFDatabase
 using System;
     using System.Collections.Generic;
     
-public partial class releaserequest
+public partial class productincident
 {
 
-    public int releaserequest_id { get; set; }
+    public int productincident_id { get; set; }
 
-    public string releaserequest_description { get; set; }
+    public string productincident_description { get; set; }
 
-    public Nullable<int> user_id_releaserequest { get; set; }
+    public string productincident_image { get; set; }
 
-    public Nullable<int> product_id_releaserequest { get; set; }
+    public Nullable<int> productincident_product_id { get; set; }
 
 
 
     public virtual product product { get; set; }
-
-    public virtual user user { get; set; }
 
 }
 

@@ -113,5 +113,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="warehousestocks">
+      <EntityTypeMapping TypeName="custommandbModel.warehousestock">
+        <MappingFragment StoreEntitySet="warehousestock">
+          <ScalarProperty Name="warehouse_id_warehousestock" ColumnName="warehouse_id_warehousestock" />
+          <ScalarProperty Name="product_id_warehousestock" ColumnName="product_id_warehousestock" />
+          <ScalarProperty Name="warehousestock_id" ColumnName="warehousestock_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

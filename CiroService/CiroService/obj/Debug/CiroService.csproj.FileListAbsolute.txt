@@ -40,3 +40,4 @@ C:\Users\Chuck\team28\CiroService\CiroService\bin\System.Web.Http.WebHost.xml
 C:\Users\Chuck\team28\CiroService\CiroService\obj\Debug\CiroService.csprojResolveAssemblyReference.cache
 C:\Users\Chuck\team28\CiroService\CiroService\obj\Debug\CiroService.dll
 C:\Users\Chuck\team28\CiroService\CiroService\obj\Debug\CiroService.pdb
+C:\Users\Tshenolo\team28\CiroService\CiroService\bin\MessagingToolkit.QRCode.dll
