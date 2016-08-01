@@ -64,8 +64,6 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addincident")]
         void addIncident(jsonIncident newIncident);
 
-
-        
         //return warehouse information
         //todo
         [OperationContract]
@@ -83,7 +81,7 @@ namespace CiroService
         //Stock take
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockleaving/{id}")]
-        IEnumerable<jsonProduct> stockleavingWarehouse(string id);
+        IEnumerable<transferStock> stockleavingWarehouse(string location);
         //Still needed and implementation
         //Notification
         //messages
