@@ -12,13 +12,13 @@ namespace CiroService.EFDatabase
     using System;
     using System.Collections.Generic;
     
-    public partial class transferlist
+    public partial class billofentry
     {
-        public int transferlist_id { get; set; }
-        public string transferlist_from { get; set; }
-        public string transferlist_to { get; set; }
-        public Nullable<int> transferlist_user_id { get; set; }
-        public Nullable<int> transferlist_product_id { get; set; }
+        public int billofentry_id { get; set; }
+        public string billofentry_code { get; set; }
+        public Nullable<int> billofentry_user_id { get; set; }
+        public Nullable<int> billofentry_product_id { get; set; }
+        public string billofentry_origin { get; set; }
     
         public virtual product product { get; set; }
         public virtual user user { get; set; }

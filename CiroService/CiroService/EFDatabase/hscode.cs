@@ -12,18 +12,18 @@ namespace CiroService.EFDatabase
     using System;
     using System.Collections.Generic;
     
-    public partial class warehousetype
+    public partial class hscode
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public warehousetype()
+        public hscode()
         {
-            this.warehouses = new HashSet<warehouse>();
+            this.products = new HashSet<product>();
         }
     
-        public int warehousetype_id { get; set; }
-        public string warehousetype_name { get; set; }
+        public int hscode_id { get; set; }
+        public Nullable<decimal> hscode_percentage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<warehouse> warehouses { get; set; }
+        public virtual ICollection<product> products { get; set; }
     }
 }

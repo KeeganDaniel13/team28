@@ -49,7 +49,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockadd")]
-        void stockAdd(jsonProduct newProduct);
+        void stockAdd(string origin,IEnumerable<jsonProduct> newProduct);
 
         //TaskList Warehouse Manager
         //To complete
@@ -64,24 +64,26 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addincident")]
         void addIncident(jsonIncident newIncident);
 
+
+        
         //return warehouse information
         //todo
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "warehouseInfo/{id}")]
-        warehouse warehouseInfo(string id);
+        jsonWarehouse warehouseInfo(string id);
 
         //return list of warehouses
         //todo
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "warehouseInfo")]
-        IEnumerable<warehouse> warehouses();
+        IEnumerable<jsonWarehouse> warehouses();
 
 
         //Now 
         //Stock take
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockleaving")]
-        void stockleavingWarehouse();
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockleaving/{id}")]
+        IEnumerable<jsonProduct> stockleavingWarehouse(string id);
         //Still needed and implementation
         //Notification
         //messages

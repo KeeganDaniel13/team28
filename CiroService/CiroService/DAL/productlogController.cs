@@ -58,13 +58,13 @@ namespace CiroService.DAL
 
         public productlog updateRecord(int id, productlog productlog)
         {
-            productlog newInvoice = productlog;
-            if (id != newInvoice.productlog_id)
+            productlog newlog = productlog;
+            if (id != newlog.productlog_id)
             {
                 return null;
             }
 
-            db.Entry(newInvoice).State = EntityState.Modified;
+            db.Entry(newlog).State = EntityState.Modified;
 
             try
             {
@@ -82,7 +82,7 @@ namespace CiroService.DAL
                 }
             }
 
-            return newInvoice;
+            return newlog;
         }
     }
 }
