@@ -8,66 +8,58 @@ using System.Web;
 
 namespace CiroService.DAL
 {
-    public class productController: IDatabaseOperator<product>
+    public class countryrelationController : IDatabaseOperator<countryrelation>
     {
 
         custommandbEntities1 db = new custommandbEntities1();
 
-        public IEnumerable<product> addRecord(product product)
+        public IEnumerable<countryrelation> addRecord(countryrelation countryrelation)
         {
 
-            db.products.Add(product);
-<<<<<<< HEAD
+            db.countryrelations.Add(countryrelation);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.countryrelations;
         }
 
-        public IEnumerable<product> deleteRecord(int id)
+        public IEnumerable<countryrelation> deleteRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            countryrelation countryrelation = db.countryrelations.Find(id);
+            if (countryrelation == null)
             {
                 return null;
             }
 
-            db.products.Remove(product);
-<<<<<<< HEAD
+            db.countryrelations.Remove(countryrelation);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.countryrelations;
         }
 
         public bool exists(int id)
         {
-            return db.products.Count(e => e.product_id == id) > 0;
+            return db.countryrelations.Count(e => e.countryrelation_id == id) > 0;
         }
 
-        public product getRecord(int id)
+        public countryrelation getRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            countryrelation countryrelation = db.countryrelations.Find(id);
+            if (countryrelation == null)
             {
                 return null;
             }
-            return product;
+            return countryrelation;
         }
 
-        public IEnumerable<product> getTable()
+        public IEnumerable<countryrelation> getTable()
         {
-            return db.products;
+            return db.countryrelations;
         }
 
-        public product updateRecord(int id, product product)
+        public countryrelation updateRecord(int id, countryrelation countryrelation)
         {
-            product newInvoice = product;
-            if (id != newInvoice.product_id)
+            countryrelation newInvoice = countryrelation;
+            if (id != newInvoice.countryrelation_id)
             {
                 return null;
             }
@@ -76,11 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-<<<<<<< HEAD
                 db.SaveChangesAsync();
-=======
-                db.SaveChanges();
->>>>>>> newService
             }
             catch (DbUpdateConcurrencyException)
             {

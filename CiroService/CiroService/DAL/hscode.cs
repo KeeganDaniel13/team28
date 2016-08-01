@@ -8,66 +8,58 @@ using System.Web;
 
 namespace CiroService.DAL
 {
-    public class productController: IDatabaseOperator<product>
+    public class hscodeController : IDatabaseOperator<hscode>
     {
 
         custommandbEntities1 db = new custommandbEntities1();
 
-        public IEnumerable<product> addRecord(product product)
+        public IEnumerable<hscode> addRecord(hscode hscode)
         {
 
-            db.products.Add(product);
-<<<<<<< HEAD
+            db.hscodes.Add(hscode);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.hscodes;
         }
 
-        public IEnumerable<product> deleteRecord(int id)
+        public IEnumerable<hscode> deleteRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            hscode hscode = db.hscodes.Find(id);
+            if (hscode == null)
             {
                 return null;
             }
 
-            db.products.Remove(product);
-<<<<<<< HEAD
+            db.hscodes.Remove(hscode);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.hscodes;
         }
 
         public bool exists(int id)
         {
-            return db.products.Count(e => e.product_id == id) > 0;
+            return db.hscodes.Count(e => e.hscode_id == id) > 0;
         }
 
-        public product getRecord(int id)
+        public hscode getRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            hscode hscode = db.hscodes.Find(id);
+            if (hscode == null)
             {
                 return null;
             }
-            return product;
+            return hscode;
         }
 
-        public IEnumerable<product> getTable()
+        public IEnumerable<hscode> getTable()
         {
-            return db.products;
+            return db.hscodes;
         }
 
-        public product updateRecord(int id, product product)
+        public hscode updateRecord(int id, hscode hscode)
         {
-            product newInvoice = product;
-            if (id != newInvoice.product_id)
+            hscode newInvoice = hscode;
+            if (id != newInvoice.hscode_id)
             {
                 return null;
             }
@@ -76,11 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-<<<<<<< HEAD
                 db.SaveChangesAsync();
-=======
-                db.SaveChanges();
->>>>>>> newService
             }
             catch (DbUpdateConcurrencyException)
             {

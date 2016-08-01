@@ -4,15 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
+<<<<<<< HEAD
       <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+    <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+>>>>>>> newService
         <EntityType Name="billofentry">
           <Key>
             <PropertyRef Name="billofentry_id" />
           </Key>
           <Property Name="billofentry_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="billofentry_code" Type="varchar" MaxLength="45" />
+<<<<<<< HEAD
           <Property Name="billofentry_user_id" Type="int" />
           <Property Name="billofentry_product_id" Type="int" />
+=======
+          <Property Name="billofentry_user" Type="int" />
+          <Property Name="billofentry_product" Type="int" />
+>>>>>>> newService
           <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
         </EntityType>
         <EntityType Name="countryrelation">
@@ -37,6 +46,10 @@
           <Property Name="message_convoid" Type="int" />
           <Property Name="message_to" Type="int" />
           <Property Name="message_from" Type="int" />
+<<<<<<< HEAD
+=======
+          <Property Name="message_message" Type="longtext" />
+>>>>>>> newService
           <Property Name="message_stamp" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="product">
@@ -50,33 +63,54 @@
           <Property Name="product_size" Type="int" />
           <Property Name="product_location" Type="varchar" MaxLength="100" />
           <Property Name="product_arrivalDate" Type="datetime" Precision="0" />
+<<<<<<< HEAD
           <Property Name="product_producttype_id" Type="int" />
           <Property Name="product_hscode_id" Type="int" />
+=======
+          <Property Name="product_producttype" Type="int" />
+          <Property Name="product_hscode" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="productlog">
           <Key>
             <PropertyRef Name="productlog_id" />
           </Key>
           <Property Name="productlog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="productlog_product_id" Type="int" />
           <Property Name="productlog_user_id" Type="int" />
           <Property Name="productlog_description" Type="varchar" MaxLength="255" />
           <Property Name="productlog_image" Type="longtext" />
           <Property Name="productlog_productlogtype_id" Type="int" />
+=======
+          <Property Name="productlog_product" Type="int" />
+          <Property Name="productlog_user" Type="int" />
+          <Property Name="productlog_description" Type="varchar" MaxLength="255" />
+          <Property Name="productlog_image" Type="longtext" />
+          <Property Name="productlog_type" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="productlogtype">
           <Key>
             <PropertyRef Name="productlogtype_id" />
           </Key>
           <Property Name="productlogtype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="productlogtype_name" Type="varchar" MaxLength="45" />
+=======
+          <Property Name="productlogtype_name" Type="varchar" MaxLength="45" Nullable="false" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="producttype">
           <Key>
             <PropertyRef Name="producttype_id" />
           </Key>
           <Property Name="producttype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="producttype_name" Type="varchar" MaxLength="45" />
+=======
+          <Property Name="producttype_name" Type="varchar" MaxLength="45" Nullable="false" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="releaserequest">
           <Key>
@@ -84,29 +118,49 @@
           </Key>
           <Property Name="releaserequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="releaserequest_verdict" Type="varchar" MaxLength="45" />
+<<<<<<< HEAD
           <Property Name="releaserequest_user_id" Type="int" />
           <Property Name="releaserequest_product_id" Type="int" />
+=======
+          <Property Name="releaserequest_user" Type="int" />
+          <Property Name="releaserequest_product" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="transferlist">
           <Key>
             <PropertyRef Name="transferlist_id" />
           </Key>
           <Property Name="transferlist_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="transferlist_from" Type="varchar" MaxLength="45" />
           <Property Name="transferlist_to" Type="varchar" MaxLength="45" />
           <Property Name="transferlist_user_id" Type="int" />
           <Property Name="transferlist_product_id" Type="int" />
+=======
+          <Property Name="transferlist_to" Type="varchar" MaxLength="45" />
+          <Property Name="transferlist_from" Type="varchar" MaxLength="45" />
+          <Property Name="transferlist_product" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="transferrequest">
           <Key>
             <PropertyRef Name="transferrequest_id" />
           </Key>
+<<<<<<< HEAD
           <Property Name="transferrequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="transferrequest_from" Type="varchar" MaxLength="45" />
           <Property Name="transferrequest_to" Type="varchar" MaxLength="45" />
           <Property Name="transferrequest_verdict" Type="varchar" MaxLength="45" />
           <Property Name="transferrequest_user_id" Type="int" />
           <Property Name="transferrequest_product_id" Type="int" />
+=======
+          <Property Name="transferrequest_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="transferrequest_from" Type="varchar" MaxLength="45" />
+          <Property Name="transferrequest_to" Type="varchar" MaxLength="45" />
+          <Property Name="transferrequest_verdict" Type="varchar" MaxLength="45" />
+          <Property Name="transferrequest_user" Type="int" />
+          <Property Name="transferrequest_product" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -116,15 +170,24 @@
           <Property Name="user_email" Type="varchar" MaxLength="45" />
           <Property Name="user_fname" Type="varchar" MaxLength="45" />
           <Property Name="user_sname" Type="varchar" MaxLength="45" />
+<<<<<<< HEAD
           <Property Name="user_password" Type="varchar" MaxLength="45" />
           <Property Name="usertype_id" Type="int" />
+=======
+          <Property Name="user_password" Type="longtext" />
+          <Property Name="usertype_id" Type="int" Nullable="false" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="usertype">
           <Key>
             <PropertyRef Name="usertype_id" />
           </Key>
           <Property Name="usertype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="usertype_name" Type="varchar" MaxLength="45" />
+=======
+          <Property Name="usertype_name" Type="varchar" MaxLength="45" Nullable="false" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="warehouse">
           <Key>
@@ -134,7 +197,12 @@
           <Property Name="warehouse_name" Type="varchar" MaxLength="45" />
           <Property Name="warehouse_location" Type="varchar" MaxLength="100" />
           <Property Name="warehouse_size" Type="int" />
+<<<<<<< HEAD
           <Property Name="warehouse_warehousetype_id" Type="int" />
+=======
+          <Property Name="warehouse_user" Type="int" />
+          <Property Name="warehouse_warehousetype" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -142,17 +210,28 @@
           </Key>
           <Property Name="warehousestock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="warehousestock_lastchecked" Type="datetime" Precision="0" />
+<<<<<<< HEAD
           <Property Name="warehousestock_warehouse_id" Type="int" />
           <Property Name="warehousestock_product_id" Type="int" />
+=======
+          <Property Name="warehousestock_warehouse" Type="int" />
+          <Property Name="warehousestock_product" Type="int" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="warehousetype">
           <Key>
             <PropertyRef Name="warehousetype_id" />
           </Key>
           <Property Name="warehousetype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="warehousetype_name" Type="varchar" MaxLength="45" />
         </EntityType>
         <Association Name="billofentry_product_id">
+=======
+          <Property Name="warehousetype_name" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <Association Name="billofentry_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,11 +239,19 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="billofentry">
+<<<<<<< HEAD
               <PropertyRef Name="billofentry_product_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="billofentry_user_id">
+=======
+              <PropertyRef Name="billofentry_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="billofentry_user">
+>>>>>>> newService
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,7 +259,11 @@
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="billofentry">
+<<<<<<< HEAD
               <PropertyRef Name="billofentry_user_id" />
+=======
+              <PropertyRef Name="billofentry_user" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -184,7 +275,11 @@
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="message">
+<<<<<<< HEAD
               <PropertyRef Name="message_to" />
+=======
+              <PropertyRef Name="message_from" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -200,7 +295,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="product_hscode_id">
+=======
+        <Association Name="product_hscode">
+>>>>>>> newService
           <End Role="hscode" Type="Self.hscode" Multiplicity="0..1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,6 +307,7 @@
               <PropertyRef Name="hscode_id" />
             </Principal>
             <Dependent Role="product">
+<<<<<<< HEAD
               <PropertyRef Name="product_hscode_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -225,6 +325,25 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="productlog_product_id">
+=======
+              <PropertyRef Name="product_hscode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_producttype">
+          <End Role="producttype" Type="Self.producttype" Multiplicity="0..1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producttype">
+              <PropertyRef Name="producttype_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_producttype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -232,11 +351,19 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_product_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="productlog_productlogtype_id">
+=======
+              <PropertyRef Name="productlog_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_type">
+>>>>>>> newService
           <End Role="productlogtype" Type="Self.productlogtype" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -244,11 +371,19 @@
               <PropertyRef Name="productlogtype_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_productlogtype_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="productlog_user_id">
+=======
+              <PropertyRef Name="productlog_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_user">
+>>>>>>> newService
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,11 +391,19 @@
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_user_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="releaserequest_product_id">
+=======
+              <PropertyRef Name="productlog_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -268,11 +411,19 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="releaserequest">
+<<<<<<< HEAD
               <PropertyRef Name="releaserequest_product_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="releaserequest_user_id">
+=======
+              <PropertyRef Name="releaserequest_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_user">
+>>>>>>> newService
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -280,11 +431,19 @@
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="releaserequest">
+<<<<<<< HEAD
               <PropertyRef Name="releaserequest_user_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="transferlist_product_id">
+=======
+              <PropertyRef Name="releaserequest_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferlist_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="transferlist" Type="Self.transferlist" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,6 +451,7 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="transferlist">
+<<<<<<< HEAD
               <PropertyRef Name="transferlist_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -309,6 +469,13 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="transferrequest_product_id">
+=======
+              <PropertyRef Name="transferlist_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferrequest_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="transferrequest" Type="Self.transferrequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -316,11 +483,19 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="transferrequest">
+<<<<<<< HEAD
               <PropertyRef Name="transferrequest_product_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="transferrequest_user_id">
+=======
+              <PropertyRef Name="transferrequest_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferrequest_user">
+>>>>>>> newService
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="transferrequest" Type="Self.transferrequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -328,12 +503,20 @@
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="transferrequest">
+<<<<<<< HEAD
               <PropertyRef Name="transferrequest_user_id" />
+=======
+              <PropertyRef Name="transferrequest_user" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="usertype_id">
+<<<<<<< HEAD
           <End Role="usertype" Type="Self.usertype" Multiplicity="0..1" />
+=======
+          <End Role="usertype" Type="Self.usertype" Multiplicity="1" />
+>>>>>>> newService
           <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usertype">
@@ -344,7 +527,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="warehouse_warehousetype_id">
+=======
+        <Association Name="warehouse_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehouse">
+              <PropertyRef Name="warehouse_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouse_warehousetype">
+>>>>>>> newService
           <End Role="warehousetype" Type="Self.warehousetype" Multiplicity="0..1" />
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
           <ReferentialConstraint>
@@ -352,11 +551,19 @@
               <PropertyRef Name="warehousetype_id" />
             </Principal>
             <Dependent Role="warehouse">
+<<<<<<< HEAD
               <PropertyRef Name="warehouse_warehousetype_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="warehousestock_product_id">
+=======
+              <PropertyRef Name="warehouse_warehousetype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousestock_product">
+>>>>>>> newService
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
           <ReferentialConstraint>
@@ -364,11 +571,19 @@
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="warehousestock">
+<<<<<<< HEAD
               <PropertyRef Name="warehousestock_product_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="warehousestock_warehouse_id">
+=======
+              <PropertyRef Name="warehousestock_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousestock_warehouse">
+>>>>>>> newService
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
           <ReferentialConstraint>
@@ -376,7 +591,11 @@
               <PropertyRef Name="warehouse_id" />
             </Principal>
             <Dependent Role="warehousestock">
+<<<<<<< HEAD
               <PropertyRef Name="warehousestock_warehouse_id" />
+=======
+              <PropertyRef Name="warehousestock_warehouse" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -397,11 +616,19 @@
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
+<<<<<<< HEAD
           <AssociationSet Name="billofentry_product_id" Association="Self.billofentry_product_id">
             <End Role="product" EntitySet="product" />
             <End Role="billofentry" EntitySet="billofentry" />
           </AssociationSet>
           <AssociationSet Name="billofentry_user_id" Association="Self.billofentry_user_id">
+=======
+          <AssociationSet Name="billofentry_product" Association="Self.billofentry_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="billofentry" EntitySet="billofentry" />
+          </AssociationSet>
+          <AssociationSet Name="billofentry_user" Association="Self.billofentry_user">
+>>>>>>> newService
             <End Role="user" EntitySet="user" />
             <End Role="billofentry" EntitySet="billofentry" />
           </AssociationSet>
@@ -413,6 +640,7 @@
             <End Role="user" EntitySet="user" />
             <End Role="message" EntitySet="message" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="product_hscode_id" Association="Self.product_hscode_id">
             <End Role="hscode" EntitySet="hscode" />
             <End Role="product" EntitySet="product" />
@@ -454,6 +682,45 @@
             <End Role="transferrequest" EntitySet="transferrequest" />
           </AssociationSet>
           <AssociationSet Name="transferrequest_user_id" Association="Self.transferrequest_user_id">
+=======
+          <AssociationSet Name="product_hscode" Association="Self.product_hscode">
+            <End Role="hscode" EntitySet="hscode" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="product_producttype" Association="Self.product_producttype">
+            <End Role="producttype" EntitySet="producttype" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_product" Association="Self.productlog_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="productlog" EntitySet="productlog" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_type" Association="Self.productlog_type">
+            <End Role="productlogtype" EntitySet="productlogtype" />
+            <End Role="productlog" EntitySet="productlog" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_user" Association="Self.productlog_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="productlog" EntitySet="productlog" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_product" Association="Self.releaserequest_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="releaserequest" EntitySet="releaserequest" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_user" Association="Self.releaserequest_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="releaserequest" EntitySet="releaserequest" />
+          </AssociationSet>
+          <AssociationSet Name="transferlist_product" Association="Self.transferlist_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="transferlist" EntitySet="transferlist" />
+          </AssociationSet>
+          <AssociationSet Name="transferrequest_product" Association="Self.transferrequest_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="transferrequest" EntitySet="transferrequest" />
+          </AssociationSet>
+          <AssociationSet Name="transferrequest_user" Association="Self.transferrequest_user">
+>>>>>>> newService
             <End Role="user" EntitySet="user" />
             <End Role="transferrequest" EntitySet="transferrequest" />
           </AssociationSet>
@@ -461,6 +728,7 @@
             <End Role="usertype" EntitySet="usertype" />
             <End Role="user" EntitySet="user" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="warehouse_warehousetype_id" Association="Self.warehouse_warehousetype_id">
             <End Role="warehousetype" EntitySet="warehousetype" />
             <End Role="warehouse" EntitySet="warehouse" />
@@ -470,10 +738,26 @@
             <End Role="warehousestock" EntitySet="warehousestock" />
           </AssociationSet>
           <AssociationSet Name="warehousestock_warehouse_id" Association="Self.warehousestock_warehouse_id">
+=======
+          <AssociationSet Name="warehouse_user" Association="Self.warehouse_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="warehouse" EntitySet="warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="warehouse_warehousetype" Association="Self.warehouse_warehousetype">
+            <End Role="warehousetype" EntitySet="warehousetype" />
+            <End Role="warehouse" EntitySet="warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="warehousestock_product" Association="Self.warehousestock_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="warehousestock" EntitySet="warehousestock" />
+          </AssociationSet>
+          <AssociationSet Name="warehousestock_warehouse" Association="Self.warehousestock_warehouse">
+>>>>>>> newService
             <End Role="warehouse" EntitySet="warehouse" />
             <End Role="warehousestock" EntitySet="warehousestock" />
           </AssociationSet>
         </EntityContainer>
+<<<<<<< HEAD
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
@@ -518,6 +802,12 @@
           <NavigationProperty Name="user" Relationship="Self.message_from" FromRole="message" ToRole="user" />
           <NavigationProperty Name="user1" Relationship="Self.message_to" FromRole="message" ToRole="user" />
         </EntityType>
+=======
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="custommandbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+>>>>>>> newService
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="product_id" />
@@ -526,6 +816,7 @@
           <Property Name="product_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="product_price" Type="Decimal" />
           <Property Name="product_quantity" Type="Int32" />
+<<<<<<< HEAD
           <Property Name="product_size" Type="Int32" />
           <Property Name="product_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_arrivalDate" Type="DateTime" />
@@ -539,12 +830,23 @@
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_product_id" FromRole="product" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_product_id" FromRole="product" ToRole="transferrequest" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_product_id" FromRole="product" ToRole="warehousestock" />
+=======
+          <Property Name="product_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_arrivalDate" Type="DateTime" />
+          <Property Name="product_size" Type="Int32" />
+          <Property Name="product_producttype" Type="Int32" />
+          <Property Name="product_hscode" Type="Int32" />
+          <NavigationProperty Name="billofentries" Relationship="custommandbModel.billofentry_product" FromRole="product" ToRole="billofentry" />
+          <NavigationProperty Name="hscode" Relationship="custommandbModel.product_hscode" FromRole="product" ToRole="hscode" />
+          <NavigationProperty Name="releaserequests1" Relationship="custommandbModel.releaserequest_product1" FromRole="product" ToRole="releaserequest" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="productlog">
           <Key>
             <PropertyRef Name="productlog_id" />
           </Key>
           <Property Name="productlog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
           <Property Name="productlog_product_id" Type="Int32" />
           <Property Name="productlog_user_id" Type="Int32" />
           <Property Name="productlog_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -562,24 +864,46 @@
           <Property Name="productlogtype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="products" Relationship="Self.product_producttype_id" FromRole="productlogtype" ToRole="product" />
           <NavigationProperty Name="productlogs" Relationship="Self.productlog_productlogtype_id" FromRole="productlogtype" ToRole="productlog" />
+=======
+          <Property Name="productlog_description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_image" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_product" Type="Int32" />
+          <Property Name="productlog_user" Type="Int32" />
+          <Property Name="productlog_type" Type="Int32" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="producttype">
           <Key>
             <PropertyRef Name="producttype_id" />
           </Key>
           <Property Name="producttype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
           <Property Name="producttype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+=======
+          <Property Name="producttype_name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="products1" Relationship="custommandbModel.product_producttype" FromRole="producttype" ToRole="product" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="releaserequest">
           <Key>
             <PropertyRef Name="releaserequest_id" />
           </Key>
           <Property Name="releaserequest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
           <Property Name="releaserequest_verdict" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="releaserequest_user_id" Type="Int32" />
           <Property Name="releaserequest_product_id" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.releaserequest_product_id" FromRole="releaserequest" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.releaserequest_user_id" FromRole="releaserequest" ToRole="user" />
+=======
+          <Property Name="releaserequest_verdict" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="releaserequest_user" Type="Int32" />
+          <Property Name="releaserequest_product" Type="Int32" />
+          <NavigationProperty Name="product1" Relationship="custommandbModel.releaserequest_product" FromRole="releaserequest" ToRole="product" />
+          <NavigationProperty Name="user1" Relationship="custommandbModel.releaserequest_user" FromRole="releaserequest" ToRole="user" />
+          <NavigationProperty Name="product2" Relationship="custommandbModel.releaserequest_product1" FromRole="releaserequest" ToRole="product" />
+          <NavigationProperty Name="user2" Relationship="custommandbModel.releaserequest_user1" FromRole="releaserequest" ToRole="user" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="transferlist">
           <Key>
@@ -588,10 +912,15 @@
           <Property Name="transferlist_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="transferlist_from" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="transferlist_to" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <Property Name="transferlist_user_id" Type="Int32" />
           <Property Name="transferlist_product_id" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.transferlist_product_id" FromRole="transferlist" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.transferlist_user_id" FromRole="transferlist" ToRole="user" />
+=======
+          <Property Name="transferlist_product" Type="Int32" />
+          <NavigationProperty Name="product1" Relationship="custommandbModel.transferlist_product" FromRole="transferlist" ToRole="product" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="transferrequest">
           <Key>
@@ -601,16 +930,24 @@
           <Property Name="transferrequest_from" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="transferrequest_to" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="transferrequest_verdict" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <Property Name="transferrequest_user_id" Type="Int32" />
           <Property Name="transferrequest_product_id" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.transferrequest_product_id" FromRole="transferrequest" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.transferrequest_user_id" FromRole="transferrequest" ToRole="user" />
+=======
+          <Property Name="transferrequest_user" Type="Int32" />
+          <Property Name="transferrequest_product" Type="Int32" />
+          <NavigationProperty Name="product1" Relationship="custommandbModel.transferrequest_product" FromRole="transferrequest" ToRole="product" />
+          <NavigationProperty Name="user1" Relationship="custommandbModel.transferrequest_user" FromRole="transferrequest" ToRole="user" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
           <Property Name="user_email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="user_fname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="user_sname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -624,19 +961,41 @@
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_user_id" FromRole="user" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_user_id" FromRole="user" ToRole="transferrequest" />
           <NavigationProperty Name="usertype" Relationship="Self.usertype_id" FromRole="user" ToRole="usertype" />
+=======
+          <Property Name="user_fname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="user_sname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="user_email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="user_password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="usertype_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="billofentries" Relationship="custommandbModel.billofentry_user" FromRole="user" ToRole="billofentry" />
+          <NavigationProperty Name="messages" Relationship="custommandbModel.message_from" FromRole="user" ToRole="message" />
+          <NavigationProperty Name="messages1" Relationship="custommandbModel.message_to" FromRole="user" ToRole="message" />
+          <NavigationProperty Name="productlogs1" Relationship="custommandbModel.productlog_user" FromRole="user" ToRole="productlog" />
+          <NavigationProperty Name="releaserequests1" Relationship="custommandbModel.releaserequest_user" FromRole="user" ToRole="releaserequest" />
+          <NavigationProperty Name="transferrequests1" Relationship="custommandbModel.transferrequest_user" FromRole="user" ToRole="transferrequest" />
+          <NavigationProperty Name="warehouses1" Relationship="custommandbModel.warehouse_user" FromRole="user" ToRole="warehouse" />
+          <NavigationProperty Name="releaserequests2" Relationship="custommandbModel.releaserequest_user1" FromRole="user" ToRole="releaserequest" />
+          <NavigationProperty Name="usertype" Relationship="custommandbModel.usertype_id" FromRole="user" ToRole="usertype" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="usertype">
           <Key>
             <PropertyRef Name="usertype_id" />
           </Key>
           <Property Name="usertype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
           <Property Name="usertype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="users" Relationship="Self.usertype_id" FromRole="usertype" ToRole="user" />
+=======
+          <Property Name="usertype_name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="users" Relationship="custommandbModel.usertype_id" FromRole="usertype" ToRole="user" />
+>>>>>>> newService
         </EntityType>
         <EntityType Name="warehouse">
           <Key>
             <PropertyRef Name="warehouse_id" />
           </Key>
+<<<<<<< HEAD
           <Property Name="warehouse_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="warehouse_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="warehouse_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -645,12 +1004,135 @@
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype_id" FromRole="warehouse" ToRole="warehousetype" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_warehouse_id" FromRole="warehouse" ToRole="warehousestock" />
         </EntityType>
+=======
+          <Property Name="warehouse_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="warehouse_name" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="warehouse_location" MaxLength="150" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="warehouse_size" Type="Int32" />
+          <Property Name="warehouse_user" Type="Int32" />
+          <Property Name="warehouse_warehousetype" Type="Int32" />
+          <NavigationProperty Name="user1" Relationship="custommandbModel.warehouse_user" FromRole="warehouse" ToRole="user" />
+          <NavigationProperty Name="warehousetype1" Relationship="custommandbModel.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
+          <NavigationProperty Name="warehousestocks1" Relationship="custommandbModel.warehousestock_warehouse" FromRole="warehouse" ToRole="warehousestock" />
+        </EntityType>
+        <EntityType Name="warehousetype">
+          <Key>
+            <PropertyRef Name="warehousetype_id" />
+          </Key>
+          <Property Name="warehousetype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehousetype_name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="warehouses1" Relationship="custommandbModel.warehouse_warehousetype" FromRole="warehousetype" ToRole="warehouse" />
+        </EntityType>
+        <EntityContainer Name="custommandbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="productlogs" EntityType="Self.productlog" />
+          <EntitySet Name="producttypes" EntityType="Self.producttype" />
+          <EntitySet Name="releaserequests" EntityType="Self.releaserequest" />
+          <EntitySet Name="transferlists" EntityType="Self.transferlist" />
+          <EntitySet Name="transferrequests" EntityType="Self.transferrequest" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="usertypes" EntityType="Self.usertype" />
+          <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+          <EntitySet Name="warehousetypes" EntityType="Self.warehousetype" />
+          <EntitySet Name="warehousestocks" EntityType="custommandbModel.warehousestock" />
+          <EntitySet Name="billofentries" EntityType="custommandbModel.billofentry" />
+          <EntitySet Name="countryrelations" EntityType="custommandbModel.countryrelation" />
+          <EntitySet Name="hscodes" EntityType="custommandbModel.hscode" />
+          <EntitySet Name="messages" EntityType="custommandbModel.message" />
+          <EntitySet Name="productlogtypes" EntityType="custommandbModel.productlogtype" />
+          <AssociationSet Name="billofentry_product" Association="custommandbModel.billofentry_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="billofentry" EntitySet="billofentries" />
+          </AssociationSet>
+          <AssociationSet Name="billofentry_user" Association="custommandbModel.billofentry_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="billofentry" EntitySet="billofentries" />
+          </AssociationSet>
+          <AssociationSet Name="product_hscode" Association="custommandbModel.product_hscode">
+            <End EntitySet="hscodes" Role="hscode" />
+            <End EntitySet="products" Role="product" />
+          </AssociationSet>
+          <AssociationSet Name="message_from" Association="custommandbModel.message_from">
+            <End Role="user" EntitySet="users" />
+            <End Role="message" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="message_to" Association="custommandbModel.message_to">
+            <End Role="user" EntitySet="users" />
+            <End Role="message" EntitySet="messages" />
+          </AssociationSet>
+          <AssociationSet Name="product_producttype" Association="custommandbModel.product_producttype">
+            <End Role="producttype" EntitySet="producttypes" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_product" Association="custommandbModel.productlog_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="productlog" EntitySet="productlogs" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_product" Association="custommandbModel.releaserequest_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="releaserequest" EntitySet="releaserequests" />
+          </AssociationSet>
+          <AssociationSet Name="transferlist_product" Association="custommandbModel.transferlist_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="transferlist" EntitySet="transferlists" />
+          </AssociationSet>
+          <AssociationSet Name="transferrequest_product" Association="custommandbModel.transferrequest_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="transferrequest" EntitySet="transferrequests" />
+          </AssociationSet>
+          <AssociationSet Name="warehousestock_product" Association="custommandbModel.warehousestock_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="warehousestock" EntitySet="warehousestocks" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_type" Association="custommandbModel.productlog_type">
+            <End Role="productlogtype" EntitySet="productlogtypes" />
+            <End Role="productlog" EntitySet="productlogs" />
+          </AssociationSet>
+          <AssociationSet Name="productlog_user" Association="custommandbModel.productlog_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="productlog" EntitySet="productlogs" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_user" Association="custommandbModel.releaserequest_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="releaserequest" EntitySet="releaserequests" />
+          </AssociationSet>
+          <AssociationSet Name="transferrequest_user" Association="custommandbModel.transferrequest_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="transferrequest" EntitySet="transferrequests" />
+          </AssociationSet>
+          <AssociationSet Name="warehouse_user" Association="custommandbModel.warehouse_user">
+            <End EntitySet="users" Role="user" />
+            <End EntitySet="warehouses" Role="warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="warehouse_warehousetype" Association="custommandbModel.warehouse_warehousetype">
+            <End EntitySet="warehousetypes" Role="warehousetype" />
+            <End EntitySet="warehouses" Role="warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="warehousestock_warehouse" Association="custommandbModel.warehousestock_warehouse">
+            <End EntitySet="warehouses" Role="warehouse" />
+            <End EntitySet="warehousestocks" Role="warehousestock" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_product1" Association="custommandbModel.releaserequest_product1">
+            <End Role="product" EntitySet="products" />
+            <End Role="releaserequest" EntitySet="releaserequests" />
+          </AssociationSet>
+          <AssociationSet Name="releaserequest_user1" Association="custommandbModel.releaserequest_user1">
+            <End Role="user" EntitySet="users" />
+            <End Role="releaserequest" EntitySet="releaserequests" />
+          </AssociationSet>
+          <AssociationSet Name="usertype_id" Association="custommandbModel.usertype_id">
+            <End Role="usertype" EntitySet="usertypes" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+>>>>>>> newService
         <EntityType Name="warehousestock">
           <Key>
             <PropertyRef Name="warehousestock_id" />
           </Key>
           <Property Name="warehousestock_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="warehousestock_lastchecked" Type="DateTime" />
+<<<<<<< HEAD
           <Property Name="warehousestock_warehouse_id" Type="Int32" />
           <Property Name="warehousestock_product_id" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.warehousestock_product_id" FromRole="warehousestock" ToRole="product" />
@@ -667,11 +1149,70 @@
         <Association Name="billofentry_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
+=======
+          <Property Name="warehousestock_warehouse" Type="Int32" />
+          <Property Name="warehousestock_product" Type="Int32" />
+          <NavigationProperty Name="product1" Relationship="custommandbModel.warehousestock_product" FromRole="warehousestock" ToRole="product" />
+          <NavigationProperty Name="warehouse1" Relationship="custommandbModel.warehousestock_warehouse" FromRole="warehousestock" ToRole="warehouse" />
+        </EntityType>
+        <EntityType Name="billofentry">
+          <Key>
+            <PropertyRef Name="billofentry_id" />
+          </Key>
+          <Property Name="billofentry_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="billofentry_code" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="billofentry_user" Type="Int32" />
+          <Property Name="billofentry_product" Type="Int32" />
+          <Property Name="billofentry_origin" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="product" Relationship="custommandbModel.billofentry_product" FromRole="billofentry" ToRole="product" />
+          <NavigationProperty Name="user" Relationship="custommandbModel.billofentry_user" FromRole="billofentry" ToRole="user" />
+        </EntityType>
+        <EntityType Name="countryrelation">
+          <Key>
+            <PropertyRef Name="countryrelation_id" />
+          </Key>
+          <Property Name="countryrelation_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="countryrelation_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="hscode">
+          <Key>
+            <PropertyRef Name="hscode_id" />
+          </Key>
+          <Property Name="hscode_id" Nullable="false" Type="Int32" />
+          <Property Name="hscode_percentage" Type="Decimal" />
+          <NavigationProperty Name="products" Relationship="custommandbModel.product_hscode" FromRole="hscode" ToRole="product" />
+        </EntityType>
+        <EntityType Name="message">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="message_convoid" Type="Int32" />
+          <Property Name="message_to" Type="Int32" />
+          <Property Name="message_from" Type="Int32" />
+          <Property Name="message_message" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="message_stamp" Type="DateTime" />
+          <NavigationProperty Name="user" Relationship="custommandbModel.message_from" FromRole="message" ToRole="user" />
+          <NavigationProperty Name="user1" Relationship="custommandbModel.message_to" FromRole="message" ToRole="user" />
+        </EntityType>
+        <EntityType Name="productlogtype">
+          <Key>
+            <PropertyRef Name="productlogtype_id" />
+          </Key>
+          <Property Name="productlogtype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productlogtype_name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="productlogs" Relationship="custommandbModel.productlog_type" FromRole="productlogtype" ToRole="productlog" />
+        </EntityType>
+        <Association Name="billofentry_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.billofentry" Role="billofentry" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="billofentry">
+<<<<<<< HEAD
               <PropertyRef Name="billofentry_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -679,11 +1220,21 @@
         <Association Name="billofentry_user_id">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
+=======
+              <PropertyRef Name="billofentry_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="billofentry_user">
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.billofentry" Role="billofentry" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="billofentry">
+<<<<<<< HEAD
               <PropertyRef Name="billofentry_user_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -691,30 +1242,57 @@
         <Association Name="product_hscode_id">
           <End Role="hscode" Type="Self.hscode" Multiplicity="0..1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
+=======
+              <PropertyRef Name="billofentry_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="product_hscode">
+          <End Type="custommandbModel.hscode" Multiplicity="0..1" Role="hscode" />
+          <End Type="custommandbModel.product" Multiplicity="*" Role="product" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="hscode">
               <PropertyRef Name="hscode_id" />
             </Principal>
             <Dependent Role="product">
+<<<<<<< HEAD
               <PropertyRef Name="product_hscode_id" />
+=======
+              <PropertyRef Name="product_hscode" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="message_from">
+<<<<<<< HEAD
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="message" Type="Self.message" Multiplicity="*" />
+=======
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.message" Role="message" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="message">
+<<<<<<< HEAD
               <PropertyRef Name="message_to" />
+=======
+              <PropertyRef Name="message_from" />
+>>>>>>> newService
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="message_to">
+<<<<<<< HEAD
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="message" Type="Self.message" Multiplicity="*" />
+=======
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.message" Role="message" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
@@ -724,6 +1302,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="product_producttype_id">
           <End Role="productlogtype" Type="Self.productlogtype" Multiplicity="0..1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
@@ -739,11 +1318,29 @@
         <Association Name="productlog_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
+=======
+        <Association Name="product_producttype">
+          <End Type="custommandbModel.producttype" Role="producttype" Multiplicity="0..1" />
+          <End Type="custommandbModel.product" Role="product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="producttype">
+              <PropertyRef Name="producttype_id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="product_producttype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.productlog" Role="productlog" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -751,11 +1348,21 @@
         <Association Name="releaserequest_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
+=======
+              <PropertyRef Name="productlog_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.releaserequest" Role="releaserequest" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="releaserequest">
+<<<<<<< HEAD
               <PropertyRef Name="releaserequest_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -763,11 +1370,21 @@
         <Association Name="transferlist_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="transferlist" Type="Self.transferlist" Multiplicity="*" />
+=======
+              <PropertyRef Name="releaserequest_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferlist_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.transferlist" Role="transferlist" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="transferlist">
+<<<<<<< HEAD
               <PropertyRef Name="transferlist_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -775,11 +1392,21 @@
         <Association Name="transferrequest_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="transferrequest" Type="Self.transferrequest" Multiplicity="*" />
+=======
+              <PropertyRef Name="transferlist_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferrequest_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.transferrequest" Role="transferrequest" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="transferrequest">
+<<<<<<< HEAD
               <PropertyRef Name="transferrequest_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -787,11 +1414,21 @@
         <Association Name="warehousestock_product_id">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
+=======
+              <PropertyRef Name="transferrequest_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousestock_product">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.warehousestock" Role="warehousestock" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="product">
               <PropertyRef Name="product_id" />
             </Principal>
             <Dependent Role="warehousestock">
+<<<<<<< HEAD
               <PropertyRef Name="warehousestock_product_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -799,11 +1436,21 @@
         <Association Name="productlog_productlogtype_id">
           <End Role="productlogtype" Type="Self.productlogtype" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
+=======
+              <PropertyRef Name="warehousestock_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_type">
+          <End Type="custommandbModel.productlogtype" Role="productlogtype" Multiplicity="0..1" />
+          <End Type="custommandbModel.productlog" Role="productlog" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="productlogtype">
               <PropertyRef Name="productlogtype_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_productlogtype_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -811,11 +1458,21 @@
         <Association Name="productlog_user_id">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="productlog" Type="Self.productlog" Multiplicity="*" />
+=======
+              <PropertyRef Name="productlog_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="productlog_user">
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.productlog" Role="productlog" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="productlog">
+<<<<<<< HEAD
               <PropertyRef Name="productlog_user_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -823,11 +1480,21 @@
         <Association Name="releaserequest_user_id">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
+=======
+              <PropertyRef Name="productlog_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_user">
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.releaserequest" Role="releaserequest" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
             <Dependent Role="releaserequest">
+<<<<<<< HEAD
               <PropertyRef Name="releaserequest_user_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -835,10 +1502,20 @@
         <Association Name="transferlist_user_id">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="transferlist" Type="Self.transferlist" Multiplicity="*" />
+=======
+              <PropertyRef Name="releaserequest_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transferrequest_user">
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.transferrequest" Role="transferrequest" Multiplicity="*" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
+<<<<<<< HEAD
             <Dependent Role="transferlist">
               <PropertyRef Name="transferlist_user_id" />
             </Dependent>
@@ -847,10 +1524,21 @@
         <Association Name="transferrequest_user_id">
           <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="transferrequest" Type="Self.transferrequest" Multiplicity="*" />
+=======
+            <Dependent Role="transferrequest">
+              <PropertyRef Name="transferrequest_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouse_user">
+          <End Type="custommandbModel.user" Multiplicity="0..1" Role="user" />
+          <End Type="custommandbModel.warehouse" Multiplicity="*" Role="warehouse" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="user_id" />
             </Principal>
+<<<<<<< HEAD
             <Dependent Role="transferrequest">
               <PropertyRef Name="transferrequest_user_id" />
             </Dependent>
@@ -871,11 +1559,22 @@
         <Association Name="warehouse_warehousetype_id">
           <End Role="warehousetype" Type="Self.warehousetype" Multiplicity="0..1" />
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
+=======
+            <Dependent Role="warehouse">
+              <PropertyRef Name="warehouse_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouse_warehousetype">
+          <End Type="custommandbModel.warehousetype" Multiplicity="0..1" Role="warehousetype" />
+          <End Type="custommandbModel.warehouse" Multiplicity="*" Role="warehouse" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="warehousetype">
               <PropertyRef Name="warehousetype_id" />
             </Principal>
             <Dependent Role="warehouse">
+<<<<<<< HEAD
               <PropertyRef Name="warehouse_warehousetype_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -883,11 +1582,21 @@
         <Association Name="warehousestock_warehouse_id">
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
+=======
+              <PropertyRef Name="warehouse_warehousetype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousestock_warehouse">
+          <End Type="custommandbModel.warehouse" Multiplicity="0..1" Role="warehouse" />
+          <End Type="custommandbModel.warehousestock" Multiplicity="*" Role="warehousestock" />
+>>>>>>> newService
           <ReferentialConstraint>
             <Principal Role="warehouse">
               <PropertyRef Name="warehouse_id" />
             </Principal>
             <Dependent Role="warehousestock">
+<<<<<<< HEAD
               <PropertyRef Name="warehousestock_warehouse_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -986,12 +1695,55 @@
             <End Role="warehousestock" EntitySet="warehousestocks" />
           </AssociationSet>
         </EntityContainer>
+=======
+              <PropertyRef Name="warehousestock_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_product1">
+          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
+          <End Type="custommandbModel.releaserequest" Role="releaserequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="releaserequest">
+              <PropertyRef Name="releaserequest_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="releaserequest_user1">
+          <End Type="custommandbModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="custommandbModel.releaserequest" Role="releaserequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="releaserequest">
+              <PropertyRef Name="releaserequest_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="usertype_id">
+          <End Type="custommandbModel.usertype" Role="usertype" Multiplicity="1" />
+          <End Type="custommandbModel.user" Role="user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usertype">
+              <PropertyRef Name="usertype_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="usertype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+>>>>>>> newService
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="custommandbModelStoreContainer" CdmEntityContainer="custommandbEntities1">
+<<<<<<< HEAD
           <EntitySetMapping Name="billofentries">
             <EntityTypeMapping TypeName="custommandbModel.billofentry">
               <MappingFragment StoreEntitySet="billofentry">
@@ -1033,21 +1785,36 @@
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="custommandbModel.product">
               <MappingFragment StoreEntitySet="product">
+=======
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="custommandbModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="product_hscode" ColumnName="product_hscode" />
+                <ScalarProperty Name="product_producttype" ColumnName="product_producttype" />
+                <ScalarProperty Name="product_size" ColumnName="product_size" />
+                <ScalarProperty Name="product_arrivalDate" ColumnName="product_arrivalDate" />
+                <ScalarProperty Name="product_location" ColumnName="product_location" />
+>>>>>>> newService
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />
                 <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+<<<<<<< HEAD
                 <ScalarProperty Name="product_size" ColumnName="product_size" />
                 <ScalarProperty Name="product_location" ColumnName="product_location" />
                 <ScalarProperty Name="product_arrivalDate" ColumnName="product_arrivalDate" />
                 <ScalarProperty Name="product_producttype_id" ColumnName="product_producttype_id" />
                 <ScalarProperty Name="product_hscode_id" ColumnName="product_hscode_id" />
               </MappingFragment>
+=======
+                </MappingFragment>
+>>>>>>> newService
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="productlogs">
             <EntityTypeMapping TypeName="custommandbModel.productlog">
               <MappingFragment StoreEntitySet="productlog">
+<<<<<<< HEAD
                 <ScalarProperty Name="productlog_id" ColumnName="productlog_id" />
                 <ScalarProperty Name="productlog_product_id" ColumnName="productlog_product_id" />
                 <ScalarProperty Name="productlog_user_id" ColumnName="productlog_user_id" />
@@ -1062,41 +1829,71 @@
               <MappingFragment StoreEntitySet="productlogtype">
                 <ScalarProperty Name="productlogtype_id" ColumnName="productlogtype_id" />
                 <ScalarProperty Name="productlogtype_name" ColumnName="productlogtype_name" />
+=======
+                <ScalarProperty Name="productlog_type" ColumnName="productlog_type" />
+                <ScalarProperty Name="productlog_user" ColumnName="productlog_user" />
+                <ScalarProperty Name="productlog_product" ColumnName="productlog_product" />
+                <ScalarProperty Name="productlog_image" ColumnName="productlog_image" />
+                <ScalarProperty Name="productlog_id" ColumnName="productlog_id" />
+                <ScalarProperty Name="productlog_description" ColumnName="productlog_description" />
+>>>>>>> newService
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="producttypes">
             <EntityTypeMapping TypeName="custommandbModel.producttype">
               <MappingFragment StoreEntitySet="producttype">
+<<<<<<< HEAD
                 <ScalarProperty Name="producttype_id" ColumnName="producttype_id" />
                 <ScalarProperty Name="producttype_name" ColumnName="producttype_name" />
+=======
+                <ScalarProperty Name="producttype_name" ColumnName="producttype_name" />
+                <ScalarProperty Name="producttype_id" ColumnName="producttype_id" />
+>>>>>>> newService
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="releaserequests">
             <EntityTypeMapping TypeName="custommandbModel.releaserequest">
               <MappingFragment StoreEntitySet="releaserequest">
+<<<<<<< HEAD
                 <ScalarProperty Name="releaserequest_id" ColumnName="releaserequest_id" />
                 <ScalarProperty Name="releaserequest_verdict" ColumnName="releaserequest_verdict" />
                 <ScalarProperty Name="releaserequest_user_id" ColumnName="releaserequest_user_id" />
                 <ScalarProperty Name="releaserequest_product_id" ColumnName="releaserequest_product_id" />
               </MappingFragment>
+=======
+                <ScalarProperty Name="releaserequest_product" ColumnName="releaserequest_product" />
+                <ScalarProperty Name="releaserequest_user" ColumnName="releaserequest_user" />
+                <ScalarProperty Name="releaserequest_verdict" ColumnName="releaserequest_verdict" />
+                <ScalarProperty Name="releaserequest_id" ColumnName="releaserequest_id" />
+                </MappingFragment>
+>>>>>>> newService
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="transferlists">
             <EntityTypeMapping TypeName="custommandbModel.transferlist">
               <MappingFragment StoreEntitySet="transferlist">
+<<<<<<< HEAD
                 <ScalarProperty Name="transferlist_id" ColumnName="transferlist_id" />
                 <ScalarProperty Name="transferlist_from" ColumnName="transferlist_from" />
                 <ScalarProperty Name="transferlist_to" ColumnName="transferlist_to" />
                 <ScalarProperty Name="transferlist_user_id" ColumnName="transferlist_user_id" />
                 <ScalarProperty Name="transferlist_product_id" ColumnName="transferlist_product_id" />
               </MappingFragment>
+=======
+                <ScalarProperty Name="transferlist_product" ColumnName="transferlist_product" />
+                <ScalarProperty Name="transferlist_id" ColumnName="transferlist_id" />
+                <ScalarProperty Name="transferlist_from" ColumnName="transferlist_from" />
+                <ScalarProperty Name="transferlist_to" ColumnName="transferlist_to" />
+                </MappingFragment>
+>>>>>>> newService
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="transferrequests">
             <EntityTypeMapping TypeName="custommandbModel.transferrequest">
               <MappingFragment StoreEntitySet="transferrequest">
+<<<<<<< HEAD
                 <ScalarProperty Name="transferrequest_id" ColumnName="transferrequest_id" />
                 <ScalarProperty Name="transferrequest_from" ColumnName="transferrequest_from" />
                 <ScalarProperty Name="transferrequest_to" ColumnName="transferrequest_to" />
@@ -1104,15 +1901,30 @@
                 <ScalarProperty Name="transferrequest_user_id" ColumnName="transferrequest_user_id" />
                 <ScalarProperty Name="transferrequest_product_id" ColumnName="transferrequest_product_id" />
               </MappingFragment>
+=======
+                <ScalarProperty Name="transferrequest_product" ColumnName="transferrequest_product" />
+                <ScalarProperty Name="transferrequest_user" ColumnName="transferrequest_user" />
+                <ScalarProperty Name="transferrequest_verdict" ColumnName="transferrequest_verdict" />
+                <ScalarProperty Name="transferrequest_id" ColumnName="transferrequest_id" />
+                <ScalarProperty Name="transferrequest_from" ColumnName="transferrequest_from" />
+                <ScalarProperty Name="transferrequest_to" ColumnName="transferrequest_to" />
+                </MappingFragment>
+>>>>>>> newService
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="custommandbModel.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+<<<<<<< HEAD
                 <ScalarProperty Name="user_email" ColumnName="user_email" />
                 <ScalarProperty Name="user_fname" ColumnName="user_fname" />
                 <ScalarProperty Name="user_sname" ColumnName="user_sname" />
+=======
+                <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+                <ScalarProperty Name="user_sname" ColumnName="user_sname" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+>>>>>>> newService
                 <ScalarProperty Name="user_password" ColumnName="user_password" />
                 <ScalarProperty Name="usertype_id" ColumnName="usertype_id" />
               </MappingFragment>
@@ -1121,25 +1933,47 @@
           <EntitySetMapping Name="usertypes">
             <EntityTypeMapping TypeName="custommandbModel.usertype">
               <MappingFragment StoreEntitySet="usertype">
+<<<<<<< HEAD
                 <ScalarProperty Name="usertype_id" ColumnName="usertype_id" />
                 <ScalarProperty Name="usertype_name" ColumnName="usertype_name" />
+=======
+                <ScalarProperty Name="usertype_name" ColumnName="usertype_name" />
+                <ScalarProperty Name="usertype_id" ColumnName="usertype_id" />
+>>>>>>> newService
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="warehouses">
             <EntityTypeMapping TypeName="custommandbModel.warehouse">
               <MappingFragment StoreEntitySet="warehouse">
+<<<<<<< HEAD
+=======
+                <ScalarProperty Name="warehouse_warehousetype" ColumnName="warehouse_warehousetype" />
+                <ScalarProperty Name="warehouse_user" ColumnName="warehouse_user" />
+>>>>>>> newService
                 <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
                 <ScalarProperty Name="warehouse_name" ColumnName="warehouse_name" />
                 <ScalarProperty Name="warehouse_location" ColumnName="warehouse_location" />
                 <ScalarProperty Name="warehouse_size" ColumnName="warehouse_size" />
+<<<<<<< HEAD
                 <ScalarProperty Name="warehouse_warehousetype_id" ColumnName="warehouse_warehousetype_id" />
+=======
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehousetypes">
+            <EntityTypeMapping TypeName="custommandbModel.warehousetype">
+              <MappingFragment StoreEntitySet="warehousetype">
+                <ScalarProperty Name="warehousetype_name" ColumnName="warehousetype_name" />
+                <ScalarProperty Name="warehousetype_id" ColumnName="warehousetype_id" />
+>>>>>>> newService
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="warehousestocks">
             <EntityTypeMapping TypeName="custommandbModel.warehousestock">
               <MappingFragment StoreEntitySet="warehousestock">
+<<<<<<< HEAD
                 <ScalarProperty Name="warehousestock_id" ColumnName="warehousestock_id" />
                 <ScalarProperty Name="warehousestock_lastchecked" ColumnName="warehousestock_lastchecked" />
                 <ScalarProperty Name="warehousestock_warehouse_id" ColumnName="warehousestock_warehouse_id" />
@@ -1152,6 +1986,59 @@
               <MappingFragment StoreEntitySet="warehousetype">
                 <ScalarProperty Name="warehousetype_id" ColumnName="warehousetype_id" />
                 <ScalarProperty Name="warehousetype_name" ColumnName="warehousetype_name" />
+=======
+                <ScalarProperty Name="warehousestock_product" ColumnName="warehousestock_product" />
+                <ScalarProperty Name="warehousestock_warehouse" ColumnName="warehousestock_warehouse" />
+                <ScalarProperty Name="warehousestock_lastchecked" ColumnName="warehousestock_lastchecked" />
+                <ScalarProperty Name="warehousestock_id" ColumnName="warehousestock_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="billofentries">
+            <EntityTypeMapping TypeName="custommandbModel.billofentry">
+              <MappingFragment StoreEntitySet="billofentry">
+                <ScalarProperty Name="billofentry_origin" ColumnName="billofentry_origin" />
+                <ScalarProperty Name="billofentry_product" ColumnName="billofentry_product" />
+                <ScalarProperty Name="billofentry_user" ColumnName="billofentry_user" />
+                <ScalarProperty Name="billofentry_code" ColumnName="billofentry_code" />
+                <ScalarProperty Name="billofentry_id" ColumnName="billofentry_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countryrelations">
+            <EntityTypeMapping TypeName="custommandbModel.countryrelation">
+              <MappingFragment StoreEntitySet="countryrelation">
+                <ScalarProperty Name="countryrelation_name" ColumnName="countryrelation_name" />
+                <ScalarProperty Name="countryrelation_id" ColumnName="countryrelation_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hscodes">
+            <EntityTypeMapping TypeName="custommandbModel.hscode">
+              <MappingFragment StoreEntitySet="hscode">
+                <ScalarProperty Name="hscode_percentage" ColumnName="hscode_percentage" />
+                <ScalarProperty Name="hscode_id" ColumnName="hscode_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="messages">
+            <EntityTypeMapping TypeName="custommandbModel.message">
+              <MappingFragment StoreEntitySet="message">
+                <ScalarProperty Name="message_stamp" ColumnName="message_stamp" />
+                <ScalarProperty Name="message_message" ColumnName="message_message" />
+                <ScalarProperty Name="message_from" ColumnName="message_from" />
+                <ScalarProperty Name="message_to" ColumnName="message_to" />
+                <ScalarProperty Name="message_convoid" ColumnName="message_convoid" />
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productlogtypes">
+            <EntityTypeMapping TypeName="custommandbModel.productlogtype">
+              <MappingFragment StoreEntitySet="productlogtype">
+                <ScalarProperty Name="productlogtype_name" ColumnName="productlogtype_name" />
+                <ScalarProperty Name="productlogtype_id" ColumnName="productlogtype_id" />
+>>>>>>> newService
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

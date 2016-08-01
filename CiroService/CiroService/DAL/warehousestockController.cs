@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using CiroService.DAL;
 using CiroService.EFDatabase;
+=======
+﻿using CiroService.EFDatabase;
+>>>>>>> newService
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -86,4 +90,8 @@ namespace CiroService.DAL
             return newInvoice;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> newService

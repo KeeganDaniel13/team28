@@ -58,13 +58,22 @@ namespace CiroService.DAL
 
         public productlog updateRecord(int id, productlog productlog)
         {
+<<<<<<< HEAD
             productlog newlog = productlog;
             if (id != newlog.productlog_id)
+=======
+            productlog newproductlog = productlog;
+            if (id != newproductlog.productlog_id)
+>>>>>>> newService
             {
                 return null;
             }
 
+<<<<<<< HEAD
             db.Entry(newlog).State = EntityState.Modified;
+=======
+            db.Entry(newproductlog).State = EntityState.Modified;
+>>>>>>> newService
 
             try
             {
@@ -82,7 +91,11 @@ namespace CiroService.DAL
                 }
             }
 
+<<<<<<< HEAD
             return newlog;
+=======
+            return newproductlog;
+>>>>>>> newService
         }
     }
 }

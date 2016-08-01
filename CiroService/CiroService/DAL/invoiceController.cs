@@ -8,66 +8,58 @@ using System.Web;
 
 namespace CiroService.DAL
 {
-    public class productController: IDatabaseOperator<product>
+    public class invoiceController : IDatabaseOperator<invoice>
     {
 
         custommandbEntities1 db = new custommandbEntities1();
 
-        public IEnumerable<product> addRecord(product product)
+        public IEnumerable<invoice> addRecord(invoice invoice)
         {
 
-            db.products.Add(product);
-<<<<<<< HEAD
+            db.invoices.Add(invoice);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.invoices;
         }
 
-        public IEnumerable<product> deleteRecord(int id)
+        public IEnumerable<invoice> deleteRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            invoice invoice = db.invoices.Find(id);
+            if (invoice == null)
             {
                 return null;
             }
 
-            db.products.Remove(product);
-<<<<<<< HEAD
+            db.invoices.Remove(invoice);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.invoices;
         }
 
         public bool exists(int id)
         {
-            return db.products.Count(e => e.product_id == id) > 0;
+            return db.invoices.Count(e => e.invoice_id == id) > 0;
         }
 
-        public product getRecord(int id)
+        public invoice getRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            invoice invoice = db.invoices.Find(id);
+            if (invoice == null)
             {
                 return null;
             }
-            return product;
+            return invoice;
         }
 
-        public IEnumerable<product> getTable()
+        public IEnumerable<invoice> getTable()
         {
-            return db.products;
+            return db.invoices;
         }
 
-        public product updateRecord(int id, product product)
+        public invoice updateRecord(int id, invoice invoice)
         {
-            product newInvoice = product;
-            if (id != newInvoice.product_id)
+            invoice newInvoice = invoice;
+            if (id != newInvoice.invoice_id)
             {
                 return null;
             }
@@ -76,11 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-<<<<<<< HEAD
                 db.SaveChangesAsync();
-=======
-                db.SaveChanges();
->>>>>>> newService
             }
             catch (DbUpdateConcurrencyException)
             {

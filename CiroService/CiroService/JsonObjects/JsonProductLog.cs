@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace CiroService.JsonObjects
 {
-    public class JsonWarehouse
+    public class JsonProductLog
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string location { get; set; }
-        public int size { get; set; }
-        public int type_id { get; set; }
+        public int product_id { get; set; }
+        public string description { get; set; }
     }
 }

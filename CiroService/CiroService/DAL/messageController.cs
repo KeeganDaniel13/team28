@@ -8,66 +8,58 @@ using System.Web;
 
 namespace CiroService.DAL
 {
-    public class productController: IDatabaseOperator<product>
+    public class messageController : IDatabaseOperator<message>
     {
 
         custommandbEntities1 db = new custommandbEntities1();
 
-        public IEnumerable<product> addRecord(product product)
+        public IEnumerable<message> addRecord(message message)
         {
 
-            db.products.Add(product);
-<<<<<<< HEAD
+            db.messages.Add(message);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.messages;
         }
 
-        public IEnumerable<product> deleteRecord(int id)
+        public IEnumerable<message> deleteRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            message message = db.messages.Find(id);
+            if (message == null)
             {
                 return null;
             }
 
-            db.products.Remove(product);
-<<<<<<< HEAD
+            db.messages.Remove(message);
             db.SaveChangesAsync();
-=======
-            db.SaveChanges();
->>>>>>> newService
 
-            return db.products;
+            return db.messages;
         }
 
         public bool exists(int id)
         {
-            return db.products.Count(e => e.product_id == id) > 0;
+            return db.messages.Count(e => e.message_id == id) > 0;
         }
 
-        public product getRecord(int id)
+        public message getRecord(int id)
         {
-            product product = db.products.Find(id);
-            if (product == null)
+            message message = db.messages.Find(id);
+            if (message == null)
             {
                 return null;
             }
-            return product;
+            return message;
         }
 
-        public IEnumerable<product> getTable()
+        public IEnumerable<message> getTable()
         {
-            return db.products;
+            return db.messages;
         }
 
-        public product updateRecord(int id, product product)
+        public message updateRecord(int id, message message)
         {
-            product newInvoice = product;
-            if (id != newInvoice.product_id)
+            message newInvoice = message;
+            if (id != newInvoice.message_id)
             {
                 return null;
             }
@@ -76,11 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-<<<<<<< HEAD
                 db.SaveChangesAsync();
-=======
-                db.SaveChanges();
->>>>>>> newService
             }
             catch (DbUpdateConcurrencyException)
             {
