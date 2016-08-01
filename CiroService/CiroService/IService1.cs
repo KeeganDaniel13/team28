@@ -9,10 +9,8 @@ using CiroService.EFDatabase;
 
 using CiroService.JsonObjects;
 using System.Web.Http;
-<<<<<<< HEAD
 using System.IO;
-=======
->>>>>>> newService
+
 
 namespace CiroService
 {
@@ -21,21 +19,16 @@ namespace CiroService
     public interface IService1
     {
 
-        [WebGet(UriTemplate="data",BodyStyle =WebMessageBodyStyle.Wrapped,ResponseFormat =WebMessageFormat.Json)]
+        [WebGet(UriTemplate = "data", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
         string GetData();
 
         [OperationContract]
-        [WebInvoke(Method="POST",BodyStyle =WebMessageBodyStyle.Wrapped,RequestFormat = WebMessageFormat.Json,ResponseFormat =WebMessageFormat.Json,UriTemplate ="login")]
-<<<<<<< HEAD
-        jsonLogin login(jsonLoginUser login);  
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
+        jsonLogin login(jsonLoginUser login);
 
         [OperationContract]
         [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "products/{id}")]
         IEnumerable<jsonProduct> clientProducts(string id);
-
-        [OperationContract]
-        [WebInvoke(Method="POST",BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "register")]
-        string register(RegisterUser regUser);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "transferrequest")]
@@ -53,7 +46,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockadd")]
-        void stockAdd(string origin,IEnumerable<jsonProduct> newProduct);
+        void stockAdd(string origin, IEnumerable<jsonProduct> newProduct);
 
         //TaskList Warehouse Manager
         //To complete
@@ -72,13 +65,13 @@ namespace CiroService
         //todo
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "warehouseInfo/{id}")]
-        jsonWarehouse warehouseInfo(string id);
+        JsonWarehouse warehouseInfo(string id);
 
         //return list of warehouses
         //todo
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "warehouseInfo")]
-        IEnumerable<jsonWarehouse> warehouses();
+        IEnumerable<JsonWarehouse> warehouses();
 
 
         //Now 
@@ -92,11 +85,9 @@ namespace CiroService
         //Pendingtansfer
         //warehouse condition
         //warehouse transaction history
-=======
-        string login(jsonLoginUser login);  
 
         [OperationContract]
-        [WebInvoke(Method="POST",BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "register")]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "register")]
         string register(JsonUser regUser);
 
         [OperationContract]
@@ -167,9 +158,9 @@ namespace CiroService
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveRequest")]
         string approveRequest(string verdict, JsonProducts prod);
 
-       /* [OperationContract]
-        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
-        string getPackageNotification(JsonUser user);*/
+        /* [OperationContract]
+         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
+         string getPackageNotification(JsonUser user);*/
 
 
 
@@ -179,34 +170,5 @@ namespace CiroService
 
         //[OperationContract]
         // CompositeType GetDataUsingDataContract(CompositeType composite);
->>>>>>> newService
-
-        // TODO: Add your service operations here
     }
-
-<<<<<<< HEAD
-=======
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
->>>>>>> newService
 }

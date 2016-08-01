@@ -4,83 +4,42 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-<<<<<<< HEAD
-      <Diagram DiagramId="19559c085909475f9f2a7c2f6ada1541" Name="Diagram1">
-        <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+      <Diagram DiagramId="86ebe562d002480a91e60c0585f7b216" Name="Diagram1">
+        <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.countryrelation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.hscode" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferlist" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferrequest" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.user" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.usertype" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehouse" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousestock" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousetype" Width="1.5" PointX="3.75" PointY="17.125" IsExpanded="true" />
-        <AssociationConnector Association="custommandbModel.billofentry_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.billofentry_user_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.product_hscode_id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="custommandbModel.hscode" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.transferlist" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.transferrequest" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.user" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.usertype" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehouse" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehousestock" Width="1.5" PointX="10.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehousetype" Width="1.5" PointX="6" PointY="19.375" IsExpanded="true" />
+        <AssociationConnector Association="custommandbModel.billofentry_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.billofentry_user" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.product_hscode" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.message_from" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.message_to" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.product_producttype_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.productlog_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.releaserequest_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.transferlist_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.transferrequest_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.warehousestock_product_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.productlog_productlogtype_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.productlog_user_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.releaserequest_user_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.transferlist_user_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.transferrequest_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.product_producttype" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.productlog_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.releaserequest_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.transferlist_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.transferrequest_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.warehousestock_product" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.productlog_type" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.productlog_user" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.releaserequest_user" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.transferrequest_user" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.usertype_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.warehouse_warehousetype_id" ManuallyRouted="false" />
-        <AssociationConnector Association="custommandbModel.warehousestock_warehouse_id" ManuallyRouted="false" />
-=======
-      <Diagram DiagramId="6e5a14d436b446d1b5e11dc6492fbc7a" Name="Diagram1" ZoomLevel="89">
-        <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferlist" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferrequest" Width="2.625" PointX="13.5" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.user" Width="1.5" PointX="3.125" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.usertype" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehouse" PointX="8.25" PointY="11.625" Width="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousetype" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousestock" Width="1.5" PointX="12.75" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="13.875" PointY="3.875" />
-        <EntityTypeShape EntityType="custommandbModel.countryrelation" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="custommandbModel.hscode" PointX="3.375" PointY="0.875" Width="1.5" />
-        <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.75" PointY="15.125" />
-        <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="8.625" PointY="3.625" />
-        <AssociationConnector Association="custommandbModel.billofentry_product" />
-        <AssociationConnector Association="custommandbModel.billofentry_user" />
-        <AssociationConnector Association="custommandbModel.product_hscode" />
-        <AssociationConnector Association="custommandbModel.message_from" />
-        <AssociationConnector Association="custommandbModel.message_to" />
-        <AssociationConnector Association="custommandbModel.product_producttype" />
-        <AssociationConnector Association="custommandbModel.productlog_product" />
-        <AssociationConnector Association="custommandbModel.releaserequest_product" />
-        <AssociationConnector Association="custommandbModel.transferlist_product" />
-        <AssociationConnector Association="custommandbModel.transferrequest_product" />
-        <AssociationConnector Association="custommandbModel.warehousestock_product" />
-        <AssociationConnector Association="custommandbModel.productlog_type" />
-        <AssociationConnector Association="custommandbModel.productlog_user" />
-        <AssociationConnector Association="custommandbModel.releaserequest_user" />
-        <AssociationConnector Association="custommandbModel.transferrequest_user" />
-        <AssociationConnector Association="custommandbModel.warehouse_user" />
-        <AssociationConnector Association="custommandbModel.warehouse_warehousetype" />
-        <AssociationConnector Association="custommandbModel.warehousestock_warehouse" />
-        <AssociationConnector Association="custommandbModel.releaserequest_product1" />
-        <AssociationConnector Association="custommandbModel.releaserequest_user1" />
-        <AssociationConnector Association="custommandbModel.usertype_id" />
->>>>>>> newService
+        <AssociationConnector Association="custommandbModel.warehouse_user" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.warehouse_warehousetype" ManuallyRouted="false" />
+        <AssociationConnector Association="custommandbModel.warehousestock_warehouse" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

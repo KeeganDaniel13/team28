@@ -58,22 +58,13 @@ namespace CiroService.DAL
 
         public billofentry updateRecord(int id, billofentry billofentry)
         {
-<<<<<<< HEAD
             billofentry newBill = billofentry;
             if (id != newBill.billofentry_id)
-=======
-            billofentry newInvoice = billofentry;
-            if (id != newInvoice.billofentry_id)
->>>>>>> newService
             {
                 return null;
             }
 
-<<<<<<< HEAD
             db.Entry(newBill).State = EntityState.Modified;
-=======
-            db.Entry(newInvoice).State = EntityState.Modified;
->>>>>>> newService
 
             try
             {
@@ -90,12 +81,8 @@ namespace CiroService.DAL
                     throw;
                 }
             }
-
-<<<<<<< HEAD
             return newBill;
-=======
-            return newInvoice;
->>>>>>> newService
+
         }
     }
 }

@@ -13,11 +13,7 @@ namespace CiroService.DAL
         IEnumerable<T> addRecord(T item);
         IEnumerable<T> deleteRecord(int id);
         T updateRecord(int id,T item);
-<<<<<<< HEAD
-        bool exists(int id);
-        
-=======
         bool exists(int id); 
->>>>>>> newService
+
     }
 }
