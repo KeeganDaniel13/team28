@@ -77,7 +77,7 @@ namespace CiroService
         //Now 
         //Stock take
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockleaving/{id}")]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockleaving/{location}")]
         IEnumerable<transferStock> stockleavingWarehouse(string location);
         //Still needed and implementation
         //Notification
