@@ -14,7 +14,7 @@ namespace CiroService.JsonObjects
         public int productType { set;get; }
         public string currentLocation  { get; set; }
         public string transferLocation { get; set; }
-
+        public string bill{ get; set; }
 
     }
 }

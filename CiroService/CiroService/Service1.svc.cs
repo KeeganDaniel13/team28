@@ -12,13 +12,15 @@ using Newtonsoft.Json;
 using CiroService.JsonObjects;
 using System.Web.Http;
 using System.Web;
-
+using PayPal;
 using MessagingToolkit.QRCode;
 using MessagingToolkit.QRCode.Codec;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-
+using PayPal.Api;
+using PayPal.PayPalAPIInterfaceService;
+using PayPal.PayPalAPIInterfaceService.Model;
 
 namespace CiroService
 {
@@ -62,16 +64,17 @@ namespace CiroService
         public IEnumerable<jsonProduct> clientProducts(string id)
         {
             var productsTable = new productController();
+            var billtable = new billofentryController();
             
-            List<product> products = productsTable.getTable().Where<product>(p => 1 == Convert.ToInt32(id)).ToList<product>();
+            List<billofentry> products = billtable.getTable().Where<billofentry>(p => p.billofentry_user == Convert.ToInt32(id)).ToList<billofentry>();
             if(products.Count == 0)
             {
                 return null;
             }
             List<jsonProduct> sendProducts = new List<jsonProduct>();
-            foreach (product p in products)
+            foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product_id,Name = p.product_name,value = Convert.ToDecimal( p.product_price )});
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id,Name = p.product.product_name,value = Convert.ToDecimal( p.product.product_price ),bill = p.billofentry_code});
             }
             return sendProducts;
         }
@@ -305,7 +308,7 @@ namespace CiroService
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                 memoStream.Write(newImage,0,newImage.Length);
                 string fileName = path + newIncident.productID + ".jpg";
-                Image saveImage = Image.FromStream(memoStream);
+                System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
                 incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = "", productlog_id = incidents.Count(), productlog_user = 2 });
             }
@@ -706,6 +709,31 @@ namespace CiroService
             var result = "Release Request has been " + verdict;
             emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, result, "Update on your request for a package release");
             return result;
+        }
+
+        public void paypal()
+        {
+            GetBalanceRequestType request = new GetBalanceRequestType();
+            GetBalanceResponseType response = new GetBalanceResponseType();
+            request.ReturnAllCurrencies="YES";
+
+            GetBalanceReq wrapper = new GetBalanceReq();
+            wrapper.GetBalanceRequest = request;
+            PayPalAPIInterfaceServiceService service = new PayPalAPIInterfaceServiceService();
+
+            response = service.GetBalance(wrapper);
+            if (response != null)
+            {
+                string ack = "Get Balance Api Operation -";
+                ack += response.Ack.ToString();
+                if (response.Ack.ToString().Trim().ToUpper().Equals("SUCCESS"))
+                {
+                    var obj = response;
+                    MessageBox.Show(response.Balance.value);
+                }
+            }
+
+
         }
 
         /*public string getPackageNotification(JsonUser user)
