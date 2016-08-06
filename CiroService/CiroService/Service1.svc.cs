@@ -736,6 +736,118 @@ namespace CiroService
 
         }
 
+        public string OwnershipRequest(string uID, string nID, JsonProducts prod)
+        {
+            var ownershipAccess = new billofentryController();
+            var ownershipExists = ownershipAccess.getTable().FirstOrDefault<billofentry>(o => o.billofentry_user == Convert.ToInt32(uID) && o.billofentry_product == prod.id);
+            if(ownershipExists == null)
+            {
+                return "Ownership of this product does not exist.";
+            }
+
+            var newOwnerAccess = new userController();
+            var newOwnerExists = newOwnerAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(nID));
+            if(newOwnerExists == null)
+            {
+                return "New Owner does not Exist.";
+            }
+
+            var ownershipReqAccess = new ownershipRequestController();
+            JsonOwnershipReq ownerReq = new JsonOwnershipReq();
+            ownerReq.prevOwner = Convert.ToInt32(uID);
+            ownerReq.newOwner = Convert.ToInt32(nID);
+            ownerReq.acceptance = "Pending...";
+            ownerReq.product = prod.id;
+
+            ownershipReqAccess.addRecord(new ownershiprequest { ownershiprequest_owner = ownerReq.prevOwner, ownershiprequest_newowner = ownerReq.newOwner, ownershiprequest_product = ownerReq.product, ownershiprequest_acceptance = ownerReq.acceptance });
+            return "Request has been sent";
+        }
+
+        public string approveOwnershipRequest(string verdict,string id, JsonProducts prod)
+        {
+            var ownerReqAccess = new ownershipRequestController();
+            var ownerReqExists = ownerReqAccess.getTable().FirstOrDefault<ownershiprequest>(o => o.ownershiprequest_newowner == Convert.ToInt32(id) && o.ownershiprequest_product == prod.id);
+            if(ownerReqExists == null)
+            {
+                return null;
+            }
+
+            JsonOwnershipReq ownerReq = new JsonOwnershipReq();
+            ownerReq.acceptance = verdict;
+            ownerReqExists.ownershiprequest_acceptance = ownerReq.acceptance;
+            ownerReqAccess.updateRecord(ownerReqExists.ownershiprequest_id, ownerReqExists);
+            if(verdict == "Accepted")
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_user == Convert.ToInt32(ownerReqExists.ownershiprequest_owner) && b.billofentry_product == Convert.ToInt32(prod.id));
+                billExists.billofentry_user = Convert.ToInt32(ownerReqExists.ownershiprequest_newowner);
+                billAccess.updateRecord(billExists.billofentry_id, billExists);
+            }
+            var userAccess = new userController();
+            var ownerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_owner));
+            var newOwnerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_newowner));
+            emailTest emailOwner = new emailTest(ownerExists.user_fname + " " + ownerExists.user_sname, ownerExists.user_email, "Dear Mr/Ms " + ownerExists.user_sname + System.Environment.NewLine + System.Environment.NewLine + "Mr/Ms " + ownerExists.user_sname + " has " + verdict + " your request to change the ownership of your package: " + System.Environment.NewLine + System.Environment.NewLine + "Product Number: " + prod.id + System.Environment.NewLine + "Product Name: " + prod.name, "Request to change Ownership");
+            emailTest emailNewOwner = new emailTest(newOwnerExists.user_fname + " " + newOwnerExists.user_sname, newOwnerExists.user_email, "Dear Mr/Ms " + newOwnerExists.user_sname + System.Environment.NewLine + System.Environment.NewLine + "You have " + verdict + " the request to change ownership of: " + System.Environment.NewLine + System.Environment.NewLine + "Product Number: " + prod.id + System.Environment.NewLine + "Product Name: " + prod.name, "Request to change Ownership");
+            return "Ownership updated";
+        }
+
+        public string notifyOwnership()
+        {
+            emailTest email = new emailTest("g","keegan.daniel103@gmail.com","gg","h");
+            return "";
+        }
+
+        public IEnumerable<JsonOwnershipReq> getOwnershipRequest(string id)
+        {
+            var ownershipReqAccess = new ownershipRequestController();
+            List<ownershiprequest> ownershipReqExists = ownershipReqAccess.getTable().Where<ownershiprequest>(o => o.ownershiprequest_owner == Convert.ToInt32(id) || o.ownershiprequest_newowner == Convert.ToInt32(id)).ToList<ownershiprequest>();
+            if(ownershipReqExists.Count == 0)
+            {
+                return null;
+            }
+
+            List<JsonOwnershipReq> ownerReq = new List<JsonOwnershipReq>();
+            foreach(ownershiprequest o in ownershipReqExists)
+            {
+                ownerReq.Add(new JsonOwnershipReq { id = o.ownershiprequest_id, prevOwner = Convert.ToInt32(o.ownershiprequest_owner), newOwner = Convert.ToInt32(o.ownershiprequest_newowner), product = Convert.ToInt32(o.ownershiprequest_product), acceptance = o.ownershiprequest_acceptance });
+            }
+            return ownerReq;
+        }
+
+        public IEnumerable<JsonUser> getTraderInStock(string id)
+        {
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(s => s.warehousestock_id == Convert.ToInt16(32)).ToList<warehousestock>();
+            if(warehouseStockExists.Count == 0)
+            {
+                return null;
+            }
+
+            var billAccess = new billofentryController();
+            List<billofentry> billExists = new List<billofentry>();
+
+            foreach(warehousestock w in warehouseStockExists)
+            {
+                billExists = billAccess.getTable().Where<billofentry>(b => b.billofentry_product == w.warehousestock_product).ToList<billofentry>();
+            }
+
+            var traderAccess = new userController();
+            List<user> traderExists = new List<user>();
+
+            foreach(billofentry b in billExists)
+            {
+                traderExists = traderAccess.getTable().Where<user>(u => u.user_id == b.billofentry_user).ToList<user>();
+            }
+
+            List<JsonUser> traders = new List<JsonUser>();
+
+            foreach(user u in traderExists)
+            {
+                traders.Add(new JsonUser { id = u.user_id, email = u.user_email, fname = u.user_fname, lname = u.user_sname, password = u.user_password });
+            }
+
+            return traders;
+        }
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();

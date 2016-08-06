@@ -87,6 +87,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -147,6 +148,7 @@
     <Compile Include="DAL\countryrelationController.cs" />
     <Compile Include="DAL\hscode.cs" />
     <Compile Include="DAL\messageController.cs" />
+    <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
     <Compile Include="DAL\productlogController.cs" />
     <Compile Include="DAL\producttypeController.cs" />
@@ -183,6 +185,9 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\message.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDatabase\ownershiprequest.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\product.cs">
@@ -224,12 +229,14 @@
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
+    <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\jsonStockTake.cs" />
     <Compile Include="JsonObjects\jsonTask.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
+    <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />

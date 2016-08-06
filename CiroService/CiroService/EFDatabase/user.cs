@@ -20,6 +20,11 @@ namespace CiroService.EFDatabase
             this.billofentries = new HashSet<billofentry>();
             this.messages = new HashSet<message>();
             this.messages1 = new HashSet<message>();
+<<<<<<< HEAD
+=======
+            this.ownershiprequests = new HashSet<ownershiprequest>();
+            this.ownershiprequests1 = new HashSet<ownershiprequest>();
+>>>>>>> ab1925d4207676426f23cc86f81126cefc5d9e50
             this.productlogs = new HashSet<productlog>();
             this.releaserequests = new HashSet<releaserequest>();
             this.transferrequests = new HashSet<transferrequest>();
@@ -40,6 +45,13 @@ namespace CiroService.EFDatabase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<message> messages1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+<<<<<<< HEAD
+=======
+        public virtual ICollection<ownershiprequest> ownershiprequests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ownershiprequest> ownershiprequests1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+>>>>>>> ab1925d4207676426f23cc86f81126cefc5d9e50
         public virtual ICollection<productlog> productlogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<releaserequest> releaserequests { get; set; }

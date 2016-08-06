@@ -160,6 +160,28 @@ namespace CiroService
 
         [OperationContract]
         void paypal();
+<<<<<<< HEAD
+=======
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "OwnershipRequest/{uID}/{nID}")]
+        string OwnershipRequest(string uID, string nID, JsonProducts prod);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveOwnershipRequest/{id}/{verdict}")]
+        string approveOwnershipRequest(string verdict,string id, JsonProducts prod);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getOwnershipRequest/{id}")]
+        IEnumerable<JsonOwnershipReq> getOwnershipRequest(string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getTraderInStock/{id}")]
+        IEnumerable<JsonUser> getTraderInStock(string id);
+		
+		
+		
+>>>>>>> ab1925d4207676426f23cc86f81126cefc5d9e50
         /* [OperationContract]
          [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
          string getPackageNotification(JsonUser user);*/
