@@ -46,7 +46,7 @@ namespace CiroService
             return JsonConvert.SerializeObject(users);
         }
     
-        public jsonLogin login(jsonLoginUser login)
+        public JsonUser login(jsonLoginUser login)
         {
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
@@ -55,9 +55,13 @@ namespace CiroService
             {
                 return null ;
             }
-            var userType = new usertypeController();
-            string usertype = userType.getRecord(Convert.ToInt32(user.usertype_id)).usertype_name;
-            return new jsonLogin {id=user.user_id,email=user.user_fname+" " + user.user_sname, type=usertype};
+            JsonUser inUser = new JsonUser();
+            inUser.id = user.user_id;
+            inUser.fname = user.user_fname;
+            inUser.lname = user.user_sname;
+            inUser.password = user.user_password;
+            inUser.usertype = user.usertype_id;
+            return inUser;
         }
 
         //send all products that come from the bill of entry
@@ -74,7 +78,7 @@ namespace CiroService
             List<jsonProduct> sendProducts = new List<jsonProduct>();
             foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product.product_id,Name = p.product.product_name,value = Convert.ToDecimal( p.product.product_price ),bill = p.billofentry_code});
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id,Name = p.product.product_name,value = Convert.ToDecimal( p.product.product_price ),bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size) });
             }
             return sendProducts;
         }
@@ -91,7 +95,7 @@ namespace CiroService
                 return "Email Already Registered";
             }
             
-            user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = 2, user_id = userstable.getTable().Count() };
+            user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = 1, user_id = userstable.getTable().Count() };
     
             userstable.addRecord(newUser);
                      emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
@@ -667,7 +671,7 @@ namespace CiroService
             List<JsonWarehouse> warehouseList = new List<JsonWarehouse>();
             foreach(warehouse warehouses in warehouseExists)
             {
-                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), type_id = Convert.ToInt32(warehouses.warehouse_warehousetype) });
+                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype), user = Convert.ToInt32(warehouses.warehouse_user)});
             }
             return warehouseList;
         }
@@ -791,12 +795,6 @@ namespace CiroService
             return "Ownership updated";
         }
 
-        public string notifyOwnership()
-        {
-            emailTest email = new emailTest("g","keegan.daniel103@gmail.com","gg","h");
-            return "";
-        }
-
         public IEnumerable<JsonOwnershipReq> getOwnershipRequest(string id)
         {
             var ownershipReqAccess = new ownershipRequestController();
@@ -847,6 +845,45 @@ namespace CiroService
             }
 
             return traders;
+        }
+
+        public void addWarehouse(JsonWarehouse warehouseAdd)
+        {
+            var warehouseAccess = new warehouseController();
+            warehouse warehouses = new warehouse { warehouse_name = warehouseAdd.name, warehouse_size = warehouseAdd.size, warehouse_location = warehouseAdd.location, warehouse_user = warehouseAdd.user, warehouse_warehousetype = warehouseAdd.warehousetype };
+            warehouseAccess.addRecord(warehouses);
+        }
+
+        public void addCountry(JsonCountry country)
+        {
+            var countryAccess = new countryrelationController();
+            var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name == country.name);
+            
+            countryAccess.addRecord(new countryrelation { countryrelation_name = country.name });
+        }
+
+        public string addWarehouseMan(JsonUser user)
+        {
+
+            var userstable = new userController();
+
+            var check = userstable.getTable().FirstOrDefault<user>(c => c.user_email.Equals(user.email));
+
+            if (check != null)
+            {
+                return "Email Already Registered";
+            }
+
+            user newUser = new user { user_fname = user.fname, user_email = user.email, user_sname = user.lname, user_password = user.password, usertype_id = 3, user_id = userstable.getTable().Count() };
+
+            userstable.addRecord(newUser);
+            emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
+            return "Registered";
+        }
+
+        public IEnumerable<JsonInventory> getWarehouseID(JsonWarehouse warehouses)
+        {
+            throw new NotImplementedException();
         }
 
         /*public string getPackageNotification(JsonUser user)
