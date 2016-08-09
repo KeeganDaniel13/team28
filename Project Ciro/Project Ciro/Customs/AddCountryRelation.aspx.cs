@@ -13,11 +13,5 @@ namespace Project_Ciro.Customs
         {
 
         }
-
-        protected void btnAdd(object sender, EventArgs e)
-        {
-            var serviceConnection = new CiroService.Service1Client();
-            serviceConnection.addCountry(new CiroService.JsonCountry { name = txtName.Value });
-        }
     }
 }

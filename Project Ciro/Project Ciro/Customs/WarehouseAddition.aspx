@@ -28,31 +28,37 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label>Name of Warehouse</label>
-                  <input type="text" class="form-control" id="txtName" runat="server" placeholder="Name of Warehouse">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter..">
                 </div>      
                   <div class="form-group">
-                  <label>Location</label>
-                  <input type="text" class="form-control" runat="server" id="txtLocation" placeholder="Location">
+                  <label>Surname</label>
+                  <input type="text" class="form-control" id="a1" placeholder="Enter ...">
                 </div>       
                    <div class="form-group">
-                  <label>Warehouse Size</label>
-                  <input type="text" class="form-control" runat="server" id="txtSize" placeholder="Size">
+                  <label>Attribute D</label>
+                  <input type="text" class="form-control" id="a6" placeholder="Enter ...">
                 </div>        
                    <div class="form-group">
-                  <label>Warehouse Owner (User Number)</label>
-                  <input type="text" class="form-control" runat="server" id="txtUser" placeholder="Owner">
+                  <label>Attribute E</label>
+                  <input type="text" class="form-control" id="a2" placeholder="Enter ...">
                 </div>                         
-                  <label>Warehouse Type</label>
+                  <label>Type Of Attribute F</label>
                  <div class="form-group">                
-                  <select runat="server" id="scType" class="form-control">
-                    <option>Select A Type</option>
-                    <option>Ordinary Storage (OS)</option>
-                    <option>Special Storage (SOS)</option>
+                  <select class="form-control">
+                    <option>Select An ... type</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
                   </select>               
                 </div>          
                 <div class="box-footer">
-                <button type="submit" runat="server" onserverclick="btnAdd" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Add</button>
                 <a href="Clientele.aspx"></a>
               </div>
             </form>

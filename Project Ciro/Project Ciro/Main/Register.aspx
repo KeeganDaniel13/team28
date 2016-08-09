@@ -12,23 +12,23 @@
 
     <form method="post">
         <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="First Name"/>
+        <input type="text" id="txtfirst" runat="server" class="form-control" placeholder="First Name"/>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
         <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Surname"/>
+        <input type="text" id="txtsurname" runat="server" class="form-control" placeholder="Surname"/>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email"/>
+        <input type="email" id="txtemail" runat="server" class="form-control" placeholder="Email"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password"/>
+        <input type="password" id="txtpass" runat="server" class="form-control" placeholder="Password"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
          <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Confirm Password"/>
+        <input type="password" id="txtconfirm" runat="server" class="form-control" placeholder="Confirm Password"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -41,7 +41,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <button type="submit" runat="server" onserverclick="btnRegister" class="btn btn-primary btn-block btn-flat">Sign Up</button>
         </div>
         <!-- /.col -->
       </div>

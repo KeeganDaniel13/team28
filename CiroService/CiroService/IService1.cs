@@ -27,8 +27,8 @@ namespace CiroService
         JsonUser login(jsonLoginUser login);
 
         [OperationContract]
-        [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "products/{id}")]
-        IEnumerable<jsonProduct> clientProducts(string id);
+        [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "clientProducts")]
+        IEnumerable<jsonProduct> clientProducts(JsonUser user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "transferrequest")]
@@ -131,28 +131,28 @@ namespace CiroService
         string updatePackageWLocation(string id, string location);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "releaseRequest/{uID}/{pID}")]
-        string releaseRequest(string uID, string pID, string description);
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "releaseRequest/{description}")]
+        string releaseRequest(JsonUser owner, jsonProduct product, string description);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getRelease/{id}")]
-        IEnumerable<JsonReleaseRequest> getRelease(string id);
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getRelease")]
+        IEnumerable<JsonReleaseRequest> getRelease(JsonUser user);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addProductLog")]
-        string addProductLog(string code, string description, JsonProducts prod);
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addProductLog/{code}")]
+        string addProductLog(string code, JsonProductLog productlog, JsonProducts prod);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getProductLog/{id}")]
-        IEnumerable<JsonProductLog> getProductLog(string id);
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getProductLog")]
+        IEnumerable<JsonProductLog> getProductLog(jsonProduct product);
 
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouse")]
         IEnumerable<JsonWarehouse> getWarehouse();
 
         [OperationContract]
-        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveTransfer/{id}")]
-        string approveTransfer(string id, string verdict);
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveTransfer")]
+        string approveTransfer(jsonProduct product, string verdict);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveRequest")]
@@ -162,20 +162,20 @@ namespace CiroService
         void paypal();
 
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "OwnershipRequest/{uID}/{nID}")]
-        string OwnershipRequest(string uID, string nID, JsonProducts prod);
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "OwnershipRequest")]
+        string OwnershipRequest(JsonUser currentOwner, JsonUser newOwner, JsonProducts prod);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveOwnershipRequest/{id}/{verdict}")]
-        string approveOwnershipRequest(string verdict,string id, JsonProducts prod);
+        string approveOwnershipRequest(string verdict,JsonUser user, JsonProducts prod);
 
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getOwnershipRequest/{id}")]
-        IEnumerable<JsonOwnershipReq> getOwnershipRequest(string id);
+        IEnumerable<JsonOwnershipReq> getOwnershipRequest(JsonUser user);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getTraderInStock/{id}")]
-        IEnumerable<JsonUser> getTraderInStock(string id);
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getTraderInStock")]
+        IEnumerable<JsonUser> getTraderInStock(JsonWarehouse warehouses);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addWarehouse")]

@@ -13,5 +13,17 @@ namespace Project_Ciro.Home
         {
 
         }
+
+        protected void btnRegister(object sender, EventArgs e)
+        {
+            var serv = new CiroService.Service1Client();
+            if(txtpass.Value == txtconfirm.Value)
+            {
+                var user = serv.register(new CiroService.JsonUser { email = txtemail.Value, password = txtpass.Value, lname = txtsurname.Value, fname=txtfirst.Value, id=0 });
+                Response.Redirect("Login.aspx");
+            }
+            
+
+        }
     }
 }

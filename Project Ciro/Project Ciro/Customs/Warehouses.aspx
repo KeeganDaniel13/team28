@@ -110,25 +110,114 @@ hr.style-one {
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>User Number</th>
-                  <th>Location</th>
-                  <th>Size</th>
-                  <th>Availability</th>
-                    <th>Actions</th>
+                  <th>Rendering engine</th>
+                  <th>Browser</th>
+                  <th>Platform(s)</th>
+                  <th>Engine version</th>
+                  <th>Avalability</th>
+                  <th></th>
                 </tr>
                 </thead>
-                 <tbody>  
-                     <%getWarehouses(); %>
+                 <tbody>               
+                <tr>
+                  <td><div contenteditable>Presto</div></td>
+                  <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td> 
+                        <div class="progress progress-sm active">
+                             <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                 <span class="sr-only">20</span>
+                             </div>
+                          </div>
+                    </td>
+                    <td>                                         
+                                              
+                          <a class="btn btn-social-icon btn-dropbox"><span title="Remove Warehouse"><i class="fa fa fa-trash"></i></span></a>
+                         <a class="btn btn-social-icon btn-dropbox"><span title="Save Editting"><i class="fa fa-save"></i></span></a>                    
+                    </td>
+                </tr>
+                     <tr>
+                  <td><div contenteditable>Presto</div></td>
+                  <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td> 
+                        <div class="progress progress-sm active">
+                             <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                 <span class="sr-only">85</span>
+                             </div>
+                          </div>
+                    </td>
+                    <td>                                         
+                                              
+                          <a class="btn btn-social-icon btn-dropbox"><span title="Remove Warehouse"><i class="fa fa-trash"></i></span></a>
+                         <a class="btn btn-social-icon btn-dropbox"><span title="Save Editting"><i class="fa fa-save"></i></span></a>                    
+                    </td>
+                </tr>
+                     <tr>
+                  <td><div contenteditable>Presto</div></td>
+                  <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td> 
+                        <div class="progress progress-sm active">
+                             <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                 <span class="sr-only">70</span>
+                             </div>
+                          </div>
+                    </td>
+                    <td>                                         
+                                              
+                          <a class="btn btn-social-icon btn-dropbox"><span title="Remove Warehouse"><i class="fa fa-trash"></i></span></a>
+                         <a class="btn btn-social-icon btn-dropbox"><span title="Save Editting"><i class="fa fa-save"></i></span></a>                    
+                    </td>
+                </tr>
+                     <tr>
+                  <td><div contenteditable>Presto</div></td>
+                  <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td> 
+                        <div class="progress progress-sm active">
+                             <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                 <span class="sr-only">40</span>
+                             </div>
+                          </div>
+                    </td>
+                    <td>                                         
+                                              
+                         <a class="btn btn-social-icon btn-dropbox"><span title="Remove Warehouse"><i class="fa fa-trash"></i></span></a>
+                         <a class="btn btn-social-icon btn-dropbox"><span title="Save Editting"><i class="fa fa-save"></i></span></a>                    
+                    </td>
+                </tr>
+                     <tr>
+                  <td><div contenteditable>Presto</div></td>
+                  <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td><div contenteditable>Presto</div></td>
+                    <td> 
+                        <div class="progress progress-sm active">
+                             <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                 <span class="sr-only">90</span>
+                             </div>
+                          </div>
+                    </td>
+                    <td>                                         
+                                              
+                           <a class="btn btn-social-icon btn-dropbox"><span title="Remove Warehouse"><i class="fa fa-trash"></i></span></a>
+                        <a class="btn btn-social-icon btn-dropbox"><span title="Save Editting"><i class="fa fa-save"></i></span></a>
+                                             
+                    </td>
+                </tr>
                      </tbody>
                   <tfoot>
                 <tr>
-                  <th>Name</th>
-                  <th>User Number</th>
-                  <th>Location</th>
-                  <th>Size</th>
+                  <th>Rendering engine</th>
+                  <th>Browser</th>
+                  <th>Platform(s)</th>
+                  <th>Engine version</th>
                   <th>Availability</th>
-                    <th>Actions</th>
                 </tr>
                 </tfoot>
               </table>
