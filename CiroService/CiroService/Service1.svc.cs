@@ -232,7 +232,7 @@ namespace CiroService
             billofentryController billAccess = new billofentryController();
             foreach (var p in newProduct)
             {
-                DateTime date = DateTime.Now;
+                DateTime date = System.DateTime.ParseExact(DateTime.Now.ToString(),"mm/dd/yyyy HH/mm/ss",System.Globalization.CultureInfo.InvariantCulture);
                 //add products to product table
                 productAccess.addRecord(new product { product_name=p.Name,product_price=p.value,product_location=p.currentLocation,product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
                 //adding new product with bill of entry
@@ -245,14 +245,14 @@ namespace CiroService
                 transferListkAccess.addRecord(new transferlist { transferlist_to=p.transferLocation,transferlist_product=addToBill.product_id,transferlist_from=p.currentLocation});
 
                 //create qrcode
-                string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\";
+                string path = "CiroService\\CiroService\\images\\";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
                 qrcodeMaker.QRCodeScale = 10;
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-                qrcode.Save(path + "new.jpg", ImageFormat.Jpeg);
+                qrcode.Save(path + qrcodeInfo+".jpg", ImageFormat.Jpeg);
             }
 
             //Updates needed
@@ -848,6 +848,7 @@ namespace CiroService
 
             return traders;
         }
+
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();

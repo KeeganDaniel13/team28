@@ -8,7 +8,7 @@ using System.Web;
 
 namespace CiroService.DAL
 {
-    public class countryRelationController : IDatabaseOperator<countryrelation>
+    public class countryrelationController : IDatabaseOperator<countryrelation>
     {
 
         custommandbEntities1 db = new custommandbEntities1();
@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.countryrelations.Add(countryrelation);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.countryrelations;
         }
@@ -58,13 +58,13 @@ namespace CiroService.DAL
 
         public countryrelation updateRecord(int id, countryrelation countryrelation)
         {
-            countryrelation newBill = countryrelation;
-            if (id != newBill.countryrelation_id)
+            countryrelation newInvoice = countryrelation;
+            if (id != newInvoice.countryrelation_id)
             {
                 return null;
             }
 
-            db.Entry(newBill).State = EntityState.Modified;
+            db.Entry(newInvoice).State = EntityState.Modified;
 
             try
             {
@@ -82,7 +82,7 @@ namespace CiroService.DAL
                 }
             }
 
-            return newBill;
+            return newInvoice;
         }
     }
 }

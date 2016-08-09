@@ -160,8 +160,6 @@ namespace CiroService
 
         [OperationContract]
         void paypal();
-<<<<<<< HEAD
-=======
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "OwnershipRequest/{uID}/{nID}")]
@@ -181,7 +179,6 @@ namespace CiroService
 		
 		
 		
->>>>>>> ab1925d4207676426f23cc86f81126cefc5d9e50
         /* [OperationContract]
          [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
          string getPackageNotification(JsonUser user);*/

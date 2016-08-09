@@ -267,6 +267,7 @@
     <Content Include="EFDatabase\CiroDatabase.edmx.diagram">
       <DependentUpon>CiroDatabase.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\ciro.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
