@@ -316,10 +316,7 @@ namespace CiroService
                 saveImage.Save(fileName);
                 incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = "", productlog_id = incidents.Count(), productlog_user = 2 });
             }
-            
-
-           return;
-            
+            return;
         }
 
  
@@ -881,9 +878,50 @@ namespace CiroService
             return "Registered";
         }
 
-        public IEnumerable<JsonInventory> getWarehouseID(JsonWarehouse warehouses)
+        public IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses)
         {
-            throw new NotImplementedException();
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehouse.warehouse_name == warehouses.name).ToList<warehousestock>();
+            if(warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach(warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), productID = Convert.ToInt32(w.warehousestock_product), lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = Convert.ToInt32(billExists.user), productType = Convert.ToInt32(w.product.product_producttype) });
+            }
+            return inventory;
+        }
+
+        public JsonWarehouse getWarehouseI(JsonWarehouse warehouses)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name == warehouses.name);
+            if(warehouseExists == null)
+            {
+                return null;
+            }
+
+            JsonWarehouse nWarehouse = new JsonWarehouse { id = warehouseExists.warehouse_id, name = warehouseExists.warehouse_name, location = warehouseExists.warehouse_location, size = Convert.ToInt32(warehouseExists.warehouse_size), user = Convert.ToInt32(warehouseExists.warehouse_user), warehousetype = Convert.ToInt32(warehouseExists.warehouse_warehousetype) };
+            return nWarehouse;
+        }
+
+        public JsonUser getUser(JsonUser users)
+        {
+            var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(w => w.user_email == users.email);
+            if (userExists == null)
+            {
+                return null;
+            }
+
+            JsonUser nUser = new JsonUser { id = userExists.user_id, fname = userExists.user_fname, lname = userExists.user_sname, email = userExists.user_email, usertype = userExists.usertype_id };
+            return nUser;
         }
 
         /*public string getPackageNotification(JsonUser user)

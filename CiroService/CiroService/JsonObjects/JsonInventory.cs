@@ -15,6 +15,6 @@ namespace CiroService.JsonObjects
         public int quantity { get; set; }
         public DateTime arrivalDate { get; set; }
         public int productType { get; set; }
-        public string owner { get; set; }
+        public int owner { get; set; }
     }
 }

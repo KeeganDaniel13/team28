@@ -229,6 +229,7 @@
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
     <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
+    <Compile Include="JsonObjects\JsonInventory.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
     <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />
