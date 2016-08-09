@@ -227,6 +227,7 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
+    <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
     <Compile Include="JsonObjects\JsonOwnershipReq.cs" />

@@ -28,7 +28,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
-        jsonLogin login(jsonLoginUser login);
+        JsonUser login(jsonLoginUser login);
 
         [OperationContract]
         [WebGet(BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "products/{id}")]
@@ -180,9 +180,25 @@ namespace CiroService
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getTraderInStock/{id}")]
         IEnumerable<JsonUser> getTraderInStock(string id);
-		
-		
-		
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addWarehouse")]
+        void addWarehouse(JsonWarehouse warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addCountry")]
+        void addCountry(JsonCountry country);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseID/{id}")]
+        IEnumerable<JsonInventory> getWarehouseID(JsonWarehouse warehouses);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addWarehouseMan")]
+        string addWarehouseMan(JsonUser user);
+
+
+
         /* [OperationContract]
          [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
          string getPackageNotification(JsonUser user);*/
