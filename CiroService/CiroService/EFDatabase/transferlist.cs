@@ -15,10 +15,21 @@ namespace CiroService.EFDatabase
     public partial class transferlist
     {
         public int transferlist_id { get; set; }
+<<<<<<< HEAD
         public string transferlist_to { get; set; }
         public string transferlist_from { get; set; }
         public Nullable<int> transferlist_product { get; set; }
     
         public virtual product product { get; set; }
+=======
+        public string transferlist_description { get; set; }
+        public string transferlist_from { get; set; }
+        public string transferlist_to { get; set; }
+        public Nullable<int> warehouse_id_transferlist { get; set; }
+        public Nullable<int> product_id_transferlist { get; set; }
+    
+        public virtual product product { get; set; }
+        public virtual warehouse warehouse { get; set; }
+>>>>>>> RestWebService
     }
 }

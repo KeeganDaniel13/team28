@@ -15,6 +15,7 @@ namespace CiroService.EFDatabase
     public partial class productlog
     {
         public int productlog_id { get; set; }
+<<<<<<< HEAD
         public Nullable<int> productlog_product { get; set; }
         public Nullable<int> productlog_user { get; set; }
         public string productlog_description { get; set; }
@@ -24,5 +25,11 @@ namespace CiroService.EFDatabase
         public virtual product product { get; set; }
         public virtual productlogtype productlogtype { get; set; }
         public virtual user user { get; set; }
+=======
+        public string productlog_description { get; set; }
+        public Nullable<int> product_id { get; set; }
+    
+        public virtual product product { get; set; }
+>>>>>>> RestWebService
     }
 }

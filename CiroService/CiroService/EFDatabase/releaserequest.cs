@@ -15,9 +15,15 @@ namespace CiroService.EFDatabase
     public partial class releaserequest
     {
         public int releaserequest_id { get; set; }
+<<<<<<< HEAD
         public string releaserequest_verdict { get; set; }
         public Nullable<int> releaserequest_user { get; set; }
         public Nullable<int> releaserequest_product { get; set; }
+=======
+        public string releaserequest_description { get; set; }
+        public Nullable<int> user_id_releaserequest { get; set; }
+        public Nullable<int> product_id_releaserequest { get; set; }
+>>>>>>> RestWebService
     
         public virtual product product { get; set; }
         public virtual user user { get; set; }

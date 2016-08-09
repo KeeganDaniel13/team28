@@ -14,6 +14,9 @@ namespace CiroService.DAL
         IEnumerable<T> deleteRecord(int id);
         T updateRecord(int id,T item);
         bool exists(int id); 
+<<<<<<< HEAD
 
+=======
+>>>>>>> RestWebService
     }
 }

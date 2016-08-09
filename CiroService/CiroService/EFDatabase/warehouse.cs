@@ -17,13 +17,18 @@ namespace CiroService.EFDatabase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public warehouse()
         {
+<<<<<<< HEAD
             this.warehousestocks = new HashSet<warehousestock>();
+=======
+            this.transferlists = new HashSet<transferlist>();
+>>>>>>> RestWebService
         }
     
         public int warehouse_id { get; set; }
         public string warehouse_name { get; set; }
         public string warehouse_location { get; set; }
         public Nullable<int> warehouse_size { get; set; }
+<<<<<<< HEAD
         public Nullable<int> warehouse_user { get; set; }
         public Nullable<int> warehouse_warehousetype { get; set; }
     
@@ -31,5 +36,12 @@ namespace CiroService.EFDatabase
         public virtual warehousetype warehousetype { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<warehousestock> warehousestocks { get; set; }
+=======
+        public Nullable<int> warehouse_warehousetypeid { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transferlist> transferlists { get; set; }
+        public virtual warehousetype warehousetype { get; set; }
+>>>>>>> RestWebService
     }
 }

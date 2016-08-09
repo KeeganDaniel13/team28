@@ -8,10 +8,13 @@ using System.Web;
 
 namespace CiroService.DAL
 {
+
     public class productlogController : IDatabaseOperator<productlog>
+
     {
 
         custommandbEntities1 db = new custommandbEntities1();
+
 
         public IEnumerable<productlog> addRecord(productlog productlog)
         {
@@ -26,14 +29,17 @@ namespace CiroService.DAL
         {
             productlog productlog = db.productlogs.Find(id);
             if (productlog == null)
+
             {
                 return null;
             }
+
 
             db.productlogs.Remove(productlog);
             db.SaveChangesAsync();
 
             return db.productlogs;
+
         }
 
         public bool exists(int id)
@@ -68,6 +74,7 @@ namespace CiroService.DAL
 
             db.Entry(newproductlog).State = EntityState.Modified;
 
+
             try
             {
                 db.SaveChangesAsync();
@@ -85,6 +92,7 @@ namespace CiroService.DAL
             }
 
             return newproductlog;
+
 
         }
     }

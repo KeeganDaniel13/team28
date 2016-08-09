@@ -19,6 +19,7 @@ namespace CiroService.DAL
             db.products.Add(product);
 
             db.SaveChanges();
+
             return db.products;
         }
 

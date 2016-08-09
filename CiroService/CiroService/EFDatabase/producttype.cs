@@ -21,7 +21,11 @@ namespace CiroService.EFDatabase
         }
     
         public int producttype_id { get; set; }
+<<<<<<< HEAD
         public string producttype_name { get; set; }
+=======
+        public string producttype_type { get; set; }
+>>>>>>> RestWebService
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<product> products { get; set; }
