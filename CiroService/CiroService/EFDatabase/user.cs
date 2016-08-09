@@ -20,6 +20,8 @@ namespace CiroService.EFDatabase
             this.billofentries = new HashSet<billofentry>();
             this.messages = new HashSet<message>();
             this.messages1 = new HashSet<message>();
+            this.ownershiprequests = new HashSet<ownershiprequest>();
+            this.ownershiprequests1 = new HashSet<ownershiprequest>();
             this.productlogs = new HashSet<productlog>();
             this.releaserequests = new HashSet<releaserequest>();
             this.transferrequests = new HashSet<transferrequest>();
@@ -39,6 +41,10 @@ namespace CiroService.EFDatabase
         public virtual ICollection<message> messages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<message> messages1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ownershiprequest> ownershiprequests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ownershiprequest> ownershiprequests1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<productlog> productlogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

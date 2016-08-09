@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_clientProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:clientProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_clientProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clientProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transeferRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:transeferRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transeferRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:transeferRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transferList_InputMessage">
+    <wsdl:part name="parameters" element="tns:transferList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transferList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:transferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockTake_InputMessage">
+    <wsdl:part name="parameters" element="tns:stockTake" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockTake_OutputMessage">
+    <wsdl:part name="parameters" element="tns:stockTakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockAdd_InputMessage">
+    <wsdl:part name="parameters" element="tns:stockAdd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockAdd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:stockAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_taskList_InputMessage">
+    <wsdl:part name="parameters" element="tns:taskList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_taskList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:taskListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addIncident_InputMessage">
+    <wsdl:part name="parameters" element="tns:addIncident" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addIncident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addIncidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_warehouseInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:warehouseInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_warehouseInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:warehouseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_warehouses_InputMessage">
+    <wsdl:part name="parameters" element="tns:warehouses" />
+  </wsdl:message>
+  <wsdl:message name="IService1_warehouses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:warehousesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockleavingWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:stockleavingWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_stockleavingWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:stockleavingWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_register_InputMessage">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="IService1_register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageType_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageType" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageOwner" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageDest_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageDest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageDest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageDestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPackageLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPackageLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPackage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePackage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePackageWLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePackageWLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updatePackageWLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePackageWLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releaseRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:releaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releaseRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:releaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRelease_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRelease" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRelease_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReleaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addProductLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:addProductLog" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addProductLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addProductLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductLog" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProductLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:approveTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:approveTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:approveRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:approveRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/login" message="tns:IService1_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/loginResponse" message="tns:IService1_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clientProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/clientProducts" message="tns:IService1_clientProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/clientProductsResponse" message="tns:IService1_clientProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="transeferRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/transeferRequest" message="tns:IService1_transeferRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/transeferRequestResponse" message="tns:IService1_transeferRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="transferList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/transferList" message="tns:IService1_transferList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/transferListResponse" message="tns:IService1_transferList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="stockTake">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/stockTake" message="tns:IService1_stockTake_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/stockTakeResponse" message="tns:IService1_stockTake_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="stockAdd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/stockAdd" message="tns:IService1_stockAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/stockAddResponse" message="tns:IService1_stockAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="taskList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/taskList" message="tns:IService1_taskList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/taskListResponse" message="tns:IService1_taskList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addIncident">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addIncident" message="tns:IService1_addIncident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addIncidentResponse" message="tns:IService1_addIncident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="warehouseInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/warehouseInfo" message="tns:IService1_warehouseInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/warehouseInfoResponse" message="tns:IService1_warehouseInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="warehouses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/warehouses" message="tns:IService1_warehouses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/warehousesResponse" message="tns:IService1_warehouses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="stockleavingWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/stockleavingWarehouse" message="tns:IService1_stockleavingWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/stockleavingWarehouseResponse" message="tns:IService1_stockleavingWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/register" message="tns:IService1_register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/registerResponse" message="tns:IService1_register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateUser" message="tns:IService1_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateUserResponse" message="tns:IService1_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageID" message="tns:IService1_getPackageID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageIDResponse" message="tns:IService1_getPackageID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageType" message="tns:IService1_getPackageType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageTypeResponse" message="tns:IService1_getPackageType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageOwner" message="tns:IService1_getPackageOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageOwnerResponse" message="tns:IService1_getPackageOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageDate" message="tns:IService1_getPackageDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageDateResponse" message="tns:IService1_getPackageDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageDest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageDest" message="tns:IService1_getPackageDest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageDestResponse" message="tns:IService1_getPackageDest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPackageLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPackageLocation" message="tns:IService1_getPackageLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPackageLocationResponse" message="tns:IService1_getPackageLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPackage" message="tns:IService1_addPackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPackageResponse" message="tns:IService1_addPackage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePackage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updatePackage" message="tns:IService1_updatePackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updatePackageResponse" message="tns:IService1_updatePackage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePackageWLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updatePackageWLocation" message="tns:IService1_updatePackageWLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updatePackageWLocationResponse" message="tns:IService1_updatePackageWLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/releaseRequest" message="tns:IService1_releaseRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/releaseRequestResponse" message="tns:IService1_releaseRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRelease" message="tns:IService1_getRelease_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getReleaseResponse" message="tns:IService1_getRelease_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addProductLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addProductLog" message="tns:IService1_addProductLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addProductLogResponse" message="tns:IService1_addProductLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProductLog" message="tns:IService1_getProductLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductLogResponse" message="tns:IService1_getProductLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarehouse" message="tns:IService1_getWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarehouseResponse" message="tns:IService1_getWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="approveTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/approveTransfer" message="tns:IService1_approveTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/approveTransferResponse" message="tns:IService1_approveTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="approveRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/approveRequest" message="tns:IService1_approveRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/approveRequestResponse" message="tns:IService1_approveRequest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPEndPoint" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IService1/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/clientProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transeferRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/transeferRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferList">
+      <soap:operation soapAction="http://tempuri.org/IService1/transferList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stockTake">
+      <soap:operation soapAction="http://tempuri.org/IService1/stockTake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stockAdd">
+      <soap:operation soapAction="http://tempuri.org/IService1/stockAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="taskList">
+      <soap:operation soapAction="http://tempuri.org/IService1/taskList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addIncident">
+      <soap:operation soapAction="http://tempuri.org/IService1/addIncident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="warehouseInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/warehouseInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="warehouses">
+      <soap:operation soapAction="http://tempuri.org/IService1/warehouses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stockleavingWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IService1/stockleavingWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/IService1/register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageID">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageType">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageOwner">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageDest">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageDest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPackageLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPackageLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPackage">
+      <soap:operation soapAction="http://tempuri.org/IService1/addPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePackage">
+      <soap:operation soapAction="http://tempuri.org/IService1/updatePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePackageWLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/updatePackageWLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/releaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRelease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProductLog">
+      <soap:operation soapAction="http://tempuri.org/IService1/addProductLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductLog">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProductLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveTransfer">
+      <soap:operation soapAction="http://tempuri.org/IService1/approveTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/approveRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="SOAPEndPoint" binding="tns:SOAPEndPoint">
+      <soap:address location="http://localhost:50983/Service1.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

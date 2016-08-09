@@ -31,6 +31,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <IncludeAppPool>true</IncludeAppPool>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -66,11 +70,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPal, Version=1.7.4.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.7.4\lib\net451\PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.7.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalCoreSDK.1.7.0\lib\net451\PayPalCoreSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPalMerchantSDK, Version=2.16.117.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalMerchantSDK.2.16.117\lib\net20\PayPalMerchantSDK.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -126,13 +143,12 @@
   <ItemGroup>
     <Compile Include="DAL\billofentryController.cs" />
     <Compile Include="DAL\IDatabaseOperator.cs" />
-    <Content Include="Service1.svc" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\countryrelationController.cs" />
     <Compile Include="DAL\hscode.cs" />
     <Compile Include="DAL\messageController.cs" />
+    <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
     <Compile Include="DAL\productlogController.cs" />
     <Compile Include="DAL\producttypeController.cs" />
@@ -169,6 +185,9 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\message.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDatabase\ownershiprequest.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\product.cs">
@@ -208,14 +227,18 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
+    <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
+    <Compile Include="JsonObjects\JsonInventory.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
+    <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\jsonStockTake.cs" />
     <Compile Include="JsonObjects\jsonTask.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
+    <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />
