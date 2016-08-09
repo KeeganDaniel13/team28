@@ -8,10 +8,15 @@ using System.Text;
 
 namespace DemoWCFRest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
-    public interface IService1
-    {
+	// NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+	[ServiceContract]
+	public interface IService1
+	{
+		[OperationContract]
+        string getPackage(int id);
+
+        [OperationContract]
+        string getPackages();
 
         [OperationContract]
         [WebInvoke(Method ="GET",ResponseFormat = WebMessageFormat.Json,BodyStyle =WebMessageBodyStyle.Bare,UriTemplate = "DoWork")]
