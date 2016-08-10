@@ -785,7 +785,7 @@ namespace CiroService
             JsonOwnershipReq ownerReq = new JsonOwnershipReq();
             ownerReq.prevOwner = Convert.ToInt32(currentOwner.id);
             ownerReq.newOwner = Convert.ToInt32(newOwner.id);
-            ownerReq.acceptance = "Pending...";
+            ownerReq.acceptance = "Pending";
             ownerReq.product = prod.id;
 
             ownershipReqAccess.addRecord(new ownershiprequest { ownershiprequest_owner = ownerReq.prevOwner, ownershiprequest_newowner = ownerReq.newOwner, ownershiprequest_product = ownerReq.product, ownershiprequest_acceptance = ownerReq.acceptance });
