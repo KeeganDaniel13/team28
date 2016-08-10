@@ -490,8 +490,6 @@ namespace CiroService
             {
                 return "Package does not exist";
             }
-            MessageBox.Show("Package exists check completed.", "Checklist", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-
             if (prod.name != null && prod.name != "")
             {
                 productExists.product_name = prod.name;
@@ -663,7 +661,6 @@ namespace CiroService
             List<JsonProductLog> productLogList = new List<JsonProductLog>();
             foreach (productlog log in logExists)
             {
-                MessageBox.Show(log.productlog_dateLogged.ToString());
                 productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription,date=DateTime.Parse(log.productlog_dateLogged.ToString())});
             }
             productLogList.OrderByDescending(c => c.date);
@@ -693,7 +690,6 @@ namespace CiroService
                 }
                 int warehouseSize = Convert.ToInt32(warehouses.warehouse_size);
                 double availabilityW = total / Convert.ToDouble(warehouseSize)*100;
-                MessageBox.Show(""+availabilityW);
                 warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype),available=availabilityW ,user = Convert.ToInt32(warehouses.warehouse_user)});
             }
             return warehouseList;
@@ -756,7 +752,6 @@ namespace CiroService
                 if (response.Ack.ToString().Trim().ToUpper().Equals("SUCCESS"))
                 {
                     var obj = response;
-                    MessageBox.Show(response.Balance.value);
                 }
             }
 
