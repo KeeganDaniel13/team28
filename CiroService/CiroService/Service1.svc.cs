@@ -650,7 +650,6 @@ namespace CiroService
             try
             {
                 logExists = logAccess.getTable().Where(c =>c.productlog_product==product.ID);
-                MessageBox.Show(""+logExists.Count());
             }
             catch (Exception x)
             { }
@@ -664,8 +663,8 @@ namespace CiroService
             List<JsonProductLog> productLogList = new List<JsonProductLog>();
             foreach (productlog log in logExists)
             {
-
-                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription});
+                MessageBox.Show(log.productlog_dateLogged.ToString());
+                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription,date=DateTime.Parse(log.productlog_dateLogged.ToString())});
             }
             productLogList.OrderByDescending(c => c.date);
             return productLogList;
@@ -681,7 +680,7 @@ namespace CiroService
                 return null;
             }
 
-            int total = 0;
+            double total = 0;
             List<JsonWarehouse> warehouseList = new List<JsonWarehouse>();
             foreach(warehouse warehouses in warehouseExists)
             {
@@ -693,10 +692,9 @@ namespace CiroService
                     total += s.size;
                 }
                 int warehouseSize = Convert.ToInt32(warehouses.warehouse_size);
-                MessageBox.Show(Convert.ToString(warehouseSize));
-                double availability = (total / warehouseSize );
-                MessageBox.Show(""+availability);
-                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype), user = Convert.ToInt32(warehouses.warehouse_user)});
+                double availabilityW = total / Convert.ToDouble(warehouseSize)*100;
+                MessageBox.Show(""+availabilityW);
+                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype),available=availabilityW ,user = Convert.ToInt32(warehouses.warehouse_user)});
             }
             return warehouseList;
         }
