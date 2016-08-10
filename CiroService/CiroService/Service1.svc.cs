@@ -667,7 +667,7 @@ namespace CiroService
 
                 productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription});
             }
-           // productLogList.Sort<JsonProductLog>((x,y)=> );
+            productLogList.OrderByDescending(c => c.date);
             return productLogList;
         }
 
