@@ -14,5 +14,6 @@ namespace CiroService.JsonObjects
         public int size { get; set; }
         public int warehousetype { get; set; }
         public int user { get; set; }
+        public double available { get; set; }
     }
 }
