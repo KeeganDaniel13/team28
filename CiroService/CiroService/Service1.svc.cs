@@ -113,7 +113,7 @@ namespace CiroService
             warehouseController warehouseTable = new warehouseController();
             warehouse warehouseName = warehouseTable.getTable().First<warehouse>(c => c.warehouse_id == warehouseID.warehousestock_warehouse);
 
-            newTransfer.transferrequest_verdict = newRequest.description;
+            newTransfer.transferrequest_verdict = "Pending";
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
             newTransfer.transferrequest_to = newRequest.endWarehouse;
@@ -261,7 +261,7 @@ namespace CiroService
                 
           
                 //add products to product table
-                productAccess.addRecord(new product { product_name=p.Name,product_price=p.value,product_location="In Transit",product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
+                productAccess.addRecord(new product { product_name=p.Name,product_size=p.size,product_quantity=p.quantity,product_price=p.value,product_location="In Transit",product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
                 //adding new product with bill of entry
                 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate==date);
@@ -550,7 +550,7 @@ namespace CiroService
 
             if(requestExists == null)
             {
-                request.addRecord(new releaserequest { releaserequest_product = Convert.ToInt32(product.ID), releaserequest_user = Convert.ToInt32(owner.id)});
+                request.addRecord(new releaserequest {releaserequest_verdict="Pending", releaserequest_product = Convert.ToInt32(product.ID), releaserequest_user = Convert.ToInt32(owner.id)});
                 return "Request has been uploaded.";
             }
             else
