@@ -187,6 +187,72 @@
   <wsdl:message name="IService1_approveRequest_OutputMessage">
     <wsdl:part name="parameters" element="tns:approveRequestResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_paypal_InputMessage">
+    <wsdl:part name="parameters" element="tns:paypal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_paypal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:paypalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OwnershipRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:OwnershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OwnershipRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OwnershipRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveOwnershipRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:approveOwnershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_approveOwnershipRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:approveOwnershipRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOwnershipRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOwnershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOwnershipRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOwnershipRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTraderInStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTraderInStock" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTraderInStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTraderInStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:addWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouseInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouseInventory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouseInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouseInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addWarehouseMan_InputMessage">
+    <wsdl:part name="parameters" element="tns:addWarehouseMan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addWarehouseMan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addWarehouseManResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouseI_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouseI" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getWarehouseI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWarehouseIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -307,6 +373,50 @@
     <wsdl:operation name="approveRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/approveRequest" message="tns:IService1_approveRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/approveRequestResponse" message="tns:IService1_approveRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="paypal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/paypal" message="tns:IService1_paypal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/paypalResponse" message="tns:IService1_paypal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OwnershipRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/OwnershipRequest" message="tns:IService1_OwnershipRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/OwnershipRequestResponse" message="tns:IService1_OwnershipRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="approveOwnershipRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/approveOwnershipRequest" message="tns:IService1_approveOwnershipRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/approveOwnershipRequestResponse" message="tns:IService1_approveOwnershipRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOwnershipRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getOwnershipRequest" message="tns:IService1_getOwnershipRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getOwnershipRequestResponse" message="tns:IService1_getOwnershipRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTraderInStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTraderInStock" message="tns:IService1_getTraderInStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTraderInStockResponse" message="tns:IService1_getTraderInStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addWarehouse" message="tns:IService1_addWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addWarehouseResponse" message="tns:IService1_addWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addCountry" message="tns:IService1_addCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addCountryResponse" message="tns:IService1_addCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarehouseInventory" message="tns:IService1_getWarehouseInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarehouseInventoryResponse" message="tns:IService1_getWarehouseInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addWarehouseMan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addWarehouseMan" message="tns:IService1_addWarehouseMan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addWarehouseManResponse" message="tns:IService1_addWarehouseMan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarehouseI" message="tns:IService1_getWarehouseI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarehouseIResponse" message="tns:IService1_getWarehouseI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUser" message="tns:IService1_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUserResponse" message="tns:IService1_getUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SOAPEndPoint" type="tns:IService1">
@@ -574,6 +684,105 @@
     </wsdl:operation>
     <wsdl:operation name="approveRequest">
       <soap:operation soapAction="http://tempuri.org/IService1/approveRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paypal">
+      <soap:operation soapAction="http://tempuri.org/IService1/paypal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OwnershipRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/OwnershipRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveOwnershipRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/approveOwnershipRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOwnershipRequest">
+      <soap:operation soapAction="http://tempuri.org/IService1/getOwnershipRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTraderInStock">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTraderInStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IService1/addWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/addCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseInventory">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarehouseInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addWarehouseMan">
+      <soap:operation soapAction="http://tempuri.org/IService1/addWarehouseMan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouseI">
+      <soap:operation soapAction="http://tempuri.org/IService1/getWarehouseI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -74,66 +74,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Clientele.aspx" />
-    <Content Include="bootstraps\NewFolder\.gitignore" />
-    <Content Include="bootstraps\NewFolder\css\agency.css" />
-    <Content Include="bootstraps\NewFolder\css\agency.min.css" />
-    <Content Include="bootstraps\NewFolder\gulpfile.js" />
-    <Content Include="bootstraps\NewFolder\img\about\1.jpg" />
-    <Content Include="bootstraps\NewFolder\img\about\2.jpg" />
-    <Content Include="bootstraps\NewFolder\img\about\3.jpg" />
-    <Content Include="bootstraps\NewFolder\img\about\4.jpg" />
-    <Content Include="bootstraps\NewFolder\img\header-bg %282%29.jpg" />
-    <Content Include="bootstraps\NewFolder\img\header-bg.JPG" />
-    <Content Include="bootstraps\NewFolder\img\header-bgh.jpg" />
-    <Content Include="bootstraps\NewFolder\img\header-bgl.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\aetuts.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\creative-market.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\designmodo.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\envato.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\microlancer.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\themeforest.jpg" />
-    <Content Include="bootstraps\NewFolder\img\logos\wordpress.jpg" />
-    <Content Include="bootstraps\NewFolder\img\map-image.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\dreams-preview.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\dreams.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\escape-preview.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\escape.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\golden-preview.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\golden.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\roundicons-free.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\roundicons.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\startup-framework-preview.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\startup-framework.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\treehouse-preview.png" />
-    <Content Include="bootstraps\NewFolder\img\portfolio\treehouse.png" />
-    <Content Include="bootstraps\NewFolder\img\team\1.jpg" />
-    <Content Include="bootstraps\NewFolder\img\team\2.jpg" />
-    <Content Include="bootstraps\NewFolder\img\team\3.jpg" />
-    <Content Include="bootstraps\NewFolder\img\warehouse-jobs-in-cape-town.jpg" />
-    <Content Include="bootstraps\NewFolder\img\warehouse.jpg" />
-    <Content Include="bootstraps\NewFolder\js\agency.js" />
-    <Content Include="bootstraps\NewFolder\js\agency.min.js" />
-    <Content Include="bootstraps\NewFolder\js\contact_me.js" />
-    <Content Include="bootstraps\NewFolder\js\jqBootstrapValidation.js" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\css\font-awesome.css" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\css\font-awesome.min.css" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="bootstraps\NewFolder\vendor\jquery\jquery.js" />
-    <Content Include="bootstraps\NewFolder\vendor\jquery\jquery.min.js" />
-    <Content Include="Clients\not using\Invoices.aspx" />
-    <Content Include="Clients\not using\Messaging.aspx" />
-    <Content Include="Clients\not using\ReadMessage.aspx" />
-    <Content Include="Clients\ItemsDeclaration.aspx" />
+    <Content Include="Clients\Invoices.aspx" />
+    <Content Include="Clients\Messaging.aspx" />
+    <Content Include="Clients\ReadMessage.aspx" />
     <Content Include="Clients\ViewItemLog.aspx" />
     <Content Include="Customs\AddCountryRelation.aspx" />
     <Content Include="Customs\AddWarehouseMan.aspx" />
     <Content Include="Customs\COfficalsAddition.aspx" />
-    <Content Include="Warehousemanager\TransferRequests.aspx" />
+    <Content Include="Customs\OverallWarehouseInventory.aspx" />
     <Content Include="Customs\WarehouseAddition.aspx" />
     <Content Include="bootstraps\adminlte\bootstrap\css\bootstrap.css" />
     <Content Include="bootstraps\adminlte\bootstrap\css\bootstrap.min.css" />
@@ -1062,19 +1010,17 @@
     <Content Include="bootstraps\client\login\js\index.js" />
     <Content Include="bootstraps\client\promt.js" />
     <Content Include="Clients\ClientItems.aspx" />
-    <Content Include="approvetranfers.aspx" />
+    <Content Include="Clients\declareItems.aspx" />
+    <Content Include="Customs\approvetranfers.aspx" />
     <Content Include="Customs\releaserequests.aspx" />
     <Content Include="Main\Login.aspx" />
     <Content Include="Main\Register.aspx" />
     <Content Include="Main\TheHome.aspx" />
     <Content Include="packages.config" />
     <Content Include="Warehousemanager\AddIncident.aspx" />
-    <Content Include="Clients\ChangeOfOwnership.aspx" />
-    <Content Include="Warehousemanager\not using\Messaging.aspx" />
+    <Content Include="Warehousemanager\ChangeOfOwnership.aspx" />
+    <Content Include="Warehousemanager\Messaging.aspx" />
     <Content Include="Warehousemanager\PendingTransfers.aspx" />
-    <Content Include="Service References\CiroService\Project_Ciro.CiroService.jsonLogin.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\Project_Ciro.CiroService.jsonProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1219,7 +1165,7 @@
     <Content Include="bootstraps\adminlte\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="bootstraps\adminlte\plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="bootstraps\adminlte\README.md" />
-    <Content Include="Warehousemanager\not using\ReadMessage.aspx" />
+    <Content Include="Warehousemanager\ReadMessage.aspx" />
     <Content Include="Warehousemanager\WarehouseItems.aspx" />
     <Content Include="Admin\Administrator.Master" />
     <Content Include="Clients\Client.Master" />
@@ -1241,53 +1187,15 @@
     <Content Include="Service References\CiroService\Project_Ciro.CiroService.transferStock.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="bootstraps\NewFolder\less\agency.less" />
-    <Content Include="bootstraps\NewFolder\less\mixins.less" />
-    <Content Include="bootstraps\NewFolder\less\variables.less" />
-    <Content Include="bootstraps\NewFolder\LICENSE" />
-    <Content Include="bootstraps\NewFolder\mail\contact_me.php" />
-    <Content Include="bootstraps\NewFolder\package.json" />
-    <Content Include="bootstraps\NewFolder\README.md" />
-    <Content Include="bootstraps\NewFolder\scss\agency.scss" />
-    <Content Include="bootstraps\NewFolder\scss\_mixins.scss" />
-    <Content Include="bootstraps\NewFolder\scss\_variables.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="bootstraps\NewFolder\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\animated.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\bordered-pulled.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\core.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\fixed-width.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\font-awesome.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\icons.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\larger.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\list.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\mixins.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\path.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\rotated-flipped.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\screen-reader.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\stacked.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\less\variables.less" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\font-awesome.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_animated.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_core.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_icons.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_larger.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_list.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_mixins.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_path.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_screen-reader.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_stacked.scss" />
-    <Content Include="bootstraps\NewFolder\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Service References\CiroService\Project_Ciro.CiroService.JsonOwnershipReq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\Project_Ciro.CiroService.JsonUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\Project_Ciro.CiroService.JsonInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -5330,33 +5238,26 @@
     <Compile Include="Admin\Clientele.aspx.designer.cs">
       <DependentUpon>Clientele.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Clients\not using\Invoices.aspx.cs">
+    <Compile Include="Clients\Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Clients\not using\Invoices.aspx.designer.cs">
+    <Compile Include="Clients\Invoices.aspx.designer.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Clients\not using\Messaging.aspx.cs">
+    <Compile Include="Clients\Messaging.aspx.cs">
       <DependentUpon>Messaging.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Clients\not using\Messaging.aspx.designer.cs">
+    <Compile Include="Clients\Messaging.aspx.designer.cs">
       <DependentUpon>Messaging.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Clients\not using\ReadMessage.aspx.cs">
+    <Compile Include="Clients\ReadMessage.aspx.cs">
       <DependentUpon>ReadMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Clients\not using\ReadMessage.aspx.designer.cs">
+    <Compile Include="Clients\ReadMessage.aspx.designer.cs">
       <DependentUpon>ReadMessage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Clients\ItemsDeclaration.aspx.cs">
-      <DependentUpon>ItemsDeclaration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Clients\ItemsDeclaration.aspx.designer.cs">
-      <DependentUpon>ItemsDeclaration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clients\ViewItemLog.aspx.cs">
       <DependentUpon>ViewItemLog.aspx</DependentUpon>
@@ -5386,12 +5287,12 @@
     <Compile Include="Customs\COfficalsAddition.aspx.designer.cs">
       <DependentUpon>COfficalsAddition.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Warehousemanager\TransferRequests.aspx.cs">
-      <DependentUpon>TransferRequests.aspx</DependentUpon>
+    <Compile Include="Customs\OverallWarehouseInventory.aspx.cs">
+      <DependentUpon>OverallWarehouseInventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Warehousemanager\TransferRequests.aspx.designer.cs">
-      <DependentUpon>TransferRequests.aspx</DependentUpon>
+    <Compile Include="Customs\OverallWarehouseInventory.aspx.designer.cs">
+      <DependentUpon>OverallWarehouseInventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customs\WarehouseAddition.aspx.cs">
       <DependentUpon>WarehouseAddition.aspx</DependentUpon>
@@ -5416,13 +5317,20 @@
       <DependentUpon>ClientItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clients\ClientProduct.cs" />
+    <Compile Include="Clients\declareItems.aspx.cs">
+      <DependentUpon>declareItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\declareItems.aspx.designer.cs">
+      <DependentUpon>declareItems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clients\signin.cs" />
     <Compile Include="Clients\User.cs" />
-    <Compile Include="approvetranfers.aspx.cs">
+    <Compile Include="Customs\approvetranfers.aspx.cs">
       <DependentUpon>approvetranfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="approvetranfers.aspx.designer.cs">
+    <Compile Include="Customs\approvetranfers.aspx.designer.cs">
       <DependentUpon>approvetranfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customs\Customs.Master.cs">
@@ -5482,18 +5390,18 @@
     <Compile Include="Warehousemanager\AddIncident.aspx.designer.cs">
       <DependentUpon>AddIncident.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Clients\ChangeOfOwnership.aspx.cs">
+    <Compile Include="Warehousemanager\ChangeOfOwnership.aspx.cs">
       <DependentUpon>ChangeOfOwnership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Clients\ChangeOfOwnership.aspx.designer.cs">
+    <Compile Include="Warehousemanager\ChangeOfOwnership.aspx.designer.cs">
       <DependentUpon>ChangeOfOwnership.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Warehousemanager\not using\Messaging.aspx.cs">
+    <Compile Include="Warehousemanager\Messaging.aspx.cs">
       <DependentUpon>Messaging.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Warehousemanager\not using\Messaging.aspx.designer.cs">
+    <Compile Include="Warehousemanager\Messaging.aspx.designer.cs">
       <DependentUpon>Messaging.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\PendingTransfers.aspx.cs">
@@ -5509,11 +5417,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Warehousemanager\not using\ReadMessage.aspx.cs">
+    <Compile Include="Warehousemanager\ReadMessage.aspx.cs">
       <DependentUpon>ReadMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Warehousemanager\not using\ReadMessage.aspx.designer.cs">
+    <Compile Include="Warehousemanager\ReadMessage.aspx.designer.cs">
       <DependentUpon>ReadMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehousemanager\WarehouseItems.aspx.cs">

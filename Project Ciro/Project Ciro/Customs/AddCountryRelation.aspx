@@ -27,37 +27,11 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter..">
-                </div>      
-                  <div class="form-group">
-                  <label>Surname</label>
-                  <input type="text" class="form-control" id="a1" placeholder="Enter ...">
-                </div>       
-                   <div class="form-group">
-                  <label>Attribute D</label>
-                  <input type="text" class="form-control" id="a6" placeholder="Enter ...">
-                </div>        
-                   <div class="form-group">
-                  <label>Attribute E</label>
-                  <input type="text" class="form-control" id="a2" placeholder="Enter ...">
-                </div>                         
-                  <label>Type Of Attribute F</label>
-                 <div class="form-group">                
-                  <select class="form-control">
-                    <option>Select An ... type</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                  </select>               
-                </div>          
+                  <label for="exampleInputEmail1">Add Country Name</label>
+                  <input type="text" runat="server" id="txtName" class="form-control" placeholder="Country">
+                </div>         
                 <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" runat="server" onserverclick="btnAdd" class="btn btn-primary">Add</button>
                 <a href="Clientele.aspx"></a>
               </div>
             </form>

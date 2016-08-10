@@ -11,7 +11,19 @@ namespace Project_Ciro.Customs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["ID"] == null)
+            {
+                Response.Redirect("../Main/Login.aspx");
+            }
+            else if (Session["ID"].Equals(1))
+            {
+                Response.Redirect("../client/ClientItems.aspx");
+            }
+            else if (Session["ID"].Equals(3))
+            {
+                Response.Redirect("../Warehousemanager/WarehouseItems.aspx");
+            }
+            else { }
         }
     }
 }
