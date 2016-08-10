@@ -61,6 +61,7 @@ namespace CiroService
             inUser.lname = user.user_sname;
             inUser.email = user.user_email;
             inUser.usertype = user.usertype_id;
+            inUser.usertypename = user.usertype.usertype_name;
             return inUser;
         }
 
@@ -104,6 +105,7 @@ namespace CiroService
 
         public string transeferRequest(jsonTRequest newRequest)
         {
+            //Fix
             transferrequestsController trans = new transferrequestsController();
             transferrequest newTransfer = new transferrequest();
             warehousestockController stockTable = new warehousestockController();
@@ -116,8 +118,8 @@ namespace CiroService
             newTransfer.transferrequest_product = newRequest.productID;
             newTransfer.transferrequest_to = newRequest.endWarehouse;
             newTransfer.transferrequest_from =warehouseName.warehouse_location;
-            DateTime date = new DateTime();
-            newTransfer.transferrequest_user = date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
+           // DateTime date = new DateTime();
+           // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
             return "Added";
         }
@@ -217,7 +219,16 @@ namespace CiroService
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
             producttypeController pTypeAccess = new producttypeController();
-            var country = countryAccess.getTable().First<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
+            countryrelation country = null;
+            try
+            {
+                country = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
+            }
+            catch (ArgumentNullException x)
+            { }
+                
+            
+            
             int hscode,producttype;
             //add to table with hscode
             if(country != null)
@@ -234,13 +245,17 @@ namespace CiroService
             }
             productController productAccess = new productController();
             billofentryController billAccess = new billofentryController();
+            DateTime date = DateTime.Now;
+            string origin2 = origin;
+            string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
             foreach (var p in newProduct)
             {
-                DateTime date = DateTime.Now;
+                
+          
                 //add products to product table
-                productAccess.addRecord(new product { product_name=p.Name,product_price=p.value,product_location=p.currentLocation,product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
+                productAccess.addRecord(new product { product_name=p.Name,product_price=p.value,product_location="In Transit",product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
                 //adding new product with bill of entry
-                string genCode = p.Name + p.productType + date.Date;
+                
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate==date);
                 billAccess.addRecord(new billofentry {billofentry_origin=origin,billofentry_product=addToBill.product_id,billofentry_user=p.userID,billofentry_code=genCode });
 
@@ -256,32 +271,8 @@ namespace CiroService
                 qrcodeMaker.QRCodeScale = 10;
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-                qrcode.Save(path + "new.jpg", ImageFormat.Jpeg);
+                qrcode.Save(path + qrcodeInfo+".jpg", ImageFormat.Jpeg);
             }
-
-            //Updates needed
-            //add item to product table
-            //productController pTable = new productController();
-            //int count = pTable.getTable().Count();
-            //pTable.addRecord(new product { product_id = count, product_name = newProduct.Name, product_producttype_id = newProduct.productType,product_quantity=1,product_price=newProduct.value,product_arrivalDate=DateTime.Now });
-
-            ////Add Item to Transfer List
-            //transferlistController tTable = new transferlistController();
-            //count = tTable.getTable().Count();
-            //tTable.addRecord(new transferlist { transferlist_id=count,transferlist_from= newProduct.currentLocation,transferlist_to=newProduct.transferLocation});
-
-
-            //Generate QRCode and save
-            //string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\";
-            //string qrcodeInfo = count+"";
-            //QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
-            //qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
-            //qrcodeMaker.QRCodeScale = 10;
-
-
-            //Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-            //qrcode.Save(path+"new.jpg",ImageFormat.Jpeg);
-            //
 
 
         }
@@ -303,7 +294,7 @@ namespace CiroService
             IEnumerable<productlog> incidents = incidentTable.getTable();
             if(newIncident.image == null || newIncident.image.Equals(""))
             {
-                incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = "",  productlog_description = newIncident.description, productlog_id = incidents.Count(),productlog_user=2 });
+                incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = "",  productlog_dscription = newIncident.description, productlog_id = incidents.Count(),productlog_user=2 });
             }
             else
             {   
@@ -314,12 +305,11 @@ namespace CiroService
                 string fileName = path + newIncident.productID + ".jpg";
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
-                incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = "", productlog_id = incidents.Count(), productlog_user = 2 });
+                incidentTable.addRecord(new productlog { productlog_product = newIncident.productID, productlog_image = fileName, productlog_dscription ="", productlog_id = incidents.Count(), productlog_user = 2, });
             }
             return;
         }
 
- 
         //return all warehpuse info for that specific warehouse
         public JsonWarehouse warehouseInfo(string id)
         {
@@ -365,7 +355,6 @@ namespace CiroService
             }
             return items;
         }
-
 
         public string updateUser(string id, JsonUser updateUsr)
         {
@@ -597,37 +586,39 @@ namespace CiroService
             var userExists = userAccess.getTable().FirstOrDefault<user>(c => c.user_id == billExists.billofentry_user);
             var productlogAccess = new productlogController();
             productlog log = new productlog();
+            DateTime date = DateTime.Now;
+            log.productlog_dateLogged = date;
             log.productlog_product = Convert.ToInt32(billExists.billofentry_product);
             if(code == "I9")
             {
-                log.productlog_description = "Incident (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_dscription = "Incident (@ " + date + "): " + productlog.description;
                 productlogAccess.addRecord(log);
-                emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, "We at Ciro would like to inform you about your package. The following log as been updated on the state of your package:" + System.Environment.NewLine + System.Environment.NewLine + log.productlog_description, "An Updated Log on your Package");
+                emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, "We at Ciro would like to inform you about your package. The following log as been updated on the state of your package:" + System.Environment.NewLine + System.Environment.NewLine + log.productlog_dscription, "An Updated Log on your Package");
                 return "I9 report added to log";
             }
             else if (code == "TR7")
             {
-                log.productlog_description = "Transfer Request (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_dscription = "Transfer Request (@ " + date + "): " + productlog.description;
                 productlogAccess.addRecord(log);
                 return "TR7 report added to log";
             }
             else if (code == "RR6")
             {
-                log.productlog_description = "Release Request (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_dscription = "Release Request (@ " + date + "): " + productlog.description;
                 productlogAccess.addRecord(log);
                 return "RR6 report added to log";
             }
             else if (code == "T2")
             {
-                log.productlog_description = "Transfer (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_dscription = "Transfer (@ " + date + "): " + productlog.description;
                 productlogAccess.addRecord(log);
                 return "T2 report added to log";
             }
             else if (code == "D3")
             {
-                log.productlog_description = "Delivered (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_dscription = "Delivered (@ " + date + "): " + productlog.description;
                 productlogAccess.addRecord(log);
-                emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, "We at Ciro would like to inform you about your package. The following log as been updated on the state of your package:" + System.Environment.NewLine + System.Environment.NewLine + log.productlog_description, "Delivery of Package");
+                emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, "We at Ciro would like to inform you about your package. The following log as been updated on the state of your package:" + System.Environment.NewLine + System.Environment.NewLine + log.productlog_dscription, "Delivery of Package");
                 return "D3 report added to log";
             }
             else
@@ -639,9 +630,17 @@ namespace CiroService
         public IEnumerable<JsonProductLog> getProductLog(jsonProduct product)
         {
             var logAccess = new productlogController();
-            List<productlog> logExists = logAccess.getTable().Where<productlog>(c => c.productlog_product == Convert.ToInt32(product.ID)).ToList<productlog>();
+            IEnumerable<productlog> logExists = null;
+            try
+            {
+                logExists = logAccess.getTable().Where(c =>c.productlog_product==product.ID);
+                MessageBox.Show(""+logExists.Count());
+            }
+            catch (Exception x)
+            { }
+            
 
-            if (logExists.Count() == 0)
+            if (logExists == null)
             {
                 return null;
             }
@@ -649,9 +648,9 @@ namespace CiroService
             List<JsonProductLog> productLogList = new List<JsonProductLog>();
             foreach (productlog log in logExists)
             {
-                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_description});
+                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription,});
             }
-
+           // productLogList.Sort<JsonProductLog>((x,y)=> );
             return productLogList;
         }
 

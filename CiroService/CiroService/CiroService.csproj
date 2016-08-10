@@ -132,6 +132,10 @@
       <DependentUpon>CiroDatabase.edmx</DependentUpon>
       <LastGenOutput>CiroDatabase.cs</LastGenOutput>
     </Content>
+    <Content Include="images\17.jpg" />
+    <Content Include="images\18.jpg" />
+    <Content Include="images\19.jpg" />
+    <Content Include="images\20.jpg" />
     <Content Include="images\img.jpg" />
     <Content Include="images\incidents\1.jpg" />
     <Content Include="images\new.jpg" />

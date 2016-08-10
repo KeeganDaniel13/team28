@@ -1,9 +1,7 @@
 [user]
-	name = JoshuaKinnear95
-	email = JoshuaKinnear.jk@gmail.com
+	name = El-Tigree
+	email = tshenolopooe@gmail.com
 [credentials]
 	helper = store
-[https]
-[http]
 [credential]
 	helper = cache --timeout=3600
