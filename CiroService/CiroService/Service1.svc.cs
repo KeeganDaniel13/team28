@@ -945,7 +945,7 @@ namespace CiroService
         public JsonWarehouse getWarehouseI(JsonWarehouse warehouses)
         {
             var warehouseAccess = new warehouseController();
-            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name == warehouses.name);
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name == warehouses.name || w.warehouse_id == warehouses.id);
             if(warehouseExists == null)
             {
                 return null;

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="releaserequests.aspx.cs" Inherits="Project_Ciro.Customs.releaserequests" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Content Wrapper. Contains page content -->
@@ -8,7 +8,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Release Requests
+        Transfer Requests
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -25,9 +25,14 @@
         <div class="col-md-3" style="width:100%">          
 
           <div class="box box-solid" >
-            <div class="box-tools">
-                </div>
+            
+
+              <div class="box-tools">
+                
+
+            </div>
           
+                        <!-- /. box -->
           <div class="box box-solid" >
             <div class="box-header with-border">
               <h3 class="box-title">Package Status</h3>
@@ -39,33 +44,27 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <ul style="white-space:nowrap";>
-                <li style="display:inline"><a href="#" style="color:black"><i class="fa fa-circle text-red" style="color:black"></i>Unpaid</a></li>           
-                <li style="display:inline; margin-left: 35%"><a href="#" style="color:black"><i class="fa fa-circle text-yellow "></i> Unchecked</a></li>
-                  <li style="display:inline;margin-left: 35%"> <a href="#" style="color:black"><i class="fa fa-circle text-green"></i> Paid</a></li>
+              <ul class="nav nav-pills nav-stacked">
+                <li style="width:10%"><a href="#"><i class="fa fa-circle text-red"></i>Unpaid</a></li>           
+                <li style="margin-left:45%;width:12%; margin-top:-3%"><a href="#"><i class="fa fa-circle text-yellow "></i> Unchecked</a></li>
+                  <li style="width:12%;margin-left:85%; margin-top:-3%"> <a href="#"><i class="fa fa-circle text-green"></i> Paid</a></li>
               </ul>
-
-
-                
-
             </div>
-
             <!-- /.box-body -->
           </div>
+          <!-- /.box -->
+            <!-- /.box-body -->
           </div>
-          <table style="width:100%">
-
-                   <%listrequests(); %>
-
-</table>
+          <!-- /. box -->
+          <!-- /.box -->
         </div>
      
 
 
           <br />
 
-               
-            <!--       <tr>
+               <table>
+                   <tr>
                        <td>
         <div class="col-md-3" style="width:100%">
           
@@ -74,23 +73,23 @@
               <h3 class="box-title" style="margin-left:40%">#531645</h3>
             </div>
             <div class="box-body">
-           <div class="form-group" style="margin-left:2%;margin-right:2%">
-                  <label for="exampleInputEmail1">User</label>
-                  <input type="email" runat="server" class="form-control" id="newOwner" placeholder="Enter email">
-                </div>
-                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product</label>
-                  <input type="email" runat="server" class="form-control" id="Email1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Expiration Date</label>
-                  <input type="email" runat="server" class="form-control" id="Email2" placeholder="Enter email">
-                </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
             </div>
            <div class="box-footer">
               <form action="#" method="post">
                 <div class="input-group">
                   <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success btn-flat">Release</button>
                       </span>
@@ -99,8 +98,254 @@
             </div>
           </div>
         </div>
-                       </td>     
-                       </tr>               -->                                                           
+                       </td>
+                        <td>
+      <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-warning direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+            <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+                          <td>
+       <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-success direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+           <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+                          <td>
+       <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-danger direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+           <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+
+                </tr>
+                         <tr>
+                       <td>
+        <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-danger direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+            <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+                        <td>
+      <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-danger direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+           <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+                          <td>
+       <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-danger direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+           <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+                          <td>
+       <div class="col-md-3" style="width:100%">
+          
+          <div class="box box-danger direct-chat direct-chat-success">
+            <div class="box-header with-border" >
+              <h3 class="box-title" style="margin-left:40%">#531645</h3>
+            </div>
+            <div class="box-body">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+                <br/>
+
+
+            </div>
+           <div class="box-footer">
+              <form action="#" method="post">
+                <div class="input-group">
+                  <button type="submit" class="btn btn-danger btn-flat" style="width:42%">Reject</button>
+                    <button type="submit"  class="btn btn-warning" style="margin-left:7%; width:45%">Check</button>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-flat">Release</button>
+                      </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+                       </td>
+
+                </tr>
+                    
+</table>   
+
+
 
 
 

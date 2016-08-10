@@ -88,10 +88,9 @@ hr.style-one {
     <section class="content-header">
       <h1>
        Your Items
-        <small></small>  
-          <input type="text" id="wareto" hidden runat="server"/>
+        <small></small>
       </h1>
-        <br/>      
+        <br/>
       <ol class="breadcrumb">
         <li><a href="Home.aspx"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active"><a href="#">Tables</a></li>
@@ -106,38 +105,34 @@ hr.style-one {
           <div class="box">           
             <!-- /.box-header -->
             <div class="box-body">
-
-                <div id="testet" runat="server">
-
-                </div>
-
-
                 <br/>
                <table id="example1" class="table table-bordered table-striped">
                 <thead>
-               <tr>
+                <tr>
                   <th>Product</th>
-                  <th>Price</th>                                   
-                   <th>Quantity</th>
-                  <th>Current Location</th>
-                  <th>Expiration Date</th>
-                  <th></th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Size</th>
+                  <th>Location</th>
+                  <th>Arrival</th>
+                    <th></th>
+                </tr>
                 </thead>
-                 <tbody>                    
-          <%ListClientItems();%> 
+                 <tbody>               
+          <%ListClientItems();%>
                      </tbody>
                   <tfoot>
                 <tr>
                   <th>Product</th>
                   <th>Price</th>
-                    <th>Quantity</th>                                   
-                  <th>Current Location</th>
-                  <th>Expiration Date</th>
-                  <th></th>
+                  <th>Quantity</th>
+                  <th>Size</th>
+                  <th>Location</th>
+                  <th>Arrival</th>
                 </tr>
                 </tfoot>
               </table>
-                <br/>                
+                <br/>
             </div>
             <!-- /.box-body -->
           </div>
@@ -152,15 +147,13 @@ hr.style-one {
   <!-- /.content-wrapper -->
 
 
-   
-
 
       <div id="popup1" class="overlay" >
          <div class="popup1" style="width:30%; margin-left:40%; margin-top:5%">		
           <div class="box box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Select A Warehouse</h3>
-                <br />
+
               <div class="box-tools">
                 <a href="#" type="button" class="btn btn-box-tool" ><i class="fa fa-close"></i>
                 </a>
@@ -172,28 +165,130 @@ hr.style-one {
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>Warehouse</th>
-                   <th>Location</th>
                   <th>Capacity</th>
                   <th style="width: 40px">%</th>
-                </tr>  
-                   <%ListWarehouses(); %>   
-              </table>
-                <br />
-                 <div class="form-group">
-                  <label>Description</label>
-                  <textarea runat="server" id="txtdescription" class="form-control" rows="3" placeholder="Enter Description Here"></textarea>
-                     <input type="text" runat="server" id="transferid" >             
-                </div>             
-                <button runat="server" onserverclick="requesttransfer" type="button" class="btn btn-primary">Accept</button>                
-                <br/>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Update software</a></td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-green">55%</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td><a href="#" id="dickpick" onclick="myFunction(this.id)">Clean database</a></td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Cron job running</a></td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-success" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-green">30%</span></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Fix and squish bugs</a></td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-danger" style="width: 90%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">90%</span></td>
+                </tr>
+                      <tr>
+                  <td>1.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Update software</a></td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-green">55%</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Clean database</a></td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Cron job running</a></td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-success" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light-green">30%</span></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Fix and squish bugs</a></td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-danger" style="width: 90%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-red">90%</span></td>
+                </tr>
+                    <tr>
+                  <td>1.</td>
+                  <td><a href="#" id="flippy" onclick="myFunction(this.id)">Update software</a></td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-success" style="width: 55%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-green">55%</span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Clean database</td>
+                  <td>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-yellow">70%</span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Cron job running</td>
+                  <td>
+                    <div class="progress progress-xs progress-striped active">
+                      <div class="progress-bar progress-bar-success" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-green">30%</span></td>
+                </tr>               
+              </table> 
+                <a href="#"></a>
             </div>
-              <br />
           </div>
        
 </div>
 
      </div>
 
+    
+    
       <div id="ownership" class="overlay" >
          <div class="popup1" style="width:30%; margin-left:40%; margin-top:5%">		
           <div class="box box-solid">
@@ -207,12 +302,18 @@ hr.style-one {
               <br/>
             <div class="box-body no-padding" style="margin-left:2%;margin-right:2%">
              <div class="form-group">
-                  <label for="exampleInputEmail1">New Owner Email</label>
-                  <input type="email" runat="server" class="form-control" id="newOwner" placeholder="Enter email">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="Email" placeholder="Enter email">
                 </div>
-                  <input type="text" runat="server" id="pidcoa" hidden>                 
-
-                <a href="#" type="submit" runat="server" id="accept" onserverclick="changeOwnership" class="btn btn-primary">Accept</a>                 
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="email" class="form-control" id="Name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Surname</label>
+                  <input type="email" class="form-control" id="Surname" placeholder="Enter Surname">
+                </div>
+                <a href="#" type="submit" class="btn btn-primary">Accept</a>  
                 <br/>              
             </div>
               <br />
@@ -223,35 +324,6 @@ hr.style-one {
      </div>
 
     
-
-       <div id="release" class="overlay" >
-         <div class="popup1" style="width:30%; margin-left:40%; margin-top:5%">		
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">WARNING !</h3>                
-              <div class="box-tools">
-                <a href="#" type="button" class="btn btn-box-tool" ><i class="fa fa-close"></i>
-                </a>
-              </div>
-            </div>
-              <br/>
-            <div class="box-body no-padding" style="margin-left:2%;margin-right:2%">
-             <div class="form-group">
-                 <p>PLEASE MAKE SURE YOUR PACKAGE IS AT THE REQUESTED WAREHOUSE BEFORE REQUESTING THE RELEASE</p>
-                </div>
-                  <input type="text" runat="server" id="releaseID" hidden>                 
-
-                <a href="#" type="submit" runat="server" id="a1" onserverclick="releasepackage" class="btn btn-primary">Continue</a>                 
-                <a href="#" type="submit" runat="server" id="a2" class="btn btn-danger">Cancel</a>                 
-                <br/>              
-            </div>
-              <br />
-          </div>
-       
-</div>
-
-     </div>
-
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -260,30 +332,19 @@ hr.style-one {
     <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
-     <script type="text/javascript">
-         function warehouseSelection(warehouseID) {   
-             $('#<%=wareto.ClientID%>').val(warehouseID);
-    
-         }
 
-         function changeOwnership(prodid)
-         {
-             $('#<%=pidcoa.ClientID%>').val(prodid);        
-         }
-        
-         function release(prodid)
-         {
-             $('#<%=releaseID.ClientID%>').val(prodid);
-         }
+    <script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
 
-         function transfer(prodid)
-         {
-             $('#<%=transferid.ClientID%>').val(prodid);             
-         }
-
-     function scrollup() {   
-         $('html,body').animate({ scrollTop: 0 }, 'fast');        
-         
-     }
+  });
 </script>
 </asp:Content>
