@@ -96,7 +96,7 @@ namespace CiroService
                 return "Email Already Registered";
             }
             
-            user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = 1, user_id = userstable.getTable().Count() };
+            user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = regUser.usertype, user_id = userstable.getTable().Count() };
     
             userstable.addRecord(newUser);
                      //emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
@@ -917,7 +917,7 @@ namespace CiroService
         public IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses)
         {
             var warehouseAccess = new warehouseController();
-            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower());
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower() || w.warehouse_id == warehouses.id);
 
             if(warehouseExists == null)
             {

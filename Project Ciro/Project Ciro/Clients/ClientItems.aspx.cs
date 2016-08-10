@@ -15,14 +15,6 @@ namespace Project_Ciro.Clients
         }
           protected void ListClientItems()
       {
-          var serve = new CiroService.Service1Client();
-          List<CiroService.jsonProduct> json = serve.clientProducts(Session["ID"].ToString()).ToList<CiroService.jsonProduct>();
-          string tablecontents = "";
-          foreach (CiroService.jsonProduct v in json)
-          {
-              tablecontents += "<tr><td>"+ v.Name + "</td><td>" + v.value + "</td><td>" + v.quantity + "</td><td>" + v.size + "</td><td>" + v.currentLocation + "</td><td>" + v.arrivalDate + "</tr>";
-          }
-          Response.Write(tablecontents); 
       }
     }
 }

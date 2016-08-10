@@ -13,5 +13,16 @@ namespace Project_Ciro.Customs
         {
 
         }
+
+        protected void btnAdd(object sender, EventArgs e)
+        {
+            var server = new CiroService.Service1Client();
+
+            if (txtPassword.Value == txtConfirm.Value)
+            {
+                var user = server.register(new CiroService.JsonUser { fname = txtName.Value, lname = txtSurname.Value, email = txtEmail.Value, password = txtPassword.Value, usertype = 3 });
+                Response.Redirect("Warehouses.aspx");
+            }
+        }
     }
 }
