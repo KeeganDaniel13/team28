@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="recyclerviewenhanced-1.0.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.nikhilpanju.recyclerviewenhanced/recyclerviewenhanced/1.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.nikhilpanju.recyclerviewenhanced/recyclerviewenhanced/1.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nikhilpanju.recyclerviewenhanced/recyclerviewenhanced/1.0.0/b414db240ca4a28fb6318a2fd1d8d1487e0215b9/recyclerviewenhanced-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
