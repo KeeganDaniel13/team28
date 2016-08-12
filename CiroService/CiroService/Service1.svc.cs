@@ -962,6 +962,37 @@ namespace CiroService
             return nUser;
         }
 
+        public string sendMessage(string from, string to, string message)
+        {
+            //string result = "Not Sent:User Not found";
+           // var messageAccess = new messageController();
+           // var user 
+            return "";
+        }
+
+        public IEnumerable<jsonmessage> getMessage(string ID)
+        {
+            List<jsonmessage> messages =new List<jsonmessage>();
+
+            IEnumerable<message> messagesTable = null;
+            try
+            {
+                messagesTable = new messageController().getTable().Where(c => c.message_to==Convert.ToInt32(ID));
+            }
+            catch (Exception x)
+            { }
+            if(messagesTable != null)
+            {
+            
+                foreach (var mess in messagesTable)
+                {
+             
+                        messages.Add(new jsonmessage { to = mess.user.user_email, from = mess.user1.user_email, date = DateTime.Parse(mess.message_stamp.ToString()) });                       
+                }
+            }
+            return messages;
+        }
+
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();
