@@ -1,0 +1,63 @@
+{
+	"ownership": [{
+			"title": "Company General Transfer",
+			"description": "Ownership transferred from Sasol to Shell petroleum company",
+			"dietLabel": "Accepted Ownership"
+
+		},
+
+		{
+			"title": "Company Special Transfer",
+			"description": "Ownership transferred from Discovery to BP Invenst company",
+			"dietLabel": "Pending Transfer"
+		},
+
+		{
+			"title": "Individual Special Transfer",
+			"description": "Ownership transferred from user 3 to user 9 petroleum company",
+			"dietLabel": "Pending Ownership"
+		},
+
+		{
+			"title": "Company General Transfer",
+			"description": "Ownership transferred from Investec to Shell petroleum company",
+			"dietLabel": "Accepted Ownership"
+		},
+
+		{
+			"title": "Individual Transfer",
+			"description": "Ownership transferred from User 17 to user 7 petroleum company",
+			"dietLabel": "Accepted Ownership"
+		},
+
+		{
+			"title": "Individual Special Transfer",
+			"description": "Ownership transferred from user 8 to user 4 petroleum company",
+			"dietLabel": "Pending Transfer"
+		},
+
+		{
+			"title": "Company Company Transfer",
+			"description": "Ownership transferred from Sasol to BP petroleum company",
+			"dietLabel": "Pending Transfer"
+		},
+
+		{
+			"title": "Company Transfer",
+			"description": "Ownership transferred from Total to Sasal petroleum company",
+			"dietLabel": "Accepted Ownership"
+		},
+
+		{
+			"title": "Individual Transfer",
+			"description": "Ownership transferred from User 5 to User 23 petroleum company",
+			"dietLabel": "Accepted Ownership"
+		},
+
+		{
+			"title": "Individual Special Transfer",
+			"description": "Ownership transferred from User 4 to Shell petroleum company",
+			"dietLabel": "Pending Transfer"
+		}
+	]
+}

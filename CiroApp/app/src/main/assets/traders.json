@@ -1,0 +1,63 @@
+{
+	"traders": [{
+			"title": "John Snow",
+			"description": "Beit Bridge",
+			"dietLabel": "Durban Ledge"
+
+		},
+
+		{
+			"title": "Rob Stark",
+			"description": "Caledonspoort",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Vince Chase",
+			"description": "Ficksburg Bridge",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Johnny Drama",
+			"description": "Golela",
+			"dietLabel": "Durban"
+		},
+
+		{
+			"title": "Thad Castle",
+			"description": "Jeppes Ridge",
+			"dietLabel": "Kempton"
+		},
+
+		{
+			"title": "Alex Moren",
+			"description": "Klopfontein",
+			"dietLabel": "OR Tambo"
+		},
+
+		{
+			"title": "Sammy Cardoso",
+			"description": "Mahamba",
+			"dietLabel": "OR Tambo"
+		},
+
+		{
+			"title": "Raydon Randell",
+			"description": "Maseru Ridge",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Yusuf Seedat",
+			"description": "NAKOP",
+			"dietLabel": "Eastern Cape"
+		},
+
+		{
+			"title": "Shaheed McPherson",
+			"description": "Oshoek",
+			"dietLabel": "Mpumalanga Bond"
+		}
+	]
+}
