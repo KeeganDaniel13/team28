@@ -48,6 +48,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +131,52 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonOwnershipReq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProducts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonWarehouse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.TransferDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.transferStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CiroService\Service1.wsdl" />
+    <None Include="Service References\CiroService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CiroService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CiroService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -247,6 +295,13 @@
     <Content Include="password-forgot.aspx" />
     <Content Include="productlog.aspx" />
     <Content Include="release.aspx" />
+    <None Include="Service References\CiroService\Service1.disco" />
+    <None Include="Service References\CiroService\configuration91.svcinfo" />
+    <None Include="Service References\CiroService\configuration.svcinfo" />
+    <None Include="Service References\CiroService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="transfergoods.aspx" />
@@ -288,6 +343,7 @@
     <Compile Include="changeofownership.aspx.designer.cs">
       <DependentUpon>changeofownership.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangeUser.cs" />
     <Compile Include="ciro.Master.cs">
       <DependentUpon>ciro.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,6 +351,7 @@
     <Compile Include="ciro.Master.designer.cs">
       <DependentUpon>ciro.Master</DependentUpon>
     </Compile>
+    <Compile Include="CiroSingleton.cs" />
     <Compile Include="clientinventory.aspx.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,6 +437,11 @@
     <Compile Include="release.aspx.designer.cs">
       <DependentUpon>release.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CiroService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -394,6 +456,7 @@
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TransferForm.cs" />
     <Compile Include="transfergoods.aspx.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -455,6 +518,12 @@
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
     <Folder Include="trader\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CiroService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

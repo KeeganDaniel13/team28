@@ -13,5 +13,10 @@ namespace CiroWebsite
         {
 
         }
+
+        protected void addOfficial(object sender,EventArgs e)
+        {
+            CiroSingleton.ServerCalls.register(new CiroService.JsonUser { fname =name.Value ,lname=surname.Value,email =name.Value+"@gmail",password =name.Value ,usertype =2});
+        }
     }
 }

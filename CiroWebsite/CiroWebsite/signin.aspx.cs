@@ -13,5 +13,33 @@ namespace CiroWebsite
         {
 
         }
+
+        protected void login(object sender, EventArgs e)
+        {
+            var server = new CiroService.Service1Client();
+            var user = server.login(new CiroService.jsonLoginUser { name = email.Value, password = pass.Value });
+
+            if (user == null)
+            {
+                wrong.Visible = true;
+            }
+            else
+            {
+                Session["user"] = user;
+                if (user.usertypename.ToLower().Equals("client"))
+                {
+                    Response.Redirect("clientinventory.aspx");
+                }
+                else if (user.usertypename.ToLower().Equals("custom"))
+                {
+                    
+                    Response.Redirect("../Customs/Warehouses.aspx");
+                }
+                else if(user.usertypename.ToLower ().Equals("admin"))
+                {
+                    Response.Redirect("dashboard.aspx");
+                }
+            }
+        }
     }
 }
