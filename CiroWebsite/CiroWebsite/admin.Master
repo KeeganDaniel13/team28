@@ -92,7 +92,7 @@
 		<div id="aside-scroll-inner" class="aside-scroll-inner">
 			<ul class="aside-menu aside-left-menu">
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="dashboard.aspx" class="menu-link">
 						<span class="menu-icon"><i class="zmdi zmdi-view-dashboard zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Dashboard</span>
 						
@@ -101,7 +101,7 @@
 				</li><!-- .menu-item -->
 				
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="user.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-user zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">View Users</span>
 						
@@ -110,7 +110,7 @@
 				</li><!-- .menu-item -->
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="licensewarehouse.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-registered zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">License Warehouse</span>
 						
@@ -119,17 +119,16 @@
 				</li><!-- .menu-item -->
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="addofficial.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-user-plus zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Register Officials</span>
-						
 					</a>
 					
 				</li><!-- .menu-item -->
 				
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="javascript:void(0)" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
