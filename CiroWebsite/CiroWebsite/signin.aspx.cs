@@ -33,7 +33,7 @@ namespace CiroWebsite
                 else if (user.usertypename.ToLower().Equals("custom"))
                 {
                     
-                    Response.Redirect("../Customs/Warehouses.aspx");
+                    Response.Redirect("customs.aspx");
                 }
                 else if(user.usertypename.ToLower ().Equals("admin"))
                 {

@@ -9,31 +9,104 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-	<form >
-        <div class="form-inline" style="margin:20px;" >
-		<div class="form-group">
-			<label for="exampleInputName2">Name</label>
-			<input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-		</div>
-		<div class="form-group">
-			<label for="exampleInputEmail2">Email</label>
-			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-		</div>
+	<form>
+        <div class="col-md-6">
+				<div class="widget">
+					<header class="widget-header">
+						<h4 class="widget-title">Declaration Information</h4>
+					</header>
+					<hr class="widget-separator">
+					<div class="widget-body">						
+                          <form>
+							<div class="form-group">
+								<label for="exampleTextInput1" class="col-sm-3 control-label">Product name</label>
+								<div class="col-sm-9">
+									<input type="text" runat="server" class="form-control" id="productName" placeholder="Product name"/>
+								</div>
+							</div>
+                              <br/>
+							<div class="form-group">
+								<label for="value" class="col-sm-3 control-label">Product Value</label>
+								<div class="col-sm-9">
+									<input type="text" runat="server" class="form-control" id="productValue" placeholder="Product Value"/>
+								</div>
+							</div>
+                              <br/>
+							<div class="form-group">
+								<label for="Warehouse" class="col-sm-3 control-label">Select Warehouse</label>
+								<div class="col-sm-9"">
+						<a href="#" data-toggle="modal" data-target="#composeModal">
+                                   <input type="text" runat="server" class="form-control" id="WarehouseName" placeholder="Warehouse"/></a>
+					</div>
+                                <br />
+							</div>	
+                              <div class="form-group">				
+							<button type="submit"  class="btn btn-primary btn-md" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Save</button>
+                                  </div>
+						</form>						
+					</div>
+				</div>
+			</div>
+                <div class="col-md-6">
+				<div class="widget">
+					<header class="widget-header">
+						<h4 class="widget-title">Saved Items</h4>
+					</header>
+					<hr class="widget-separator">
+					<div class="widget-body">												
+					<table class="table table-striped">
+						<tr>
+                            <th>#</th><th>Product Name</th>
+                            <th>Value</th>
+                            <th>Warehouse</th>
+                            <th>Remove</th>		
+                        </tr>
+                        <% listItems(); %>
+					</table>
 
-            </div>
-        <div class="form-inline" style="margin:20px;">
-		<div class="form-group">
-			<label for="exampleInputName2">Name</label>
-			<input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-		</div>
-		<div class="form-group">
-			<label for="exampleInputEmail2">Email</label>
-			<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-		</div>
-
-            </div>
-       
-	</form>
-     <input type="submit" runat="server" onserverclick="dothis" value="submit"  />
-      
+							<br/>
+							<button type="submit"  class="btn btn-primary btn-md" onserverclick="declareItems" runat="server">Save</button>
+				
+					</div>
+				</div>
+			</div>
+		
+</form>
+<!-- Compose modal -->
+<div class="modal fade" id="composeModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Warehouse</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+                <tr>
+                  <th>Select</th>
+                  <th style="width: 10px">#</th>
+                  <th>Warehouse</th>
+                   <th>Location</th>
+                  <th>Capacity</th>
+                  <th style="width: 40px">%</th>
+                </tr>  
+                   <%ListWarehouses(); %>   
+              </table>                                
+                <br/>
+               <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                <br/>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <script type="text/javascript">
+        function saveWarehouse(id, name)
+        {
+            $('#<%=WarehouseName.ClientID%>').val(name);
+        }
+        function remove(id)
+        {
+            alert(id);
+        }
+    </script>
 </asp:Content>

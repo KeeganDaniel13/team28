@@ -100,86 +100,7 @@
 					<table class="table mail-list">
 						<tr>
 							<td>
-								<!-- a single mail -->
-								<div class="mail-item">
-									<table class="mail-container">
-										<tr>
-											<td class="mail-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="#"><img src="../infinity/assets/images/208.jpg" alt="sender photo"></a>
-												</div>
-											</td>
-											<td class="mail-center">
-												<div class="mail-item-header">
-													<h4 class="mail-item-title"><a href="mail-view.html" class="title-color">Welcome To Dashboard</a></h4>
-													<a href="#"><span class="label label-success">client</span></a>
-													<a href="#"><span class="label label-primary">work</span></a>
-												</div>
-												<p class="mail-item-excerpt">Welcome To your dashboard. here you can manage and coordinate any activities</p>
-											</td>
-											<td class="mail-right">
-												<p class="mail-item-date">2 hours ago</p>
-												<p class="mail-item-star starred">
-													<a href="#"><i class="zmdi zmdi-star"></i></a>
-												</p>
-											</td>
-										</tr>
-									</table>
-								</div><!-- END mail-item -->
-
-								<!-- a single mail -->
-								<div class="mail-item">
-									<table class="mail-container">
-										<tr>
-											<td class="mail-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="#"><img src="../infinity/assets/images/209.jpg" alt="sender photo"></a>
-												</div>
-											</td>
-											<td class="mail-center">
-												<div class="mail-item-header">
-													<h4 class="mail-item-title"><a href="mail-view.html" class="title-color">Account Activity</a></h4>
-													<a href="#"><span class="label label-warning">personal</span></a>
-												</div>
-												<p class="mail-item-excerpt">A login activity detected from unusual location. please check this mail</p>
-											</td>
-											<td class="mail-right">
-												<p class="mail-item-date">1 minute ago</p>
-												<p class="mail-item-star">
-													<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-												</p>
-											</td>
-										</tr>
-									</table>
-								</div><!-- END mail-item -->
-
-								<!-- a single mail -->
-								<div class="mail-item">
-									<table class="mail-container">
-										<tr>
-											<td class="mail-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="#"><img src="../infinity/assets/images/210.jpg" alt="sender photo"></a>
-												</div>
-											</td>
-											<td class="mail-center">
-												<div class="mail-item-header">
-													<h4 class="mail-item-title"><a href="mail-view.html" class="title-color">Sales Report 2014</a></h4>
-													<a href="#"><span class="label label-primary">work</span></a>
-												</div>
-												<p class="mail-item-excerpt">Lorem ipsum. ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, accusamus</p>
-											</td>
-											<td class="mail-right">
-												<p class="mail-item-date">2 hours ago</p>
-												<p class="mail-item-star">
-													<a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-												</p>
-											</td>
-										</tr>
-									</table>
-								</div><!-- END mail-item -->
-
-								
+								<%listMessages(); %>	
 							</td>
 						</tr>
 					</table>
@@ -200,13 +121,13 @@
 			<div class="modal-body">
 				<form action="#">
 					<div class="form-group">
-						<input name="mail_from_field" id="mail_from_field" type="text" class="form-control" placeholder="from">
+						<input runat="server" name="from" id="from" type="text" class="form-control" placeholder="from">
 					</div>
 					<div class="form-group">
-						<input name="mail_to_field" id="mail_to_field" type="text" class="form-control" placeholder="to">
+						<input runat="server" name="from" id="to" type="text" class="form-control" placeholder="to">
 					</div>
 					<div class="form-group">
-						<input name="mail_subject_field" id="mail_subject_field" type="text" class="form-control" placeholder="subject">
+						<input name="mail_subject_field" id="subject" type="text" class="form-control" placeholder="subject">
 					</div>
 					<textarea name="mail_body_field" id="mail_body_field" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
 				</form>
@@ -214,7 +135,7 @@
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn btn-danger"><i class="fa fa-trash"></i></button>
 				<button type="button" data-dismiss="modal" class="btn btn-success"><i class="fa fa-save"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
+				<button type="button" runat="server" onserverclick="sendMail" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

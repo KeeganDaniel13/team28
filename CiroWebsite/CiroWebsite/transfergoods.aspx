@@ -259,58 +259,12 @@ span.round-tab:hover {
                     <h3>Transfer Ownership Document</h3>
                     <p>If you wish to transfer your ownership to another partner complete the following</p>
            <table>
-           <td>
-                 <table class="table" style="width:350px">
-            <tr>
-                <th colspan="5">
-                    <b>
-                        Lanseria Bondage</b>
-                </th>
-					
-            </tr>
-            <tr>
-                <td colspan="5">
-				<img src="out.jpg" alt="Mountain View" style="width:100px;height:100px;">
-					
-				<div style="float:right;">
-                    Gauteng Pretoria<br/>
-                    Special Warehouse (SOS)<br />
-                    Status : Open<br/>
-					Created on: <br/>
-					<button type="button" class="btn btn-outline mw-md rounded btn-success btn-xs">View warehouse</button>
-					</div>
-                </td>
-            </tr>
-       </table>	
-               </td>
-               <td>
-        <table class="table" style="width:350px; float:right;">
-               <tr>
-                <th colspan="5">
-                    <b>
-                        Lanseria Bondage</b>
-                </th>
-					
-            </tr>
-            <tr>
-                <td colspan="5">
-				<img src="out.jpg" alt="Mountain View" style="width:100px;height:100px;">
-					
-				<div style="float:right;">
-                    Gauteng Pretoria<br/>
-                    Special Warehouse (SOS)<br />
-                    Status : Open<br/>
-					Created on: <br/>
-					<button type="button" class="btn btn-outline mw-md rounded btn-success btn-xs">View warehouse</button>
-					</div>
-                </td>
-            </tr>
-                </table>   
-                   </td>
+
+               <%listwarehouse(); %>
                </table>
   	
                     <ul class="list-inline pull-right">
-                        <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        <li><a type="button" class="btn btn-primary next-step">Save and continue</a></li>
                     </ul>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="step2">
@@ -325,18 +279,18 @@ span.round-tab:hover {
                         <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Container</label><br />
-							<input type="text" class="form-control" id="goodsContainer" placeholder="Enter Container 0 or 1" style="width: 300px;">
+							<input runat="server" type="text" class="form-control" id="goodsContainer" placeholder="Enter Container 0 or 1" style="width: 300px;">
 						</div>
 						<div class="form-group ">
 							<label  for="exampleInputPassword3">Origin</label><br />
-							<input type="text" class="form-control" id="origincountry" placeholder="Country Of Orgin" style="width: 400px;">
+							<input runat="server"  type="text" class="form-control" id="origincountry" placeholder="Country Of Orgin" style="width: 400px;">
 						</div>
 						</div>
                         <div class="form-inline" >
 						<div class="form-group">
 							<label  for="exampleInputEmail3">Mode Of Transport</label><br/>
 							
-							<select class="form-control" style="width: 300px;">
+							<select class="form-control" runat="server" id="transport" style="width: 300px;">
 								<option>Air Transport</option>
 								<option>Sea Transport</option>
 								<option>Powered Road Vehicle</option>
@@ -347,13 +301,13 @@ span.round-tab:hover {
 						</div>
 						<div class="form-group">
 							<label  for="exampleInputPassword3">Net Mass(kg)</label><br/>
-							<input type="text" class="form-control" id="exampleInputPassword3" placeholder="Enter Mass of the package" style="width: 400px;">
+							<input type="text" runat="server" class="form-control" id="mass" placeholder="Enter Mass of the package" style="width: 400px;">
 						</div>
 						</div>
                          <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Procedure</label><br />
-							<input type="email" class="form-control" id="Proceduregoods" placeholder="Enter Procedure of Goods" style="width: 300px;">
+							<input runat="server" type="email" class="form-control" id="Proceduregoods" placeholder="Enter Procedure of Goods" style="width: 300px;">
 						</div>
 						<div class="form-group ">
 							<label  for="exampleInputPassword3">Estimated Release Date</label><br />
@@ -368,7 +322,7 @@ span.round-tab:hover {
                          <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Package Description</label><br />
-							<textarea name="control-demo-5" id="control-demo-5" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
+							<textarea name="control-demo-5" runat="server" id="description" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
 						<div class="form-group ">
 							<label for="exampleInputFile">Package Documentation</label><br />
@@ -378,7 +332,7 @@ span.round-tab:hover {
                         <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Reason for Transfer</label><br />
-							<textarea name="control-demo-5" id="control-demo-5" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
+							<textarea name="control-demo-5" id="reason" runat="server" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
 						<div class="form-group ">
 							<label for="exampleInputFile">Package Image</label><br />
@@ -388,7 +342,7 @@ span.round-tab:hover {
 					</form>
                     <ul class="list-inline pull-right">
                         <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                        <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                        <li><button type="button" runat="server" onserverclick="saveInfo" class="btn btn-primary next-step">Save and continue</button></li>
                     </ul>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="step3">
@@ -414,7 +368,7 @@ span.round-tab:hover {
                             Success! message sent successfully.
                         </div>
                     <ul class="list-inline pull-right">
-                        <li><button id="btnsuccess" type="button" class="btn btn-outline mw-md btn-success ">Submit Transfer</button></li>
+                        <li><button id="btnsuccess" runat="server" onserverclick="completeRequest" type="button" class="btn btn-outline mw-md btn-success ">Submit Transfer</button></li>
                   
                     </ul>
                     

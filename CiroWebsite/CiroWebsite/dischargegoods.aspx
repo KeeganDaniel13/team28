@@ -81,7 +81,7 @@
             <th>Action</th>
 		</tr>
 	</thead>					
-	<tbody>
+	<tbody runat="server" id="Release">
 		
 									
 	</tbody>
