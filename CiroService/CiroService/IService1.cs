@@ -46,7 +46,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockadd")]
-        void stockAdd(string origin, IEnumerable<jsonProduct> newProduct);
+        void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse);
 
         //TaskList Warehouse Manager
         //To complete
@@ -201,6 +201,33 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getUser")]
         JsonUser getUser(JsonUser users);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getBill")]
+        IEnumerable<JsonBillofEntry> getBill(JsonBillofEntry bill);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addInvoice")]
+        string addInvoice(JsonBillofEntry bill, JsonProducts product);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getInvoice")]
+        JsonInvoice getInvoice(JsonInvoice invoiceNum, jsonProduct products);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addTax")]
+        string addTax(JsonProducts products, JsonBillofEntry newBill);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getMessages")]
+        IEnumerable<JsonMessage> getMessages(JsonUser users);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "sendMessage")]
+        string sendMessage(JsonMessage messages);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "payTax")]
+        string payTax(JsonInvoice invoices);
 
 
         /* [OperationContract]
