@@ -202,7 +202,6 @@ namespace CiroService
         JsonUser getUser(JsonUser users);
 
         [OperationContract]
-<<<<<<< HEAD
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getBill")]
         IEnumerable<JsonBillofEntry> getBill(JsonBillofEntry bill);
 

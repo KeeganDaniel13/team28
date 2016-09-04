@@ -151,11 +151,8 @@
   <ItemGroup>
     <Compile Include="DAL\countryrelationController.cs" />
     <Compile Include="DAL\hscode.cs" />
-<<<<<<< HEAD
     <Compile Include="DAL\invoiceController.cs" />
-=======
     <Compile Include="DAL\LocationController.cs" />
->>>>>>> a3d346831d42d6108595938b088d797a59d99f72
     <Compile Include="DAL\messageController.cs" />
     <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
@@ -243,11 +240,8 @@
     <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\JsonInventory.cs" />
-<<<<<<< HEAD
     <Compile Include="JsonObjects\JsonInvoice.cs" />
-=======
     <Compile Include="JsonObjects\jsonlocation.cs" />
->>>>>>> a3d346831d42d6108595938b088d797a59d99f72
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
     <Compile Include="JsonObjects\JsonMessage.cs" />
     <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
