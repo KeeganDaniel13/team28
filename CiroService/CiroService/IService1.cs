@@ -239,6 +239,16 @@ namespace CiroService
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseLocations/{warehousesID}")]
         IEnumerable<jsonlocation> getWarehouseLocations(string warehousesID);
+
+
+
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseAvailability")]
+        IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph();
+
+
         /* [OperationContract]
          [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
          string getPackageNotification(JsonUser user);*/
