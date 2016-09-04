@@ -993,6 +993,147 @@ namespace CiroService
             return messages;
         }
 
+
+        public string addlocation(jsonlocation loca)
+        {
+            var locationaccess = new LocationController();
+            location loc = new location { location_isle = loca.isle, location_row = loca.row, location_column = loca.col, location_size = loca.size, location_product = loca.product, location_warehouse = loca.warehouse, location_height = loca.height, location_length = loca.length, location_width = loca.width };
+            locationaccess.addRecord(loc);
+            return "location added.";
+        }
+
+        public void vacatelocation(string packageID)
+        {
+            var locationaccess = new LocationController();
+            var loc = locationaccess.getTable().FirstOrDefault<location>(l => l.location_product == Convert.ToInt32(int.Parse(packageID)));
+
+            loc.location_product = null;
+
+            locationaccess.updateRecord(loc.location_id, loc);
+        }
+
+        public void occupylocation(jsonlocation loc, string productID)
+        {
+            var locationaccess = new LocationController();
+            var loca = locationaccess.getTable().FirstOrDefault<location>(l => l.location_warehouse == Convert.ToInt32(loc.warehouse) && (l.location_isle == loc.isle) && (l.location_row == loc.row) && (l.location_column == loc.col));
+            loca.location_product = int.Parse(productID);
+
+            locationaccess.updateRecord(loca.location_id, loca);
+        }
+
+
+        public jsonlocation getPackageInWarehouse(string packageID)
+        {
+            var loc = new jsonlocation();
+            var getlocation = new LocationController();
+            var locdetails = getlocation.getTable().FirstOrDefault<location>(l => l.location_product == int.Parse(packageID));
+
+            loc.ID = locdetails.location_id;
+            loc.isle = Convert.ToInt32(locdetails.location_isle);
+            loc.row = Convert.ToInt32(locdetails.location_row);
+            loc.col = Convert.ToInt32(locdetails.location_column);
+            loc.size = Convert.ToInt32(locdetails.location_size);
+            loc.warehouse = Convert.ToInt32(locdetails.location_warehouse);
+            loc.product = Convert.ToInt32(locdetails.location_product);
+
+
+            //MessageBox.Show("Isle : " + loc.isle + "  Column : " + loc.col + "  Row : " + loc.row);
+
+            return loc;
+        }
+
+        public IEnumerable<jsonlocation> getWarehouseLocations(string warehouseID)
+        {
+            var warehouseaccess = new warehouseController();
+            var warehouseExists = warehouseaccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == int.Parse(warehouseID));
+
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var locationaccess = new LocationController();
+            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == int.Parse(warehouseID)).ToList<location>();
+
+            if (locationlist == null)
+            {
+                return null;
+            }
+
+            List<jsonlocation> locations = new List<jsonlocation>();
+
+            foreach (location l in locationlist)
+            {
+                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse) });
+            }
+            return locations;
+        }
+
+
+        public jsonlocation findavailablelocation(JsonWarehouse w, jsonProduct p)
+        {
+            var locationaccess = new LocationController();
+            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_product == null && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
+
+            if (locationlist == null || locationlist.Count == 0)
+            {
+                return null;
+            }
+
+            jsonlocation best = new jsonlocation { ID = locationlist[0].location_id, col = Convert.ToInt32(locationlist[0].location_column), isle = Convert.ToInt32(locationlist[0].location_isle), row = Convert.ToInt32(locationlist[0].location_row) };
+
+            foreach (location loc in locationlist)
+            {
+                if (loc.location_length < best.length || loc.location_height < best.height || loc.location_width < best.width)
+                {
+                    best.ID = loc.location_id;
+                    best.isle = Convert.ToInt32(loc.location_isle);
+                    best.row = Convert.ToInt32(loc.location_row);
+                    best.col = Convert.ToInt32(loc.location_column);
+                }
+            }
+            return best;
+        }
+
+        public string findlocation(JsonWarehouse w, jsonProduct p)
+        {
+            var loc = findavailablelocation(w, p);
+            string inst = null;
+
+            if (loc != null)
+            {
+                inst = "Location Open At Isle : " + loc.isle + " Row : " + loc.row + " Column : " + loc.col;
+                return inst;
+            }
+
+            if (loc == null)
+            {
+                var locationaccess = new LocationController();
+                List<location> locationfits = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
+
+                if (locationfits.Count == 0)
+                {
+                    return "Package Does Not Fit In Any Locations In The Warehouse";
+                }
+
+                for (int i = 0; i < locationfits.Count; i++)
+                {
+                    jsonlocation loc2 = findavailablelocation(w, new jsonProduct { length = Convert.ToInt32(locationfits[i].product.product_length), height = Convert.ToInt32(locationfits[i].product.product_height), width = Convert.ToInt32(locationfits[i].product.product_width) });
+                    if (loc2 == null)
+                    {
+                        i = locationfits.Count;
+                    }
+                    else
+                    {
+                        inst = "Move Package ID = " + locationfits[i].location_id + ", To Isle : " + loc2.isle + ", Row : " + loc2.row + " Column : " + loc2.col;
+                        inst += " \nNow Move The New Package To Isle : " + locationfits[i].location_isle + ", Row : " + locationfits[i].location_row + ", Column : " + locationfits[i].location_column;
+                        return inst;
+                    }
+                }
+            }
+            return "No Location Available For This Package Yet";
+        }
+
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();

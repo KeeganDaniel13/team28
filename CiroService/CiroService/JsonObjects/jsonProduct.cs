@@ -19,5 +19,10 @@ namespace CiroService.JsonObjects
         public string transferLocation { get; set; }
         public string bill{ get; set; }
 
+
+        public int height { set; get; }
+        public int length { get; set; }
+        public int width { get; set; }
+
     }
 }

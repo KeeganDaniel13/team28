@@ -151,6 +151,7 @@
   <ItemGroup>
     <Compile Include="DAL\countryrelationController.cs" />
     <Compile Include="DAL\hscode.cs" />
+    <Compile Include="DAL\LocationController.cs" />
     <Compile Include="DAL\messageController.cs" />
     <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
@@ -234,6 +235,7 @@
     <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\JsonInventory.cs" />
+    <Compile Include="JsonObjects\jsonlocation.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
     <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />

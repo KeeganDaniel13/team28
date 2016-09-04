@@ -210,6 +210,35 @@ namespace CiroService
         IEnumerable<jsonmessage> getMessage(string ID);
 
 
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "findavailablelocation")]
+        jsonlocation findavailablelocation(JsonWarehouse w, jsonProduct p);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "findlocation")]
+        string findlocation(JsonWarehouse w, jsonProduct p);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addlocation")]
+        string addlocation(jsonlocation loca);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageInWarehouse/{packageID}")]
+        jsonlocation getPackageInWarehouse(string packageID);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "occupylocation/{id}")]
+        void occupylocation(jsonlocation loc, string id);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "vacatelocation/{packageID}")]
+        void vacatelocation(string packageID);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseLocations/{warehousesID}")]
+        IEnumerable<jsonlocation> getWarehouseLocations(string warehousesID);
         /* [OperationContract]
          [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getPackageNotification")]
          string getPackageNotification(JsonUser user);*/
