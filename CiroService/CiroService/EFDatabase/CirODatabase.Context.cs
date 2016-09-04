@@ -28,6 +28,7 @@ namespace CiroService.EFDatabase
         public virtual DbSet<billofentry> billofentries { get; set; }
         public virtual DbSet<countryrelation> countryrelations { get; set; }
         public virtual DbSet<hscode> hscodes { get; set; }
+        public virtual DbSet<invoice> invoices { get; set; }
         public virtual DbSet<message> messages { get; set; }
         public virtual DbSet<ownershiprequest> ownershiprequests { get; set; }
         public virtual DbSet<product> products { get; set; }

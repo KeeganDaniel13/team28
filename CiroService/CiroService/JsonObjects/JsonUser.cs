@@ -14,6 +14,7 @@ namespace CiroService.JsonObjects
         public string usertypename { get; set; }
         public string email { get; set; }
         public string password { get; set; }
+        public int convo_id { get; set; }
 
     }
 }
