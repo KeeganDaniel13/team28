@@ -1,0 +1,73 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+
+            android:src="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/TransferName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="Name"
+            android:padding="9dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/image1"
+            android:layout_toEndOf="@+id/image1" />
+        <TextView
+            android:id="@+id/locatioName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="Location"
+            android:drawableLeft="@drawable/marker_ic"
+            android:padding="9dp"
+            android:gravity="center_vertical"
+
+
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/image1"
+            android:layout_toEndOf="@+id/image1" />
+        <TextView
+            android:id="@+id/destinationName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="Destination"
+            android:drawableLeft="@drawable/ic_dest"
+            android:padding="9dp"
+            android:gravity="center_vertical"
+
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/image1"
+            android:layout_toEndOf="@+id/image1" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/star_ic"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

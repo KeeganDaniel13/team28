@@ -1,0 +1,63 @@
+{
+	"transfers": [{
+			"title": "Shift Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Durban Ledge"
+
+		},
+
+		{
+			"title": "Temporary Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Product Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Product Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Durban"
+		},
+
+		{
+			"title": "Temporary Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Kempton"
+		},
+
+		{
+			"title": "Shift Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "OR Tambo"
+		},
+
+		{
+			"title": "Shift Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "OR Tambo"
+		},
+
+		{
+			"title": "Product Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Rand Bonded"
+		},
+
+		{
+			"title": "Product Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Eastern Cape"
+		},
+
+		{
+			"title": "Temporary Transfer",
+			"description": "Lanseria Bonded",
+			"dietLabel": "Mpumalanga Bond"
+		}
+	]
+}

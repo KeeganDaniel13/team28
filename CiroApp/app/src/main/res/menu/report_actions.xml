@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto">
+    <!-- Search Widget -->
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_send"
+        android:title="Send Incident"
+        appcompat:showAsAction="ifRoom"
+   />
+</menu>
