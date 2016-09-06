@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Declaration Of Goods" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="declaregoods.aspx.cs" Inherits="CiroWebsite.declaregoods" %>
+﻿<%@ Page Title="Declaration Of Goods" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="declaregoods.aspx.cs" Inherits="CiroWebsite.declaregoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
        
@@ -24,6 +24,12 @@
 									<input type="text" runat="server" class="form-control" id="productName" placeholder="Product name"/>
 								</div>
 							</div>
+                             <div class="form-group">
+								<label for="exampleTextInput1" class="col-sm-3 control-label">Quantity</label>
+								<div class="col-sm-9">
+									<input type="text" runat="server" class="form-control" id="quantity" placeholder="Quantity"/>
+								</div>
+							</div>
                               <br/>
 							<div class="form-group">
 								<label for="value" class="col-sm-3 control-label">Product Value</label>
@@ -40,7 +46,9 @@
 					</div>
                                 <br />
 							</div>	
-                              <div class="form-group">				
+                              <div class="form-group">	
+                                  <br />
+                                  			
 							<button type="submit"  class="btn btn-primary btn-md" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Save</button>
                                   </div>
 						</form>						
@@ -49,6 +57,12 @@
 			</div>
                 <div class="col-md-6">
 				<div class="widget">
+                    <div class="form-group">
+								<label for="exampleTextInput1" class="col-sm-3 control-label">Country Origin</label>
+								<div class="col-sm-9">
+									<input type="text" runat="server" class="form-control" id="country" placeholder="Country Origin"/>
+								</div>
+							</div>
 					<header class="widget-header">
 						<h4 class="widget-title">Saved Items</h4>
 					</header>

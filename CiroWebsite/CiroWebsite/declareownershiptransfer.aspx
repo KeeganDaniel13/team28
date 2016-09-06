@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ownership Transfer" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="declareownershiptransfer.aspx.cs" Inherits="CiroWebsite.declareownershiptransfer" %>
+﻿<%@ Page Title="Ownership Transfer" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="declareownershiptransfer.aspx.cs" Inherits="CiroWebsite.declareownershiptransfer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

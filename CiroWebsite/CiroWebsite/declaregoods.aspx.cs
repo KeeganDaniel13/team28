@@ -45,7 +45,8 @@ namespace CiroWebsite
 
         protected void SaveItem(object sender, EventArgs e)
         {
-            declaredItems.Add(new CiroService.jsonProduct { userID = 1, Name = productName.Value, value = Convert.ToDecimal(productValue.Value), transferLocation = WarehouseName.Value, ID = declaredItems.Count() + 1, size = 1, quantity = 1 });
+            var user = (CiroService.JsonUser)Session["user"];
+            declaredItems.Add(new CiroService.jsonProduct { userID = user.id , Name = productName.Value, value = Convert.ToDecimal(productValue.Value), transferLocation = WarehouseName.Value, ID = declaredItems.Count() + 1, size = 1, quantity = Convert.ToInt32(quantity .Value ) });
             Session["declared"] = declaredItems;
             WarehouseName.Value = "";
             productValue.Value = "";
@@ -106,7 +107,7 @@ namespace CiroWebsite
                 i++;
 
             }
-            server.stockAdd("Japan", items);
+            server.stockAdd(country.Value, items);
             declaredItems.Clear();
         }
     }

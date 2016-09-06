@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Transfer Goods | Ciro" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="transfergoods.aspx.cs" Inherits="CiroWebsite.transfergoods" %>
+﻿<%@ Page Title="Transfer Goods | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="transfergoods.aspx.cs" Inherits="CiroWebsite.transfergoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .wizard {
@@ -6,7 +6,7 @@
     background: #fff;
 }
 
-    .wizard .nav-tabs {
+    .wizard .nav-tabs {u
         position: relative;
         margin: 40px auto;
         margin-bottom: 0;

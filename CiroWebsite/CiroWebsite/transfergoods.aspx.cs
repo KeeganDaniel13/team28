@@ -32,9 +32,9 @@ namespace CiroWebsite
         {
             var ser = new CiroService.Service1Client();
             var transInfo = Session["TransferInfo"] as TransferForm;
-            var productID = Convert.ToInt32(Session["transferProduct"]);
-            //Convert.ToInt32(Session["user"])
-            ser.transeferRequest(new CiroService.jsonTRequest { userID = 1, description = transInfo.description, endWarehouse = Convert.ToInt32(Session["warehouse"]), productID = productID });
+            var productIDt = Convert.ToInt32(Session["transferProduct"]);
+            var user = (CiroService.JsonUser)Session["user"];
+            CiroSingleton .ServerCalls .transeferRequest(new CiroService.jsonTRequest { userID = user.id, description = transInfo.description, endWarehouse = Convert.ToInt32(Session["warehouse"]), productID = productIDt });
         }
 
         protected void listwarehouse()
