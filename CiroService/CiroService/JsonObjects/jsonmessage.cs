@@ -5,11 +5,12 @@ using System.Web;
 
 namespace CiroService.JsonObjects
 {
-    public class jsonmessage
+    public class JsonMessage
     {
+        public int convo_id { get; set; }
         public string from { get; set; }
         public string to { get; set; }
         public string message { get; set; }
-        public DateTime date { get; set; }
+        public DateTime stamp { get; set; }
     }
 }

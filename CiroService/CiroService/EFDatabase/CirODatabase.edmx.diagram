@@ -46,6 +46,9 @@
         <AssociationConnector Association="custommandbModel.warehouse_user" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.warehouse_warehousetype" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.warehousestock_warehouse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="custommandbModel.location" Width="1.5" PointX="13.5" PointY="7.75" />
+        <AssociationConnector Association="custommandbModel.location_product" />
+        <AssociationConnector Association="custommandbModel.location_warehouse" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

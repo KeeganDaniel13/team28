@@ -193,6 +193,9 @@
     <Compile Include="EFDatabase\invoice.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFDatabase\location.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFDatabase\message.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
@@ -252,7 +255,6 @@
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
     <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
-    <Compile Include="JsonObjects\jsonmessage.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />
