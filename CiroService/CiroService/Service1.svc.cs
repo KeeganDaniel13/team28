@@ -956,7 +956,7 @@ namespace CiroService
                 inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), productID = Convert.ToInt32(w.warehousestock_product), lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = Convert.ToInt32(billExists.billofentry_user), productType = Convert.ToInt32(w.product.product_producttype) });
             }
             return inventory;
-        }
+        }      
 
         public JsonWarehouse getWarehouseI(JsonWarehouse warehouses)
         {
@@ -1283,6 +1283,21 @@ namespace CiroService
                 }
             }
             return "No Location Available For This Package Yet";
+        }
+
+        public IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph()
+        {
+            var warehouseaccess = new warehouseController();
+            var warehouses = warehouseaccess.getTable();
+            var packageaccess = new productController();
+            List<jsonWarehouseAvailabilty> warehouse = new List<jsonWarehouseAvailabilty>();
+
+            foreach (warehouse w in warehouses)
+            {
+                var packages = packageaccess.getTable().Where<product>(p => p.product_location == w.warehouse_location);
+                warehouse.Add(new jsonWarehouseAvailabilty { warehouse = w.warehouse_name, size = Convert.ToInt32(w.warehouse_size), capacity = packages.Count() });
+            }
+            return warehouse;
         }
 
         /*public string getPackageNotification(JsonUser user)
