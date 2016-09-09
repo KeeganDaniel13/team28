@@ -17,7 +17,7 @@ namespace CiroService.JsonObjects
         public int productID { get; set; }
         public int userID { get; set; }
         public int type { get; set; }
-        [DataMember]
+     //   [DataMember]
         public string warehouse { get; set; }
     }
 }

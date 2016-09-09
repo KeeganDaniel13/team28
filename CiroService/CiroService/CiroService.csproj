@@ -267,6 +267,8 @@
     <Compile Include="JsonObjects\JsonProducts.cs" />
     <Compile Include="JsonObjects\JsonUser.cs" />
     <Compile Include="JsonObjects\UserDemo.cs" />
+    <Compile Include="JsonObjects\WarehouseIncidentsGraph.cs" />
+    <Compile Include="JsonObjects\WarehouseReleasescs.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

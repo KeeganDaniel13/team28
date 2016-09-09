@@ -14,6 +14,7 @@
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
           <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
+          <Property Name="billofentry_invoice" Type="int" />
         </EntityType>
         <EntityType Name="countryrelation">
           <Key>
@@ -28,6 +29,15 @@
           </Key>
           <Property Name="hscode_id" Type="int" Nullable="false" />
           <Property Name="hscode_percentage" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="location">
           <Key>
@@ -88,7 +98,7 @@
           </Key>
           <Property Name="productlog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="productlog_product" Type="int" />
-          <Property Name="productlog_warehouse" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="productlog_warehouse" Type="varchar" MaxLength="80" />
           <Property Name="productlog_user" Type="int" />
           <Property Name="productlog_dscription" Type="varchar" MaxLength="255" />
           <Property Name="productlog_dateLogged" Type="datetime" Precision="0" />
@@ -183,6 +193,18 @@
           <Property Name="warehousetype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="warehousetype_name" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
+        <Association Name="billofentry_invoice">
+          <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
+          <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice">
+              <PropertyRef Name="invoice_id" />
+            </Principal>
+            <Dependent Role="billofentry">
+              <PropertyRef Name="billofentry_invoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="billofentry_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
@@ -478,6 +500,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="location" EntityType="Self.location" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="message" EntityType="Self.message" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="custommandb" store:Type="Tables" />
@@ -493,6 +516,10 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
+          <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
+            <End Role="invoice" EntitySet="invoice" />
+            <End Role="billofentry" EntitySet="billofentry" />
+          </AssociationSet>
           <AssociationSet Name="billofentry_product" Association="Self.billofentry_product">
             <End Role="product" EntitySet="product" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -627,11 +654,28 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="Int32" Nullable="false" />
+          <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="invoice_vat" Type="Decimal" />
           <Property Name="invoice_penalty" Type="Decimal" />
-          <NavigationProperty Name="billofentries" Relationship="Self.billofentry_invoice" FromRole="invoice" ToRole="billofentry" />
           <Property Name="invoice_paid" Type="Decimal" />
+          <NavigationProperty Name="billofentries" Relationship="Self.billofentry_invoice" FromRole="invoice" ToRole="billofentry" />
+        </EntityType>
+        <EntityType Name="location">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="location_isle" Type="Int32" />
+          <Property Name="location_column" Type="Int32" />
+          <Property Name="location_row" Type="Int32" />
+          <Property Name="location_size" Type="Int32" />
+          <Property Name="location_product" Type="Int32" />
+          <Property Name="location_warehouse" Type="Int32" />
+          <Property Name="location_height" Type="Int32" />
+          <Property Name="location_width" Type="Int32" />
+          <Property Name="location_length" Type="Int32" />
+          <NavigationProperty Name="product" Relationship="Self.location_product" FromRole="location" ToRole="product" />
+          <NavigationProperty Name="warehouse" Relationship="Self.location_warehouse" FromRole="location" ToRole="warehouse" />
         </EntityType>
         <EntityType Name="message">
           <Key>
@@ -670,10 +714,14 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="product_size" Type="Int32" />
           <Property Name="product_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="product_arrivalDate" Type="DateTime" />
+          <Property Name="product_width" Type="Int32" />
+          <Property Name="product_height" Type="Int32" />
+          <Property Name="product_length" Type="Int32" />
           <Property Name="product_producttype" Type="Int32" />
           <Property Name="product_hscode" Type="Int32" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_product" FromRole="product" ToRole="billofentry" />
           <NavigationProperty Name="hscode" Relationship="Self.product_hscode" FromRole="product" ToRole="hscode" />
+          <NavigationProperty Name="locations" Relationship="Self.location_product" FromRole="product" ToRole="location" />
           <NavigationProperty Name="ownershiprequests" Relationship="Self.ownsershiprequest_product" FromRole="product" ToRole="ownershiprequest" />
           <NavigationProperty Name="producttype" Relationship="Self.product_producttype" FromRole="product" ToRole="producttype" />
           <NavigationProperty Name="productlogs" Relationship="Self.productlog_product" FromRole="product" ToRole="productlog" />
@@ -681,10 +729,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_product" FromRole="product" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_product" FromRole="product" ToRole="transferrequest" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_product" FromRole="product" ToRole="warehousestock" />
-          <NavigationProperty Name="locations" Relationship="custommandbModel.location_product" FromRole="product" ToRole="location" />
-          <Property Name="product_width" Type="Int32" />
-          <Property Name="product_height" Type="Int32" />
-          <Property Name="product_length" Type="Int32" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -700,7 +744,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="product" Relationship="Self.productlog_product" FromRole="productlog" ToRole="product" />
           <NavigationProperty Name="productlogtype" Relationship="Self.productlog_type" FromRole="productlog" ToRole="productlogtype" />
           <NavigationProperty Name="user" Relationship="Self.productlog_user" FromRole="productlog" ToRole="user" />
-          <Property Name="productlog_warehouse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_warehouse" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="productlogtype">
           <Key>
@@ -791,10 +835,10 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="warehouse_size" Type="Int32" />
           <Property Name="warehouse_user" Type="Int32" />
           <Property Name="warehouse_warehousetype" Type="Int32" />
+          <NavigationProperty Name="locations" Relationship="Self.location_warehouse" FromRole="warehouse" ToRole="location" />
           <NavigationProperty Name="user" Relationship="Self.warehouse_user" FromRole="warehouse" ToRole="user" />
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_warehouse" FromRole="warehouse" ToRole="warehousestock" />
-          <NavigationProperty Name="locations" Relationship="custommandbModel.location_warehouse" FromRole="warehouse" ToRole="location" />
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -860,6 +904,30 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Principal>
             <Dependent Role="product">
               <PropertyRef Name="product_hscode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="location_product">
+          <End Role="product" Type="Self.product" Multiplicity="0..1" />
+          <End Role="location" Type="Self.location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="location">
+              <PropertyRef Name="location_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="location_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="location" Type="Self.location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="location">
+              <PropertyRef Name="location_warehouse" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1096,6 +1164,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySet Name="countryrelations" EntityType="Self.countryrelation" />
           <EntitySet Name="hscodes" EntityType="Self.hscode" />
           <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="locations" EntityType="Self.location" />
           <EntitySet Name="messages" EntityType="Self.message" />
           <EntitySet Name="ownershiprequests" EntityType="Self.ownershiprequest" />
           <EntitySet Name="products" EntityType="Self.product" />
@@ -1125,6 +1194,14 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <AssociationSet Name="product_hscode" Association="Self.product_hscode">
             <End Role="hscode" EntitySet="hscodes" />
             <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="location_product" Association="Self.location_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="location" EntitySet="locations" />
+          </AssociationSet>
+          <AssociationSet Name="location_warehouse" Association="Self.location_warehouse">
+            <End Role="warehouse" EntitySet="warehouses" />
+            <End Role="location" EntitySet="locations" />
           </AssociationSet>
           <AssociationSet Name="message_from" Association="Self.message_from">
             <End Role="user" EntitySet="users" />
@@ -1202,57 +1279,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="warehouse" EntitySet="warehouses" />
             <End Role="warehousestock" EntitySet="warehousestocks" />
           </AssociationSet>
-          <EntitySet Name="locations" EntityType="custommandbModel.location" />
-          <AssociationSet Name="location_product" Association="custommandbModel.location_product">
-            <End Role="product" EntitySet="products" />
-            <End Role="location" EntitySet="locations" />
-          </AssociationSet>
-          <AssociationSet Name="location_warehouse" Association="custommandbModel.location_warehouse">
-            <End Role="warehouse" EntitySet="warehouses" />
-            <End Role="location" EntitySet="locations" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="location">
-          <Key>
-            <PropertyRef Name="location_id" />
-          </Key>
-          <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="location_isle" Type="Int32" />
-          <Property Name="location_column" Type="Int32" />
-          <Property Name="location_row" Type="Int32" />
-          <Property Name="location_size" Type="Int32" />
-          <Property Name="location_product" Type="Int32" />
-          <Property Name="location_warehouse" Type="Int32" />
-          <Property Name="location_height" Type="Int32" />
-          <Property Name="location_width" Type="Int32" />
-          <Property Name="location_length" Type="Int32" />
-          <NavigationProperty Name="product" Relationship="custommandbModel.location_product" FromRole="location" ToRole="product" />
-          <NavigationProperty Name="warehouse" Relationship="custommandbModel.location_warehouse" FromRole="location" ToRole="warehouse" />
-        </EntityType>
-        <Association Name="location_product">
-          <End Type="custommandbModel.product" Role="product" Multiplicity="0..1" />
-          <End Type="custommandbModel.location" Role="location" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="location">
-              <PropertyRef Name="location_product" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="location_warehouse">
-          <End Type="custommandbModel.warehouse" Role="warehouse" Multiplicity="0..1" />
-          <End Type="custommandbModel.location" Role="location" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="warehouse">
-              <PropertyRef Name="warehouse_id" />
-            </Principal>
-            <Dependent Role="location">
-              <PropertyRef Name="location_warehouse" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1267,6 +1294,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="billofentry_user" ColumnName="billofentry_user" />
                 <ScalarProperty Name="billofentry_product" ColumnName="billofentry_product" />
                 <ScalarProperty Name="billofentry_origin" ColumnName="billofentry_origin" />
+                <ScalarProperty Name="billofentry_invoice" ColumnName="billofentry_invoice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1283,6 +1311,32 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
               <MappingFragment StoreEntitySet="hscode">
                 <ScalarProperty Name="hscode_id" ColumnName="hscode_id" />
                 <ScalarProperty Name="hscode_percentage" ColumnName="hscode_percentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="custommandbModel.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="invoice_vat" ColumnName="invoice_vat" />
+                <ScalarProperty Name="invoice_penalty" ColumnName="invoice_penalty" />
+                <ScalarProperty Name="invoice_paid" ColumnName="invoice_paid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="locations">
+            <EntityTypeMapping TypeName="custommandbModel.location">
+              <MappingFragment StoreEntitySet="location">
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_isle" ColumnName="location_isle" />
+                <ScalarProperty Name="location_column" ColumnName="location_column" />
+                <ScalarProperty Name="location_row" ColumnName="location_row" />
+                <ScalarProperty Name="location_size" ColumnName="location_size" />
+                <ScalarProperty Name="location_product" ColumnName="location_product" />
+                <ScalarProperty Name="location_warehouse" ColumnName="location_warehouse" />
+                <ScalarProperty Name="location_height" ColumnName="location_height" />
+                <ScalarProperty Name="location_width" ColumnName="location_width" />
+                <ScalarProperty Name="location_length" ColumnName="location_length" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1312,9 +1366,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="custommandbModel.product">
               <MappingFragment StoreEntitySet="product">
-                <ScalarProperty Name="product_length" ColumnName="product_length" />
-                <ScalarProperty Name="product_height" ColumnName="product_height" />
-                <ScalarProperty Name="product_width" ColumnName="product_width" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />
@@ -1322,6 +1373,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="product_size" ColumnName="product_size" />
                 <ScalarProperty Name="product_location" ColumnName="product_location" />
                 <ScalarProperty Name="product_arrivalDate" ColumnName="product_arrivalDate" />
+                <ScalarProperty Name="product_width" ColumnName="product_width" />
+                <ScalarProperty Name="product_height" ColumnName="product_height" />
+                <ScalarProperty Name="product_length" ColumnName="product_length" />
                 <ScalarProperty Name="product_producttype" ColumnName="product_producttype" />
                 <ScalarProperty Name="product_hscode" ColumnName="product_hscode" />
               </MappingFragment>
@@ -1436,22 +1490,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
               <MappingFragment StoreEntitySet="warehousetype">
                 <ScalarProperty Name="warehousetype_id" ColumnName="warehousetype_id" />
                 <ScalarProperty Name="warehousetype_name" ColumnName="warehousetype_name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="locations">
-            <EntityTypeMapping TypeName="custommandbModel.location">
-              <MappingFragment StoreEntitySet="location">
-                <ScalarProperty Name="location_length" ColumnName="location_length" />
-                <ScalarProperty Name="location_width" ColumnName="location_width" />
-                <ScalarProperty Name="location_height" ColumnName="location_height" />
-                <ScalarProperty Name="location_warehouse" ColumnName="location_warehouse" />
-                <ScalarProperty Name="location_product" ColumnName="location_product" />
-                <ScalarProperty Name="location_size" ColumnName="location_size" />
-                <ScalarProperty Name="location_row" ColumnName="location_row" />
-                <ScalarProperty Name="location_column" ColumnName="location_column" />
-                <ScalarProperty Name="location_isle" ColumnName="location_isle" />
-                <ScalarProperty Name="location_id" ColumnName="location_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -29,6 +29,7 @@ namespace CiroService.EFDatabase
         public virtual DbSet<countryrelation> countryrelations { get; set; }
         public virtual DbSet<hscode> hscodes { get; set; }
         public virtual DbSet<invoice> invoices { get; set; }
+        public virtual DbSet<location> locations { get; set; }
         public virtual DbSet<message> messages { get; set; }
         public virtual DbSet<ownershiprequest> ownershiprequests { get; set; }
         public virtual DbSet<product> products { get; set; }
@@ -43,6 +44,5 @@ namespace CiroService.EFDatabase
         public virtual DbSet<warehouse> warehouses { get; set; }
         public virtual DbSet<warehousestock> warehousestocks { get; set; }
         public virtual DbSet<warehousetype> warehousetypes { get; set; }
-        public virtual DbSet<location> locations { get; set; }
     }
 }

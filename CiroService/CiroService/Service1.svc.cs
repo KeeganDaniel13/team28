@@ -122,7 +122,7 @@ namespace CiroService
 		
         public IEnumerable <TransferDetails> listTransferTRequests()
         {
-            try
+      /*      try
             {
                 var tRequest = new transferrequestsController().getTable().Where(c => c.transferrequest_verdict== "Pending");
                 var productinfo = new productController();
@@ -137,13 +137,13 @@ namespace CiroService
                 return transfers;
 
             }
-            catch (Exception e) {  }
+            catch (Exception e) {  } */
             return null;
            
         }
 
         public string transeferRequest(jsonTRequest newRequest)
-        {
+        {/*
             //Fix
             transferrequestsController trans = new transferrequestsController();
             transferrequest newTransfer = new transferrequest();
@@ -160,7 +160,8 @@ namespace CiroService
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
-            return "Added";
+            return "Added";*/
+            return null;
         }
 
         public IEnumerable<TransferDetails> transferList()
@@ -271,7 +272,7 @@ namespace CiroService
         *   with the bill of rights
         */
         public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
-        {
+        { /*
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
             producttypeController pTypeAccess = new producttypeController();
@@ -327,7 +328,7 @@ namespace CiroService
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
             }
 
-
+            */
         }
 
         //need implemantation
@@ -442,27 +443,28 @@ namespace CiroService
 
         public JsonProducts getPackageID(string id)
         {
-            var package = new JsonObjects.JsonProducts();
-            var getPackage = new productController();
-            var detailPackage = getPackage.getRecord(Convert.ToInt32(id));
-            if (detailPackage == null)
-            {
-                return null;
-            }
+            /*   var package = new JsonObjects.JsonProducts();
+               var getPackage = new productController();
+               var detailPackage = getPackage.getRecord(Convert.ToInt32(id));
+               if (detailPackage == null)
+               {
+                   return null;
+               }
 
-            package.id = detailPackage.product_id;
-            package.name = detailPackage.product_name;
-            package.price = Convert.ToDouble(detailPackage.product_price);
-            package.producttype = Convert.ToInt32(detailPackage.product_producttype);
-            package.quantity = Convert.ToInt32(detailPackage.product_quantity);
-            package.location = detailPackage.product_location;
-            package.arrivalDate = Convert.ToDateTime(detailPackage.product_arrivalDate);
-            package.bill = detailPackage.billofentries.First<billofentry>(c => c.billofentry_product == detailPackage.product_id).billofentry_code;
-            //var warehouseid = detailPackage.warehousestocks.First<warehousestock>(c => Convert.ToInt32(c.warehousestock_product) == detailPackage.product_id);
-            //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
-            var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
-            package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
-            return package;
+               package.id = detailPackage.product_id;
+               package.name = detailPackage.product_name;
+               package.price = Convert.ToDouble(detailPackage.product_price);
+               package.producttype = Convert.ToInt32(detailPackage.product_producttype);
+               package.quantity = Convert.ToInt32(detailPackage.product_quantity);
+               package.location = detailPackage.product_location;
+               package.arrivalDate = Convert.ToDateTime(detailPackage.product_arrivalDate);
+               package.bill = detailPackage.billofentries.First<billofentry>(c => c.billofentry_product == detailPackage.product_id).billofentry_code;
+               //var warehouseid = detailPackage.warehousestocks.First<warehousestock>(c => Convert.ToInt32(c.warehousestock_product) == detailPackage.product_id);
+               //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
+               var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
+               package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
+               return package; */
+            return null;
         }
 
         public IEnumerable<JsonProducts> getPackageOwner(string id)
@@ -1328,6 +1330,7 @@ namespace CiroService
             return "No Location Available For This Package Yet";
         }
 
+        //warehouse size vs capacity -for customs
         public IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph()
         {
             var warehouseaccess = new warehouseController();
@@ -1343,7 +1346,7 @@ namespace CiroService
             return warehouse;
         }
 
-
+        //size categories for lenght - for warehouses
         public IEnumerable<PackageSizeCategory> PackageLengthCategories()
         {
             var Packageaccess = new productController();
@@ -1377,6 +1380,7 @@ namespace CiroService
             return categories;
         }
 
+        //size categories for Height - for warehouses
         public IEnumerable<PackageSizeCategory> PackageHeightCategories()
         {
             var Packageaccess = new productController();
@@ -1410,6 +1414,8 @@ namespace CiroService
             return categories;
         }
 
+
+        //size categories for width - for warehouses
         public IEnumerable<PackageSizeCategory> PackagewidthCategories()
         {
             var Packageaccess = new productController();
@@ -1441,6 +1447,58 @@ namespace CiroService
             categories.Add(new PackageSizeCategory { category = "Widths Less Than 120cm", count = Convert.ToInt32(count2) });
             categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
+        }
+
+
+        //warehouses incidents comparisons
+        public IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents()
+        {
+            productlogController logaccess = new productlogController();
+            warehouseController warehouseaccess = new warehouseController();
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+            List<WarehouseIncidentsGraph> incidents = new List<WarehouseIncidentsGraph>();
+
+
+            foreach (warehouse w in warehouses)
+            {
+                int counter = 0;
+                foreach(productlog l in log)
+                {
+                    if(l.productlog_type == 1 && l.productlog_warehouse == w.warehouse_name)
+                    {
+                        counter++;
+                    }                   
+                }
+                incidents.Add(new WarehouseIncidentsGraph { warehouse = w.warehouse_name, incidents = Convert.ToInt32(counter) });
+            }
+            return incidents;
+        }
+
+
+
+        //Most common release destination
+        public IEnumerable<WarehouseReleasescs> WarehouseReleases()
+        {
+            productlogController logaccess = new productlogController();
+            warehouseController warehouseaccess = new warehouseController();
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+            List<WarehouseReleasescs> releases = new List<WarehouseReleasescs>();
+
+            foreach (warehouse w in warehouses)
+            {
+                int counter = 0;
+                foreach (productlog l in log)
+                {
+                    if (l.productlog_type == 3 && l.productlog_warehouse == w.warehouse_name)
+                    {
+                        counter++;
+                    }
+                }
+                releases.Add(new WarehouseReleasescs { warehouse = w.warehouse_name, releases = Convert.ToInt32(counter) });
+            }
+            return releases;
         }
 
         /*public string getPackageNotification(JsonUser user)
