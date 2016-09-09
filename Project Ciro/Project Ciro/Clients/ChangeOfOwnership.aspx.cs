@@ -9,10 +9,6 @@ namespace Project_Ciro.Warehousemanager
 {
     public partial class ChangeOfOwnership : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
 
         protected void listrequests()
         {

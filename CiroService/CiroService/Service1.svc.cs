@@ -45,15 +45,15 @@ namespace CiroService
             }
             return JsonConvert.SerializeObject(users);
         }
-    
+
         public JsonUser login(jsonLoginUser login)
         {
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-            var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name) ) && c.user_password.Equals(login.password));
+            var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name)) && c.user_password.Equals(login.password));
             if (user == null)
             {
-                return null ;
+                return null;
             }
             JsonUser inUser = new JsonUser();
             inUser.id = user.user_id;
@@ -70,16 +70,16 @@ namespace CiroService
         {
             var productsTable = new productController();
             var billtable = new billofentryController();
-            
+
             List<billofentry> products = billtable.getTable().Where<billofentry>(p => p.billofentry_user == Convert.ToInt32(user.id)).ToList<billofentry>();
-            if(products.Count == 0)
+            if (products.Count == 0)
             {
                 return null;
             }
             List<jsonProduct> sendProducts = new List<jsonProduct>();
             foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product.product_id,Name = p.product.product_name,value = Convert.ToDecimal( p.product.product_price ),bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size) });
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size) });
             }
             return sendProducts;
         }
@@ -88,18 +88,18 @@ namespace CiroService
         {
 
             var userstable = new userController();
-            
+
             var check = userstable.getTable().FirstOrDefault<user>(c => c.user_email.Equals(regUser.email));
-            
+
             if (check != null)
             {
                 return "Email Already Registered";
             }
-            
+
             user newUser = new user { user_fname = regUser.fname, user_email = regUser.email, user_sname = regUser.lname, user_password = regUser.password, usertype_id = regUser.usertype, user_id = userstable.getTable().Count() };
-    
+
             userstable.addRecord(newUser);
-                     //emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
+            //emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
             return "Registered";
         }
 
@@ -117,9 +117,9 @@ namespace CiroService
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
             newTransfer.transferrequest_to = newRequest.endWarehouse;
-            newTransfer.transferrequest_from =warehouseName.warehouse_location;
-           // DateTime date = new DateTime();
-           // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
+            newTransfer.transferrequest_from = warehouseName.warehouse_location;
+            // DateTime date = new DateTime();
+            // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
             return "Added";
         }
@@ -130,22 +130,22 @@ namespace CiroService
             List<TransferDetails> transferList = new List<TransferDetails>();
             var tempList = list.getTable();
 
-            foreach(transferlist t in tempList)
+            foreach (transferlist t in tempList)
             {
                 var productAccess = new productController();
                 var productExists = productAccess.getTable().FirstOrDefault<product>(p => p.product_id == t.transferlist_product);
 
-                if(productExists == null)
+                if (productExists == null)
                 {
                     return null;
                 }
 
-                transferList.Add(new TransferDetails { productName = productExists.product_name ,currentLocation=t.transferlist_from,destination=t.transferlist_to});
+                transferList.Add(new TransferDetails { productName = productExists.product_name, currentLocation = t.transferlist_from, destination = t.transferlist_to });
             }
-             return transferList;
-            
+            return transferList;
+
         }
-        
+
         //Add Method to update table of stock take 
         //Needs Test
         public string stockTake(stockTakeInfo stockTake)
@@ -160,7 +160,7 @@ namespace CiroService
             var warehouseTable = new warehouseController();
             if (inList != null)
             {
-                stockTable.addRecord(new warehousestock { warehousestock_product= stockTake.id, warehousestock_warehouse = warehouseTable.getTable().First<warehouse>(c => c.warehouse_location.Equals(stockTake.location)).warehouse_id, warehousestock_lastchecked = DateTime.Now });
+                stockTable.addRecord(new warehousestock { warehousestock_product = stockTake.id, warehousestock_warehouse = warehouseTable.getTable().First<warehouse>(c => c.warehouse_location.Equals(stockTake.location)).warehouse_id, warehousestock_lastchecked = DateTime.Now });
                 tlistAccess.deleteRecord(inList.transferlist_id);
                 message = "Stock Recorded";
 
@@ -186,7 +186,7 @@ namespace CiroService
                 {
                     //add user that approved release
                     //add location_to for release request
-                    tlistAccess.addRecord(new transferlist { transferlist_product = stockTake.id, transferlist_from = stockTake.location, transferlist_to = "owner "});
+                    tlistAccess.addRecord(new transferlist { transferlist_product = stockTake.id, transferlist_from = stockTake.location, transferlist_to = "owner " });
                     rRequestTable.deleteRecord(rRequest.releaserequest_id);
                     stockTable.deleteRecord(stockTable.getTable().First<warehousestock>(c => c.warehousestock_product == stockTake.id).warehousestock_id);
                     message = "Move Item to loading dock for Release";
@@ -222,7 +222,16 @@ namespace CiroService
         //Make sure to generate qrcode for specfic product
         //Just double check with boolean
         //needs test with single and multiple produts varying of duty and non duty produts
-        public void stockAdd(string origin, IEnumerable<jsonProduct> newProduct)
+
+
+
+        /**
+        *   IMPORTANT!!!!
+        *   MUST FIX
+        *   hscodes needs to be updated and adding a product into the product table needs to be moved to a seperate method
+        *   with the bill of rights
+        */
+        public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
         {
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
@@ -234,52 +243,50 @@ namespace CiroService
             }
             catch (ArgumentNullException x)
             { }
-                
-            
-            
-            int hscode,producttype;
+
+
+
+            int hscode, producttype;
             //add to table with hscode
-            if(country != null)
+            if (country != null)
             {
                 //duty
-                hscode = 1;
+                hscode = 825;
                 producttype = 1;
             }
             else
             {
                 //non duty
-                hscode = 0;
+                hscode = 825;
                 producttype = 2;
             }
             productController productAccess = new productController();
             billofentryController billAccess = new billofentryController();
-            DateTime date = DateTime.Now;
             string origin2 = origin;
-            string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
             foreach (var p in newProduct)
             {
-                
-          
+
+                DateTime date = DateTime.Now;
+                string genCode = "" + hscode + date.Day + date.Month + date.Year + date.Second + date.Millisecond + origin2.Substring(0, 2);
                 //add products to product table
-                productAccess.addRecord(new product { product_name=p.Name,product_size=p.size,product_quantity=p.quantity,product_price=p.value,product_location="In Transit",product_arrivalDate=date,product_hscode=hscode,product_producttype=producttype});
+                productAccess.addRecord(new product { product_name = p.name, product_size = p.size, product_quantity = p.quantity, product_price = Convert.ToDecimal(p.price), product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
                 //adding new product with bill of entry
-                
-                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate==date);
-                billAccess.addRecord(new billofentry {billofentry_origin=origin,billofentry_product=addToBill.product_id,billofentry_user=p.userID,billofentry_code=genCode });
+                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.name) && c.product_hscode == hscode && c.product_arrivalDate == date);
+                addTax(new JsonProducts { id = addToBill.product_id }, new JsonBillofEntry { origin = origin2, billCode = genCode, user = p.userid, product = addToBill.product_id });
 
                 //add to transferlist
                 transferlistController transferListkAccess = new transferlistController();
-                transferListkAccess.addRecord(new transferlist { transferlist_to=p.transferLocation,transferlist_product=addToBill.product_id,transferlist_from=p.currentLocation});
+                transferListkAccess.addRecord(new transferlist { transferlist_to = _warehouse.location, transferlist_product = addToBill.product_id, transferlist_from = addToBill.product_location });
 
                 //create qrcode
-                string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\";
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
                 qrcodeMaker.QRCodeScale = 10;
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-                qrcode.Save(path + qrcodeInfo+".jpg", ImageFormat.Jpeg);
+                qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
             }
 
 
@@ -300,21 +307,21 @@ namespace CiroService
             //Removed Image adding will implemement at a later stage once system is more cohisive
             productlogController incidentTable = new productlogController();
             IEnumerable<productlog> incidents = incidentTable.getTable();
-            if(newIncident.image == null || newIncident.image.Equals(""))
+            if (newIncident.image == null || newIncident.image.Equals(""))
             {
-                incidentTable.addRecord(new productlog { productlog_type = newIncident.type, productlog_dateLogged = DateTime.Now, productlog_product = newIncident.productID, productlog_image = "",  productlog_dscription = newIncident.description, productlog_id = incidents.Count(),productlog_user= newIncident.userID });
+                incidentTable.addRecord(new productlog { productlog_type = newIncident.type, productlog_dateLogged = DateTime.Now, productlog_product = newIncident.productID, productlog_image = "", productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
             }
             else
-            {   
+            {
                 string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
                 byte[] newImage = Convert.FromBase64String(newIncident.image);
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
-                memoStream.Write(newImage,0,newImage.Length);
+                memoStream.Write(newImage, 0, newImage.Length);
                 string fileName = path + newIncident.productID + ".jpg";
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
 
-                incidentTable.addRecord(new productlog {productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_product = newIncident.productID, productlog_image = fileName, productlog_dscription = newIncident.description , productlog_id = incidents.Count(), productlog_user = newIncident.userID });
+                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_product = newIncident.productID, productlog_image = fileName, productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
             }
             return;
         }
@@ -332,10 +339,10 @@ namespace CiroService
         {
             var warehouses = new warehouseController().getTable();
             List<JsonWarehouse> warehouseList = new List<JsonWarehouse>();
-            foreach(var warehouse in warehouses)
+            foreach (var warehouse in warehouses)
             {
                 var warehouseType = new warehousetypeController().getRecord(Convert.ToInt32(warehouse.warehouse_warehousetype)).warehousetype_name;
-                warehouseList.Add(new JsonWarehouse { id = warehouse.warehouse_id, location = warehouse.warehouse_location, name = warehouse.warehouse_name, size = Convert.ToInt32(warehouse.warehouse_size)});
+                warehouseList.Add(new JsonWarehouse { id = warehouse.warehouse_id, location = warehouse.warehouse_location, name = warehouse.warehouse_name, size = Convert.ToInt32(warehouse.warehouse_size) });
             }
 
             return warehouseList;
@@ -348,16 +355,16 @@ namespace CiroService
             var transferlistAccess = new transferlistController();
             List<transferStock> items = new List<transferStock>();
             var list = transferlistAccess.getTable().Where(c => c.transferlist_from.Equals(location) || c.transferlist_to.Equals(location));
-            if(list != null)
+            if (list != null)
             {
-                foreach(var t in list)
+                foreach (var t in list)
                 {
-                    if(t.transferlist_from.Equals(location))
-                    { 
-                        items.Add(new transferStock { productName= t.product.product_name,status="IN",location=t.transferlist_from,size=Convert.ToInt32(t.product.product_size),value=Convert.ToDecimal(t.product.product_price)});
+                    if (t.transferlist_from.Equals(location))
+                    {
+                        items.Add(new transferStock { productName = t.product.product_name, status = "IN", location = t.transferlist_from, size = Convert.ToInt32(t.product.product_size), value = Convert.ToDecimal(t.product.product_price) });
                     }
                     else
-                    { 
+                    {
                         items.Add(new transferStock { productName = t.product.product_name, status = "OUT", location = t.transferlist_to, size = Convert.ToInt32(t.product.product_size), value = Convert.ToDecimal(t.product.product_price) });
                     }
                 }
@@ -370,7 +377,7 @@ namespace CiroService
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(c => c.user_id == Convert.ToInt32(id));
 
-            if(userExists == null)
+            if (userExists == null)
             {
                 return "User does not exist";
             }
@@ -379,16 +386,16 @@ namespace CiroService
             {
                 userExists.user_fname = updateUsr.fname;
             }
-            if(updateUsr.lname != null && updateUsr.lname != "")
+            if (updateUsr.lname != null && updateUsr.lname != "")
             {
                 userExists.user_sname = updateUsr.lname;
             }
-            if(updateUsr.email != null && updateUsr.email != "")
+            if (updateUsr.email != null && updateUsr.email != "")
             {
                 userExists.user_email = updateUsr.email;
             }
-            if(updateUsr.password != null && updateUsr.password != "")
-            { 
+            if (updateUsr.password != null && updateUsr.password != "")
+            {
                 userExists.user_password = updateUsr.password;
             }
             userAccess.updateRecord(Convert.ToInt32(id), userExists);
@@ -400,7 +407,7 @@ namespace CiroService
             var package = new JsonObjects.JsonProducts();
             var getPackage = new productController();
             var detailPackage = getPackage.getRecord(Convert.ToInt32(id));
-            if(detailPackage == null)
+            if (detailPackage == null)
             {
                 return null;
             }
@@ -420,23 +427,23 @@ namespace CiroService
             var billentryTable = new billofentryController();
             var productsTable = new productController();
             List<billofentry> entries = billentryTable.getTable().Where<billofentry>(c => c.billofentry_user == Convert.ToInt32(id)).ToList<billofentry>();
-            
-            if(entries.Count == 0)
+
+            if (entries.Count == 0)
             {
                 return null;
             }
 
             List<product> products = new List<product>();
 
-            foreach(billofentry e in entries)
+            foreach (billofentry e in entries)
             {
                 products.Add(productsTable.getRecord(Convert.ToInt32(e.billofentry_product)));
             }
-            
+
             List<JsonProducts> sendProducts = new List<JsonProducts>();
             foreach (product p in products)
             {
-                sendProducts.Add(new JsonProducts { id = p.product_id, name = p.product_name, price = Convert.ToDouble(p.product_price), quantity = Convert.ToInt32(p.product_quantity), producttype = Convert.ToInt32(p.product_producttype), location = p.product_location, arrivalDate = Convert.ToDateTime(p.product_arrivalDate)});
+                sendProducts.Add(new JsonProducts { id = p.product_id, name = p.product_name, price = Convert.ToDouble(p.product_price), quantity = Convert.ToInt32(p.product_quantity), producttype = Convert.ToInt32(p.product_producttype), location = p.product_location, arrivalDate = Convert.ToDateTime(p.product_arrivalDate) });
             }
             return sendProducts;
         }
@@ -453,7 +460,7 @@ namespace CiroService
             List<JsonProducts> sendProducts = new List<JsonProducts>();
             foreach (product p in products)
             {
-                sendProducts.Add(new JsonProducts { id = p.product_id, name = p.product_name, price = Convert.ToDouble(p.product_price), quantity = Convert.ToInt32(p.product_quantity), producttype = Convert.ToInt32(p.product_producttype), location = p.product_location, arrivalDate = Convert.ToDateTime(p.product_arrivalDate)});
+                sendProducts.Add(new JsonProducts { id = p.product_id, name = p.product_name, price = Convert.ToDouble(p.product_price), quantity = Convert.ToInt32(p.product_quantity), producttype = Convert.ToInt32(p.product_producttype), location = p.product_location, arrivalDate = Convert.ToDateTime(p.product_arrivalDate) });
             }
             return sendProducts;
         }
@@ -476,7 +483,7 @@ namespace CiroService
         public string addPackage(JsonProducts prod)
         {
             var productAccess = new productController();
-            product pro = new product { product_name = prod.name, product_price = Convert.ToDecimal(prod.price), product_hscode = Convert.ToInt32(prod.hscode), product_size = Convert.ToInt32(prod.size), product_id = prod.id, product_quantity = prod.quantity, product_producttype = prod.producttype, product_location = prod.location, product_arrivalDate = prod.arrivalDate};
+            product pro = new product { product_name = prod.name, product_price = Convert.ToDecimal(prod.price), product_hscode = Convert.ToInt32(prod.hscode), product_size = Convert.ToInt32(prod.size), product_quantity = prod.quantity, product_producttype = prod.producttype, product_location = prod.location, product_arrivalDate = prod.arrivalDate };
             productAccess.addRecord(pro);
             return "Package added.";
         }
@@ -520,17 +527,17 @@ namespace CiroService
 
         public string updatePackageWLocation(string id, string location)
         {
-           /* var productAccess = new warehousestockController();
-            var productExists = productAccess.getTable().FirstOrDefault<warehousestock>(c => c.warehousestock_id == Convert.ToInt32(id));
+            /* var productAccess = new warehousestockController();
+             var productExists = productAccess.getTable().FirstOrDefault<warehousestock>(c => c.warehousestock_id == Convert.ToInt32(id));
 
-            if (productExists == null)
-            {
-                return "Package does not exist";
-            }
+             if (productExists == null)
+             {
+                 return "Package does not exist";
+             }
 
-            productExists.warehousestock_location = location;
-            productAccess.updateRecord(Convert.ToInt32(id), productExists);*/
-            return "Package location has been updated.";           
+             productExists.warehousestock_location = location;
+             productAccess.updateRecord(Convert.ToInt32(id), productExists);*/
+            return "Package location has been updated.";
         }
 
         public string releaseRequest(JsonUser owner, jsonProduct product, string description)
@@ -538,7 +545,7 @@ namespace CiroService
             var productAccess = new billofentryController();
             var productExists = productAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == Convert.ToInt32(product.ID) && c.billofentry_user == Convert.ToInt32(owner.id));
 
-            if(productExists == null)
+            if (productExists == null)
             {
                 return "No such package is Owned by user";
             }
@@ -546,9 +553,9 @@ namespace CiroService
             var request = new releaseRequestController();
             var requestExists = request.getTable().FirstOrDefault<releaserequest>(c => c.releaserequest_product == Convert.ToInt32(product.ID) && c.releaserequest_user == Convert.ToInt32(owner.id));
 
-            if(requestExists == null)
+            if (requestExists == null)
             {
-                request.addRecord(new releaserequest {releaserequest_verdict="Pending", releaserequest_product = Convert.ToInt32(product.ID), releaserequest_user = Convert.ToInt32(owner.id)});
+                request.addRecord(new releaserequest { releaserequest_verdict = "Pending", releaserequest_product = Convert.ToInt32(product.ID), releaserequest_user = Convert.ToInt32(owner.id) });
                 return "Request has been uploaded.";
             }
             else
@@ -570,7 +577,7 @@ namespace CiroService
             List<JsonReleaseRequest> releaseRequestList = new List<JsonReleaseRequest>();
             foreach (releaserequest rq in requestExists)
             {
-                releaseRequestList.Add(new JsonReleaseRequest  { user_id = Convert.ToInt32(rq.releaserequest_user), product_id = Convert.ToInt32(rq.releaserequest_product), verdict = rq.releaserequest_verdict});
+                releaseRequestList.Add(new JsonReleaseRequest { user_id = Convert.ToInt32(rq.releaserequest_user), product_id = Convert.ToInt32(rq.releaserequest_product), verdict = rq.releaserequest_verdict });
             }
 
             return releaseRequestList;
@@ -581,7 +588,7 @@ namespace CiroService
         {
             var billAccess = new billofentryController();
             var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == prod.id);
-            if(billExists == null)
+            if (billExists == null)
             {
                 return "Product not found";
             }
@@ -594,7 +601,7 @@ namespace CiroService
             log.productlog_product = Convert.ToInt32(billExists.billofentry_product);
             log.productlog_dateLogged = DateTime.Now;
             log.productlog_user = productlog.userID;
-            if(code == "I9")
+            if (code == "I9")
             {
 
                 log.productlog_dscription = "Incident (@ " + DateTime.Now + "): " + productlog.description;
@@ -635,6 +642,13 @@ namespace CiroService
                 //emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, "We at Ciro would like to inform you about your package. The following log as been updated on the state of your package:" + System.Environment.NewLine + System.Environment.NewLine + log.productlog_dscription, "Delivery of Package");
                 return "D3 report added to log";
             }
+            else if (code == "CO2")
+            {
+                log.productlog_dscription = "Ownership Change (@ " + DateTime.Now + "): " + productlog.description;
+                log.productlog_type = 6;
+                productlogAccess.addRecord(log);
+                return "CO2 report added to log";
+            }
             else
             {
                 return "No such code";
@@ -647,11 +661,11 @@ namespace CiroService
             IEnumerable<productlog> logExists = null;
             try
             {
-                logExists = logAccess.getTable().Where(c =>c.productlog_product==product.ID);
+                logExists = logAccess.getTable().Where(c => c.productlog_product == product.ID);
             }
             catch (Exception x)
             { }
-            
+
 
             if (logExists == null)
             {
@@ -661,7 +675,7 @@ namespace CiroService
             List<JsonProductLog> productLogList = new List<JsonProductLog>();
             foreach (productlog log in logExists)
             {
-                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription,date=DateTime.Parse(log.productlog_dateLogged.ToString())});
+                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription, date = DateTime.Parse(log.productlog_dateLogged.ToString()) });
             }
             productLogList.OrderByDescending(c => c.date);
             return productLogList;
@@ -672,25 +686,25 @@ namespace CiroService
             var warehouseAccess = new warehouseController();
             List<warehouse> warehouseExists = warehouseAccess.getTable().ToList<warehouse>();
 
-            if(warehouseExists.Count() == 0)
+            if (warehouseExists.Count() == 0)
             {
                 return null;
             }
 
             double total = 0;
             List<JsonWarehouse> warehouseList = new List<JsonWarehouse>();
-            foreach(warehouse warehouses in warehouseExists)
+            foreach (warehouse warehouses in warehouseExists)
             {
                 IEnumerable<JsonInventory> warehouseStock = new List<JsonInventory>();
                 warehouseStock = getWarehouseInventory(new JsonWarehouse { name = warehouses.warehouse_name });
                 total = 0;
-                foreach(JsonInventory s in warehouseStock)
+                foreach (JsonInventory s in warehouseStock)
                 {
                     total += s.size;
                 }
                 int warehouseSize = Convert.ToInt32(warehouses.warehouse_size);
-                double availabilityW = total / Convert.ToDouble(warehouseSize)*100;
-                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype),available=availabilityW ,user = Convert.ToInt32(warehouses.warehouse_user)});
+                double availabilityW = total / Convert.ToDouble(warehouseSize) * 100;
+                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype), available = availabilityW, user = Convert.ToInt32(warehouses.warehouse_user) });
             }
             return warehouseList;
         }
@@ -719,7 +733,7 @@ namespace CiroService
             var requestAccess = new releaseRequestController();
             var requestExists = requestAccess.getTable().FirstOrDefault<releaserequest>(c => c.releaserequest_product == Convert.ToInt32(billExists.billofentry_product));
 
-            if(requestExists == null)
+            if (requestExists == null)
             {
                 return "No request found for this package";
             }
@@ -736,9 +750,11 @@ namespace CiroService
 
         public void paypal()
         {
+            var test = new PayPal.Account();
+            MessageBox.Show(test.APIPassword);
             GetBalanceRequestType request = new GetBalanceRequestType();
             GetBalanceResponseType response = new GetBalanceResponseType();
-            request.ReturnAllCurrencies="YES";
+            request.ReturnAllCurrencies = "YES";
 
             GetBalanceReq wrapper = new GetBalanceReq();
             wrapper.GetBalanceRequest = request;
@@ -762,19 +778,26 @@ namespace CiroService
         {
             var ownershipAccess = new billofentryController();
             var ownershipExists = ownershipAccess.getTable().FirstOrDefault<billofentry>(o => o.billofentry_user == Convert.ToInt32(currentOwner.id) && o.billofentry_product == prod.id);
-            if(ownershipExists == null)
+            if (ownershipExists == null)
             {
                 return "Ownership of this product does not exist.";
             }
 
             var newOwnerAccess = new userController();
             var newOwnerExists = newOwnerAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(newOwner.id));
-            if(newOwnerExists == null)
+            if (newOwnerExists == null)
             {
                 return "New Owner does not Exist.";
             }
 
             var ownershipReqAccess = new ownershipRequestController();
+            var ownershipReqExists = ownershipReqAccess.getTable().FirstOrDefault<ownershiprequest>(o => o.ownershiprequest_owner == currentOwner.id && o.ownershiprequest_newowner == newOwner.id && o.ownershiprequest_product == prod.id);
+
+            if(ownershipReqExists != null)
+            {
+                return "Ownership Request has already been sent";
+            }
+
             JsonOwnershipReq ownerReq = new JsonOwnershipReq();
             ownerReq.prevOwner = Convert.ToInt32(currentOwner.id);
             ownerReq.newOwner = Convert.ToInt32(newOwner.id);
@@ -785,11 +808,11 @@ namespace CiroService
             return "Request has been sent";
         }
 
-        public string approveOwnershipRequest(string verdict,JsonUser user, JsonProducts prod)
+        public string approveOwnershipRequest(string verdict, JsonUser user, JsonProducts prod)
         {
             var ownerReqAccess = new ownershipRequestController();
             var ownerReqExists = ownerReqAccess.getTable().FirstOrDefault<ownershiprequest>(o => o.ownershiprequest_newowner == Convert.ToInt32(user.id) && o.ownershiprequest_product == prod.id);
-            if(ownerReqExists == null)
+            if (ownerReqExists == null)
             {
                 return null;
             }
@@ -798,7 +821,7 @@ namespace CiroService
             ownerReq.acceptance = verdict;
             ownerReqExists.ownershiprequest_acceptance = ownerReq.acceptance;
             ownerReqAccess.updateRecord(ownerReqExists.ownershiprequest_id, ownerReqExists);
-            if(verdict == "Accepted")
+            if (verdict == "Accepted")
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_user == Convert.ToInt32(ownerReqExists.ownershiprequest_owner) && b.billofentry_product == Convert.ToInt32(prod.id));
@@ -817,13 +840,13 @@ namespace CiroService
         {
             var ownershipReqAccess = new ownershipRequestController();
             List<ownershiprequest> ownershipReqExists = ownershipReqAccess.getTable().Where<ownershiprequest>(o => o.ownershiprequest_owner == Convert.ToInt32(user.id) || o.ownershiprequest_newowner == Convert.ToInt32(user.id)).ToList<ownershiprequest>();
-            if(ownershipReqExists.Count == 0)
+            if (ownershipReqExists.Count == 0)
             {
                 return null;
             }
 
             List<JsonOwnershipReq> ownerReq = new List<JsonOwnershipReq>();
-            foreach(ownershiprequest o in ownershipReqExists)
+            foreach (ownershiprequest o in ownershipReqExists)
             {
                 ownerReq.Add(new JsonOwnershipReq { id = o.ownershiprequest_id, prevOwner = Convert.ToInt32(o.ownershiprequest_owner), newOwner = Convert.ToInt32(o.ownershiprequest_newowner), product = Convert.ToInt32(o.ownershiprequest_product), acceptance = o.ownershiprequest_acceptance });
             }
@@ -835,14 +858,14 @@ namespace CiroService
             var warehouseAccess = new warehouseController();
             var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower());
 
-            if(warehouseExists == null)
+            if (warehouseExists == null)
             {
                 return null;
             }
 
             var warehouseStockAccess = new warehousestockController();
             List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(s => s.warehousestock_warehouse == Convert.ToInt32(warehouseExists.warehouse_id)).ToList<warehousestock>();
-            if(warehouseStockExists.Count == 0)
+            if (warehouseStockExists.Count == 0)
             {
                 return null;
             }
@@ -850,7 +873,7 @@ namespace CiroService
             var billAccess = new billofentryController();
             List<billofentry> billExists = new List<billofentry>();
 
-            foreach(warehousestock w in warehouseStockExists)
+            foreach (warehousestock w in warehouseStockExists)
             {
                 billExists = billAccess.getTable().Where<billofentry>(b => b.billofentry_product == w.warehousestock_product).ToList<billofentry>();
             }
@@ -858,14 +881,14 @@ namespace CiroService
             var traderAccess = new userController();
             List<user> traderExists = new List<user>();
 
-            foreach(billofentry b in billExists)
+            foreach (billofentry b in billExists)
             {
                 traderExists = traderAccess.getTable().Where<user>(u => u.user_id == b.billofentry_user).ToList<user>();
             }
 
             List<JsonUser> traders = new List<JsonUser>();
 
-            foreach(user u in traderExists)
+            foreach (user u in traderExists)
             {
                 traders.Add(new JsonUser { id = u.user_id, email = u.user_email, fname = u.user_fname, lname = u.user_sname, password = u.user_password });
             }
@@ -884,7 +907,7 @@ namespace CiroService
         {
             var countryAccess = new countryrelationController();
             var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name == country.name);
-            
+
             countryAccess.addRecord(new countryrelation { countryrelation_name = country.name });
         }
 
@@ -912,34 +935,34 @@ namespace CiroService
             var warehouseAccess = new warehouseController();
             var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower() || w.warehouse_id == warehouses.id);
 
-            if(warehouseExists == null)
+            if (warehouseExists == null)
             {
                 return null;
             }
 
             var warehouseStockAccess = new warehousestockController();
             List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
-            if(warehouseStockExists == null)
+            if (warehouseStockExists == null)
             {
                 return null;
             }
 
             List<JsonInventory> inventory = new List<JsonInventory>();
 
-            foreach(warehousestock w in warehouseStockExists)
+            foreach (warehousestock w in warehouseStockExists)
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
                 inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), productID = Convert.ToInt32(w.warehousestock_product), lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = Convert.ToInt32(billExists.billofentry_user), productType = Convert.ToInt32(w.product.product_producttype) });
             }
             return inventory;
-        }
+        }      
 
         public JsonWarehouse getWarehouseI(JsonWarehouse warehouses)
         {
             var warehouseAccess = new warehouseController();
             var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name == warehouses.name || w.warehouse_id == warehouses.id);
-            if(warehouseExists == null)
+            if (warehouseExists == null)
             {
                 return null;
             }
@@ -953,7 +976,7 @@ namespace CiroService
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == users.email || u.user_id == users.id);
 
-            if(userExists == null)
+            if (userExists == null)
             {
                 return null;
             }
@@ -962,35 +985,319 @@ namespace CiroService
             return nUser;
         }
 
-        public string sendMessage(string from, string to, string message)
+        public IEnumerable<JsonBillofEntry> getBill(JsonBillofEntry bill)
         {
-            //string result = "Not Sent:User Not found";
-           // var messageAccess = new messageController();
-           // var user 
+            var billAccess = new billofentryController();
+            List<billofentry> billExists = billAccess.getTable().Where<billofentry>(b => b.billofentry_code == bill.billCode || b.billofentry_product == bill.product || b.billofentry_user == bill.user).ToList<billofentry>();
+
+            if (billExists.Count == 0)
+            {
+                return null;
+            }
+
+            List<JsonBillofEntry> billofentries = new List<JsonBillofEntry>();
+
+            foreach (billofentry b in billExists)
+            {
+                billofentries.Add(new JsonBillofEntry { id = b.billofentry_id, billCode = b.billofentry_code, productName = b.product.product_name, ownerEmail = b.user.user_email, user = Convert.ToInt32(b.billofentry_user), product = Convert.ToInt32(b.billofentry_product), origin = b.billofentry_origin });
+            }
+
+            return billofentries;
+        }
+
+        public string addInvoice(JsonBillofEntry bill, JsonProducts product)
+        {
+            char[] valueNo = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            char[] valueAlph = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            Random rand = new Random();
+            string invoiceNo = valueAlph.ElementAt(rand.Next(0, valueAlph.Length - 1)).ToString() + valueAlph.ElementAt(rand.Next(0, valueAlph.Length - 1)).ToString() + valueNo.ElementAt(rand.Next(0, valueNo.Length - 1)).ToString() + valueNo.ElementAt(rand.Next(0, valueNo.Length - 1)).ToString() + valueAlph.ElementAt(rand.Next(0, valueAlph.Length - 1)).ToString() + valueAlph.ElementAt(rand.Next(0, valueAlph.Length - 1)).ToString();
+            MessageBox.Show(invoiceNo);
             return "";
         }
 
-        public IEnumerable<jsonmessage> getMessage(string ID)
+        public string addTax(JsonProducts products, JsonBillofEntry _bill)
         {
-            List<jsonmessage> messages =new List<jsonmessage>();
+            double addedVAT = 0.0;
+            double addedPenalty = 0.0;
 
-            IEnumerable<message> messagesTable = null;
-            try
+            var productAccess = new productController();
+            var productExists = productAccess.getTable().FirstOrDefault<product>(p => p.product_id == Convert.ToInt32(products.id));
+            if (productExists == null)
             {
-                messagesTable = new messageController().getTable().Where(c => c.message_to==Convert.ToInt32(ID));
+                return null;
             }
-            catch (Exception x)
-            { }
-            if(messagesTable != null)
+
+            var billAccess = new billofentryController();
+
+            var countryAccess = new countryrelationController();
+            var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower() == _bill.origin.ToLower());
+            addedVAT = Convert.ToDouble(productExists.product_price) * 0.14;
+            if (countryExists == null)
             {
+                addedPenalty = Convert.ToDouble(productExists.product_price) * Convert.ToDouble(productExists.hscode.hscode_percentage);
+            }
+            DateTime date = DateTime.Now;
+            IEnumerable<billofentry> billExists = billAccess.getTable().Where<billofentry>(b => b.billofentry_user == _bill.user).ToList<billofentry>();
+
+            int count = 0;
+
+            foreach (billofentry b in billExists)
+            {
+                count++;
+            }
+
+            string invoiceNo = "" + date.Day + date.Month + date.Year + _bill.user + count;
+            MessageBox.Show(invoiceNo);
+            MessageBox.Show("" + addedVAT + "   " + addedPenalty);
+            JsonInvoice newInvoice = new JsonInvoice { id = Convert.ToInt32(invoiceNo), vat = addedVAT, penalty = addedPenalty };
+            var invoiceAccess = new invoiceController();
+            invoiceAccess.addRecord(new invoice { invoice_id = newInvoice.id, invoice_vat = Convert.ToDecimal(newInvoice.vat), invoice_penalty = Convert.ToDecimal(newInvoice.penalty) });
+
+            billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
+
+            return "Tax Added to product.";
+        }
+
+        public JsonInvoice getInvoice(JsonInvoice invoiceNum, jsonProduct products)
+        {
+            var billAccess = new billofentryController();
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == products.ID || b.billofentry_invoice == invoiceNum.id);
+
+            if(billExists == null)
+            {
+                return null;
+            }
+
+            JsonInvoice newInvoice = new JsonInvoice { id = billExists.invoice.invoice_id, vat = Convert.ToDouble(billExists.invoice.invoice_vat), penalty = Convert.ToDouble(billExists.invoice.invoice_penalty), paid = Convert.ToDouble(billExists.invoice.invoice_paid) };
+
+            return newInvoice;
+        }
+
+        public IEnumerable<JsonMessage> getMessages(JsonUser users)
+        {
+            var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == users.email);
+
+            if(userExists == null)
+			{
+                return null;
+            }
+
+            var messageAccess = new messageController();
+            List<message> messageExists = messageAccess.getTable().Where<message>(m => m.message_convoid == users.convo_id || m.message_from == userExists.user_id || m.message_to == userExists.user_id).ToList<message>();
+
+            if(messageExists.Count() == 0)
+            {
+                return null;
+            }
+
+            List<JsonMessage> newMessage = new List<JsonMessage>();
+
+            foreach(message m in messageExists)
+            {
+                var userFrom = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(m.message_from));
+                var userTo = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(m.message_to));
+                newMessage.Add(new JsonMessage { convo_id = Convert.ToInt32(m.message_convoid), from = userFrom.user_email, to = userTo.user_email, message = m.message_message, stamp = Convert.ToDateTime(m.message_stamp) });
+            }
+
+            return newMessage;
+        }
+
+        public string sendMessage(JsonMessage messages)
+        {
+            var userAccess = new userController();
+            var userFrom = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == messages.from);
+            var userTo = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == messages.to);
+
+            var messageAccess = new messageController();
+            var messageConvoExists = messageAccess.getTable().FirstOrDefault<message>(m => (m.message_from == userFrom.user_id && m.message_to == userTo.user_id) || (m.message_from == userTo.user_id && m.message_to == userFrom.user_id));
             
-                foreach (var mess in messagesTable)
+
+            message newMessage;
+
+
+            if(messageConvoExists == null)
+            {
+                newMessage = new message { message_convoid = Convert.ToInt32("" + userFrom.user_id + userTo.user_id), message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
+                messageAccess.addRecord(newMessage);
+                return "Message has been sent";
+            }
+
+
+            newMessage = new message { message_convoid = messageConvoExists.message_convoid, message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
+            messageAccess.addRecord(newMessage);
+            return "Message has been sent";
+        }
+
+        public string payTax(JsonInvoice invoices)
+        {
+            var invoiceAccess = new invoiceController();
+            var invoiceExists = invoiceAccess.getTable().FirstOrDefault<invoice>(i => i.invoice_id == invoices.id);
+
+            if(invoiceExists == null)
+            {
+                return null;
+            }
+
+            invoiceExists.invoice_paid += Convert.ToDecimal(invoices.paid);
+            invoiceAccess.updateRecord(invoiceExists.invoice_id, invoiceExists);
+            return "Invoice Paid";
+		}
+
+        public string addlocation(jsonlocation loca)
+        {
+            var locationaccess = new LocationController();
+            location loc = new location { location_isle = loca.isle, location_row = loca.row, location_column = loca.col, location_size = loca.size, location_product = loca.product, location_warehouse = loca.warehouse, location_height = loca.height, location_length = loca.length, location_width = loca.width };
+            locationaccess.addRecord(loc);
+            return "location added.";
+        }
+
+        public void vacatelocation(string packageID)
+        {
+            var locationaccess = new LocationController();
+            var loc = locationaccess.getTable().FirstOrDefault<location>(l => l.location_product == Convert.ToInt32(int.Parse(packageID)));
+
+            loc.location_product = null;
+
+            locationaccess.updateRecord(loc.location_id, loc);
+        }
+
+        public void occupylocation(jsonlocation loc, string productID)
+        {
+            var locationaccess = new LocationController();
+            var loca = locationaccess.getTable().FirstOrDefault<location>(l => l.location_warehouse == Convert.ToInt32(loc.warehouse) && (l.location_isle == loc.isle) && (l.location_row == loc.row) && (l.location_column == loc.col));
+            loca.location_product = int.Parse(productID);
+
+            locationaccess.updateRecord(loca.location_id, loca);
+        }
+
+
+        public jsonlocation getPackageInWarehouse(string packageID)
+        {
+            var loc = new jsonlocation();
+            var getlocation = new LocationController();
+            var locdetails = getlocation.getTable().FirstOrDefault<location>(l => l.location_product == int.Parse(packageID));
+
+            loc.ID = locdetails.location_id;
+            loc.isle = Convert.ToInt32(locdetails.location_isle);
+            loc.row = Convert.ToInt32(locdetails.location_row);
+            loc.col = Convert.ToInt32(locdetails.location_column);
+            loc.size = Convert.ToInt32(locdetails.location_size);
+            loc.warehouse = Convert.ToInt32(locdetails.location_warehouse);
+            loc.product = Convert.ToInt32(locdetails.location_product);
+
+
+            //MessageBox.Show("Isle : " + loc.isle + "  Column : " + loc.col + "  Row : " + loc.row);
+
+            return loc;
+        }
+
+        public IEnumerable<jsonlocation> getWarehouseLocations(string warehouseID)
+        {
+            var warehouseaccess = new warehouseController();
+            var warehouseExists = warehouseaccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == int.Parse(warehouseID));
+
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+
+            var locationaccess = new LocationController();
+            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == int.Parse(warehouseID)).ToList<location>();
+
+            if (locationlist == null)
+            {
+                return null;
+            }
+
+            List<jsonlocation> locations = new List<jsonlocation>();
+
+            foreach (location l in locationlist)
+            {
+                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse) });
+            }
+            return locations;
+        }
+
+
+        public jsonlocation findavailablelocation(JsonWarehouse w, jsonProduct p)
+        {
+            var locationaccess = new LocationController();
+            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_product == null && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
+
+            if (locationlist == null || locationlist.Count == 0)
+            {
+                return null;
+            }
+
+            jsonlocation best = new jsonlocation { ID = locationlist[0].location_id, col = Convert.ToInt32(locationlist[0].location_column), isle = Convert.ToInt32(locationlist[0].location_isle), row = Convert.ToInt32(locationlist[0].location_row) };
+
+            foreach (location loc in locationlist)
+            {
+                if (loc.location_length < best.length || loc.location_height < best.height || loc.location_width < best.width)
                 {
-             
-                        messages.Add(new jsonmessage { to = mess.user.user_email, from = mess.user1.user_email, date = DateTime.Parse(mess.message_stamp.ToString()) });                       
+                    best.ID = loc.location_id;
+                    best.isle = Convert.ToInt32(loc.location_isle);
+                    best.row = Convert.ToInt32(loc.location_row);
+                    best.col = Convert.ToInt32(loc.location_column);
                 }
             }
-            return messages;
+            return best;
+        }
+
+        public string findlocation(JsonWarehouse w, jsonProduct p)
+        {
+            var loc = findavailablelocation(w, p);
+            string inst = null;
+
+            if (loc != null)
+            {
+                inst = "Location Open At Isle : " + loc.isle + " Row : " + loc.row + " Column : " + loc.col;
+                return inst;
+            }
+
+            if (loc == null)
+            {
+                var locationaccess = new LocationController();
+                List<location> locationfits = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
+
+                if (locationfits.Count == 0)
+                {
+                    return "Package Does Not Fit In Any Locations In The Warehouse";
+                }
+
+                for (int i = 0; i < locationfits.Count; i++)
+                {
+                    jsonlocation loc2 = findavailablelocation(w, new jsonProduct { length = Convert.ToInt32(locationfits[i].product.product_length), height = Convert.ToInt32(locationfits[i].product.product_height), width = Convert.ToInt32(locationfits[i].product.product_width) });
+                    if (loc2 == null)
+                    {
+                        i = locationfits.Count;
+                    }
+                    else
+                    {
+                        inst = "Move Package ID = " + locationfits[i].location_id + ", To Isle : " + loc2.isle + ", Row : " + loc2.row + " Column : " + loc2.col;
+                        inst += " \nNow Move The New Package To Isle : " + locationfits[i].location_isle + ", Row : " + locationfits[i].location_row + ", Column : " + locationfits[i].location_column;
+                        return inst;
+                    }
+                }
+            }
+            return "No Location Available For This Package Yet";
+        }
+
+        public IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph()
+        {
+            var warehouseaccess = new warehouseController();
+            var warehouses = warehouseaccess.getTable();
+            var packageaccess = new productController();
+            List<jsonWarehouseAvailabilty> warehouse = new List<jsonWarehouseAvailabilty>();
+
+            foreach (warehouse w in warehouses)
+            {
+                var packages = packageaccess.getTable().Where<product>(p => p.product_location == w.warehouse_location);
+                warehouse.Add(new jsonWarehouseAvailabilty { warehouse = w.warehouse_name, size = Convert.ToInt32(w.warehouse_size), capacity = packages.Count() });
+            }
+            return warehouse;
         }
 
         /*public string getPackageNotification(JsonUser user)

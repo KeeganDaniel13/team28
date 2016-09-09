@@ -4,28 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-<<<<<<< HEAD
-      <Diagram DiagramId="5bc655864141455bbcc1c62f4556fc7f" Name="Diagram1" ZoomLevel="111">
-=======
-      <Diagram DiagramId="5bc655864141455bbcc1c62f4556fc7f" Name="Diagram1" ZoomLevel="56">
->>>>>>> 12ac0bd6e6d31ec27c283771675e11f7336a038b
-        <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+      <Diagram DiagramId="39dca235780448f5909a51c0104b8356" Name="Diagram1">
+        <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.countryrelation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.hscode" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.ownershiprequest" Width="1.5" PointX="8.25" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="3.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferlist" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.transferrequest" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.user" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.usertype" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehouse" Width="1.5" PointX="11.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousestock" Width="1.5" PointX="13.5" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.warehousetype" Width="1.5" PointX="9" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.hscode" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.invoice" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.ownershiprequest" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.transferlist" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.transferrequest" Width="1.5" PointX="8.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.user" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.usertype" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehouse" Width="1.5" PointX="11.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehousestock" Width="1.5" PointX="13.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.warehousetype" Width="1.5" PointX="9" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="custommandbModel.billofentry_invoice" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.billofentry_product" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.billofentry_user" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.product_hscode" ManuallyRouted="false" />
@@ -48,6 +46,9 @@
         <AssociationConnector Association="custommandbModel.warehouse_user" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.warehouse_warehousetype" ManuallyRouted="false" />
         <AssociationConnector Association="custommandbModel.warehousestock_warehouse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="custommandbModel.location" Width="1.5" PointX="13.5" PointY="7.75" />
+        <AssociationConnector Association="custommandbModel.location_product" />
+        <AssociationConnector Association="custommandbModel.location_warehouse" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
