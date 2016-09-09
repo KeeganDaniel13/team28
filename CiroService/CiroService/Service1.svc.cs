@@ -28,6 +28,23 @@ namespace CiroService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public IEnumerable <JsonUser> GetUsers()
+        {
+            var userAccess = new userController();
+            List<JsonUser> users = new List<JsonUser>();
+            List<user> userTable = userAccess.getTable().ToList<user>();
+            foreach (user u in userTable)
+            {
+                users.Add(new JsonUser
+                {
+                    id = u.user_id,
+                    fname = u.user_fname,
+                    email = u.user_email,
+                    usertypename = u.usertype.usertype_name
+                });
+            }
+            return users;
+        }
 
         public string GetData()
         {
@@ -102,21 +119,43 @@ namespace CiroService
             //emailTest email = new emailTest(newUser.user_fname + " " + newUser.user_sname, newUser.user_email, "Hello " + newUser.user_fname + ", Welcome to Ciro. You are now a member of our family, Enjoy!", "Registered to Ciro Solutions");
             return "Registered";
         }
+		
+        public IEnumerable <TransferDetails> listTransferTRequests()
+        {
+            try
+            {
+                var tRequest = new transferrequestsController().getTable().Where(c => c.transferrequest_verdict== "Pending");
+                var productinfo = new productController();
+                var userInfo = new userController();
+                var transfers =new List<TransferDetails>();
+                foreach(var requets in tRequest)
+                {
+                    var prod = productinfo.getRecord(Convert.ToInt32(requets.transferrequest_product));
+                    var use = userInfo.getRecord(Convert.ToInt32(requets.transferrequest_user));
+                    transfers.Add(new TransferDetails {productid= Convert.ToInt32(requets.transferrequest_product ), currentLocation = requets .transferrequest_from ,transferName =use.user_fname ,productName = prod.product_name  ,destination = requets .transferrequest_to });
+                }
+                return transfers;
+
+            }
+            catch (Exception e) {  }
+            return null;
+           
+        }
 
         public string transeferRequest(jsonTRequest newRequest)
         {
             //Fix
             transferrequestsController trans = new transferrequestsController();
             transferrequest newTransfer = new transferrequest();
-            warehousestockController stockTable = new warehousestockController();
-            warehousestock warehouseID = stockTable.getTable().First<warehousestock>(c => c.warehousestock_product == newRequest.productID);
+            //warehousestockController stockTable = new warehousestockController();
+            //warehousestock warehouseID = stockTable.getTable().First<warehousestock>(c => c.warehousestock_product == newRequest.productID);
             warehouseController warehouseTable = new warehouseController();
-            warehouse warehouseName = warehouseTable.getTable().First<warehouse>(c => c.warehouse_id == warehouseID.warehousestock_warehouse);
+            warehouse warehouseName = warehouseTable.getRecord(newRequest.endWarehouse);
 
             newTransfer.transferrequest_verdict = "Pending";
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
-            newTransfer.transferrequest_to = newRequest.endWarehouse;
+            newTransfer.transferrequest_to = warehouseName.warehouse_name;
             newTransfer.transferrequest_from = warehouseName.warehouse_location;
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
@@ -263,11 +302,10 @@ namespace CiroService
             productController productAccess = new productController();
             billofentryController billAccess = new billofentryController();
             string origin2 = origin;
+			string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
+
             foreach (var p in newProduct)
             {
-
-                DateTime date = DateTime.Now;
-                string genCode = "" + hscode + date.Day + date.Month + date.Year + date.Second + date.Millisecond + origin2.Substring(0, 2);
                 //add products to product table
                 productAccess.addRecord(new product { product_name = p.name, product_size = p.size, product_quantity = p.quantity, product_price = Convert.ToDecimal(p.price), product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
                 //adding new product with bill of entry
@@ -419,6 +457,11 @@ namespace CiroService
             package.quantity = Convert.ToInt32(detailPackage.product_quantity);
             package.location = detailPackage.product_location;
             package.arrivalDate = Convert.ToDateTime(detailPackage.product_arrivalDate);
+            package.bill = detailPackage.billofentries.First<billofentry>(c => c.billofentry_product == detailPackage.product_id).billofentry_code;
+            //var warehouseid = detailPackage.warehousestocks.First<warehousestock>(c => Convert.ToInt32(c.warehousestock_product) == detailPackage.product_id);
+            //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
+            var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
+            package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
             return package;
         }
 
