@@ -12,10 +12,10 @@ namespace CiroWebsite
         protected void Page_Load(object sender, EventArgs e)
         {
             var server = new CiroService.Service1Client();
-            var user = Session["ID"];
+            var user = (CiroService.JsonUser) Session["user"];
 
 
-            var goods = server.clientProducts(new CiroService.JsonUser { id = Convert.ToInt32(user) });
+            var goods = server.clientProducts(new CiroService.JsonUser { id = Convert.ToInt32(user.id ) });
             //var goods = server.clientProducts(new CiroService.JsonUser { id = 1 });
             if (Request.QueryString["add"] != null)
             {

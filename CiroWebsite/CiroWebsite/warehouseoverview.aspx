@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="warehouseoverview.aspx.cs" Inherits="CiroWebsite.warehouseoverview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/warehouse.Master" AutoEventWireup="true" CodeBehind="warehouseoverview.aspx.cs" Inherits="CiroWebsite.warehouseoverview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style>
 		label { width: 200px; float: left; margin: 0 10px 0 0; }
@@ -81,48 +81,9 @@
             </div>
         </div>  
 	<table class="table" style="width:350px">
-                <tr>
-                    <th colspan="5">
-                        <b>
-                            Lanseria Bondage</b>
-                    </th>
-					
-                </tr>
-                <tr>
-                    <td colspan="5">
-					<img src="out.jpg" alt="Mountain View" style="width:100px;height:100px;">
-					
-					<div style="float:right;">
-                        Gauteng Pretoria<br/>
-                        Special Warehouse (SOS)<br />
-                        Status : Open<br/>
-						Created on: <br/>
-						<button>View warehouse</button>
-						</div>
-                    </td>
-                </tr>
-				<tr>
-                    <th colspan="5">
-                        <b>
-                            Lanseria Bondage</b>
-                    </th>
-					
-                </tr>
-                <tr>
-                    <td colspan="5">
-					<img src="out.jpg" alt="Mountain View" style="width:100px;height:100px;">
-					
-					<div style="float:right;">
-                        Gauteng Pretoria<br/>
-                        Special Warehouse (SOS)<br />
-                        Status : Open<br/>
-						Created on: <br/>
-						<button>View warehouse</button>
-						</div>
-                    </td>
-                </tr>
-                
-            </table>		
+            <%listWarehouses(); %>    
+			   
+     </table>		
         
 	</div>
 </div>

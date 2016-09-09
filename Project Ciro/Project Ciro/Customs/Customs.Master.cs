@@ -11,7 +11,7 @@ namespace Project_Ciro.Customs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["ID"] == null)
+           /* if(Session["ID"] == null)
             {
                 Response.Redirect("../Main/Login.aspx");
             }
@@ -23,7 +23,7 @@ namespace Project_Ciro.Customs
             {
                 Response.Redirect("../Warehousemanager/WarehouseItems.aspx");
             }
-            else { }
+            else { }*/
         }
     }
 }

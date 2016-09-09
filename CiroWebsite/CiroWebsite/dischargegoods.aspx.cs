@@ -23,5 +23,17 @@ namespace CiroWebsite
             }
             Release.InnerHtml = body;
         }
+
+        protected void sumbitRelease(object sender,EventArgs e)
+        {
+            var user = (CiroService.JsonUser ) Session["user"];
+            var list = (List<int>)Session["declare"];
+            //var list
+            foreach(var prod in list)
+            {
+                MessageBox.Show(CiroSingleton.ServerCalls.releaseRequest(new CiroService.JsonUser { id = user.id }, new CiroService.jsonProduct { ID = prod }, ""));
+            }
+            
+        }
     }
 }

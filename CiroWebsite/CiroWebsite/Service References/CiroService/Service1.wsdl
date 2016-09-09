@@ -25,6 +25,12 @@
   <wsdl:message name="IService1_clientProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:clientProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_listTransferTRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:listTransferTRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listTransferTRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listTransferTRequestsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_transeferRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:transeferRequest" />
   </wsdl:message>
@@ -290,6 +296,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/clientProducts" message="tns:IService1_clientProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/clientProductsResponse" message="tns:IService1_clientProducts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="listTransferTRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listTransferTRequests" message="tns:IService1_listTransferTRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listTransferTRequestsResponse" message="tns:IService1_listTransferTRequests_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="transeferRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/transeferRequest" message="tns:IService1_transeferRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/transeferRequestResponse" message="tns:IService1_transeferRequest_OutputMessage" />
@@ -481,6 +491,15 @@
     </wsdl:operation>
     <wsdl:operation name="clientProducts">
       <soap:operation soapAction="http://tempuri.org/IService1/clientProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTransferTRequests">
+      <soap:operation soapAction="http://tempuri.org/IService1/listTransferTRequests" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

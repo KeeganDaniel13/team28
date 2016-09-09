@@ -17,7 +17,8 @@ namespace CiroWebsite
 
         protected void listMessages()
         {
-            var messages = CiroSingleton.ServerCalls.getMessage(new CiroService.JsonUser { id = 2, email = "customs@gmail" });
+            var user = (CiroService .JsonUser) Session["user"];
+            var messages = CiroSingleton.ServerCalls.getMessage(new CiroService.JsonUser { id = user.id, email = user.email });
             Session["messages"] = messages.ToList<CiroService.JsonMessage>();
             var body = "";
             foreach (var message in messages)
@@ -52,7 +53,7 @@ namespace CiroWebsite
 
         protected void sendMail(object sender, EventArgs e)
         {
-            MessageBox.Show(CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = "customs@gmail", to = "customs@gmail", date = DateTime.Now, message = "Sent Your First Message" }));
+            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = "customs@gmail", to = "customs@gmail", date = DateTime.Now, message = "Sent Your First Message" });
         }
     }
 }

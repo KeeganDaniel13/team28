@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
+﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="~/warehouse.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
@@ -21,10 +21,10 @@
 			</div>
 		</div>
 		<div class="text-center">
-			<h2 class="profile-info-name m-b-lg"><a href="javascript:void(0)" class="title-color">Lanseria Bonded Warehouse</a></h2>
+			<h2 class="profile-info-name m-b-lg"><a href="javascript:void(0)" runat="server" id="name" class="title-color"></a></h2>
 			<div>
-				<a href="javascript:void(0)" class="m-r-xl theme-color"><i class="fa fa-bolt m-r-xs"></i>Special Storage Warehouse</a>
-				<a href="javascript:void(0)" class="theme-color"><i class="fa fa-map-marker m-r-xs"></i>Cairo, Egypt</a>
+				<a href="javascript:void(0)" id="type" runat="server" class="m-r-xl theme-color"><i class="fa fa-bolt m-r-xs"></i></a>
+				<a href="javascript:void(0)" id="loaction" runat="server" class="theme-color"><i class="fa fa-map-marker m-r-xs"></i></a>
 			</div>
 		</div>
 	</div><!-- .profile-cover -->

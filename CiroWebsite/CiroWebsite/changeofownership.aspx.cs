@@ -14,9 +14,9 @@ namespace CiroWebsite
         {
             if (!IsPostBack)
             {
-                var user = Convert.ToInt32(Session["user"]);
+                var user =(CiroService .JsonUser)(Session["user"]);
                 //var server = new CiroService.Service1Client();
-                ownedProducts = CiroSingleton.ServerCalls.clientProducts(new CiroService.JsonUser { id = user }).ToList<CiroService.jsonProduct>();
+                ownedProducts = CiroSingleton.ServerCalls.clientProducts(new CiroService.JsonUser { id = user.id }).ToList<CiroService.jsonProduct>();
                 Session["userList"] = ownedProducts;
                 foreach (var prod in ownedProducts)
                 {
@@ -31,6 +31,7 @@ namespace CiroWebsite
             var fillGoods = (List<CiroService.jsonProduct>)Session["userList"];
             var good = fillGoods.First<CiroService.jsonProduct>(c => c.ID == Convert.ToInt32(goods.Value));
             Session["changeItem"] = good;
+            MessageBox.Show(""+good.ID);
             origincountry.Value = "Get Country Origin from database";
             Locationgoods.Value = good.currentLocation;
             if (good.transferLocation != "" || good.transferLocation != null)
