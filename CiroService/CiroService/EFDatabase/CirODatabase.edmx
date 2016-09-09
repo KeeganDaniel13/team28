@@ -64,6 +64,7 @@
           <Property Name="message_from" Type="int" />
           <Property Name="message_message" Type="longtext" />
           <Property Name="message_stamp" Type="datetime" Precision="0" />
+          <Property Name="message_subject" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="ownershiprequest">
           <Key>
@@ -689,6 +690,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="message_stamp" Type="DateTime" />
           <NavigationProperty Name="user" Relationship="Self.message_from" FromRole="message" ToRole="user" />
           <NavigationProperty Name="user1" Relationship="Self.message_to" FromRole="message" ToRole="user" />
+          <Property Name="message_subject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ownershiprequest">
           <Key>
@@ -1343,6 +1345,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="messages">
             <EntityTypeMapping TypeName="custommandbModel.message">
               <MappingFragment StoreEntitySet="message">
+                <ScalarProperty Name="message_subject" ColumnName="message_subject" />
                 <ScalarProperty Name="message_id" ColumnName="message_id" />
                 <ScalarProperty Name="message_convoid" ColumnName="message_convoid" />
                 <ScalarProperty Name="message_to" ColumnName="message_to" />

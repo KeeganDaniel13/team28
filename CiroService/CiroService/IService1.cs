@@ -146,6 +146,10 @@ namespace CiroService
         IEnumerable<JsonReleaseRequest> getRelease(JsonUser user);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getReleaseRequests")]
+        IEnumerable<JsonReleaseRequest> getReleaseRequests();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addProductLog/{code}")]
         string addProductLog(string code, JsonProductLog productlog, JsonProducts prod);
 
@@ -280,7 +284,6 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageLengthCategories")]
         IEnumerable<PackageSizeCategory> PackageLengthCategories();
 
-
         //pie chart for the three size categories for height
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageHeightCategories")]
@@ -296,7 +299,7 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseIncidents")]
         IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents();
 
-        //Most coomon release destination
+        //Most common release destination
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseReleases")]
         IEnumerable<WarehouseReleasescs> WarehouseReleases();
@@ -320,6 +323,15 @@ namespace CiroService
 
 
 
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedRelease")]
+        IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedTransfer")]
+        IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse);
 
 
 

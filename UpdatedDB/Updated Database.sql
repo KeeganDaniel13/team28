@@ -289,6 +289,7 @@ CREATE TABLE `custommandb`.`productlog` (
   `message_convoid` INT NULL,
   `message_to` INT NULL,
   `message_from` INT NULL,
+  `message_subject` VARCHAR(200) NULL,
   `message_message` LONGTEXT NULL,
   `message_stamp` DATETIME NULL,
   PRIMARY KEY (`message_id`),
