@@ -58,6 +58,9 @@
 				<li class="nav-item dropdown">
 					<a href="declareownershiptransfer.aspx">Change Ownership</a>
 				</li>
+                <li class="nav-item">
+                   <a href="messages.aspx"> <i class="zmdi m-r-md zmdi-hc-lg zmdi-envalope"></i></a>
+                </li>
 				<li class="nav-item">
 					<a href="javascript:void(0)" class="side-panel-toggle"
 						data-toggle="class" 

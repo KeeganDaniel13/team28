@@ -422,6 +422,7 @@
     <Content Include="viewtransfer.aspx" />
     <Content Include="warehouseinventory.aspx" />
     <Content Include="warehouseoverview.aspx" />
+    <Content Include="warehouserelease.aspx" />
     <Content Include="warehouseview.aspx" />
     <Content Include="wareMessage.aspx" />
     <Content Include="wareMessages.aspx" />
@@ -666,6 +667,13 @@
     </Compile>
     <Compile Include="warehouseoverview.aspx.designer.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehouserelease.aspx.cs">
+      <DependentUpon>warehouserelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouserelease.aspx.designer.cs">
+      <DependentUpon>warehouserelease.aspx</DependentUpon>
     </Compile>
     <Compile Include="warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>

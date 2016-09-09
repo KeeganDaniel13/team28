@@ -39,7 +39,7 @@ namespace CiroWebsite
 
         protected void listwarehouse()
         {
-            var warehouses = new CiroService.Service1Client().getWarehouse();
+            var warehouses = new CiroService.Service1Client().warehouses();
             var body = "";
             var count = 1;
 
