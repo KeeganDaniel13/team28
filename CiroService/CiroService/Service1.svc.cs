@@ -309,7 +309,7 @@ namespace CiroService
             IEnumerable<productlog> incidents = incidentTable.getTable();
             if (newIncident.image == null || newIncident.image.Equals(""))
             {
-                incidentTable.addRecord(new productlog { productlog_type = newIncident.type, productlog_dateLogged = DateTime.Now, productlog_product = newIncident.productID, productlog_image = "", productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
+                incidentTable.addRecord(new productlog { productlog_type = newIncident.type, productlog_dateLogged = DateTime.Now, productlog_product = newIncident.productID, productlog_warehouse = newIncident.warehouse, productlog_image = "", productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
             }
             else
             {
@@ -321,7 +321,7 @@ namespace CiroService
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
 
-                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_product = newIncident.productID, productlog_image = fileName, productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
+                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now,productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse,productlog_product = newIncident.productID, productlog_image = fileName, productlog_dscription = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
             }
             return;
         }

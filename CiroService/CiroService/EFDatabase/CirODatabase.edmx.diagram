@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="custommandbModel.message" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.ownershiprequest" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.product" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="custommandbModel.productlog" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="custommandbModel.productlog" Width="2" PointX="5.25" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.productlogtype" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.producttype" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.releaserequest" Width="1.5" PointX="8.25" PointY="8.25" IsExpanded="true" />

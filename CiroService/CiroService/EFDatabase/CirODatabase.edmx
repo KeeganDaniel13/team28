@@ -14,7 +14,6 @@
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
           <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
-          <Property Name="billofentry_invoice" Type="int" />
         </EntityType>
         <EntityType Name="countryrelation">
           <Key>
@@ -28,16 +27,7 @@
             <PropertyRef Name="hscode_id" />
           </Key>
           <Property Name="hscode_id" Type="int" Nullable="false" />
-          <Property Name="hscode_percentage" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>
-        <EntityType Name="invoice">
-          <Key>
-            <PropertyRef Name="invoice_id" />
-          </Key>
-          <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="hscode_percentage" Type="decimal" Precision="10" Scale="0" />
         </EntityType>
         <EntityType Name="location">
           <Key>
@@ -98,6 +88,7 @@
           </Key>
           <Property Name="productlog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="productlog_product" Type="int" />
+          <Property Name="productlog_warehouse" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="productlog_user" Type="int" />
           <Property Name="productlog_dscription" Type="varchar" MaxLength="255" />
           <Property Name="productlog_dateLogged" Type="datetime" Precision="0" />
@@ -192,18 +183,6 @@
           <Property Name="warehousetype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="warehousetype_name" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
-        <Association Name="billofentry_invoice">
-          <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
-          <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="invoice">
-              <PropertyRef Name="invoice_id" />
-            </Principal>
-            <Dependent Role="billofentry">
-              <PropertyRef Name="billofentry_invoice" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="billofentry_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="billofentry" Type="Self.billofentry" Multiplicity="*" />
@@ -372,6 +351,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'productlog_warehouse' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="productlog_warehouse" />-->
         <Association Name="releaserequest_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
@@ -496,7 +478,6 @@
           <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="location" EntityType="Self.location" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="message" EntityType="Self.message" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="custommandb" store:Type="Tables" />
@@ -512,10 +493,6 @@
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
-          <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
-            <End Role="invoice" EntitySet="invoice" />
-            <End Role="billofentry" EntitySet="billofentry" />
-          </AssociationSet>
           <AssociationSet Name="billofentry_product" Association="Self.billofentry_product">
             <End Role="product" EntitySet="product" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -723,6 +700,7 @@
           <NavigationProperty Name="product" Relationship="Self.productlog_product" FromRole="productlog" ToRole="product" />
           <NavigationProperty Name="productlogtype" Relationship="Self.productlog_type" FromRole="productlog" ToRole="productlogtype" />
           <NavigationProperty Name="user" Relationship="Self.productlog_user" FromRole="productlog" ToRole="user" />
+          <Property Name="productlog_warehouse" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="productlogtype">
           <Key>
@@ -1289,7 +1267,6 @@
                 <ScalarProperty Name="billofentry_user" ColumnName="billofentry_user" />
                 <ScalarProperty Name="billofentry_product" ColumnName="billofentry_product" />
                 <ScalarProperty Name="billofentry_origin" ColumnName="billofentry_origin" />
-                <ScalarProperty Name="billofentry_invoice" ColumnName="billofentry_invoice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1306,16 +1283,6 @@
               <MappingFragment StoreEntitySet="hscode">
                 <ScalarProperty Name="hscode_id" ColumnName="hscode_id" />
                 <ScalarProperty Name="hscode_percentage" ColumnName="hscode_percentage" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="invoices">
-            <EntityTypeMapping TypeName="custommandbModel.invoice">
-              <MappingFragment StoreEntitySet="invoice">
-                <ScalarProperty Name="invoice_paid" ColumnName="invoice_paid" />
-                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
-                <ScalarProperty Name="invoice_vat" ColumnName="invoice_vat" />
-                <ScalarProperty Name="invoice_penalty" ColumnName="invoice_penalty" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1363,6 +1330,7 @@
           <EntitySetMapping Name="productlogs">
             <EntityTypeMapping TypeName="custommandbModel.productlog">
               <MappingFragment StoreEntitySet="productlog">
+                <ScalarProperty Name="productlog_warehouse" ColumnName="productlog_warehouse" />
                 <ScalarProperty Name="productlog_id" ColumnName="productlog_id" />
                 <ScalarProperty Name="productlog_product" ColumnName="productlog_product" />
                 <ScalarProperty Name="productlog_user" ColumnName="productlog_user" />
