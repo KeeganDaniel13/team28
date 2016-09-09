@@ -146,6 +146,10 @@ namespace CiroService
         IEnumerable<JsonReleaseRequest> getRelease(JsonUser user);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getReleaseRequests")]
+        IEnumerable<JsonReleaseRequest> getReleaseRequests();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addProductLog/{code}")]
         string addProductLog(string code, JsonProductLog productlog, JsonProducts prod);
 
@@ -287,6 +291,15 @@ namespace CiroService
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagewidthCategories")]
         IEnumerable<PackageSizeCategory> PackagewidthCategories();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedRelease")]
+        IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedTransfer")]
+        IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse);
+
 
 
         /* [OperationContract]

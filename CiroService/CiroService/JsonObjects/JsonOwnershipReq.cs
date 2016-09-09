@@ -14,5 +14,8 @@ namespace CiroService.JsonObjects
         public string acceptance { get; set; }
 
         public int product { get; set; }
+        public JsonUser prevInfo{get;set;}
+        public JsonUser newOwnerInfo { get; set; }
+        public JsonProducts prodInfo { get; set; }
     }
 }

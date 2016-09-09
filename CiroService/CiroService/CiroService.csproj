@@ -157,6 +157,7 @@
     <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
     <Compile Include="DAL\productlogController.cs" />
+    <Compile Include="DAL\productlogtypeController.cs" />
     <Compile Include="DAL\producttypeController.cs" />
     <Compile Include="DAL\releaseRequestController.cs" />
     <Compile Include="DAL\transferlistController.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
     <Compile Include="JsonObjects\PackageSizeCategory.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
+    <Compile Include="JsonObjects\ReleaseProduct.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />
     <Compile Include="JsonObjects\transferStock.cs" />

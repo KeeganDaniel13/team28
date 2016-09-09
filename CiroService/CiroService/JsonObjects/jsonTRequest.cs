@@ -8,7 +8,7 @@ namespace CiroService.JsonObjects
     public class jsonTRequest
     {
         public int userID { get; set; }
-        public string endWarehouse { get; set; }
+        public int endWarehouse { get; set; }
         public string description  { get; set; }
         public int productID { get; set; }
 

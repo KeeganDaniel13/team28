@@ -301,6 +301,7 @@ namespace CiroService
             }
             productController productAccess = new productController();
             billofentryController billAccess = new billofentryController();
+			DateTime date = DateTime.Now;
             string origin2 = origin;
 			string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
 
@@ -625,6 +626,26 @@ namespace CiroService
 
             return releaseRequestList;
         }
+		
+        public IEnumerable<JsonReleaseRequest> getReleaseRequests()
+        {
+            var requestAccess = new releaseRequestController();
+            List<releaserequest> requestExists = requestAccess.getTable().ToList<releaserequest >();
+
+            if (requestExists.Count() == 0)
+            {
+                return null;
+            }
+
+            List<JsonReleaseRequest> releaseRequestList = new List<JsonReleaseRequest>();
+            foreach (releaserequest rq in requestExists)
+            {
+      
+                releaseRequestList.Add(new JsonReleaseRequest { user_id = Convert.ToInt32(rq.releaserequest_user), product_id = Convert.ToInt32(rq.releaserequest_product), verdict = rq.releaserequest_verdict,userInfo = new JsonUser { email =rq.user .user_email },productInfo = new JsonProducts {bill =rq.product .billofentries.First <billofentry>(c => c.billofentry_product == Convert.ToInt32(rq.releaserequest_product)).billofentry_code,arrivalDate = (DateTime)rq.product .product_arrivalDate,name =rq.product .product_name} });
+            }
+
+            return releaseRequestList;
+        }
 
         //add changes for image
         public string addProductLog(string code, JsonProductLog productlog, JsonProducts prod)
@@ -701,6 +722,7 @@ namespace CiroService
         public IEnumerable<JsonProductLog> getProductLog(jsonProduct product)
         {
             var logAccess = new productlogController();
+            var logTypes = new productlogtypeController();
             IEnumerable<productlog> logExists = null;
             try
             {
@@ -718,7 +740,7 @@ namespace CiroService
             List<JsonProductLog> productLogList = new List<JsonProductLog>();
             foreach (productlog log in logExists)
             {
-                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription, date = DateTime.Parse(log.productlog_dateLogged.ToString()) });
+                productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_dscription, date = DateTime.Parse(log.productlog_dateLogged.ToString()),logtypename = logTypes.getTable().First<productlogtype>(c => c.productlogtype_id == log.productlog_type).productlogtype_name});
             }
             productLogList.OrderByDescending(c => c.date);
             return productLogList;
@@ -872,8 +894,8 @@ namespace CiroService
                 billAccess.updateRecord(billExists.billofentry_id, billExists);
             }
             var userAccess = new userController();
-            var ownerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_owner));
-            var newOwnerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_newowner));
+            //var ownerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_owner));
+            //var newOwnerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_newowner));
             //emailTest emailOwner = new emailTest(ownerExists.user_fname + " " + ownerExists.user_sname, ownerExists.user_email, "Dear Mr/Ms " + ownerExists.user_sname + System.Environment.NewLine + System.Environment.NewLine + "Mr/Ms " + ownerExists.user_sname + " has " + verdict + " your request to change the ownership of your package: " + System.Environment.NewLine + System.Environment.NewLine + "Product Number: " + prod.id + System.Environment.NewLine + "Product Name: " + prod.name, "Request to change Ownership");
             //emailTest emailNewOwner = new emailTest(newOwnerExists.user_fname + " " + newOwnerExists.user_sname, newOwnerExists.user_email, "Dear Mr/Ms " + newOwnerExists.user_sname + System.Environment.NewLine + System.Environment.NewLine + "You have " + verdict + " the request to change ownership of: " + System.Environment.NewLine + System.Environment.NewLine + "Product Number: " + prod.id + System.Environment.NewLine + "Product Name: " + prod.name, "Request to change Ownership");
             return "Ownership updated";
@@ -891,7 +913,10 @@ namespace CiroService
             List<JsonOwnershipReq> ownerReq = new List<JsonOwnershipReq>();
             foreach (ownershiprequest o in ownershipReqExists)
             {
-                ownerReq.Add(new JsonOwnershipReq { id = o.ownershiprequest_id, prevOwner = Convert.ToInt32(o.ownershiprequest_owner), newOwner = Convert.ToInt32(o.ownershiprequest_newowner), product = Convert.ToInt32(o.ownershiprequest_product), acceptance = o.ownershiprequest_acceptance });
+                JsonUser newOwner = new JsonUser { email =o.user1 .user_email,id =o.user1 .user_id  } ;
+                JsonUser prevOwner = new JsonUser { email = o.user.user_email, id = o.user.user_id };
+                JsonProducts prod = new JsonProducts { id = o.product.product_id ,location =o.product .product_location ,arrivalDate=(DateTime)o.product .product_arrivalDate ,name =o.product .product_name  };
+                ownerReq.Add(new JsonOwnershipReq { newOwnerInfo =newOwner ,prevInfo =prevOwner,prodInfo = prod,id = o.ownershiprequest_id, prevOwner = Convert.ToInt32(o.ownershiprequest_owner), newOwner = Convert.ToInt32(o.ownershiprequest_newowner), product = Convert.ToInt32(o.ownershiprequest_product), acceptance = o.ownershiprequest_acceptance });
             }
             return ownerReq;
         }
@@ -933,7 +958,7 @@ namespace CiroService
 
             foreach (user u in traderExists)
             {
-                traders.Add(new JsonUser { id = u.user_id, email = u.user_email, fname = u.user_fname, lname = u.user_sname, password = u.user_password });
+                traders.Add(new JsonUser { id = u.user_id, email = u.user_email, fname = u.user_fname, lname = u.user_sname});
             }
 
             return traders;
@@ -996,7 +1021,7 @@ namespace CiroService
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
-                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), productID = Convert.ToInt32(w.warehousestock_product), lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = Convert.ToInt32(billExists.billofentry_user), productType = Convert.ToInt32(w.product.product_producttype) });
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name=billExists .product .product_name}, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner =new JsonUser {fname =billExists.user.user_fname,lname=billExists.user.user_sname ,email=billExists.user.user_email}});
             }
             return inventory;
         }      
@@ -1127,7 +1152,7 @@ namespace CiroService
             }
 
             var messageAccess = new messageController();
-            List<message> messageExists = messageAccess.getTable().Where<message>(m => m.message_convoid == users.convo_id || m.message_from == userExists.user_id || m.message_to == userExists.user_id).ToList<message>();
+            List<message> messageExists = messageAccess.getTable().Where<message>(m => m.message_to == userExists.user_id).ToList<message>();
 
             if(messageExists.Count() == 0)
             {
@@ -1140,7 +1165,7 @@ namespace CiroService
             {
                 var userFrom = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(m.message_from));
                 var userTo = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(m.message_to));
-                newMessage.Add(new JsonMessage { convo_id = Convert.ToInt32(m.message_convoid), from = userFrom.user_email, to = userTo.user_email, message = m.message_message, stamp = Convert.ToDateTime(m.message_stamp) });
+                newMessage.Add(new JsonMessage {id =m.message_id ,subject=m.message_subject, convo_id = Convert.ToInt32(m.message_convoid), from = userFrom.user_email, to = userTo.user_email, message = m.message_message, stamp = Convert.ToDateTime(m.message_stamp)});
             }
 
             return newMessage;
@@ -1441,6 +1466,22 @@ namespace CiroService
             categories.Add(new PackageSizeCategory { category = "Widths Less Than 120cm", count = Convert.ToInt32(count2) });
             categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
+        }
+
+        public IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse)
+        {
+            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            List<ReleaseProduct> items = new List<ReleaseProduct>();
+            foreach(var item in warehouseStock)
+            {
+                items.Add(new ReleaseProduct {name = item.product .product_name});
+            }
+            return null;
+        }
+
+        public IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse)
+        {
+            throw new NotImplementedException();
         }
 
         /*public string getPackageNotification(JsonUser user)

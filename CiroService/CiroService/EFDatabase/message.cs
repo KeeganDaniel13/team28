@@ -20,6 +20,7 @@ namespace CiroService.EFDatabase
         public Nullable<int> message_from { get; set; }
         public string message_message { get; set; }
         public Nullable<System.DateTime> message_stamp { get; set; }
+        public string message_subject { get; set; }
     
         public virtual user user { get; set; }
         public virtual user user1 { get; set; }
