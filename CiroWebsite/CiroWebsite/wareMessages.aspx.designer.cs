@@ -10,33 +10,33 @@
 namespace CiroWebsite {
     
     
-    public partial class warehouseview {
+    public partial class wareMessages {
         
         /// <summary>
-        /// name control.
+        /// from control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor name;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText from;
         
         /// <summary>
-        /// type control.
+        /// to control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor type;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText to;
         
         /// <summary>
-        /// loaction control.
+        /// message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor loaction;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea message;
     }
 }

@@ -420,8 +420,11 @@
     <Content Include="viewpackage.aspx" />
     <Content Include="viewreleaseinfo.aspx" />
     <Content Include="viewtransfer.aspx" />
+    <Content Include="warehouseinventory.aspx" />
     <Content Include="warehouseoverview.aspx" />
     <Content Include="warehouseview.aspx" />
+    <Content Include="wareMessage.aspx" />
+    <Content Include="wareMessages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -650,6 +653,13 @@
     <Compile Include="warehouse.Master.designer.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
     </Compile>
+    <Compile Include="warehouseinventory.aspx.cs">
+      <DependentUpon>warehouseinventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouseinventory.aspx.designer.cs">
+      <DependentUpon>warehouseinventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -663,6 +673,20 @@
     </Compile>
     <Compile Include="warehouseview.aspx.designer.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wareMessage.aspx.cs">
+      <DependentUpon>wareMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wareMessage.aspx.designer.cs">
+      <DependentUpon>wareMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wareMessages.aspx.cs">
+      <DependentUpon>wareMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wareMessages.aspx.designer.cs">
+      <DependentUpon>wareMessages.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

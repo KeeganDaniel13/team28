@@ -1808,13 +1808,10 @@ namespace CiroWebsite.CiroService {
         private System.DateTime lastCheckedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ownerField;
+        private CiroWebsite.CiroService.JsonUser ownerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productTypeField;
+        private CiroWebsite.CiroService.JsonProducts productField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int quantityField;
@@ -1862,12 +1859,12 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int owner {
+        public CiroWebsite.CiroService.JsonUser owner {
             get {
                 return this.ownerField;
             }
             set {
-                if ((this.ownerField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.ownerField, value) != true)) {
                     this.ownerField = value;
                     this.RaisePropertyChanged("owner");
                 }
@@ -1875,27 +1872,14 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productID {
+        public CiroWebsite.CiroService.JsonProducts product {
             get {
-                return this.productIDField;
+                return this.productField;
             }
             set {
-                if ((this.productIDField.Equals(value) != true)) {
-                    this.productIDField = value;
-                    this.RaisePropertyChanged("productID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productType {
-            get {
-                return this.productTypeField;
-            }
-            set {
-                if ((this.productTypeField.Equals(value) != true)) {
-                    this.productTypeField = value;
-                    this.RaisePropertyChanged("productType");
+                if ((object.ReferenceEquals(this.productField, value) != true)) {
+                    this.productField = value;
+                    this.RaisePropertyChanged("product");
                 }
             }
         }

@@ -228,9 +228,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="lastChecked" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="owner" type="xs:int" />
-      <xs:element minOccurs="0" name="productID" type="xs:int" />
-      <xs:element minOccurs="0" name="productType" type="xs:int" />
+      <xs:element minOccurs="0" name="owner" nillable="true" type="tns:JsonUser" />
+      <xs:element minOccurs="0" name="product" nillable="true" type="tns:JsonProducts" />
       <xs:element minOccurs="0" name="quantity" type="xs:int" />
       <xs:element minOccurs="0" name="size" type="xs:int" />
       <xs:element minOccurs="0" name="warehouseID" type="xs:int" />
