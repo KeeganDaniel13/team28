@@ -1343,6 +1343,106 @@ namespace CiroService
             return warehouse;
         }
 
+
+        public IEnumerable<PackageSizeCategory> PackageLengthCategories()
+        {
+            var Packageaccess = new productController();
+            var products = Packageaccess.getTable();
+            int count1 = 0;
+            int count2 = 0;
+            int count3 = 0;
+            int cat1 = 0;
+            int cat2 = 60;
+            int cat3 = 120;
+
+            foreach(product p in products)
+            {
+                if (p.product_length < cat2)
+                {
+                    count1++;
+                }
+                else if(p.product_length < cat3)
+                {
+                    count2++;
+                }
+                else if(p.product_length > cat3)
+                {
+                    count3++;
+                }
+            }
+            List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
+            categories.Add(new PackageSizeCategory { category = "Lengths Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Lengths Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Lengths Greater Than 120cm", count = Convert.ToInt32(count3) });
+            return categories;
+        }
+
+        public IEnumerable<PackageSizeCategory> PackageHeightCategories()
+        {
+            var Packageaccess = new productController();
+            var products = Packageaccess.getTable();
+            int count1 = 0;
+            int count2 = 0;
+            int count3 = 0;
+            int cat1 = 0;
+            int cat2 = 60;
+            int cat3 = 120;
+
+            foreach (product p in products)
+            {
+                if (p.product_height < cat2)
+                {
+                    count1++;
+                }
+                else if (p.product_height < cat3)
+                {
+                    count2++;
+                }
+                else if (p.product_height > cat3)
+                {
+                    count3++;
+                }
+            }
+            List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
+            categories.Add(new PackageSizeCategory { category = "Heights Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Heights Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Heights Greater Than 120cm", count = Convert.ToInt32(count3) });
+            return categories;
+        }
+
+        public IEnumerable<PackageSizeCategory> PackagewidthCategories()
+        {
+            var Packageaccess = new productController();
+            var products = Packageaccess.getTable();
+            int count1 = 0;
+            int count2 = 0;
+            int count3 = 0;
+            int cat1 = 0;
+            int cat2 = 60;
+            int cat3 = 120;
+
+            foreach (product p in products)
+            {
+                if (p.product_width < cat2)
+                {
+                    count1++;
+                }
+                else if (p.product_width < cat3)
+                {
+                    count2++;
+                }
+                else if (p.product_width > cat3)
+                {
+                    count3++;
+                }
+            }
+            List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
+            categories.Add(new PackageSizeCategory { category = "Widths Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Widths Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
+            return categories;
+        }
+
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();

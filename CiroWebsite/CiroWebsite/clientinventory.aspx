@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Depositor | Inventory" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="clientinventory.aspx.cs" Inherits="CiroWebsite.clientinventory" %>
+﻿<%@ Page Title="Depositor | Inventory" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="clientinventory.aspx.cs" Inherits="CiroWebsite.clientinventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         td, th {

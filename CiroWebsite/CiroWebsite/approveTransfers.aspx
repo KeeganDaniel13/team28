@@ -37,9 +37,7 @@
 					<div class="app-actions-list scrollable-container">
 						<!-- mail category list -->
 						<div class="list-group">
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Package Log</a>
-						
-		
+							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-info-circle"></i>Package Log</a>
 						</div><!-- .list-group -->
 
 						<hr class="m-0 m-b-md" style="border-color: #ddd;">
@@ -53,14 +51,6 @@
 								<div class="carousel-inner">
 									<!-- Slide 1 -->
 									<div class="item active">
-										<img src="../infinity/assets/images/001.jpg" alt="">
-									</div>
-									<!-- Slide 2 -->
-									<div class="item">
-										<img src="../infinity/assets/images/001.jpg" alt="">
-									</div>
-									<!-- Slide 3 -->
-									<div class="item">
 										<img src="../infinity/assets/images/001.jpg" alt="">
 									</div>
 								</div>
