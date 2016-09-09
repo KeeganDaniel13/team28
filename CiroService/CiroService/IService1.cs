@@ -260,10 +260,26 @@ namespace CiroService
 
 
 
-
+        //double bar graph - occupied space vs total space
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseAvailability")]
         IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph();
+
+        //pie chart for the three size categories for length
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageLengthCategories")]
+        IEnumerable<PackageSizeCategory> PackageLengthCategories();
+
+
+        //pie chart for the three size categories for height
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageHeightCategories")]
+        IEnumerable<PackageSizeCategory> PackageHeightCategories();
+
+        //pie chart for the three size categories for width
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagewidthCategories")]
+        IEnumerable<PackageSizeCategory> PackagewidthCategories();
 
 
         /* [OperationContract]

@@ -13,6 +13,5 @@ namespace CiroService.JsonObjects
         public string from { get; set; }
         public string message { get; set; }
         public DateTime stamp { get; set; }
-
     }
 }

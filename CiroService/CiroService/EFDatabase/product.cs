@@ -24,6 +24,7 @@ namespace CiroService.EFDatabase
             this.transferlists = new HashSet<transferlist>();
             this.transferrequests = new HashSet<transferrequest>();
             this.warehousestocks = new HashSet<warehousestock>();
+            this.locations = new HashSet<location>();
         }
     
         public int product_id { get; set; }
@@ -35,6 +36,9 @@ namespace CiroService.EFDatabase
         public Nullable<System.DateTime> product_arrivalDate { get; set; }
         public Nullable<int> product_producttype { get; set; }
         public Nullable<int> product_hscode { get; set; }
+        public Nullable<int> product_width { get; set; }
+        public Nullable<int> product_height { get; set; }
+        public Nullable<int> product_length { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<billofentry> billofentries { get; set; }
@@ -52,5 +56,7 @@ namespace CiroService.EFDatabase
         public virtual ICollection<transferrequest> transferrequests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<warehousestock> warehousestocks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<location> locations { get; set; }
     }
 }

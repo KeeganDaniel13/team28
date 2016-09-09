@@ -43,5 +43,6 @@ namespace CiroService.EFDatabase
         public virtual DbSet<warehouse> warehouses { get; set; }
         public virtual DbSet<warehousestock> warehousestocks { get; set; }
         public virtual DbSet<warehousetype> warehousetypes { get; set; }
+        public virtual DbSet<location> locations { get; set; }
     }
 }
