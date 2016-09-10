@@ -122,7 +122,7 @@ namespace CiroService
 		
         public IEnumerable <TransferDetails> listTransferTRequests()
         {
-      /*      try
+          try
             {
                 var tRequest = new transferrequestsController().getTable().Where(c => c.transferrequest_verdict== "Pending");
                 var productinfo = new productController();
@@ -137,13 +137,13 @@ namespace CiroService
                 return transfers;
 
             }
-            catch (Exception e) {  } */
+            catch (Exception e) {  } 
             return null;
            
         }
 
         public string transeferRequest(jsonTRequest newRequest)
-        {/*
+        {
             //Fix
             transferrequestsController trans = new transferrequestsController();
             transferrequest newTransfer = new transferrequest();
@@ -160,7 +160,7 @@ namespace CiroService
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
-            return "Added";*/
+            return "Added";
             return null;
         }
 
@@ -272,7 +272,7 @@ namespace CiroService
         *   with the bill of rights
         */
         public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
-        { /*
+        { 
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
             producttypeController pTypeAccess = new producttypeController();
@@ -327,9 +327,7 @@ namespace CiroService
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
-            }
-
-            */
+            }   
         }
 
         //need implemantation
@@ -444,7 +442,7 @@ namespace CiroService
 
         public JsonProducts getPackageID(string id)
         {
-            /*   var package = new JsonObjects.JsonProducts();
+               var package = new JsonObjects.JsonProducts();
                var getPackage = new productController();
                var detailPackage = getPackage.getRecord(Convert.ToInt32(id));
                if (detailPackage == null)
@@ -464,8 +462,7 @@ namespace CiroService
                //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
                var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
                package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
-               return package; */
-            return null;
+               return package; 
         }
 
         public IEnumerable<JsonProducts> getPackageOwner(string id)
@@ -1473,8 +1470,6 @@ namespace CiroService
             categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
         }
-
-<<<<<<< HEAD
 
         //warehouses incidents comparisons
         public IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents()
