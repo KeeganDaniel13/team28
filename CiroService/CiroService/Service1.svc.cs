@@ -1521,7 +1521,33 @@ namespace CiroService
             }
             return releases;
 		}
-		
+
+        //number of packages coming in for each month use line graph
+        public IEnumerable<PackagePerMonth> PackagesPerMonth(JsonWarehouse warehouse)
+        {   
+
+            productController productaccess = new productController();
+            var products = productaccess.getTable().Where<product>(p => p.product_location == warehouse.location);
+            List<PackagePerMonth> monthly = new List<PackagePerMonth>();
+            
+
+            for(int k = 1; k <= 12;k++)
+            {
+                int count = 0;      
+                DateTime dtmon = new DateTime(1772, k, 24);
+                foreach (product p in products)
+                {
+                    DateTime dtprod = (DateTime)p.product_arrivalDate;
+                    if (dtprod.Month == k)
+                    {
+                        count++;
+                    }
+                }
+                monthly.Add(new PackagePerMonth {month = dtmon.ToString("MMMM"), packages = count });
+            }           
+            return monthly;
+        }
+
         public IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse)
         {
             var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);

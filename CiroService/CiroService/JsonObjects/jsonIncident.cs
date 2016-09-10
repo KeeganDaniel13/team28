@@ -15,9 +15,11 @@ namespace CiroService.JsonObjects
         public String image { get; set; }
         [DataMember]
         public int productID { get; set; }
+        [DataMember]
         public int userID { get; set; }
+        [DataMember]
         public int type { get; set; }
-     //   [DataMember]
+        [DataMember]
         public string warehouse { get; set; }
     }
 }
