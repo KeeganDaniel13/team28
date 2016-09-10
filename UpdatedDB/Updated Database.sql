@@ -31,7 +31,7 @@ CREATE TABLE `custommandb`.`usertype` (
   
  	CREATE TABLE `custommandb`.`hscode` (
   `hscode_id` INT NOT NULL,
-  `hscode_percentage` DECIMAL(10,2) NULL,
+  `hscode_percentage` DECIMAL NULL,
   PRIMARY KEY (`hscode_id`));
  
  
@@ -110,16 +110,13 @@ CREATE TABLE `custommandb`.`product` (
   PRIMARY KEY (`countryrelation_id`));
   
   
-  
-  
 CREATE TABLE `custommandb`.`invoice` (
   `invoice_id` INT(45) NOT NULL AUTO_INCREMENT,
   `invoice_vat` DECIMAL(10,2) NULL,
   `invoice_penalty` DECIMAL(10,2) NULL,
   `invoice_paid` DECIMAL(10,2) NULL,
   PRIMARY KEY (`invoice_id`));
-
-
+	
 	
 CREATE TABLE `custommandb`.`billofentry` (
   `billofentry_id` INT NOT NULL AUTO_INCREMENT,
@@ -147,14 +144,13 @@ CREATE TABLE `custommandb`.`billofentry` (
     REFERENCES `custommandb`.`invoice` (`invoice_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-
 	
 	
 	
 CREATE TABLE `custommandb`.`productlog` (
   `productlog_id` INT NOT NULL AUTO_INCREMENT,
   `productlog_product` INT NULL,
+  `productlog_warehouse` INT NULL,
   `productlog_user` INT NULL,
   `productlog_dscription` VARCHAR(255) NULL,
   `productlog_dateLogged` DATETIME NULL,
@@ -167,6 +163,11 @@ CREATE TABLE `custommandb`.`productlog` (
   CONSTRAINT `productlog_product`
     FOREIGN KEY (`productlog_product`)
     REFERENCES `custommandb`.`product` (`product_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+	 CONSTRAINT `productlog_warehouse`
+    FOREIGN KEY (`productlog_warehouse`)
+    REFERENCES `custommandb`.`warehouse` (`warehouse_name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `productlog_user`
@@ -256,8 +257,8 @@ CREATE TABLE `custommandb`.`productlog` (
     REFERENCES `custommandb`.`product` (`product_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-	
-	 CREATE TABLE `custommandb`.`Location` (
+    
+     CREATE TABLE `custommandb`.`Location` (
     `location_id` INT NOT NULL AUTO_INCREMENT,
     `location_isle` INT NULL,
     `location_column` INT NULL,
@@ -289,7 +290,6 @@ CREATE TABLE `custommandb`.`productlog` (
   `message_convoid` INT NULL,
   `message_to` INT NULL,
   `message_from` INT NULL,
-  `message_subject` VARCHAR(200) NULL,
   `message_message` LONGTEXT NULL,
   `message_stamp` DATETIME NULL,
   PRIMARY KEY (`message_id`),
@@ -337,8 +337,6 @@ ADD CONSTRAINT `ownsershiprequest_product`
   ON UPDATE NO ACTION;
 
 
-  
-
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
@@ -347,7 +345,7 @@ INSERT INTO `custommandb`.`producttype` (`producttype_id`, `producttype_name`) V
 INSERT INTO `custommandb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('2', 'Duty');
 
 
-INSERT INTO `custommandb`.`hscode` (`hscode_id`, `hscode_percentage`) VALUES ('825', '0.50');
+INSERT INTO `custommandb`.`hscode` (`hscode_id`, `hscode_percentage`) VALUES ('825', '14');
 
 
 INSERT INTO `custommandb`.`countryrelation` (`countryrelation_name`) VALUES ('China');
@@ -450,4 +448,4 @@ INSERT INTO `custommandb`.`transferrequest` (`transferrequest_from`, `transferre
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', '3', 'Transfer: Package has been transfered to DHL Express Warehouse at 48 Hoylake Road, Randburg, 2034', '2016-07-03 11:14:02', '4');
 
 
-INSERT INTO `custommandb`.`transferlist` (`transferlist_to`, `transferlist_from`, `transferlist_product`) VALUES ('48 Hoylake Road, Randburg, 2034', 'In Transit', '2');
+INSERT INTO `custommandb`.`transferlist` (`transferlist_to`, `transferlist_from`, `transferlist_product`) VALUES ('48 Hoylake Road, Randburg, 2034', '11 Eva Road, Benoni, 1512', '2');
