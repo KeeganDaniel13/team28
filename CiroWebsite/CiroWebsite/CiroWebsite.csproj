@@ -76,6 +76,7 @@
     <Content Include="ClientMessages.aspx" />
     <Content Include="ClientMessageView.aspx" />
     <Content Include="customs.aspx" />
+    <Content Include="CustomsReports.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="declareownershiptransfer.aspx" />
     <Content Include="dischargegoods.aspx" />
@@ -277,6 +278,33 @@
     <Content Include="infinity\landing\libs\bower\waypoints\._lib" />
     <Content Include="infinity\landing\libs\misc\._owl-carousel" />
     <Content Include="Customs.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonlocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonWarehouseAvailabilty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.PackagePerMonth.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.PackageSizeCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.ReleaseProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseIncidentsGraph.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
@@ -508,6 +536,13 @@
     </Compile>
     <Compile Include="Customs.Master.designer.cs">
       <DependentUpon>Customs.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsReports.aspx.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsReports.aspx.designer.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>

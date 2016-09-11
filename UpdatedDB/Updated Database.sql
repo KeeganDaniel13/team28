@@ -150,7 +150,7 @@ CREATE TABLE `custommandb`.`billofentry` (
 CREATE TABLE `custommandb`.`productlog` (
   `productlog_id` INT NOT NULL AUTO_INCREMENT,
   `productlog_product` INT NULL,
-  `productlog_warehouse` INT NULL,
+  `productlog_warehouse` varchar(80) NULL,
   `productlog_user` INT NULL,
   `productlog_dscription` VARCHAR(255) NULL,
   `productlog_dateLogged` DATETIME NULL,
@@ -288,6 +288,7 @@ CREATE TABLE `custommandb`.`productlog` (
 	CREATE TABLE `custommandb`.`message` (
   `message_id` INT NOT NULL AUTO_INCREMENT,
   `message_convoid` INT NULL,
+  `message_subject` varchar(45) NULL,
   `message_to` INT NULL,
   `message_from` INT NULL,
   `message_message` LONGTEXT NULL,
