@@ -24,6 +24,7 @@ namespace CiroWebsite
                     var count = 1;
                     foreach (var log in logs)
                     {
+                        
                         if (count % 2 == 0)
                         {
                             body += "<li class='timeline-inverted'><div class='timeline-badge'><i class='";

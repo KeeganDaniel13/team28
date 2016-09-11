@@ -150,7 +150,7 @@ CREATE TABLE `custommandb`.`billofentry` (
 CREATE TABLE `custommandb`.`productlog` (
   `productlog_id` INT NOT NULL AUTO_INCREMENT,
   `productlog_product` INT NULL,
-  `productlog_warehouse` varchar(80) NULL,
+  `productlog_warehouse` varchar(45) NULL,
   `productlog_user` INT NULL,
   `productlog_dscription` VARCHAR(255) NULL,
   `productlog_dateLogged` DATETIME NULL,

@@ -196,7 +196,6 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
-    <Content Include="Reports.aspx" />
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInventory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -620,13 +619,6 @@
     </Compile>
     <Compile Include="release.aspx.designer.cs">
       <DependentUpon>release.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports.aspx.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports.aspx.designer.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\CiroService\Reference.cs">
       <AutoGen>True</AutoGen>
