@@ -304,6 +304,11 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseReleases")]
         IEnumerable<WarehouseReleasescs> WarehouseReleases();
 
+        //Packages Received Per Month For Warehouse
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagesPerMonth")]
+        IEnumerable<PackagePerMonth> PackagesPerMonth(JsonWarehouse warehouse);
+
         //REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS 
         //================================================ ================================================ ================================================ ================================================ ================================================ 
 

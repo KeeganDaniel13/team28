@@ -257,6 +257,7 @@
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
     <Compile Include="JsonObjects\jsonWarehouseAvailabilty.cs" />
     <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
+    <Compile Include="JsonObjects\PackagePerMonth.cs" />
     <Compile Include="JsonObjects\PackageSizeCategory.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\ReleaseProduct.cs" />

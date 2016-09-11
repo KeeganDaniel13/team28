@@ -123,6 +123,7 @@ namespace CiroService
         public IEnumerable <TransferDetails> listTransferTRequests()
         {
             try
+
             {
                 var tRequest = new transferrequestsController().getTable().Where(c => c.transferrequest_verdict== "Pending");
                 var productinfo = new productController();
@@ -161,7 +162,6 @@ namespace CiroService
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
             return "Added";
-            
         }
 
         public IEnumerable<TransferDetails> transferList()
@@ -327,9 +327,8 @@ namespace CiroService
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
-            }
 
-            
+            }   
         }
 
         //need implemantation
@@ -465,7 +464,7 @@ namespace CiroService
                var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
                package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
                return package; 
-            return null;
+
         }
 
         public IEnumerable<JsonProducts> getPackageOwner(string id)
@@ -1472,8 +1471,6 @@ namespace CiroService
             categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
         }
-
-
         //warehouses incidents comparisons
         public IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents()
         {
@@ -1524,7 +1521,33 @@ namespace CiroService
             }
             return releases;
 		}
-		
+
+        //number of packages coming in for each month use line graph
+        public IEnumerable<PackagePerMonth> PackagesPerMonth(JsonWarehouse warehouse)
+        {   
+
+            productController productaccess = new productController();
+            var products = productaccess.getTable().Where<product>(p => p.product_location == warehouse.location);
+            List<PackagePerMonth> monthly = new List<PackagePerMonth>();
+            
+
+            for(int k = 1; k <= 12;k++)
+            {
+                int count = 0;      
+                DateTime dtmon = new DateTime(1772, k, 24);
+                foreach (product p in products)
+                {
+                    DateTime dtprod = (DateTime)p.product_arrivalDate;
+                    if (dtprod.Month == k)
+                    {
+                        count++;
+                    }
+                }
+                monthly.Add(new PackagePerMonth {month = dtmon.ToString("MMMM"), packages = count });
+            }           
+            return monthly;
+        }
+
         public IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse)
         {
             var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
