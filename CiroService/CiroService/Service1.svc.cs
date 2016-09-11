@@ -263,7 +263,71 @@ namespace CiroService
         //Just double check with boolean
         //needs test with single and multiple produts varying of duty and non duty produts
 
+        public void stockAdd(string origin, IEnumerable<jsonProduct> newProduct)
+        {
+            //Check if we have relation with country
+            countryrelationController countryAccess = new countryrelationController();
+            producttypeController pTypeAccess = new producttypeController();
+            countryrelation country = null;
+            try
+            {
+                country = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
+            }
+            catch (ArgumentNullException x)
+            { }
 
+
+
+            int hscode, producttype;
+            //add to table with hscode
+            if (country != null)
+            {
+                //duty
+                hscode = 825;
+                producttype = 1;
+            }
+            else
+            {
+                //non duty
+                hscode = 825;
+                producttype = 2;
+            }
+            productController productAccess = new productController();
+            billofentryController billAccess = new billofentryController();
+            DateTime date = DateTime.Now;
+            string origin2 = origin;
+            string genCode = "" + hscode + date.Day + date.Second + origin2.Substring(0, 2);
+            foreach (var p in newProduct)
+            {
+
+
+                //add products to product table
+
+                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
+                //adding new product with bill of entry
+
+                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
+                billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
+
+                //add to transferlist
+
+                transferlistController transferListkAccess = new transferlistController();
+                transferListkAccess.addRecord(new transferlist { transferlist_to = p.transferLocation, transferlist_product = addToBill.product_id, transferlist_from = p.currentLocation });
+
+                //create qrcode
+
+                string path = "C:\\Users\\Kgomotso\\Desktop\\Work\\CiroService\\CiroService\\images\\";
+                string qrcodeInfo = addToBill.product_id + "";
+                QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
+                qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
+                qrcodeMaker.QRCodeScale = 10;
+
+                Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
+                qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
+            }
+
+
+        }
 
         /**
         *   IMPORTANT!!!!
@@ -271,7 +335,7 @@ namespace CiroService
         *   hscodes needs to be updated and adding a product into the product table needs to be moved to a seperate method
         *   with the bill of rights
         */
-        public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
+        /*public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
         { 
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
@@ -329,7 +393,7 @@ namespace CiroService
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
 
             }   
-        }
+        }*/
 
         //need implemantation
         //Not Important Yet
@@ -901,6 +965,26 @@ namespace CiroService
             return "Ownership updated";
         }
 
+        public IEnumerable<JsonOwnershipReq> getUserOwnershipRequest(JsonUser user)
+        {
+            var ownershipReqAccess = new ownershipRequestController();
+            List<ownershiprequest> ownershipReqExists = ownershipReqAccess.getTable().Where<ownershiprequest>(o => o.ownershiprequest_newowner == Convert.ToInt32(user.id) && o.ownershiprequest_acceptance == "Pending").ToList<ownershiprequest>();
+            if (ownershipReqExists.Count == 0)
+            {
+                return null;
+            }
+
+            List<JsonOwnershipReq> ownerReq = new List<JsonOwnershipReq>();
+            foreach (ownershiprequest o in ownershipReqExists)
+            {
+                JsonUser newOwner = new JsonUser { email = o.user.user_email, id = o.user.user_id };
+                JsonUser prevOwner = new JsonUser { email = o.user1.user_email, id = o.user1.user_id };
+                JsonProducts prod = new JsonProducts { id = o.product.product_id, location = o.product.product_location, arrivalDate = (DateTime)o.product.product_arrivalDate, name = o.product.product_name };
+                ownerReq.Add(new JsonOwnershipReq { newOwnerInfo = newOwner, prevInfo = prevOwner, prodInfo = prod, id = o.ownershiprequest_id, prevOwner = Convert.ToInt32(o.ownershiprequest_owner), newOwner = Convert.ToInt32(o.ownershiprequest_newowner), product = Convert.ToInt32(o.ownershiprequest_product), acceptance = o.ownershiprequest_acceptance });
+            }
+            return ownerReq;
+        }
+
         public IEnumerable<JsonOwnershipReq> getOwnershipRequest(JsonUser user)
         {
             var ownershipReqAccess = new ownershipRequestController();
@@ -1141,7 +1225,7 @@ namespace CiroService
             return newInvoice;
         }
 
-        public IEnumerable<JsonMessage> getMessages(JsonUser users)
+        public IEnumerable<JsonMessage> getMessage(JsonUser users)
         {
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == users.email);
