@@ -122,7 +122,7 @@ namespace CiroService
 		
         public IEnumerable <TransferDetails> listTransferTRequests()
         {
-      /*      try
+            try
             {
                 var tRequest = new transferrequestsController().getTable().Where(c => c.transferrequest_verdict== "Pending");
                 var productinfo = new productController();
@@ -137,13 +137,13 @@ namespace CiroService
                 return transfers;
 
             }
-            catch (Exception e) {  } */
+            catch (Exception e) {  } 
             return null;
            
         }
 
         public string transeferRequest(jsonTRequest newRequest)
-        {/*
+        {
             //Fix
             transferrequestsController trans = new transferrequestsController();
             transferrequest newTransfer = new transferrequest();
@@ -160,8 +160,8 @@ namespace CiroService
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
-            return "Added";*/
-            return null;
+            return "Added";
+            
         }
 
         public IEnumerable<TransferDetails> transferList()
@@ -272,7 +272,7 @@ namespace CiroService
         *   with the bill of rights
         */
         public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
-        { /*
+        { 
             //Check if we have relation with country
             countryrelationController countryAccess = new countryrelationController();
             producttypeController pTypeAccess = new producttypeController();
@@ -319,7 +319,7 @@ namespace CiroService
                 transferListkAccess.addRecord(new transferlist { transferlist_to = _warehouse.location, transferlist_product = addToBill.product_id, transferlist_from = addToBill.product_location });
 
                 //create qrcode
-                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\";
+                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -329,7 +329,7 @@ namespace CiroService
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
             }
 
-            */
+            
         }
 
         //need implemantation
@@ -444,7 +444,7 @@ namespace CiroService
 
         public JsonProducts getPackageID(string id)
         {
-            /*   var package = new JsonObjects.JsonProducts();
+               var package = new JsonObjects.JsonProducts();
                var getPackage = new productController();
                var detailPackage = getPackage.getRecord(Convert.ToInt32(id));
                if (detailPackage == null)
@@ -464,7 +464,7 @@ namespace CiroService
                //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
                var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
                package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
-               return package; */
+               return package; 
             return null;
         }
 
@@ -818,7 +818,6 @@ namespace CiroService
         public void paypal()
         {
             var test = new PayPal.Account();
-            MessageBox.Show(test.APIPassword);
             GetBalanceRequestType request = new GetBalanceRequestType();
             GetBalanceResponseType response = new GetBalanceResponseType();
             request.ReturnAllCurrencies = "YES";
@@ -851,7 +850,7 @@ namespace CiroService
             }
 
             var newOwnerAccess = new userController();
-            var newOwnerExists = newOwnerAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(newOwner.id));
+            var newOwnerExists = newOwnerAccess.getTable().FirstOrDefault<user>(u => u.user_email == newOwner.email);
             if (newOwnerExists == null)
             {
                 return "New Owner does not Exist.";
@@ -1474,7 +1473,6 @@ namespace CiroService
             return categories;
         }
 
-<<<<<<< HEAD
 
         //warehouses incidents comparisons
         public IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents()
