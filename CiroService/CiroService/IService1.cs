@@ -53,7 +53,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "stockadd")]
-        void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse);
+        void stockAdd(string origin, IEnumerable<jsonProduct> newProduct/*, JsonWarehouse _warehouse*/);
 
         //TaskList Warehouse Manager
         //To complete
@@ -230,7 +230,11 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getMessages")]
-        IEnumerable<JsonMessage> getMessages(JsonUser users);
+        IEnumerable<JsonMessage> getMessage(JsonUser users);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getUserOwnershipRequest")]
+        IEnumerable<JsonOwnershipReq> getUserOwnershipRequest(JsonUser user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "sendMessage")]

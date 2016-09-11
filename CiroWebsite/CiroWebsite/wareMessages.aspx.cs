@@ -38,7 +38,7 @@ namespace CiroWebsite
                 body += "<p class='mail-item-excerpt'>" + message.message.Substring(0, 10) + "..." + "</p>";
                 body += "</td>";
                 body += "<td class='mail-right'>";
-                body += "<p class='mail-item-date'>" + message.date + "</p>";
+                body += "<p class='mail-item-date'>" + message.stamp + "</p>";
                 body += "<p class='mail-item-star starred'>";
                 body += "<a href='#'><i class='zmdi zmdi-star'></i></a>";
                 body += "</p>";
@@ -53,7 +53,7 @@ namespace CiroWebsite
         protected void sendMail(object sender, EventArgs e)
         {
             var user = (CiroService.JsonUser)Session["user"];
-            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email, to = to.Value, date = DateTime.Now, message = message.Value });
+            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email, to = to.Value, stamp = DateTime.Now, message = message.Value });
         }
     }
 }
