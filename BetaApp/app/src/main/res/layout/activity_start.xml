@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/aakibbg">
+
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@drawable/logo"
+        android:layout_marginTop="200dp"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/round"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp">
+
+
+                    <app.ciro.chuck.betaapp.MyTextView1
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:letterSpacing="0.0025"
+                        android:text="Create Account"
+                        android:background="#00000000"
+                        android:textSize="16dp"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="20dp"
+                        android:padding="15dp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="50dp">
+
+
+
+                    <app.ciro.chuck.betaapp.MyTextView1
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:textSize="16dp"
+                        android:textColorHint="#fff"
+                        android:textColor="#fff"
+                        android:letterSpacing="0.0025"
+                        android:textAlignment="center"
+                        android:background="#00000000"
+                        android:padding="15dp"
+                        android:layout_marginLeft="20dp"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/quotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CIRO - Customs Warehouse Management"
+                android:textColor="#fff"
+                android:textSize="14dp"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="center"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
