@@ -74,7 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Clientele.aspx" />
+    <Content Include="Clients\ChangeOfOwnership.aspx" />
     <Content Include="Clients\Invoices.aspx" />
+    <Content Include="Clients\ItemsDeclaration.aspx" />
     <Content Include="Clients\Messaging.aspx" />
     <Content Include="Clients\ReadMessage.aspx" />
     <Content Include="Clients\ViewItemLog.aspx" />
@@ -5238,12 +5240,26 @@
     <Compile Include="Admin\Clientele.aspx.designer.cs">
       <DependentUpon>Clientele.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clients\ChangeOfOwnership.aspx.cs">
+      <DependentUpon>ChangeOfOwnership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\ChangeOfOwnership.aspx.designer.cs">
+      <DependentUpon>ChangeOfOwnership.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clients\Invoices.aspx.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Clients\Invoices.aspx.designer.cs">
       <DependentUpon>Invoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clients\ItemsDeclaration.aspx.cs">
+      <DependentUpon>ItemsDeclaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients\ItemsDeclaration.aspx.designer.cs">
+      <DependentUpon>ItemsDeclaration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clients\Messaging.aspx.cs">
       <DependentUpon>Messaging.aspx</DependentUpon>

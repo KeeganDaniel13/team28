@@ -19,5 +19,7 @@ namespace CiroService.JsonObjects
         public DateTime arrivalDate { get; set; }
         public string destination { get; set; }
         public int hscode { get; set; }
+        public string cosigner { get; set; }
+        public string bill { get; set; }
     }
 }

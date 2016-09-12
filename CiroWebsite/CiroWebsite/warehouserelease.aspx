@@ -28,7 +28,9 @@
 
                       </tr>
                       </thead>
-                      <tbody>
+
+                      <tbody runat="server" id="releaseTable">
+
                       <tr>
                           <td class="p-name">
                               <i class="fa zmdi-hc-sm fa-file-text-o fa-2x" aria-hidden="true"></i><a href="">  S001

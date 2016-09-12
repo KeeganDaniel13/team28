@@ -10,7 +10,7 @@
 						<i class="fa fa-chevron-left"></i>
 					</div><!-- .action-panel-toggle -->
 					<div class="m-b-lg">
-						<a href="#" type="button" data-toggle="modal" data-target="#contactModal" class="btn action-panel-btn btn-success btn-block">New User</a>
+						<a href="#" type="button" data-toggle="modal" data-target="#contactModal" class="btn action-panel-btn btn-success btn-block">Add C/Official</a>
 					</div>
 					<!-- contact category list -->
 					<div id="categories-list" class="app-actions-list scrollable-container">
@@ -18,7 +18,7 @@
 							<a href="#" class="list-group-item">
 								<i class="fa fa-user text-color m-r-xs"></i>
 								<span>Total Users</span>
-								<span class="pull-right">6</span>
+								<span id="total" runat="server" class="pull-right">6</span>
 							</a>
 						</div><!-- .list-group -->
 
@@ -28,7 +28,7 @@
 							<a href="#" class="list-group-item">
 								<div class="item-data">
 									<span class="label-text">Warehouse</span>
-									<span class="pull-right hide-on-hover">7</span>
+									<span id="warehouseTotal" runat="server" class="pull-right hide-on-hover">7</span>
 								</div>
 								<div class="item-actions">
 									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#categoryModal"></i>
@@ -38,7 +38,7 @@
 							<a href="#" class="list-group-item">
 								<div class="item-data">
 									<span class="label-text">Officials</span>
-									<span class="pull-right hide-on-hover">5</span>
+									<span id="officalTotal" runat="server" class="pull-right hide-on-hover">5</span>
 								</div>
 								<div class="item-actions">
 									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#categoryModal"></i>
@@ -48,7 +48,7 @@
 							<a href="#" class="list-group-item">
 								<div class="item-data">
 									<span class="label-text">Clients</span>
-									<span class="pull-right hide-on-hover">17</span>
+									<span id="clientTotal" runat="server" class="pull-right hide-on-hover">17</span>
 								</div>
 								<div class="item-actions">
 									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#categoryModal"></i>
@@ -71,156 +71,8 @@
 					</div><!-- END column -->
 				</div><!-- .row -->
 				
-				<div id="contacts-list" class="row">
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/101.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">John Doe</h5>
-									<small class="media-meta">Web Developer</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
+				<div id="userslist" runat="server" class="row">
 
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/212.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">Jane Doe</h5>
-									<small class="media-meta">UI/UX Designer</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
-
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/103.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">John Doe</h5>
-									<small class="media-meta">Software Engineer</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
-
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/104.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">Jane Doe</h5>
-									<small class="media-meta">Accountant</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
-
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/105.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">Jeffrey Way</h5>
-									<small class="media-meta">Programmer</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
-
-					<div class="col-sm-6">
-						<div class="user-card contact-item p-md">
-							<div class="media">
-								<div class="media-left">
-									<div class="avatar avatar-xl avatar-circle">
-										<img src="../infinity/assets/images/201.jpg" alt="contact image">
-									</div>
-								</div>
-								<div class="media-body">
-									<h5 class="media-heading title-color">Sara Adams</h5>
-									<small class="media-meta">Web Designer</small>
-									<div class="contact-links m-t-sm">
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
-										<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
-										
-									</div>
-								</div>
-							</div>
-							<div class="contact-item-actions">
-								<a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#contactModal"><i class="fa fa-pencil"></i></a>
-								<a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal" data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
-							</div><!-- .contact-item-actions -->
-						</div><!-- user-card -->
-					</div><!-- END column -->
 				</div><!-- #contacts-list -->
 			</div><!-- END column -->
 		</div><!-- .row -->
@@ -233,26 +85,25 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Create / update contact</h4>
+				<h4 class="modal-title">Create Official</h4>
 			</div>
 			<form action="#" id="newContactForm">
 				<div class="modal-body">
 					<div class="form-group">
-						<input type="text" id="contactName" class="form-control" placeholder="Name">
+						<input type="text" id="contactName" runat="server" class="form-control" placeholder="Name"/>
+					</div>
+                    <div class="form-group">
+						<input type="text" id="surname" runat="server" class="form-control" placeholder="Surname"/>
 					</div>
 					<div class="form-group">
-						<input type="text" id="contactImgUrl" class="form-control" placeholder="Image URL">
+						<input type="text" id="contactOccupation"  runat="server" class="form-control" placeholder="Occupation"/>
 					</div>
 					<div class="form-group">
-						<input type="text" id="contactOccupation" class="form-control" placeholder="Occupation">
-					</div>
-					<div class="form-group">
-						<input type="email" id="contactEmail" class="form-control" placeholder="Email">
+						<input type="email" id="contactEmail" runat="server" class="form-control" placeholder="Email"/>
 					</div>
 				</div><!-- .modal-body -->
 				<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+				<button type="button" runat="server" onserverclick="addOfficial" class="btn btn-success" data-dismiss="modal">Save</button>
 				</div><!-- .modal-footer -->
 			</form>
 		</div><!-- /.modal-content -->

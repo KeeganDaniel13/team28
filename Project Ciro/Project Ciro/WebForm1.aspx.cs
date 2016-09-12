@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Project_Ciro
 {
@@ -12,6 +13,11 @@ namespace Project_Ciro
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void test(object sender, EventArgs e)
+        {
+            MessageBox.Show("worked");
         }
     }
 }

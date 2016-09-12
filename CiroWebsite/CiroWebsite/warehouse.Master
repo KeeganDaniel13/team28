@@ -46,11 +46,11 @@
 			</div>
 			<div class="media-body">
 				<div class="foldable">
-					<h5><a href="javascript:void(0)" class="username">John Doe</a></h5>
+					<h5><a href="javascript:void(0)" runat="server" id="name" class="username">John Doe</a></h5>
 					<ul>
 						<li class="dropdown">
 							<a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<small>System Admin</small>
+								<small id="title" runat="server">System Admin</small>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu animated flipInY">
@@ -92,7 +92,7 @@
 		<div id="aside-scroll-inner" class="aside-scroll-inner">
 			<ul class="aside-menu aside-left-menu">
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+					<a href="dashboard.aspx" class="menu-link">
 						<span class="menu-icon"><i class="zmdi zmdi-view-dashboard zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Dashboard</span>
 						
@@ -101,41 +101,35 @@
 				</li><!-- .menu-item -->
 				
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
-						<span class="menu-icon"><i class="fa fa-cube zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Inventory</span>
-						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
-					</a>
-					<ul class="submenu">
-						<li><a href="">Packages</a></li>
-						<li><a href="">Variants</a></li>
-					</ul>
-				</li><!-- .menu-item -->
-
-				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
-						<span class="menu-icon"><i class="fa fa-exchange zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Stock Transfers</span>
+					<a href="users.aspx" class="menu-link">
+						<span class="menu-icon"><i class="fa fa-user zmdi-hc-lg"></i></span>
+						<span class="menu-text foldable">View Users</span>
 						
 					</a>
 					
 				</li><!-- .menu-item -->
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
-						<span class="menu-icon"><i class="fa fa-wpforms zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Release Requests</span>
-						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
+					<a href="licensewarehouse.aspx" class="menu-link">
+						<span class="menu-icon"><i class="fa fa-registered zmdi-hc-lg"></i></span>
+						<span class="menu-text foldable">License Warehouse</span>
+						
 					</a>
-					<ul class="submenu">
-						<li><a href="">Requests</a></li>
-						<li><a href="">Invoices</a></li>
-					</ul>
+					
+				</li><!-- .menu-item -->
+
+				<li class="menu-item has-submenu">
+					<a href="addofficial.aspx" class="menu-link">
+						<span class="menu-icon"><i class="fa fa-user-plus zmdi-hc-lg"></i></span>
+						<span class="menu-text foldable">Register Officials</span>
+					</a>
+					
 				</li><!-- .menu-item -->
 				
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link submenu-toggle">
+
+					<a href="javascript:void(0)" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
@@ -150,16 +144,7 @@
 						<li><a href="">Report 7</a></li>
 					</ul>
 				</li><!-- .menu-item -->
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-			     <br />
-                <br />
-                 <br/>
-			     <br />
-                
+			<hr>
 			<footer id="aside-footer">
 				<ul class="aside-menu aside-left-menu">
 					<li class="menu-item">

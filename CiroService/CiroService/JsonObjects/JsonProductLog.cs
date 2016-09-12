@@ -14,5 +14,6 @@ namespace CiroService.JsonObjects
         public DateTime date { get; set; }
         public int userID { get; set; }
         public int logtype { get; set; }
+        public string logtypename { get; set; }
     }
 }

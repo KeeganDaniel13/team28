@@ -12,5 +12,7 @@ namespace CiroService.JsonObjects
         public int product_id { get; set; }
         public string description { get; set; }
         public string verdict { get; set; }
+        public JsonUser userInfo { get; set; }
+        public JsonProducts productInfo { get; set; }
     }
 }

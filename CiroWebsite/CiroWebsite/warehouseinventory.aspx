@@ -285,7 +285,8 @@
                               <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                       </tr>
-                     
+                      <tbody runat="server" id="warehouseStock"> 
+        
                       </tbody>
                   </table>
               </section>

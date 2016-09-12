@@ -10,10 +10,10 @@
 							<div class="form-group m-b-0">
 								<div class="row">
 									<div class="col-sm-6">
-										<input type="text" class="form-control m-b-lg" placeholder="Name">
+										<input type="text" id="name" runat="server" class="form-control m-b-lg" placeholder="Name">
 									</div>
 									<div class="col-sm-6">
-										<input type="text" class="form-control m-b-lg" placeholder="Last Name">
+										<input type="text" id="surname" runat="server" class="form-control m-b-lg" placeholder="Last Name">
 									</div>
 								</div>
 							</div><!-- .form-group -->
@@ -44,7 +44,7 @@
 						<div class="panel-footer clearfix">
 							<div class="pull-right">
 								
-								<button type="button" class="btn btn-success btn-outline ">Register Official</button>
+								<button type="button" runat="server" onserverclick="addOfficial" class="btn btn-success btn-outline ">Register Official</button>
 							</div>
 						</div><!-- .panel-footer -->
 					</form>

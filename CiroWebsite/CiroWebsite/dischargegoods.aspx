@@ -81,7 +81,7 @@
             <th>Action</th>
 		</tr>
 	</thead>					
-	<tbody>
+	<tbody runat="server" id="Release">
 		
 									
 	</tbody>
@@ -187,7 +187,7 @@
                 </li>
             </ul>
             <br/>
-            <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <button  runat="server" onserverclick="sumbitRelease" class="btn btn-success btn-lg btn-block" role="button">Pay</button>
         </div>
     </div>
 </div>

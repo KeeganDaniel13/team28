@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CiroService.JsonObjects
 {
-    public class jsonmessage
+    public class JsonMessage
     {
-        public string from { get; set; }
+        public int id { get; set; }
+        public int convo_id { get; set; }
         public string to { get; set; }
+        public string from { get; set; }
         public string message { get; set; }
-        public DateTime date { get; set; }
+        public DateTime stamp { get; set; }
+        public string subject { get; set; }
     }
 }

@@ -151,10 +151,13 @@
   <ItemGroup>
     <Compile Include="DAL\countryrelationController.cs" />
     <Compile Include="DAL\hscode.cs" />
+    <Compile Include="DAL\invoiceController.cs" />
+    <Compile Include="DAL\LocationController.cs" />
     <Compile Include="DAL\messageController.cs" />
     <Compile Include="DAL\ownershipController.cs" />
     <Compile Include="DAL\productController.cs" />
     <Compile Include="DAL\productlogController.cs" />
+    <Compile Include="DAL\productlogtypeController.cs" />
     <Compile Include="DAL\producttypeController.cs" />
     <Compile Include="DAL\releaseRequestController.cs" />
     <Compile Include="DAL\transferlistController.cs" />
@@ -186,6 +189,12 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\hscode.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDatabase\invoice.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDatabase\location.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\message.cs">
@@ -231,10 +240,14 @@
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
+    <Compile Include="JsonObjects\JsonBillofEntry.cs" />
     <Compile Include="JsonObjects\JsonCountry.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\JsonInventory.cs" />
+    <Compile Include="JsonObjects\JsonInvoice.cs" />
+    <Compile Include="JsonObjects\jsonlocation.cs" />
     <Compile Include="JsonObjects\jsonLoginUser.cs" />
+    <Compile Include="JsonObjects\JsonMessage.cs" />
     <Compile Include="JsonObjects\JsonOwnershipReq.cs" />
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
@@ -242,9 +255,12 @@
     <Compile Include="JsonObjects\jsonTask.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
+    <Compile Include="JsonObjects\jsonWarehouseAvailabilty.cs" />
     <Compile Include="JsonObjects\JsonWarehouseStock.cs" />
-    <Compile Include="JsonObjects\jsonmessage.cs" />
+    <Compile Include="JsonObjects\PackagePerMonth.cs" />
+    <Compile Include="JsonObjects\PackageSizeCategory.cs" />
     <Compile Include="JsonObjects\RegisterUser.cs" />
+    <Compile Include="JsonObjects\ReleaseProduct.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />
     <Compile Include="JsonObjects\transferStock.cs" />
@@ -254,6 +270,8 @@
     <Compile Include="JsonObjects\JsonProducts.cs" />
     <Compile Include="JsonObjects\JsonUser.cs" />
     <Compile Include="JsonObjects\UserDemo.cs" />
+    <Compile Include="JsonObjects\WarehouseIncidentsGraph.cs" />
+    <Compile Include="JsonObjects\WarehouseReleasescs.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

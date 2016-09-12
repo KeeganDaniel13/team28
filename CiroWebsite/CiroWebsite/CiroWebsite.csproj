@@ -48,6 +48,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +73,8 @@
     <Content Include="approveTransfers.aspx" />
     <Content Include="changeofownership.aspx" />
     <Content Include="clientinventory.aspx" />
+    <Content Include="ClientMessages.aspx" />
+    <Content Include="ClientMessageView.aspx" />
     <Content Include="customs.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="declareownershiptransfer.aspx" />
@@ -79,6 +83,67 @@
     <Content Include="infinity\assets\images\warehouse.jpg" />
     <Content Include="infinity\css\ownership.css" />
     <Content Include="infinity\css\style.css" />
+    <Content Include="infinity\landing\assets\css\._bootstrap.css" />
+    <Content Include="infinity\landing\assets\css\._landing-page.css" />
+    <Content Include="infinity\landing\assets\css\bootstrap.css" />
+    <Content Include="infinity\landing\assets\css\landing-page.css" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regular.svg" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="infinity\landing\assets\images\._101.jpg" />
+    <Content Include="infinity\landing\assets\images\._102.jpg" />
+    <Content Include="infinity\landing\assets\images\._103.jpg" />
+    <Content Include="infinity\landing\assets\images\101.jpg" />
+    <Content Include="infinity\landing\assets\images\102.jpg" />
+    <Content Include="infinity\landing\assets\images\103.jpg" />
+    <Content Include="infinity\landing\assets\images\landing-page\._header-bg.jpg" />
+    <Content Include="infinity\landing\assets\images\landing-page\._img-1.jpg" />
+    <Content Include="infinity\landing\assets\images\landing-page\._play-icon.png" />
+    <Content Include="infinity\landing\assets\images\landing-page\._puff.svg" />
+    <Content Include="infinity\landing\assets\images\landing-page\._talk-bubble.png" />
+    <Content Include="infinity\landing\assets\images\landing-page\._video-bg.png" />
+    <Content Include="infinity\landing\assets\images\landing-page\header-bg.jpg" />
+    <Content Include="infinity\landing\assets\images\landing-page\img-1.jpg" />
+    <Content Include="infinity\landing\assets\images\landing-page\play-icon.png" />
+    <Content Include="infinity\landing\assets\images\landing-page\puff.svg" />
+    <Content Include="infinity\landing\assets\images\landing-page\talk-bubble.png" />
+    <Content Include="infinity\landing\assets\images\landing-page\video-bg.png" />
+    <Content Include="infinity\landing\assets\svg\._check.svg" />
+    <Content Include="infinity\landing\assets\svg\._email.svg" />
+    <Content Include="infinity\landing\assets\svg\._pig.svg" />
+    <Content Include="infinity\landing\assets\svg\._pointer.svg" />
+    <Content Include="infinity\landing\assets\svg\._remove.svg" />
+    <Content Include="infinity\landing\assets\svg\._tie.svg" />
+    <Content Include="infinity\landing\assets\svg\._users.svg" />
+    <Content Include="infinity\landing\assets\svg\check.svg" />
+    <Content Include="infinity\landing\assets\svg\email.svg" />
+    <Content Include="infinity\landing\assets\svg\pig.svg" />
+    <Content Include="infinity\landing\assets\svg\pointer.svg" />
+    <Content Include="infinity\landing\assets\svg\remove.svg" />
+    <Content Include="infinity\landing\assets\svg\tie.svg" />
+    <Content Include="infinity\landing\assets\svg\users.svg" />
+    <Content Include="infinity\landing\libs\bower\._animate.css" />
+    <Content Include="infinity\landing\libs\bower\animate.css\._animate.min.css" />
+    <Content Include="infinity\landing\libs\bower\animate.css\animate.min.css" />
+    <Content Include="infinity\landing\libs\bower\bootstrap-sass\assets\javascripts\._bootstrap.js" />
+    <Content Include="infinity\landing\libs\bower\bootstrap-sass\assets\javascripts\bootstrap.js" />
+    <Content Include="infinity\landing\libs\bower\counterup\._jquery.counterup.min.js" />
+    <Content Include="infinity\landing\libs\bower\counterup\jquery.counterup.min.js" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\css\._font-awesome.min.css" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\css\font-awesome.min.css" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfont5b62.svg" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="infinity\landing\libs\bower\jquery\dist\._jquery.js" />
+    <Content Include="infinity\landing\libs\bower\jquery\dist\jquery.js" />
+    <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\js\._smooth-scroll.min.js" />
+    <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\js\smooth-scroll.min.js" />
+    <Content Include="infinity\landing\libs\bower\waypoints\lib\._jquery.waypoints.min.js" />
+    <Content Include="infinity\landing\libs\bower\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\._grabbing.html" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\._owl.carousel.css" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\._owl.carousel.min.js" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\grabbing.html" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.css" />
+    <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.min.js" />
     <Content Include="infinity\libs\misc\echarts\build\dist\echarts-all.js" />
     <Content Include="licensewarehouse.aspx" />
     <Content Include="messages.aspx" />
@@ -131,6 +196,132 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
     <Content Include="warehouse.Master" />
+    <Content Include="Client.Master" />
+    <Content Include="infinity\landing\assets\._css" />
+    <Content Include="infinity\landing\assets\._fonts" />
+    <Content Include="infinity\landing\assets\._images" />
+    <Content Include="infinity\landing\assets\._svg" />
+    <Content Include="infinity\landing\assets\fonts\._bootstrap" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regular.eot" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regular.ttf" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regular.woff" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regular.woff2" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\._glyphicons-halflings-regulard41d.eot" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="infinity\landing\assets\fonts\bootstrap\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="infinity\landing\assets\images\._landing-page" />
+    <Content Include="infinity\landing\libs\._bower" />
+    <Content Include="infinity\landing\libs\._misc" />
+    <Content Include="infinity\landing\libs\bower\._bootstrap-sass" />
+    <Content Include="infinity\landing\libs\bower\._counterup" />
+    <Content Include="infinity\landing\libs\bower\._font-awesome" />
+    <Content Include="infinity\landing\libs\bower\._jquery" />
+    <Content Include="infinity\landing\libs\bower\._smooth-scroll" />
+    <Content Include="infinity\landing\libs\bower\._waypoints" />
+    <Content Include="infinity\landing\libs\bower\bootstrap-sass\._assets" />
+    <Content Include="infinity\landing\libs\bower\bootstrap-sass\assets\._javascripts" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\._css" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\._fonts" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfont5b62.eot" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfont5b62.ttf" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfont5b62.woff" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfont5b62.woff2" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\._fontawesome-webfontd41d.eot" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfont5b62.woff2" />
+    <Content Include="infinity\landing\libs\bower\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="infinity\landing\libs\bower\jquery\._dist" />
+    <Content Include="infinity\landing\libs\bower\smooth-scroll\._dist" />
+    <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\._js" />
+    <Content Include="infinity\landing\libs\bower\waypoints\._lib" />
+    <Content Include="infinity\landing\libs\misc\._owl-carousel" />
+    <Content Include="Customs.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonlocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonOwnershipReq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProducts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonWarehouse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonWarehouseAvailabilty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.PackagePerMonth.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.PackageSizeCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.ReleaseProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.TransferDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.transferStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseIncidentsGraph.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CiroService\Service1.disco" />
+    <None Include="Service References\CiroService\configuration91.svcinfo" />
+    <None Include="Service References\CiroService\configuration.svcinfo" />
+    <None Include="Service References\CiroService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="warehouse.Master" />
+    <None Include="Service References\CiroService\Service1.wsdl" />
+    <None Include="Service References\CiroService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CiroService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CiroService\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,7 +454,11 @@
     <Content Include="warehouserelease.aspx" />
     <Content Include="warehousetransfers.aspx" />
     <Content Include="warehousevariants.aspx" />
+    <Content Include="warehouseoverview.aspx" />
+    <Content Include="warehouserelease.aspx" />
     <Content Include="warehouseview.aspx" />
+    <Content Include="wareMessage.aspx" />
+    <Content Include="wareMessages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -295,12 +490,21 @@
     <Compile Include="changeofownership.aspx.designer.cs">
       <DependentUpon>changeofownership.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangeUser.cs" />
     <Compile Include="ciro.Master.cs">
       <DependentUpon>ciro.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ciro.Master.designer.cs">
       <DependentUpon>ciro.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CiroSingleton.cs" />
+    <Compile Include="Client.Master.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client.Master.designer.cs">
+      <DependentUpon>Client.Master</DependentUpon>
     </Compile>
     <Compile Include="clientinventory.aspx.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
@@ -309,12 +513,33 @@
     <Compile Include="clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientMessages.aspx.cs">
+      <DependentUpon>ClientMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientMessages.aspx.designer.cs">
+      <DependentUpon>ClientMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientMessageView.aspx.cs">
+      <DependentUpon>ClientMessageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientMessageView.aspx.designer.cs">
+      <DependentUpon>ClientMessageView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="customs.aspx.cs">
       <DependentUpon>customs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="customs.aspx.designer.cs">
       <DependentUpon>customs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customs.Master.cs">
+      <DependentUpon>Customs.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customs.Master.designer.cs">
+      <DependentUpon>Customs.Master</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -350,6 +575,10 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
@@ -394,6 +623,11 @@
     <Compile Include="release.aspx.designer.cs">
       <DependentUpon>release.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CiroService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -408,6 +642,7 @@
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TransferForm.cs" />
     <Compile Include="transfergoods.aspx.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -506,6 +741,20 @@
     <Compile Include="warehouseview.aspx.designer.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="wareMessage.aspx.cs">
+      <DependentUpon>wareMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wareMessage.aspx.designer.cs">
+      <DependentUpon>wareMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wareMessages.aspx.cs">
+      <DependentUpon>wareMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wareMessages.aspx.designer.cs">
+      <DependentUpon>wareMessages.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="customs\" />
@@ -513,6 +762,12 @@
     <Folder Include="infinity\landing\assets\" />
     <Folder Include="infinity\landing\libs\" />
     <Folder Include="trader\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CiroService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

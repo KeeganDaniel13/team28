@@ -16,6 +16,7 @@ namespace CiroService.EFDatabase
     {
         public int message_id { get; set; }
         public Nullable<int> message_convoid { get; set; }
+        public string message_subject { get; set; }
         public Nullable<int> message_to { get; set; }
         public Nullable<int> message_from { get; set; }
         public string message_message { get; set; }

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="app-content">
+    <section runat="server" id="messageDetails" class="app-content">
 		<div class="row">
 			<div class="col-md-2">
 				<div class="app-action-panel" id="mailview-action-panel">
@@ -14,7 +14,7 @@
 					<div class="m-b-lg">
 						<a href="#" type="button" data-toggle="modal" data-target="#composeModal" class="btn action-panel-btn btn-default btn-block">Compose</a>
 					</div>
-
+                    
 					<div class="app-actions-list scrollable-container">
 						<!-- mail category list -->
 						<div class="list-group">
@@ -90,57 +90,7 @@
 						</div>
 					</div>
 				</div><!-- END toolbar -->
-				
-				<div class="mail-view">
-					<h4 class="m-0">Lorem ipsum dolor consectetur test</h4>
-					<div class="divid"></div>
-					<div class="media">
-						<div class="media-left">
-							<div class="avatar avatar-lg avatar-circle">
-								<img class="img-responsive" src="../infinity/assets/images/001.jpg" alt="avatar"/>
-							</div><!-- .avatar -->
-						</div>
-
-						<div class="media-body">
-							<div class="m-b-sm">
-								<h4 class="m-0 inline-block m-r-lg">
-									<a href="#" class="title-color">Envato Market</a>
-								</h4>
-								<a href="#"><span class="label label-success">ThemeForest</span></a>
-							</div>
-							<p><b>From: </b>themeforest@envatomarket.com</p>
-						</div>
-					</div>
-					<div class="divid"></div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="m-h-lg lh-xl">
-								<p>We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves, so that’s what we have continued to do. We also hope to win Startup Fictional Business of the Year this Year.</p>
-								<p>Browse our site and see for yourself why you need Ooooh.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="panel panel-default new-message">
-							<div class="panel-heading">
-								<input type="text" placeholder="envatomarket@envato.com">
-							</div>								
-							<div class="panel-body p-0">
-								<textarea name="new_message_body" id="new-message-body">We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves, so that’s what we have continued to do. We also hope to win Startup Fictional Business of the Year this Year.</textarea>
-							</div>
-							<div class="panel-footer">
-								<button type="button" class="btn btn-primary btn-outline btn-sm">Forward</button>
-								<button type="button" class="btn btn-default pull-right" data-dismiss="modal"><i class="fa fa-trash"></i></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!-- END column -->
-		</div><!-- .row -->
+				<!--message content-->
 	</section><!-- .app-content -->
 </div><!-- .wrap -->
 

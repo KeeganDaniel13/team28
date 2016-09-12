@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Change Ownership | Ciro" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="changeofownership.aspx.cs" Inherits="CiroWebsite.changeofownership" %>
+﻿<%@ Page Title="Change Ownership | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="changeofownership.aspx.cs" Inherits="CiroWebsite.changeofownership" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   <style>
       body{
@@ -50,47 +50,53 @@
 					</div>
                     <form class="form-inline">
                         <div class="form-inline" >
-						<div class="form-group ">
+						<div class="form-group " >
 							<label  for="exampleInputEmail3">Name of Goods</label><br />
-							<input type="text" class="form-control" id="goodsContainer" placeholder="Name of Good(s)" style="width: 300px;">
+							<!--<input type="text" class="form-control" id="goodsContainer" placeholder="Name of Good(s)" style="width: 300px;">-->
+                            <select class="form-control" onserverclick="fillInfo" data-plaugin="listGoods" id="goods" runat="server">
+                               
+                            </select>
+                            <button onserverclick="fillInfo" class="btn" runat="server" id="Send">Select</button>
 						</div>
 						<div class="form-group ">
 							<label  for="exampleInputPassword3">Origin</label><br />
-							<input type="text" class="form-control" id="origincountry" placeholder="Country Of Orgin" style="width: 400px;">
+							<input type="text" class="form-control" runat="server" id="origincountry" placeholder="Country Of Orgin" style="width: 400px;"/>
 						</div>
 						</div>
                   
                          <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Location of Goods</label><br />
-							<input type="email" class="form-control" id="Locationgoods" placeholder="Location of Goods" style="width: 300px;">
+							<input type="email" class="form-control" runat="server" id="Locationgoods" placeholder="Location of Goods" style="width: 300px;"/>
 						</div>
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Destination of Goods</label><br />
-							<input type="email" class="form-control" id="Destinationgoods" placeholder="Destination of Goods" style="width: 400px;">
+							<input type="email" class="form-control" runat="server" id="Destinationgoods" placeholder="Destination of Goods" style="width: 400px;"/>
 						</div>
 						</div>
                          <div class="form-inline" >
 						<div class="form-group ">
 							<label  for="exampleInputEmail3">Description of Goods</label><br />
-							<textarea name="control-demo-5" id="control-demo-5" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
+							<textarea name="control-demo-5" runat="server" id="desc" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
 						<div class="form-group ">
 							<label for="exampleInputFile">Bill Of Entry</label><br />
-							<input type="file" id="exampleInputFile" class="form-control" style="width: 400px;">
+							<input type="file" id="exampleInputFile" class="form-control" style="width: 400px;"/>
 						</div>
 						</div>
                         <div class="form-inline" >
 						<div class="form-group ">
 							<label for="exampleInputFile">Reciept of Good(s)</label><br />
-							<input type="file" id="exampleInputFile2" class="form-control" style="width: 300px;">
+							<input type="file" id="exampleInputFile2" class="form-control" style="width: 300px;"/>
 						</div>
 						<div class="form-group ">
 							<label for="exampleInputFile">Package Image</label><br />
-							<input type="file" id="exampleInputFile3" class="form-control" style="width: 400px;">
+							<input type="file" id="exampleInputFile3" class="form-control" style="width: 400px;"/>
 						</div>
 						</div>
 					</form>
+            <br />
+           <button runat="server" onserverclick="Approve" >Approve</button>
         </div>
 </div>
 </asp:Content>
