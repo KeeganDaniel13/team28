@@ -18,8 +18,7 @@
 					<div class="app-actions-list scrollable-container">
 						<!-- mail category list -->
 						<div class="list-group">
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Inbox</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-star"></i>Starred</a>
+							<a href="wareMessages.aspx" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Inbox</a>
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-bookmark"></i>Important</a>
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-paper-plane"></i>Sent</a>
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-folder"></i>All Mail</a>
@@ -106,15 +105,15 @@
 			<div class="modal-body">
 				<form action="#">
 					<div class="form-group">
-						<input name="mail_from_field" id="mail_from_field" type="text" class="form-control" placeholder="from">
+						<input name="mail_from_field" id="from" runat="server" type="text" class="form-control" placeholder="from">
 					</div>
 					<div class="form-group">
-						<input name="mail_to_field" id="mail_to_field" type="text" class="form-control" placeholder="to">
+						<input name="mail_to_field" id="to" runat="server" type="text" class="form-control" placeholder="to">
 					</div>
 					<div class="form-group">
-						<input name="mail_subject_field" id="mail_subject_field" type="text" class="form-control" placeholder="subject">
+						<input name="mail_subject_field" id="subject" runat="server" type="text" class="form-control" placeholder="subject">
 					</div>
-					<textarea name="mail_body_field" id="mail_body_field" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
+					<textarea name="mail_body_field" id="body" runat="server" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
 				</form>
 			</div>
 			<div class="modal-footer">

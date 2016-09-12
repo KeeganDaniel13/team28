@@ -317,23 +317,6 @@ namespace CiroService
         //================================================ ================================================ ================================================ ================================================ ================================================ 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedRelease")]
         IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse);

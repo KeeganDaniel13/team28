@@ -31,11 +31,11 @@ namespace CiroWebsite
                 body += "</td>";
                 body += "<td class='mail-center'>";
                 body += "<div class='mail-item-header'>";
-                body += "<h4 class='mail-item-title'><a href='messageview.aspx?id=" + message.id + "' class='title-color'>" + message.subject + "</a></h4>";
+                body += "<h4 class='mail-item-title'><a href='wareMessage.aspx?id=" + message.id + "' class='title-color'>" + message.subject + "</a></h4>";
                 body += "<a href='#'><span class='label label-success'>client</span></a>";
                 body += "<a href='#'><span class='label label-primary'>work</span></a>";
                 body += "</div>";
-                body += "<p class='mail-item-excerpt'>" + message.message.Substring(0, 10) + "..." + "</p>";
+                body += "<p class='mail-item-excerpt'>" + message.subject + "..." + "</p>";
                 body += "</td>";
                 body += "<td class='mail-right'>";
                 body += "<p class='mail-item-date'>" + message.stamp + "</p>";

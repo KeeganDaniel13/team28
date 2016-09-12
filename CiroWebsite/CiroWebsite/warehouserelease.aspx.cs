@@ -11,7 +11,14 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var user = (CiroService.JsonUser)Session["user"];
+            var releaseRequest = CiroSingleton.ServerCalls.releaseWareHouse(new CiroService.JsonWarehouse { id = user.warehouseID });
+            var body = "";
+            foreach(var release in releaseRequest )
+            {
+                body += "";
+            }
+            releaseTable.InnerHtml = body;
         }
     }
 }

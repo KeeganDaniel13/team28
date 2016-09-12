@@ -92,9 +92,9 @@
 		<div id="aside-scroll-inner" class="aside-scroll-inner">
 			<ul class="aside-menu aside-left-menu">
 				<li class="menu-item has-submenu">
-					<a href="dashboard.aspx" class="menu-link">
+					<a href="warehouseinventory.aspx" class="menu-link">
 						<span class="menu-icon"><i class="zmdi zmdi-view-dashboard zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Dashboard</span>
+						<span class="menu-text foldable">Inventory</span>
 						
 					</a>
 					
@@ -103,25 +103,25 @@
 				<li class="menu-item has-submenu">
 					<a href="users.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-user zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">View Users</span>
+						<span class="menu-text foldable">Transfers(transfer page)</span>
 						
 					</a>
 					
 				</li><!-- .menu-item -->
 
 				<li class="menu-item has-submenu">
-					<a href="licensewarehouse.aspx" class="menu-link">
+					<a href="warehouserelease.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-registered zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">License Warehouse</span>
+						<span class="menu-text foldable">Releases</span>
 						
 					</a>
 					
 				</li><!-- .menu-item -->
 
 				<li class="menu-item has-submenu">
-					<a href="addofficial.aspx" class="menu-link">
-						<span class="menu-icon"><i class="fa fa-user-plus zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Register Officials</span>
+					<a href="wareMessages.aspx" class="menu-link">
+						<span class="menu-icon"><i class="fa fa-envelope zmdi-hc-lg"></i></span>
+						<span class="menu-text foldable">Messges</span>
 					</a>
 					
 				</li><!-- .menu-item -->
@@ -143,25 +143,7 @@
 						<li><a href="">Report 7</a></li>
 					</ul>
 				</li><!-- .menu-item -->
-			<hr>
-			<footer id="aside-footer">
-				<ul class="aside-menu aside-left-menu">
-					<li class="menu-item">
-						<a href="documentation.html" class="menu-link">
-							<span class="menu-icon"><i class="zmdi zmdi-file-text zmdi-hc-lg"></i></span>
-							<span class="menu-text foldable">Documentation</span>
-						</a>
-					</li><!-- .menu-item -->
-
-					<li class="menu-item">
-						<a href="javascript:void(0)" class="menu-link">
-							<span class="menu-icon"><i class="zmdi zmdi-settings zmdi-hc-lg"></i></span>
-							<span class="menu-text foldable">Settings</span>
-						</a>
-					</li><!-- .menu-item -->
-				
-				</ul>
-			</footer><!-- #sidebar-footer -->
+			<hr/>
 		</div><!-- .aside-scroll-inner -->
 	</div><!-- #aside-scroll -->
 </aside>

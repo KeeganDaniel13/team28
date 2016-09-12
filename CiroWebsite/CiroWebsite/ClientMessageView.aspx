@@ -106,21 +106,19 @@
 			<div class="modal-body">
 				<form action="#">
 					<div class="form-group">
-						<input name="mail_from_field" id="mail_from_field" type="text" class="form-control" placeholder="from">
+						<input name="mail_from_field" id="from" runat="server" type="text" class="form-control" placeholder="from">
 					</div>
 					<div class="form-group">
-						<input name="mail_to_field" id="mail_to_field" type="text" class="form-control" placeholder="to">
+						<input name="mail_to_field" id="to" runat="server" type="text" class="form-control" placeholder="to">
 					</div>
 					<div class="form-group">
-						<input name="mail_subject_field" id="mail_subject_field" type="text" class="form-control" placeholder="subject">
+						<input name="mail_subject_field" id="subject" runat="server" type="text" class="form-control" placeholder="subject">
 					</div>
-					<textarea name="mail_body_field" id="mail_body_field" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
+					<textarea name="mail_body_field" id="body" runat="server" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-success"><i class="fa fa-save"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
+                <button type="button" runat="server" onserverclick="sendMail" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

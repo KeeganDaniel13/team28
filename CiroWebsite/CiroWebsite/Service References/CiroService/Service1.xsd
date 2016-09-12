@@ -16,6 +16,8 @@
       <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="usertype" type="xs:int" />
       <xs:element minOccurs="0" name="usertypename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouseID" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouseName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonUser" nillable="true" type="tns:JsonUser" />
@@ -385,6 +387,7 @@
   <xs:element name="ArrayOfReleaseProduct" nillable="true" type="tns:ArrayOfReleaseProduct" />
   <xs:complexType name="ReleaseProduct">
     <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="invoiceTotal" type="xs:double" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />

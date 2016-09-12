@@ -127,9 +127,9 @@
 						<input runat="server" name="from" id="to" type="text" class="form-control" placeholder="to">
 					</div>
 					<div class="form-group">
-						<input name="mail_subject_field" id="subject" type="text" class="form-control" placeholder="subject">
+						<input name="mail_subject_field" runat="server" id="subject" type="text" class="form-control" placeholder="subject">
 					</div>
-					<textarea name="mail_body_field" id="mail_body_field" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
+					<textarea name="mail_body_field" id="body" runat="server" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
 				</form>
 			</div>
 			<div class="modal-footer">

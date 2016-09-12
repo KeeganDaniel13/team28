@@ -11,7 +11,8 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var goods = CiroSingleton.ServerCalls.getWarehouseInventory(new CiroService.JsonWarehouse { id = 1});
+            var user = (CiroService.JsonUser)Session["user"];
+            var goods = CiroSingleton.ServerCalls.getWarehouseInventory(new CiroService.JsonWarehouse { id = user.warehouseID});
             var body = "";
             foreach (var stock in goods)
             {

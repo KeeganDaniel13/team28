@@ -46,6 +46,12 @@ namespace CiroWebsite.CiroService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string usertypenameField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int warehouseIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warehouseNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -156,6 +162,32 @@ namespace CiroWebsite.CiroService {
                 if ((object.ReferenceEquals(this.usertypenameField, value) != true)) {
                     this.usertypenameField = value;
                     this.RaisePropertyChanged("usertypename");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int warehouseID {
+            get {
+                return this.warehouseIDField;
+            }
+            set {
+                if ((this.warehouseIDField.Equals(value) != true)) {
+                    this.warehouseIDField = value;
+                    this.RaisePropertyChanged("warehouseID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warehouseName {
+            get {
+                return this.warehouseNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warehouseNameField, value) != true)) {
+                    this.warehouseNameField = value;
+                    this.RaisePropertyChanged("warehouseName");
                 }
             }
         }
@@ -2972,6 +3004,9 @@ namespace CiroWebsite.CiroService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double invoiceTotalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2993,6 +3028,19 @@ namespace CiroWebsite.CiroService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
             }
         }
         
