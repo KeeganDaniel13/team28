@@ -75,6 +75,7 @@
     <Content Include="dashboard.aspx" />
     <Content Include="declareownershiptransfer.aspx" />
     <Content Include="dischargegoods.aspx" />
+    <Content Include="index.aspx" />
     <Content Include="infinity\assets\images\warehouse.jpg" />
     <Content Include="infinity\css\ownership.css" />
     <Content Include="infinity\css\style.css" />
@@ -129,6 +130,7 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
+    <Content Include="warehouse.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -255,7 +257,12 @@
     <Content Include="viewpackage.aspx" />
     <Content Include="viewreleaseinfo.aspx" />
     <Content Include="viewtransfer.aspx" />
+    <Content Include="warehouseinventory.aspx" />
+    <Content Include="warehouseinvoices.aspx" />
     <Content Include="warehouseoverview.aspx" />
+    <Content Include="warehouserelease.aspx" />
+    <Content Include="warehousetransfers.aspx" />
+    <Content Include="warehousevariants.aspx" />
     <Content Include="warehouseview.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -336,6 +343,13 @@
     </Compile>
     <Compile Include="dischargegoods.aspx.designer.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
@@ -436,12 +450,54 @@
     <Compile Include="viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="warehouse.Master.cs">
+      <DependentUpon>warehouse.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouse.Master.designer.cs">
+      <DependentUpon>warehouse.Master</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseinventory.aspx.cs">
+      <DependentUpon>warehouseinventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouseinventory.aspx.designer.cs">
+      <DependentUpon>warehouseinventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehouseinvoices.aspx.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouseinvoices.aspx.designer.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="warehouseoverview.aspx.designer.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehouserelease.aspx.cs">
+      <DependentUpon>warehouserelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouserelease.aspx.designer.cs">
+      <DependentUpon>warehouserelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehousetransfers.aspx.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehousetransfers.aspx.designer.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehousevariants.aspx.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehousevariants.aspx.designer.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
     </Compile>
     <Compile Include="warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
@@ -454,6 +510,8 @@
   <ItemGroup>
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
+    <Folder Include="infinity\landing\assets\" />
+    <Folder Include="infinity\landing\libs\" />
     <Folder Include="trader\" />
   </ItemGroup>
   <PropertyGroup>

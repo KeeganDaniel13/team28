@@ -20,11 +20,11 @@
 </head>
 <body class="simple-page">
     <div id="back-to-home">
-		<a href="index-2.html" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
+		<a href="index.aspx" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
 	</div>
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
-			<a href="index-2.html">
+			<a href="index.aspx">
 				<span><i class="fa fa-gg"></i></span>
 				<span>CIRO</span>
 			</a>
@@ -54,7 +54,7 @@
 	<p><a href="password-forget.html">FORGOT YOUR PASSWORD ?</a></p>
 	<p>
 		<small>Don't have an account ?</small>
-		<a href="signup.html">CREATE AN ACCOUNT</a>
+		<a href="signup.aspx">CREATE AN ACCOUNT</a>
 	</p>
 </div><!-- .simple-page-footer -->
 
