@@ -278,40 +278,45 @@ namespace CiroService
 
         //REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS 
         //================================================ ================================================ ================================================ ================================================ ================================================ 
-        //double bar graph - occupied space vs total space
+        //double bar graph - occupied space vs total space done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseAvailability")]
         IEnumerable<jsonWarehouseAvailabilty> WarehouseAvailabilityGraph();
 
-        //pie chart for the three size categories for length
+        //pie chart for the three size categories for length done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageLengthCategories")]
         IEnumerable<PackageSizeCategory> PackageLengthCategories();
 
-        //pie chart for the three size categories for height
+        //pie chart for the three size categories for height done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackageHeightCategories")]
         IEnumerable<PackageSizeCategory> PackageHeightCategories();
 
-        //pie chart for the three size categories for width
+        //pie chart for the three size categories for width done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagewidthCategories")]
         IEnumerable<PackageSizeCategory> PackagewidthCategories();
 
-        //Number of incidents per warehouse
+        //Number of incidents per warehouse done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseIncidents")]
         IEnumerable<WarehouseIncidentsGraph> WarehouseIncidents();
 
-        //Most common release destination
+        //Most common release destination done
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseReleases")]
         IEnumerable<WarehouseReleasescs> WarehouseReleases();
 
-        //Packages Received Per Month For Warehouse
+        //Packages Received Per Month For Warehouse done
         [OperationContract]
-        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagesPerMonth")]
-        IEnumerable<PackagePerMonth> PackagesPerMonth(JsonWarehouse warehouse);
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "PackagesPerMonth/{name}")]
+        IEnumerable<PackagePerMonth> PackagesPerMonth(string name);
+
+        //Number of incidents last month done
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "IncidentsLastMonth/{name}")]
+        IEnumerable<OutgoingRate> IncidentsLastMonth(string name);
 
         //REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS 
         //================================================ ================================================ ================================================ ================================================ ================================================ 

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/packagetoolbar">
+
+    </include>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linear"
+
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/jbl"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="25dp"
+            />
+
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/packagetoolbar">
+
+        </include>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="top"
+            android:padding="16dp">
+
+            <!--<ImageView-->
+
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/menu"-->
+            <!--android:layout_gravity="left"-->
+            <!--/>-->
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="30dp">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingRight="5dp"
+                        android:text="JBL Flip 3"
+                        android:background="@drawable/round"
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginLeft="16dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bluetooth Speakers"
+                        android:background="@drawable/round"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:paddingRight="5dp"
+                        android:textColor="#000"
+                        android:layout_marginLeft="16dp"
+                        />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:background="@drawable/rect1"
+                    android:elevation="7dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="10dp"/>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!-->-->
+            <!-- -->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:paddingTop="2dp"-->
+            <!--android:paddingBottom="2dp"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:text="AWSOME VILLA"-->
+            <!--android:background="@drawable/round"-->
+            <!--android:textSize="18dp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="New Delhi"-->
+            <!--android:background="@drawable/round"-->
+            <!--android:paddingTop="2dp"-->
+            <!--android:paddingBottom="2dp"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:layout_marginTop="3dp"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--/>-->
+
+
+
+            <!--</LinearLayout>-->
+
+
+
+
+
+
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:layout_gravity="right"-->
+            <!-->-->
+
+            <!-- -->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="4.5"-->
+            <!--android:textSize="35dp"-->
+            <!--android:textColor="#fff"-->
+            <!--android:padding="10dp"-->
+            <!--android:background="@drawable/rect1"-->
+            <!--android:elevation="7dp"-->
+            <!--android:layout_marginTop="15dp"-->
+
+            <!--/>-->
+
+
+
+
+            <!--</LinearLayout>-->
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/pay">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Duty Payable"
+                android:textSize="22dp"
+                android:textColor="@color/text"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R278.00"
+                android:textColor="#b20000"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/fullyfurnished"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Entry"
+                android:textColor="@color/text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/dateofentry"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="12.09.2015"
+                android:textColorHint="#181737"
+                android:textColor="@color/text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/devider"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/bathroom"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Variants"
+                android:textColor="@color/text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"/>
+
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/cupboards"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#1b193b"
+                android:hint="3 Variants"
+                android:textColor="@color/text"
+                android:maxLength="12"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/devider"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/beds"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Owner(s)"
+                android:textColor="@color/text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+
+            <app.ciro.chuck.betaapp.MyTextView
+                android:layout_weight="1"
+                android:id="@+id/tv"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#1b193b"
+                android:text="1+"
+                android:textColor="@color/text"
+                android:background="#0000"
+                android:padding="16dp"
+                android:gravity="left"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/devider"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
+
+
+
+
+        <LinearLayout
+            android:layout_marginTop="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/error_1"
+                    android:layout_gravity="center"
+                    android:gravity="bottom"
+
+                    />
+
+
+
+                <app.ciro.chuck.betaapp.MyTextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Report"
+                    android:layout_gravity="center"
+                    android:textSize="12dp"
+                    android:textColor="@color/icons"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/location"
+                    android:layout_gravity="center"
+                    android:gravity="bottom"
+
+                    />
+
+
+
+                <app.ciro.chuck.betaapp.MyTextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Location"
+                    android:layout_gravity="center"
+                    android:textSize="12dp"
+                    android:textColor="@color/icons"
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#008FBF"
+        android:text="Request Transfer"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

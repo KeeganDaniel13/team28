@@ -1481,9 +1481,9 @@ namespace CiroService
                 }
             }
             List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
-            categories.Add(new PackageSizeCategory { category = "Lengths Less Than 60cm", count = Convert.ToInt32(count1) });
-            categories.Add(new PackageSizeCategory { category = "Lengths Less Than 120cm", count = Convert.ToInt32(count2) });
-            categories.Add(new PackageSizeCategory { category = "Lengths Greater Than 120cm", count = Convert.ToInt32(count3) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
         }
 
@@ -1515,9 +1515,9 @@ namespace CiroService
                 }
             }
             List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
-            categories.Add(new PackageSizeCategory { category = "Heights Less Than 60cm", count = Convert.ToInt32(count1) });
-            categories.Add(new PackageSizeCategory { category = "Heights Less Than 120cm", count = Convert.ToInt32(count2) });
-            categories.Add(new PackageSizeCategory { category = "Heights Greater Than 120cm", count = Convert.ToInt32(count3) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
         }
 
@@ -1550,9 +1550,9 @@ namespace CiroService
                 }
             }
             List<PackageSizeCategory> categories = new List<PackageSizeCategory>();
-            categories.Add(new PackageSizeCategory { category = "Widths Less Than 60cm", count = Convert.ToInt32(count1) });
-            categories.Add(new PackageSizeCategory { category = "Widths Less Than 120cm", count = Convert.ToInt32(count2) });
-            categories.Add(new PackageSizeCategory { category = "Widths Greater Than 120cm", count = Convert.ToInt32(count3) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 60cm", count = Convert.ToInt32(count1) });
+            categories.Add(new PackageSizeCategory { category = "Less Than 120cm", count = Convert.ToInt32(count2) });
+            categories.Add(new PackageSizeCategory { category = "Greater Than 120cm", count = Convert.ToInt32(count3) });
             return categories;
         }
         //warehouses incidents comparisons
@@ -1607,11 +1607,29 @@ namespace CiroService
 		}
 
         //number of packages coming in for each month use line graph
-        public IEnumerable<PackagePerMonth> PackagesPerMonth(JsonWarehouse warehouse)
+        public IEnumerable<PackagePerMonth> PackagesPerMonth(string name)
         {   
 
             productController productaccess = new productController();
-            var products = productaccess.getTable().Where<product>(p => p.product_location == warehouse.location);
+            warehouseController warehouseaccess = new warehouseController();
+            userController useraccess = new userController();
+            var tuser = useraccess.getTable().Where<user>(u => u.user_fname == name || u.user_email == name);
+            user actu = null;
+            foreach (user w in tuser)
+            {
+                actu = w;
+                break;
+            }
+
+            var ware = warehouseaccess.getTable().Where<warehouse>(w => w.warehouse_user == actu.user_id);
+            warehouse actware = null;
+            foreach(warehouse w in ware)
+            {
+                actware = w;
+                break;
+            }
+
+            var products = productaccess.getTable().Where<product>(p => p.product_location == actware.warehouse_location);
             List<PackagePerMonth> monthly = new List<PackagePerMonth>();
             
 
@@ -1630,6 +1648,23 @@ namespace CiroService
                 monthly.Add(new PackagePerMonth {month = dtmon.ToString("MMMM"), packages = count });
             }           
             return monthly;
+        }
+
+        public IEnumerable<OutgoingRate> IncidentsLastMonth(string name)
+        {           
+            warehouseController warehouseaccess = new warehouseController();           
+            productlogController logaccess = new productlogController();
+            var warehouses = warehouseaccess.getTable();
+            List<OutgoingRate> or = new List<OutgoingRate>();
+            DateTime now = DateTime.Now;
+
+            foreach (warehouse w in warehouses)
+            {
+                //MessageBox.Show(now.AddMonths(1).Month.ToString());
+                var outgoing = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == w.warehouse_name && (p.productlog_type == 1 && ((DateTime)p.productlog_dateLogged).AddMonths(1).Month.Equals(now.Month)));
+                or.Add(new OutgoingRate {warehouse = w.warehouse_name, leaving = outgoing.Count<productlog>()});
+            }
+            return or;
         }
 
         public IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse)
