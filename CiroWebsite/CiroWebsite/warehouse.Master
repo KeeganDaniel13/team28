@@ -128,6 +128,7 @@
 				
 
 				<li class="menu-item has-submenu">
+
 					<a href="javascript:void(0)" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>

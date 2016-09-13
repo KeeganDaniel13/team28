@@ -28,8 +28,8 @@
 
                       </tr>
                       </thead>
+
                       <tbody runat="server" id="releaseTable">
-                      
                       
                       
                       <tr>

@@ -195,6 +195,7 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
+    <Content Include="warehouse.Master" />
     <Content Include="Client.Master" />
     <Content Include="infinity\landing\assets\._css" />
     <Content Include="infinity\landing\assets\._fonts" />
@@ -448,6 +449,11 @@
     <Content Include="viewreleaseinfo.aspx" />
     <Content Include="viewtransfer.aspx" />
     <Content Include="warehouseinventory.aspx" />
+    <Content Include="warehouseinvoices.aspx" />
+    <Content Include="warehouseoverview.aspx" />
+    <Content Include="warehouserelease.aspx" />
+    <Content Include="warehousetransfers.aspx" />
+    <Content Include="warehousevariants.aspx" />
     <Content Include="warehouseoverview.aspx" />
     <Content Include="warehouserelease.aspx" />
     <Content Include="warehouseview.aspx" />
@@ -564,6 +570,11 @@
       <DependentUpon>dischargegoods.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
@@ -688,6 +699,13 @@
     <Compile Include="warehouseinventory.aspx.designer.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="warehouseinvoices.aspx.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouseinvoices.aspx.designer.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
+    </Compile>
     <Compile Include="warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -701,6 +719,20 @@
     </Compile>
     <Compile Include="warehouserelease.aspx.designer.cs">
       <DependentUpon>warehouserelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehousetransfers.aspx.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehousetransfers.aspx.designer.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehousevariants.aspx.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehousevariants.aspx.designer.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
     </Compile>
     <Compile Include="warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
@@ -727,6 +759,8 @@
   <ItemGroup>
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
+    <Folder Include="infinity\landing\assets\" />
+    <Folder Include="infinity\landing\libs\" />
     <Folder Include="trader\" />
   </ItemGroup>
   <ItemGroup>
