@@ -39,6 +39,10 @@ namespace CiroWebsite
                 {
                     Response.Redirect("dashboard.aspx");
                 }
+                else
+                {
+                    Response.Redirect("warehouseinventory.aspx");
+                }
             }
         }
     }

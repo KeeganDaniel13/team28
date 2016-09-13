@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="messageview.aspx.cs" Inherits="CiroWebsite.messageview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="messageview.aspx.cs" Inherits="CiroWebsite.messageview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -106,7 +106,7 @@
 			<div class="modal-body">
 				<form action="#">
 					<div class="form-group">
-						<input name="mail_from_field" id="mail_from_field" type="text" class="form-control" placeholder="from">
+						<input name="mail_from_field" runat="server" id="from" type="text" class="form-control" placeholder="from">
 					</div>
 					<div class="form-group">
 						<input name="mail_to_field" id="mail_to_field" type="text" class="form-control" placeholder="to">

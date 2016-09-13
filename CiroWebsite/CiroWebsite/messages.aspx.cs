@@ -12,7 +12,8 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var user = (CiroService.JsonUser)Session["user"];
+            from.Value += user.email;
         }
 
         protected void listMessages()
@@ -36,7 +37,7 @@ namespace CiroWebsite
                 body += "<a href='#'><span class='label label-success'>client</span></a>";
                 body += "<a href='#'><span class='label label-primary'>work</span></a>";
                 body += "</div>";
-                body += "<p class='mail-item-excerpt'>" + message.message.Substring(0, 10) + "..." + "</p>";
+                body += "<p class='mail-item-excerpt'>" + message.subject + "</p>";
                 body += "</td>";
                 body += "<td class='mail-right'>";
                 body += "<p class='mail-item-date'>" + message.stamp + "</p>";
@@ -48,12 +49,14 @@ namespace CiroWebsite
                 body += "</table>";
                 body += "</div>";
             }
+            
             Response.Write(body);
         }
 
         protected void sendMail(object sender, EventArgs e)
         {
-            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = "customs@gmail", to = "customs@gmail", stamp = DateTime.Now, message = "Sent Your First Message" });
+            var user = (CiroService.JsonUser)Session["user"];
+            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email , to =to.Value, stamp = DateTime.Now, message = message.Value,subject =subject .Value  });
         }
     }
 }

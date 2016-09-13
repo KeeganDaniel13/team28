@@ -334,30 +334,13 @@ namespace CiroService
         //================================================ ================================================ ================================================ ================================================ ================================================ 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedRelease")]
         IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedTransfer")]
-        IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse);
+        IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse);
 
 
 

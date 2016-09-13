@@ -13,7 +13,7 @@ namespace CiroWebsite
         {
             var messages = (List<CiroService.JsonMessage>)Session["messages"];
             CiroService.JsonMessage message = messages.First(c => c.id == Convert.ToInt32(Request.QueryString["id"]));
-            var body = "< div class='mail-view'>";
+            var body = "<div class='mail-view'>";
             body += "<h4 class='m-0'>" + message.subject + "</h4>";
             body += "<div class='divid'></div>";
             body += "<div class='media'>";
@@ -42,17 +42,17 @@ namespace CiroWebsite
             body += "<div class='row'>";
             body += "<div class='col-md-12'>";
             body += "<div class='panel panel-default new-message'>";
-            body += "<div class='panel-heading'>";
-            body += "<input type = 'text' placeholder='envatomarket@envato.com'>";
-            body += "</div>";
-            body += "<div class='panel-body p-0'>";
-            body += "<textarea name = 'new_message_body' id='new-message-body'>We are excited to launch our new company and product Ooooh.After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves, so that’s what we have continued to do. We also hope to win Startup Fictional Business of the Year this Year.</textarea>";
-            body += "</div>";
             body += "<div class='panel-footer'>";
             body += "<button type = 'button' class='btn btn-primary btn-outline btn-sm'>Forward</button>";
             body += "<button type = 'button' class='btn btn-default pull-right' data-dismiss='modal'><i class='fa fa-trash'></i></button>";
             body += "</div></div></div></div></div></div>";
             messageDetails.InnerHtml += body;
+        }
+
+        protected void sendMail(object sender, EventArgs e)
+        {
+            var user = (CiroService.JsonUser)Session["user"];
+            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email, to = to.Value, stamp = DateTime.Now, message = body.Value, subject = subject.Value });
         }
     }
 }

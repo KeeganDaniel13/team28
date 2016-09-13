@@ -15,676 +15,6 @@ namespace CiroWebsite.CiroService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WarehouseReleasescs", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class WarehouseReleasescs : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int releasesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warehouseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int releases {
-            get {
-                return this.releasesField;
-            }
-            set {
-                if ((this.releasesField.Equals(value) != true)) {
-                    this.releasesField = value;
-                    this.RaisePropertyChanged("releases");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warehouse {
-            get {
-                return this.warehouseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warehouseField, value) != true)) {
-                    this.warehouseField = value;
-                    this.RaisePropertyChanged("warehouse");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PackagePerMonth", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class PackagePerMonth : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string monthField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int packagesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string month {
-            get {
-                return this.monthField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.monthField, value) != true)) {
-                    this.monthField = value;
-                    this.RaisePropertyChanged("month");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int packages {
-            get {
-                return this.packagesField;
-            }
-            set {
-                if ((this.packagesField.Equals(value) != true)) {
-                    this.packagesField = value;
-                    this.RaisePropertyChanged("packages");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OutgoingRate", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class OutgoingRate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int leavingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string warehouseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int leaving {
-            get {
-                return this.leavingField;
-            }
-            set {
-                if ((this.leavingField.Equals(value) != true)) {
-                    this.leavingField = value;
-                    this.RaisePropertyChanged("leaving");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string warehouse {
-            get {
-                return this.warehouseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.warehouseField, value) != true)) {
-                    this.warehouseField = value;
-                    this.RaisePropertyChanged("warehouse");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JsonWarehouse", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class JsonWarehouse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double availableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string locationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int userField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int warehousetypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double available {
-            get {
-                return this.availableField;
-            }
-            set {
-                if ((this.availableField.Equals(value) != true)) {
-                    this.availableField = value;
-                    this.RaisePropertyChanged("available");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string location {
-            get {
-                return this.locationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.locationField, value) != true)) {
-                    this.locationField = value;
-                    this.RaisePropertyChanged("location");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nameField, value) != true)) {
-                    this.nameField = value;
-                    this.RaisePropertyChanged("name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((this.sizeField.Equals(value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int user {
-            get {
-                return this.userField;
-            }
-            set {
-                if ((this.userField.Equals(value) != true)) {
-                    this.userField = value;
-                    this.RaisePropertyChanged("user");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int warehousetype {
-            get {
-                return this.warehousetypeField;
-            }
-            set {
-                if ((this.warehousetypeField.Equals(value) != true)) {
-                    this.warehousetypeField = value;
-                    this.RaisePropertyChanged("warehousetype");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReleaseProduct", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class ReleaseProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double invoiceTotalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ownerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime requestedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string statusField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double invoiceTotal {
-            get {
-                return this.invoiceTotalField;
-            }
-            set {
-                if ((this.invoiceTotalField.Equals(value) != true)) {
-                    this.invoiceTotalField = value;
-                    this.RaisePropertyChanged("invoiceTotal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nameField, value) != true)) {
-                    this.nameField = value;
-                    this.RaisePropertyChanged("name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string owner {
-            get {
-                return this.ownerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ownerField, value) != true)) {
-                    this.ownerField = value;
-                    this.RaisePropertyChanged("owner");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime requested {
-            get {
-                return this.requestedField;
-            }
-            set {
-                if ((this.requestedField.Equals(value) != true)) {
-                    this.requestedField = value;
-                    this.RaisePropertyChanged("requested");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string status {
-            get {
-                return this.statusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.statusField, value) != true)) {
-                    this.statusField = value;
-                    this.RaisePropertyChanged("status");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JsonProducts", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
-    [System.SerializableAttribute()]
-    public partial class JsonProducts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime arrivalDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string billField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cosignerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string destinationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int hscodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string locationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double priceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int producttypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int quantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int sizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int useridField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime arrivalDate {
-            get {
-                return this.arrivalDateField;
-            }
-            set {
-                if ((this.arrivalDateField.Equals(value) != true)) {
-                    this.arrivalDateField = value;
-                    this.RaisePropertyChanged("arrivalDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bill {
-            get {
-                return this.billField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.billField, value) != true)) {
-                    this.billField = value;
-                    this.RaisePropertyChanged("bill");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cosigner {
-            get {
-                return this.cosignerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cosignerField, value) != true)) {
-                    this.cosignerField = value;
-                    this.RaisePropertyChanged("cosigner");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string destination {
-            get {
-                return this.destinationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.destinationField, value) != true)) {
-                    this.destinationField = value;
-                    this.RaisePropertyChanged("destination");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int hscode {
-            get {
-                return this.hscodeField;
-            }
-            set {
-                if ((this.hscodeField.Equals(value) != true)) {
-                    this.hscodeField = value;
-                    this.RaisePropertyChanged("hscode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string location {
-            get {
-                return this.locationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.locationField, value) != true)) {
-                    this.locationField = value;
-                    this.RaisePropertyChanged("location");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nameField, value) != true)) {
-                    this.nameField = value;
-                    this.RaisePropertyChanged("name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double price {
-            get {
-                return this.priceField;
-            }
-            set {
-                if ((this.priceField.Equals(value) != true)) {
-                    this.priceField = value;
-                    this.RaisePropertyChanged("price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int producttype {
-            get {
-                return this.producttypeField;
-            }
-            set {
-                if ((this.producttypeField.Equals(value) != true)) {
-                    this.producttypeField = value;
-                    this.RaisePropertyChanged("producttype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int quantity {
-            get {
-                return this.quantityField;
-            }
-            set {
-                if ((this.quantityField.Equals(value) != true)) {
-                    this.quantityField = value;
-                    this.RaisePropertyChanged("quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int size {
-            get {
-                return this.sizeField;
-            }
-            set {
-                if ((this.sizeField.Equals(value) != true)) {
-                    this.sizeField = value;
-                    this.RaisePropertyChanged("size");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int userid {
-            get {
-                return this.useridField;
-            }
-            set {
-                if ((this.useridField.Equals(value) != true)) {
-                    this.useridField = value;
-                    this.RaisePropertyChanged("userid");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JsonUser", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
     [System.SerializableAttribute()]
     public partial class JsonUser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -715,6 +45,12 @@ namespace CiroWebsite.CiroService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string usertypenameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int warehouseIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warehouseNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -826,6 +162,32 @@ namespace CiroWebsite.CiroService {
                 if ((object.ReferenceEquals(this.usertypenameField, value) != true)) {
                     this.usertypenameField = value;
                     this.RaisePropertyChanged("usertypename");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int warehouseID {
+            get {
+                return this.warehouseIDField;
+            }
+            set {
+                if ((this.warehouseIDField.Equals(value) != true)) {
+                    this.warehouseIDField = value;
+                    this.RaisePropertyChanged("warehouseID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warehouseName {
+            get {
+                return this.warehouseNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warehouseNameField, value) != true)) {
+                    this.warehouseNameField = value;
+                    this.RaisePropertyChanged("warehouseName");
                 }
             }
         }
@@ -1573,6 +935,147 @@ namespace CiroWebsite.CiroService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonWarehouse", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class JsonWarehouse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double availableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string locationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int userField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int warehousetypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double available {
+            get {
+                return this.availableField;
+            }
+            set {
+                if ((this.availableField.Equals(value) != true)) {
+                    this.availableField = value;
+                    this.RaisePropertyChanged("available");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string location {
+            get {
+                return this.locationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.locationField, value) != true)) {
+                    this.locationField = value;
+                    this.RaisePropertyChanged("location");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((this.sizeField.Equals(value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int user {
+            get {
+                return this.userField;
+            }
+            set {
+                if ((this.userField.Equals(value) != true)) {
+                    this.userField = value;
+                    this.RaisePropertyChanged("user");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int warehousetype {
+            get {
+                return this.warehousetypeField;
+            }
+            set {
+                if ((this.warehousetypeField.Equals(value) != true)) {
+                    this.warehousetypeField = value;
+                    this.RaisePropertyChanged("warehousetype");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="transferStock", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
     [System.SerializableAttribute()]
     public partial class transferStock : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1666,6 +1169,243 @@ namespace CiroWebsite.CiroService {
                 if ((this.valueField.Equals(value) != true)) {
                     this.valueField = value;
                     this.RaisePropertyChanged("value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonProducts", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class JsonProducts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime arrivalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string billField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cosignerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string destinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int hscodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string locationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double priceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int producttypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int quantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int sizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int useridField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime arrivalDate {
+            get {
+                return this.arrivalDateField;
+            }
+            set {
+                if ((this.arrivalDateField.Equals(value) != true)) {
+                    this.arrivalDateField = value;
+                    this.RaisePropertyChanged("arrivalDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bill {
+            get {
+                return this.billField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.billField, value) != true)) {
+                    this.billField = value;
+                    this.RaisePropertyChanged("bill");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string cosigner {
+            get {
+                return this.cosignerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cosignerField, value) != true)) {
+                    this.cosignerField = value;
+                    this.RaisePropertyChanged("cosigner");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string destination {
+            get {
+                return this.destinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.destinationField, value) != true)) {
+                    this.destinationField = value;
+                    this.RaisePropertyChanged("destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int hscode {
+            get {
+                return this.hscodeField;
+            }
+            set {
+                if ((this.hscodeField.Equals(value) != true)) {
+                    this.hscodeField = value;
+                    this.RaisePropertyChanged("hscode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string location {
+            get {
+                return this.locationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.locationField, value) != true)) {
+                    this.locationField = value;
+                    this.RaisePropertyChanged("location");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double price {
+            get {
+                return this.priceField;
+            }
+            set {
+                if ((this.priceField.Equals(value) != true)) {
+                    this.priceField = value;
+                    this.RaisePropertyChanged("price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int producttype {
+            get {
+                return this.producttypeField;
+            }
+            set {
+                if ((this.producttypeField.Equals(value) != true)) {
+                    this.producttypeField = value;
+                    this.RaisePropertyChanged("producttype");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                if ((this.quantityField.Equals(value) != true)) {
+                    this.quantityField = value;
+                    this.RaisePropertyChanged("quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                if ((this.sizeField.Equals(value) != true)) {
+                    this.sizeField = value;
+                    this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int userid {
+            get {
+                return this.useridField;
+            }
+            set {
+                if ((this.useridField.Equals(value) != true)) {
+                    this.useridField = value;
+                    this.RaisePropertyChanged("userid");
                 }
             }
         }
@@ -3132,39 +2872,317 @@ namespace CiroWebsite.CiroService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WarehouseReleasescs", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class WarehouseReleasescs : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int releasesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warehouseField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int releases {
+            get {
+                return this.releasesField;
+            }
+            set {
+                if ((this.releasesField.Equals(value) != true)) {
+                    this.releasesField = value;
+                    this.RaisePropertyChanged("releases");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warehouse {
+            get {
+                return this.warehouseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warehouseField, value) != true)) {
+                    this.warehouseField = value;
+                    this.RaisePropertyChanged("warehouse");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PackagePerMonth", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class PackagePerMonth : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string monthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int packagesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string month {
+            get {
+                return this.monthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.monthField, value) != true)) {
+                    this.monthField = value;
+                    this.RaisePropertyChanged("month");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int packages {
+            get {
+                return this.packagesField;
+            }
+            set {
+                if ((this.packagesField.Equals(value) != true)) {
+                    this.packagesField = value;
+                    this.RaisePropertyChanged("packages");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutgoingRate", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class OutgoingRate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int leavingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string warehouseField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int leaving {
+            get {
+                return this.leavingField;
+            }
+            set {
+                if ((this.leavingField.Equals(value) != true)) {
+                    this.leavingField = value;
+                    this.RaisePropertyChanged("leaving");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string warehouse {
+            get {
+                return this.warehouseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.warehouseField, value) != true)) {
+                    this.warehouseField = value;
+                    this.RaisePropertyChanged("warehouse");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReleaseProduct", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class ReleaseProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double invoiceTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ownerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime requestedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double invoiceTotal {
+            get {
+                return this.invoiceTotalField;
+            }
+            set {
+                if ((this.invoiceTotalField.Equals(value) != true)) {
+                    this.invoiceTotalField = value;
+                    this.RaisePropertyChanged("invoiceTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string owner {
+            get {
+                return this.ownerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ownerField, value) != true)) {
+                    this.ownerField = value;
+                    this.RaisePropertyChanged("owner");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime requested {
+            get {
+                return this.requestedField;
+            }
+            set {
+                if ((this.requestedField.Equals(value) != true)) {
+                    this.requestedField = value;
+                    this.RaisePropertyChanged("requested");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statusField, value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CiroService.IService1")]
     public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseReleases", ReplyAction="http://tempuri.org/IService1/WarehouseReleasesResponse")]
-        CiroWebsite.CiroService.WarehouseReleasescs[] WarehouseReleases();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseReleases", ReplyAction="http://tempuri.org/IService1/WarehouseReleasesResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseReleasescs[]> WarehouseReleasesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackagesPerMonth", ReplyAction="http://tempuri.org/IService1/PackagesPerMonthResponse")]
-        CiroWebsite.CiroService.PackagePerMonth[] PackagesPerMonth(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackagesPerMonth", ReplyAction="http://tempuri.org/IService1/PackagesPerMonthResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackagePerMonth[]> PackagesPerMonthAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IncidentsLastMonth", ReplyAction="http://tempuri.org/IService1/IncidentsLastMonthResponse")]
-        CiroWebsite.CiroService.OutgoingRate[] IncidentsLastMonth(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IncidentsLastMonth", ReplyAction="http://tempuri.org/IService1/IncidentsLastMonthResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.OutgoingRate[]> IncidentsLastMonthAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/releaseWareHouse", ReplyAction="http://tempuri.org/IService1/releaseWareHouseResponse")]
-        CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/releaseWareHouse", ReplyAction="http://tempuri.org/IService1/releaseWareHouseResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.ReleaseProduct[]> releaseWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
-        CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUsers", ReplyAction="http://tempuri.org/IService1/GetUsersResponse")]
         CiroWebsite.CiroService.JsonUser[] GetUsers();
@@ -3549,6 +3567,36 @@ namespace CiroWebsite.CiroService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseIncidents", ReplyAction="http://tempuri.org/IService1/WarehouseIncidentsResponse")]
         System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseIncidentsGraph[]> WarehouseIncidentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseReleases", ReplyAction="http://tempuri.org/IService1/WarehouseReleasesResponse")]
+        CiroWebsite.CiroService.WarehouseReleasescs[] WarehouseReleases();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseReleases", ReplyAction="http://tempuri.org/IService1/WarehouseReleasesResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseReleasescs[]> WarehouseReleasesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackagesPerMonth", ReplyAction="http://tempuri.org/IService1/PackagesPerMonthResponse")]
+        CiroWebsite.CiroService.PackagePerMonth[] PackagesPerMonth(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackagesPerMonth", ReplyAction="http://tempuri.org/IService1/PackagesPerMonthResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackagePerMonth[]> PackagesPerMonthAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IncidentsLastMonth", ReplyAction="http://tempuri.org/IService1/IncidentsLastMonthResponse")]
+        CiroWebsite.CiroService.OutgoingRate[] IncidentsLastMonth(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IncidentsLastMonth", ReplyAction="http://tempuri.org/IService1/IncidentsLastMonthResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.OutgoingRate[]> IncidentsLastMonthAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/releaseWareHouse", ReplyAction="http://tempuri.org/IService1/releaseWareHouseResponse")]
+        CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/releaseWareHouse", ReplyAction="http://tempuri.org/IService1/releaseWareHouseResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.ReleaseProduct[]> releaseWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
+        CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3576,46 +3624,6 @@ namespace CiroWebsite.CiroService {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public CiroWebsite.CiroService.WarehouseReleasescs[] WarehouseReleases() {
-            return base.Channel.WarehouseReleases();
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseReleasescs[]> WarehouseReleasesAsync() {
-            return base.Channel.WarehouseReleasesAsync();
-        }
-        
-        public CiroWebsite.CiroService.PackagePerMonth[] PackagesPerMonth(string name) {
-            return base.Channel.PackagesPerMonth(name);
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackagePerMonth[]> PackagesPerMonthAsync(string name) {
-            return base.Channel.PackagesPerMonthAsync(name);
-        }
-        
-        public CiroWebsite.CiroService.OutgoingRate[] IncidentsLastMonth(string name) {
-            return base.Channel.IncidentsLastMonth(name);
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.OutgoingRate[]> IncidentsLastMonthAsync(string name) {
-            return base.Channel.IncidentsLastMonthAsync(name);
-        }
-        
-        public CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
-            return base.Channel.releaseWareHouse(warehouse);
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.ReleaseProduct[]> releaseWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
-            return base.Channel.releaseWareHouseAsync(warehouse);
-        }
-        
-        public CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
-            return base.Channel.transferWareHouse(warehouse);
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
-            return base.Channel.transferWareHouseAsync(warehouse);
         }
         
         public CiroWebsite.CiroService.JsonUser[] GetUsers() {
@@ -4128,6 +4136,46 @@ namespace CiroWebsite.CiroService {
         
         public System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseIncidentsGraph[]> WarehouseIncidentsAsync() {
             return base.Channel.WarehouseIncidentsAsync();
+        }
+        
+        public CiroWebsite.CiroService.WarehouseReleasescs[] WarehouseReleases() {
+            return base.Channel.WarehouseReleases();
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.WarehouseReleasescs[]> WarehouseReleasesAsync() {
+            return base.Channel.WarehouseReleasesAsync();
+        }
+        
+        public CiroWebsite.CiroService.PackagePerMonth[] PackagesPerMonth(string name) {
+            return base.Channel.PackagesPerMonth(name);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackagePerMonth[]> PackagesPerMonthAsync(string name) {
+            return base.Channel.PackagesPerMonthAsync(name);
+        }
+        
+        public CiroWebsite.CiroService.OutgoingRate[] IncidentsLastMonth(string name) {
+            return base.Channel.IncidentsLastMonth(name);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.OutgoingRate[]> IncidentsLastMonthAsync(string name) {
+            return base.Channel.IncidentsLastMonthAsync(name);
+        }
+        
+        public CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+            return base.Channel.releaseWareHouse(warehouse);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.ReleaseProduct[]> releaseWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+            return base.Channel.releaseWareHouseAsync(warehouse);
+        }
+        
+        public CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+            return base.Channel.transferWareHouse(warehouse);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+            return base.Channel.transferWareHouseAsync(warehouse);
         }
     }
 }

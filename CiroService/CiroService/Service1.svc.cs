@@ -79,6 +79,14 @@ namespace CiroService
             inUser.email = user.user_email;
             inUser.usertype = user.usertype_id;
             inUser.usertypename = user.usertype.usertype_name;
+            inUser.warehouseID = 0;
+            inUser.warehouseName = "";
+            if(user.usertype .usertype_name == "Warehouse")
+            {
+                var warehouse = user.warehouses.First<warehouse>(c => c.warehouse_user == user.user_id);
+                inUser.warehouseID = warehouse.warehouse_id;
+                inUser.warehouseName = warehouse.warehouse_name;
+            }
             return inUser;
         }
 
@@ -295,7 +303,9 @@ namespace CiroService
         //Make sure to generate qrcode for specfic product
         //Just double check with boolean
         //needs test with single and multiple produts varying of duty and non duty produts
-
+        //Make sure to generate qrcode for specfic product
+        //Just double check with boolean
+        //needs test with single and multiple produts varying of duty and non duty produts
         public void stockAdd(string origin, IEnumerable<jsonProduct> newProduct)
         {
             //Check if we have relation with country
@@ -341,10 +351,12 @@ namespace CiroService
 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
                 billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
+
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode && b.billofentry_product == addToBill.product_id && b.billofentry_user == p.userID);
                 
 
                 addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id});
+
 
                 //add to transferlist
 
@@ -365,6 +377,71 @@ namespace CiroService
 
 
         }
+        /*public void stockAdd(string origin, IEnumerable<jsonProduct> newProduct)
+        {
+            //Check if we have relation with country
+            countryrelationController countryAccess = new countryrelationController();
+            producttypeController pTypeAccess = new producttypeController();
+            countryrelation country = null;
+            try
+            {
+                country = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
+            }
+            catch (ArgumentNullException x)
+            { }
+
+
+
+            int hscode, producttype;
+            //add to table with hscode
+            if (country != null)
+            {
+                //duty
+                hscode = 825;
+                producttype = 1;
+            }
+            else
+            {
+                //non duty
+                hscode = 825;
+                producttype = 2;
+            }
+            productController productAccess = new productController();
+            billofentryController billAccess = new billofentryController();
+            DateTime date = DateTime.Now;
+            string origin2 = origin;
+            string genCode = "" + hscode + date.Day + date.Second + origin2.Substring(0, 2);
+            foreach (var p in newProduct)
+            {
+
+
+                //add products to product table
+
+                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
+                //adding new product with bill of entry
+
+                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
+                //billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
+                var tax = addTax(new JsonProducts { id = addToBill.product_id }, new JsonBillofEntry { origin = origin2, billCode = genCode, user = p.userID, product = addToBill.product_id });
+                //add to transferlist
+
+                transferlistController transferListkAccess = new transferlistController();
+                transferListkAccess.addRecord(new transferlist { transferlist_to = p.transferLocation, transferlist_product = addToBill.product_id, transferlist_from = p.currentLocation });
+
+                //create qrcode
+
+                string path = "C:/Users/Kgomotso/team28/CiroService/CiroService/images";
+                string qrcodeInfo = addToBill.product_id + "";
+                QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
+                qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
+                qrcodeMaker.QRCodeScale = 10;
+                MessageBox.Show("Adding QRCode");
+                Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
+                qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
+                MessageBox.Show("QR Added");
+            }
+
+        }*/
 
         /**
         *   IMPORTANT!!!!
@@ -1123,6 +1200,29 @@ namespace CiroService
         public IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses)
         {
             var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == warehouses.id);
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+            }
+            return inventory;
+            /*var warehouseAccess = new warehouseController();
             var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower() || w.warehouse_id == warehouses.id);
 
             if (warehouseExists == null)
@@ -1145,7 +1245,7 @@ namespace CiroService
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
                 inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name=billExists .product .product_name}, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner =new JsonUser {fname =billExists.user.user_fname,lname=billExists.user.user_sname ,email=billExists.user.user_email}});
             }
-            return inventory;
+            return inventory;*/
         }      
 
         public JsonWarehouse getWarehouseI(JsonWarehouse warehouses)
@@ -1309,13 +1409,13 @@ namespace CiroService
 
             if(messageConvoExists == null)
             {
-                newMessage = new message { message_convoid = Convert.ToInt32("" + userFrom.user_id + userTo.user_id), message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
+                newMessage = new message { message_subject=messages.subject,message_convoid = Convert.ToInt32("" + userFrom.user_id + userTo.user_id), message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
                 messageAccess.addRecord(newMessage);
                 return "Message has been sent";
             }
 
 
-            newMessage = new message { message_convoid = messageConvoExists.message_convoid, message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
+            newMessage = new message { message_subject = messages.subject, message_convoid = messageConvoExists.message_convoid, message_from = userFrom.user_id, message_to = userTo.user_id, message_stamp = DateTime.Today, message_message = messages.message };
             messageAccess.addRecord(newMessage);
             return "Message has been sent";
         }
@@ -1708,18 +1808,50 @@ namespace CiroService
 
         public IEnumerable<ReleaseProduct> releaseWareHouse(JsonWarehouse warehouse)
         {
-            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);            
             List<ReleaseProduct> items = new List<ReleaseProduct>();
-            foreach(var item in warehouseStock)
+
+           var requestList = new releaseRequestController().getTable() ;
+            foreach (var item in warehouseStock)
             {
-                items.Add(new ReleaseProduct {name = item.product .product_name});
+                try
+                {
+                    var release = requestList.First<releaserequest>(c => c.releaserequest_product == item.warehousestock_product);
+                    if (release != null)
+                    {
+                        items.Add(new ReleaseProduct { id = release.releaserequest_id  ,invoiceTotal = 0.00,requested = DateTime.Now,owner =release .user .user_email ,status =release.releaserequest_verdict ,name=release .product .product_name});
+                    }
+                }
+                catch (Exception) { }   
             }
-            return null;
+
+            return items;
         }
 
-        public IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse)
+        public IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse)
         {
-            throw new NotImplementedException();
+            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            List<TransferDetails> items = new List<TransferDetails>();
+            MessageBox.Show(warehouseStock.Count() + "");
+            var transferList = new transferrequestsController().getTable();
+            MessageBox.Show(transferList.Count()+"");
+            foreach (var item in warehouseStock)
+            {
+                
+                try
+                {
+                    
+                   // var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == item.warehouse .warehouse_location  || c.transferrequest_from == item.warehouse.warehouse_location);
+                    MessageBox.Show(item.warehouse .warehouse_location +"");
+                   // if (release != null)
+                    //{
+                      //  items.Add(new TransferDetails ());
+                    //}
+                }
+                catch (Exception) { }
+            }
+
+            return items;
 
         }
 

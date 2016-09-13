@@ -29,6 +29,8 @@
                       </tr>
                       </thead>
                       <tbody runat="server" id="releaseTable">
+<<<<<<< HEAD
+=======
                       <tr>
                           <td class="p-name">
                               <i class="fa zmdi-hc-sm fa-file-text-o fa-2x" aria-hidden="true"></i><a href="">  S001
@@ -100,6 +102,7 @@
                           </td>
                       </tr>
                       
+>>>>>>> 089e39b6788f8fd68504d5caf14aeb0389c9b93a
                      
                       </tbody>
                   </table>
