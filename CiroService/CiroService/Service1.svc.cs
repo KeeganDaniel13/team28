@@ -173,7 +173,7 @@ namespace CiroService
             {
                 return "Product does not exist.";
             }
-
+            
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == newRequest.userID);
 
@@ -181,12 +181,13 @@ namespace CiroService
             {
                 return "User does not exist";
             }
-
+            
             newTransfer.transferrequest_verdict = "Pending";
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
             newTransfer.transferrequest_to = warehouseName.warehouse_location;
             newTransfer.transferrequest_from = productExists.product_location;
+            
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
@@ -365,7 +366,7 @@ namespace CiroService
 
                 //create qrcode
 
-                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
+                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -641,6 +642,7 @@ namespace CiroService
                //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
                var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
                package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
+            //package.tax = new invoiceController().getRecord();
                return package; 
 
         }
@@ -1352,7 +1354,6 @@ namespace CiroService
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             var invoiceAccess = new invoiceController();
             invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty) };
-            MessageBox.Show(",");
             invoiceAccess.addRecord(_invoice);
             billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
             billAccess.updateRecord(billExists.billofentry_id, billExists);

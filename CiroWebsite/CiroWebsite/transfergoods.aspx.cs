@@ -34,6 +34,10 @@ namespace CiroWebsite
             var transInfo = Session["TransferInfo"] as TransferForm;
             var productIDt = Convert.ToInt32(Session["transferProduct"]);
             var user = (CiroService.JsonUser)Session["user"];
+            MessageBox.Show(user.id+"User ID");
+            MessageBox.Show(transInfo.description);
+            MessageBox.Show(Convert.ToInt32(Session["warehouse"]) + "Warehouse ID");
+            MessageBox.Show(productIDt+"Product ID");
             CiroSingleton .ServerCalls .transeferRequest(new CiroService.jsonTRequest { userID = user.id, description = transInfo.description, endWarehouse = Convert.ToInt32(Session["warehouse"]), productID = productIDt });
         }
 
