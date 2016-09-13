@@ -1,141 +1,46 @@
-﻿<%@ Page Title="Discharge Goods | Ciro" Language="C#" MasterPageFile="~/ciro.Master" AutoEventWireup="true" CodeBehind="dischargegoods.aspx.cs" Inherits="CiroWebsite.dischargegoods" %>
+﻿<%@ Page Title="Discharge Goods | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="dischargegoods.aspx.cs" Inherits="CiroWebsite.dischargegoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
     <style>
-  .form-inline > * {
-   margin:20px 50px;
+        td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
-
-.panel-title {display: inline;font-weight: bold;}
-.checkbox.pull-right { margin: 0; }
-.pl-ziro { padding-left: 5px; }
     </style>
-    <script>
-        $(document).ready(function () {
-
-            var navListItems = $('ul.setup-panel li a'),
-                allWells = $('.setup-content');
-
-            allWells.hide();
-
-            navListItems.click(function (e) {
-                e.preventDefault();
-                var $target = $($(this).attr('href')),
-                    $item = $(this).closest('li');
-
-                if (!$item.hasClass('disabled')) {
-                    navListItems.closest('li').removeClass('active');
-                    $item.addClass('active');
-                    allWells.hide();
-                    $target.show();
-                }
-            });
-
-            $('ul.setup-panel li.active a').trigger('click');
-
-            // DEMO ONLY //
-            $('#activate-step-2').on('click', function (e) {
-                $('ul.setup-panel li:eq(1)').removeClass('disabled');
-                $('ul.setup-panel li a[href="#step-2"]').trigger('click');
-                $(this).remove();
-            })
-
-        });
-
-
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3>Discharge Manager</h3>
-    <div class="row form-group">
-        <div class="col-xs-12">
-            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
-                <li class="active"><a href="#step-1">
-                    <h4 class="list-group-item-heading">Discharge</h4>
-                    <p class="list-group-item-text">Goods that you chose to discharge for free circulation</p>
-                </a></li>
-                <li class="disabled"><a href="#step-2">
-                    <h4 class="list-group-item-heading">Additional Information</h4>
-                    <p class="list-group-item-text">Complete the following fields</p>
-                </a></li>
-                <li class="disabled"><a href="#step-3">
-                    <h4 class="list-group-item-heading">Payment</h4>
-                    <p class="list-group-item-text">Proceed with Payment Options</p>
-                </a></li>
-            </ul>
-        </div>
-	</div>
-    <div class="row setup-content" id="step-1">
-        <h3>Goods to be Discharged</h3>
-  
 
-      <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
-       <thead>
-		<tr>
-			<th>Package Name</th>
-			<th>Quantity</th>
-			<th>Duty Access</th>
-			<th>Bill</th>
-            <th>Exit Date</th>
-			<th>Cosigner</th>
-            <th>Action</th>
-		</tr>
-	</thead>					
-	<tbody runat="server" id="Release">
-		
-									
-	</tbody>
+<h3>Goods to be Discharged</h3>
+<table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+<thead>
+<tr>
+	<th>Package Name</th>
+	<th>Quantity</th>
+	<th>Duty Access</th>
+	<th>Bill</th>
+    <th>Exit Date</th>
+	<th>Cosigner</th>
+    <th>Action</th>
+</tr>
+</thead>					
+<tbody runat="server" id="Release">
+</tbody>
 </table>
-            <button id="activate-step-2" class="btn btn-info btn-outline">Step 2</button>
-           
-    </div>
-    <div class="row setup-content" id="step-2">
+       
+  <a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="btn btn-outline mw-md btn-danger">Proceed</a>
 
-         <h3>Discharge Adminstrative Form</h3>
-         
-         <form class="form-inline">
-            <div class="form-inline" >
-			        <div class="form-group ">
-				        <label  for="exampleInputEmail3">Identification Number</label><br />
-				        <input type="text" class="form-control" id="idnumber"  style="width: 300px;">
-			        </div>
-			        <div class="form-group ">
-				        <label  for="exampleInputPassword3">Cosignee Full Name</label><br />
-				        <input type="text" class="form-control" id="fullname" style="width: 400px;">
-			        </div>
+               
+  <div class="clearfix"></div>
+    <!-- Compose modal -->
+<div class="modal fade" id="composeModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Duty Payment</h4>
 			</div>
-             <div class="form-inline">
-					<div class="form-group">
-						<label  for="exampleInputEmail3">Mode of Discharge</label><br />
-						<select class="form-control" style="width: 300px;">
-								<option>Non-free Circulation</option>
-								<option>Free Circulation</option>
-								<option>Re-export</option>
-								
-							</select>
-					</div>
-					<div class="form-group ">
-						<label  for="exampleInputPassword3">Form of Transport</label><br />
-						<select class="form-control" style="width: 400px;">
-								<option>Delivery</option>
-								<option>Own propulsion</option>
-                                <option>Warehouse Storage</option>
-							</select>
-					</div>
-					</div>
-             </form>
-
-        <button id="activate-step-3" class="btn btn-info btn-outline">Step 3</button>
-                  </div>
-    
-    <div class="row setup-content" id="step-3">
-         
-        <div class="alert alert-success alert-dismissible" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<strong>Congratulations </strong>
-			<span>You successfully completed your discharge process, you can proceed with your payment.</span>
-		</div>
-        <div class="row">
+			<div class="modal-body">
+				 <div class="row">
         <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -189,8 +94,13 @@
             <br/>
             <button  runat="server" onserverclick="sumbitRelease" class="btn btn-success btn-lg btn-block" role="button">Pay</button>
         </div>
-    </div>
-</div>
-
-
+    </div>                               
+                <br/>
+               <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                <br/>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+            
 </asp:Content>

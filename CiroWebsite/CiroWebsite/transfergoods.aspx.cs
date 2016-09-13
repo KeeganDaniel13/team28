@@ -25,7 +25,7 @@ namespace CiroWebsite
 
         protected void saveInfo(object sender, EventArgs e)
         {
-            Session["TransferInfo"] = new TransferForm { origin = origincountry.Value, mass = Convert.ToDouble(mass.Value), transport = transport.Value, transferReason = reason.Value, description = description.Value };
+          // Session["TransferInfo"] = new TransferForm { origin = origincountry.Value, mass = Convert.ToDouble(mass.Value), transport = transport.Value, transferReason = reason.Value, description = description.Value };
         }
 
         protected void completeRequest(object sender, EventArgs e)

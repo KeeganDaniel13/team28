@@ -44,29 +44,24 @@
 		<div>
 			<ul id="top-nav" class="pull-right">
                 <li class="nav-item dropdown">
-					<a href="clientinventory.aspx" id="" class="">
+					<a href="clientinventory.aspx" >
 						Home
 					</a>
 				</li>
                 <li class="nav-item dropdown">
-					<a href="clientinventory.aspx" id="" class="">
+					<a href="clientinventory.aspx" >
 						Inventory
 					</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Goods Options</a>
+					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packages</a>
 					<ul class="dropdown-menu animated flipInY">
-						<li><a href="transfergoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer Good</a></li>
-						<li><a href="declaregoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Declare Goods</a></li>
-                        <li><a href="dischargegoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-exit"></i>Discharge Goods</a></li>
+						<li><a href="transfergoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer</a></li>
+						<li><a href="declaregoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Declare</a></li>
+                        <li><a href="dischargegoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-exit"></i>Discharge</a></li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
-					<a href="declareownershiptransfer.aspx">Change Ownership</a>
-				</li>
-                <li class="nav-item dropdown">
-					<a href="ClientMessages.aspx">Messages</a>
-				</li>
+			
 				<li class="nav-item">
 					<a href="javascript:void(0)" class="side-panel-toggle"
 						data-toggle="class" 
@@ -77,32 +72,35 @@
 					</a>
 					<div id="side-panel" class="side-panel">
 						
-						<div class="scrollable-container">
+						<div class="scrollable-container" >
 							<div class="media-group">
-								<a href="javascript:void(0)" class="media-group-item">
+								<a  href="declareownershiptransfer.aspx" class="media-group-item">
 									<div class="media">
-										<div class="media-body">
-											<h5 class="media-heading">John Doe</h5>
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-exchange  "></i><font size="3">Ownerships</font></h5>
 											
 										</div>
 									</div>
 								</a><!-- .media-group-item -->
 
-								<a href="javascript:void(0)" class="media-group-item">
+								<a href="ClientMessages.aspx" class="media-group-item">
 									<div class="media">
-										<div class="media-left">
-											<div class="avatar avatar-xs avatar-circle">
-												<img src="../assets/images/205.jpg" alt="">
-												<i class="status status-online"></i>
-											</div>
-										</div>
-										<div class="media-body">
-											<h5 class="media-heading">John Doe</h5>
-											<small class="media-meta">active now</small>
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-comments"></i><font size="3">Messages</font></h5>
+										
 										</div>
 									</div>
 								</a><!-- .media-group-item -->
-					
+					            <a href="signin.aspx" class="media-group-item">
+									<div class="media">
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-user"></i><font size="3">Logout</font></h5>
+										
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
 							</div>
 						</div><!-- .scrollable-container -->
 					</div>
@@ -148,20 +146,7 @@
 			
 	</section><!-- #dash-content -->
 </div><!-- .wrap -->
-		<div class="wrap">
-			<!-- app-footer -->
-			<footer class="app-footer">
-				<div class="clearfix">
-					<ul class="footer-menu pull-right">
-						<li><a href="javascript:void(0)">Careers</a></li>
-						<li><a href="javascript:void(0)">Privacy Policy</a></li>
-						<li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
-					</ul>
-					<div class="copyright pull-left">Copyright RaThemes 2016 &copy;</div>
-				</div>
-			</footer>
-			<!-- #app-footer -->
-		</div>
+		
 	</div>
 </main>
 <!--========== END app main -->
