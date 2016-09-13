@@ -12,18 +12,22 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["accept"] != null || Request.QueryString ["reject"] != null)
+            if(Request.QueryString["accept"] != null)
             {
-                MessageBox.Show("");
+                CiroSingleton.ServerCalls.approveRequest("Accepted",new CiroService.JsonProducts { id = Convert.ToInt32(Request.QueryString ["accpet"])});
             }
-            if(Request.QueryString["info"] != null)
+            if (Request.QueryString["reject"] != null)
+            {
+                CiroSingleton.ServerCalls.approveRequest("Rejected", new CiroService.JsonProducts { id = Convert.ToInt32(Request.QueryString["reject"]) });
+            }
+            if (Request.QueryString["info"] != null)
             {
                 var requests = Session["releases"] as List<CiroService.JsonReleaseRequest>;
                 var request = requests.First<CiroService.JsonReleaseRequest>(c => c.product_id == Convert.ToInt32(Request.QueryString["info"]));
                 name.InnerHtml = request.userInfo.email;
                 var body = "<td>"+request .productInfo .name+"</td>";
                 body += "<td>"+request .productInfo .quantity+"</td>";
-                body += "<td>" + "TAx" + "</td>";
+                body += "<td>" + "Tax" + "</td>";
                 body += "<td>" +request .productInfo .bill  +"</td>";
                 body += "<td>" +request .productInfo .arrivalDate +"</td>";
                 body += "<td>" + request .productInfo .cosigner+"</td>";

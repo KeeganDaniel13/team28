@@ -163,11 +163,11 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveTransfer")]
-        string approveTransfer(jsonProduct product, string verdict);
+        string approveTransfer(jsonProduct product, string verdict, string description);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "approveRequest")]
-        string approveRequest(string verdict, JsonProducts prod);
+        string approveRequest(string verdict, JsonProducts prod, string description);
 
         [OperationContract]
         void paypal();

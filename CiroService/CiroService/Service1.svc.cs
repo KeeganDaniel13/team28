@@ -954,29 +954,38 @@ namespace CiroService
             return warehouseList;
         }
 
-        public string approveTransfer(jsonProduct product, string verdict)
+        public string approveTransfer(jsonProduct product, string verdict, string description)
         {
             var requestAccess = new transferrequestsController();
-            var requestExists = requestAccess.getTable().FirstOrDefault<transferrequest>(c => c.transferrequest_product == Convert.ToInt32(product.ID));
+            var requestExists = requestAccess.getTable().FirstOrDefault<transferrequest>(c => c.transferrequest_product == product.ID);
 
             if (requestExists == null)
             {
                 return "No request found for this package";
             }
 
+            var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == product.userID);
+
+            if(userExists == null)
+            {
+                return "User does not exist";
+            }
+
             requestExists.transferrequest_verdict = verdict;
             requestAccess.updateRecord(Convert.ToInt32(requestExists.transferrequest_id), requestExists);
+            addProductLog("TR7", new JsonProductLog { product_id = product.ID, userID = userExists.user_id , description = userExists.user_fname + " " + userExists.user_sname + " has " + verdict + " the Request to Transfer the product." + System.Environment.NewLine + "Product ID: " + product.ID + System.Environment.NewLine + "Reason: " + description });
             var result = "Transfer Request has been " + verdict;
             return result;
         }
 
-        public string approveRequest(string verdict, JsonProducts prod)
+        public string approveRequest(string verdict, JsonProducts prod, string description)
         {
             var billAccess = new billofentryController();
-            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == prod.id);
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == prod.id);
 
             var requestAccess = new releaseRequestController();
-            var requestExists = requestAccess.getTable().FirstOrDefault<releaserequest>(c => c.releaserequest_product == Convert.ToInt32(billExists.billofentry_product));
+            var requestExists = requestAccess.getTable().FirstOrDefault<releaserequest>(r => r.releaserequest_product == Convert.ToInt32(billExists.billofentry_product));
 
             if (requestExists == null)
             {
@@ -987,8 +996,15 @@ namespace CiroService
             requestAccess.updateRecord(Convert.ToInt32(prod.id), requestExists);
 
             var userAccess = new userController();
-            var userExists = userAccess.getTable().FirstOrDefault<user>(c => c.user_id == billExists.billofentry_user);
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == prod.userid);
+
+            if(userExists == null)
+            {
+                return "User does not exist.";
+            }
+
             var result = "Release Request has been " + verdict;
+            addProductLog("RR6", new JsonProductLog { product_id = prod.id, userID = userExists.user_id, description = userExists.user_fname + " " + userExists.user_sname + " has " + verdict + " the Request to Release the product." + System.Environment.NewLine + "Product ID: " + prod.id + System.Environment.NewLine + "Reason: " + description });
             //emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, result, "Update on your request for a package release");
             return result;
         }
