@@ -18,7 +18,7 @@ namespace CiroWebsite
             {
                 var prod = server.getPackageID("" + i);
                 body += "<tr>";
-                body += "<td>" + prod.name + "</td><td>" + prod.quantity + "</td><td>CalculateAccess</td><td>" + prod.bill + "</td><td>Exit date</td><td>" + prod.cosigner + "</td>";
+                body += "<td>" + prod.name + "</td><td>" + prod.quantity + "</td><td>CalculateAccess</td><td>" + prod.bill + "</td><td>Exit date</td><td>" + prod.cosigner + "</td>" + "<td><a type='button' class='btn btn-primary'><i class='fa fa-minus-square-o'></i></a></td>";
                 body += "</tr>";
             }
             Release.InnerHtml = body;

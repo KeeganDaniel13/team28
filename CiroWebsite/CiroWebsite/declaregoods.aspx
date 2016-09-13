@@ -11,12 +11,12 @@
 
 	<form>
         <div class="col-md-6">
-				<div class="widget">
+				
 					<header class="widget-header">
 						<h4 class="widget-title">Declaration Information</h4>
 					</header>
-					<hr class="widget-separator">
-					<div class="widget-body">						
+					
+										
                           <form>
 							<div class="form-group">
 								<label for="exampleTextInput1" class="col-sm-3 control-label">Product name</label>
@@ -24,6 +24,7 @@
 									<input type="text" runat="server" class="form-control" id="productName" placeholder="Product name"/>
 								</div>
 							</div>
+                              <br />
                              <div class="form-group">
 								<label for="exampleTextInput1" class="col-sm-3 control-label">Quantity</label>
 								<div class="col-sm-9">
@@ -44,17 +45,17 @@
 						<a href="#" data-toggle="modal" data-target="#composeModal">
                                    <input type="text" runat="server" class="form-control" id="WarehouseName" placeholder="Warehouse"/></a>
 					</div>
-                                <br />
+                         
 							</div>	
-                              <div class="form-group">	
+                     
                                   <br />
-                                  			
-							<button type="submit"  class="btn btn-primary btn-md" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Save</button>
-                                  </div>
+                                  
+                                    
+							<button type="submit"  class="btn btn-primary btn-xs btn-outline" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Add Package</button>
+                              
 						</form>						
 					</div>
-				</div>
-			</div>
+			
                 <div class="col-md-6">
 				<div class="widget">
                     <div class="form-group">
@@ -79,7 +80,7 @@
 					</table>
 
 							<br/>
-							<button type="submit"  class="btn btn-primary btn-md" onserverclick="declareItems" runat="server">Save</button>
+							<button type="submit"  class="btn btn-primary btn-xs btn-outline" onserverclick="declareItems" runat="server">Store Packages</button>
 				
 					</div>
 				</div>
