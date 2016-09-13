@@ -485,7 +485,7 @@ namespace CiroService
             string origin2 = origin;
 			string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
 
-            foreach (var p in newProduct)
+            foreach (var p in newProduct)an
             {
                 //add products to product table
                 productAccess.addRecord(new product { product_name = p.name, product_size = p.size, product_quantity = p.quantity, product_price = Convert.ToDecimal(p.price), product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
@@ -1353,7 +1353,8 @@ namespace CiroService
 
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             var invoiceAccess = new invoiceController();
-            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty) };
+            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
+            
             invoiceAccess.addRecord(_invoice);
             billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
             billAccess.updateRecord(billExists.billofentry_id, billExists);
@@ -1440,10 +1441,12 @@ namespace CiroService
 
             if(invoiceExists == null)
             {
-                return "Invoice does not exist";
+                return "Invoice does not exist.";
             }
 
-            invoiceExists.invoice_paid += Convert.ToDecimal(invoices.paid);
+            var value = invoiceExists.invoice_paid;
+            value += Convert.ToDecimal(invoices.paid);
+            invoiceExists.invoice_paid = value;
             invoiceAccess.updateRecord(invoiceExists.invoice_id, invoiceExists);
             return "Payment has been made.";
 		}

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="~/warehouse.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
+﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
@@ -39,7 +39,7 @@
 			<div class="col-sm-2 col-xs-6 promo-tab">
 				<div class="text-center">
 					<small>Warehouse Monthly Rates</small>
-					<h4 class="m-0 m-t-xs">12$ - 25$</h4>
+					<h4 class="m-0 m-t-xs">R120 - R250</h4>
 				</div>
 			</div>
 			<div class="col-sm-2 col-xs-12 promo-tab">
@@ -58,218 +58,6 @@
 	</div><!-- .promo-footer -->
     <br/>
 </div><!-- .profile-header -->
-    <div class="row">
-			<div class="col-md-8">
-				<div id="profile-tabs" class="nav-tabs-horizontal white m-b-lg">
-					<!-- tabs list -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#profile-stream" aria-controls="stream" role="tab" data-toggle="tab">Stream</a></li>
-						<li role="presentation"><a href="#profile-friends" aria-controls="friends" role="tab" data-toggle="tab">Employees</a></li>
-					</ul><!-- .nav-tabs -->
-
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane in active fade" id="profile-stream">
-							<div class="media stream-post">
-								<div class="media-left">
-									<div class="avatar avatar-lg avatar-circle">
-										<img src="../infinity/assets/images/221.jpg" alt="">
-									</div>
-								</div>
-								<div class="media-body">
-									<h4 class="media-heading m-t-xs">
-										<a href="javascript:void(0)">John Doe</a>
-										<small class="text-muted">posted an update</small>
-									</h4>
-									<small class="media-meta">Active 14 minute ago</small>
-									<div class="stream-body m-t-xl">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae neque incidunt cumque, dolore eveniet porro asperiores itaque! Eligendi minus cupiditate molestiae praesentium, facilis, neque saepe, soluta sapiente aliquid modi sunt.</p>
-									</div>
-								</div>
-							</div><!-- .stream-post -->
-
-							<div class="media stream-post">
-								<div class="media-left">
-									<div class="avatar avatar-lg avatar-circle">
-										<img src="../infinity/assets/images/101.jpg" alt="">
-									</div>
-								</div>
-								<div class="media-body">
-									<h4 class="media-heading m-t-xs">
-										<a href="javascript:void(0)">Adam Khaury</a>
-										<small class="text-muted">posted an update</small>
-									</h4>
-									<small class="media-meta">Active 25 minutes ago</small>
-									<div class="stream-body m-t-xl">
-										<a href="../assets/images/original/102.jpg" data-lightbox="feed-img-1">
-											<img class="stream-img" src="../infinity/assets/images/102.jpg" alt="">
-										</a>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae neque incidunt cumque, dolore eveniet porro asperiores itaque! Eligendi minus cupiditate molestiae praesentium, facilis, neque saepe, soluta sapiente aliquid modi sunt.</p>
-									</div>
-								</div>
-							</div><!-- .stream-post -->
-
-							<div class="media stream-post">
-								<div class="media-left">
-									<div class="avatar avatar-lg avatar-circle">
-										<img src="../infinity/assets/images/204.jpg" alt="">
-									</div>
-								</div>
-								<div class="media-body">
-									<h4 class="media-heading m-t-xs">
-										<a href="javascript:void(0)">Dani Smith</a>
-										<small class="text-muted">has birthday</small>
-									</h4>
-									<small class="media-meta">Active now</small>
-									<div class="stream-body m-t-xl">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae neque incidunt cumque, dolore eveniet porro asperiores itaque! Eligendi minus cupiditate molestiae praesentium, facilis, neque saepe, soluta sapiente aliquid modi sunt.</p>
-									</div>
-								</div>
-							</div><!-- .stream-post -->
-						</div><!-- .tab-pane -->
-
-						<div role="tabpanel" class="tab-pane fade p-md" id="profile-friends">
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/221.jpg" alt=""></a>
-													<i class="status status-online"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">John Doe</a></h5>
-												<small class="media-meta">Web Developer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/210.jpg" alt=""></a>
-													<i class="status status-offline"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Ibraham Said</a></h5>
-												<small class="media-meta">Web Designer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/211.jpg" alt=""></a>
-													<i class="status status-away"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Sally Adams</a></h5>
-												<small class="media-meta">Graphical Designer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/212.jpg" alt=""></a>
-													<i class="status status-offline"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Jeffery Way</a></h5>
-												<small class="media-meta">Software Engineer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/213.jpg" alt=""></a>
-													<i class="status status-away"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Adam Smith</a></h5>
-												<small class="media-meta">UI Designer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/214.jpg" alt=""></a>
-													<i class="status status-online"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Sandy Matt</a></h5>
-												<small class="media-meta">Lawyer</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/217.jpg" alt=""></a>
-													<i class="status status-offline"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">Sara Adams</a></h5>
-												<small class="media-meta">Actress</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-
-								<div class="col-md-6 col-sm-6">
-									<div class="user-card">
-										<div class="media">
-											<div class="media-left">
-												<div class="avatar avatar-lg avatar-circle">
-													<a href="javascript:void(0)"><img src="../infinity/assets/images/218.jpg" alt=""></a>
-													<i class="status status-offline"></i>
-												</div>
-											</div>
-											<div class="media-body">
-												<h5 class="media-heading"><a href="javascript:void(0)" class="title-color">John Doe</a></h5>
-												<small class="media-meta">Factional Character</small>
-											</div>
-										</div>
-									</div><!-- search-result -->
-								</div><!-- END column -->
-							</div><!-- .row -->
-						</div><!-- .tab-pane -->
-					</div><!-- .tab-content -->
-				</div><!-- #profile-components -->
-			</div><!-- END column -->
 
         <div class="col-md-4">
 				<div class="row">
@@ -287,7 +75,7 @@
 												<img src="../infinity/assets/images/warehouse.jpg" alt="">
 												<i class="status status-online"></i>
 											</div>
-										</div>
+										</div>B
 										<div class="media-body">
 											<h5 class="media-heading"><a href="javascript:void(0)">Mpumalanga Ridge</a></h5>
 											<small class="media-meta">Storage Manufacturer Warehouse</small>

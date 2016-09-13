@@ -26,6 +26,7 @@ namespace CiroWebsite
         protected void listTransfers()
         {
             var transfers = CiroSingleton.ServerCalls.listTransferTRequests();
+            Session["transfers"] = transfers.ToList<CiroService.TransferDetails>();
             try
             {
                 var body = "";
@@ -34,19 +35,15 @@ namespace CiroWebsite
                     body += "<div class='mail-item'>";
                     body += "<table class='mail-container'>";
                     body += "<tr>";
-                    body += "<td class='mail-left'>";
-                    body += "<div class='avatar avatar-lg avatar-circle'>";
-                    body += "<a href='#'><img src='../infinity/assets/images/209.jpg' alt='sender photo'></a>";
-                    body += "</div></td>";
                     body += "<td class='mail-center'>";
                     body += "<div class='mail-item-header'>";
-                    body += "<h4 class='mail-item-title'><a href='mail-view.html' class='title-color'>"+transfer.productName+"</a></h4>";
+                    body += "<h4 class='mail-item-title'><a href='viewtransfer.aspx?id="+transfer.productid +"' class='title-color'>"+transfer.productName+"</a></h4>";
                     body += "<a href='#'><span class='label label-warning'>Transfer</span></a>";
                     body += "</div>";
-                    body += "<p class='mail-item-excerpt'>A login activity detected from unusual location. please check this mail</p>";
+                    body += "<p class='mail-item-excerpt'>To: "+transfer.destination+"</p>";
                     body += "</td>";
                     body += "<td class='mail-right'>";
-                    body += "<p class='mail-item-date'>1 minute ago</p>";
+                    body += "<p class='mail-item-date'>"+DateTime.Now+"</p>";
                     body += "<div class='floated'><a href='transfers.aspx?accept="+transfer.productid +"' class='btn btn-success btn-outline btn-xs'>Approve</a></div>";
                     body += "<div class='floated'><a href='transfers.aspx?reject="+ transfer.productid + "' class='btn btn-danger btn-outline btn-xs'>Reject</a></div>";
                     body += "</td></tr></table></div>";
