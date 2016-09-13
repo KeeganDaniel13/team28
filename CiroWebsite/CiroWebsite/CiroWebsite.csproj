@@ -76,6 +76,7 @@
     <Content Include="ClientMessages.aspx" />
     <Content Include="ClientMessageView.aspx" />
     <Content Include="customs.aspx" />
+    <Content Include="CustomsReports.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="declareownershiptransfer.aspx" />
     <Content Include="dischargegoods.aspx" />
@@ -195,7 +196,42 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
-    <Content Include="warehouse.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonOwnershipReq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProducts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonWarehouse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.TransferDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.transferStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Client.Master" />
     <Content Include="infinity\landing\assets\._css" />
     <Content Include="infinity\landing\assets\._fonts" />
@@ -244,40 +280,10 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInventory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonInvoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonlocation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonMessage.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonOwnershipReq.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonProduct.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductLog.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProducts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonTask.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonWarehouse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonWarehouseAvailabilty.datasource">
@@ -292,26 +298,15 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.ReleaseProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.TransferDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.transferStock.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseIncidentsGraph.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\CiroService\Service1.disco" />
-    <None Include="Service References\CiroService\configuration91.svcinfo" />
-    <None Include="Service References\CiroService\configuration.svcinfo" />
-    <None Include="Service References\CiroService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="warehouse.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.OutgoingRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
@@ -322,6 +317,8 @@
     <None Include="Service References\CiroService\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Warehouse Reports.aspx" />
+    <Content Include="warehouse.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -440,6 +437,13 @@
     <Content Include="password-forgot.aspx" />
     <Content Include="productlog.aspx" />
     <Content Include="release.aspx" />
+    <None Include="Service References\CiroService\Service1.disco" />
+    <None Include="Service References\CiroService\configuration91.svcinfo" />
+    <None Include="Service References\CiroService\configuration.svcinfo" />
+    <None Include="Service References\CiroService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="transfergoods.aspx" />
@@ -449,11 +453,6 @@
     <Content Include="viewreleaseinfo.aspx" />
     <Content Include="viewtransfer.aspx" />
     <Content Include="warehouseinventory.aspx" />
-    <Content Include="warehouseinvoices.aspx" />
-    <Content Include="warehouseoverview.aspx" />
-    <Content Include="warehouserelease.aspx" />
-    <Content Include="warehousetransfers.aspx" />
-    <Content Include="warehousevariants.aspx" />
     <Content Include="warehouseoverview.aspx" />
     <Content Include="warehouserelease.aspx" />
     <Content Include="warehouseview.aspx" />
@@ -541,6 +540,13 @@
     <Compile Include="Customs.Master.designer.cs">
       <DependentUpon>Customs.Master</DependentUpon>
     </Compile>
+    <Compile Include="CustomsReports.aspx.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsReports.aspx.designer.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -570,11 +576,6 @@
       <DependentUpon>dischargegoods.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
@@ -685,6 +686,13 @@
     <Compile Include="viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse Reports.aspx.cs">
+      <DependentUpon>Warehouse Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warehouse Reports.aspx.designer.cs">
+      <DependentUpon>Warehouse Reports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="warehouse.Master.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -699,13 +707,6 @@
     <Compile Include="warehouseinventory.aspx.designer.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouseinvoices.aspx.cs">
-      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="warehouseinvoices.aspx.designer.cs">
-      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
-    </Compile>
     <Compile Include="warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -719,20 +720,6 @@
     </Compile>
     <Compile Include="warehouserelease.aspx.designer.cs">
       <DependentUpon>warehouserelease.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="warehousetransfers.aspx.cs">
-      <DependentUpon>warehousetransfers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="warehousetransfers.aspx.designer.cs">
-      <DependentUpon>warehousetransfers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="warehousevariants.aspx.cs">
-      <DependentUpon>warehousevariants.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="warehousevariants.aspx.designer.cs">
-      <DependentUpon>warehousevariants.aspx</DependentUpon>
     </Compile>
     <Compile Include="warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
@@ -759,8 +746,6 @@
   <ItemGroup>
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
-    <Folder Include="infinity\landing\assets\" />
-    <Folder Include="infinity\landing\libs\" />
     <Folder Include="trader\" />
   </ItemGroup>
   <ItemGroup>

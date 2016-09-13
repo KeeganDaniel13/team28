@@ -20,11 +20,11 @@
 </head>
 <body class="simple-page">
     <div id="back-to-home">
-		<a href="index.aspx" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
+		<a href="index-2.html" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
 	</div>
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
-			<a href="index.aspx">
+			<a href="index-2.html">
 				<span><i class="fa fa-gg"></i></span>
 				<span>CIRO</span>
 			</a>

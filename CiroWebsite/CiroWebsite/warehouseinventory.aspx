@@ -232,61 +232,9 @@
 
                       </tr>
                       </thead>
-                      <tbody>
-                      <tr>
-                          <td class="p-name">
-                              <a href="">iPhone 6S</a>
-                          </td>
-                          <td >
-                              Garrett Winters
-                          </td>
-                          <td>
-                             Electronic
-                          </td>
-                          <td>
-                              <span class="label label-success">3</span><i>Variants</i>
-                          </td>
-                          <td>
-                              <span class="label label-primary">Active</span>
-                          </td>
-                          <td>
-                              <i> 27.11.2014</i>
-                          </td>
-                          <td>
-                              <a href="project_details.html" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                          </td>
-                      </tr>
-                      
-                      
-                      <tr>
-                          <td class="p-name">
-                              <a href="project_details.html">Hair Clippers</a>
-                          </td>
-                          <td >
-                              Ashton Cox
-                          </td>
-                          <td>
-                              Mechanical
-                          </td>
-                          <td>
-                              <span class="label label-success">3</span><i>Variants</i>
-                          </td>
-                          <td>
-                               <span class="label label-primary">Active</span>
-                          </td>
-                          <td>
-                             <i> 27.11.2014</i>
-                          </td>
-                          <td>
-                              <a href="project_details.html" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                          </td>
-                      </tr>
                       <tbody runat="server" id="warehouseStock"> 
-        
+
+                     
                       </tbody>
                   </table>
               </section>

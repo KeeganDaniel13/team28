@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Declaration Of Goods" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="declaregoods.aspx.cs" Inherits="CiroWebsite.declaregoods" %>
+﻿w<%@ Page Title="Declaration Of Goods" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="declaregoods.aspx.cs" Inherits="CiroWebsite.declaregoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
        
