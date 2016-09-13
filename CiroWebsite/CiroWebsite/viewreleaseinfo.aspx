@@ -15,8 +15,7 @@
 							</div>
 						</div>
 						<div class="media-body">
-							<h5 class="media-heading title-color">John Doe</h5>
-							<small class="media-meta">Web Developer</small>
+							<h5 class="media-heading title-color" id="name" runat="server"></h5>
 							<div class="contact-links m-t-sm">
 								<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Phone" data-placement="top"><i class="fa fa-phone"></i></a>
 								<a href="javascript:void(0)" class="icon icon-circle icon-sm m-b-0" data-toggle="tooltip" title="Mobile" data-placement="top"><i class="fa fa-mobile"></i></a>
@@ -56,7 +55,7 @@
             <th>Action</th>
 		</tr>
 	</thead>					
-	<tbody>
+	<tbody runat="server" id="releaseInfo">
 								
 	</tbody>
 </table>

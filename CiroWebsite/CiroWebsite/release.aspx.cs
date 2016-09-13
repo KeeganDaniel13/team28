@@ -14,7 +14,7 @@ namespace CiroWebsite
         {
             var releaseRequests = CiroSingleton.ServerCalls.getReleaseRequests();
             var body = "";
-            MessageBox.Show(releaseRequests.Count() + "");
+            Session["releases"] = releaseRequests.ToList<CiroService .JsonReleaseRequest>();
             foreach (var request in releaseRequests)
             {
                 body += "<div class='col-md-3 col-sm-6'>";

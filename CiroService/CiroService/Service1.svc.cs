@@ -160,14 +160,37 @@ namespace CiroService
             //warehousestock warehouseID = stockTable.getTable().First<warehousestock>(c => c.warehousestock_product == newRequest.productID);
             warehouseController warehouseTable = new warehouseController();
             warehouse warehouseName = warehouseTable.getRecord(newRequest.endWarehouse);
+			
+            if(warehouseName == null)
+            {
+                return "Warehouse does not exist.";
+            }
+
+            var productAccess = new productController();
+            var productExists = productAccess.getTable().FirstOrDefault<product>(p => p.product_id == newRequest.productID);
+
+            if(productExists == null)
+            {
+                return "Product does not exist.";
+            }
+
+            var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == newRequest.userID);
+
+            if(userExists == null)
+            {
+                return "User does not exist";
+            }
+
             newTransfer.transferrequest_verdict = "Pending";
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
-            newTransfer.transferrequest_to = warehouseName.warehouse_name;
-            newTransfer.transferrequest_from = warehouseName.warehouse_location;
+            newTransfer.transferrequest_to = warehouseName.warehouse_location;
+            newTransfer.transferrequest_from = productExists.product_location;
             // DateTime date = new DateTime();
             // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
             trans.addRecord(newTransfer);
+            addProductLog("TR7", new JsonProductLog { product_id = newRequest.productID, userID = newRequest.userID, description = "Owner: " + userExists.user_fname + " " + userExists.user_sname + System.Environment.NewLine + "Owner has Requested a Transfer of product on:" + System.Environment.NewLine + "Product ID: " + newRequest.productID + System.Environment.NewLine + "From: " + productExists.product_location + System.Environment.NewLine + "To: " + warehouseName.warehouse_location + System.Environment.NewLine + newRequest.description});
             return "Added";
         }
 
@@ -328,9 +351,12 @@ namespace CiroService
 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
                 billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
-                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode);
 
-                addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id, origin = origin2, billCode = genCode, user = p.userID, product = addToBill.product_id });
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode && b.billofentry_product == addToBill.product_id && b.billofentry_user == p.userID);
+                
+
+                addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id});
+
 
                 //add to transferlist
 
@@ -753,6 +779,7 @@ namespace CiroService
             if (requestExists == null)
             {
                 request.addRecord(new releaserequest { releaserequest_verdict = "Pending", releaserequest_product = Convert.ToInt32(product.ID), releaserequest_user = Convert.ToInt32(owner.id) });
+                addProductLog("RR6", new JsonProductLog { product_id = product.ID, userID = owner.id, description = "Owner: " + productExists.user.user_fname + " " + productExists.user.user_sname + System.Environment.NewLine + "Owner has Requested a Release of product on:" + System.Environment.NewLine + "Product ID: " + product.ID + System.Environment.NewLine + description });
                 return "Request has been uploaded.";
             }
             else
@@ -1294,6 +1321,12 @@ namespace CiroService
 
             var countryAccess = new countryrelationController();
             var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_id == _bill.id);
+
+            if(billExists == null)
+            {
+                return "Error, no bill of entry exists";
+            }
+
             var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower() == billExists.billofentry_origin.ToLower());
             addedVAT = Convert.ToDouble(productExists.product_price) * 0.14;
             if (countryExists == null)
@@ -1305,10 +1338,11 @@ namespace CiroService
             
 
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
-            JsonInvoice newInvoice = new JsonInvoice { id = Convert.ToInt32(invoiceNo), vat = addedVAT, penalty = addedPenalty };
             var invoiceAccess = new invoiceController();
-            invoiceAccess.addRecord(new invoice { invoice_id = newInvoice.id, invoice_vat = Convert.ToDecimal(newInvoice.vat), invoice_penalty = Convert.ToDecimal(newInvoice.penalty) });
-            billExists.billofentry_invoice = newInvoice.id;
+            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty) };
+            MessageBox.Show(",");
+            invoiceAccess.addRecord(_invoice);
+            billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
             billAccess.updateRecord(billExists.billofentry_id, billExists);
             //billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
 
