@@ -993,7 +993,7 @@ namespace CiroService
             }
 
             requestExists.releaserequest_verdict = verdict;
-            requestAccess.updateRecord(Convert.ToInt32(prod.id), requestExists);
+            requestAccess.updateRecord(requestExists.releaserequest_id , requestExists);
 
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == prod.userid);
