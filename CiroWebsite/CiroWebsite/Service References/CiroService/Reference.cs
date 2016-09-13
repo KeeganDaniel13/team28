@@ -731,6 +731,9 @@ namespace CiroWebsite.CiroService {
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string locationField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -752,6 +755,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string image {
+            get {
+                return this.imageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageField, value) != true)) {
+                    this.imageField = value;
+                    this.RaisePropertyChanged("image");
                 }
             }
         }
@@ -3057,6 +3073,144 @@ namespace CiroWebsite.CiroService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonCountryPercentage", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class JsonCountryPercentage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double percentageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double percentage {
+            get {
+                return this.percentageField;
+            }
+            set {
+                if ((this.percentageField.Equals(value) != true)) {
+                    this.percentageField = value;
+                    this.RaisePropertyChanged("percentage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonTax", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class JsonTax : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double penaltyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double totalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double vatField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double penalty {
+            get {
+                return this.penaltyField;
+            }
+            set {
+                if ((this.penaltyField.Equals(value) != true)) {
+                    this.penaltyField = value;
+                    this.RaisePropertyChanged("penalty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double total {
+            get {
+                return this.totalField;
+            }
+            set {
+                if ((this.totalField.Equals(value) != true)) {
+                    this.totalField = value;
+                    this.RaisePropertyChanged("total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double vat {
+            get {
+                return this.vatField;
+            }
+            set {
+                if ((this.vatField.Equals(value) != true)) {
+                    this.vatField = value;
+                    this.RaisePropertyChanged("vat");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReleaseProduct", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
     [System.SerializableAttribute()]
     public partial class ReleaseProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3353,10 +3507,10 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonReleaseRequest[]> getReleaseRequestsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addProductLog", ReplyAction="http://tempuri.org/IService1/addProductLogResponse")]
-        string addProductLog(string code, CiroWebsite.CiroService.JsonProductLog productlog, CiroWebsite.CiroService.JsonProducts prod);
+        string addProductLog(string code, CiroWebsite.CiroService.JsonProductLog productlog);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addProductLog", ReplyAction="http://tempuri.org/IService1/addProductLogResponse")]
-        System.Threading.Tasks.Task<string> addProductLogAsync(string code, CiroWebsite.CiroService.JsonProductLog productlog, CiroWebsite.CiroService.JsonProducts prod);
+        System.Threading.Tasks.Task<string> addProductLogAsync(string code, CiroWebsite.CiroService.JsonProductLog productlog);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getProductLog", ReplyAction="http://tempuri.org/IService1/getProductLogResponse")]
         CiroWebsite.CiroService.JsonProductLog[] getProductLog(CiroWebsite.CiroService.jsonProduct product);
@@ -3371,16 +3525,16 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonWarehouse[]> getWarehouseAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/approveTransfer", ReplyAction="http://tempuri.org/IService1/approveTransferResponse")]
-        string approveTransfer(CiroWebsite.CiroService.jsonProduct product, string verdict);
+        string approveTransfer(CiroWebsite.CiroService.jsonProduct product, string verdict, string description);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/approveTransfer", ReplyAction="http://tempuri.org/IService1/approveTransferResponse")]
-        System.Threading.Tasks.Task<string> approveTransferAsync(CiroWebsite.CiroService.jsonProduct product, string verdict);
+        System.Threading.Tasks.Task<string> approveTransferAsync(CiroWebsite.CiroService.jsonProduct product, string verdict, string description);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/approveRequest", ReplyAction="http://tempuri.org/IService1/approveRequestResponse")]
-        string approveRequest(string verdict, CiroWebsite.CiroService.JsonProducts prod);
+        string approveRequest(string verdict, CiroWebsite.CiroService.JsonProducts prod, string description);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/approveRequest", ReplyAction="http://tempuri.org/IService1/approveRequestResponse")]
-        System.Threading.Tasks.Task<string> approveRequestAsync(string verdict, CiroWebsite.CiroService.JsonProducts prod);
+        System.Threading.Tasks.Task<string> approveRequestAsync(string verdict, CiroWebsite.CiroService.JsonProducts prod, string description);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/paypal", ReplyAction="http://tempuri.org/IService1/paypalResponse")]
         void paypal();
@@ -3586,6 +3740,24 @@ namespace CiroWebsite.CiroService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IncidentsLastMonth", ReplyAction="http://tempuri.org/IService1/IncidentsLastMonthResponse")]
         System.Threading.Tasks.Task<CiroWebsite.CiroService.OutgoingRate[]> IncidentsLastMonthAsync(string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCountryP", ReplyAction="http://tempuri.org/IService1/getCountryPResponse")]
+        CiroWebsite.CiroService.JsonCountryPercentage[] getCountryP();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getCountryP", ReplyAction="http://tempuri.org/IService1/getCountryPResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonCountryPercentage[]> getCountryPAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getOutstandingTax", ReplyAction="http://tempuri.org/IService1/getOutstandingTaxResponse")]
+        double getOutstandingTax();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getOutstandingTax", ReplyAction="http://tempuri.org/IService1/getOutstandingTaxResponse")]
+        System.Threading.Tasks.Task<double> getOutstandingTaxAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAverageTax", ReplyAction="http://tempuri.org/IService1/getAverageTaxResponse")]
+        CiroWebsite.CiroService.JsonTax getAverageTax();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getAverageTax", ReplyAction="http://tempuri.org/IService1/getAverageTaxResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonTax> getAverageTaxAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/releaseWareHouse", ReplyAction="http://tempuri.org/IService1/releaseWareHouseResponse")]
         CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
         
@@ -3593,10 +3765,10 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.ReleaseProduct[]> releaseWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
-        CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
+        CiroWebsite.CiroService.TransferDetails[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferWareHouse", ReplyAction="http://tempuri.org/IService1/transferWareHouseResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.TransferDetails[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3850,12 +4022,12 @@ namespace CiroWebsite.CiroService {
             return base.Channel.getReleaseRequestsAsync();
         }
         
-        public string addProductLog(string code, CiroWebsite.CiroService.JsonProductLog productlog, CiroWebsite.CiroService.JsonProducts prod) {
-            return base.Channel.addProductLog(code, productlog, prod);
+        public string addProductLog(string code, CiroWebsite.CiroService.JsonProductLog productlog) {
+            return base.Channel.addProductLog(code, productlog);
         }
         
-        public System.Threading.Tasks.Task<string> addProductLogAsync(string code, CiroWebsite.CiroService.JsonProductLog productlog, CiroWebsite.CiroService.JsonProducts prod) {
-            return base.Channel.addProductLogAsync(code, productlog, prod);
+        public System.Threading.Tasks.Task<string> addProductLogAsync(string code, CiroWebsite.CiroService.JsonProductLog productlog) {
+            return base.Channel.addProductLogAsync(code, productlog);
         }
         
         public CiroWebsite.CiroService.JsonProductLog[] getProductLog(CiroWebsite.CiroService.jsonProduct product) {
@@ -3874,20 +4046,20 @@ namespace CiroWebsite.CiroService {
             return base.Channel.getWarehouseAsync();
         }
         
-        public string approveTransfer(CiroWebsite.CiroService.jsonProduct product, string verdict) {
-            return base.Channel.approveTransfer(product, verdict);
+        public string approveTransfer(CiroWebsite.CiroService.jsonProduct product, string verdict, string description) {
+            return base.Channel.approveTransfer(product, verdict, description);
         }
         
-        public System.Threading.Tasks.Task<string> approveTransferAsync(CiroWebsite.CiroService.jsonProduct product, string verdict) {
-            return base.Channel.approveTransferAsync(product, verdict);
+        public System.Threading.Tasks.Task<string> approveTransferAsync(CiroWebsite.CiroService.jsonProduct product, string verdict, string description) {
+            return base.Channel.approveTransferAsync(product, verdict, description);
         }
         
-        public string approveRequest(string verdict, CiroWebsite.CiroService.JsonProducts prod) {
-            return base.Channel.approveRequest(verdict, prod);
+        public string approveRequest(string verdict, CiroWebsite.CiroService.JsonProducts prod, string description) {
+            return base.Channel.approveRequest(verdict, prod, description);
         }
         
-        public System.Threading.Tasks.Task<string> approveRequestAsync(string verdict, CiroWebsite.CiroService.JsonProducts prod) {
-            return base.Channel.approveRequestAsync(verdict, prod);
+        public System.Threading.Tasks.Task<string> approveRequestAsync(string verdict, CiroWebsite.CiroService.JsonProducts prod, string description) {
+            return base.Channel.approveRequestAsync(verdict, prod, description);
         }
         
         public void paypal() {
@@ -4162,6 +4334,30 @@ namespace CiroWebsite.CiroService {
             return base.Channel.IncidentsLastMonthAsync(name);
         }
         
+        public CiroWebsite.CiroService.JsonCountryPercentage[] getCountryP() {
+            return base.Channel.getCountryP();
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonCountryPercentage[]> getCountryPAsync() {
+            return base.Channel.getCountryPAsync();
+        }
+        
+        public double getOutstandingTax() {
+            return base.Channel.getOutstandingTax();
+        }
+        
+        public System.Threading.Tasks.Task<double> getOutstandingTaxAsync() {
+            return base.Channel.getOutstandingTaxAsync();
+        }
+        
+        public CiroWebsite.CiroService.JsonTax getAverageTax() {
+            return base.Channel.getAverageTax();
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonTax> getAverageTaxAsync() {
+            return base.Channel.getAverageTaxAsync();
+        }
+        
         public CiroWebsite.CiroService.ReleaseProduct[] releaseWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
             return base.Channel.releaseWareHouse(warehouse);
         }
@@ -4170,11 +4366,11 @@ namespace CiroWebsite.CiroService {
             return base.Channel.releaseWareHouseAsync(warehouse);
         }
         
-        public CiroWebsite.CiroService.JsonProducts[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+        public CiroWebsite.CiroService.TransferDetails[] transferWareHouse(CiroWebsite.CiroService.JsonWarehouse warehouse) {
             return base.Channel.transferWareHouse(warehouse);
         }
         
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProducts[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.TransferDetails[]> transferWareHouseAsync(CiroWebsite.CiroService.JsonWarehouse warehouse) {
             return base.Channel.transferWareHouseAsync(warehouse);
         }
     }

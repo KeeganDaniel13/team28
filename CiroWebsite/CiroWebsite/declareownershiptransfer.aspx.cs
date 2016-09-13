@@ -16,7 +16,7 @@ namespace CiroWebsite
                 try
                 {
                     var user = (CiroService.JsonUser)Session["user"];
-                    MessageBox.Show(CiroSingleton.ServerCalls.approveOwnershipRequest("Accepted", new CiroService.JsonUser { id = user.id }, new CiroService.JsonProducts { id = Convert.ToInt32(Request.QueryString["accpet"]) }));
+                    CiroSingleton.ServerCalls.approveOwnershipRequest("Accepted", new CiroService.JsonUser { id = user.id }, new CiroService.JsonProducts { id = Convert.ToInt32(Request.QueryString["accpet"]) });
                 }
                 catch (Exception)
                 {

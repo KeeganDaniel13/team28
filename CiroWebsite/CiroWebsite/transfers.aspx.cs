@@ -11,13 +11,14 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var user = (CiroService.JsonUser)Session["user"];
             if (Request.QueryString["accept"] != null)
             {
-               var ans= CiroSingleton.ServerCalls.approveTransfer(new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["accept"]) }, "Approved");
+               var ans= CiroSingleton.ServerCalls.approveTransfer(new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["accept"]) ,userID=user.id}, "Approved","");
             }
             if (Request.QueryString["reject"] != null)
             {
-                var ans= CiroSingleton.ServerCalls.approveTransfer(new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["reject"]) }, "Rejected");
+                var ans= CiroSingleton.ServerCalls.approveTransfer(new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["reject"]) ,userID=user .id}, "Rejected","");
             }
 
         }

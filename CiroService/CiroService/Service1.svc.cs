@@ -983,7 +983,6 @@ namespace CiroService
         {
             var billAccess = new billofentryController();
             var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == prod.id);
-
             var requestAccess = new releaseRequestController();
             var requestExists = requestAccess.getTable().FirstOrDefault<releaserequest>(r => r.releaserequest_product == Convert.ToInt32(billExists.billofentry_product));
 
@@ -991,10 +990,8 @@ namespace CiroService
             {
                 return "No request found for this package";
             }
-
             requestExists.releaserequest_verdict = verdict;
-            requestAccess.updateRecord(Convert.ToInt32(prod.id), requestExists);
-
+            requestAccess.updateRecord(requestExists.releaserequest_id , requestExists);
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == prod.userid);
 
@@ -1002,7 +999,6 @@ namespace CiroService
             {
                 return "User does not exist.";
             }
-
             var result = "Release Request has been " + verdict;
             addProductLog("RR6", new JsonProductLog { product_id = prod.id, userID = userExists.user_id, description = userExists.user_fname + " " + userExists.user_sname + " has " + verdict + " the Request to Release the product." + System.Environment.NewLine + "Product ID: " + prod.id + System.Environment.NewLine + "Reason: " + description });
             //emailTest email = new emailTest(userExists.user_fname + " " + userExists.user_sname, userExists.user_email, result, "Update on your request for a package release");
