@@ -444,10 +444,12 @@ INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`,
 INSERT INTO `custommandb`.`releaserequest` (`releaserequest_verdict`, `releaserequest_user`, `releaserequest_product`) VALUES ('Pending', '1', '1');
 
 
-INSERT INTO `custommandb`.`transferrequest` (`transferrequest_from`, `transferrequest_to`, `transferrequest_verdict`, `transferrequest_user`, `transferrequest_product`) VALUES ('11 Eva Road, Benoni, 1512', '48 Hoylake Road, Randburg, 2034', 'Pending...', '1', '1');
+INSERT INTO `custommandb`.`transferrequest` (`transferrequest_from`, `transferrequest_to`, `transferrequest_verdict`, `transferrequest_user`, `transferrequest_product`) VALUES ('11 Eva Road, Benoni, 1512', '48 Hoylake Road, Randburg, 2034', 'Pending', '1', '1');
 
 
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', '3', 'Transfer: Package has been transfered to DHL Express Warehouse at 48 Hoylake Road, Randburg, 2034', '2016-07-03 11:14:02', '4');
 
 
 INSERT INTO `custommandb`.`transferlist` (`transferlist_to`, `transferlist_from`, `transferlist_product`) VALUES ('48 Hoylake Road, Randburg, 2034', '11 Eva Road, Benoni, 1512', '2');
+UPDATE `custommandb`.`product` SET `product_width`='23', `product_height`='65', `product_length`='78' WHERE `product_id`='1';
+UPDATE `custommandb`.`product` SET `product_width`='315', `product_height`='123', `product_length`='138' WHERE `product_id`='2';

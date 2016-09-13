@@ -409,6 +409,24 @@
   <wsdl:message name="IService1_IncidentsLastMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:IncidentsLastMonthResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getCountryP_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCountryP" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getCountryP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCountryPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOutstandingTax_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOutstandingTax" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOutstandingTax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOutstandingTaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAverageTax_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAverageTax" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAverageTax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAverageTaxResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_releaseWareHouse_InputMessage">
     <wsdl:part name="parameters" element="tns:releaseWareHouse" />
   </wsdl:message>
@@ -689,6 +707,18 @@
     <wsdl:operation name="IncidentsLastMonth">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonth" message="tns:IService1_IncidentsLastMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonthResponse" message="tns:IService1_IncidentsLastMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCountryP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCountryP" message="tns:IService1_getCountryP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCountryPResponse" message="tns:IService1_getCountryP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOutstandingTax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getOutstandingTax" message="tns:IService1_getOutstandingTax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getOutstandingTaxResponse" message="tns:IService1_getOutstandingTax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAverageTax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAverageTax" message="tns:IService1_getAverageTax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAverageTaxResponse" message="tns:IService1_getAverageTax_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="releaseWareHouse">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/releaseWareHouse" message="tns:IService1_releaseWareHouse_InputMessage" />
@@ -1297,6 +1327,33 @@
     </wsdl:operation>
     <wsdl:operation name="IncidentsLastMonth">
       <soap:operation soapAction="http://tempuri.org/IService1/IncidentsLastMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountryP">
+      <soap:operation soapAction="http://tempuri.org/IService1/getCountryP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOutstandingTax">
+      <soap:operation soapAction="http://tempuri.org/IService1/getOutstandingTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAverageTax">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAverageTax" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

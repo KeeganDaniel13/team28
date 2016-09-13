@@ -81,6 +81,7 @@
   <xs:complexType name="stockTakeInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -392,6 +393,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OutgoingRate" nillable="true" type="tns:OutgoingRate" />
+  <xs:complexType name="ArrayOfJsonCountryPercentage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJsonCountryPercentage" nillable="true" type="tns:ArrayOfJsonCountryPercentage" />
+  <xs:complexType name="JsonCountryPercentage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="percentage" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
+  <xs:complexType name="JsonTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="penalty" type="xs:double" />
+      <xs:element minOccurs="0" name="total" type="xs:double" />
+      <xs:element minOccurs="0" name="vat" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JsonTax" nillable="true" type="tns:JsonTax" />
   <xs:complexType name="ArrayOfReleaseProduct">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
