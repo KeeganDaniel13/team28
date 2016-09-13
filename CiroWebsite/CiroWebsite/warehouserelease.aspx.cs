@@ -16,7 +16,10 @@ namespace CiroWebsite
             var body = "";
             foreach(var release in releaseRequest )
             {
-                body += "";
+                body += "<tr>";
+                body += "<td class='p-name'>";
+                body += "<i class='fa zmdi-hc-sm fa-file-text-o fa-2x' aria-hidden='true'></i><a href=''>" + release;
+                body += "</a>";
             }
             releaseTable.InnerHtml = body;
         }
