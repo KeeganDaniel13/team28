@@ -210,7 +210,18 @@ namespace CiroService
             {
                 stockTable.addRecord(new warehousestock { warehousestock_product = stockTake.id, warehousestock_warehouse = warehouseTable.getTable().First<warehouse>(c => c.warehouse_location.Equals(stockTake.location)).warehouse_id, warehousestock_lastchecked = DateTime.Now });
                 tlistAccess.deleteRecord(inList.transferlist_id);
-                message = "Stock Recorded";
+                if (stockTake.image != null || !stockTake.image.Equals(""))
+                {
+                    string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                    byte[] newImage = Convert.FromBase64String(stockTake.image);
+                    MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
+                    memoStream.Write(newImage, 0, newImage.Length);
+                    string fileName = path + stockTake.id + ".jpg";
+                    System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
+                    saveImage.Save(fileName);
+                    productTable.updateRecord(stockTake.id, new product { product_image = fileName });
+                }
+                    message = "Stock Recorded";
 
             }
             else
@@ -318,6 +329,9 @@ namespace CiroService
 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
                 billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode);
+
+                addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id, origin = origin2, billCode = genCode, user = p.userID, product = addToBill.product_id });
 
                 //add to transferlist
 
@@ -326,7 +340,7 @@ namespace CiroService
 
                 //create qrcode
 
-                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images\\";
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -457,8 +471,8 @@ namespace CiroService
                 transferlistController transferListkAccess = new transferlistController();
                 transferListkAccess.addRecord(new transferlist { transferlist_to = _warehouse.location, transferlist_product = addToBill.product_id, transferlist_from = addToBill.product_location });
 
-                //create qrcode
-                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images";
+                //create qrcode 
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -788,10 +802,10 @@ namespace CiroService
         }
 
         //add changes for image
-        public string addProductLog(string code, JsonProductLog productlog, JsonProducts prod)
+        public string addProductLog(string code, JsonProductLog productlog)
         {
             var billAccess = new billofentryController();
-            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == prod.id);
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == productlog.product_id);
             if (billExists == null)
             {
                 return "Product not found";
@@ -1274,35 +1288,31 @@ namespace CiroService
             var productExists = productAccess.getTable().FirstOrDefault<product>(p => p.product_id == Convert.ToInt32(products.id));
             if (productExists == null)
             {
-                return null;
+                return "No Product";
             }
 
             var billAccess = new billofentryController();
 
             var countryAccess = new countryrelationController();
-            var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower() == _bill.origin.ToLower());
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_id == _bill.id);
+            var countryExists = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower() == billExists.billofentry_origin.ToLower());
             addedVAT = Convert.ToDouble(productExists.product_price) * 0.14;
             if (countryExists == null)
             {
                 addedPenalty = Convert.ToDouble(productExists.product_price) * Convert.ToDouble(productExists.hscode.hscode_percentage);
             }
             DateTime date = DateTime.Now;
-            IEnumerable<billofentry> billExists = billAccess.getTable().Where<billofentry>(b => b.billofentry_user == _bill.user).ToList<billofentry>();
+            int count = billAccess.getTable().Where<billofentry>(b => b.billofentry_user == billExists.billofentry_user).Count();
+            
 
-            int count = 0;
-
-            foreach (billofentry b in billExists)
-            {
-                count++;
-            }
-
-            string invoiceNo = "" + date.Day + date.Month + date.Year + _bill.user + count;
+            string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             JsonInvoice newInvoice = new JsonInvoice { id = Convert.ToInt32(invoiceNo), vat = addedVAT, penalty = addedPenalty };
             var invoiceAccess = new invoiceController();
             invoiceAccess.addRecord(new invoice { invoice_id = newInvoice.id, invoice_vat = Convert.ToDecimal(newInvoice.vat), invoice_penalty = Convert.ToDecimal(newInvoice.penalty) });
+            billExists.billofentry_invoice = newInvoice.id;
+            billAccess.updateRecord(billExists.billofentry_id, billExists);
+            //billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
 
-            billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
-            MessageBox.Show("Tax Added");
             return "Tax Added to product.";
         }
 
@@ -1810,6 +1820,45 @@ namespace CiroService
 
             return items;
 
+        }
+
+        public IEnumerable<JsonCountryPercentage> getCountryP()
+        {
+            var countryAccess = new billofentryController();
+            billofentry bill = new billofentry();
+            var total = countryAccess.getTable().Count();
+            List<string> countries = countryAccess.getTable().Select(b => b.billofentry_origin).Distinct().ToList<string>();
+            List<JsonCountryPercentage> cp = new List<JsonCountryPercentage>();
+            foreach(var o in countries)
+            {
+                var count = countryAccess.getTable().Where<billofentry>(b => b.billofentry_origin == o).Count();
+                cp.Add(new JsonCountryPercentage { name = o, percentage = (Convert.ToDouble(count) / Convert.ToDouble(total)) * 100 });
+            }
+            return cp;
+        }
+
+        public double getOutstandingTax()
+        {
+            double outstandingTax = 0.00;
+
+            var taxAccess = new invoiceController();
+            double vatCharges = Convert.ToDouble(taxAccess.getTable().Select(t => t.invoice_vat).Sum());
+            double penaltyCharges = Convert.ToDouble(taxAccess.getTable().Select(t => t.invoice_penalty).Sum());
+            double paidTax = Convert.ToDouble(taxAccess.getTable().Select(t => t.invoice_paid).Sum());
+            outstandingTax = (vatCharges + penaltyCharges) - paidTax;
+            return outstandingTax;
+        }
+
+        public JsonTax getAverageTax()
+        {
+            var taxAccess = new invoiceController();
+            double averageVAT = Convert.ToDouble(taxAccess.getTable().Select(t => t.invoice_vat).Average());
+            double averagePenalty = Convert.ToDouble(taxAccess.getTable().Select(t => t.invoice_penalty).Average());
+            double averageTotal = averageVAT + averagePenalty;
+
+            JsonTax tax = new JsonTax { vat = averageVAT, penalty = averagePenalty, total = averageTotal };
+
+            return tax;
         }
 
         /*public string getPackageNotification(JsonUser user)

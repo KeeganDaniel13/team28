@@ -66,6 +66,7 @@ CREATE TABLE `custommandb`.`product` (
   `product_length` INT NULL,
   `product_producttype` INT NULL,
   `product_hscode` INT NULL,
+  `product_image` LONGTEXT NULL,
   PRIMARY KEY (`product_id`),
   INDEX `product_producttype_idx` (`product_producttype` ASC),
   INDEX `product_hscode_idx` (`product_hscode` ASC),
@@ -111,7 +112,7 @@ CREATE TABLE `custommandb`.`product` (
   
   
 CREATE TABLE `custommandb`.`invoice` (
-  `invoice_id` INT(45) NOT NULL AUTO_INCREMENT,
+  `invoice_id` INT(45) NOT NULL,
   `invoice_vat` DECIMAL(10,2) NULL,
   `invoice_penalty` DECIMAL(10,2) NULL,
   `invoice_paid` DECIMAL(10,2) NULL,

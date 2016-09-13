@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="billofentry">
           <Key>
             <PropertyRef Name="billofentry_id" />
@@ -34,7 +34,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoice_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
@@ -92,6 +92,7 @@
           <Property Name="product_length" Type="int" />
           <Property Name="product_producttype" Type="int" />
           <Property Name="product_hscode" Type="int" />
+          <Property Name="product_image" Type="longtext" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -618,8 +619,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="warehousestock" EntitySet="warehousestock" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="custommandbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -732,6 +732,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_product" FromRole="product" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_product" FromRole="product" ToRole="transferrequest" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_product" FromRole="product" ToRole="warehousestock" />
+          <Property Name="product_image" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -1370,6 +1371,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="custommandbModel.product">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="product_image" ColumnName="product_image" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />
