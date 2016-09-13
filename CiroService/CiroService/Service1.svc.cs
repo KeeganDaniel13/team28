@@ -1047,7 +1047,7 @@ namespace CiroService
             }
 
             var ownershipReqAccess = new ownershipRequestController();
-            var ownershipReqExists = ownershipReqAccess.getTable().FirstOrDefault<ownershiprequest>(o => o.ownershiprequest_owner == currentOwner.id && o.ownershiprequest_newowner == newOwner.id && o.ownershiprequest_product == prod.id);
+            var ownershipReqExists = ownershipReqAccess.getTable().FirstOrDefault<ownershiprequest>(o => o.ownershiprequest_owner == currentOwner.id && o.ownershiprequest_newowner == newOwnerExists.user_id && o.ownershiprequest_product == prod.id);
 
             if(ownershipReqExists != null)
             {
