@@ -242,6 +242,7 @@
     <Compile Include="JsonObjects\changeOfOwnership.cs" />
     <Compile Include="JsonObjects\JsonBillofEntry.cs" />
     <Compile Include="JsonObjects\JsonCountry.cs" />
+    <Compile Include="JsonObjects\JsonCountryPercentage.cs" />
     <Compile Include="JsonObjects\jsonIncident.cs" />
     <Compile Include="JsonObjects\JsonInventory.cs" />
     <Compile Include="JsonObjects\JsonInvoice.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\jsonStockTake.cs" />
     <Compile Include="JsonObjects\jsonTask.cs" />
+    <Compile Include="JsonObjects\JsonTax.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
     <Compile Include="JsonObjects\jsonWarehouseAvailabilty.cs" />
