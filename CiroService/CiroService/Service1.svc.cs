@@ -1785,9 +1785,30 @@ namespace CiroService
             return items;
         }
 
-        public IEnumerable<JsonProducts> transferWareHouse(JsonWarehouse warehouse)
+        public IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse)
         {
-            throw new NotImplementedException();
+            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            List<TransferDetails> items = new List<TransferDetails>();
+            MessageBox.Show(warehouseStock.Count() + "");
+            var transferList = new transferrequestsController().getTable();
+            MessageBox.Show(transferList.Count()+"");
+            foreach (var item in warehouseStock)
+            {
+                
+                try
+                {
+                    
+                   // var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == item.warehouse .warehouse_location  || c.transferrequest_from == item.warehouse.warehouse_location);
+                    MessageBox.Show(item.warehouse .warehouse_location +"");
+                   // if (release != null)
+                    //{
+                      //  items.Add(new TransferDetails ());
+                    //}
+                }
+                catch (Exception) { }
+            }
+
+            return items;
 
         }
 

@@ -2,8 +2,6 @@
 
 <!DOCTYPE html>
 
-<!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8">
@@ -47,19 +45,19 @@
 		<div>
 			<ul id="top-nav" class="pull-right">
                 <li class="nav-item dropdown">
-					<a href="clientinventory.aspx" id="" class="">
-						Invertory
+					<a href="customs.aspx" id="" class="">
+						Home
 					</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Goods Options</a>
 					<ul class="dropdown-menu animated flipInY">
-						<li><a href="transfergoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer Requests</a></li>
-						<li><a href="declaregoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Discharge Requests</a></li>
+						<li><a href="transfers.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer Requests</a></li>
+						<li><a href="releases.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Discharge Requests</a></li>
 					</ul>
 				</li>
                 <li class="nav-item dropdown">
-					<a href="wareMessages.aspx" id="" class="">
+					<a href="messages.aspx" id="" class="">
 						Messages
 					</a>
 				</li>

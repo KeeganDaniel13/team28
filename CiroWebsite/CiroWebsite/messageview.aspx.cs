@@ -11,6 +11,8 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var user = (CiroService.JsonUser)Session["user"];
+            from.Value += user.email;
             var messages = (List<CiroService.JsonMessage>)Session["messages"];
             CiroService.JsonMessage message = messages.First(c => c.id == Convert.ToInt32(Request.QueryString["id"]));
             var body = "< div class='mail-view'>";

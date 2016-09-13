@@ -18,8 +18,29 @@ namespace CiroWebsite
             {
                 body += "<tr>";
                 body += "<td class='p-name'>";
-                body += "<i class='fa zmdi-hc-sm fa-file-text-o fa-2x' aria-hidden='true'></i><a href=''>" + release;
+                body += "<i class='fa zmdi-hc-sm fa-file-text-o fa-2x' aria-hidden='true'></i><a href=''>" + release.name  ;
                 body += "</a>";
+                body += "</td>";
+                body += "<td>" +release .owner +"</td>";
+                body += "<td>";
+                body += "<span class='badge badge-success'>"+release .status+"</span>";
+                body += "</td>";
+                body += "<td><div class='checkbox checkbox-circle checkbox-primary'><input type='checkbox' id='cb-circle-2' /><label for='cb-circle-2'></label></div>";
+                body += "</td>";
+                body += "<td><div class='checkbox checkbox-circle checkbox-primary'><input type='checkbox' id='cb-circle-2' /><label for='cb-circle-2'></label></div>";
+                body += "</td>";
+                body += "<td>";
+                body += "<i>"+release .invoiceTotal+"</i>"; //tax
+                body += "</td>";
+                body += "<td>";
+                body += "<i>" + release.requested + "</i>";
+                body += "</td>";
+                body += "<td>";
+                body += "<a href='#' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>";
+                body += "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>";
+                body += "</td>";
+                
+                body += "</tr>";
             }
             releaseTable.InnerHtml = body;
         }
