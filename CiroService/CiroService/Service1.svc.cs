@@ -1439,12 +1439,12 @@ namespace CiroService
 
             if(invoiceExists == null)
             {
-                return null;
+                return "Invoice does not exist";
             }
 
             invoiceExists.invoice_paid += Convert.ToDecimal(invoices.paid);
             invoiceAccess.updateRecord(invoiceExists.invoice_id, invoiceExists);
-            return "Invoice Paid";
+            return "Payment has been made.";
 		}
 
         public string addlocation(jsonlocation loca)
