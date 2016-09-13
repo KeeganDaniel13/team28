@@ -642,7 +642,7 @@ namespace CiroService
                //package.cosigner =""+ detailPackage.warehousestocks.First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehouse.warehouse_user.Value ;
                var warehousestocks = new warehousestockController().getTable().First<warehousestock>(c => c.warehousestock_product == detailPackage.product_id).warehousestock_warehouse ;
                package.cosigner = "" + new userController().getRecord ( Convert.ToInt32(new warehouseController().getRecord(Convert.ToInt32(warehousestocks)).warehouse_user)).user_fname;
-            //package.tax = new invoiceController().getRecord();
+               //package.tax = new invoiceController().getRecord();
                return package; 
 
         }

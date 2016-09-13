@@ -28,11 +28,13 @@ namespace CiroWebsite
         {
             var user = (CiroService.JsonUser ) Session["user"];
             var list = (List<int>)Session["declare"];
+            Session["declare"] = null;
             //var list
             foreach(var prod in list)
             {
                 MessageBox.Show(CiroSingleton.ServerCalls.releaseRequest(new CiroService.JsonUser { id = user.id }, new CiroService.jsonProduct { ID = prod }, ""));
             }
+
             
         }
     }
