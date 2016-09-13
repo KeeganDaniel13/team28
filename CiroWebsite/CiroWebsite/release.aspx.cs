@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace CiroWebsite
 {
@@ -13,6 +14,7 @@ namespace CiroWebsite
         {
             var releaseRequests = CiroSingleton.ServerCalls.getReleaseRequests();
             var body = "";
+            MessageBox.Show(releaseRequests.Count() + "");
             foreach (var request in releaseRequests)
             {
                 body += "<div class='col-md-3 col-sm-6'>";
@@ -27,8 +29,6 @@ namespace CiroWebsite
                 body += "</div>";
                 body += "</div>";
             }
-
-
             releases.InnerHtml += body;
         }
     }

@@ -160,7 +160,6 @@ namespace CiroService
             //warehousestock warehouseID = stockTable.getTable().First<warehousestock>(c => c.warehousestock_product == newRequest.productID);
             warehouseController warehouseTable = new warehouseController();
             warehouse warehouseName = warehouseTable.getRecord(newRequest.endWarehouse);
-
             newTransfer.transferrequest_verdict = "Pending";
             newTransfer.transferrequest_user = newRequest.userID;
             newTransfer.transferrequest_product = newRequest.productID;
