@@ -49,7 +49,6 @@ namespace CiroWebsite
         protected void listRequests()
         {
             var user = (CiroService .JsonUser)Session["user"];
-            MessageBox.Show("Declare");
             try
             {
                 var requests = CiroSingleton.ServerCalls.getUserOwnershipRequest(new CiroService.JsonUser { id = user.id });
