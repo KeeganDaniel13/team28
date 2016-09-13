@@ -726,10 +726,10 @@ namespace CiroService
         }
 
         //add changes for image
-        public string addProductLog(string code, JsonProductLog productlog, JsonProducts prod)
+        public string addProductLog(string code, JsonProductLog productlog)
         {
             var billAccess = new billofentryController();
-            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == prod.id);
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == productlog.product_id);
             if (billExists == null)
             {
                 return "Product not found";
