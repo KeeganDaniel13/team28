@@ -39,6 +39,7 @@ namespace CiroService.EFDatabase
         public Nullable<int> product_length { get; set; }
         public Nullable<int> product_producttype { get; set; }
         public Nullable<int> product_hscode { get; set; }
+        public string product_image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<billofentry> billofentries { get; set; }

@@ -202,7 +202,18 @@ namespace CiroService
             {
                 stockTable.addRecord(new warehousestock { warehousestock_product = stockTake.id, warehousestock_warehouse = warehouseTable.getTable().First<warehouse>(c => c.warehouse_location.Equals(stockTake.location)).warehouse_id, warehousestock_lastchecked = DateTime.Now });
                 tlistAccess.deleteRecord(inList.transferlist_id);
-                message = "Stock Recorded";
+                if (stockTake.image != null || !stockTake.image.Equals(""))
+                {
+                    string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                    byte[] newImage = Convert.FromBase64String(stockTake.image);
+                    MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
+                    memoStream.Write(newImage, 0, newImage.Length);
+                    string fileName = path + stockTake.id + ".jpg";
+                    System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
+                    saveImage.Save(fileName);
+                    productTable.updateRecord(stockTake.id, new product { product_image = fileName });
+                }
+                    message = "Stock Recorded";
 
             }
             else
