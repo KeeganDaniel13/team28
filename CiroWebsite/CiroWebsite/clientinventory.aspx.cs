@@ -33,9 +33,9 @@ namespace CiroWebsite
                         table += "<tr>";
                         table += "<td>" + item.Name + "</td>" + "<td>" + item.currentLocation + "</td>" + "<td>" + item.size + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.Name + "</td>";
                         table += "<td>";
-                        table += "<a href='productlog.aspx?id=" + item.ID + "' type='button' class='btn btn-outline mw-md rounded btn-info btn-xs mybtn' runat='server' onserverclick=''>View</a>";
-                        table += "<a href='clientinventory.aspx?add=" + item.ID + "' type='button'  class='btn btn-outline mw-md rounded btn-info btn-xs mybtn' runat='server' onserverclick=''>Release</a>";
-                        table += "<a href='transfergoods.aspx?transfer=" + item.ID + "' type='button' class='btn btn-outline mw-md rounded btn-info btn-xs'>Transfer</a>";
+                        table += "<a href='productlog.aspx?id=" + item.ID + "' type='button' class='btn btn-outline  rounded btn-info btn-xs mybtn' runat='server' onserverclick=''>View</a>";
+                        table += "<a href='clientinventory.aspx?add=" + item.ID + "' type='button'  class='btn btn-outline  rounded btn-info btn-xs mybtn' runat='server' onserverclick=''>Release</a>";
+                        table += "<a href='transfergoods.aspx?transfer=" + item.ID + "' type='button' class='btn btn-outline rounded btn-info btn-xs'>Transfer</a>";
                         table += "</td>";
                         table += "</tr>";
 
