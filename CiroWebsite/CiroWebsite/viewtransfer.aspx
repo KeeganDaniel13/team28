@@ -11,23 +11,6 @@
 						<i class="fa fa-chevron-left"></i>
 					</div><!-- .app-action-panel -->
 
-					<div class="app-actions-list scrollable-container">
-						<!-- mail category list -->
-						<div class="list-group">
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Package Log</a>
-						<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Approve Transfer</a>
-		
-						</div><!-- .list-group -->
-
-						<hr class="m-0 m-b-md" style="border-color: #ddd;">
-
-						<!-- mail label list -->
-						<div class="list-group">
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>me@gmail.com</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-phone"></i>Warehouse Name</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-eye"></i>Location</a>
-						</div><!-- .list-group -->
-					</div><!-- .app-actions-list -->
 				</div><!-- .app-action-panel -->
 			</div><!-- END column -->
 
@@ -55,7 +38,7 @@
 								</h4>
 								<a href="#"><span class="label label-success">Transfer</span></a>
 							</div>
-							<p><b>From: </b>chuck@mulatto.com</p>
+							<p runat="server" id="name"><b>From: </b></p>
 						</div>
 					</div>
 					<div class="divid"></div>
@@ -66,8 +49,8 @@
        <thead>
 		<tr>
 			<th>Transferer</th>
-            <th>Goods Transfered</th>
-			<th>Good Current Location</th>
+            <th>Good Transfered</th>
+			<th>Current Location</th>
 			<th>Destination</th>
             <th>DOT</th>
             <th>Action</th>
@@ -77,7 +60,7 @@
 									
 	</tbody>
 </table>
-							<div class="m-h-lg lh-xl">
+							<!--<div class="m-h-lg lh-xl">
                                 <h3>Reason for Transfer</h3>
 								<p>Put the reason for transfer here</p>
 								
