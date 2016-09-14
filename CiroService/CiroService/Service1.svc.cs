@@ -1063,6 +1063,7 @@ namespace CiroService
             ownerReq.product = prod.id;
 
             ownershipReqAccess.addRecord(new ownershiprequest { ownershiprequest_owner = ownerReq.prevOwner, ownershiprequest_newowner = ownerReq.newOwner, ownershiprequest_product = ownerReq.product, ownershiprequest_acceptance = ownerReq.acceptance });
+            addProductLog("CO2", new JsonProductLog { userID = currentOwner.id, product_id = prod.id, description = "A Change of Ownership has been made from owner to " + newOwnerExists.user_fname + " " + newOwnerExists.user_sname });
             return "Request has been sent";
         }
 
@@ -1087,6 +1088,14 @@ namespace CiroService
                 billAccess.updateRecord(billExists.billofentry_id, billExists);
             }
             var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == user.id);
+
+            if(userExists == null)
+            {
+                return null;
+            }
+
+            addProductLog("CO2", new JsonProductLog { userID = userExists.user_id, product_id = prod.id, description = "The change of Ownership has been " + verdict + " by " + userExists.user_fname + " " + userExists.user_sname });
             //var ownerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_owner));
             //var newOwnerExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == Convert.ToInt32(ownerReqExists.ownershiprequest_newowner));
             //emailTest emailOwner = new emailTest(ownerExists.user_fname + " " + ownerExists.user_sname, ownerExists.user_email, "Dear Mr/Ms " + ownerExists.user_sname + System.Environment.NewLine + System.Environment.NewLine + "Mr/Ms " + ownerExists.user_sname + " has " + verdict + " your request to change the ownership of your package: " + System.Environment.NewLine + System.Environment.NewLine + "Product Number: " + prod.id + System.Environment.NewLine + "Product Name: " + prod.name, "Request to change Ownership");
