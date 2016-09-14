@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addofficial.aspx" />
+    <Content Include="AdminReports.aspx" />
     <Content Include="approveTransfers.aspx" />
     <Content Include="changeofownership.aspx" />
     <Content Include="clientinventory.aspx" />
@@ -511,6 +512,13 @@
     </Compile>
     <Compile Include="admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminReports.aspx.cs">
+      <DependentUpon>AdminReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminReports.aspx.designer.cs">
+      <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="approveTransfers.aspx.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
