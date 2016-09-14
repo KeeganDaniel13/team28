@@ -25,7 +25,7 @@ namespace CiroWebsite
 
         protected void saveInfo(object sender, EventArgs e)
         {
-            Session["TransferInfo"] = new TransferForm { origin = origincountry.Value, mass = Convert.ToDouble(mass.Value), transport = transport.Value, transferReason = reason.Value, description = description.Value };
+          // Session["TransferInfo"] = new TransferForm { origin = origincountry.Value, mass = Convert.ToDouble(mass.Value), transport = transport.Value, transferReason = reason.Value, description = description.Value };
         }
 
         protected void completeRequest(object sender, EventArgs e)
@@ -34,6 +34,10 @@ namespace CiroWebsite
             var transInfo = Session["TransferInfo"] as TransferForm;
             var productIDt = Convert.ToInt32(Session["transferProduct"]);
             var user = (CiroService.JsonUser)Session["user"];
+            MessageBox.Show(user.id+"User ID");
+            MessageBox.Show(transInfo.description);
+            MessageBox.Show(Convert.ToInt32(Session["warehouse"]) + "Warehouse ID");
+            MessageBox.Show(productIDt+"Product ID");
             CiroSingleton .ServerCalls .transeferRequest(new CiroService.jsonTRequest { userID = user.id, description = transInfo.description, endWarehouse = Convert.ToInt32(Session["warehouse"]), productID = productIDt });
         }
 

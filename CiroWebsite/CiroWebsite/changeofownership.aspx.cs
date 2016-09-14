@@ -31,7 +31,6 @@ namespace CiroWebsite
             var fillGoods = (List<CiroService.jsonProduct>)Session["userList"];
             var good = fillGoods.First<CiroService.jsonProduct>(c => c.ID == Convert.ToInt32(goods.Value));
             Session["changeItem"] = good;
-            MessageBox.Show(""+good.ID);
             origincountry.Value = "Get Country Origin from database";
             Locationgoods.Value = good.currentLocation;
             if (good.transferLocation != "" || good.transferLocation != null)
@@ -50,7 +49,7 @@ namespace CiroWebsite
 
             var toUser = (ChangeUser)Session["changeUser"];
             var changeItem = (CiroService.jsonProduct)Session["changeItem"];
-            MessageBox.Show(CiroSingleton.ServerCalls.OwnershipRequest(new CiroService.JsonUser { id = toUser.tranferer }, new CiroService.JsonUser { email = toUser.transfereeEmail }, new CiroService.JsonProducts { id = changeItem.ID }));
+            CiroSingleton.ServerCalls.OwnershipRequest(new CiroService.JsonUser { id = toUser.tranferer }, new CiroService.JsonUser { email = toUser.transfereeEmail }, new CiroService.JsonProducts { id = changeItem.ID });
         }
     }
 }

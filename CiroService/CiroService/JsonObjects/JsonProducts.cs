@@ -13,6 +13,7 @@ namespace CiroService.JsonObjects
         public double price { get; set; }
         public int quantity { get; set; }
         public int producttype { get; set; }
+        public double tax { get; set; }
         public int size { get; set; }
         public int userid { get; set; }
         public string location { get; set; }

@@ -67,7 +67,7 @@ namespace CiroWebsite
 
         protected void remove(string id)
         {
-            MessageBox.Show(id);
+            
             //Response.Redirect("declaregoods.aspx");
         }
 

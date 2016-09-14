@@ -1245,6 +1245,9 @@ namespace CiroWebsite.CiroService {
         private int sizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double taxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int useridField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1409,6 +1412,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.sizeField.Equals(value) != true)) {
                     this.sizeField = value;
                     this.RaisePropertyChanged("size");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double tax {
+            get {
+                return this.taxField;
+            }
+            set {
+                if ((this.taxField.Equals(value) != true)) {
+                    this.taxField = value;
+                    this.RaisePropertyChanged("tax");
                 }
             }
         }
