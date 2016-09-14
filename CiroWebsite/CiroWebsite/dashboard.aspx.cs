@@ -65,12 +65,13 @@ namespace CiroWebsite
             for (int i = 0; i < cp.Count(); i++)
             {
                 countryName += "'" + cp[i].name + "',";
-                countryData += "'" + cp[i].percentage + "',";
+                countryData += "'" + Math.Round(cp[i].percentage) + "',";
             }
-            
+
             countryName = countryName.Remove(countryName.Length - 1);
             countryData = countryData.Remove(countryData.Length - 1);
-
+            MessageBox.Show(countryName);
+            MessageBox.Show(countryData);
         }
 
         protected void getCountry()

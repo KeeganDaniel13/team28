@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="CustomsReports.aspx.cs" Inherits="CiroWebsite.CustomsReports" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="CustomsReports.aspx.cs" Inherits="CiroWebsite.CustomsReports" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -211,96 +211,48 @@
         </div><!-- .widget -->
       
     </div>
-               <div class="row">  <div class="col-md-6">
+              
+
+
+   
+
+    
+       <div class="row">
+      <div class="col-md-6" style="width:100%">
         <div class="widget">
           <header class="widget-header">
-            <h4 class="widget-title">Horizontal Stacked Bars</h4>
+            <h4 class="widget-title">Countries Imported From %</h4>
           </header><!-- .widget-header -->
           <hr class="widget-separator">
           <div class="widget-body">
             <div data-plugin="chart" data-options="{
               tooltip : {
-                trigger: 'axis',
-                axisPointer : {
-                  type : 'shadow'
-                }
+                trigger: 'axis'
               },
               legend: {
-                data: ['Interview', 'Marketing','Advertising','Video Ads','Search Engine']
+                data:['Most Imported From']
               },
-              grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
+              calculable : true,
+              grid : {
+                x: 120
               },
-              xAxis:{
-                type: 'value'
-              },
-              yAxis: {
-                type: 'category',
-                data: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-              },
-              series: [
+              xAxis : [
                 {
-                  name: 'Interview',
-                  type: 'bar',
-                  stack: 'Total',
-                  label: {
-                    normal: {
-                      show: true,
-                      position: 'insideRight'
-                    }
-                  },
-                  data: [320, 302, 301, 334, 390, 330, 320]
-                },
+                  type : 'value',
+                  boundaryGap : [0, 0.01]
+                }
+              ],
+              yAxis : [
                 {
-                  name: 'Marketing',
-                  type: 'bar',
-                  stack: 'Total',
-                  label: {
-                    normal: {
-                      show: true,
-                      position: 'insideRight'
-                    }
-                  },
-                  data: [120, 132, 101, 134, 90, 230, 210]
-                },
+                  type : 'category',
+                  data : [<%getCountry(); %><%getCountryName(); %>]
+                }
+              ],
+              series : [
                 {
-                  name: 'Advertising',
-                  type: 'bar',
-                  stack: 'Total',
-                  label: {
-                    normal: {
-                      show: true,
-                      position: 'insideRight'
-                    }
-                  },
-                  data: [220, 182, 191, 234, 290, 330, 310]
-                },
-                {
-                  name: 'Video Ads',
-                  type: 'bar',
-                  stack: 'Total',
-                  label: {
-                    normal: {
-                      show: true,
-                      position: 'insideRight'
-                    }
-                  },
-                  data: [150, 212, 201, 154, 190, 330, 410]
-                },
-                {
-                  name: 'Search Eengine',
-                  type: 'bar',
-                  stack: 'Total',
-                  label: {
-                    normal: {
-                      show: true,
-                      position: 'insideRight'
-                    }
-                  },
-                  data: [820, 832, 901, 934, 1290, 1330, 1320]
+                  name:'Occupied Space',
+                  type:'bar',
+                  data:[<%getData();%>]
                 }
               ]
             }" style="height:300px">
@@ -309,8 +261,67 @@
         </div><!-- .widget -->
       </div><!-- END column -->
 
-   
         </div><!-- END row -->
-        </div>
+
+            <div class="row">
+        <div class="col-md-3 col-sm-6">
+				<div class="widget stats-widget">
+					<div class="widget-body clearfix">
+						<div class="pull-left">
+							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">R <%getOutstanding(); %></span></h3>
+							<small class="text-color">Outstanding Tax on Imports</small>
+						</div>
+						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
+					</div>
+					<footer class="widget-footer bg-primary">
+						<small>in Rands</small>
+						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
+					</footer>
+				</div><!-- .widget -->
+			</div><%getAverageTax(); %>
+			<div class="col-md-3 col-sm-6">
+				<div class="widget stats-widget">
+					<div class="widget-body clearfix">
+						<div class="pull-left">
+							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">R <%getVAT();%></span></h3>
+							<small class="text-color">Average VAT Charged </small>
+						</div>
+						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
+					</div>
+					<footer class="widget-footer bg-primary">
+						<small>in Rands</small>
+						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
+					</footer>
+				</div><!-- .widget --></div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="widget stats-widget">
+					<div class="widget-body clearfix">
+						<div class="pull-left">
+							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">R <%getPenalty();%></span></h3>
+							<small class="text-color">Average Penalties Charged on Goods</small>
+						</div>
+						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
+					</div>
+					<footer class="widget-footer bg-primary">
+						<small>in Rands</small>
+						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
+					</footer>
+				</div><!-- .widget --></div>
+			<div class="col-md-3 col-sm-6">
+				<div class="widget stats-widget">
+					<div class="widget-body clearfix">
+						<div class="pull-left">
+							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">R <%getTotal();%></span></h3>
+							<small class="text-color">Average Total Charged on Goods</small>
+						</div>
+						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
+					</div>
+					<footer class="widget-footer bg-primary">
+						<small>in Rands</small>
+						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
+					</footer>
+				</div><!-- .widget --></div>
+			</div>
 
 </asp:Content>

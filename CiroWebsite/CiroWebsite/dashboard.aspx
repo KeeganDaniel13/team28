@@ -63,6 +63,58 @@
 				</div><!-- .widget --></div>
 			</div>
 
+    <div class="row">
+      <div class="col-md-6" style="width:100%">
+        <div class="widget">
+          <header class="widget-header">
+            <h4 class="widget-title">Warehouses Space vs Capacity</h4>
+          </header><!-- .widget-header -->
+          <hr class="widget-separator">
+          <div class="widget-body">
+            <div data-plugin="chart" data-options="{
+              tooltip : {
+                trigger: 'axis'
+              },
+              legend: {
+                data:['Occupied Space', 'Total Space']
+              },
+              calculable : true,
+              grid : {
+                x: 120
+              },
+              xAxis : [
+                {
+                  type : 'value',
+                  boundaryGap : [0, 0.01]
+                }
+              ],
+              yAxis : [
+                {
+                  type : 'category',
+                  data : ['China', 'USA']
+                }
+              ],
+              series : [
+                {
+                  name:'Occupied Space',
+                  type:'bar',
+                  data:[45,56]
+                },
+                {
+                  name:'Total Space',
+                  type:'bar',
+                  data:[12,60]
+                }
+              ]
+            }" style="height:300px">
+            </div>
+          </div><!-- .widget-body -->
+        </div><!-- .widget -->
+      </div><!-- END column -->
+
+        </div><!-- END row -->
+
+
    
       <div class="row">
          <div class="col-md-6" style="width:100%">
