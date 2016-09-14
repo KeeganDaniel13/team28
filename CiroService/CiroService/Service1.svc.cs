@@ -1353,7 +1353,8 @@ namespace CiroService
 
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             var invoiceAccess = new invoiceController();
-            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty) };
+            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
+            
             invoiceAccess.addRecord(_invoice);
             billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
             billAccess.updateRecord(billExists.billofentry_id, billExists);
@@ -1440,10 +1441,12 @@ namespace CiroService
 
             if(invoiceExists == null)
             {
-                return "Invoice does not exist";
+                return "Invoice does not exist.";
             }
 
-            invoiceExists.invoice_paid += Convert.ToDecimal(invoices.paid);
+            var value = invoiceExists.invoice_paid;
+            value += Convert.ToDecimal(invoices.paid);
+            invoiceExists.invoice_paid = value;
             invoiceAccess.updateRecord(invoiceExists.invoice_id, invoiceExists);
             return "Payment has been made.";
 		}
