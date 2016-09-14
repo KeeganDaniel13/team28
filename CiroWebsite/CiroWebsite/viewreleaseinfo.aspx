@@ -30,10 +30,8 @@
 					</div><!-- .contact-item-actions -->
 				</div><!-- user-card -->
                 <div class="app-actions-list">
-                    <div class="list-group">
-						<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-product-hunt"></i>Package Log</a>
-						<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-money"></i>View Payments</a>
-		
+                    <div class="list-group" runat="server" id ="log">
+						<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>View Payments</a>
 						</div><!-- .list-group -->
                     </div>
                 </div>

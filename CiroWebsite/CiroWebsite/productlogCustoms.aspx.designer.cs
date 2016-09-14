@@ -10,33 +10,24 @@
 namespace CiroWebsite {
     
     
-    public partial class viewtransfer {
+    public partial class productlogCustoms {
         
         /// <summary>
-        /// H1 control.
+        /// logList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl H1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logList;
         
         /// <summary>
-        /// name control.
+        /// detailsInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl name;
-        
-        /// <summary>
-        /// transferD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl transferD;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl detailsInfo;
     }
 }
