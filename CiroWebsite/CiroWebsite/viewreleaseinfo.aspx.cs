@@ -32,7 +32,7 @@ namespace CiroWebsite
                 body += "<td>" +request .productInfo .bill  +"</td>";
                 body += "<td>" +request .productInfo .arrivalDate +"</td>";
                 body += "<td>" + request .productInfo .cosigner+"</td>";
-                body += "<td><a class='btn btn-success' href='viewreleaseinfo.aspx?accept="+request.product_id + "'><i class='fa fa-cross'></i></a><a class='btn btn-warning' href='viewreleaseinfo.aspx?reject=" + request.product_id + "'><i class='fa fa-cross'></i></a></td>";
+                body += "<td><a class='btn btn-success' href='viewreleaseinfo.aspx?accept="+request.product_id + "'><i class='fa fa-check-circle-o'></i></a><a class='btn btn-danger' href='viewreleaseinfo.aspx?reject=" + request.product_id + "'><i class='fa fa-times '></i></a></td>";
                 releaseInfo.InnerHtml = body;
             }
             else
