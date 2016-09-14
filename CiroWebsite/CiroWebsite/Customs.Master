@@ -47,11 +47,14 @@
                 <li class="nav-item dropdown">
 					<a href="customs.aspx" id="" class="">Home</a>
 				</li>
+                <li class="nav-item dropdown">
+					<a href="warehouseoverview.aspx" id="" class="">Warehouse</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packages</a>
 					<ul class="dropdown-menu animated flipInY">
 						<li><a href="transfers.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer Requests</a></li>
-						<li><a href="release.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Discharge Requests</a></li>
+						<li><a href="release.aspx"><i class="fa m-r-md zmdi-hc-lg fa-ship"></i>Discharge Requests</a></li>
 					</ul>
 				</li>
                 
@@ -139,20 +142,7 @@
 			
 	</section><!-- #dash-content -->
 </div><!-- .wrap -->
-		<div class="wrap">
-			<!-- app-footer -->
-			<footer class="app-footer">
-				<div class="clearfix">
-					<ul class="footer-menu pull-right">
-						<li><a href="javascript:void(0)">Careers</a></li>
-						<li><a href="javascript:void(0)">Privacy Policy</a></li>
-						<li><a href="javascript:void(0)">Feedback <i class="fa fa-angle-up m-l-md"></i></a></li>
-					</ul>
-					<div class="copyright pull-left">Copyright RaThemes 2016 &copy;</div>
-				</div>
-			</footer>
-			<!-- #app-footer -->
-		</div>
+		
 	</div>
 </main>
 <!--========== END app main -->

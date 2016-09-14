@@ -6,7 +6,7 @@
     background: #fff;
 }
 
-    .wizard .nav-tabs {u
+    .wizard .nav-tabs {
         position: relative;
         margin: 40px auto;
         margin-bottom: 0;
@@ -258,8 +258,7 @@ span.round-tab:hover {
                 <div class="tab-pane active" role="tabpanel" id="step1">
                     <h3>Transfer Ownership Document</h3>
                     <p>If you wish to transfer your ownership to another partner complete the following</p>
-           <table>
-
+                <table>
                <%listwarehouse(); %>
                </table>
   	
