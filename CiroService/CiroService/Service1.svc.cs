@@ -1366,13 +1366,12 @@ namespace CiroService
         public JsonInvoice getInvoice(JsonInvoice invoiceNum, jsonProduct products)
         {
             var billAccess = new billofentryController();
-            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == products.ID || b.billofentry_invoice == invoiceNum.id);
-
+            var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == products.ID /*|| b.billofentry_invoice == invoiceNum.id*/);
             if(billExists == null)
             {
                 return null;
             }
-
+            
             JsonInvoice newInvoice = new JsonInvoice { id = billExists.invoice.invoice_id, vat = Convert.ToDouble(billExists.invoice.invoice_vat), penalty = Convert.ToDouble(billExists.invoice.invoice_penalty), paid = Convert.ToDouble(billExists.invoice.invoice_paid) };
 
             return newInvoice;
