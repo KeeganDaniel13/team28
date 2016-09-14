@@ -8,7 +8,7 @@
         <div class="col-md-6 col-sm-6">
 				<div class="widget p-md clearfix">
 					<div class="pull-left">
-						<h3 class="widget-title">Welcome Hugh Hefner</h3>
+						<h3 class="widget-title">Welcome Customs Official</h3>
 						<small class="text-color">Number of Goods Today</small>
 					</div>
 					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp">102</span>
@@ -90,23 +90,7 @@
 				</div><!-- .widget -->
 			</div>
 		</div><!-- .row -->
-    <div class="row">
-			<div class="col-md-12">
-				<div class="widget row no-gutter p-lg">						
-					<div class="col-md-5 col-sm-5">
-						<div>
-							<h3 class="widget-title fz-lg text-primary m-b-lg">Revenue Generated This Month</h3>
-							<p class="m-b-lg">SA Customs prides itself in the work they have done in raising funds to </p>
-							<p class="fs-italic"></p>
-						</div>
-					</div>
-
-		<div class="col-md-7 col-sm-7">
-		
-					</div>
-				</div><!-- .widget -->	
-			</div>
-		</div><!-- .row -->
+    
     <div class="row">
 			<div class="col-md-6 col-sm-6">
 				<div class="widget">

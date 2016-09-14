@@ -451,5 +451,58 @@ INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`,
 
 
 INSERT INTO `custommandb`.`transferlist` (`transferlist_to`, `transferlist_from`, `transferlist_product`) VALUES ('48 Hoylake Road, Randburg, 2034', '11 Eva Road, Benoni, 1512', '2');
+
 UPDATE `custommandb`.`product` SET `product_width`='23', `product_height`='65', `product_length`='78' WHERE `product_id`='1';
 UPDATE `custommandb`.`product` SET `product_width`='315', `product_height`='123', `product_length`='138' WHERE `product_id`='2';
+UPDATE `custommandb`.`product` SET `product_width`='55', `product_height`='75', `product_length`='155' WHERE `product_id`='3';
+UPDATE `custommandb`.`product` SET `product_width`='48', `product_height`='88', `product_length`='185' WHERE `product_id`='4';
+UPDATE `custommandb`.`product` SET `product_width`='36', `product_height`='92', `product_length`='135' WHERE `product_id`='5';
+UPDATE `custommandb`.`product` SET `product_width`='59', `product_height`='100', `product_length`='160' WHERE `product_id`='6';
+UPDATE `custommandb`.`product` SET `product_width`='47', `product_height`='77', `product_length`='85' WHERE `product_id`='7';
+UPDATE `custommandb`.`product` SET `product_width`='112', `product_height`='25', `product_length`='64' WHERE `product_id`='8';
+UPDATE `custommandb`.`product` SET `product_width`='145', `product_height`='36', `product_length`='35' WHERE `product_id`='9';
+UPDATE `custommandb`.`product` SET `product_width`='88', `product_height`='155', `product_length`='45' WHERE `product_id`='10';
+UPDATE `custommandb`.`product` SET `product_width`='99', `product_height`='145', `product_length`='75' WHERE `product_id`='12';
+UPDATE `custommandb`.`product` SET `product_width`='77', `product_height`='180', `product_length`='45' WHERE `product_id`='11';
+
+UPDATE `custommandb`.`warehouse` SET `warehouse_size`='70' WHERE `warehouse_id`='1';
+UPDATE `custommandb`.`warehouse` SET `warehouse_size`='60' WHERE `warehouse_id`='2';
+UPDATE `custommandb`.`warehouse` SET `warehouse_size`='50' WHERE `warehouse_id`='3';
+UPDATE `custommandb`.`warehouse` SET `warehouse_size`='45' WHERE `warehouse_id`='4';
+
+
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Goof J', '25000', '8', '40', '11 Eva Road, Benoni, 1512', '2016-01-02 15:55:41', '45', '85', '150', '2', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good J', '410', '3', '40', '11 Eva Road, Benoni, 1512', '2016-10-02 15:55:41', '45', '85', '150', '1', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good K', '410', '4', '25', '11 Eva Road, Benoni, 1512', '2016-11-02 15:55:41', '45', '85', '150', '2', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good L', '550', '6', '35', '11 Eva Road, Benoni, 1512', '2016-02-02 15:55:41', '45', '85', '160', '1', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good M', '8500', '5', '60', '11 Eva Road, Benoni, 1512', '2016-04-02 15:55:41', '150', '165', '45', '2', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good N', '2300', '5', '42', '11 Eva Road, Benoni, 1512', '2016-05-02 15:55:41', '160', '185', '45', '1', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good O', '4500', '9', '45', '11 Eva Road, Benoni, 1512', '2016-06-02 15:55:41', '78', '45', '78', '2', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good P', '1210', '1', '13', '11 Eva Road, Benoni, 1512', '2016-07-02 15:55:41', '79', '45', '78', '1', '825');
+INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_width`, `product_height`, `product_length`, `product_producttype`, `product_hscode`) VALUES ('Good Q', '470', '3', '68', '11 Eva Road, Benoni, 1512', '2016-08-02 15:55:41', '45', '36', '68', '2', '825');
+
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Mount Warehousing', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Old Storage', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('5', 'Old Storage', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('5', 'DS Space', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-03 11:14:02', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('5', 'DS Space', '3', 'Incident : Carl Kicked the Package', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('DS Space', '3', 'Incident : Carl Kicked the Package again', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('DS Space', '3', 'Incident : Carl Kicked the Package once again', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('DS Space', '3', 'Incident : Carl got fired...Then kicked the package', '2016-08-03 11:14:02', '1');
+
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='6';
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='7';
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='8';
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='12';
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='13';
+UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='14';
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Water Damage', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Fire Damage', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Incident : Wild Dog Tore The Package', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I\'m running out of things to say', '2016-08-03 11:14:02', '1');

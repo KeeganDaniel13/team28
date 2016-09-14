@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="574f803afa614a91ace18337b818132a" Name="Diagram1">
+      <Diagram DiagramId="fd72323d20084cf68a37a8ff75c4bc83" Name="Diagram1">
         <EntityTypeShape EntityType="custommandbModel.billofentry" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.countryrelation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="custommandbModel.hscode" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />

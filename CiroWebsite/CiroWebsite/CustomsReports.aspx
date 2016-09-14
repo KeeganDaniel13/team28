@@ -37,12 +37,12 @@
                 {
                   name:'Occupied Space',
                   type:'bar',
-                  data:[<%getsizeused(); %>]
+                  data:[<%getCapacity(); %>]
                 },
                 {
                   name:'Total Space',
                   type:'bar',
-                  data:[<%getCapacity(); %>]
+                  data:[<%getsizeused(); %>]
                 }
               ]
             }" style="height:300px">
