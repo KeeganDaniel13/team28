@@ -10,33 +10,24 @@
 namespace CiroWebsite {
     
     
-    public partial class viewreleaseinfo {
+    public partial class productlogCustoms {
         
         /// <summary>
-        /// name control.
+        /// logList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl name;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logList;
         
         /// <summary>
-        /// log control.
+        /// detailsInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log;
-        
-        /// <summary>
-        /// releaseInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl releaseInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl detailsInfo;
     }
 }
