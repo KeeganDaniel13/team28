@@ -197,6 +197,7 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
+    <Content Include="productlogCustoms.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Client.Master" />
     <Content Include="infinity\landing\assets\._css" />
@@ -630,6 +631,13 @@
     </Compile>
     <Compile Include="productlog.aspx.designer.cs">
       <DependentUpon>productlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productlogCustoms.aspx.cs">
+      <DependentUpon>productlogCustoms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productlogCustoms.aspx.designer.cs">
+      <DependentUpon>productlogCustoms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="release.aspx.cs">

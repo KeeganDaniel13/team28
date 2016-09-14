@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Product Log | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="productlog.aspx.cs" Inherits="CiroWebsite.productlog" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="productlogCustoms.aspx.cs" Inherits="CiroWebsite.productlogCustoms" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<link rel="stylesheet" href="infinity/css/style.css"/> <!-- Resource style -->
+    <link rel="stylesheet" href="infinity/css/style.css"/> <!-- Resource style -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="page-header">
+       <div class="page-header">
         <h1 id="timeline">Package Log</h1>
     </div>
 			<div class="col-md-8">
@@ -27,6 +27,4 @@
 						</div><!-- .widget -->
 					</div><!-- END column -->
                 </div>
-              
-       
 </asp:Content>

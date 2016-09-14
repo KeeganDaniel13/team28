@@ -506,3 +506,42 @@ INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_wareho
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I\'m running out of things to say', '2016-08-03 11:14:02', '1');
+
+
+
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`) VALUES ('1', 'payment', '1', '2', 'when will you make payment');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`) VALUES ('1', 'payment', '2', '1', 'i already paid');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('2', 'xbox', '3', '4', 'still interested in the xbox', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('2', 'xbox', '4', '3', 'yes definitely, how much are you looking for it', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('3', 'incident on golf clubs', '5', '6', 'I will just like you to know that I expect a full reinbursement for my golf sticks', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('3', 'incident on golf clubs', '6', '5', 'we are atually purhasing a new set for you rest assuredx', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('4', 'ciro', '7', '8', 'i love this service x', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('4', 'ciro', '8', '7', 'we are glad to hear that', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('5', 'package release', '9', '10', 'when will my package be released', '2016-08-03 11:14:02');
+INSERT INTO `custommandb`.`message` (`message_convoid`, `message_subject`, `message_to`, `message_from`, `message_message`, `message_stamp`) VALUES ('5', 'package release', '10', '9', 'its available for collection afeter release has been accepeted', '2016-08-03 11:14:02');
+
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('1', '260.00', '122.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('2', '360.00', '40.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('3', '220.00', '0.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('4', '120.00', '4.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('5', '420.00', '678.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('6', '70.00', '123.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('7', '470.00', '220.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('8', '670.00', '1260.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('9', '80.00', '320.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('10', '67.00', '0.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('11', '89.00', '0.00', '0.00');
+INSERT INTO `custommandb`.`invoice` (`invoice_id`, `invoice_vat`, `invoice_penalty`, `invoice_paid`) VALUES ('12', '2600.00', '370.00', '0.00');
+
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='1' WHERE `billofentry_id`='1';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='2' WHERE `billofentry_id`='2';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='3' WHERE `billofentry_id`='3';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='4' WHERE `billofentry_id`='4';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='5' WHERE `billofentry_id`='5';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='6' WHERE `billofentry_id`='6';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='7' WHERE `billofentry_id`='7';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='8' WHERE `billofentry_id`='8';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='9' WHERE `billofentry_id`='9';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='10' WHERE `billofentry_id`='10';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofentry_id`='11';
+UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';

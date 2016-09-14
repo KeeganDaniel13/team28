@@ -24,6 +24,7 @@ namespace CiroWebsite
                 body += "<div class='floated'><a href='transfers.aspx?accept=" + transfer.productid + "' class='btn btn-success btn-outline btn-xs'>Approve</a></div>";
                 body += "<div class='floated'><a href='transfers.aspx?reject=" + transfer.productid + "' class='btn btn-danger btn-outline btn-xs'>Reject</a></div>";
                 body += "</td>";
+                name.InnerHtml += transfer.transferName;
                 transferD.InnerHtml = body;
             }
             else
