@@ -485,7 +485,7 @@ namespace CiroService
             string origin2 = origin;
 			string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
 
-            foreach (var p in newProduct)
+            foreach (var p in newProduct)an
             {
                 //add products to product table
                 productAccess.addRecord(new product { product_name = p.name, product_size = p.size, product_quantity = p.quantity, product_price = Convert.ToDecimal(p.price), product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });

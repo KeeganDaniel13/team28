@@ -27,7 +27,7 @@ namespace CiroWebsite
                 body += "</tr>";
                 body += "<tr>";
                 body += "<td colspan='5'>";
-                body += "<img src='out.jpg' alt='Mountain View' style='width:100px;height:100px;'>";
+                body += "<img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>";
                 body += "<div style='float:right;'>";
                 body += warehouse.warehousetype +"<br/>";
                 body += warehouse.location + "<br/>";

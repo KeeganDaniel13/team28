@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/warehouse.Master" AutoEventWireup="true" CodeBehind="warehouseoverview.aspx.cs" Inherits="CiroWebsite.warehouseoverview" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="warehouseoverview.aspx.cs" Inherits="CiroWebsite.warehouseoverview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <style>
 		label { width: 200px; float: left; margin: 0 10px 0 0; }
