@@ -7,18 +7,18 @@
 <meta charset="UTF-8">
 	<meta name="description" content="Admin, Dashboard, Bootstrap" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" sizes="196x196" href="../infinity/assets/images/logo.png">
+	<link rel="shortcut icon" sizes="196x196" href="infinity/assets/images/logo.png">
 	
 	<title>CIRO </title>
 	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
 	
 	<!-- build:css ../assets/css/app.min.css -->
-	<link rel="stylesheet" href="../infinity/libs/bower/animate.css/animate.min.css">
-	<link rel="stylesheet" href="../infinity/libs/bower/fullcalendar/dist/fullcalendar.min.css">
-	<link rel="stylesheet" href="../infinity/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
-	<link rel="stylesheet" href="../infinity/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="../infinity/assets/css/app.css">
-	<link rel="stylesheet" href="../infinity/libs/bower/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="infinity/libs/bower/animate.css/animate.min.css">
+	<link rel="stylesheet" href="infinity/libs/bower/fullcalendar/dist/fullcalendar.min.css">
+	<link rel="stylesheet" href="infinity/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="infinity/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="infinity/assets/css/app.css">
+	<link rel="stylesheet" href="infinity/libs/bower/fontawesome/css/font-awesome.min.css">
 	<!-- endbuild -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -498,24 +498,24 @@
 <!--========== END app main -->
    
     <!-- build:js ../assets/js/core.min.js -->
-	<script src="../infinity/libs/bower/jquery/dist/jquery.js"></script>
-	<script src="../infinity/libs/bower/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../infinity/libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
-	<script src="../infinity/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-	<script src="../infinity/libs/bower/superfish/dist/js/hoverIntent.js"></script>
-	<script src="../infinity/libs/bower/superfish/dist/js/superfish.js"></script>
-	<script src="../infinity/libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
-	<script src="../infinity/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-	<script src="../infinity/libs/bower/PACE/pace.min.js"></script>
+	<script src="infinity/libs/bower/jquery/dist/jquery.js"></script>
+	<script src="infinity/libs/bower/jquery-ui/jquery-ui.min.js"></script>
+	<script src="infinity/libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+	<script src="infinity/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="infinity/libs/bower/superfish/dist/js/hoverIntent.js"></script>
+	<script src="infinity/libs/bower/superfish/dist/js/superfish.js"></script>
+	<script src="infinity/libs/bower/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="infinity/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="infinity/libs/bower/PACE/pace.min.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js ../assets/js/app.min.js -->
-	<script src="../infinity/assets/js/library.js"></script>
-	<script src="../infinity/assets/js/plugins.js"></script>
-	<script src="../infinity/assets/js/app.js"></script>
+	<script src="infinity/assets/js/library.js"></script>
+	<script src="infinity/assets/js/plugins.js"></script>
+	<script src="infinity/assets/js/app.js"></script>
 	<!-- endbuild -->
-	<script src="../infinity/libs/bower/moment/moment.js"></script>
-	<script src="../infinity/libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
-	<script src="../infinity/assets/js/fullcalendar.js"></script>
+	<script src="infinity/libs/bower/moment/moment.js"></script>
+	<script src="infinity/libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="infinity/assets/js/fullcalendar.js"></script>
 </body>
 </html>
