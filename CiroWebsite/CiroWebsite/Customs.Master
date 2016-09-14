@@ -70,15 +70,22 @@
 						
 						<div class="scrollable-container" >
 							<div class="media-group">
-								<a  href="declareownershiptransfer.aspx" class="media-group-item">
+								<a  href="transfers.aspx" class="media-group-item">
 									<div class="media">
 										<div class="media-body" style="height:30px;">
-											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-exchange  "></i><font size="3">Ownership Changes</font></h5>
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-exchange  "></i><font size="3">Transfer Requests</font></h5>
 											
 										</div>
 									</div>
 								</a><!-- .media-group-item -->
-
+                                <a  href="release.aspx" class="media-group-item">
+									<div class="media">
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-ship"></i><font size="3">Release Request</font></h5>
+											
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
 								<a href="messages.aspx" class="media-group-item">
 									<div class="media">
 									
