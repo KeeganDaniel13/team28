@@ -20,23 +20,7 @@ namespace CiroWebsite
             if (Request.QueryString["add"] != null)
             {
                 var item = Convert.ToInt32(Request.QueryString["add"]);
-                if (Session["declare"] != null)
-                {
-                    List<int> declare = Session["declare"] as List<int>;
-                    if (declare.Contains(item))
-                    { }
-                    else
-                    {
-                        declare.Add(item);
-                        Session["declare"] = declare;
-                    }
-                }
-                else
-                {
-                    List<int> declare = new List<int>();
-                    declare.Add(item);
-                    Session["declare"] = declare;
-                }
+                Session["declare"] = item;
             }
             try
             {

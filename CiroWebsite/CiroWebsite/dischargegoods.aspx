@@ -27,7 +27,7 @@
 </tbody>
 </table>
        
-  <a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="btn btn-outline mw-md btn-danger">Proceed</a>
+  <a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="btn btn-outline mw-md btn-success">Proceed</a>
 
                
   <div class="clearfix"></div>
@@ -41,7 +41,7 @@
 			</div>
 			<div class="modal-body">
 				 <div class="row">
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">

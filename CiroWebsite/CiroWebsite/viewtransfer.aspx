@@ -66,14 +66,14 @@
        <thead>
 		<tr>
 			<th>Transferer</th>
-			<th>Transferee</th>
             <th>Goods Transfered</th>
+			<th>Good Current Location</th>
 			<th>Destination</th>
             <th>DOT</th>
             <th>Action</th>
 		</tr>
 	</thead>					
-	<tbody>
+	<tbody runat="server" id="transferD">
 									
 	</tbody>
 </table>
