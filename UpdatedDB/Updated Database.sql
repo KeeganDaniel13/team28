@@ -337,11 +337,49 @@ ADD CONSTRAINT `ownsershiprequest_product`
   REFERENCES `custommandb`.`product` (`product_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+  
+
+  CREATE TABLE `custommandb`.`warehouseemployee` (
+  `warehouseemployee_id` INT NOT NULL AUTO_INCREMENT,
+  `warehouseemployee_employee` INT NULL,
+  `warehouseemployee_warehouse` INT NULL,
+  PRIMARY KEY (`warehouseemployee_id`),
+  INDEX `warehouseemployee_employee_idx` (`warehouseemployee_employee` ASC),
+  INDEX `warehouseemployee_warehouse_idx` (`warehouseemployee_warehouse` ASC),
+  CONSTRAINT `warehouseemployee_employee`
+    FOREIGN KEY (`warehouseemployee_employee`)
+    REFERENCES `custommandb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `warehouseemployee_warehouse`
+    FOREIGN KEY (`warehouseemployee_warehouse`)
+    REFERENCES `custommandb`.`warehouse` (`warehouse_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+	CREATE TABLE `custommandb`.`warehousetask` (
+  `warehousetask_id` INT NOT NULL AUTO_INCREMENT,
+  `warehousetask_employee` INT NULL,
+  `warehousetask_description` LONGTEXT NULL,
+  `warehousetask_section` VARCHAR(45) NULL,
+  `warehousetask_timestamp` DATETIME NULL,
+  `warehousetask_endtime` DATETIME NULL,
+  PRIMARY KEY (`warehousetask_id`),
+  INDEX `warehousetask_employee_idx` (`warehousetask_employee` ASC),
+  CONSTRAINT `warehousetask_employee`
+    FOREIGN KEY (`warehousetask_employee`)
+    REFERENCES `custommandb`.`warehouseemployee` (`warehouseemployee_employee`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
 
 
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
+INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('4', 'Admin');
+INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('5', 'Warehouse Employee');
 
 INSERT INTO `custommandb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('1', 'Duty Free');
 INSERT INTO `custommandb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('2', 'Duty');
@@ -379,6 +417,12 @@ INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `use
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse2@gmail', 'Warehouse2', 'warehouse2', 'warehouse2', '3');
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('client3@gmail', 'Client3', 'client3', 'client3', '1');
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse3@gmail', 'Warehouse3', 'warehouse3', 'warehouse3', '3');
+INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('admin@gmail', 'Admin', 'admin', 'admin', '4');
+INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee@gmail', 'Employee', 'employee', 'employee', '5');
+INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee1@gmail', 'Employee1', 'employee1', 'employee1', '5');
+
+
+
 
 
 INSERT INTO `custommandb`.`product` (`product_name`, `product_price`, `product_quantity`, `product_size`, `product_location`, `product_arrivalDate`, `product_producttype`, `product_hscode`) VALUES ('Tubes and Pipes', '88000', '5', '13', '11 Eva Road, Benoni, 1512', '2014-12-01 17:50', '1', '825');
@@ -545,3 +589,12 @@ UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='9' WHERE `billofen
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='10' WHERE `billofentry_id`='10';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofentry_id`='11';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';
+
+
+
+INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('12', '1');
+INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('13', '1');
+
+
+INSERT INTO `custommandb`.`warehousetask` (`warehousetask_employee`, `warehousetask_description`, `warehousetask_section`, `warehousetask_timestamp`, `warehousetask_endtime`) VALUES ('12', 'Stock take Section A in warehouse', 'Section A', '2016/09/20 12:01:00', '2016/09/20 16:30:22');
+
