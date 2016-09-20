@@ -545,3 +545,6 @@ UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='9' WHERE `billofen
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='10' WHERE `billofentry_id`='10';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofentry_id`='11';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_exitdate` DATETIME NULL AFTER `product_image`;
