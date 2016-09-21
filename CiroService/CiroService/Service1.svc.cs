@@ -381,7 +381,7 @@ namespace CiroService
 
                 //create qrcode
 
-                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images";
+                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -546,7 +546,7 @@ namespace CiroService
             }
             else
             {
-                string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images\\incidents\\";
                 byte[] newImage = Convert.FromBase64String(newIncident.image);
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                 memoStream.Write(newImage, 0, newImage.Length);
