@@ -193,8 +193,21 @@ namespace CiroService
                 newTransfer.transferrequest_requestDate = DateTime.Now;
                 // DateTime date = new DateTime();
                 // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
-                
-                trans.addRecord(newTransfer);
+                try
+                {
+                    MessageBox.Show(newTransfer.transferrequest_verdict);
+                    MessageBox.Show(newTransfer.transferrequest_user +"");
+                    MessageBox.Show(newTransfer.transferrequest_to.Length +"");
+                    MessageBox.Show(newTransfer.transferrequest_from.Length +"" );
+                    MessageBox.Show(newTransfer.transferrequest_description);
+                    MessageBox.Show(newTransfer.transferrequest_requestDate+"");
+                    trans.addRecord(newTransfer);
+                }
+                    
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
                 
                 addProductLog("TR7", new JsonProductLog { product_id = newRequest.productID, userID = newRequest.userID, description = "Owner: " + userExists.user_fname + " " + userExists.user_sname + System.Environment.NewLine + "Owner has Requested a Transfer of product on:" + System.Environment.NewLine + "Product ID: " + newRequest.productID + System.Environment.NewLine + "From: " + productExists.product_location + System.Environment.NewLine + "To: " + warehouseName.warehouse_location + System.Environment.NewLine + newRequest.description });
         }
