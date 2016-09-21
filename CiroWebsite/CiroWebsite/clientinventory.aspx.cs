@@ -30,7 +30,7 @@ namespace CiroWebsite
                     string table = "";
                     foreach (var item in goods)
                     {
-                        table += "<tr>";
+                        table += "<tr onclick='bingo()'>";
                         table += "<td>" + item.Name + "</td>" + "<td>" + item.currentLocation + "</td>" + "<td>" + item.size + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.Name + "</td>";
                         table += "<td>";
                         table += "<a href='productlog.aspx?id=" + item.ID + "' type='button' class='btn btn-outline  rounded btn-info btn-xs mybtn' runat='server' onserverclick=''>View</a>";
