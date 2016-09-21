@@ -8,7 +8,37 @@
 	<meta name="description" content="Admin, Dashboard, Bootstrap" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" sizes="196x196" href="infinity/assets/images/logo.png">
-	
+	<style>
+
+     .ar { text-align: right; }
+     .top-msg {
+          border-bottom: 5px solid hsla(0, 0%, 90%, .3);
+  
+          color: hsl(0, 0%, 40%);
+          font-size: 13px;
+          font-weight: 300;
+        }
+        .breadcrumb a {
+          transition: color .5s;
+        }
+        .breadcrumb a:hover {
+          color: hsl(0, 0%, 20%);
+        }
+        .breadcrumb a:after {
+          content: '\00a0\00a0\002F\00a0\00a0';
+          color: hsl(0, 0%, 70%);
+        }
+        .breadcrumb a:last-child:after {
+          content: '\00a0\00a0\002F\00a0\00a0 now you\0027re here';
+          color: hsl(0, 0%, 70%);
+        }
+          .breadcrumb a:nth-child(2) { margin: 3px 0 3px 10px; }
+          .breadcrumb a:nth-child(3) { margin: 3px 0 3px 20px; }
+          .breadcrumb a:nth-child(4) { margin: 3px 0 3px 30px; }
+          .breadcrumb a:after {
+           
+          }
+	</style>
 	
 	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
 	
@@ -34,7 +64,7 @@
 			<div class="animated">
 				<a href="../index.html" id="app-brand" class="app-brand text-white">
 					<span id="brand-icon" class="brand-icon"><i class="fa fa-gg"></i></span>
-					<span id="brand-name" class="brand-icon foldable"></span>
+					<span id="brand-name" class="brand-icon foldable">ciro</span>
 				</a>
 			</div>
 		</div>
@@ -44,7 +74,7 @@
 		<div>
 			<ul id="top-nav" class="pull-right">
                 <li class="nav-item dropdown">
-					<a href="clientinventory.aspx" >
+					<a href="index.aspx" >
 						Home
 					</a>
 				</li>
@@ -71,9 +101,19 @@
 						<i class="zmdi zmdi-hc-lg zmdi-apps"></i>
 					</a>
 					<div id="side-panel" class="side-panel">
-						
+						<div class="panel-header">
+						<h4 class="panel-title" style="font-family:"Comic Sans MS", cursive, sans-serif;>INVENTORY</h4>
+					</div>
 						<div class="scrollable-container" >
 							<div class="media-group">
+                                <a  href="declareownershiptransfer.aspx" class="media-group-item">
+									<div class="media">
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-bars  "></i><font size="3">My Inventory</font></h5>
+											
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
 								<a  href="declareownershiptransfer.aspx" class="media-group-item">
 									<div class="media">
 										<div class="media-body" style="height:30px;">
@@ -88,6 +128,15 @@
 									
 										<div class="media-body" style="height:30px;">
 											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-comments"></i><font size="3">Messages</font></h5>
+										
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+                                <a href="ClientMessages.aspx" class="media-group-item">
+									<div class="media">
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-building-o "></i><font size="3">View Warehouses</font></h5>
 										
 										</div>
 									</div>
@@ -108,7 +157,26 @@
 			</ul>
 		</div>
 		<!-- /navbar-nav -->
-		
+		 <aside id="app-aside" class="app-aside top" style="height:40px;">
+
+			<a href="#top" id="top-button">
+                <i class="icon-angle-up"></i>
+              </a>
+             
+                <div class="col-md-6  lpad  breadcrumb" style="background:white;">
+                  <span id="breadcrumb">
+                    <a href="#"><i class="fa fa-home"></i></a>
+                    <a href="#">some category</a>
+                    <a href="#">some topic</a>
+                  </span>
+                </div> 
+                <div class="col-md-6  ar lpad " style="background:white;">
+                  Welcome,
+                  <a href="#">Robin Brons</a>
+                </div>
+     
+       </aside>
+		<!-- /aside-menu --
 		<!-- navbar search -->
 		<div id="navbar-search" class="navbar-search">
 			<form action="#">
