@@ -569,3 +569,5 @@ ALTER TABLE `custommandb`.`transferrequest`
 ADD COLUMN `transferrequest_requestDate` DATETIME NULL AFTER `transferrequestc_reason`,
 ADD COLUMN `transferrequest_approvalDate` DATETIME NULL AFTER `transferrequest_requestDate`;
 
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_description` VARCHAR(255) NULL AFTER `product_reciept`;

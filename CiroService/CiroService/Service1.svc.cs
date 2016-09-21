@@ -191,16 +191,11 @@ namespace CiroService
                 newTransfer.transferrequest_from = productExists.product_location;
                 newTransfer.transferrequest_description = newRequest.description;
                 newTransfer.transferrequest_requestDate = DateTime.Now;
+                newTransfer.transferrequestc_reason = newRequest.reason;
                 // DateTime date = new DateTime();
                 // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
                 try
                 {
-                    MessageBox.Show(newTransfer.transferrequest_verdict);
-                    MessageBox.Show(newTransfer.transferrequest_user +"");
-                    MessageBox.Show(newTransfer.transferrequest_to.Length +"");
-                    MessageBox.Show(newTransfer.transferrequest_from.Length +"" );
-                    MessageBox.Show(newTransfer.transferrequest_description);
-                    MessageBox.Show(newTransfer.transferrequest_requestDate+"");
                     trans.addRecord(newTransfer);
                 }
                     
@@ -1004,6 +999,7 @@ namespace CiroService
             }
 
             requestExists.transferrequest_verdict = verdict;
+            requestExists.transferrequest_approvalDate = DateTime.Now;
             requestAccess.updateRecord(Convert.ToInt32(requestExists.transferrequest_id), requestExists);
             addProductLog("TR7", new JsonProductLog { product_id = product.ID, userID = userExists.user_id , description = userExists.user_fname + " " + userExists.user_sname + " has " + verdict + " the Request to Transfer the product." + System.Environment.NewLine + "Product ID: " + product.ID + System.Environment.NewLine + "Reason: " + description });
             var result = "Transfer Request has been " + verdict;
