@@ -16,7 +16,7 @@ namespace CiroService.DAL
         {
 
             db.users.Add(user);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.users;
         }
@@ -30,7 +30,7 @@ namespace CiroService.DAL
             }
 
             db.users.Remove(user);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.users;
         }
@@ -73,7 +73,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

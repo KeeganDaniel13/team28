@@ -16,7 +16,7 @@ namespace CiroService.DAL
         {
 
             db.invoices.Add(invoice);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.invoices;
         }
@@ -30,7 +30,7 @@ namespace CiroService.DAL
             }
 
             db.invoices.Remove(invoice);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.invoices;
         }

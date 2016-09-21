@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.hscodes.Add(hscode);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.hscodes;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.hscodes.Remove(hscode);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.hscodes;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

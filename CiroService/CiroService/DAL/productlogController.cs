@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.productlogs.Add(productlog);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.productlogs;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.productlogs.Remove(productlog);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.productlogs;
         }
@@ -70,7 +70,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
