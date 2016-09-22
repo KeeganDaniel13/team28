@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Transfer Goods | Ciro" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="transfergoods.aspx.cs" Inherits="CiroWebsite.transfergoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link rel="stylesheet" href="infinity/css/inventory.css">
     <style>
         .wizard {
     margin: 20px auto;
@@ -212,7 +213,6 @@ span.round-tab:hover {
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<h2>Transfer Manager</h2>
 <div class="row">
 	<section>
     <div class="wizard">
@@ -231,14 +231,14 @@ span.round-tab:hover {
                 <li role="presentation" class="disabled">
                     <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                         <span class="round-tab">
-                            <i class="fa fa-exchange"></i>
+                            <i class="fa fa-plus"></i>
                         </span>
                     </a>
                 </li>
                 <li role="presentation" class="disabled">
                     <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                         <span class="round-tab">
-                            <i class="glyphicon glyphicon-pencil"></i>
+                            <i class="fa fa-check-circle-o"></i>
                         </span>
                     </a>
                 </li>
@@ -256,8 +256,8 @@ span.round-tab:hover {
         <form role="form">
             <div class="tab-content">
                 <div class="tab-pane active" role="tabpanel" id="step1">
-                    <h3>Transfer Ownership Document</h3>
-                    <p>If you wish to transfer your ownership to another partner complete the following</p>
+                    <h3>Select A Warehouse</h3>
+                   
                 <table>
                <%listwarehouse(); %>
                </table>
@@ -266,113 +266,124 @@ span.round-tab:hover {
                         <li><a type="button" class="btn btn-primary next-step">Save and continue</a></li>
                     </ul>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="step2">
-                    <h3>Single Adminstrative Document</h3>
-                    <p>To be completed for transfer process</p>
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<strong>Warning! </strong>
-						<span>Better check yourself, you're not looking too good.</span>
-					</div>
-                    <form class="form-inline">
-                        <div class="form-inline" >
-						<div class="form-group ">
-							<label  for="exampleInputEmail3">Container</label><br />
-							<input runat="server" type="text" class="form-control" id="goodsContainer" placeholder="Enter Container 0 or 1" style="width: 300px;">
-						</div>
-						<div class="form-group ">
-							<label  for="exampleInputPassword3">Origin</label><br />
-							<input runat="server"  type="text" class="form-control" id="origincountry" placeholder="Country Of Orgin" style="width: 400px;">
-						</div>
-						</div>
-                        <div class="form-inline" >
-						<div class="form-group">
-							<label  for="exampleInputEmail3">Mode Of Transport</label><br/>
-							
-							<select class="form-control" runat="server" id="transport" style="width: 300px;">
-								<option>Air Transport</option>
-								<option>Sea Transport</option>
-								<option>Powered Road Vehicle</option>
-								<option>Post Office Mail</option>
-								<option>Own propulsion</option>
-							</select>
-						
-						</div>
-						<div class="form-group">
-							<label  for="exampleInputPassword3">Net Mass(kg)</label><br/>
-							<input type="text" runat="server" class="form-control" id="mass" placeholder="Enter Mass of the package" style="width: 400px;">
-						</div>
-						</div>
-                         <div class="form-inline" >
-						<div class="form-group ">
-							<label  for="exampleInputEmail3">Procedure</label><br />
-							<input runat="server" type="email" class="form-control" id="Proceduregoods" placeholder="Enter Procedure of Goods" style="width: 300px;">
-						</div>
-						<div class="form-group ">
-							<label  for="exampleInputPassword3">Estimated Release Date</label><br />
-									<div class='input-group date' id='datetimepicker2' data-plugin="datetimepicker">
-										<input type='text' class="form-control" style="width: 400px;"/>
-										<span class="input-group-addon bg-info text-white">
-											<span class="glyphicon glyphicon-calendar"></span>
-										</span>
-									</div>
-						</div>
-						</div>
-                         <div class="form-inline" >
-						<div class="form-group ">
-							<label  for="exampleInputEmail3">Package Description</label><br />
-							<textarea name="control-demo-5" runat="server" id="description" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
-						</div>
-						<div class="form-group ">
-							<label for="exampleInputFile">Package Documentation</label><br />
-							<input type="file" id="exampleInputFile" class="form-control" style="width: 400px;">
-						</div>
-						</div>
-                        <div class="form-inline" >
-						<div class="form-group ">
-							<label  for="exampleInputEmail3">Reason for Transfer</label><br />
-							<textarea name="control-demo-5" id="reason" runat="server" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
-						</div>
-						<div class="form-group ">
-							<label for="exampleInputFile">Package Image</label><br />
-							<input type="file" id="exampleInputFile" class="form-control" style="width: 400px;">
-						</div>
-						</div>
-					</form>
+                <div class="tab-pane" role="tabpanel" id="step3">
+            
+                    <div class="col-sm-12 col-md-12">
+	    <div class="panel panel-primary panel-custom inventory">
+		    <div class="panel-heading">
+			    <h4 class="panel-title">Confirm Transfer</h4>
+		    </div>
+		    <div class="panel-body">
+			     <table id="acrylic" width="100%">
+            <thead>
+                <tr>
+                    <th>Package Name</th>
+			        <th>Unit(s)</th>
+			        <th>Location</th> 
+			        <th>Destination</th>
+                    <th>Transfer Date</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carolina Biggleswade</td>
+                    
+                    <td>65</td>
+                    <td>Jockey</td>
+                    <td>Old Storage</td>
+                    <td>20.09.2016</td>
+                </tr>
+                 <tr>
+                    <td>Carolina Biggleswade</td>
+                  
+                    <td>65</td>
+                    <td>Jockey</td>
+                    <td>Old Storage</td>
+                    <td>20.09.2016</td>
+                </tr>  
+            </tbody>
+        </table>
+		    </div>
+	    </div>
+    </div><!-- END column -->
+                    <form>
+			<div class="form-group">
+                <label for="changeReason">Reason for Transfer</label>
+               <textarea name="control-demo-5" runat="server" id="changeReason" class="form-control" cols="30" rows="2" style="width: 300px;"></textarea>
+                </div>
+		</form>
                     <ul class="list-inline pull-right">
                         <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                         <li><button type="button" runat="server" onserverclick="saveInfo" class="btn btn-primary next-step">Save and continue</button></li>
                     </ul>
                 </div>
-                <div class="tab-pane" role="tabpanel" id="step3">
-                    <h3>Verify Transfer</h3>
+                <div class="tab-pane" role="tabpanel" id="step2">
+                    <h3>Add Items To Transfer</h3>
 
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<strong>Warning </strong>
-						<span>Without verifying your transfer, your package may be transfered incorrectly</span>
-					</div>
+                    <div class="col-sm-12 col-md-12">
+	    <div class="panel panel-primary panel-custom inventory">
+		    <div class="panel-heading">
+               
+			    <h4 class="panel-title">Warehouse Transfer</h4>
+                <a type="button" class="pull-right"><i class="fa fa-plus "></i></a>
+               
+		    </div>
+		    <div class="panel-body">
+			     <table id="acrylic" width="100%">
+            <thead>
+                <tr>
+                    <th>Package Name</th>
+			        <th>Unit(s)</th>
+			        <th>Transfer Date</th> 
+			        <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carolina Biggleswade</td>
+                    <td>23</td>
+                    <td>65</td>
+                    <td>Jockey</td>
+                    <td> 
+                        <div class="row">
+                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
+                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
+                            </div>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>Carolina Biggleswade</td>
+                    <td>23</td>
+                    <td>65</td>
+                    <td>Jockey</td>
+                    <td>
+                        <div class="row">
+                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
+                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
+                            </div>
+                    </td> 
+                </tr>  
+            </tbody>
+        </table>
+		    </div>
+	    </div>
+    </div><!-- END column -->
 
-
-                    <ul class="list-inline pull-right">
-                        <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                        <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                        <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
-                    </ul>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="complete">
-                    <h3>Successfully Request Your Transfer</h3>
-                     <div class="alert alert-success alert-dismissable success-alert" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            Success! message sent successfully.
-                        </div>
-                    <ul class="list-inline pull-right">
-                        <li><button id="btnsuccess" runat="server" onserverclick="completeRequest" type="button" class="btn btn-outline mw-md btn-success ">Submit Transfer</button></li>
-                  
-                    </ul>
-                    
-                </div>
-                <div class="clearfix"></div>
+        <ul class="list-inline pull-right">
+            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+        </ul>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="complete">
+            <div class="alert alert-success" role="alert">
+								<strong>Success! </strong>
+								<span>You successfully submitted your warehouse transfer request.</span>
+								<a href="#" class="alert-link">view transfer</a>
+							</div>
+        </div>
+        <div class="clearfix"></div>
             </div>
         </form>
     </div>

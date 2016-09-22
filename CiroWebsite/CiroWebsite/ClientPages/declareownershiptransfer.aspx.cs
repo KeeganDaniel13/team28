@@ -11,6 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             if (Request.QueryString["accpet"] != null)
             {
                 try
@@ -36,19 +37,19 @@ namespace CiroWebsite
 
                 }
                 Response.Redirect("declareownershiptransfer.aspx");
-            }
+            }*/
         }
 
         protected void proceed(object sender, EventArgs e)
         {
             var userID = (CiroService .JsonUser )Session["user"] ;
-            Session["changeUser"] = new ChangeUser { tranferer = userID.id, tranfereeName = transfereeName.Value, transfereeEmail = transfereeEmail.Value, reason = changeReason.Value };
+           // Session["changeUser"] = new ChangeUser { tranferer = userID.id, tranfereeName = transfereeName.Value, transfereeEmail = transfereeEmail.Value, reason = changeReason.Value };
             Response.Redirect("changeofownership.aspx");
         }
-
+        
         protected void listRequests()
         {
-            var user = (CiroService .JsonUser)Session["user"];
+            var user = (CiroService.JsonUser)Session["user"];
             try
             {
                 var requests = CiroSingleton.ServerCalls.getUserOwnershipRequest(new CiroService.JsonUser { id = user.id });
@@ -62,5 +63,6 @@ namespace CiroWebsite
             catch (Exception) { }
 
         }
+     
     }
 }
