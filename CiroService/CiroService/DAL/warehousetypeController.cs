@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.warehousetypes.Add(warehousetype);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.warehousetypes;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.warehousetypes.Remove(warehousetype);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.warehousetypes;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

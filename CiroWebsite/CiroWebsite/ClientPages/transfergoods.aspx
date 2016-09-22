@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Transfer Goods | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="transfergoods.aspx.cs" Inherits="CiroWebsite.transfergoods" %>
+﻿<%@ Page Title="Transfer Goods | Ciro" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="transfergoods.aspx.cs" Inherits="CiroWebsite.transfergoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link rel="stylesheet" href="infinity/css/inventory.css">
     <style>

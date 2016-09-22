@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Depositor | Inventory" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="clientinventory.aspx.cs" Inherits="CiroWebsite.clientinventory" %>
+﻿<%@ Page Title="Depositor | Inventory" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="clientinventory.aspx.cs" Inherits="CiroWebsite.clientinventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         td, th {
@@ -34,6 +34,7 @@ tbody > tr {
 		</tr>
 	</thead>
 								
+<<<<<<< HEAD:CiroWebsite/CiroWebsite/clientinventory.aspx
 	<tbody id="list" runat="server">
 				<tr >
                     <td onclick="bingo()"><a>Carolina Biggleswade</a></td>
@@ -50,12 +51,19 @@ tbody > tr {
                     </td>
                     
                 </tr>				
+=======
+	<tbody id="list" runat="server">			
+>>>>>>> 8567ce59407e3a3f8857a3ecdf03a49a5e4d9e59:CiroWebsite/CiroWebsite/ClientPages/clientinventory.aspx
 	</tbody>
 </table>
 
 
 
+<<<<<<< HEAD:CiroWebsite/CiroWebsite/clientinventory.aspx
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+=======
+            <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+>>>>>>> 8567ce59407e3a3f8857a3ecdf03a49a5e4d9e59:CiroWebsite/CiroWebsite/ClientPages/clientinventory.aspx
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -164,7 +172,7 @@ tbody > tr {
     
     
     
-    <script>function bingo() {
-    $('#myModal').modal('show');
+    <script>function bingo(id) {
+    $(id).modal('show');
 }</script>
 </asp:Content>

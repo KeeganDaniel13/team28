@@ -39,7 +39,7 @@ namespace CiroService
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "transferrequest")]
-        string transeferRequest(jsonTRequest newRequest);
+        string transeferRequest(IEnumerable<jsonTRequest> newRequest);
 
         //Complete
         [OperationContract]

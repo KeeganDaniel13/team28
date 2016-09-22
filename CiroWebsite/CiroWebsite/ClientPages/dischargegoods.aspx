@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Discharge Goods | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="dischargegoods.aspx.cs" Inherits="CiroWebsite.dischargegoods" %>
+﻿<%@ Page Title="Discharge Goods | Ciro" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="dischargegoods.aspx.cs" Inherits="CiroWebsite.dischargegoods" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         td, th {

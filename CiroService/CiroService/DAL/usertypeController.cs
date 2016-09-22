@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.usertypes.Add(usertype);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.usertypes;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.usertypes.Remove(usertype);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.usertypes;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

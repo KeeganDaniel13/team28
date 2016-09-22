@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.releaserequests.Add(releaserequest);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.releaserequests;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.releaserequests.Remove(releaserequest);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.releaserequests;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
