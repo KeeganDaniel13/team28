@@ -35,11 +35,9 @@ namespace CiroWebsite
             var productIDt = Convert.ToInt32(Session["transferProduct"]);
             var user = (CiroService.JsonUser)Session["user"];
             var warehouse = Convert.ToInt32(Session["warehouse"]);
-           // MessageBox.Show(user.id+"User ID");
-            //MessageBox.Show(transInfo.description);
-            //MessageBox.Show(Convert.ToInt32(Session["warehouse"]) + "Warehouse ID");
-            //MessageBox.Show(productIDt+"Product ID");
-            CiroSingleton .ServerCalls .transeferRequest(new CiroService.jsonTRequest { userID = user.id, description = "", endWarehouse = warehouse, productID = productIDt });
+            List<CiroService.jsonTRequest> requests = new List<CiroService.jsonTRequest>();
+            requests.Add(new CiroService.jsonTRequest { userID = user.id, description = "", endWarehouse = warehouse, productID = productIDt });
+            CiroSingleton .ServerCalls .transeferRequest(requests.ToArray());
         }
 
         protected void listwarehouse()
@@ -54,7 +52,7 @@ namespace CiroWebsite
                 body += "<td>";
                 body += "<table class='table' style='width:350px'>";
                 body += "<tr><th colspan='5'><b>" + w.name + "</b></th></tr>";
-                body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/><a href='warehouseview.aspx' class='btn btn-outline mw-md rounded btn-success btn-xs'>View Warehose</a><br/><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-outline mw-md rounded btn-success btn-xs'>Select Warehouse</a></div></td></tr>";
+                body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/><a href='viewware.aspx' class='btn btn-outline mw-md rounded btn-success btn-xs'>View Warehose</a><br/><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-outline mw-md rounded btn-success btn-xs'>Select Warehouse</a></div></td></tr>";
                 body += "</table>";
                 body += "</td>";
                 if (count % 3 == 0)

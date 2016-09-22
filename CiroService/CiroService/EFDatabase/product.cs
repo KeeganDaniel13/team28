@@ -44,6 +44,7 @@ namespace CiroService.EFDatabase
         public string product_Expired { get; set; }
         public string product_insured { get; set; }
         public string product_reciept { get; set; }
+        public string product_description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<billofentry> billofentries { get; set; }

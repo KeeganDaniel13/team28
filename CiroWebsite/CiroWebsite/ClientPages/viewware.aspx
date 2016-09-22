@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="viewware.aspx.cs" Inherits="CiroWebsite.viewware" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="viewware.aspx.cs" Inherits="CiroWebsite.viewware" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="infinity/assets/css/style.css">
+    <link rel="stylesheet" href="../infinity/assets/css/style.css">
       <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="infinity/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../infinity/css/slick.css">
     <!-- price picker slider -->
-    <link rel="stylesheet" type="text/css" href="infinity/css/nouislider.css">
+    <link rel="stylesheet" type="text/css" href="../infinity/css/nouislider.css">
     <!-- Fancybox slider -->
-    <link rel="stylesheet" href="infinity/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <link rel="stylesheet" href="../infinity/css/jquery.fancybox.css" type="text/css" media="screen" /> 
     <!-- Theme color -->
-    <link id="switcher" href="infinity/css/theme-color/default-theme.css" rel="stylesheet"> 
+    <link id="switcher" href="../infinity/css/theme-color/default-theme.css" rel="stylesheet"> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -41,15 +41,13 @@
             <!-- Start properties content body -->
             <div class="aa-properties-details">
              <div class="aa-properties-details-img">
-               <img src="infinity/assets/images/11.jpg" alt="img">
+               <img src="../infinity/assets/images/11.jpg" alt="img">
               
              </div>
-             <div class="aa-properties-info">
+             <div class="aa-properties-info" runat="server" id="warehouseInfo">
                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, alias!</h2>
                <span class="aa-price">$65000</span>
                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptatibus veniam non voluptate, ipsa eius magni aliquid ratione sit, odio reprehenderit in quis repudiandae dolor.</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur, veritatis, ducimus in aliquam magnam voluptatibus ullam libero fugiat temporibus at, aliquid explicabo placeat eligendi, assumenda magni saepe eius consequuntur.</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dicta aliquid, autem, cum, impedit nostrum, rem molestias quisquam ab iure enim totam? Itaque esse ut adipisci officiis nulla repellendus ratione dolore, iste ex doloribus tenetur eos provident quam quasi maxime.</p>
                <h4>Warehouse Features</h4>
                <ul>
                  <li>4 Bedroom</li>
@@ -99,8 +97,7 @@
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading"><a href="#">This is Title</a></h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>                
-                  <span>$65000</span>
+                  <p id="name" runat="server"></p>                
                 </div>              
               </div>
               <div class="media">
@@ -123,15 +120,15 @@
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <script src="infinity/js/jquery.min.js"></script>   
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="infinity/js/bootstrap.js"></script>   
+  <script src="../infinity/js/bootstrap.js"></script>   
   <!-- slick slider -->
-  <script type="text/javascript" src="infinity/js/slick.js"></script>
+  <script type="text/javascript" src="../infinity/js/slick.js"></script>
   <!-- Price picker slider -->
-  <script type="text/javascript" src="infinity/js/nouislider.js"></script>
+  <script type="text/javascript" src="../infinity/js/nouislider.js"></script>
    <!-- mixit slider -->
-  <script type="text/javascript" src="infinity/js/jquery.mixitup.js"></script>
+  <script type="text/javascript" src="../infinity/js/jquery.mixitup.js"></script>
   <!-- Add fancyBox -->        
-  <script type="text/javascript" src="infinity/js/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="../infinity/js/jquery.fancybox.pack.js"></script>
   <!-- Custom js -->
-  <script src="js/custom.js"></script> 
+  
 </asp:Content>

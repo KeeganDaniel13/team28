@@ -1,68 +1,46 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="editor.aspx.cs" Inherits="CiroWebsite.editor" %>
+﻿<%@ Page Title="Depositor | Inventory" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="clientinventory.aspx.cs" Inherits="CiroWebsite.clientinventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="infinity/css/inventory.css">
-      <script src="infinity/assets/myjs/mode.js"></script>    
-    
+    <style>
+        td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+    </style>
+    <style>
+        @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+tbody > tr {
+    cursor: pointer;
+}
+
+.result{
+    margin-top:20px;
+}
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  
-    <div class="col-sm-12 col-md-12">
-	    <div class="panel panel-primary inventory">
-		    <div class="panel-heading">
-			    <h4 class="panel-title">Inventory</h4>
-		    </div>
-		    <div class="panel-body">
-			     <table id="acrylic" width="100%">
-            <thead>
-                <tr>
-                    <th>Package Name</th>
-			        <th>Unit</th>
-			        <th>Arrival Date</th>
-			        <th>ERD</th>     
-			        <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Carolina Biggleswade</td>
-                    <td>23</td>
-                    <td>65</td>
-                    <td>Jockey</td>
-                     <td>23</td>
-                   
-                    <td> 
-                        <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
-                            </div>
-                    </td>
-                    
-                </tr>
-                 <tr>
-                    <td>Carolina Biggleswade</td>
-                    <td>23</td>
-                    <td>65</td>
-                    <td>Jockey</td>
-                      <td>23</td>
-                    <td>
-                        <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
-                            </div>
-                    </td>
-                   
-                </tr>
-               
-                
-            </tbody>
-        </table>
-		    </div>
-	    </div>
-    </div><!-- END column -->
-  
-    <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <h2>Warehoused Inventory</h2>
+<table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			<th>Package Name</th>
+			<th>Package Location</th>
+			<th >Unit</th>
+			<th>Arrival Date</th>
+			<th>ERD</th>     
+			<th>Status</th>
+            <th>Action</th>
+		</tr>
+	</thead>
+								
+	<tbody id="list" runat="server">			
+	</tbody>
+</table>
+
+
+
+            <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -73,7 +51,7 @@
                   
                     <table class="pull-left col-md-8 ">
                          <tbody>
-                             <tr>
+                             <tr >
                                  <td class="h6"><strong>Código</strong></td>
                                  <td> </td>
                                  <td class="h5">02051</td>
@@ -164,8 +142,14 @@
               </div>
             </div>
             </div>
-<!-- fim Modal-->
-
- 
+<!-- fim Modal-->    
     
+    
+    
+    
+    
+    
+    <script>function bingo(id) {
+    $(id).modal('show');
+}</script>
 </asp:Content>
