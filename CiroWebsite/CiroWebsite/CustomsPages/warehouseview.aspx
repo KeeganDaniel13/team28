@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
+﻿<%@ Page Title="Ciro" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="warehouseview.aspx.cs" Inherits="CiroWebsite.warehouseview" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 </asp:Content>
