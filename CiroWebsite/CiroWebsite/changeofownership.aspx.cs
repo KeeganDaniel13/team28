@@ -12,6 +12,7 @@ namespace CiroWebsite
         List<CiroService.jsonProduct> ownedProducts;
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             if (!IsPostBack)
             {
                 var user =(CiroService .JsonUser)(Session["user"]);
@@ -20,11 +21,12 @@ namespace CiroWebsite
                 Session["userList"] = ownedProducts;
                 foreach (var prod in ownedProducts)
                 {
-                    goods.Items.Add(new ListItem(prod.Name + "-" + prod.bill/*+"-" add Country*/ , "" + prod.ID));
+                    goods.Items.Add(new ListItem(prod.Name + "-" + prod.bill/*+"-" add Country , "" + prod.ID));
                 }
             }
+            */
         }
-
+        /*
         protected void fillInfo(object sender, EventArgs e)
         {
 
@@ -43,7 +45,7 @@ namespace CiroWebsite
             }
 
         }
-
+        */
         protected void Approve(object sender, EventArgs e)
         {
 

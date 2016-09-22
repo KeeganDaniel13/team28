@@ -13,22 +13,31 @@ namespace CiroWebsite {
     public partial class changeofownership {
         
         /// <summary>
-        /// goods control.
+        /// cosignee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect goods;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cosignee;
         
         /// <summary>
-        /// Send control.
+        /// nameofgoods control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton Send;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nameofgoods;
+        
+        /// <summary>
+        /// quantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText quantity;
         
         /// <summary>
         /// origincountry control.
@@ -65,5 +74,32 @@ namespace CiroWebsite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea desc;
+        
+        /// <summary>
+        /// packagekind control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText packagekind;
+        
+        /// <summary>
+        /// reasontrans control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea reasontrans;
+        
+        /// <summary>
+        /// additional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea additional;
     }
 }

@@ -6,23 +6,16 @@
     <div class="col-md-4">
 		<form>
 			<div class="form-group">
-                <input type="text" class="form-control" runat="server" id="transfereeEmail" placeholder="Transferee Email" style="width: 300px;"><br/>
-                <input type="text" class="form-control" runat="server" id="transfereeName" placeholder="Transferee Name" style="width: 300px;"><br/>
-                <div class='input-group date' id='datetimepicker2' data-plugin="datetimepicker">
-					    <input type='text' class="form-control"/>
-					    <span class="input-group-addon bg-info text-white">
-						    <span class="fa fa-calendar"></span>
-					    </span>
-				    </div><br/>
-                <label for="exampleInputFile">Reason for Transfer of Ownership</label>
-				<textarea name="control-demo-5" runat="server" id="changeReason" class="form-control" cols="30" rows="2" style="width: 300px;"></textarea><br/>
+                <input type="text" class="form-control" runat="server" id="transfereeEmail" placeholder="Cosignee Email" style="width: 300px;"><br/>
+                <input type="text" class="form-control" runat="server" id="transfereeName" placeholder="Cosignee Name" style="width: 300px;"><br/>
+
 			<div class="checkbox checkbox-primary">
 					<input type="checkbox" id="checkbox-demo-1"/>
 					<label for="checkbox-demo-1">I Agree with all terms and conditions</label>
 				</div>
             </div>
 			
-			<button type="submit" runat="server" onserverclick="proceed" class="btn btn-primary btn-outline btn-sm">Proceed</button>
+			<button type="submit" runat="server" onserverclick="proceed" class="btn btn-info btn-sm">Select</button>
 		</form>
 	
 	</div><!-- END column -->
@@ -31,18 +24,22 @@
        <thead>
 		<tr>
             <th>Product Name</th>
-			<th>Transferer</th>
-			<th>Origin</th>
-            <th>DOA</th>
-            <th>DOT</th>
-			<th>Reason</th>
+			<th>Cosignee</th>
+            <th>Entry Number</th>
+			<th>Location</th>
+            <th>Arrival Date</th>
             <th>Action</th>
 		</tr>
 	</thead>					
 	<tbody>
-        <% listRequests(); %>							
+       <!--  listRequests(); -->					
 	</tbody>
 </table>
+        <br/>
+         <ul class="list-inline pull-right">
+            <li><button type="button" class="btn btn-success btn-sm">Proceed</button></li>
+        </ul>
 	</div><!-- END column -->
+
      </div>
 </asp:Content>

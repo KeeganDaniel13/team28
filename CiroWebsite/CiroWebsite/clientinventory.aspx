@@ -35,8 +35,8 @@ tbody > tr {
 	</thead>
 								
 	<tbody id="list" runat="server">
-				<tr onclick="bingo()">
-                    <td>Carolina Biggleswade</td>
+				<tr >
+                    <td onclick="bingo()"><a>Carolina Biggleswade</a></td>
                     <td>23</td>
                     <td>65</td>
                     <td>Jockey</td>
@@ -44,8 +44,8 @@ tbody > tr {
                    
                     <td> 
                         <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
+                        <a href="www.google.com" type="button" class="btn rounded btn-sm btn-danger">Release</a>
+                         <a type="button" class="btn  btn-sm btn-success">Transfer</a>
                             </div>
                     </td>
                     
@@ -55,7 +55,7 @@ tbody > tr {
 
 
 
-            <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">

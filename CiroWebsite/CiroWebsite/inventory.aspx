@@ -9,7 +9,10 @@
     <div class="col-sm-12 col-md-12">
 	    <div class="panel panel-primary inventory">
 		    <div class="panel-heading">
+                <div class="row">
 			    <h4 class="panel-title">Inventory</h4>
+                    
+                </div>
 		    </div>
 		    <div class="panel-body">
 			     <table id="acrylic" width="100%">
