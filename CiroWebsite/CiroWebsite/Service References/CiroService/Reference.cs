@@ -644,6 +644,9 @@ namespace CiroWebsite.CiroService {
         private int productIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string reasonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int userIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -691,6 +694,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.productIDField.Equals(value) != true)) {
                     this.productIDField = value;
                     this.RaisePropertyChanged("productID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string reason {
+            get {
+                return this.reasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.reasonField, value) != true)) {
+                    this.reasonField = value;
+                    this.RaisePropertyChanged("reason");
                 }
             }
         }
@@ -962,6 +978,9 @@ namespace CiroWebsite.CiroService {
         private double availableField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descrptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -998,6 +1017,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.availableField.Equals(value) != true)) {
                     this.availableField = value;
                     this.RaisePropertyChanged("available");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string descrption {
+            get {
+                return this.descrptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descrptionField, value) != true)) {
+                    this.descrptionField = value;
+                    this.RaisePropertyChanged("descrption");
                 }
             }
         }
@@ -3385,10 +3417,10 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.TransferDetails[]> listTransferTRequestsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transeferRequest", ReplyAction="http://tempuri.org/IService1/transeferRequestResponse")]
-        string transeferRequest(CiroWebsite.CiroService.jsonTRequest newRequest);
+        string transeferRequest(CiroWebsite.CiroService.jsonTRequest[] newRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transeferRequest", ReplyAction="http://tempuri.org/IService1/transeferRequestResponse")]
-        System.Threading.Tasks.Task<string> transeferRequestAsync(CiroWebsite.CiroService.jsonTRequest newRequest);
+        System.Threading.Tasks.Task<string> transeferRequestAsync(CiroWebsite.CiroService.jsonTRequest[] newRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/transferList", ReplyAction="http://tempuri.org/IService1/transferListResponse")]
         CiroWebsite.CiroService.TransferDetails[] transferList();
@@ -3854,11 +3886,11 @@ namespace CiroWebsite.CiroService {
             return base.Channel.listTransferTRequestsAsync();
         }
         
-        public string transeferRequest(CiroWebsite.CiroService.jsonTRequest newRequest) {
+        public string transeferRequest(CiroWebsite.CiroService.jsonTRequest[] newRequest) {
             return base.Channel.transeferRequest(newRequest);
         }
         
-        public System.Threading.Tasks.Task<string> transeferRequestAsync(CiroWebsite.CiroService.jsonTRequest newRequest) {
+        public System.Threading.Tasks.Task<string> transeferRequestAsync(CiroWebsite.CiroService.jsonTRequest[] newRequest) {
             return base.Channel.transeferRequestAsync(newRequest);
         }
         

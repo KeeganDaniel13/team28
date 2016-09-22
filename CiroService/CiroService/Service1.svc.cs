@@ -67,6 +67,7 @@ namespace CiroService
         {
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
+
             var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name)) && c.user_password.Equals(login.password));
             if (user == null)
             {
@@ -393,137 +394,6 @@ namespace CiroService
 
 
         }
-        /*public void stockAdd(string origin, IEnumerable<jsonProduct> newProduct)
-        {
-            //Check if we have relation with country
-            countryrelationController countryAccess = new countryrelationController();
-            producttypeController pTypeAccess = new producttypeController();
-            countryrelation country = null;
-            try
-            {
-                country = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
-            }
-            catch (ArgumentNullException x)
-            { }
-
-
-
-            int hscode, producttype;
-            //add to table with hscode
-            if (country != null)
-            {
-                //duty
-                hscode = 825;
-                producttype = 1;
-            }
-            else
-            {
-                //non duty
-                hscode = 825;
-                producttype = 2;
-            }
-            productController productAccess = new productController();
-            billofentryController billAccess = new billofentryController();
-            DateTime date = DateTime.Now;
-            string origin2 = origin;
-            string genCode = "" + hscode + date.Day + date.Second + origin2.Substring(0, 2);
-            foreach (var p in newProduct)
-            {
-
-
-                //add products to product table
-
-                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
-                //adding new product with bill of entry
-
-                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
-                //billAccess.addRecord(new billofentry { billofentry_origin = origin, billofentry_product = addToBill.product_id, billofentry_user = p.userID, billofentry_code = genCode });
-                var tax = addTax(new JsonProducts { id = addToBill.product_id }, new JsonBillofEntry { origin = origin2, billCode = genCode, user = p.userID, product = addToBill.product_id });
-                //add to transferlist
-
-                transferlistController transferListkAccess = new transferlistController();
-                transferListkAccess.addRecord(new transferlist { transferlist_to = p.transferLocation, transferlist_product = addToBill.product_id, transferlist_from = p.currentLocation });
-
-                //create qrcode
-
-                string path = "C:/Users/Kgomotso/team28/CiroService/CiroService/images";
-                string qrcodeInfo = addToBill.product_id + "";
-                QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
-                qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
-                qrcodeMaker.QRCodeScale = 10;
-                MessageBox.Show("Adding QRCode");
-                Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-                qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
-                MessageBox.Show("QR Added");
-            }
-
-        }*/
-
-        /**
-        *   IMPORTANT!!!!
-        *   MUST FIX
-        *   hscodes needs to be updated and adding a product into the product table needs to be moved to a seperate method
-        *   with the bill of rights
-        */
-        /*public void stockAdd(string origin, IEnumerable<JsonProducts> newProduct, JsonWarehouse _warehouse)
-        { 
-            //Check if we have relation with country
-            countryrelationController countryAccess = new countryrelationController();
-            producttypeController pTypeAccess = new producttypeController();
-            countryrelation country = null;
-            try
-            {
-                country = countryAccess.getTable().FirstOrDefault<countryrelation>(c => c.countryrelation_name.ToLower().Equals(origin.ToLower()));
-            }
-            catch (ArgumentNullException x)
-            { }
-
-
-
-            int hscode, producttype;
-            //add to table with hscode
-            if (country != null)
-            {
-                //duty
-                hscode = 825;
-                producttype = 1;
-            }
-            else
-            {
-                //non duty
-                hscode = 825;
-                producttype = 2;
-            }
-            productController productAccess = new productController();
-            billofentryController billAccess = new billofentryController();
-			DateTime date = DateTime.Now;
-            string origin2 = origin;
-			string genCode = ""+hscode + date.Day  + date.Second + origin2.Substring(0,2);
-
-            foreach (var p in newProduct)an
-            {
-                //add products to product table
-                productAccess.addRecord(new product { product_name = p.name, product_size = p.size, product_quantity = p.quantity, product_price = Convert.ToDecimal(p.price), product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype });
-                //adding new product with bill of entry
-                product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.name) && c.product_hscode == hscode && c.product_arrivalDate == date);
-                addTax(new JsonProducts { id = addToBill.product_id }, new JsonBillofEntry { origin = origin2, billCode = genCode, user = p.userid, product = addToBill.product_id });
-
-                //add to transferlist
-                transferlistController transferListkAccess = new transferlistController();
-                transferListkAccess.addRecord(new transferlist { transferlist_to = _warehouse.location, transferlist_product = addToBill.product_id, transferlist_from = addToBill.product_location });
-
-                //create qrcode 
-                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\";
-                string qrcodeInfo = addToBill.product_id + "";
-                QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
-                qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
-                qrcodeMaker.QRCodeScale = 10;
-
-                Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
-                qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
-
-            }   
-        }*/
 
         //need implemantation
         //Not Important Yet
@@ -975,7 +845,7 @@ namespace CiroService
                 }
                 int warehouseSize = Convert.ToInt32(warehouses.warehouse_size);
                 double availabilityW = total / Convert.ToDouble(warehouseSize) * 100;
-                warehouseList.Add(new JsonWarehouse { id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype), available = availabilityW, user = Convert.ToInt32(warehouses.warehouse_user) });
+                warehouseList.Add(new JsonWarehouse { descrption = warehouses.warehouse_description.ToString(),id = warehouses.warehouse_id, name = warehouses.warehouse_name, location = warehouses.warehouse_location, size = Convert.ToInt32(warehouses.warehouse_size), warehousetype = Convert.ToInt32(warehouses.warehouse_warehousetype), available = availabilityW, user = Convert.ToInt32(warehouses.warehouse_user) });
             }
             return warehouseList;
         }
@@ -1167,7 +1037,7 @@ namespace CiroService
             }
             return ownerReq;
         }
-
+        
         public IEnumerable<JsonUser> getTraderInStock(JsonWarehouse warehouses)
         {
             var warehouseAccess = new warehouseController();
@@ -1512,7 +1382,6 @@ namespace CiroService
             locationaccess.updateRecord(loca.location_id, loca);
         }
 
-
         public jsonlocation getPackageInWarehouse(string packageID)
         {
             var loc = new jsonlocation();
@@ -1714,7 +1583,6 @@ namespace CiroService
             return categories;
         }
 
-
         //size categories for width - for warehouses
         public IEnumerable<PackageSizeCategory> PackagewidthCategories()
         {
@@ -1772,8 +1640,6 @@ namespace CiroService
             }
             return incidents;
         }
-
-
 
         //Most common release destination
         public IEnumerable<WarehouseReleasescs> WarehouseReleases()

@@ -189,6 +189,7 @@
           <Property Name="warehouse_user" Type="int" />
           <Property Name="warehouse_warehousetype" Type="int" />
           <Property Name="warehouse_image" Type="varchar" MaxLength="255" />
+          <Property Name="warehouse_description" Type="longblob" />
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -880,6 +881,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="warehouse_user" Type="Int32" />
           <Property Name="warehouse_warehousetype" Type="Int32" />
           <Property Name="warehouse_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="warehouse_description" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="locations" Relationship="Self.location_warehouse" FromRole="warehouse" ToRole="location" />
           <NavigationProperty Name="user" Relationship="Self.warehouse_user" FromRole="warehouse" ToRole="user" />
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
@@ -1546,6 +1548,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="warehouse_user" ColumnName="warehouse_user" />
                 <ScalarProperty Name="warehouse_warehousetype" ColumnName="warehouse_warehousetype" />
                 <ScalarProperty Name="warehouse_image" ColumnName="warehouse_image" />
+                <ScalarProperty Name="warehouse_description" ColumnName="warehouse_description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
