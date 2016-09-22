@@ -69,21 +69,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addofficial.aspx" />
-    <Content Include="AdminReports.aspx" />
+    <Content Include="AdminPages\addofficial.aspx" />
+    <Content Include="AdminPages\AdminReports.aspx" />
     <Content Include="approveTransfers.aspx" />
     <Content Include="ClientPages\changeofownership.aspx" />
     <Content Include="ClientPages\ClientMessages.aspx" />
     <Content Include="ClientPages\ClientMessageView.aspx" />
-    <Content Include="ClientPages\clientinventory.aspx" />
+    <Content Include="clientinventory.aspx" />
     <Content Include="CustomsPages\customs.aspx" />
     <Content Include="CustomsPages\customsrelease.aspx" />
-    <Content Include="CustomsReports.aspx" />
+    <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="CustomsPages\customstransfers.aspx" />
-    <Content Include="dashboard.aspx" />
+    <Content Include="AdminPages\dashboard.aspx" />
     <Content Include="ClientPages\declareownershiptransfer.aspx" />
     <Content Include="ClientPages\dischargegoods.aspx" />
-    <Content Include="ClientPages\inventory.aspx" />
+    <Content Include="inventory.aspx" />
     <Content Include="index.aspx" />
     <Content Include="infinity\assets\css\font-awesome.css" />
     <Content Include="infinity\assets\css\jquery.fancybox.css" />
@@ -164,7 +164,7 @@
     <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.css" />
     <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.min.js" />
     <Content Include="infinity\libs\misc\echarts\build\dist\echarts-all.js" />
-    <Content Include="licensewarehouse.aspx" />
+    <Content Include="AdminPages\licensewarehouse.aspx" />
     <Content Include="CustomsPages\messages.aspx" />
     <Content Include="CustomsPages\messageview.aspx" />
     <Content Include="packages.config" />
@@ -332,7 +332,7 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="ClientPages\Client.Master" />
+    <Content Include="Client.Master" />
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -341,7 +341,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="ClientPages\viewware.aspx" />
-    <Content Include="Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\Warehouse Reports.aspx" />
     <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
@@ -473,29 +473,29 @@
     <Content Include="CustomsPages\release.aspx" />
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
-    <Content Include="ClientPages\transfergoods.aspx" />
-    <Content Include="transfers.aspx" />
-    <Content Include="users.aspx" />
+    <Content Include="transfergoods.aspx" />
+    <Content Include="CustomsPages\transfers.aspx" />
+    <Content Include="AdminPages\users.aspx" />
     <Content Include="viewpackage.aspx" />
     <Content Include="CustomsPages\viewreleaseinfo.aspx" />
     <Content Include="CustomsPages\viewtransfer.aspx" />
     <Content Include="WarehousePages\warehouseinventory.aspx" />
     <Content Include="WarehousePages\warehouseinvoices.aspx" />
-    <Content Include="warehouseoverview.aspx" />
+    <Content Include="CustomsPages\warehouseoverview.aspx" />
     <Content Include="WarehousePages\warehouserelease.aspx" />
     <Content Include="WarehousePages\warehousetransfers.aspx" />
-    <Content Include="warehousevariants.aspx" />
-    <Content Include="warehouseview.aspx" />
+    <Content Include="WarehousePages\warehousevariants.aspx" />
+    <Content Include="CustomsPages\warehouseview.aspx" />
     <Content Include="WarehousePages\wareMessage.aspx" />
     <Content Include="WarehousePages\wareMessages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addofficial.aspx.cs">
+    <Compile Include="AdminPages\addofficial.aspx.cs">
       <DependentUpon>addofficial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addofficial.aspx.designer.cs">
+    <Compile Include="AdminPages\addofficial.aspx.designer.cs">
       <DependentUpon>addofficial.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\admin.Master.cs">
@@ -505,11 +505,11 @@
     <Compile Include="AdminPages\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="AdminReports.aspx.cs">
+    <Compile Include="AdminPages\AdminReports.aspx.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminReports.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="approveTransfers.aspx.cs">
@@ -549,18 +549,18 @@
     <Compile Include="ClientPages\ClientMessageView.aspx.designer.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\Client.Master.cs">
+    <Compile Include="Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\Client.Master.designer.cs">
+    <Compile Include="Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\clientinventory.aspx.cs">
+    <Compile Include="clientinventory.aspx.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\clientinventory.aspx.designer.cs">
+    <Compile Include="clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsPages\customs.aspx.cs">
@@ -584,11 +584,11 @@
     <Compile Include="CustomsPages\customsrelease.aspx.designer.cs">
       <DependentUpon>customsrelease.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomsReports.aspx.cs">
+    <Compile Include="AdminPages\CustomsReports.aspx.cs">
       <DependentUpon>CustomsReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomsReports.aspx.designer.cs">
+    <Compile Include="AdminPages\CustomsReports.aspx.designer.cs">
       <DependentUpon>CustomsReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsPages\customstransfers.aspx.cs">
@@ -598,11 +598,11 @@
     <Compile Include="CustomsPages\customstransfers.aspx.designer.cs">
       <DependentUpon>customstransfers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="dashboard.aspx.cs">
+    <Compile Include="AdminPages\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dashboard.aspx.designer.cs">
+    <Compile Include="AdminPages\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientPages\declaregoods.aspx.cs">
@@ -626,11 +626,11 @@
     <Compile Include="ClientPages\dischargegoods.aspx.designer.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\inventory.aspx.cs">
+    <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\inventory.aspx.designer.cs">
+    <Compile Include="inventory.aspx.designer.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
@@ -639,11 +639,11 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx.cs</DependentUpon>
     </Compile>
-    <Compile Include="licensewarehouse.aspx.cs">
+    <Compile Include="AdminPages\licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="licensewarehouse.aspx.designer.cs">
+    <Compile Include="AdminPages\licensewarehouse.aspx.designer.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsPages\messages.aspx.cs">
@@ -716,25 +716,25 @@
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="TransferForm.cs" />
-    <Compile Include="ClientPages\transfergoods.aspx.cs">
+    <Compile Include="transfergoods.aspx.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\transfergoods.aspx.designer.cs">
+    <Compile Include="transfergoods.aspx.designer.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
     </Compile>
-    <Compile Include="transfers.aspx.cs">
+    <Compile Include="CustomsPages\transfers.aspx.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="transfers.aspx.designer.cs">
+    <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="users.aspx.cs">
+    <Compile Include="AdminPages\users.aspx.cs">
       <DependentUpon>users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="users.aspx.designer.cs">
+    <Compile Include="AdminPages\users.aspx.designer.cs">
       <DependentUpon>users.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewpackage.aspx.cs">
@@ -765,11 +765,11 @@
     <Compile Include="ClientPages\viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse Reports.aspx.cs">
+    <Compile Include="WarehousePages\Warehouse Reports.aspx.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Warehouse Reports.aspx.designer.cs">
+    <Compile Include="WarehousePages\Warehouse Reports.aspx.designer.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\warehouse.Master.cs">
@@ -793,11 +793,11 @@
     <Compile Include="WarehousePages\warehouseinvoices.aspx.designer.cs">
       <DependentUpon>warehouseinvoices.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouseoverview.aspx.cs">
+    <Compile Include="CustomsPages\warehouseoverview.aspx.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouseoverview.aspx.designer.cs">
+    <Compile Include="CustomsPages\warehouseoverview.aspx.designer.cs">
       <DependentUpon>warehouseoverview.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\warehouserelease.aspx.cs">
@@ -814,18 +814,18 @@
     <Compile Include="WarehousePages\warehousetransfers.aspx.designer.cs">
       <DependentUpon>warehousetransfers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehousevariants.aspx.cs">
+    <Compile Include="WarehousePages\warehousevariants.aspx.cs">
       <DependentUpon>warehousevariants.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehousevariants.aspx.designer.cs">
+    <Compile Include="WarehousePages\warehousevariants.aspx.designer.cs">
       <DependentUpon>warehousevariants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouseview.aspx.cs">
+    <Compile Include="CustomsPages\warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouseview.aspx.designer.cs">
+    <Compile Include="CustomsPages\warehouseview.aspx.designer.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\wareMessage.aspx.cs">
