@@ -571,3 +571,7 @@ ADD COLUMN `transferrequest_approvalDate` DATETIME NULL AFTER `transferrequest_r
 
 ALTER TABLE `custommandb`.`product` 
 ADD COLUMN `product_description` VARCHAR(255) NULL AFTER `product_reciept`;
+
+ALTER TABLE `custommandb`.`warehouse` 
+ADD COLUMN `warehouse_description` VARCHAR(255) NULL AFTER `warehouse_image`;
+
