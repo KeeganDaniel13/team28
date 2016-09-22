@@ -545,3 +545,29 @@ UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='9' WHERE `billofen
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='10' WHERE `billofentry_id`='10';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofentry_id`='11';
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_exitdate` DATETIME NULL AFTER `product_image`;
+
+ALTER TABLE `custommandb`.`warehouse` 
+ADD COLUMN `warehouse_image` VARCHAR(255) NULL DEFAULT NULL AFTER `warehouse_warehousetype`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_Expired` VARCHAR(45) NULL AFTER `product_exitdate`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_insured` VARCHAR(45) NULL AFTER `product_Expired`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_reciept` VARCHAR(45) NULL AFTER `product_insured`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+ADD COLUMN `transferrequest_description` VARCHAR(255) NULL AFTER `transferrequest_product`,
+ADD COLUMN `transferrequestc_reason` VARCHAR(255) NULL AFTER `transferrequest_description`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+ADD COLUMN `transferrequest_requestDate` DATETIME NULL AFTER `transferrequestc_reason`,
+ADD COLUMN `transferrequest_approvalDate` DATETIME NULL AFTER `transferrequest_requestDate`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_description` VARCHAR(255) NULL AFTER `product_reciept`;

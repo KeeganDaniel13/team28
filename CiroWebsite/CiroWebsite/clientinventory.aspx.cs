@@ -11,6 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             var server = new CiroService.Service1Client();
             var user = (CiroService.JsonUser) Session["user"];
 
@@ -46,6 +47,7 @@ namespace CiroWebsite
             }
             catch (Exception ex)
             { }
+            */
         }
 
 

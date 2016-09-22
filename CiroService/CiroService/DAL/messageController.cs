@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.messages.Add(message);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.messages;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.messages.Remove(message);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.messages;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

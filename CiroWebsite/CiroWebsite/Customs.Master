@@ -10,7 +10,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" sizes="196x196" href="infinity/assets/images/logo.png">
 	
-	
+	<style>
+
+     .ar { 
+         text-align: right; 
+         position:absolute;
+     }
+     .top-msg {
+          border-bottom: 5px solid hsla(0, 0%, 90%, .3);
+  
+          color: hsl(0, 0%, 40%);
+          font-size: 13px;
+          font-weight: 300;
+        }
+        .breadcrumb a {
+          transition: color .5s;
+        }
+        .breadcrumb a:hover {
+          color: hsl(0, 0%, 20%);
+        }
+        .breadcrumb a:after {
+          content: '\00a0\00a0\002F\00a0\00a0';
+          color: hsl(0, 0%, 70%);
+        }
+        .breadcrumb a:last-child:after {
+          content: '\00a0\00a0\002F\00a0\00a0 now you\0027re here';
+          color: hsl(0, 0%, 70%);
+        }
+          .breadcrumb a:nth-child(2) { margin: 3px 0 3px 10px; }
+          .breadcrumb a:nth-child(3) { margin: 3px 0 3px 20px; }
+          .breadcrumb a:nth-child(4) { margin: 3px 0 3px 30px; }
+          .breadcrumb a:after {
+           
+          }
+	</style>
 	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
 	
 	<!-- build:css ../assets/css/app.min.css -->
@@ -111,6 +144,26 @@
 			</ul>
 		</div>
 		<!-- /navbar-nav -->
+   <aside id="app-aside" class="app-aside top" style="height:40px;">
+
+			<a href="#top" id="top-button">
+                <i class="icon-angle-up"></i>
+              </a>
+             
+                <div class="col-md-6  lpad  breadcrumb" style="background:white;">
+                  <span id="breadcrumb">
+                    <a href="#"><i class="fa fa-home"></i></a>
+                    <a href="#">some category</a>
+                    <a href="#">some topic</a>
+                  </span>
+                </div> 
+                <div class="col-md-6 ar lpad " style="background:white;">
+                  Welcome,
+                  <a href="#">Robin Brons</a>
+                </div>
+     
+       </aside>
+		<!-- /aside-menu -->
 		
 		<!-- navbar search -->
 		<div id="navbar-search" class="navbar-search">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="z9hEo6fL5gO9fG6jpAGOmWVmgT4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Td1B1+UO6uxKitWspAji/45ph1I=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="SOAPEndPoint">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="SOAPEndPoint" contract="CiroService.IService1" bindingType="basicHttpBinding" address="http://localhost:50983/Service1.svc/soap" bindingConfiguration="SOAPEndPoint">
+    <endpoint name="SOAPEndPoint" contract="CiroService.IService1" bindingType="basicHttpBinding" address="http://localhost:2020/Service1.svc/soap" bindingConfiguration="SOAPEndPoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:50983/Service1.svc/soap</serializedValue>
+          <serializedValue>http://localhost:2020/Service1.svc/soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

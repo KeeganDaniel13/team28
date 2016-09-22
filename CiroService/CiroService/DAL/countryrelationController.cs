@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.countryrelations.Add(countryrelation);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.countryrelations;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.countryrelations.Remove(countryrelation);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.countryrelations;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

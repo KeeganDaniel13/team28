@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="warehouse.master.cs" Inherits="CiroWebsite.warehouse" %>
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="warehouse.master.cs" Inherits="CiroWebsite.warehouse" %>
 
 <!DOCTYPE html>
 
@@ -109,7 +109,7 @@
 				
 
 				<li class="menu-item has-submenu">
-					<a href="javascript:void(0)" class="menu-link">
+					<a href="Warehouse Reports.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
