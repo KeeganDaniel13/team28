@@ -1502,11 +1502,12 @@ namespace CiroService
             locationaccess.updateRecord(loc.location_id, loc);
         }
 
-        public void occupylocation(jsonlocation loc, string productID)
+        public void occupylocation(string productID)
         {
             var locationaccess = new LocationController();
-            var loca = locationaccess.getTable().FirstOrDefault<location>(l => l.location_warehouse == Convert.ToInt32(loc.warehouse) && (l.location_isle == loc.isle) && (l.location_row == loc.row) && (l.location_column == loc.col));
+            var loca = locationaccess.getTable().FirstOrDefault<location>(l => l.location_reserve == Convert.ToInt32(productID));
             loca.location_product = int.Parse(productID);
+            loca.location_reserve = null;
 
             locationaccess.updateRecord(loca.location_id, loca);
         }
@@ -1560,32 +1561,36 @@ namespace CiroService
             return locations;
         }
 
-
+        //Will return to reservelocation function
         public jsonlocation findavailablelocation(JsonWarehouse w, jsonProduct p)
         {
             var locationaccess = new LocationController();
-            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_product == null && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
+            List<location> locationlist = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_product == null && l.location_reserve == null && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
 
             if (locationlist == null || locationlist.Count == 0)
             {
                 return null;
             }
 
-            jsonlocation best = new jsonlocation { ID = locationlist[0].location_id, col = Convert.ToInt32(locationlist[0].location_column), isle = Convert.ToInt32(locationlist[0].location_isle), row = Convert.ToInt32(locationlist[0].location_row) };
+            jsonlocation best = new jsonlocation { ID = locationlist[0].location_id, col = Convert.ToInt32(locationlist[0].location_column), isle = Convert.ToInt32(locationlist[0].location_isle), row = Convert.ToInt32(locationlist[0].location_row), height = Convert.ToInt32(locationlist[0].location_height), length = Convert.ToInt32(locationlist[0].location_length), width = Convert.ToInt32(locationlist[0].location_width)};
 
             foreach (location loc in locationlist)
             {
-                if (loc.location_length < best.length || loc.location_height < best.height || loc.location_width < best.width)
+                if ((loc.location_length < best.length && loc.location_height < best.height) || (loc.location_width < best.width && loc.location_height < best.height) || (loc.location_length < best.length && loc.location_width < best.width))
                 {
                     best.ID = loc.location_id;
                     best.isle = Convert.ToInt32(loc.location_isle);
                     best.row = Convert.ToInt32(loc.location_row);
                     best.col = Convert.ToInt32(loc.location_column);
+                    best.height = Convert.ToInt32(loc.location_height);
+                    best.length = Convert.ToInt32(loc.location_length);
+                    best.width = Convert.ToInt32(loc.location_width);
                 }
             }
             return best;
         }
 
+        //don't use
         public string findlocation(JsonWarehouse w, jsonProduct p)
         {
             var loc = findavailablelocation(w, p);
@@ -1942,6 +1947,16 @@ namespace CiroService
 
             return tax;
         }
+
+        public void Reservelocation(jsonlocation jloc, string packageid)
+        {            
+            var locationaccess = new LocationController();
+            var loca = locationaccess.getTable().First<location>(l => l.location_id == jloc.ID);
+            loca.location_reserve = int.Parse(packageid);
+
+            locationaccess.updateRecord(loca.location_id, loca);
+        }
+
 
         /*public string getPackageNotification(JsonUser user)
         {
