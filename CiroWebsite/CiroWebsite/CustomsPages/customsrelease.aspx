@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="customstransfers.aspx.cs" Inherits="CiroWebsite.customstransfers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="customsrelease.aspx.cs" Inherits="CiroWebsite.customsrelease" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<style>
+    <style>
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Open+Sans+Condensed:300,700);
         header {
           background-image: url('http://subtlepatterns.com/patterns/use_your_illusion.png');
@@ -264,30 +264,23 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-  
-    <div class="col-sm-12 col-md-12">
-	    <div class="panel panel-primary panel-custom inventory">
-		    <div class="panel-heading">
-			    <h4 class="panel-title">Package Transfers</h4>
-		    </div>
-  <div class="row mt">
+     <div class="row mt">
     <div class="col-md-12">
       
       
       <div class="toggleview">
         <div class="col-md-12 forum-head">
           <div class="col-md-8 col-sm-8 column lpad">
-            Description
+            Forums
           </div>
           <div class="col-md-1  column lpad">
-            Owner
+            Threads
           </div>
           <div class="col-md-1 column lpad">
-            Qty.
+            Post
           </div>
           <div class="col-md-2 col-sm-4 column lpad">
-            Transfer Details
+            Freshness
           </div>
         </div>
         
@@ -297,24 +290,24 @@
           </div>
           <div class="col-md-7 col-sm-8 column lpad">
             <span class="overflow-control">
-              <a href="#">Title of package</a>
+              <a href="#">Title of the title</a>
             </span>
             <span class="overflow-control">
-              Description of the package
+              Description of the title of the topic(?)
             </span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">Que Kia</span>
+            <span class="center">96587</span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">23</span>
+            <span class="center">678</span>
           </div>
           <div class="col-md-2 small-4 column pad">
             <span>
-              From:<a href="#"> Old Storage</a>
+              <a href="#">Some sub-topic</a>
             </span>
             <span>08-29-2013 7:29PM</span>
-            <span>To:<a href="#"> Mount Warehouse</a></span>
+            <span>by <a href="#">Some user</a></span>
           </div>
         </div>
         
@@ -324,24 +317,24 @@
           </div>
           <div class="col-md-7 col-sm-8 column lpad">
             <span class="overflow-control">
-              <a href="#">Title of package</a>
+              <a href="#">Oops.. Foundation is supposed to be responsive</a>
             </span>
             <span class="overflow-control">
-               Description of the package
+              But it's not (yet) working here
             </span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">Sofi Toi</span>
+            <span class="center">25</span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">253</span>
+            <span class="center">2523</span>
           </div>
           <div class="col-md-2 col-sm-4 column pad">
             <span>
-              From:<a href="#"> Old Storage</a>
+              <a href="#">Some sub-topic</a>
             </span>
             <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
+            <span>by <a href="#">Some user</a></span>
           </div>
         </div>
         
@@ -351,24 +344,24 @@
           </div>
           <div class="col-md-7 col-sm-8 column lpad">
             <span class="overflow-control">
-              <a href="#">Title of package</a>
+              <a href="#">text-overflow: ellipsis;</a>
             </span>
             <span class="overflow-control">
-             Description of the package
+              You can type as many things as you want but the text will be shorter than bla bla bla
             </span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">Joe Pozo</span>
+            <span class="center">355</span>
           </div>
           <div class="col-md-1 column lpad">
             <span class="center">215</span>
           </div>
           <div class="col-md-2 small-4 column pad">
             <span>
-              From:<a href="#"> Old Storage</a>
+              <a href="#">Some sub-topic</a>
             </span>
             <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
+            <span>by <a href="#">Some user</a></span>
           </div>
         </div>
         
@@ -378,30 +371,28 @@
           </div>
           <div class="col-md-7 col-sm-8 column lpad">
             <span class="overflow-control">
-              <a href="#">Title of package</a>
+              <a href="#">If you find any bugs is this pen...</a>
             </span>
             <span class="overflow-control">
-            Description of the package
+              ... please tell me in the comments :)
             </span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">Joe Mack</span>
+            <span class="center">255</span>
           </div>
           <div class="col-md-1 column lpad">
             <span class="center">285</span>
           </div>
           <div class="col-md-2 col-sm-4 column pad">
             <span>
-              From:<a href="#">  Old Storage</a>
+              <a href="#">Some sub-topic</a>
             </span>
             <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
+            <span>by <a href="#">Some user</a></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-</div>
   
 </asp:Content>

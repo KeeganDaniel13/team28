@@ -1,20 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="messages.aspx.cs" Inherits="CiroWebsite.messages" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="ClientMessageView.aspx.cs" Inherits="CiroWebsite.ClientMessageView" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="app-content">
+    <section runat="server" id="messageDetails" class="app-content">
 		<div class="row">
 			<div class="col-md-2">
-				<div class="app-action-panel" id="inbox-action-panel">
-					<div class="action-panel-toggle" data-toggle="class" data-target="#inbox-action-panel" data-class="open">
+				<div class="app-action-panel" id="mailview-action-panel">
+					<div class="action-panel-toggle" data-toggle="class" data-target="#mailview-action-panel" data-class="open">
 						<i class="fa fa-chevron-right"></i>
 						<i class="fa fa-chevron-left"></i>
 					</div><!-- .app-action-panel -->
 
 					<div class="m-b-lg">
-						<a href="#" type="button" data-toggle="modal" data-target="#composeModal" class="btn action-panel-btn btn-default btn-block" >Compose</a>
+						<a href="#" type="button" data-toggle="modal" data-target="#composeModal" class="btn action-panel-btn btn-default btn-block">Compose</a>
 					</div>
-
+                    
 					<div class="app-actions-list scrollable-container">
 						<!-- mail category list -->
 						<div class="list-group">
@@ -23,7 +23,7 @@
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-bookmark"></i>Important</a>
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-paper-plane"></i>Sent</a>
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-folder"></i>All Mail</a>
-						
+							
 						</div><!-- .list-group -->
 
 						<hr class="m-0 m-b-md" style="border-color: #ddd;">
@@ -65,20 +65,20 @@
 							</a>
 							<a href="#" class="list-group-item text-color" data-toggle="modal" data-target="#labelModal"><i class="fa fa-plus m-r-sm"></i> Add New Label</a>
 						</div><!-- .list-group -->
-				
 					</div><!-- .app-actions-list -->
 				</div><!-- .app-action-panel -->
 			</div><!-- END column -->
 
 			<div class="col-md-10">
+				<!-- toolbar -->
 				<div class="row">
 					<div class="col-md-12">
-						<div class="mail-toolbar m-b-lg">								
+						<div class="mail-toolbar m-b-md">								
 							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span></button>
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reply <span class="caret"></span></button>
 								<ul class="dropdown-menu">
-									<li><a href="#">time</a></li>
-									<li><a href="#">importance</a></li>
+									<li><a href="#">forward</a></li>
+									<li><a href="#">save</a></li>
 								</ul>
 							</div>
 
@@ -86,29 +86,14 @@
 								<a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
 								<a href="#" class="btn btn-default"><i class="fa fa-exclamation-circle"></i></a>
 							</div>
-							<a href="#" class="btn btn-default"><i class="fa fa-refresh"></i></a>
-
-							<div class="btn-group pull-right" role="group">
-								<a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i></a>
-								<a href="#" class="btn btn-default"><i class="fa fa-chevron-right"></i></a>
-							</div>
+							<a href="#" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 						</div>
 					</div>
-				</div>
-
-				<div class="table-responsive">
-					<table class="table mail-list">
-						<tr>
-							<td>
-								<%listMessages(); %>	
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div><!-- END column -->
-		</div><!-- .row -->
+				</div><!-- END toolbar -->
+				<!--message content-->
 	</section><!-- .app-content -->
 </div><!-- .wrap -->
+
 
 <!-- Compose modal -->
 <div class="modal fade" id="composeModal" tabindex="-1" role="dialog">
@@ -121,21 +106,19 @@
 			<div class="modal-body">
 				<form action="#">
 					<div class="form-group">
-						<input runat="server" name="from" id="from" type="text" class="form-control" placeholder="from">
+						<input name="mail_from_field" id="from" runat="server" type="text" class="form-control" placeholder="from">
 					</div>
 					<div class="form-group">
-						<input runat="server" name="to" id="to" type="text" class="form-control" placeholder="to">
+						<input name="mail_to_field" id="to" runat="server" type="text" class="form-control" placeholder="to">
 					</div>
 					<div class="form-group">
 						<input name="mail_subject_field" id="subject" runat="server" type="text" class="form-control" placeholder="subject">
 					</div>
-					<textarea name="mail_body_field" id="message" runat="server" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
+					<textarea name="mail_body_field" id="body" runat="server" cols="30" rows="5" class="form-control" placeholder="content"></textarea>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-success"><i class="fa fa-save"></i></button>
-				<button type="button" runat="server" onserverclick="sendMail" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
+                <button type="button" runat="server" onserverclick="sendMail" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
@@ -181,5 +164,4 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-	
 </asp:Content>

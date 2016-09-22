@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Product Log | Ciro" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="productlog.aspx.cs" Inherits="CiroWebsite.productlog" %>
+﻿<%@ Page Title="Product Log | Ciro" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="productlog.aspx.cs" Inherits="CiroWebsite.productlog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<link rel="stylesheet" href="infinity/css/style.css"/> <!-- Resource style -->
 </asp:Content>

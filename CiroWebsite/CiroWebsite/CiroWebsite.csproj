@@ -72,16 +72,16 @@
     <Content Include="addofficial.aspx" />
     <Content Include="AdminReports.aspx" />
     <Content Include="approveTransfers.aspx" />
-    <Content Include="changeofownership.aspx" />
-    <Content Include="ClientMessages.aspx" />
-    <Content Include="ClientMessageView.aspx" />
+    <Content Include="ClientPages\changeofownership.aspx" />
+    <Content Include="ClientPages\ClientMessages.aspx" />
+    <Content Include="ClientPages\ClientMessageView.aspx" />
     <Content Include="ClientPages\clientinventory.aspx" />
-    <Content Include="customs.aspx" />
-    <Content Include="customsrelease.aspx" />
+    <Content Include="CustomsPages\customs.aspx" />
+    <Content Include="CustomsPages\customsrelease.aspx" />
     <Content Include="CustomsReports.aspx" />
-    <Content Include="customstransfers.aspx" />
+    <Content Include="CustomsPages\customstransfers.aspx" />
     <Content Include="dashboard.aspx" />
-    <Content Include="declareownershiptransfer.aspx" />
+    <Content Include="ClientPages\declareownershiptransfer.aspx" />
     <Content Include="ClientPages\dischargegoods.aspx" />
     <Content Include="ClientPages\inventory.aspx" />
     <Content Include="index.aspx" />
@@ -259,7 +259,7 @@
     <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\._js" />
     <Content Include="infinity\landing\libs\bower\waypoints\._lib" />
     <Content Include="infinity\landing\libs\misc\._owl-carousel" />
-    <Content Include="Customs.Master" />
+    <Content Include="CustomsPages\Customs.Master" />
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -519,11 +519,11 @@
     <Compile Include="approveTransfers.aspx.designer.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="changeofownership.aspx.cs">
+    <Compile Include="ClientPages\changeofownership.aspx.cs">
       <DependentUpon>changeofownership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="changeofownership.aspx.designer.cs">
+    <Compile Include="ClientPages\changeofownership.aspx.designer.cs">
       <DependentUpon>changeofownership.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangeUser.cs" />
@@ -535,18 +535,18 @@
       <DependentUpon>ciro.Master</DependentUpon>
     </Compile>
     <Compile Include="CiroSingleton.cs" />
-    <Compile Include="ClientMessages.aspx.cs">
+    <Compile Include="ClientPages\ClientMessages.aspx.cs">
       <DependentUpon>ClientMessages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientMessages.aspx.designer.cs">
+    <Compile Include="ClientPages\ClientMessages.aspx.designer.cs">
       <DependentUpon>ClientMessages.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientMessageView.aspx.cs">
+    <Compile Include="ClientPages\ClientMessageView.aspx.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientMessageView.aspx.designer.cs">
+    <Compile Include="ClientPages\ClientMessageView.aspx.designer.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientPages\Client.Master.cs">
@@ -563,25 +563,25 @@
     <Compile Include="ClientPages\clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="customs.aspx.cs">
+    <Compile Include="CustomsPages\customs.aspx.cs">
       <DependentUpon>customs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customs.aspx.designer.cs">
+    <Compile Include="CustomsPages\customs.aspx.designer.cs">
       <DependentUpon>customs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customs.Master.cs">
+    <Compile Include="CustomsPages\Customs.Master.cs">
       <DependentUpon>Customs.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customs.Master.designer.cs">
+    <Compile Include="CustomsPages\Customs.Master.designer.cs">
       <DependentUpon>Customs.Master</DependentUpon>
     </Compile>
-    <Compile Include="customsrelease.aspx.cs">
+    <Compile Include="CustomsPages\customsrelease.aspx.cs">
       <DependentUpon>customsrelease.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customsrelease.aspx.designer.cs">
+    <Compile Include="CustomsPages\customsrelease.aspx.designer.cs">
       <DependentUpon>customsrelease.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsReports.aspx.cs">
@@ -591,11 +591,11 @@
     <Compile Include="CustomsReports.aspx.designer.cs">
       <DependentUpon>CustomsReports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="customstransfers.aspx.cs">
+    <Compile Include="CustomsPages\customstransfers.aspx.cs">
       <DependentUpon>customstransfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customstransfers.aspx.designer.cs">
+    <Compile Include="CustomsPages\customstransfers.aspx.designer.cs">
       <DependentUpon>customstransfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="dashboard.aspx.cs">
@@ -612,11 +612,11 @@
     <Compile Include="ClientPages\declaregoods.aspx.designer.cs">
       <DependentUpon>declaregoods.aspx</DependentUpon>
     </Compile>
-    <Compile Include="declareownershiptransfer.aspx.cs">
+    <Compile Include="ClientPages\declareownershiptransfer.aspx.cs">
       <DependentUpon>declareownershiptransfer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="declareownershiptransfer.aspx.designer.cs">
+    <Compile Include="ClientPages\declareownershiptransfer.aspx.designer.cs">
       <DependentUpon>declareownershiptransfer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientPages\dischargegoods.aspx.cs">

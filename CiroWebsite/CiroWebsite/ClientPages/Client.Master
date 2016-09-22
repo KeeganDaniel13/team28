@@ -79,7 +79,7 @@
 					</a>
 				</li>
                 <li class="nav-item dropdown">
-					<a href="clientinventory.aspx" >
+					<a href="inventory.aspx" >
 						Inventory
 					</a>
 				</li>

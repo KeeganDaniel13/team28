@@ -30,10 +30,12 @@ namespace CiroWebsite
                     foreach (var item in goods)
                     {
                         table += "<tr>";
-                        table += "<td  onclick='bingo(modal)'>" + item.Name + "</td>" + "<td>" + item.currentLocation + "</td>" + "<td>" + item.size + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>";
+                        table += "<td  onclick='bingo(modal)'>" + item.Name + "</td>" + "<td>" + item.quantity + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>";
                         table += "<td>";
-                        table += "<a href='clientinventory.aspx?add=" + item.ID + "' type='button'  class='btn rounded btn-sm btn-danger' runat='server' onserverclick=''>Release</a>";
-                        table += "<a href='transfergoods.aspx?transfer=" + item.ID + "' type='button' class='btn  btn-sm btn-success'>Transfer</a>";
+                        table += "<ul class='list-inline'>";
+                        table += "<li><a href='inventory.aspx?add=" + item.ID + "' type='button'  class='btn rounded btn-sm btn-danger' runat='server' onserverclick=''>Release</a></li>";
+                        table += "<li><a href='transfergoods.aspx?transfer=" + item.ID + "' type='button' class='btn  btn-sm btn-success'>Transfer</a></li>";
+                        table += "</ul>";
                         table += "</td>";
                         table += "</tr>";
 

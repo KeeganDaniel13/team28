@@ -24,37 +24,7 @@
                 </tr>
             </thead>
             <tbody id="list" runat="server">
-                <tr>
-                    <td>Carolina Biggleswade</td>
-                    <td>23</td>
-                    <td>65</td>
-                    <td>Jockey</td>
-                     <td>23</td>
-                   
-                    <td> 
-                        <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
-                            </div>
-                    </td>
-                    
-                </tr>
-                 <tr>
-                    <td>Carolina Biggleswade</td>
-                    <td>23</td>
-                    <td>65</td>
-                    <td>Jockey</td>
-                      <td>23</td>
-                    <td>
-                        <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
-                            </div>
-                    </td>
-                   
-                </tr>
                
-                
             </tbody>
         </table>
 		    </div>

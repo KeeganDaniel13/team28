@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Customs" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="customs.aspx.cs" Inherits="CiroWebsite.customs" %>
+﻿<%@ Page Title="Customs" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="customs.aspx.cs" Inherits="CiroWebsite.customs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
   
 </asp:Content>

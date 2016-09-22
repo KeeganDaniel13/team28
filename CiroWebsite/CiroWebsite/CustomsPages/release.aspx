@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customs.Master" AutoEventWireup="true" CodeBehind="release.aspx.cs" Inherits="CiroWebsite.release" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="release.aspx.cs" Inherits="CiroWebsite.release" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
        <style>
    .floated {
