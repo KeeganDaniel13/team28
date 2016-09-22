@@ -264,6 +264,7 @@ CREATE TABLE `custommandb`.`productlog` (
     `location_isle` INT NULL,
     `location_column` INT NULL,
     `location_row` INT NULL,
+	`location_reserve` INT NULL,
     `location_size` INT NULL,
     `location_product` INT NULL,
     `location_warehouse` INT NULL,
@@ -280,6 +281,11 @@ CREATE TABLE `custommandb`.`productlog` (
     ON UPDATE NO ACTION,
      CONSTRAINT `location_product`
     FOREIGN KEY (`location_product`)
+    REFERENCES `custommandb`.`product` (`product_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+	CONSTRAINT `location_reserve`
+    FOREIGN KEY (`location_reserve`)
     REFERENCES `custommandb`.`product` (`product_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
@@ -505,7 +511,7 @@ INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_wareho
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Incident : Wild Dog Tore The Package', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I\'m running out of things to say', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I am running out of things to say', '2016-08-03 11:14:02', '1');
 
 
 
