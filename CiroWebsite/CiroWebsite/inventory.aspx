@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="editor.aspx.cs" Inherits="CiroWebsite.editor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="inventory.aspx.cs" Inherits="CiroWebsite.editor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="infinity/css/inventory.css">
       <script src="infinity/assets/myjs/mode.js"></script>    

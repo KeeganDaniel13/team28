@@ -73,17 +73,17 @@
     <Content Include="AdminReports.aspx" />
     <Content Include="approveTransfers.aspx" />
     <Content Include="changeofownership.aspx" />
+    <Content Include="clientinventory.aspx" />
     <Content Include="ClientMessages.aspx" />
     <Content Include="ClientMessageView.aspx" />
-    <Content Include="ClientPages\clientinventory.aspx" />
     <Content Include="customs.aspx" />
     <Content Include="customsrelease.aspx" />
     <Content Include="CustomsReports.aspx" />
     <Content Include="customstransfers.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="declareownershiptransfer.aspx" />
-    <Content Include="ClientPages\dischargegoods.aspx" />
-    <Content Include="ClientPages\inventory.aspx" />
+    <Content Include="dischargegoods.aspx" />
+    <Content Include="inventory.aspx" />
     <Content Include="index.aspx" />
     <Content Include="infinity\assets\css\font-awesome.css" />
     <Content Include="infinity\assets\css\jquery.fancybox.css" />
@@ -216,6 +216,7 @@
     <Content Include="infinity\css\.DS_Store" />
     <Content Include="productlogCustoms.aspx" />
     <Content Include="Reports.aspx" />
+    <Content Include="Client.Master" />
     <Content Include="infinity\landing\assets\._css" />
     <Content Include="infinity\landing\assets\._fonts" />
     <Content Include="infinity\landing\assets\._images" />
@@ -332,7 +333,6 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="ClientPages\Client.Master" />
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -340,7 +340,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="ClientPages\viewware.aspx" />
+    <Content Include="viewware.aspx" />
     <Content Include="Warehouse Reports.aspx" />
     <Content Include="warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
@@ -361,7 +361,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClientPages\declaregoods.aspx" />
+    <Content Include="declaregoods.aspx" />
     <Content Include="infinity\assets\css\app.css" />
     <Content Include="infinity\assets\css\bootstrap.css" />
     <Content Include="infinity\assets\css\font-awesome.min.css" />
@@ -473,7 +473,7 @@
     <Content Include="release.aspx" />
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
-    <Content Include="ClientPages\transfergoods.aspx" />
+    <Content Include="transfergoods.aspx" />
     <Content Include="transfers.aspx" />
     <Content Include="users.aspx" />
     <Content Include="viewpackage.aspx" />
@@ -535,6 +535,20 @@
       <DependentUpon>ciro.Master</DependentUpon>
     </Compile>
     <Compile Include="CiroSingleton.cs" />
+    <Compile Include="Client.Master.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client.Master.designer.cs">
+      <DependentUpon>Client.Master</DependentUpon>
+    </Compile>
+    <Compile Include="clientinventory.aspx.cs">
+      <DependentUpon>clientinventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clientinventory.aspx.designer.cs">
+      <DependentUpon>clientinventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClientMessages.aspx.cs">
       <DependentUpon>ClientMessages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -548,20 +562,6 @@
     </Compile>
     <Compile Include="ClientMessageView.aspx.designer.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientPages\Client.Master.cs">
-      <DependentUpon>Client.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClientPages\Client.Master.designer.cs">
-      <DependentUpon>Client.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ClientPages\clientinventory.aspx.cs">
-      <DependentUpon>clientinventory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ClientPages\clientinventory.aspx.designer.cs">
-      <DependentUpon>clientinventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="customs.aspx.cs">
       <DependentUpon>customs.aspx</DependentUpon>
@@ -605,11 +605,11 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\declaregoods.aspx.cs">
+    <Compile Include="declaregoods.aspx.cs">
       <DependentUpon>declaregoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\declaregoods.aspx.designer.cs">
+    <Compile Include="declaregoods.aspx.designer.cs">
       <DependentUpon>declaregoods.aspx</DependentUpon>
     </Compile>
     <Compile Include="declareownershiptransfer.aspx.cs">
@@ -619,18 +619,18 @@
     <Compile Include="declareownershiptransfer.aspx.designer.cs">
       <DependentUpon>declareownershiptransfer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\dischargegoods.aspx.cs">
+    <Compile Include="dischargegoods.aspx.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\dischargegoods.aspx.designer.cs">
+    <Compile Include="dischargegoods.aspx.designer.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\inventory.aspx.cs">
+    <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\inventory.aspx.designer.cs">
+    <Compile Include="inventory.aspx.designer.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
@@ -716,11 +716,11 @@
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="TransferForm.cs" />
-    <Compile Include="ClientPages\transfergoods.aspx.cs">
+    <Compile Include="transfergoods.aspx.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\transfergoods.aspx.designer.cs">
+    <Compile Include="transfergoods.aspx.designer.cs">
       <DependentUpon>transfergoods.aspx</DependentUpon>
     </Compile>
     <Compile Include="transfers.aspx.cs">
@@ -758,11 +758,11 @@
     <Compile Include="viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\viewware.aspx.cs">
+    <Compile Include="viewware.aspx.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\viewware.aspx.designer.cs">
+    <Compile Include="viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warehouse Reports.aspx.cs">
@@ -846,7 +846,6 @@
   <ItemGroup>
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="trader\" />
   </ItemGroup>
   <ItemGroup>

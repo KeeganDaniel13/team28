@@ -67,70 +67,47 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="text-danger fa fa-times"></i></button>
-                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted fa fa-shopping-cart"></i> <strong>02051</strong> - Nome do Produto </h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted fa fa-shopping-cart"></i> Green Lambo</h4>
                   </div>
                   <div class="modal-body">
                   
-                    <table class="pull-left col-md-8 ">
+                    <table class="pull-left col-md-6 ">
                          <tbody>
-                             <tr>
-                                 <td class="h6"><strong>Código</strong></td>
+                             <tr >
+                                 <td class="h6"><strong>HS Code</strong></td>
                                  <td> </td>
                                  <td class="h5">02051</td>
                              </tr>
                              
                              <tr>
-                                 <td class="h6"><strong>Descrição</strong></td>
+                                 <td class="h6"><strong>Arrival Date</strong></td>
                                  <td> </td>
-                                 <td class="h5">descrição do produto</td>
+                                 <td class="h5">19.05.2016</td>
                              </tr>
                              
                              <tr>
-                                 <td class="h6"><strong>Marca/Fornecedor</strong></td>
+                                 <td class="h6"><strong>Insured</strong></td>
                                  <td> </td>
-                                 <td class="h5">Marca do produto</td>
+                                 <td class="h5">Yes</td>
                              </tr>
                              
                              <tr>
-                                 <td class="h6"><strong>Número Original</strong></td>
+                                 <td class="h6"><strong>Width</strong></td>
                                  <td> </td>
-                                 <td class="h5">0230316</td>
+                                 <td class="h5">20cm</td>
                              </tr>
                              
                              <tr>
-                                 <td class="h6"><strong>Código N.C.M</strong></td>
+                                 <td class="h6"><strong>Height</strong></td>
                                  <td> </td>
                                  <td class="h5">032165</td>
                              </tr>
                              
-                             <tr>
-                                 <td class="h6"><strong>Código de Barras</strong></td>
-                                 <td> </td>
-                                 <td class="h5">0321649843</td>
-                             </tr>  
-
-                             <tr>
-                                 <td class="h6"><strong>Unid. por Embalagem</strong></td>
-                                 <td> </td>
-                                 <td class="h5">50</td>
-                             </tr>                            
-
-                             <tr>
-                                 <td class="h6"><strong>Quantidade Mínima</strong></td>
-                                 <td> </td>
-                                 <td class="h5">50</td>
-                             </tr>
-
-                             <tr>
-                                 <td class="h6"><strong>Preço Atacado</strong></td>
-                                 <td> </td>
-                                 <td class="h5">R$ 35,00</td>
-                             </tr> 
-                            
+                             
                              <tr>
                                  <td class="btn-mais-info text-primary">
                                      <i class="open_info fa fa-plus-square-o"></i>
-                                     <i class="open_info hide fa fa-minus-square-o"></i> informações
+                                     <i class="open_info hide fa fa-minus-square-o"></i> Description
                                  </td>
                                  <td> </td>
                                  <td class="h5"></td>
@@ -140,8 +117,8 @@
                     </table>
                              
                          
-                    <div class="col-md-4"> 
-                        <img src="http://lorempixel.com/150/150/technics/" alt="teste" class="img-thumbnail">  
+                    <div class="col-md-6"> 
+                        <img src="../infinity/assets/images/11.jpg" alt="teste" class="img-thumbnail">  
                     </div>
                     
                     <div class="clearfix"></div>
@@ -151,13 +128,11 @@
                   <div class="modal-footer">       
                       
                     <div class="text-right pull-right col-md-3">
-                        Varejo: <br/> 
-                        <span class="h3 text-muted"><strong> R$50,00 </strong></span></span> 
-                    </div> 
-                      
+                        Value: <br/> 
+                        <span class="h3 text-muted"><strong>R900000</strong></span></span> 
+                    </div>
                     <div class="text-right pull-right col-md-3">
-                        Atacado: <br/> 
-                        <span class="h3 text-muted"><strong>R$35,00</strong></span>
+                      <a type="button" class="btn   btn-sm btn-success">Package Log</a>
                     </div>
                      
                 </div>
@@ -167,7 +142,7 @@
 <!-- fim Modal-->
 
  
-        <script>function bingo(id) {
+   <script>function bingo(id) {
     $(id).modal('show');
 }</script>
 </asp:Content>
