@@ -41,14 +41,21 @@
 	</style>
 	
 	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css"/>
-	
+    <link href="../infinity/assets/css/font-awesome.min.css" rel="stylesheet" />
 	<!-- build:css ../assets/css/app.min.css -->
+	<link rel="stylesheet" href="Sinfinity/libs/bower/animate.css/animate.min.css"/>
+	<link rel="stylesheet" href="infinity/libs/bower/fullcalendar/dist/fullcalendar.min.css"/>
+	<link rel="stylesheet" href="infinity/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css"/>
+	<link rel="stylesheet" href="infinity/assets/css/bootstrap.css"/>
+	<link rel="stylesheet" href="infinity/assets/css/app.css"/>
+	<link rel="stylesheet" href="infinity/assets/libs/bower/fontawesome/css/font-awesome.min.css/"/>
+    	
+	<link rel="stylesheet" href="../infinity/libs/bower/fontawesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
 	<link rel="stylesheet" href="../infinity/libs/bower/animate.css/animate.min.css"/>
-	<link rel="stylesheet" href="../infinity/libs/bower/fullcalendar/dist/fullcalendar.min.css"/>
-	<link rel="stylesheet" href="../infinity/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css"/>
+    
 	<link rel="stylesheet" href="../infinity/assets/css/bootstrap.css"/>
 	<link rel="stylesheet" href="../infinity/assets/css/app.css"/>
-	<link rel="stylesheet" href="../infinity/libs/bower/fontawesome/css/font-awesome.min.css/"/>
 	<!-- endbuild -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300"/>
     <asp:ContentPlaceHolder ID="head" runat="server">

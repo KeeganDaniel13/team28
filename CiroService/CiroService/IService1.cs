@@ -261,8 +261,12 @@ namespace CiroService
         jsonlocation getPackageInWarehouse(string packageID);
 
         [OperationContract]
-        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "occupylocation/{id}")]
-        void occupylocation(jsonlocation loc, string id);
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "occupylocation/{productID}")]
+        void occupylocation(string productID);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "Reservelocation/{packageid}")]
+        void Reservelocation(jsonlocation jloc, string packageid);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "vacatelocation/{packageID}")]
