@@ -32,6 +32,7 @@ namespace CiroWebsite
 
         protected void completeRequest(object sender, EventArgs e)
         {
+            /*
             var ser = new CiroService.Service1Client();
             var transInfo = Session["TransferInfo"] as TransferForm;
             var productIDt = Convert.ToInt32(Session["transferProduct"]);
@@ -39,12 +40,12 @@ namespace CiroWebsite
             var warehouse = Convert.ToInt32(Session["warehouse"]);
             List<CiroService.jsonTRequest> requests = new List<CiroService.jsonTRequest>();
             requests.Add(new CiroService.jsonTRequest { userID = user.id, description = "", endWarehouse = warehouse, productID = productIDt });
-            CiroSingleton .ServerCalls .transeferRequest(requests.ToArray());
+            CiroSingleton .ServerCalls .transeferRequest(requests.ToArray());*/
         }
-
+        
         protected void listwarehouse()
         {
-            var warehouses = new CiroService.Service1Client().warehouses();
+           /* var warehouses = new CiroService.Service1Client().warehouses();
             var body = "";
             var count = 1;
 
@@ -54,11 +55,9 @@ namespace CiroWebsite
                 body += "<td>";
                 body += "<table class='table' style='width:350px'>";
                 body += "<tr><th colspan='5'><b>" + w.name + "</b></th></tr>";
-<<<<<<< HEAD:CiroWebsite/CiroWebsite/transfergoods.aspx.cs
                 body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/><i class='fa fa-map-marker'></i>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/> <ul class='list-inline pull-right'><li><a href='warehouseview.aspx' class='btn btn-info btn-xs'>View Warehouse</a></li><li><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-success btn-xs'>Select</a></li></ul></div></td></tr>";
-=======
-                body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/><a href='viewware.aspx' class='btn btn-outline mw-md rounded btn-success btn-xs'>View Warehose</a><br/><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-outline mw-md rounded btn-success btn-xs'>Select Warehouse</a></div></td></tr>";
->>>>>>> 8567ce59407e3a3f8857a3ecdf03a49a5e4d9e59:CiroWebsite/CiroWebsite/ClientPages/transfergoods.aspx.cs
+               // body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/><a href='viewware.aspx' class='btn btn-outline mw-md rounded btn-success btn-xs'>View Warehose</a><br/><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-outline mw-md rounded btn-success btn-xs'>Select Warehouse</a></div></td></tr>";
+               
                 body += "</table>";
                 body += "</td>";
                 if (count % 3 == 0)
@@ -68,6 +67,7 @@ namespace CiroWebsite
                 count++;
             }
             Response.Write(body);
+            */
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CiroWebsite
 {
-    public partial class editor : System.Web.UI.Page
+    public partial class inventory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -326,7 +326,7 @@ span.round-tab:hover {
 		    <div class="panel-heading">
                
 			    <h4 class="panel-title">Warehouse Transfer</h4>
-                <a type="button" class="pull-right"><i class="fa fa-plus "></i></a>
+                <a href="" type="button" onserverclick="bingo()" class="pull-right"><i class="fa fa-plus "></i></a>
                
 		    </div>
 		    <div class="panel-body">
@@ -389,5 +389,44 @@ span.round-tab:hover {
     </div>
 </section>
 </div>
+    <!-- Modal -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="text-danger fa fa-times"></i></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted fa fa-shopping-cart"></i>Select Package</h4>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-hover">
+                    <tr>
+                      <th>Select</th>
+                      <th style="width: 10px">#</th>
+                      <th>Name</th>
+                       <th>Location</th>
+                      <th>Value</th>
+                    </tr>  
+                       <!--  ListPackages(); -->
+                  </table>                                
+                    <br/>
+                   <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                    <br/>
 
+                  <div class="modal-footer">       
+                      
+                    <div class="text-right pull-right col-md-3">
+                        Package Selected: <br/> 
+                        <span class="h3 text-muted"><strong>(Name of package)</strong></span></span> 
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+<!-- fim Modal-->
+
+ 
+   <script>function bingo(id) {
+    $(id).modal('show');
+}</script>
 </asp:Content>

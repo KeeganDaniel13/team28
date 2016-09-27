@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Ownership Transfer" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="declareownershiptransfer.aspx.cs" Inherits="CiroWebsite.declareownershiptransfer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <script src="../infinity/assets/myjs/mode.js"></script>  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <div class="row">
@@ -15,7 +16,7 @@
 				</div>
             </div>
 			
-			<button type="submit" runat="server" onserverclick="proceed" class="btn btn-info btn-sm">Select</button>
+			<button type="submit" runat="server" onserverclick="bingo()" class="btn btn-info btn-sm">Select</button>
 		</form>
 	
 	</div><!-- END column -->
@@ -42,4 +43,45 @@
 	</div><!-- END column -->
 
      </div>
+    
+    <!-- Modal -->
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="text-danger fa fa-times"></i></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted fa fa-shopping-cart"></i>Select Package</h4>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-hover">
+                    <tr>
+                      <th>Select</th>
+                      <th style="width: 10px">#</th>
+                      <th>Name</th>
+                       <th>Location</th>
+                      <th>Value</th>
+                    </tr>  
+                       <!--  ListPackages(); -->
+                  </table>                                
+                    <br/>
+                   <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                    <br/>
+
+                  <div class="modal-footer">       
+                      
+                    <div class="text-right pull-right col-md-3">
+                        Package Selected: <br/> 
+                        <span class="h3 text-muted"><strong>(Name of package)</strong></span></span> 
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+<!-- fim Modal-->
+
+ 
+   <script>function bingo(id) {
+    $(id).modal('show');
+}</script>
 </asp:Content>
