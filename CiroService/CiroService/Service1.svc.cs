@@ -1709,6 +1709,41 @@ namespace CiroService
             return monthly;
         }
 
+        public IEnumerable<WarehouseStorageRate> StorageRate(string warehouseID)
+        {
+            productlogController logaccess = new productlogController();
+            warehouseController warehouseaccess = new warehouseController();
+            MessageBox.Show(warehouseID);
+            var warehouse = warehouseaccess.getRecord(int.Parse(warehouseID));
+            MessageBox.Show(warehouse.warehouse_name);
+            var log = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == warehouse.warehouse_name);
+            List<WarehouseStorageRate> rates = new List<WarehouseStorageRate>();
+
+            for(int k = 1; k <= 12; k++)
+            {
+                DateTime dtmon = new DateTime(2016, k, 24);
+                int countin = 0;
+                int countout = 0;
+                foreach (productlog p in log)
+                {
+                    DateTime dtprod = (DateTime)p.productlog_dateLogged;
+                    if(dtprod.Month == k && dtprod.Year == dtmon.Year)
+                    {
+                        if(p.productlog_type == 2 || p.productlog_type == 3)
+                        {
+                            countout++;
+                        }
+                        if (p.productlog_type == 7)
+                        {
+                            countin++;
+                        }
+                    }
+                }
+                rates.Add(new WarehouseStorageRate { incoming = countin, outgoing = countout, month = dtmon.ToString("MMMM") });
+            }
+            return rates;
+        }
+
         public IEnumerable<OutgoingRate> IncidentsLastMonth(string name)
         {           
             warehouseController warehouseaccess = new warehouseController();           
@@ -1822,6 +1857,37 @@ namespace CiroService
 
             locationaccess.updateRecord(loca.location_id, loca);
         }
+
+
+        public IEnumerable<WarehousesStorageRates> StorageRates()
+        {
+            warehouseController warehouseaccess = new warehouseController();
+            productlogController logaccess = new productlogController();
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+            List<WarehousesStorageRates> rates = new List<WarehousesStorageRates>();
+
+            foreach (warehouse w in warehouses)
+            {
+                int countin = 0;
+                int countout = 0;
+                foreach (productlog p in log)
+                {
+                    if (p.productlog_warehouse == w.warehouse_name && p.productlog_type == 7)
+                    {
+                        countin++;
+                    }
+                    if (p.productlog_warehouse == w.warehouse_name && (p.productlog_type == 2 || p.productlog_type == 3))
+                    {
+                        countout++;
+                    }
+                }
+                rates.Add(new WarehousesStorageRates { warehouse = w.warehouse_name, incoming = countin, outgoing = countout });
+            }
+            return rates;
+        }
+
+       
 
 
         /*public string getPackageNotification(JsonUser user)

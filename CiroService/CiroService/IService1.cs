@@ -322,6 +322,17 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "IncidentsLastMonth/{name}")]
         IEnumerable<OutgoingRate> IncidentsLastMonth(string name);
 
+
+        //packages coming in vs leaving all warehouses
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "StorageRates")]
+        IEnumerable<WarehousesStorageRates> StorageRates();
+
+        //packages coming in vs leaving specific warehouse
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "StorageRate/{warehouseID}")]
+        IEnumerable<WarehouseStorageRate> StorageRate(string warehouseID);
+
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getCountryP")]
         IEnumerable<JsonCountryPercentage> getCountryP();
