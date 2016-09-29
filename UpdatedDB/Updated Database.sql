@@ -86,6 +86,7 @@ CREATE TABLE `custommandb`.`product` (
   `warehouse_id` INT NOT NULL AUTO_INCREMENT,
   `warehouse_name` VARCHAR(45) NULL,
   `warehouse_location` VARCHAR(100) NULL,
+  `warehouse_established` DATETIME NULL,
   `warehouse_size` INT NULL,
   `warehouse_user` INT NULL,
   `warehouse_warehousetype` INT NULL,
