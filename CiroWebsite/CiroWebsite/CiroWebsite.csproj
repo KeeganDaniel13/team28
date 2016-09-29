@@ -659,6 +659,7 @@
     </Compile>
     <Compile Include="ClientPages\viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -714,7 +715,7 @@
     </Compile>
     <Compile Include="CustomsPages\messages.aspx.designer.cs">
       <DependentUpon>messages.aspx</DependentUpon>
-
+</Compile>
     <Compile Include="AdminPages\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -749,6 +750,7 @@
     </Compile>
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -769,6 +771,7 @@
     </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="AdminPages\licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
