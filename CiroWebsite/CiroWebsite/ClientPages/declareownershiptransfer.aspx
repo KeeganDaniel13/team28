@@ -16,7 +16,7 @@
 				</div>
             </div>
 			
-			<button type="submit" runat="server" onserverclick="bingo()" class="btn btn-info btn-sm">Select</button>
+			<button type="submit" runat="server" class="btn btn-info btn-sm">Select</button>
 		</form>
 	
 	</div><!-- END column -->

@@ -28,7 +28,7 @@ namespace CiroWebsite
                 Session["user"] = user;
                 if (user.usertypename.ToLower().Equals("client"))
                 {
-                    Response.Redirect("inventory.aspx");
+                    Response.Redirect("ClientPages/inventory.aspx");
                 }
                 else if (user.usertypename.ToLower().Equals("custom"))
                 {

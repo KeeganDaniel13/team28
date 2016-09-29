@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="inventory.aspx.cs" Inherits="CiroWebsite.editor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="inventory.aspx.cs" Inherits="CiroWebsite.inventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../infinity/css/inventory.css">
+    <link rel="stylesheet" href="../infinity/css/inventory.css"/>
       <script src="../infinity/assets/myjs/mode.js"></script>    
     
 </asp:Content>
@@ -31,6 +31,8 @@
 	    </div>
     </div><!-- END column -->
   
+    <div id="modalsHolder" runat="server">
+        
     <!-- Modal -->
             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog">
@@ -85,8 +87,7 @@
 
                          </tbody>
                     </table>
-                             
-                         
+
                     <div class="col-md-6"> 
                         <img src="../infinity/assets/images/11.jpg" alt="teste" class="img-thumbnail">  
                     </div>
@@ -94,9 +95,7 @@
                     <div class="clearfix"></div>
                    <p class="open_info hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                   </div>
-                    
                   <div class="modal-footer">       
-                      
                     <div class="text-right pull-right col-md-3">
                         Value: <br/> 
                         <span class="h3 text-muted"><strong>R900000</strong></span></span> 
@@ -104,12 +103,13 @@
                     <div class="text-right pull-right col-md-3">
                       <a type="button" class="btn   btn-sm btn-success">Package Log</a>
                     </div>
-                     
                 </div>
               </div>
             </div>
             </div>
 <!-- fim Modal-->
+        </div>
+
 
  
    <script>function bingo(id) {

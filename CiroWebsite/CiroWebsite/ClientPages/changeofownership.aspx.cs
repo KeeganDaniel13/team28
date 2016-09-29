@@ -9,7 +9,7 @@ namespace CiroWebsite
 {
     public partial class changeofownership : System.Web.UI.Page
     {
-        List<CiroService.jsonProduct> ownedProducts;
+        //List<CiroService.jsonProduct> ownedProducts;
         protected void Page_Load(object sender, EventArgs e)
         {
             /*
