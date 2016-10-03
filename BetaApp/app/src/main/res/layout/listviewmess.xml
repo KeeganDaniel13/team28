@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+    android:elevation="8dp"
+    android:layout_margin="10dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff"
+
+        android:layout_margin="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            >
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <app.ciro.chuck.betaapp.MyTextView
+                    android:id="@+id/time"
+                    android:layout_weight="0.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10-03-2016"
+                    android:textColor="@color/listsub1"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="230dp"
+                    android:layout_gravity="center"
+                    />
+
+                <ImageView
+                    android:id="@+id/more"
+                    android:visibility="invisible"
+                    android:layout_width="15dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/more"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp"
+                    >
+
+                    <app.ciro.chuck.betaapp.MyTextView
+                        android:id="@+id/news"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trump’s Plan for AmericanMade iPhonew Wold Be Disastrous. Trump’s Plan for AmericanMade iPhonew Wold Be Disastrous"
+                        android:lines="2"
+                        android:textSize="17dp"
+                        android:textColor="@color/listtext"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="3"
+                        />
+
+                    <app.ciro.chuck.betaapp.MyTextView
+                        android:id="@+id/newssub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Why even a President Trump couldn’t make Apple manufacture iPhone in the state."
+                        android:layout_marginTop="13dp"
+                        android:textSize="13dp"
+                        android:textColor="@color/listsub1"
+                        android:lineSpacingExtra="3dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="2.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
