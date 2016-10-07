@@ -11,7 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            
             if (Request.QueryString["accpet"] != null)
             {
                 try
@@ -37,7 +37,7 @@ namespace CiroWebsite
 
                 }
                 Response.Redirect("declareownershiptransfer.aspx");
-            }*/
+            }
         }
 
         protected void proceed(object sender, EventArgs e)
@@ -61,7 +61,6 @@ namespace CiroWebsite
                 Response.Write(body);
             }
             catch (Exception) { }
-
         }
      
     }

@@ -350,6 +350,12 @@
     <Content Include="ClientPages\Client.Master" />
     <Content Include="AdminPages\admin.Master" />
     <Content Include="CustomsPages\Customs.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehousesStorageRates.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />

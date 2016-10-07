@@ -105,7 +105,7 @@ namespace CiroService
             List<jsonProduct> sendProducts = new List<jsonProduct>();
             foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size) });
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size),description = p.product .product_description});
             }
             return sendProducts;
         }
@@ -190,9 +190,9 @@ namespace CiroService
                 newTransfer.transferrequest_product = newRequest.productID;
                 newTransfer.transferrequest_to = warehouseName.warehouse_location;
                 newTransfer.transferrequest_from = productExists.product_location;
-                newTransfer.transferrequest_description = newRequest.description;
-                newTransfer.transferrequest_requestDate = DateTime.Now;
-                newTransfer.transferrequestc_reason = newRequest.reason;
+                //newTransfer.transferrequest_description = "";
+                //newTransfer.transferrequest_requestDate = newRequest .date;
+                //newTransfer.transferrequestc_reason = newRequest.reason;
                 // DateTime date = new DateTime();
                 // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
                 try
@@ -356,14 +356,12 @@ namespace CiroService
             DateTime date = DateTime.Now;
             string origin2 = origin;
             string genCode = "" + hscode + date.Day + date.Second + origin2.Substring(0, 2);
-            //DateTime ExpirationDate = 
+            DateTime ExpirationDate = date.AddYears(2);
             foreach (var p in newProduct)
             {
 
-
                 //add products to product table
-                
-                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype /*,product_exitdate=*/});
+                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype ,product_expirationDate = ExpirationDate,});
                 //adding new product with bill of entry
 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
@@ -371,9 +369,7 @@ namespace CiroService
 
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode && b.billofentry_product == addToBill.product_id && b.billofentry_user == p.userID);
                 
-
                 addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id});
-
 
                 //add to transferlist
 

@@ -16,6 +16,7 @@ namespace CiroWebsite
             var user = (CiroService.JsonUser) Session["user"];
 
             var goods = server.clientProducts(new CiroService.JsonUser { id = Convert.ToInt32(user.id ) });
+            Session["currentItems"] = goods.ToList<CiroService.jsonProduct>();
             //var goods = server.clientProducts(new CiroService.JsonUser { id = 1 });
             if (Request.QueryString["add"] != null)
             {
@@ -28,6 +29,7 @@ namespace CiroWebsite
                 {
 
                     string table = "";
+                    
                     foreach (var item in goods)
                     {
                         table += "<tr>";

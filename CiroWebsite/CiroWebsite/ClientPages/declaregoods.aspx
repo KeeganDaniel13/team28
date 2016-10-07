@@ -41,16 +41,24 @@
                               <br/>
 							<div class="form-group">
 								<label for="Warehouse" class="col-sm-3 control-label">Select Warehouse</label>
-								<div class="col-sm-9"">
+						<div class="col-sm-9"">
 						<a href="#" data-toggle="modal" data-target="#composeModal">
                                    <input type="text" runat="server" class="form-control" id="WarehouseName" placeholder="Warehouse"/></a>
-					</div>
-                         
-							</div>	
-                     
-                                  <br />
-                                  
-                                    
+					        </div> 
+							</div>
+                            <div>
+                                <label for="insuredBox" class="col-sm-3 control-label">Is The Product Insured</label>
+								<div class="col-sm-9">
+								</div> 
+                              </div>	
+                              <div>
+                                <label for="reasonInput" class="col-sm-3 control-label">Reason For Importation</label>
+								<div class="col-sm-9">
+									<textarea id="reason" runat="server" rows="4" cols="50"></textarea>
+								</div> 
+                              </div>
+                                  <br /><br /><br /><br /><br /><br /><br /><br />   
+
 							<button type="submit"  class="btn btn-primary btn-xs btn-outline" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Add Package</button>
                               
 						</form>						

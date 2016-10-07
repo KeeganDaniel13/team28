@@ -58,10 +58,10 @@ namespace CiroWebsite
                         modals += "<tr><td class='h6'><strong>Insured</strong></td><td> </td><td class='h5'>Implement</td></tr>";
                         modals += "<tr><td class='h6'><strong>Width</strong></td><td> </td><td class='h5'>"+item.width+ "</td></tr>";
                         modals += "<tr><td class='h6'><strong>Height</strong></td><td> </td><td class='h5'>"+item.height+"</td></tr>";
-                        modals += "<tr><td class='btn-mais-info text-primary'><i class='open_info fa fa-plus-square-o'></i><i class='open_info hide fa fa-minus-square-o'></i> Description (Implement)</td><td> </td><td class='h5'></td></tr>";
+                        modals += "<tr><td class='btn-mais-info text-primary'><i class='open_info fa fa-plus-square-o'></i><i class='open_info hide fa fa-minus-square-o'></i> Description</td><td></td><td class='h5'></td></tr>";
                         modals += "</tbody></table>";
                         modals += "<div class='col-md-6'><img src='../infinity/assets/images/11.jpg' alt='teste' class='img-thumbnail'></div>";
-                        modals += "<div class='clearfix'></div><p class='open_info hide'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div>";
+                        modals += "<div class='clearfix'></div><p class='open_info hide'>"+item.description+"</p></div>";
                         modals += "<div class='modal-footer'><div class='text-right pull-right col-md-3'>Value: <br/> <span class='h3 text-muted'><strong>R"+item.value+"</strong></span></span></div>";
                         modals += "<div class='text-right pull-right col-md-3'><a type='button' href='productlog.aspx?id="+item.ID+ "' class='btn btn-sm btn-success'>Package Log</a></div></div></div></div></div>";
                     }

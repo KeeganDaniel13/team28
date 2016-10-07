@@ -47,13 +47,13 @@
           <Property Name="location_isle" Type="int" />
           <Property Name="location_column" Type="int" />
           <Property Name="location_row" Type="int" />
-          <Property Name="location_reserve" Type="int" />
           <Property Name="location_size" Type="int" />
           <Property Name="location_product" Type="int" />
           <Property Name="location_warehouse" Type="int" />
           <Property Name="location_height" Type="int" />
           <Property Name="location_width" Type="int" />
           <Property Name="location_length" Type="int" />
+          <Property Name="location_reserve" Type="int" />
         </EntityType>
         <EntityType Name="message">
           <Key>
@@ -99,6 +99,7 @@
           <Property Name="product_insured" Type="varchar" MaxLength="45" />
           <Property Name="product_reciept" Type="varchar" MaxLength="45" />
           <Property Name="product_description" Type="varchar" MaxLength="255" />
+          <Property Name="product_expirationDate" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -150,8 +151,8 @@
             <PropertyRef Name="transferrequest_id" />
           </Key>
           <Property Name="transferrequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="transferrequest_from" Type="varchar" MaxLength="45" />
-          <Property Name="transferrequest_to" Type="varchar" MaxLength="45" />
+          <Property Name="transferrequest_from" Type="varchar" MaxLength="255" />
+          <Property Name="transferrequest_to" Type="varchar" MaxLength="255" />
           <Property Name="transferrequest_verdict" Type="varchar" MaxLength="45" />
           <Property Name="transferrequest_user" Type="int" />
           <Property Name="transferrequest_product" Type="int" />
@@ -252,18 +253,6 @@
             </Principal>
             <Dependent Role="location">
               <PropertyRef Name="location_product" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="location_reserve">
-          <End Role="product" Type="Self.product" Multiplicity="0..1" />
-          <End Role="location" Type="Self.location" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="location">
-              <PropertyRef Name="location_reserve" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -558,10 +547,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="product" EntitySet="product" />
             <End Role="location" EntitySet="location" />
           </AssociationSet>
-          <AssociationSet Name="location_reserve" Association="Self.location_reserve">
-            <End Role="product" EntitySet="product" />
-            <End Role="location" EntitySet="location" />
-          </AssociationSet>
           <AssociationSet Name="location_warehouse" Association="Self.location_warehouse">
             <End Role="warehouse" EntitySet="warehouse" />
             <End Role="location" EntitySet="location" />
@@ -698,7 +683,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="location_isle" Type="Int32" />
           <Property Name="location_column" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
-          <Property Name="location_reserve" Type="Int32" />
           <Property Name="location_size" Type="Int32" />
           <Property Name="location_product" Type="Int32" />
           <Property Name="location_warehouse" Type="Int32" />
@@ -708,6 +692,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="product" Relationship="Self.location_product" FromRole="location" ToRole="product" />
           <NavigationProperty Name="product1" Relationship="Self.location_reserve" FromRole="location" ToRole="product" />
           <NavigationProperty Name="warehouse" Relationship="Self.location_warehouse" FromRole="location" ToRole="warehouse" />
+          <Property Name="location_reserve" Type="Int32" />
         </EntityType>
         <EntityType Name="message">
           <Key>
@@ -769,6 +754,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_product" FromRole="product" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_product" FromRole="product" ToRole="transferrequest" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_product" FromRole="product" ToRole="warehousestock" />
+          <Property Name="product_expirationDate" Type="DateTime" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -1389,11 +1375,11 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="locations">
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
+                <ScalarProperty Name="location_reserve" ColumnName="location_reserve" />
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
                 <ScalarProperty Name="location_column" ColumnName="location_column" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
-                <ScalarProperty Name="location_reserve" ColumnName="location_reserve" />
                 <ScalarProperty Name="location_size" ColumnName="location_size" />
                 <ScalarProperty Name="location_product" ColumnName="location_product" />
                 <ScalarProperty Name="location_warehouse" ColumnName="location_warehouse" />
@@ -1430,6 +1416,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="custommandbModel.product">
               <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />

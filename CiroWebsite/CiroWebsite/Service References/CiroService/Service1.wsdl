@@ -349,6 +349,12 @@
   <wsdl:message name="IService1_occupylocation_OutputMessage">
     <wsdl:part name="parameters" element="tns:occupylocationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Reservelocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reservelocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Reservelocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservelocationResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_vacatelocation_InputMessage">
     <wsdl:part name="parameters" element="tns:vacatelocation" />
   </wsdl:message>
@@ -408,6 +414,18 @@
   </wsdl:message>
   <wsdl:message name="IService1_IncidentsLastMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:IncidentsLastMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRates" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRateResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getCountryP_InputMessage">
     <wsdl:part name="parameters" element="tns:getCountryP" />
@@ -668,6 +686,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/occupylocation" message="tns:IService1_occupylocation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/occupylocationResponse" message="tns:IService1_occupylocation_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Reservelocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Reservelocation" message="tns:IService1_Reservelocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ReservelocationResponse" message="tns:IService1_Reservelocation_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="vacatelocation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/vacatelocation" message="tns:IService1_vacatelocation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/vacatelocationResponse" message="tns:IService1_vacatelocation_OutputMessage" />
@@ -707,6 +729,14 @@
     <wsdl:operation name="IncidentsLastMonth">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonth" message="tns:IService1_IncidentsLastMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonthResponse" message="tns:IService1_IncidentsLastMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRates" message="tns:IService1_StorageRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRatesResponse" message="tns:IService1_StorageRates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRate" message="tns:IService1_StorageRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRateResponse" message="tns:IService1_StorageRate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getCountryP">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCountryP" message="tns:IService1_getCountryP_InputMessage" />
@@ -1244,6 +1274,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Reservelocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/Reservelocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="vacatelocation">
       <soap:operation soapAction="http://tempuri.org/IService1/vacatelocation" style="document" />
       <wsdl:input>
@@ -1327,6 +1366,24 @@
     </wsdl:operation>
     <wsdl:operation name="IncidentsLastMonth">
       <soap:operation soapAction="http://tempuri.org/IService1/IncidentsLastMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageRates">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageRate">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageRate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
