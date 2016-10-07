@@ -1709,9 +1709,7 @@ namespace CiroService
         {
             productlogController logaccess = new productlogController();
             warehouseController warehouseaccess = new warehouseController();
-            MessageBox.Show(warehouseID);
             var warehouse = warehouseaccess.getRecord(int.Parse(warehouseID));
-            MessageBox.Show(warehouse.warehouse_name);
             var log = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == warehouse.warehouse_name);
             List<WarehouseStorageRate> rates = new List<WarehouseStorageRate>();
 
@@ -1723,7 +1721,7 @@ namespace CiroService
                 foreach (productlog p in log)
                 {
                     DateTime dtprod = (DateTime)p.productlog_dateLogged;
-                    if(dtprod.Month == k && dtprod.Year == dtmon.Year)
+                    if(dtprod.Month == k)
                     {
                         if(p.productlog_type == 2 || p.productlog_type == 3)
                         {
@@ -1854,7 +1852,7 @@ namespace CiroService
             locationaccess.updateRecord(loca.location_id, loca);
         }
 
-
+        //overall rate at which the warehouse is filling up
         public IEnumerable<WarehousesStorageRates> StorageRates()
         {
             warehouseController warehouseaccess = new warehouseController();
@@ -1883,7 +1881,58 @@ namespace CiroService
             return rates;
         }
 
-       
+        public IEnumerable<StorageFilledBy> StorageFilledBy()
+        {
+            warehouseController warehouseaccess = new warehouseController();
+            productlogController logaccess = new productlogController();
+            productController productaccess = new productController();
+
+            List<StorageFilledBy> storages = new List<StorageFilledBy>();
+
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+
+            foreach(warehouse w in warehouses)
+            {
+                int countin = 0;
+                int countout = 0;
+                double capacity = productaccess.getTable().Where<product>(p => p.product_location == w.warehouse_location).ToList<product>().Count();
+
+                foreach (productlog p in log)
+                {
+                    if (p.productlog_warehouse == w.warehouse_name && p.productlog_type == 7)
+                    {
+                        countin++;
+                    }
+                    if (p.productlog_warehouse == w.warehouse_name && (p.productlog_type == 2 || p.productlog_type == 3))
+                    {
+                        countout++;
+                    }
+                }
+                DateTime est = (DateTime)w.warehouse_established;
+                var rate = countin - countout;
+                var difference = DateTime.Now.Subtract(est).TotalDays;                
+                var dailyrate = (rate / difference);
+                var size = w.warehouse_size;
+                int DaysTilFull = 0;
+
+                if(dailyrate > 0)
+                {
+                    while (capacity < size)
+                    {
+                        capacity += dailyrate;
+                        DaysTilFull++;
+                    }
+                }
+                if(dailyrate <= 0)
+                {
+                    DaysTilFull = -1;
+                }
+              
+                storages.Add(new JsonObjects.StorageFilledBy { warehouse = w.warehouse_name, DaysTilFull = DaysTilFull });
+            }
+            return storages;
+        }
 
 
         /*public string getPackageNotification(JsonUser user)

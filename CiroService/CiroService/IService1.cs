@@ -323,15 +323,19 @@ namespace CiroService
         IEnumerable<OutgoingRate> IncidentsLastMonth(string name);
 
 
-        //packages coming in vs leaving all warehouses
+        ////overall rate at which the warehouse is filling up all warehouses
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "StorageRates")]
         IEnumerable<WarehousesStorageRates> StorageRates();
 
-        //packages coming in vs leaving specific warehouse
+        //overall rate at which the warehouse is filling specific warehouse each month
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "StorageRate/{warehouseID}")]
         IEnumerable<WarehouseStorageRate> StorageRate(string warehouseID);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "StorageFilledBy")]
+        IEnumerable<StorageFilledBy> StorageFilledBy();
 
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getCountryP")]
