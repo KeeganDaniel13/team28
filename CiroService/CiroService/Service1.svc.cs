@@ -105,7 +105,7 @@ namespace CiroService
             List<jsonProduct> sendProducts = new List<jsonProduct>();
             foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size) });
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size),description = p.product .product_description});
             }
             return sendProducts;
         }
@@ -190,9 +190,9 @@ namespace CiroService
                 newTransfer.transferrequest_product = newRequest.productID;
                 newTransfer.transferrequest_to = warehouseName.warehouse_location;
                 newTransfer.transferrequest_from = productExists.product_location;
-                newTransfer.transferrequest_description = newRequest.description;
-                newTransfer.transferrequest_requestDate = DateTime.Now;
-                newTransfer.transferrequestc_reason = newRequest.reason;
+                //newTransfer.transferrequest_description = "";
+                //newTransfer.transferrequest_requestDate = newRequest .date;
+                //newTransfer.transferrequestc_reason = newRequest.reason;
                 // DateTime date = new DateTime();
                 // newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
                 try
@@ -356,14 +356,12 @@ namespace CiroService
             DateTime date = DateTime.Now;
             string origin2 = origin;
             string genCode = "" + hscode + date.Day + date.Second + origin2.Substring(0, 2);
-            //DateTime ExpirationDate = 
+            DateTime ExpirationDate = date.AddYears(2);
             foreach (var p in newProduct)
             {
 
-
                 //add products to product table
-                
-                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype /*,product_exitdate=*/});
+                productAccess.addRecord(new product { product_name = p.Name, product_size = p.size, product_quantity = p.quantity, product_price = p.value, product_location = "In Transit", product_arrivalDate = date, product_hscode = hscode, product_producttype = producttype ,product_expirationDate = ExpirationDate,});
                 //adding new product with bill of entry
 
                 product addToBill = productAccess.getTable().First(c => c.product_name.Equals(p.Name) && c.product_hscode == hscode && c.product_arrivalDate == date);
@@ -371,9 +369,7 @@ namespace CiroService
 
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_code == genCode && b.billofentry_product == addToBill.product_id && b.billofentry_user == p.userID);
                 
-
                 addTax(new JsonProducts { id = Convert.ToInt32(billExists.billofentry_product) }, new JsonBillofEntry { id = billExists.billofentry_id});
-
 
                 //add to transferlist
 
@@ -1709,6 +1705,39 @@ namespace CiroService
             return monthly;
         }
 
+        public IEnumerable<WarehouseStorageRate> StorageRate(string warehouseID)
+        {
+            productlogController logaccess = new productlogController();
+            warehouseController warehouseaccess = new warehouseController();
+            var warehouse = warehouseaccess.getRecord(int.Parse(warehouseID));
+            var log = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == warehouse.warehouse_name);
+            List<WarehouseStorageRate> rates = new List<WarehouseStorageRate>();
+
+            for(int k = 1; k <= 12; k++)
+            {
+                DateTime dtmon = new DateTime(2016, k, 24);
+                int countin = 0;
+                int countout = 0;
+                foreach (productlog p in log)
+                {
+                    DateTime dtprod = (DateTime)p.productlog_dateLogged;
+                    if(dtprod.Month == k)
+                    {
+                        if(p.productlog_type == 2 || p.productlog_type == 3)
+                        {
+                            countout++;
+                        }
+                        if (p.productlog_type == 7)
+                        {
+                            countin++;
+                        }
+                    }
+                }
+                rates.Add(new WarehouseStorageRate { incoming = countin, outgoing = countout, month = dtmon.ToString("MMMM") });
+            }
+            return rates;
+        }
+
         public IEnumerable<OutgoingRate> IncidentsLastMonth(string name)
         {           
             warehouseController warehouseaccess = new warehouseController();           
@@ -1821,6 +1850,88 @@ namespace CiroService
             loca.location_reserve = int.Parse(packageid);
 
             locationaccess.updateRecord(loca.location_id, loca);
+        }
+
+        //overall rate at which the warehouse is filling up
+        public IEnumerable<WarehousesStorageRates> StorageRates()
+        {
+            warehouseController warehouseaccess = new warehouseController();
+            productlogController logaccess = new productlogController();
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+            List<WarehousesStorageRates> rates = new List<WarehousesStorageRates>();
+
+            foreach (warehouse w in warehouses)
+            {
+                int countin = 0;
+                int countout = 0;
+                foreach (productlog p in log)
+                {
+                    if (p.productlog_warehouse == w.warehouse_name && p.productlog_type == 7)
+                    {
+                        countin++;
+                    }
+                    if (p.productlog_warehouse == w.warehouse_name && (p.productlog_type == 2 || p.productlog_type == 3))
+                    {
+                        countout++;
+                    }
+                }
+                rates.Add(new WarehousesStorageRates { warehouse = w.warehouse_name, incoming = countin, outgoing = countout });
+            }
+            return rates;
+        }
+
+        public IEnumerable<StorageFilledBy> StorageFilledBy()
+        {
+            warehouseController warehouseaccess = new warehouseController();
+            productlogController logaccess = new productlogController();
+            productController productaccess = new productController();
+
+            List<StorageFilledBy> storages = new List<StorageFilledBy>();
+
+            var warehouses = warehouseaccess.getTable();
+            var log = logaccess.getTable();
+
+            foreach(warehouse w in warehouses)
+            {
+                int countin = 0;
+                int countout = 0;
+                double capacity = productaccess.getTable().Where<product>(p => p.product_location == w.warehouse_location).ToList<product>().Count();
+
+                foreach (productlog p in log)
+                {
+                    if (p.productlog_warehouse == w.warehouse_name && p.productlog_type == 7)
+                    {
+                        countin++;
+                    }
+                    if (p.productlog_warehouse == w.warehouse_name && (p.productlog_type == 2 || p.productlog_type == 3))
+                    {
+                        countout++;
+                    }
+                }
+                DateTime est = (DateTime)w.warehouse_established;
+                var rate = countin - countout;
+                var difference = DateTime.Now.Subtract(est).TotalDays;                
+                var dailyrate = (rate / difference);
+                var size = w.warehouse_size;
+                int DaysTilFull = 0;
+
+                if(dailyrate > 0)
+                {
+                    while (capacity < size)
+                    {
+                        capacity += dailyrate;
+                        DaysTilFull++;
+                    }
+                }
+                if(dailyrate <= 0)
+                {
+                    DaysTilFull = -1;
+                }
+              
+                storages.Add(new JsonObjects.StorageFilledBy { warehouse = w.warehouse_name, DaysTilFull = DaysTilFull });
+            }
+            return storages;
         }
 
 

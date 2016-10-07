@@ -10,7 +10,7 @@
 namespace CiroWebsite {
     
     
-    public partial class editor {
+    public partial class inventory {
         
         /// <summary>
         /// list control.
@@ -20,5 +20,14 @@ namespace CiroWebsite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl list;
+        
+        /// <summary>
+        /// modalsHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalsHolder;
     }
 }

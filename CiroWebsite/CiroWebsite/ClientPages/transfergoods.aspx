@@ -268,7 +268,7 @@ span.round-tab:hover {
                 </div>
                 <div class="tab-pane" role="tabpanel" id="step3">
             
-                    <div class="col-sm-12 col-md-12">
+    <div class="col-sm-12 col-md-12">
 	    <div class="panel panel-primary panel-custom inventory">
 		    <div class="panel-heading">
 			    <h4 class="panel-title">Confirm Transfer</h4>
@@ -285,23 +285,8 @@ span.round-tab:hover {
                     
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Carolina Biggleswade</td>
-                    
-                    <td>65</td>
-                    <td>Jockey</td>
-                    <td>Old Storage</td>
-                    <td>20.09.2016</td>
-                </tr>
-                 <tr>
-                    <td>Carolina Biggleswade</td>
-                  
-                    <td>65</td>
-                    <td>Jockey</td>
-                    <td>Old Storage</td>
-                    <td>20.09.2016</td>
-                </tr>  
+            <tbody id="transferProducts" runat="server"> 
+                <%displayTransferList(); %>
             </tbody>
         </table>
 		    </div>
@@ -315,7 +300,7 @@ span.round-tab:hover {
 		</form>
                     <ul class="list-inline pull-right">
                         <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                        <li><button type="button" runat="server" onserverclick="saveInfo" class="btn btn-primary next-step">Save and continue</button></li>
+                        <li><button  type="button" runat="server" onserverclick="saveInfo" class="btn btn-primary next-step">Save and continue</button></li>
                     </ul>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="step2">
@@ -326,7 +311,8 @@ span.round-tab:hover {
 		    <div class="panel-heading">
                
 			    <h4 class="panel-title">Warehouse Transfer</h4>
-                <a href="" type="button" onserverclick="bingo()" class="pull-right"><i class="fa fa-plus "></i></a>
+                <!--Modal to add the items to onserverclick="bingo(model)" <a href="#" data-toggle="modal" data-target="#composeModal"> transferlist-->
+                <a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="pull-right"><i class="fa fa-plus "></i></a>
                
 		    </div>
 		    <div class="panel-body">
@@ -364,7 +350,8 @@ span.round-tab:hover {
                          <button type="button" class="btn  btn-sm btn-success">Transfer</button>
                             </div>
                     </td> 
-                </tr>  
+                </tr>
+                 <%displayTransferList(); %>
             </tbody>
         </table>
 		    </div>
@@ -389,6 +376,34 @@ span.round-tab:hover {
     </div>
 </section>
 </div>
+
+    <!-- Compose modal -->
+<div class="modal fade" id="composeModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Select Product</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+                <tr>
+                  <th>Select</th>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                   <th>Location</th>
+                  <th>Value</th>
+                </tr>  
+                   <%listPackages(); %>   
+              </table>                                
+                <br/>
+               <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                <br/>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
     <!-- Modal -->
             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog">

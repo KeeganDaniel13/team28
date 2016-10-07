@@ -86,6 +86,7 @@ CREATE TABLE `custommandb`.`product` (
   `warehouse_id` INT NOT NULL AUTO_INCREMENT,
   `warehouse_name` VARCHAR(45) NULL,
   `warehouse_location` VARCHAR(100) NULL,
+  `warehouse_established` DATETIME NULL,
   `warehouse_size` INT NULL,
   `warehouse_user` INT NULL,
   `warehouse_warehousetype` INT NULL,
@@ -584,8 +585,17 @@ ADD COLUMN `warehouse_description` VARCHAR(255) NULL AFTER `warehouse_image`;
 ALTER TABLE `custommandb`.`warehouse` 
 CHANGE COLUMN `warehouse_description` `warehouse_description` LONGBLOB NULL DEFAULT NULL ;
 
+INSERT INTO `custommandb`.`productlogtype` (`productlogtype_name`) VALUES ('PR');
+
+
 UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Safe and secure Industrial Park with 24/7 security and visitor controlled access. Central to Midrand, Or Tambo and Pretoria. 3464 sqm warehouse, double volume 380 sqm office with balcony. Stand alone. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='1';
 UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Prominent position with excellent exposure onto the M13.This top floor unit offers clear span factory floor in 2 sections with good height and abundant natural light. The unit may divided into 2 x 720m2 units @ R38/m2. Ample office space and staff ablutions. Excellent access to M13/M19/M7. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='2';
 UPDATE `custommandb`.`warehouse` SET `warehouse_description`='This well situated mini factory located just off chris hani road and within close proximity to umgeni road and the N2. Offering a total of 320m2, Workshop space has a double volume height ideal for storage, neat office component with kitchenette and 2X staff ablution facilities. Industrial park is fenced and gated with 24 hour security for peace of mind. Contact me for further information. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='3';
 UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Warehouse available in Benoni South. Offering 600sqm with a mezzanine floor. 2 Large roller doors 2 Offices available that has its own entrance. Neat unit. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='4';
 
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_expirationDate` DATETIME NULL AFTER `product_description`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+CHANGE COLUMN `transferrequest_from` `transferrequest_from` VARCHAR(255) NULL DEFAULT NULL ,
+CHANGE COLUMN `transferrequest_to` `transferrequest_to` VARCHAR(255) NULL DEFAULT NULL ;

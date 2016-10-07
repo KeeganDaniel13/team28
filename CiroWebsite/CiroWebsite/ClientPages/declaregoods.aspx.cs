@@ -16,10 +16,11 @@ namespace CiroWebsite
         List<CiroService.jsonProduct> declaredItems = new List<CiroService.jsonProduct>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
             if (Request.QueryString["id"] != null)
             {
                 remove(Request.QueryString["id"]);
-                /*List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
+               
                 if (declared != null)
                 {
                     declaredItems = null;
@@ -28,10 +29,10 @@ namespace CiroWebsite
                     {
                         declaredItems.Add(item);
                     }
-                }*/
+                }
             }
 
-            List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
+            //List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
             if (declared != null)
             {
                 declaredItems = null;

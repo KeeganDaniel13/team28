@@ -18,7 +18,6 @@ namespace CiroService.DAL
 
             db.transferrequests.Add(transferrequest);
             db.SaveChanges();
-
             return db.transferrequests;
         }
 

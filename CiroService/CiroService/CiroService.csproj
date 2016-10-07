@@ -265,6 +265,7 @@
     <Compile Include="JsonObjects\RegisterUser.cs" />
     <Compile Include="JsonObjects\ReleaseProduct.cs" />
     <Compile Include="JsonObjects\stockTakeInfo.cs" />
+    <Compile Include="JsonObjects\StorageFilledBy.cs" />
     <Compile Include="JsonObjects\TransferDetails.cs" />
     <Compile Include="JsonObjects\transferStock.cs" />
     <Compile Include="emailTest.cs" />
@@ -275,6 +276,8 @@
     <Compile Include="JsonObjects\UserDemo.cs" />
     <Compile Include="JsonObjects\WarehouseIncidentsGraph.cs" />
     <Compile Include="JsonObjects\WarehouseReleasescs.cs" />
+    <Compile Include="JsonObjects\WarehousesStorageRates.cs" />
+    <Compile Include="JsonObjects\WarehouseStorageRate.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
