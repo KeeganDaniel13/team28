@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CiroWebsite {
+namespace CiroWebsite.ClientPages {
     
     
     public partial class clientinventory {

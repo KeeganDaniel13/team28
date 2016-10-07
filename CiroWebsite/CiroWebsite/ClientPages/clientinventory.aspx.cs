@@ -41,7 +41,7 @@ namespace CiroWebsite
                         table += "</tr>";
 
                     }
-                    list.InnerHtml += table;
+                    //list.InnerHtml += table;
                     
                 }
             }
