@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="AdminPages\addofficial.aspx" />
     <Content Include="AdminPages\AdminReports.aspx" />
+    <Content Include="ClientPages\ApproveTransfers.aspx" />
     <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="AdminPages\dashboard.aspx" />
     <Content Include="AdminPages\licensewarehouse.aspx" />
@@ -532,6 +533,13 @@
     <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\CustomsReports.aspx.cs">
       <DependentUpon>CustomsReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -659,7 +667,7 @@
     </Compile>
     <Compile Include="ClientPages\viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
-	  </Compile>
+    </Compile>
     <Compile Include="Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -715,7 +723,7 @@
     </Compile>
     <Compile Include="CustomsPages\messages.aspx.designer.cs">
       <DependentUpon>messages.aspx</DependentUpon>
-</Compile>
+    </Compile>
     <Compile Include="AdminPages\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -750,7 +758,7 @@
     </Compile>
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
-	  </Compile>
+    </Compile>
     <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -771,7 +779,7 @@
     </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
-	  </Compile>
+    </Compile>
     <Compile Include="AdminPages\licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
