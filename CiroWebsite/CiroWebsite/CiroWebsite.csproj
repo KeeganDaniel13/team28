@@ -620,17 +620,15 @@
     </Compile>
     <Compile Include="ClientPages\viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
-	  </Compile>
+    </Compile>
     <Compile Include="Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
     </Compile>
     <Compile Include="clientinventory.aspx.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
@@ -676,11 +674,7 @@
     </Compile>
     <Compile Include="CustomsPages\messages.aspx.designer.cs">
       <DependentUpon>messages.aspx</DependentUpon>
-<<<<<<< HEAD
-</Compile>
-=======
     </Compile>
->>>>>>> 13a2021146e4d77ab014c37aa8c9d418b2e69eb1
     <Compile Include="AdminPages\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -715,23 +709,18 @@
     </Compile>
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
-<<<<<<< HEAD
-	  </Compile>
+    </Compile>
     <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="inventory.aspx.designer.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsPages\viewreleaseinfo.aspx.cs">
       <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomsPages\viewreleaseinfo.aspx.designer.cs">
       <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-=======
->>>>>>> 13a2021146e4d77ab014c37aa8c9d418b2e69eb1
     </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
@@ -739,11 +728,7 @@
     </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.designer.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
-<<<<<<< HEAD
-	  </Compile>
-=======
     </Compile>
->>>>>>> 13a2021146e4d77ab014c37aa8c9d418b2e69eb1
     <Compile Include="AdminPages\licensewarehouse.aspx.cs">
       <DependentUpon>licensewarehouse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -812,13 +797,6 @@
     </Compile>
     <Compile Include="viewpackage.aspx.designer.cs">
       <DependentUpon>viewpackage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomsPages\viewreleaseinfo.aspx.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomsPages\viewreleaseinfo.aspx.designer.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\Warehouse Reports.aspx.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
