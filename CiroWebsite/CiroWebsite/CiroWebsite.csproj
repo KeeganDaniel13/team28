@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="AdminPages\addofficial.aspx" />
     <Content Include="AdminPages\AdminReports.aspx" />
+    <Content Include="ClientPages\ApproveTransfers.aspx" />
     <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="AdminPages\dashboard.aspx" />
     <Content Include="AdminPages\licensewarehouse.aspx" />
@@ -350,6 +351,12 @@
     <Content Include="ClientPages\Client.Master" />
     <Content Include="AdminPages\admin.Master" />
     <Content Include="CustomsPages\Customs.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehousesStorageRates.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -521,6 +528,13 @@
     <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="approveTransfers.aspx.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -620,6 +634,7 @@
     </Compile>
     <Compile Include="ClientPages\viewware.aspx.designer.cs">
       <DependentUpon>viewware.aspx</DependentUpon>
+<<<<<<< HEAD
     </Compile>
     <Compile Include="Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
@@ -632,6 +647,8 @@
     </Compile>
     <Compile Include="clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
+=======
+>>>>>>> aea172b3e2826e27c7e39346d119022670edc5b0
     </Compile>
     <Compile Include="CustomsPages\customs.aspx.cs">
       <DependentUpon>customs.aspx</DependentUpon>
@@ -709,12 +726,15 @@
     </Compile>
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
+<<<<<<< HEAD
     </Compile>
     <Compile Include="inventory.aspx.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="inventory.aspx.designer.cs">
       <DependentUpon>inventory.aspx</DependentUpon>
+=======
+>>>>>>> aea172b3e2826e27c7e39346d119022670edc5b0
     </Compile>
     <Compile Include="CustomsPages\viewreleaseinfo.aspx.cs">
       <DependentUpon>viewreleaseinfo.aspx</DependentUpon>

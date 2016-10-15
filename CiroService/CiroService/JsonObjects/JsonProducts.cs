@@ -22,5 +22,6 @@ namespace CiroService.JsonObjects
         public int hscode { get; set; }
         public string cosigner { get; set; }
         public string bill { get; set; }
+        public string description { get; set; }
     }
 }

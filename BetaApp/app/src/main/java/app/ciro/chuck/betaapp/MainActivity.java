@@ -1,5 +1,6 @@
 package app.ciro.chuck.betaapp;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,6 +8,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar1);
+        setSupportActionBar(mToolbar);
         /**
          *Setup the DrawerLayout and NavigationView
          */
@@ -47,13 +52,27 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                if (menuItem.getItemId() == R.id.nav_item_sent) {
+                if (menuItem.getItemId() == R.id.nav_item_scan) {
+                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.containerView,new Scanner()).commit();
+
+                }
+                if (menuItem.getItemId() == R.id.nav_item_messages) {
                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.containerView,new SentFragment()).commit();
 
                 }
+                if (menuItem.getItemId() == R.id.nav_item_incidents) {
+                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.containerView,new SentFragment()).commit();
 
-                if (menuItem.getItemId() == R.id.nav_item_inbox) {
+                }
+                if (menuItem.getItemId() == R.id.nav_item_transfers) {
+                    FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+                    xfragmentTransaction.replace(R.id.containerView,new TabFragment()).commit();
+                }
+
+                if (menuItem.getItemId() == R.id.nav_item_inventory) {
                     FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                     xfragmentTransaction.replace(R.id.containerView,new TabFragment()).commit();
                 }
@@ -76,4 +95,33 @@ public class MainActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Take appropriate action for each action item click
+        switch (item.getItemId()) {
+            case R.id.action_incident:
+                // search action
+
+                Intent intent = new Intent(this, IncidentsActivity.class);
+                this.startActivity(intent);
+
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
+    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+        return false;
+    }
+
 }

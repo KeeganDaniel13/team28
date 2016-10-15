@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CiroWebsite {
+namespace CiroWebsite.AdminPages {
     
     
     public partial class warehouse {
