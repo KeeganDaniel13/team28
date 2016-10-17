@@ -286,7 +286,7 @@ span.round-tab:hover {
                 </tr>
             </thead>
             <tbody id="transferProducts" runat="server"> 
-                <%displayTransferList(); %>
+                <%displayTransferComplete(); %>
             </tbody>
         </table>
 		    </div>

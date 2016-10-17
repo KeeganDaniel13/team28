@@ -188,7 +188,7 @@ namespace CiroService
                 newTransfer.transferrequest_verdict = "Pending";
                 newTransfer.transferrequest_user = newRequest.userID;
                 newTransfer.transferrequest_product = newRequest.productID;
-                newTransfer.transferrequest_to = warehouseName.warehouse_location;
+                //newTransfer.transferrequest_to = warehouseName.warehouse_location;
                 newTransfer.transferrequest_from = productExists.product_location;
                 //newTransfer.transferrequest_description = "";
                 //newTransfer.transferrequest_requestDate = newRequest .date;

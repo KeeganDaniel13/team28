@@ -73,7 +73,7 @@ namespace CiroWebsite
         {
             var user = (CiroService.JsonUser)Session["user"];
             var packages = CiroSingleton.ServerCalls.clientProducts(new CiroService.JsonUser {id=user.id });
-            //var packages = (List<CiroService.jsonProduct>)Session["currentItems"];
+            var packagesInfo = (List<CiroService.jsonProduct>)Session["packagesInfo"];
             try
             {
                 string list = "";
@@ -118,22 +118,49 @@ namespace CiroWebsite
             Response.Write(body);   
         }
 
+        //needs completion
+        protected void displayTransferComplete()
+        {
+            var transferList = (List<int>)Session["transfers"];
+            //var packages = (List<CiroService.jsonProduct>)Session["packagesInfo"];
+            if (transferList != null)
+            {
+                string body = "";
+                foreach (var i in transferList)
+                {
+                    var package = CiroSingleton.ServerCalls.getPackageID("" + i);
+                    //var package = packages.First<CiroService.jsonProduct>(c=>c.ID==i);
+                    body += "<tr>";
+                    body += "<td>" + package.name + "</td>";
+                    body += "<td>" + package.quantity + "</td>";
+                    body += "<td>" + package.location + "</td>";
+                    body += "<td>destination</td>";
+                    body += "<td>transfer date</td>";
+                    body += "</tr>";
+
+                }
+                Response.Write(body);
+            }
+        }
 
         //needs completion
         protected void displayTransferList()
         {
             var transferList = (List<int>)Session["transfers"];
-            if(transferList!=null)
+            //var packages = (List<CiroService.jsonProduct>)Session["packagesInfo"];
+            if (transferList!=null)
             {
                 string body = "";
                 foreach (var i in transferList)
                 {
+                    var package = CiroSingleton.ServerCalls .getPackageID (""+i);
+                    //var package = packages.First<CiroService.jsonProduct>(c=>c.ID==i);
                     body += "<tr>";
-                    body += "<td>Name</td>";
-                    body += "<td>quantity</td>";
-                    body += "<td>currentlocation</td>";
+                    body += "<td>"+package .name+"</td>";
+                    body += "<td>"+package.quantity+"</td>";
+                    body += "<td>"+package .location   +"</td>";
                     body += "<td>destination</td>";
-                    body += "<td>transfer date</td>";
+                    body += "<td><button type='button' class='btn rounded btn - sm btn - danger'>Remove</button></td>";
                     body += "</tr>";
 
                 }

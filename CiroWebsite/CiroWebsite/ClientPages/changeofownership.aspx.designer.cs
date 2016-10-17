@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CiroWebsite.ClientPages {
+namespace CiroWebsite {
     
     
     public partial class changeofownership {

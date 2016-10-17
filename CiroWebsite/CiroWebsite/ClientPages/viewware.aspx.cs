@@ -11,7 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (Request.QueryString["w"] != null)
+            if (Request.QueryString["w"] != null)
             {
                 var warehouses = (List<CiroService.JsonWarehouse>)Session["warehouses"];
                 CiroService.JsonWarehouse warehouse = warehouses.First<CiroService.JsonWarehouse>(c => c.id == Convert.ToInt32(Request.QueryString["w"]));
@@ -20,7 +20,7 @@ namespace CiroWebsite
                 //loaction.InnerHtml += warehouse.location;
             }
             else
-            { Response.Redirect(""); }*/
+            { Response.Redirect(""); }
         }
     }
 }

@@ -27,7 +27,6 @@ namespace CiroService.EFDatabase
         public Nullable<int> location_reserve { get; set; }
     
         public virtual product product { get; set; }
-        public virtual product product1 { get; set; }
         public virtual warehouse warehouse { get; set; }
     }
 }

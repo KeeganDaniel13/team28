@@ -71,6 +71,8 @@
   <ItemGroup>
     <Content Include="AdminPages\addofficial.aspx" />
     <Content Include="AdminPages\AdminReports.aspx" />
+    <Content Include="ClientPages\AllTransfers.aspx" />
+    <Content Include="ClientPages\Approve.aspx" />
     <Content Include="ClientPages\ApproveTransfers.aspx" />
     <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="AdminPages\dashboard.aspx" />
@@ -527,6 +529,20 @@
     </Compile>
     <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\AllTransfers.aspx.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\AllTransfers.aspx.designer.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
       <DependentUpon>ApproveTransfers.aspx</DependentUpon>
