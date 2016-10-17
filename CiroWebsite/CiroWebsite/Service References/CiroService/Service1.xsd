@@ -433,6 +433,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WarehouseStorageRate" nillable="true" type="tns:WarehouseStorageRate" />
+  <xs:complexType name="ArrayOfStorageFilledBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStorageFilledBy" nillable="true" type="tns:ArrayOfStorageFilledBy" />
+  <xs:complexType name="StorageFilledBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DaysTilFull" type="xs:double" />
+      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
   <xs:complexType name="ArrayOfJsonCountryPercentage">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
