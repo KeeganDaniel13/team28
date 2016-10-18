@@ -26,6 +26,8 @@ namespace CiroService.EFDatabase
             this.releaserequests = new HashSet<releaserequest>();
             this.transferrequests = new HashSet<transferrequest>();
             this.warehouses = new HashSet<warehouse>();
+            this.warehouseemployees = new HashSet<warehouseemployee>();
+            this.warehousetasks = new HashSet<warehousetask>();
         }
     
         public int user_id { get; set; }
@@ -54,5 +56,9 @@ namespace CiroService.EFDatabase
         public virtual usertype usertype { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<warehouse> warehouses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<warehouseemployee> warehouseemployees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<warehousetask> warehousetasks { get; set; }
     }
 }

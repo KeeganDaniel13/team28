@@ -258,9 +258,12 @@ CREATE TABLE `custommandb`.`productlog` (
     REFERENCES `custommandb`.`product` (`product_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+	
+	
     
      CREATE TABLE `custommandb`.`Location` (
     `location_id` INT NOT NULL AUTO_INCREMENT,
+    `location_section` VARCHAR(50) NULL,
     `location_isle` INT NULL,
     `location_column` INT NULL,
     `location_row` INT NULL,
@@ -360,16 +363,24 @@ ADD CONSTRAINT `ownsershiprequest_product`
 
 	CREATE TABLE `custommandb`.`warehousetask` (
   `warehousetask_id` INT NOT NULL AUTO_INCREMENT,
+  `warehousetask_warehouse` INT NULL,
   `warehousetask_employee` INT NULL,
+  `warehousetask_type` VARCHAR(50) NULL,
   `warehousetask_description` LONGTEXT NULL,
   `warehousetask_section` VARCHAR(45) NULL,
   `warehousetask_timestamp` DATETIME NULL,
   `warehousetask_endtime` DATETIME NULL,
   PRIMARY KEY (`warehousetask_id`),
   INDEX `warehousetask_employee_idx` (`warehousetask_employee` ASC),
+    INDEX `warehousetask_warehouse_idx` (`warehousetask_warehouse` ASC), 
   CONSTRAINT `warehousetask_employee`
     FOREIGN KEY (`warehousetask_employee`)
-    REFERENCES `custommandb`.`warehouseemployee` (`warehouseemployee_employee`)
+    REFERENCES `custommandb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `warehousetask_warehouse`
+    FOREIGN KEY (`warehousetask_warehouse`)
+    REFERENCES `custommandb`.`warehouse` (`warehouse_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
@@ -596,5 +607,5 @@ INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `wa
 INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('13', '1');
 
 
-INSERT INTO `custommandb`.`warehousetask` (`warehousetask_employee`, `warehousetask_description`, `warehousetask_section`, `warehousetask_timestamp`, `warehousetask_endtime`) VALUES ('12', 'Stock take Section A in warehouse', 'Section A', '2016/09/20 12:01:00', '2016/09/20 16:30:22');
+INSERT INTO `custommandb`.`warehousetask` (`warehousetask_warehouse`, `warehousetask_employee`, `warehousetask_type`, `warehousetask_description`, `warehousetask_section`, `warehousetask_timestamp`) VALUES ('1', '12', 'Stock Take', 'Stock take Section A in warehouse', 'Section A', '2016/09/20 12:01:00');
 

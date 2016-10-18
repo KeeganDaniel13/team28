@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="billofentry">
           <Key>
             <PropertyRef Name="billofentry_id" />
@@ -44,6 +44,7 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="location_section" Type="varchar" MaxLength="50" />
           <Property Name="location_isle" Type="int" />
           <Property Name="location_column" Type="int" />
           <Property Name="location_row" Type="int" />
@@ -179,6 +180,14 @@
           <Property Name="warehouse_user" Type="int" />
           <Property Name="warehouse_warehousetype" Type="int" />
         </EntityType>
+        <EntityType Name="warehouseemployee">
+          <Key>
+            <PropertyRef Name="warehouseemployee_id" />
+          </Key>
+          <Property Name="warehouseemployee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="warehouseemployee_employee" Type="int" />
+          <Property Name="warehouseemployee_warehouse" Type="int" />
+        </EntityType>
         <EntityType Name="warehousestock">
           <Key>
             <PropertyRef Name="warehousestock_id" />
@@ -187,6 +196,19 @@
           <Property Name="warehousestock_lastchecked" Type="datetime" Precision="0" />
           <Property Name="warehousestock_warehouse" Type="int" />
           <Property Name="warehousestock_product" Type="int" />
+        </EntityType>
+        <EntityType Name="warehousetask">
+          <Key>
+            <PropertyRef Name="warehousetask_id" />
+          </Key>
+          <Property Name="warehousetask_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="warehousetask_warehouse" Type="int" />
+          <Property Name="warehousetask_employee" Type="int" />
+          <Property Name="warehousetask_type" Type="varchar" MaxLength="50" />
+          <Property Name="warehousetask_description" Type="longtext" />
+          <Property Name="warehousetask_section" Type="varchar" MaxLength="45" />
+          <Property Name="warehousetask_timestamp" Type="datetime" Precision="0" />
+          <Property Name="warehousetask_endtime" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="warehousetype">
           <Key>
@@ -474,6 +496,30 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehouseemployee_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouseemployee_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="warehousestock_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
@@ -498,6 +544,30 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehousetask_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousetask_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
           <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
@@ -516,7 +586,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
@@ -610,6 +682,14 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="warehousetype" EntitySet="warehousetype" />
             <End Role="warehouse" EntitySet="warehouse" />
           </AssociationSet>
+          <AssociationSet Name="warehouseemployee_employee" Association="Self.warehouseemployee_employee">
+            <End Role="user" EntitySet="user" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployee" />
+          </AssociationSet>
+          <AssociationSet Name="warehouseemployee_warehouse" Association="Self.warehouseemployee_warehouse">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployee" />
+          </AssociationSet>
           <AssociationSet Name="warehousestock_product" Association="Self.warehousestock_product">
             <End Role="product" EntitySet="product" />
             <End Role="warehousestock" EntitySet="warehousestock" />
@@ -618,9 +698,16 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="warehouse" EntitySet="warehouse" />
             <End Role="warehousestock" EntitySet="warehousestock" />
           </AssociationSet>
+          <AssociationSet Name="warehousetask_employee" Association="Self.warehousetask_employee">
+            <End Role="user" EntitySet="user" />
+            <End Role="warehousetask" EntitySet="warehousetask" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_warehouse" Association="Self.warehousetask_warehouse">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="warehousetask" EntitySet="warehousetask" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="custommandbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -668,6 +755,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="location_section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="location_isle" Type="Int32" />
           <Property Name="location_column" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
@@ -821,6 +909,8 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_user" FromRole="user" ToRole="transferrequest" />
           <NavigationProperty Name="usertype" Relationship="Self.usertype_id" FromRole="user" ToRole="usertype" />
           <NavigationProperty Name="warehouses" Relationship="Self.warehouse_user" FromRole="user" ToRole="warehouse" />
+          <NavigationProperty Name="warehouseemployees" Relationship="Self.warehouseemployee_employee" FromRole="user" ToRole="warehouseemployee" />
+          <NavigationProperty Name="warehousetasks" Relationship="Self.warehousetask_employee" FromRole="user" ToRole="warehousetask" />
         </EntityType>
         <EntityType Name="usertype">
           <Key>
@@ -843,7 +933,19 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <NavigationProperty Name="locations" Relationship="Self.location_warehouse" FromRole="warehouse" ToRole="location" />
           <NavigationProperty Name="user" Relationship="Self.warehouse_user" FromRole="warehouse" ToRole="user" />
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
+          <NavigationProperty Name="warehouseemployees" Relationship="Self.warehouseemployee_warehouse" FromRole="warehouse" ToRole="warehouseemployee" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_warehouse" FromRole="warehouse" ToRole="warehousestock" />
+          <NavigationProperty Name="warehousetasks" Relationship="custommandbModel.warehousetask_warehouse" FromRole="warehouse" ToRole="warehousetask" />
+        </EntityType>
+        <EntityType Name="warehouseemployee">
+          <Key>
+            <PropertyRef Name="warehouseemployee_id" />
+          </Key>
+          <Property Name="warehouseemployee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehouseemployee_employee" Type="Int32" />
+          <Property Name="warehouseemployee_warehouse" Type="Int32" />
+          <NavigationProperty Name="user" Relationship="Self.warehouseemployee_employee" FromRole="warehouseemployee" ToRole="user" />
+          <NavigationProperty Name="warehouse" Relationship="Self.warehouseemployee_warehouse" FromRole="warehouseemployee" ToRole="warehouse" />
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -855,6 +957,21 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="warehousestock_product" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.warehousestock_product" FromRole="warehousestock" ToRole="product" />
           <NavigationProperty Name="warehouse" Relationship="Self.warehousestock_warehouse" FromRole="warehousestock" ToRole="warehouse" />
+        </EntityType>
+        <EntityType Name="warehousetask">
+          <Key>
+            <PropertyRef Name="warehousetask_id" />
+          </Key>
+          <Property Name="warehousetask_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehousetask_employee" Type="Int32" />
+          <Property Name="warehousetask_description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_section" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_timestamp" Type="DateTime" />
+          <Property Name="warehousetask_endtime" Type="DateTime" />
+          <NavigationProperty Name="user" Relationship="Self.warehousetask_employee" FromRole="warehousetask" ToRole="user" />
+          <Property Name="warehousetask_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_warehouse" Type="Int32" />
+          <NavigationProperty Name="warehouse" Relationship="custommandbModel.warehousetask_warehouse" FromRole="warehousetask" ToRole="warehouse" />
         </EntityType>
         <EntityType Name="warehousetype">
           <Key>
@@ -1140,6 +1257,30 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehouseemployee_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousetask_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="warehouse_warehousetype">
           <End Role="warehousetype" Type="Self.warehousetype" Multiplicity="0..1" />
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
@@ -1149,6 +1290,18 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Principal>
             <Dependent Role="warehouse">
               <PropertyRef Name="warehouse_warehousetype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouseemployee_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_warehouse" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1182,7 +1335,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySet Name="users" EntityType="Self.user" />
           <EntitySet Name="usertypes" EntityType="Self.usertype" />
           <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+          <EntitySet Name="warehouseemployees" EntityType="Self.warehouseemployee" />
           <EntitySet Name="warehousestocks" EntityType="Self.warehousestock" />
+          <EntitySet Name="warehousetasks" EntityType="Self.warehousetask" />
           <EntitySet Name="warehousetypes" EntityType="Self.warehousetype" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoices" />
@@ -1276,15 +1431,43 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="user" EntitySet="users" />
             <End Role="warehouse" EntitySet="warehouses" />
           </AssociationSet>
+          <AssociationSet Name="warehouseemployee_employee" Association="Self.warehouseemployee_employee">
+            <End Role="user" EntitySet="users" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployees" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_employee" Association="Self.warehousetask_employee">
+            <End Role="user" EntitySet="users" />
+            <End Role="warehousetask" EntitySet="warehousetasks" />
+          </AssociationSet>
           <AssociationSet Name="warehouse_warehousetype" Association="Self.warehouse_warehousetype">
             <End Role="warehousetype" EntitySet="warehousetypes" />
             <End Role="warehouse" EntitySet="warehouses" />
+          </AssociationSet>
+          <AssociationSet Name="warehouseemployee_warehouse" Association="Self.warehouseemployee_warehouse">
+            <End Role="warehouse" EntitySet="warehouses" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployees" />
           </AssociationSet>
           <AssociationSet Name="warehousestock_warehouse" Association="Self.warehousestock_warehouse">
             <End Role="warehouse" EntitySet="warehouses" />
             <End Role="warehousestock" EntitySet="warehousestocks" />
           </AssociationSet>
+          <AssociationSet Name="warehousetask_warehouse" Association="custommandbModel.warehousetask_warehouse">
+            <End Role="warehouse" EntitySet="warehouses" />
+            <End Role="warehousetask" EntitySet="warehousetasks" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="warehousetask_warehouse">
+          <End Type="custommandbModel.warehouse" Role="warehouse" Multiplicity="0..1" />
+          <End Type="custommandbModel.warehousetask" Role="warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1333,6 +1516,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_section" ColumnName="location_section" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
                 <ScalarProperty Name="location_column" ColumnName="location_column" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
@@ -1482,6 +1666,15 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="warehouseemployees">
+            <EntityTypeMapping TypeName="custommandbModel.warehouseemployee">
+              <MappingFragment StoreEntitySet="warehouseemployee">
+                <ScalarProperty Name="warehouseemployee_id" ColumnName="warehouseemployee_id" />
+                <ScalarProperty Name="warehouseemployee_employee" ColumnName="warehouseemployee_employee" />
+                <ScalarProperty Name="warehouseemployee_warehouse" ColumnName="warehouseemployee_warehouse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="warehousestocks">
             <EntityTypeMapping TypeName="custommandbModel.warehousestock">
               <MappingFragment StoreEntitySet="warehousestock">
@@ -1489,6 +1682,20 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="warehousestock_lastchecked" ColumnName="warehousestock_lastchecked" />
                 <ScalarProperty Name="warehousestock_warehouse" ColumnName="warehousestock_warehouse" />
                 <ScalarProperty Name="warehousestock_product" ColumnName="warehousestock_product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehousetasks">
+            <EntityTypeMapping TypeName="custommandbModel.warehousetask">
+              <MappingFragment StoreEntitySet="warehousetask">
+                <ScalarProperty Name="warehousetask_warehouse" ColumnName="warehousetask_warehouse" />
+                <ScalarProperty Name="warehousetask_type" ColumnName="warehousetask_type" />
+                <ScalarProperty Name="warehousetask_id" ColumnName="warehousetask_id" />
+                <ScalarProperty Name="warehousetask_employee" ColumnName="warehousetask_employee" />
+                <ScalarProperty Name="warehousetask_description" ColumnName="warehousetask_description" />
+                <ScalarProperty Name="warehousetask_section" ColumnName="warehousetask_section" />
+                <ScalarProperty Name="warehousetask_timestamp" ColumnName="warehousetask_timestamp" />
+                <ScalarProperty Name="warehousetask_endtime" ColumnName="warehousetask_endtime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

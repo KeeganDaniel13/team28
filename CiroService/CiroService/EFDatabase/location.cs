@@ -15,6 +15,7 @@ namespace CiroService.EFDatabase
     public partial class location
     {
         public int location_id { get; set; }
+        public string location_section { get; set; }
         public Nullable<int> location_isle { get; set; }
         public Nullable<int> location_column { get; set; }
         public Nullable<int> location_row { get; set; }
