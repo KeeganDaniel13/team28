@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.ownershiprequests.Add(ownershiprequest);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.ownershiprequests;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.ownershiprequests.Remove(ownershiprequest);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.ownershiprequests;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

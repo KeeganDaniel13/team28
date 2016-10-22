@@ -69,20 +69,60 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addofficial.aspx" />
-    <Content Include="AdminReports.aspx" />
+    <Content Include="AdminPages\addofficial.aspx" />
+    <Content Include="AdminPages\AdminReports.aspx" />
+    <Content Include="ClientPages\AllTransfers.aspx" />
+    <Content Include="ClientPages\Approve.aspx" />
+    <Content Include="ClientPages\ApproveTransfers.aspx" />
+    <Content Include="AdminPages\CustomsReports.aspx" />
+    <Content Include="AdminPages\dashboard.aspx" />
+    <Content Include="AdminPages\licensewarehouse.aspx" />
+    <Content Include="AdminPages\users.aspx" />
     <Content Include="approveTransfers.aspx" />
-    <Content Include="changeofownership.aspx" />
-    <Content Include="clientinventory.aspx" />
-    <Content Include="ClientMessages.aspx" />
-    <Content Include="ClientMessageView.aspx" />
-    <Content Include="customs.aspx" />
-    <Content Include="CustomsReports.aspx" />
-    <Content Include="dashboard.aspx" />
-    <Content Include="declareownershiptransfer.aspx" />
-    <Content Include="dischargegoods.aspx" />
+    <Content Include="ClientPages\changeofownership.aspx" />
+    <Content Include="ClientPages\clientinventory.aspx" />
+    <Content Include="ClientPages\ClientMessages.aspx" />
+    <Content Include="ClientPages\ClientMessageView.aspx" />
+    <Content Include="ClientPages\declaregoods.aspx" />
+    <Content Include="ClientPages\declareownershiptransfer.aspx" />
+    <Content Include="ClientPages\dischargegoods.aspx" />
+    <Content Include="ClientPages\inventory.aspx" />
+    <Content Include="ClientPages\productlog.aspx" />
+    <Content Include="ClientPages\transfergoods.aspx" />
+    <Content Include="ClientPages\viewware.aspx" />
+    <Content Include="CustomsPages\customs.aspx" />
+    <Content Include="CustomsPages\customsrelease.aspx" />
+    <Content Include="CustomsPages\customstransfers.aspx" />
+    <Content Include="CustomsPages\messages.aspx" />
+    <Content Include="CustomsPages\messageview.aspx" />
+    <Content Include="CustomsPages\productlogCustoms.aspx" />
+    <Content Include="CustomsPages\release.aspx" />
+    <Content Include="CustomsPages\tempreports.aspx" />
+    <Content Include="CustomsPages\viewreleaseinfo.aspx" />
+    <Content Include="CustomsPages\viewtransfer.aspx" />
+    <Content Include="CustomsPages\warehouseoverview.aspx" />
+    <Content Include="CustomsPages\warehouseview.aspx" />
+    <Content Include="CustomsPages\customs.aspx" />
+    <Content Include="CustomsPages\customsrelease.aspx" />
+    <Content Include="CustomsPages\customstransfers.aspx" />
+    <Content Include="ClientPages\declareownershiptransfer.aspx" />
+    <Content Include="ClientPages\dischargegoods.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="infinity\assets\css\font-awesome.css" />
+    <Content Include="infinity\assets\css\jquery.fancybox.css" />
+    <Content Include="infinity\assets\css\nouislider.css" />
+    <Content Include="infinity\assets\css\slick.css" />
+    <Content Include="infinity\assets\css\style.css" />
+    <Content Include="infinity\assets\images\11.jpg" />
     <Content Include="infinity\assets\images\warehouse.jpg" />
+    <Content Include="infinity\assets\myjs\custom.js" />
+    <Content Include="infinity\assets\myjs\jquery.fancybox.pack.js" />
+    <Content Include="infinity\assets\myjs\jquery.min.js" />
+    <Content Include="infinity\assets\myjs\jquery.mixitup.js" />
+    <Content Include="infinity\assets\myjs\mode.js" />
+    <Content Include="infinity\assets\myjs\nouislider.js" />
+    <Content Include="infinity\assets\myjs\slick.js" />
+    <Content Include="infinity\css\inventory.css" />
     <Content Include="infinity\css\ownership.css" />
     <Content Include="infinity\css\style.css" />
     <Content Include="infinity\landing\assets\css\._bootstrap.css" />
@@ -147,11 +187,9 @@
     <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.css" />
     <Content Include="infinity\landing\libs\misc\owl-carousel\owl.carousel.min.js" />
     <Content Include="infinity\libs\misc\echarts\build\dist\echarts-all.js" />
-    <Content Include="licensewarehouse.aspx" />
-    <Content Include="messages.aspx" />
-    <Content Include="messageview.aspx" />
+    <Content Include="CustomsPages\messages.aspx" />
+    <Content Include="CustomsPages\messageview.aspx" />
     <Content Include="packages.config" />
-    <Content Include="admin.Master" />
     <Content Include="ciro.Master" />
     <Content Include="infinity\assets\.DS_Store" />
     <Content Include="infinity\assets\css\.DS_Store" />
@@ -197,9 +235,7 @@
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="infinity\libs\bower\material-design-iconic-font\dist\fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="infinity\css\.DS_Store" />
-    <Content Include="productlogCustoms.aspx" />
     <Content Include="Reports.aspx" />
-    <Content Include="Client.Master" />
     <Content Include="infinity\landing\assets\._css" />
     <Content Include="infinity\landing\assets\._fonts" />
     <Content Include="infinity\landing\assets\._images" />
@@ -243,7 +279,6 @@
     <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\._js" />
     <Content Include="infinity\landing\libs\bower\waypoints\._lib" />
     <Content Include="infinity\landing\libs\misc\._owl-carousel" />
-    <Content Include="Customs.Master" />
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -313,7 +348,17 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource">
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource"/>
+    <Content Include="ClientPages\Client.Master" />
+    <Content Include="AdminPages\admin.Master" />
+    <Content Include="CustomsPages\Customs.Master" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehousesStorageRates.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CiroService\Service1.disco" />
@@ -323,8 +368,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Warehouse Reports.aspx" />
-    <Content Include="warehouse.Master" />
+    <Content Include="WarehousePages\Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
@@ -335,6 +380,7 @@
     <None Include="Service References\CiroService\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -343,7 +389,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="declaregoods.aspx" />
     <Content Include="infinity\assets\css\app.css" />
     <Content Include="infinity\assets\css\bootstrap.css" />
     <Content Include="infinity\assets\css\font-awesome.min.css" />
@@ -451,45 +496,61 @@
     <Content Include="infinity\libs\misc\jvectormap\maps\jquery-jvectormap-us-mill.js" />
     <Content Include="infinity\libs\misc\jvectormap\maps\jquery-jvectormap-world-mill.js" />
     <Content Include="password-forgot.aspx" />
-    <Content Include="productlog.aspx" />
-    <Content Include="release.aspx" />
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
-    <Content Include="transfergoods.aspx" />
-    <Content Include="transfers.aspx" />
-    <Content Include="users.aspx" />
+    <Content Include="CustomsPages\transfers.aspx" />
     <Content Include="viewpackage.aspx" />
-    <Content Include="viewreleaseinfo.aspx" />
-    <Content Include="viewtransfer.aspx" />
-    <Content Include="warehouseinventory.aspx" />
-    <Content Include="warehouseoverview.aspx" />
-    <Content Include="warehouserelease.aspx" />
-    <Content Include="warehouseview.aspx" />
-    <Content Include="wareMessage.aspx" />
-    <Content Include="wareMessages.aspx" />
+    <Content Include="WarehousePages\Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\warehouseinventory.aspx" />
+    <Content Include="WarehousePages\warehouseinvoices.aspx" />
+    <Content Include="WarehousePages\warehouserelease.aspx" />
+    <Content Include="WarehousePages\warehousetransfers.aspx" />
+    <Content Include="WarehousePages\warehousevariants.aspx" />
+    <Content Include="WarehousePages\wareMessage.aspx" />
+    <Content Include="WarehousePages\wareMessages.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addofficial.aspx.cs">
+    <Compile Include="AdminPages\addofficial.aspx.cs">
       <DependentUpon>addofficial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addofficial.aspx.designer.cs">
+    <Compile Include="AdminPages\addofficial.aspx.designer.cs">
       <DependentUpon>addofficial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin.Master.cs">
+    <Compile Include="AdminPages\admin.Master.cs">
       <DependentUpon>admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin.Master.designer.cs">
+    <Compile Include="AdminPages\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="AdminReports.aspx.cs">
+    <Compile Include="AdminPages\AdminReports.aspx.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminReports.aspx.designer.cs">
+    <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\AllTransfers.aspx.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\AllTransfers.aspx.designer.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
+      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="approveTransfers.aspx.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
@@ -497,13 +558,6 @@
     </Compile>
     <Compile Include="approveTransfers.aspx.designer.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="changeofownership.aspx.cs">
-      <DependentUpon>changeofownership.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="changeofownership.aspx.designer.cs">
-      <DependentUpon>changeofownership.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangeUser.cs" />
     <Compile Include="ciro.Master.cs">
@@ -514,109 +568,200 @@
       <DependentUpon>ciro.Master</DependentUpon>
     </Compile>
     <Compile Include="CiroSingleton.cs" />
-    <Compile Include="Client.Master.cs">
+    <Compile Include="ClientPages\changeofownership.aspx.cs">
+      <DependentUpon>changeofownership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\changeofownership.aspx.designer.cs">
+      <DependentUpon>changeofownership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\Client.Master.cs">
       <DependentUpon>Client.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Client.Master.designer.cs">
+    <Compile Include="ClientPages\Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
     </Compile>
-    <Compile Include="clientinventory.aspx.cs">
+    <Compile Include="ClientPages\clientinventory.aspx.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="clientinventory.aspx.designer.cs">
+    <Compile Include="ClientPages\clientinventory.aspx.designer.cs">
       <DependentUpon>clientinventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientMessages.aspx.cs">
+    <Compile Include="ClientPages\ClientMessages.aspx.cs">
       <DependentUpon>ClientMessages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientMessages.aspx.designer.cs">
+    <Compile Include="ClientPages\ClientMessages.aspx.designer.cs">
       <DependentUpon>ClientMessages.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientMessageView.aspx.cs">
+    <Compile Include="ClientPages\ClientMessageView.aspx.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientMessageView.aspx.designer.cs">
+    <Compile Include="ClientPages\ClientMessageView.aspx.designer.cs">
       <DependentUpon>ClientMessageView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="customs.aspx.cs">
-      <DependentUpon>customs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="customs.aspx.designer.cs">
-      <DependentUpon>customs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customs.Master.cs">
-      <DependentUpon>Customs.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customs.Master.designer.cs">
-      <DependentUpon>Customs.Master</DependentUpon>
-    </Compile>
-    <Compile Include="CustomsReports.aspx.cs">
-      <DependentUpon>CustomsReports.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomsReports.aspx.designer.cs">
-      <DependentUpon>CustomsReports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="declaregoods.aspx.cs">
+    <Compile Include="ClientPages\declaregoods.aspx.cs">
       <DependentUpon>declaregoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="declaregoods.aspx.designer.cs">
+    <Compile Include="ClientPages\declaregoods.aspx.designer.cs">
       <DependentUpon>declaregoods.aspx</DependentUpon>
     </Compile>
-    <Compile Include="declareownershiptransfer.aspx.cs">
+    <Compile Include="ClientPages\declareownershiptransfer.aspx.cs">
       <DependentUpon>declareownershiptransfer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="declareownershiptransfer.aspx.designer.cs">
+    <Compile Include="ClientPages\declareownershiptransfer.aspx.designer.cs">
       <DependentUpon>declareownershiptransfer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="dischargegoods.aspx.cs">
+    <Compile Include="ClientPages\dischargegoods.aspx.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="dischargegoods.aspx.designer.cs">
+    <Compile Include="ClientPages\dischargegoods.aspx.designer.cs">
       <DependentUpon>dischargegoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\inventory.aspx.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\inventory.aspx.designer.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\productlog.aspx.cs">
+      <DependentUpon>productlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\productlog.aspx.designer.cs">
+      <DependentUpon>productlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\transfergoods.aspx.cs">
+      <DependentUpon>transfergoods.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\transfergoods.aspx.designer.cs">
+      <DependentUpon>transfergoods.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\viewware.aspx.cs">
+      <DependentUpon>viewware.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\viewware.aspx.designer.cs">
+      <DependentUpon>viewware.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\customs.aspx.cs">
+      <DependentUpon>customs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\customs.aspx.designer.cs">
+      <DependentUpon>customs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\Customs.Master.cs">
+      <DependentUpon>Customs.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\Customs.Master.designer.cs">
+      <DependentUpon>Customs.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\customsrelease.aspx.cs">
+      <DependentUpon>customsrelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\customsrelease.aspx.designer.cs">
+      <DependentUpon>customsrelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\CustomsReports.aspx.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\CustomsReports.aspx.designer.cs">
+      <DependentUpon>CustomsReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\customstransfers.aspx.cs">
+      <DependentUpon>customstransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\customstransfers.aspx.designer.cs">
+      <DependentUpon>customstransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\messages.aspx.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\messages.aspx.designer.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\messageview.aspx.cs">
+      <DependentUpon>messageview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\messageview.aspx.designer.cs">
+      <DependentUpon>messageview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\productlogCustoms.aspx.cs">
+      <DependentUpon>productlogCustoms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\productlogCustoms.aspx.designer.cs">
+      <DependentUpon>productlogCustoms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\release.aspx.cs">
+      <DependentUpon>release.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\release.aspx.designer.cs">
+      <DependentUpon>release.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\tempreports.aspx.cs">
+      <DependentUpon>tempreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\tempreports.aspx.designer.cs">
+      <DependentUpon>tempreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\transfers.aspx.cs">
+      <DependentUpon>transfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\transfers.aspx.designer.cs">
+      <DependentUpon>transfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\viewtransfer.aspx.cs">
+      <DependentUpon>viewtransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\viewtransfer.aspx.designer.cs">
+      <DependentUpon>viewtransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\licensewarehouse.aspx.cs">
+      <DependentUpon>licensewarehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\licensewarehouse.aspx.designer.cs">
+      <DependentUpon>licensewarehouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\warehouseoverview.aspx.cs">
+      <DependentUpon>warehouseoverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\warehouseoverview.aspx.designer.cs">
+      <DependentUpon>warehouseoverview.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="licensewarehouse.aspx.cs">
-      <DependentUpon>licensewarehouse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="licensewarehouse.aspx.designer.cs">
-      <DependentUpon>licensewarehouse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="messages.aspx.cs">
-      <DependentUpon>messages.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="messages.aspx.designer.cs">
-      <DependentUpon>messages.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="messageview.aspx.cs">
-      <DependentUpon>messageview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="messageview.aspx.designer.cs">
-      <DependentUpon>messageview.aspx</DependentUpon>
     </Compile>
     <Compile Include="password-forgot.aspx.cs">
       <DependentUpon>password-forgot.aspx</DependentUpon>
@@ -625,28 +770,7 @@
     <Compile Include="password-forgot.aspx.designer.cs">
       <DependentUpon>password-forgot.aspx</DependentUpon>
     </Compile>
-    <Compile Include="productlog.aspx.cs">
-      <DependentUpon>productlog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="productlog.aspx.designer.cs">
-      <DependentUpon>productlog.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="productlogCustoms.aspx.cs">
-      <DependentUpon>productlogCustoms.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="productlogCustoms.aspx.designer.cs">
-      <DependentUpon>productlogCustoms.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="release.aspx.cs">
-      <DependentUpon>release.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="release.aspx.designer.cs">
-      <DependentUpon>release.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -674,25 +798,11 @@
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="TransferForm.cs" />
-    <Compile Include="transfergoods.aspx.cs">
-      <DependentUpon>transfergoods.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="transfergoods.aspx.designer.cs">
-      <DependentUpon>transfergoods.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="transfers.aspx.cs">
-      <DependentUpon>transfers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="transfers.aspx.designer.cs">
-      <DependentUpon>transfers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="users.aspx.cs">
+    <Compile Include="AdminPages\users.aspx.cs">
       <DependentUpon>users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="users.aspx.designer.cs">
+    <Compile Include="AdminPages\users.aspx.designer.cs">
       <DependentUpon>users.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewpackage.aspx.cs">
@@ -702,74 +812,74 @@
     <Compile Include="viewpackage.aspx.designer.cs">
       <DependentUpon>viewpackage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="viewreleaseinfo.aspx.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="viewreleaseinfo.aspx.designer.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="viewtransfer.aspx.cs">
-      <DependentUpon>viewtransfer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="viewtransfer.aspx.designer.cs">
-      <DependentUpon>viewtransfer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Warehouse Reports.aspx.cs">
+    <Compile Include="WarehousePages\Warehouse Reports.aspx.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Warehouse Reports.aspx.designer.cs">
+    <Compile Include="WarehousePages\Warehouse Reports.aspx.designer.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouse.Master.cs">
+    <Compile Include="WarehousePages\warehouse.Master.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouse.Master.designer.cs">
+    <Compile Include="WarehousePages\warehouse.Master.designer.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
     </Compile>
-    <Compile Include="warehouseinventory.aspx.cs">
+    <Compile Include="WarehousePages\warehouseinventory.aspx.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouseinventory.aspx.designer.cs">
+    <Compile Include="WarehousePages\warehouseinventory.aspx.designer.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouseoverview.aspx.cs">
-      <DependentUpon>warehouseoverview.aspx</DependentUpon>
+    <Compile Include="WarehousePages\warehouseinvoices.aspx.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouseoverview.aspx.designer.cs">
-      <DependentUpon>warehouseoverview.aspx</DependentUpon>
+    <Compile Include="WarehousePages\warehouseinvoices.aspx.designer.cs">
+      <DependentUpon>warehouseinvoices.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouserelease.aspx.cs">
+    <Compile Include="WarehousePages\warehouserelease.aspx.cs">
       <DependentUpon>warehouserelease.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouserelease.aspx.designer.cs">
+    <Compile Include="WarehousePages\warehouserelease.aspx.designer.cs">
       <DependentUpon>warehouserelease.aspx</DependentUpon>
     </Compile>
-    <Compile Include="warehouseview.aspx.cs">
+    <Compile Include="WarehousePages\warehousetransfers.aspx.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\warehousetransfers.aspx.designer.cs">
+      <DependentUpon>warehousetransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarehousePages\warehousevariants.aspx.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\warehousevariants.aspx.designer.cs">
+      <DependentUpon>warehousevariants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\warehouseview.aspx.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="warehouseview.aspx.designer.cs">
+    <Compile Include="CustomsPages\warehouseview.aspx.designer.cs">
       <DependentUpon>warehouseview.aspx</DependentUpon>
     </Compile>
-    <Compile Include="wareMessage.aspx.cs">
+    <Compile Include="WarehousePages\wareMessage.aspx.cs">
       <DependentUpon>wareMessage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="wareMessage.aspx.designer.cs">
+    <Compile Include="WarehousePages\wareMessage.aspx.designer.cs">
       <DependentUpon>wareMessage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="wareMessages.aspx.cs">
+    <Compile Include="WarehousePages\wareMessages.aspx.cs">
       <DependentUpon>wareMessages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="wareMessages.aspx.designer.cs">
+    <Compile Include="WarehousePages\wareMessages.aspx.designer.cs">
       <DependentUpon>wareMessages.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

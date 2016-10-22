@@ -17,12 +17,15 @@ namespace CiroService.EFDatabase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public hscode()
         {
+            this.countryrelations = new HashSet<countryrelation>();
             this.products = new HashSet<product>();
         }
     
         public int hscode_id { get; set; }
-        public Nullable<decimal> hscode_percentage { get; set; }
+        public decimal hscode_percentage { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<countryrelation> countryrelations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<product> products { get; set; }
     }

@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.transferlists.Add(transferlist);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.transferlists;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.transferlists.Remove(transferlist);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.transferlists;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

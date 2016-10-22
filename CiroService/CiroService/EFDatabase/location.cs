@@ -17,8 +17,9 @@ namespace CiroService.EFDatabase
         public int location_id { get; set; }
         public string location_section { get; set; }
         public Nullable<int> location_isle { get; set; }
-        public Nullable<int> location_column { get; set; }
         public Nullable<int> location_row { get; set; }
+        public Nullable<int> location_column { get; set; }
+        public Nullable<int> location_reserve { get; set; }
         public Nullable<int> location_size { get; set; }
         public Nullable<int> location_product { get; set; }
         public Nullable<int> location_warehouse { get; set; }

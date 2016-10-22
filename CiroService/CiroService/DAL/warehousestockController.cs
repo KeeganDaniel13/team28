@@ -21,7 +21,7 @@ namespace CiroService.DAL
         {
 
             db.warehousestocks.Add(warehousestock);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.warehousestocks;
         }
@@ -35,7 +35,7 @@ namespace CiroService.DAL
             }
 
             db.warehousestocks.Remove(warehousestock);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.warehousestocks;
         }
@@ -72,7 +72,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

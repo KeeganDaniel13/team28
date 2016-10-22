@@ -17,7 +17,7 @@ namespace CiroService.DAL
         {
 
             db.billofentries.Add(billofentry);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.billofentries;
         }
@@ -31,7 +31,7 @@ namespace CiroService.DAL
             }
 
             db.billofentries.Remove(billofentry);
-            db.SaveChangesAsync();
+            db.SaveChanges();
 
             return db.billofentries;
         }
@@ -68,7 +68,7 @@ namespace CiroService.DAL
 
             try
             {
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

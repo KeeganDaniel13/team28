@@ -40,6 +40,12 @@ namespace CiroService.EFDatabase
         public Nullable<int> product_producttype { get; set; }
         public Nullable<int> product_hscode { get; set; }
         public string product_image { get; set; }
+        public Nullable<System.DateTime> product_exitdate { get; set; }
+        public string product_Expired { get; set; }
+        public string product_receipt { get; set; }
+        public string product_description { get; set; }
+        public Nullable<System.DateTime> product_expirationDate { get; set; }
+        public Nullable<int> product_Insured { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<billofentry> billofentries { get; set; }

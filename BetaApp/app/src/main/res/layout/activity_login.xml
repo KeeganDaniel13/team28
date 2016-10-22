@@ -63,7 +63,7 @@
                     android:layout_marginLeft="15dp"
                     android:src="@drawable/ic_web"/>
                 <app.ciro.chuck.betaapp.MyEditText
-
+                    android:id="@+id/etUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email-id "
@@ -99,7 +99,7 @@
 
 
                 <app.ciro.chuck.betaapp.MyEditText
-                    android:id="@+id/password"
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"

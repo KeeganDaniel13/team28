@@ -4,28 +4,31 @@
 
     <item android:title="">
         <menu>
-        <item android:title="Inbox"
-              android:id="@+id/nav_item_inbox"
-              android:icon="@drawable/inbox"/>
-
-        <item android:title="Sent"
-              android:id="@+id/nav_item_sent"
+        <item android:title="All Inventory"
+              android:id="@+id/nav_item_inventory"
               android:icon="@drawable/sent"/>
 
-        <item android:title="Drafts"
-              android:id="@+id/nav_item_draft"
+        <item android:title="Messages"
+              android:id="@+id/nav_item_messages"
+              android:icon="@drawable/inbox"/>
+
+        <item android:title="Transfers"
+              android:id="@+id/nav_item_transfers"
               android:icon="@drawable/draft"/>
         </menu>
     </item>
 
 
-    <item android:title="Others">
+
+    <item android:title="Packages">
         <menu>
             <item
-                android:title="Spam"
+                android:title="Incidents"
+                android:id="@+id/nav_item_incidents"
                 android:icon="@drawable/spam"/>
             <item
-                android:title="Bin"
+                android:title="Scan Packages"
+                android:id="@+id/nav_item_scan"
                 android:icon="@drawable/bin"/>
         </menu>
     </item>
@@ -33,8 +36,10 @@
     <group android:id="@+id/group_settings_id">
 
         <item android:title="Settings"
+            android:id="@+id/nav_item_settings"
               android:icon="@drawable/settings"/>
-        <item android:title="Help"
+        <item android:title="Report"
+            android:id="@+id/nav_item_report"
              android:icon="@drawable/help"/>
     </group>
 

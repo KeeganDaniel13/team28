@@ -18,7 +18,7 @@ namespace CiroService.EFDatabase
         public Nullable<int> productlog_product { get; set; }
         public string productlog_warehouse { get; set; }
         public Nullable<int> productlog_user { get; set; }
-        public string productlog_dscription { get; set; }
+        public string productlog_description { get; set; }
         public Nullable<System.DateTime> productlog_dateLogged { get; set; }
         public string productlog_image { get; set; }
         public Nullable<int> productlog_type { get; set; }

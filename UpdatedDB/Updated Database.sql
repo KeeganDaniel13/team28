@@ -86,6 +86,7 @@ CREATE TABLE `custommandb`.`product` (
   `warehouse_id` INT NOT NULL AUTO_INCREMENT,
   `warehouse_name` VARCHAR(45) NULL,
   `warehouse_location` VARCHAR(100) NULL,
+  `warehouse_established` DATETIME NULL,
   `warehouse_size` INT NULL,
   `warehouse_user` INT NULL,
   `warehouse_warehousetype` INT NULL,
@@ -267,6 +268,7 @@ CREATE TABLE `custommandb`.`productlog` (
     `location_isle` INT NULL,
     `location_column` INT NULL,
     `location_row` INT NULL,
+	`location_reserve` INT NULL,
     `location_size` INT NULL,
     `location_product` INT NULL,
     `location_warehouse` INT NULL,
@@ -283,6 +285,11 @@ CREATE TABLE `custommandb`.`productlog` (
     ON UPDATE NO ACTION,
      CONSTRAINT `location_product`
     FOREIGN KEY (`location_product`)
+    REFERENCES `custommandb`.`product` (`product_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+	CONSTRAINT `location_reserve`
+    FOREIGN KEY (`location_reserve`)
     REFERENCES `custommandb`.`product` (`product_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
@@ -383,6 +390,55 @@ ADD CONSTRAINT `ownsershiprequest_product`
     REFERENCES `custommandb`.`warehouse` (`warehouse_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_exitdate` DATETIME NULL AFTER `product_image`;
+
+ALTER TABLE `custommandb`.`warehouse` 
+ADD COLUMN `warehouse_image` VARCHAR(255) NULL DEFAULT NULL AFTER `warehouse_warehousetype`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_Expired` VARCHAR(45) NULL AFTER `product_exitdate`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_insured` VARCHAR(45) NULL AFTER `product_Expired`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_reciept` VARCHAR(45) NULL AFTER `product_insured`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+ADD COLUMN `transferrequest_description` VARCHAR(255) NULL AFTER `transferrequest_product`,
+ADD COLUMN `transferrequestc_reason` VARCHAR(255) NULL AFTER `transferrequest_description`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+ADD COLUMN `transferrequest_requestDate` DATETIME NULL AFTER `transferrequestc_reason`,
+ADD COLUMN `transferrequest_approvalDate` DATETIME NULL AFTER `transferrequest_requestDate`;
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_description` VARCHAR(255) NULL AFTER `product_reciept`;
+
+ALTER TABLE `custommandb`.`warehouse` 
+ADD COLUMN `warehouse_description` VARCHAR(255) NULL AFTER `warehouse_image`;
+
+ALTER TABLE `custommandb`.`warehouse` 
+CHANGE COLUMN `warehouse_description` `warehouse_description` LONGBLOB NULL DEFAULT NULL ;
+
+INSERT INTO `custommandb`.`productlogtype` (`productlogtype_name`) VALUES ('PR');
+
+
+UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Safe and secure Industrial Park with 24/7 security and visitor controlled access. Central to Midrand, Or Tambo and Pretoria. 3464 sqm warehouse, double volume 380 sqm office with balcony. Stand alone. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='1';
+UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Prominent position with excellent exposure onto the M13.This top floor unit offers clear span factory floor in 2 sections with good height and abundant natural light. The unit may divided into 2 x 720m2 units @ R38/m2. Ample office space and staff ablutions. Excellent access to M13/M19/M7. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='2';
+UPDATE `custommandb`.`warehouse` SET `warehouse_description`='This well situated mini factory located just off chris hani road and within close proximity to umgeni road and the N2. Offering a total of 320m2, Workshop space has a double volume height ideal for storage, neat office component with kitchenette and 2X staff ablution facilities. Industrial park is fenced and gated with 24 hour security for peace of mind. Contact me for further information. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='3';
+UPDATE `custommandb`.`warehouse` SET `warehouse_description`='Warehouse available in Benoni South. Offering 600sqm with a mezzanine floor. 2 Large roller doors 2 Offices available that has its own entrance. Neat unit. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.' WHERE `warehouse_id`='4';
+
+ALTER TABLE `custommandb`.`product` 
+ADD COLUMN `product_expirationDate` DATETIME NULL AFTER `product_description`;
+
+ALTER TABLE `custommandb`.`transferrequest` 
+CHANGE COLUMN `transferrequest_from` `transferrequest_from` VARCHAR(255) NULL DEFAULT NULL ,
+CHANGE COLUMN `transferrequest_to` `transferrequest_to` VARCHAR(255) NULL DEFAULT NULL ;
 
 
 
@@ -560,7 +616,7 @@ INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_wareho
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Incident : Wild Dog Tore The Package', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I\'m running out of things to say', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I am running out of things to say', '2016-08-03 11:14:02', '1');
 
 
 
@@ -602,7 +658,6 @@ UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofe
 UPDATE `custommandb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';
 
 
-
 INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('12', '1');
 INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('13', '1');
 
@@ -637,3 +692,4 @@ INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `locat
 INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('22', '1', '1', '1');
 INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('23', '1', '1', '1');
 INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('24', '1', '1', '1');
+

@@ -20,6 +20,10 @@ namespace CiroService.EFDatabase
         public string transferrequest_verdict { get; set; }
         public Nullable<int> transferrequest_user { get; set; }
         public Nullable<int> transferrequest_product { get; set; }
+        public string transferrequest_description { get; set; }
+        public string transferrequest_reason { get; set; }
+        public Nullable<System.DateTime> transferrequestc_requsetDate { get; set; }
+        public Nullable<System.DateTime> transferrequest_approvalDate { get; set; }
     
         public virtual product product { get; set; }
         public virtual user user { get; set; }

@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Client.master.cs" Inherits="CiroWebsite.Client" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8"/>
+    <title>CIRO </title>
+	<meta name="description" content="Admin, Dashboard, Bootstrap" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="shortcut icon" sizes="196x196" href="../infinity/assets/images/logo.png"/>
+	<style>
+
+     .ar { text-align: right; }
+     .top-msg {
+          border-bottom: 5px solid hsla(0, 0%, 90%, .3);
+  
+          color: hsl(0, 0%, 40%);
+          font-size: 13px;
+          font-weight: 300;
+        }
+        .breadcrumb a {
+          transition: color .5s;
+        }
+        .breadcrumb a:hover {
+          color: hsl(0, 0%, 20%);
+        }
+        .breadcrumb a:after {
+          content: '\00a0\00a0\002F\00a0\00a0';
+          color: hsl(0, 0%, 70%);
+        }
+        .breadcrumb a:last-child:after {
+          content: '\00a0\00a0\002F\00a0\00a0 now you\0027re here';
+          color: hsl(0, 0%, 70%);
+        }
+          .breadcrumb a:nth-child(2) { margin: 3px 0 3px 10px; }
+          .breadcrumb a:nth-child(3) { margin: 3px 0 3px 20px; }
+          .breadcrumb a:nth-child(4) { margin: 3px 0 3px 30px; }
+          .breadcrumb a:after {
+           
+          }
+	</style>
+	
+	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css"/>
+    <link href="../infinity/assets/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- build:css ../assets/css/app.min.css -->
+	<link rel="stylesheet" href="Sinfinity/libs/bower/animate.css/animate.min.css"/>
+	<link rel="stylesheet" href="infinity/libs/bower/fullcalendar/dist/fullcalendar.min.css"/>
+	<link rel="stylesheet" href="infinity/libs/bower/perfect-scrollbar/css/perfect-scrollbar.css"/>
+	<link rel="stylesheet" href="infinity/assets/css/bootstrap.css"/>
+	<link rel="stylesheet" href="infinity/assets/css/app.css"/>
+	<link rel="stylesheet" href="infinity/assets/libs/bower/fontawesome/css/font-awesome.min.css/"/>
+    	
+	<link rel="stylesheet" href="../infinity/libs/bower/fontawesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="../infinity/libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
+	<link rel="stylesheet" href="../infinity/libs/bower/animate.css/animate.min.css"/>
+    
+	<link rel="stylesheet" href="../infinity/assets/css/bootstrap.css"/>
+	<link rel="stylesheet" href="../infinity/assets/css/app.css"/>
+	<!-- endbuild -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body  class="sb-top" style="background-color:#fff">
+    <!--============= start main area -->
+<!-- APP NAVBAR ==========-->
+<nav id="app-navbar" class="app-navbar bg-primary">
+	<div class="container">
+		<!-- navbar-header -->
+		<div id="navbar-header" class="pull-left">
+			<div class="animated">
+				<a href="../index.html" id="app-brand" class="app-brand text-white">
+					<span id="brand-icon" class="brand-icon"><i class="fa fa-gg"></i></span>
+					<span id="brand-name" class="brand-icon foldable">ciro</span>
+				</a>
+			</div>
+		</div>
+		<!-- /navbar-header -->
+		
+		<!-- navbar nav -->
+		<div>
+			<ul id="top-nav" class="pull-right">
+                <li class="nav-item dropdown">
+					<a href="index.aspx" >
+						Home
+					</a>
+				</li>
+                <li class="nav-item dropdown">
+					<a href="inventory.aspx" >
+						Inventory
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packages</a>
+					<ul class="dropdown-menu animated flipInY">
+						<li><a href="transfergoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>Transfer</a></li>
+						<li><a href="declaregoods.aspx"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Declare</a></li>
+                        <li><a href="dischargegoods.aspx"><i class="fa m-r-md zmdi-hc-lg fa-ship"></i>Discharge</a></li>
+					</ul>
+				</li>
+			
+				<li class="nav-item">
+					<a href="javascript:void(0)" class="side-panel-toggle"
+						data-toggle="class" 
+						data-target="#side-panel"
+						data-class="open"
+						role="button">
+						<i class="zmdi zmdi-hc-lg zmdi-apps"></i>
+					</a>
+					<div id="side-panel" class="side-panel">
+						<div class="panel-header">
+						<h4 class="panel-title" style="font-family:'Comic Sans MS', cursive, sans-serif;">INVENTORY</h4>
+					</div>
+						<div class="scrollable-container" >
+							<div class="media-group">
+                                <a  href="declareownershiptransfer.aspx" class="media-group-item">
+									<div class="media">
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-bars  "></i><font size="3">My Inventory</font></h5>
+											
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+								<a  href="declareownershiptransfer.aspx" class="media-group-item">
+									<div class="media">
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-exchange  "></i><font size="3">Ownerships</font></h5>
+											
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+
+								<a href="ClientMessages.aspx" class="media-group-item">
+									<div class="media">
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-comments"></i><font size="3">Messages</font></h5>
+										
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+                                <a href="ClientMessages.aspx" class="media-group-item">
+									<div class="media">
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-building-o "></i><font size="3">View Warehouses</font></h5>
+										
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+					            <a href="signin.aspx" class="media-group-item">
+									<div class="media">
+									
+										<div class="media-body" style="height:30px;">
+											<h5 class="media-heading"><i class="fa m-r-md zmdi-hc-lg fa-user"></i><font size="3">Logout</font></h5>
+										
+										</div>
+									</div>
+								</a><!-- .media-group-item -->
+							</div>
+						</div><!-- .scrollable-container -->
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- /navbar-nav -->
+		 <aside id="app-aside" class="app-aside top" style="height:40px;">
+
+			<a href="#top" id="top-button">
+                <i class="icon-angle-up"></i>
+              </a>
+             
+                <div class="col-md-6  lpad  breadcrumb" style="background:white;">
+                  <span id="breadcrumb">
+                    <a href="#"><i class="fa fa-home"></i></a>
+                    <a href="#">some category</a>
+                    <a href="#">some topic</a>
+                  </span>
+                </div> 
+                <div class="col-md-6  ar lpad " style="background:white;">
+                  Welcome,
+                  <a href="#">Robin Brons</a>
+                </div>
+     
+       </aside>
+		<!-- /aside-menu --
+		<!-- navbar search -->
+		<div id="navbar-search" class="navbar-search">
+			<form action="#">
+				<span class="search-icon"><i class="fa fa-search"></i></span>
+				<input class="search-field" type="search" placeholder="search..."/>
+			</form>
+			<button id="search-close" class="search-close">
+				<i class="fa fa-close"></i>
+			</button>
+		</div>
+		<!-- /navbar search -->
+	</div>
+</nav>
+<!--========== END app navbar -->
+
+<!-- APP MAIN ==========-->
+<main id="app-main" class="app-main">
+	<div class="container">
+		<div class="wrap">
+	<section class="app-content">
+		
+
+		
+
+	 <form id="form1" runat="server"> 
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+	</form>
+
+		
+
+			
+	</section><!-- #dash-content -->
+</div><!-- .wrap -->
+		
+	</div>
+</main>
+<!--========== END app main -->
+
+    <!-- build:js ../assets/js/core.min.js -->
+	<script src="../infinity/libs/bower/jquery/dist/jquery.js"></script>
+	<script src="../infinity/libs/bower/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../infinity/libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+	<script src="../infinity/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="../infinity/libs/bower/superfish/dist/js/hoverIntent.js"></script>
+	<script src="../infinity/libs/bower/superfish/dist/js/superfish.js"></script>
+
+	<script src="../infinity/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../infinity/libs/bower/PACE/pace.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js ../assets/js/app.min.js -->
+	<script src="../infinity/assets/js/library.js"></script>
+	<script src="../infinity/assets/js/plugins.js"></script>
+	<script src="../infinity/assets/js/app.js"></script>
+	<!-- endbuild -->
+	<script src="../infinity/libs/bower/moment/moment.js"></script>
+	<script src="../infinity/libs/bower/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="../infinity/assets/js/fullcalendar.js"></script>
+</body>
+</html>
+

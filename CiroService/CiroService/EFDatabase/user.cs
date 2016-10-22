@@ -35,7 +35,7 @@ namespace CiroService.EFDatabase
         public string user_fname { get; set; }
         public string user_sname { get; set; }
         public string user_password { get; set; }
-        public int usertype_id { get; set; }
+        public Nullable<int> usertype_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<billofentry> billofentries { get; set; }
