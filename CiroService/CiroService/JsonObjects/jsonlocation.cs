@@ -16,6 +16,7 @@ namespace CiroService.JsonObjects
         public int col { get; set; }
 
         public int size { get; set; }
+        public string section { get; set; }
 
         public int height { get; set; }
 

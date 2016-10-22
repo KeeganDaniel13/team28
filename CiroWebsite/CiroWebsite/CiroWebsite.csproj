@@ -311,9 +311,6 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.jsonTask.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTax.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -350,6 +347,7 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource"/>
     <Content Include="ClientPages\Client.Master" />
     <Content Include="AdminPages\admin.Master" />
     <Content Include="CustomsPages\Customs.Master" />

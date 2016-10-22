@@ -8,7 +8,7 @@ namespace CiroService.JsonObjects
 {
     public class JsonInvoice
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public double vat { get; set; }
         public double penalty { get; set; }
         public double paid { get; set; }

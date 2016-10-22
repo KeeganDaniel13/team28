@@ -108,7 +108,7 @@ namespace CiroService
         /// <returns>IEnumerable&lt;jsonTask&gt;.</returns>
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "tasks/{id}")]
-        IEnumerable<jsonTask> taskList(string id);
+        IEnumerable<JsonTask> taskList(string id);
 
         //Report incident
         //Todo
@@ -593,6 +593,10 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseLocations/{warehousesID}")]
         IEnumerable<jsonlocation> getWarehouseLocations(string warehousesID);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "updateSection")]
+        string updateSection(JsonWarehouse _warehouse);
+
 
 
 
@@ -746,6 +750,34 @@ namespace CiroService
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "itemsNeedTransfer")]
         IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addTask")]
+        string addTask(JsonTask _task);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getTasks")]
+        IEnumerable<JsonTask> getTasks(JsonUser _user);
+
+        [OperationContract]
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "completeTask")]
+        string completeTask(JsonTask _task);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseSection")]
+        IEnumerable<IEnumerable<jsonlocation>> getWarehouseSection(JsonWarehouse _warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addEmployee")]
+        string addEmployee(JsonUser _user, JsonWarehouse _warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseTask")]
+        IEnumerable<JsonTask> getWarehouseTask(JsonWarehouse _warehouse);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getEmployees")]
+        IEnumerable<JsonUser> getEmployees(JsonWarehouse _warehouse);
 
 
 
