@@ -97,6 +97,7 @@
     <Content Include="CustomsPages\messageview.aspx" />
     <Content Include="CustomsPages\productlogCustoms.aspx" />
     <Content Include="CustomsPages\release.aspx" />
+    <Content Include="CustomsPages\tempreports.aspx" />
     <Content Include="CustomsPages\viewreleaseinfo.aspx" />
     <Content Include="CustomsPages\viewtransfer.aspx" />
     <Content Include="CustomsPages\warehouseoverview.aspx" />
@@ -357,6 +358,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CiroService\Service1.disco" />
@@ -721,19 +725,19 @@
     <Compile Include="CustomsPages\release.aspx.designer.cs">
       <DependentUpon>release.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomsPages\tempreports.aspx.cs">
+      <DependentUpon>tempreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\tempreports.aspx.designer.cs">
+      <DependentUpon>tempreports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomsPages\transfers.aspx.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomsPages\viewreleaseinfo.aspx.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomsPages\viewreleaseinfo.aspx.designer.cs">
-      <DependentUpon>viewreleaseinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>

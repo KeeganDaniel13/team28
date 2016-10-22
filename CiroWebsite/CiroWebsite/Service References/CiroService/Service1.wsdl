@@ -427,6 +427,12 @@
   <wsdl:message name="IService1_StorageRate_OutputMessage">
     <wsdl:part name="parameters" element="tns:StorageRateResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_StorageFilledBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageFilledBy" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageFilledBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageFilledByResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getCountryP_InputMessage">
     <wsdl:part name="parameters" element="tns:getCountryP" />
   </wsdl:message>
@@ -737,6 +743,10 @@
     <wsdl:operation name="StorageRate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRate" message="tns:IService1_StorageRate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRateResponse" message="tns:IService1_StorageRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageFilledBy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageFilledBy" message="tns:IService1_StorageFilledBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageFilledByResponse" message="tns:IService1_StorageFilledBy_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getCountryP">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCountryP" message="tns:IService1_getCountryP_InputMessage" />
@@ -1384,6 +1394,15 @@
     </wsdl:operation>
     <wsdl:operation name="StorageRate">
       <soap:operation soapAction="http://tempuri.org/IService1/StorageRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageFilledBy">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageFilledBy" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
