@@ -24,12 +24,12 @@ namespace CiroService.EFDatabase
         public int warehouse_id { get; set; }
         public string warehouse_name { get; set; }
         public string warehouse_location { get; set; }
-        public Nullable<System.DateTime> warehouse_established { get; set; }
         public Nullable<int> warehouse_size { get; set; }
         public Nullable<int> warehouse_user { get; set; }
         public Nullable<int> warehouse_warehousetype { get; set; }
         public string warehouse_image { get; set; }
-        public byte[] warehouse_description { get; set; }
+        public string warehouse_description { get; set; }
+        public Nullable<System.DateTime> warehouse_established { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<location> locations { get; set; }

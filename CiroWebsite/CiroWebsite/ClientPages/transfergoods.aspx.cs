@@ -73,7 +73,7 @@ namespace CiroWebsite
         {
             var user = (CiroService.JsonUser)Session["user"];
             var packages = CiroSingleton.ServerCalls.clientProducts(new CiroService.JsonUser {id=user.id });
-            //var packages = (List<CiroService.jsonProduct>)Session["currentItems"];
+            var packagesInfo = (List<CiroService.jsonProduct>)Session["packagesInfo"];
             try
             {
                 string list = "";
@@ -106,7 +106,6 @@ namespace CiroWebsite
                 body += "<tr><th colspan='5'><b>" + w.name + "</b></th></tr>";
                 body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/><i class='fa fa-map-marker'></i>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/> <ul class='list-inline pull-right'><li><a href='viewware.aspx' class='btn btn-info btn-xs'>View Warehouse</a></li><li><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-success btn-xs'>Select</a></li></ul></div></td></tr>";
                // body += "<tr><td colspan='5'><img class='img-responsive' src='../infinity/assets/images/warehouse.jpg' alt='avatar'/>Location :" + w.location + "<br/>Type:" + w.warehousetype + "<br/><a href='viewware.aspx' class='btn btn-outline mw-md rounded btn-success btn-xs'>View Warehose</a><br/><a href='transfergoods.aspx?w=" + w.id + "' class='btn btn-outline mw-md rounded btn-success btn-xs'>Select Warehouse</a></div></td></tr>";
-               
                 body += "</table>";
                 body += "</td>";
                 if (count % 3 == 0)
@@ -118,22 +117,49 @@ namespace CiroWebsite
             Response.Write(body);   
         }
 
+        //needs completion
+        protected void displayTransferComplete()
+        {
+            var transferList = (List<int>)Session["transfers"];
+            //var packages = (List<CiroService.jsonProduct>)Session["packagesInfo"];
+            if (transferList != null)
+            {
+                string body = "";
+                foreach (var i in transferList)
+                {
+                    var package = CiroSingleton.ServerCalls.getPackageID("" + i);
+                    //var package = packages.First<CiroService.jsonProduct>(c=>c.ID==i);
+                    body += "<tr>";
+                    body += "<td>" + package.name + "</td>";
+                    body += "<td>" + package.quantity + "</td>";
+                    body += "<td>" + package.location + "</td>";
+                    body += "<td>destination</td>";
+                    body += "<td>transfer date</td>";
+                    body += "</tr>";
+
+                }
+                Response.Write(body);
+            }
+        }
 
         //needs completion
         protected void displayTransferList()
         {
             var transferList = (List<int>)Session["transfers"];
-            if(transferList!=null)
+            //var packages = (List<CiroService.jsonProduct>)Session["packagesInfo"];
+            if (transferList!=null)
             {
                 string body = "";
                 foreach (var i in transferList)
                 {
+                    var package = CiroSingleton.ServerCalls .getPackageID (""+i);
+                    //var package = packages.First<CiroService.jsonProduct>(c=>c.ID==i);
                     body += "<tr>";
-                    body += "<td>Name</td>";
-                    body += "<td>quantity</td>";
-                    body += "<td>currentlocation</td>";
+                    body += "<td>"+package .name+"</td>";
+                    body += "<td>"+package.quantity+"</td>";
+                    body += "<td>"+package .location   +"</td>";
                     body += "<td>destination</td>";
-                    body += "<td>transfer date</td>";
+                    body += "<td><button type='button' class='btn rounded btn - sm btn - danger'>Remove</button></td>";
                     body += "</tr>";
 
                 }

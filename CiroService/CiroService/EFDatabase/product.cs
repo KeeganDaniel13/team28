@@ -19,7 +19,6 @@ namespace CiroService.EFDatabase
         {
             this.billofentries = new HashSet<billofentry>();
             this.locations = new HashSet<location>();
-            this.locations1 = new HashSet<location>();
             this.ownershiprequests = new HashSet<ownershiprequest>();
             this.productlogs = new HashSet<productlog>();
             this.releaserequests = new HashSet<releaserequest>();
@@ -43,8 +42,7 @@ namespace CiroService.EFDatabase
         public string product_image { get; set; }
         public Nullable<System.DateTime> product_exitdate { get; set; }
         public string product_Expired { get; set; }
-        public string product_insured { get; set; }
-        public string product_reciept { get; set; }
+        public string product_receipt { get; set; }
         public string product_description { get; set; }
         public Nullable<System.DateTime> product_expirationDate { get; set; }
     
@@ -53,8 +51,6 @@ namespace CiroService.EFDatabase
         public virtual hscode hscode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<location> locations { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<location> locations1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ownershiprequest> ownershiprequests { get; set; }
         public virtual producttype producttype { get; set; }

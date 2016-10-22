@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="custommandbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="billofentry">
           <Key>
             <PropertyRef Name="billofentry_id" />
           </Key>
           <Property Name="billofentry_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="billofentry_code" Type="varchar" MaxLength="45" />
+          <Property Name="billofentry_code" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
-          <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
+          <Property Name="billofentry_origin" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_invoice" Type="int" />
         </EntityType>
         <EntityType Name="countryrelation">
@@ -21,14 +21,15 @@
             <PropertyRef Name="countryrelation_id" />
           </Key>
           <Property Name="countryrelation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="countryrelation_name" Type="varchar" MaxLength="45" />
+          <Property Name="countryrelation_name" Type="varchar" MaxLength="255" />
+          <Property Name="countryrelation_hscode" Type="int" />
         </EntityType>
         <EntityType Name="hscode">
           <Key>
             <PropertyRef Name="hscode_id" />
           </Key>
-          <Property Name="hscode_id" Type="int" Nullable="false" />
-          <Property Name="hscode_percentage" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="hscode_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hscode_percentage" Type="decimal" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="invoice">
           <Key>
@@ -45,15 +46,15 @@
           </Key>
           <Property Name="location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="location_isle" Type="int" />
-          <Property Name="location_column" Type="int" />
           <Property Name="location_row" Type="int" />
+          <Property Name="location_column" Type="int" />
+          <Property Name="location_reserve" Type="int" />
           <Property Name="location_size" Type="int" />
           <Property Name="location_product" Type="int" />
           <Property Name="location_warehouse" Type="int" />
           <Property Name="location_height" Type="int" />
           <Property Name="location_width" Type="int" />
           <Property Name="location_length" Type="int" />
-          <Property Name="location_reserve" Type="int" />
         </EntityType>
         <EntityType Name="message">
           <Key>
@@ -61,7 +62,7 @@
           </Key>
           <Property Name="message_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="message_convoid" Type="int" />
-          <Property Name="message_subject" Type="varchar" MaxLength="45" />
+          <Property Name="message_subject" Type="varchar" MaxLength="255" />
           <Property Name="message_to" Type="int" />
           <Property Name="message_from" Type="int" />
           <Property Name="message_message" Type="longtext" />
@@ -74,7 +75,7 @@
           <Property Name="ownershiprequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ownershiprequest_owner" Type="int" />
           <Property Name="ownershiprequest_newowner" Type="int" />
-          <Property Name="ownershiprequest_acceptance" Type="varchar" MaxLength="45" />
+          <Property Name="ownershiprequest_acceptance" Type="varchar" MaxLength="255" />
           <Property Name="ownershiprequest_product" Type="int" />
         </EntityType>
         <EntityType Name="product">
@@ -82,11 +83,11 @@
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="product_name" Type="varchar" MaxLength="45" />
+          <Property Name="product_name" Type="varchar" MaxLength="255" />
           <Property Name="product_price" Type="decimal" Precision="10" Scale="0" />
           <Property Name="product_quantity" Type="int" />
           <Property Name="product_size" Type="int" />
-          <Property Name="product_location" Type="varchar" MaxLength="100" />
+          <Property Name="product_location" Type="varchar" MaxLength="255" />
           <Property Name="product_arrivalDate" Type="datetime" Precision="0" />
           <Property Name="product_width" Type="int" />
           <Property Name="product_height" Type="int" />
@@ -95,9 +96,8 @@
           <Property Name="product_hscode" Type="int" />
           <Property Name="product_image" Type="longtext" />
           <Property Name="product_exitdate" Type="datetime" Precision="0" />
-          <Property Name="product_Expired" Type="varchar" MaxLength="45" />
-          <Property Name="product_insured" Type="varchar" MaxLength="45" />
-          <Property Name="product_reciept" Type="varchar" MaxLength="45" />
+          <Property Name="product_Expired" Type="varchar" MaxLength="255" />
+          <Property Name="product_receipt" Type="varchar" MaxLength="255" />
           <Property Name="product_description" Type="varchar" MaxLength="255" />
           <Property Name="product_expirationDate" Type="datetime" Precision="0" />
         </EntityType>
@@ -107,11 +107,11 @@
           </Key>
           <Property Name="productlog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="productlog_product" Type="int" />
-          <Property Name="productlog_warehouse" Type="varchar" MaxLength="45" />
+          <Property Name="productlog_warehouse" Type="varchar" MaxLength="255" />
           <Property Name="productlog_user" Type="int" />
-          <Property Name="productlog_dscription" Type="varchar" MaxLength="255" />
+          <Property Name="productlog_description" Type="varchar" MaxLength="255" />
           <Property Name="productlog_dateLogged" Type="datetime" Precision="0" />
-          <Property Name="productlog_image" Type="longtext" />
+          <Property Name="productlog_image" Type="varchar" MaxLength="255" />
           <Property Name="productlog_type" Type="int" />
         </EntityType>
         <EntityType Name="productlogtype">
@@ -119,31 +119,34 @@
             <PropertyRef Name="productlogtype_id" />
           </Key>
           <Property Name="productlogtype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="productlogtype_name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="productlogtype_name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="producttype">
           <Key>
             <PropertyRef Name="producttype_id" />
           </Key>
           <Property Name="producttype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="producttype_name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="producttype_name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="releaserequest">
           <Key>
             <PropertyRef Name="releaserequest_id" />
           </Key>
           <Property Name="releaserequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="releaserequest_verdict" Type="varchar" MaxLength="45" />
+          <Property Name="releaserequest_verdict" Type="varchar" MaxLength="255" />
           <Property Name="releaserequest_user" Type="int" />
           <Property Name="releaserequest_product" Type="int" />
+          <Property Name="releaserequest_reason" Type="varchar" MaxLength="255" />
+          <Property Name="releaserequest_requestDate" Type="datetime" Precision="0" />
+          <Property Name="releaserequest_approvalDate" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="transferlist">
           <Key>
             <PropertyRef Name="transferlist_id" />
           </Key>
           <Property Name="transferlist_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="transferlist_to" Type="varchar" MaxLength="45" />
-          <Property Name="transferlist_from" Type="varchar" MaxLength="45" />
+          <Property Name="transferlist_to" Type="varchar" MaxLength="255" />
+          <Property Name="transferlist_from" Type="varchar" MaxLength="255" />
           <Property Name="transferlist_product" Type="int" />
         </EntityType>
         <EntityType Name="transferrequest">
@@ -153,12 +156,12 @@
           <Property Name="transferrequest_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="transferrequest_from" Type="varchar" MaxLength="255" />
           <Property Name="transferrequest_to" Type="varchar" MaxLength="255" />
-          <Property Name="transferrequest_verdict" Type="varchar" MaxLength="45" />
+          <Property Name="transferrequest_verdict" Type="varchar" MaxLength="255" />
           <Property Name="transferrequest_user" Type="int" />
           <Property Name="transferrequest_product" Type="int" />
           <Property Name="transferrequest_description" Type="varchar" MaxLength="255" />
-          <Property Name="transferrequestc_reason" Type="varchar" MaxLength="255" />
-          <Property Name="transferrequest_requestDate" Type="datetime" Precision="0" />
+          <Property Name="transferrequest_reason" Type="varchar" MaxLength="255" />
+          <Property Name="transferrequestc_requsetDate" Type="datetime" Precision="0" />
           <Property Name="transferrequest_approvalDate" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="user">
@@ -166,32 +169,32 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_email" Type="varchar" MaxLength="45" />
-          <Property Name="user_fname" Type="varchar" MaxLength="45" />
-          <Property Name="user_sname" Type="varchar" MaxLength="45" />
+          <Property Name="user_email" Type="varchar" MaxLength="255" />
+          <Property Name="user_fname" Type="varchar" MaxLength="255" />
+          <Property Name="user_sname" Type="varchar" MaxLength="255" />
           <Property Name="user_password" Type="longtext" />
-          <Property Name="usertype_id" Type="int" Nullable="false" />
+          <Property Name="usertype_id" Type="int" />
         </EntityType>
         <EntityType Name="usertype">
           <Key>
             <PropertyRef Name="usertype_id" />
           </Key>
           <Property Name="usertype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usertype_name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="usertype_name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="warehouse">
           <Key>
             <PropertyRef Name="warehouse_id" />
           </Key>
           <Property Name="warehouse_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="warehouse_name" Type="varchar" MaxLength="45" />
-          <Property Name="warehouse_location" Type="varchar" MaxLength="100" />
-          <Property Name="warehouse_established" Type="datetime" Precision="0" />
+          <Property Name="warehouse_name" Type="varchar" MaxLength="255" />
+          <Property Name="warehouse_location" Type="varchar" MaxLength="255" />
           <Property Name="warehouse_size" Type="int" />
           <Property Name="warehouse_user" Type="int" />
           <Property Name="warehouse_warehousetype" Type="int" />
           <Property Name="warehouse_image" Type="varchar" MaxLength="255" />
-          <Property Name="warehouse_description" Type="longblob" />
+          <Property Name="warehouse_description" Type="longtext" />
+          <Property Name="warehouse_established" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -207,7 +210,7 @@
             <PropertyRef Name="warehousetype_id" />
           </Key>
           <Property Name="warehousetype_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="warehousetype_name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="warehousetype_name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <Association Name="billofentry_invoice">
           <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
@@ -242,6 +245,18 @@
             </Principal>
             <Dependent Role="billofentry">
               <PropertyRef Name="billofentry_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="countryrelation_hscode">
+          <End Role="hscode" Type="Self.hscode" Multiplicity="0..1" />
+          <End Role="countryrelation" Type="Self.countryrelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hscode">
+              <PropertyRef Name="hscode_id" />
+            </Principal>
+            <Dependent Role="countryrelation">
+              <PropertyRef Name="countryrelation_hscode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -317,7 +332,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ownsershiprequest_product">
+        <Association Name="ownershiprequest_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="ownershiprequest" Type="Self.ownershiprequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -389,9 +404,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-warning 6035: The relationship 'productlog_warehouse' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
-        <Association Name="productlog_warehouse" />-->
         <Association Name="releaserequest_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="releaserequest" Type="Self.releaserequest" Multiplicity="*" />
@@ -453,7 +465,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </ReferentialConstraint>
         </Association>
         <Association Name="usertype_id">
-          <End Role="usertype" Type="Self.usertype" Multiplicity="1" />
+          <End Role="usertype" Type="Self.usertype" Multiplicity="0..1" />
           <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usertype">
@@ -513,25 +525,25 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
-          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="location" EntityType="Self.location" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="message" EntityType="Self.message" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="location" EntityType="Self.location" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="message" EntityType="Self.message" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="newdb" store:Type="Tables" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -543,6 +555,10 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <AssociationSet Name="billofentry_user" Association="Self.billofentry_user">
             <End Role="user" EntitySet="user" />
             <End Role="billofentry" EntitySet="billofentry" />
+          </AssociationSet>
+          <AssociationSet Name="countryrelation_hscode" Association="Self.countryrelation_hscode">
+            <End Role="hscode" EntitySet="hscode" />
+            <End Role="countryrelation" EntitySet="countryrelation" />
           </AssociationSet>
           <AssociationSet Name="location_product" Association="Self.location_product">
             <End Role="product" EntitySet="product" />
@@ -568,7 +584,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="user" EntitySet="user" />
             <End Role="ownershiprequest" EntitySet="ownershiprequest" />
           </AssociationSet>
-          <AssociationSet Name="ownsershiprequest_product" Association="Self.ownsershiprequest_product">
+          <AssociationSet Name="ownershiprequest_product" Association="Self.ownershiprequest_product">
             <End Role="product" EntitySet="product" />
             <End Role="ownershiprequest" EntitySet="ownershiprequest" />
           </AssociationSet>
@@ -633,8 +649,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="warehousestock" EntitySet="warehousestock" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="custommandbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -643,10 +658,10 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="billofentry_id" />
           </Key>
           <Property Name="billofentry_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="billofentry_code" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="billofentry_code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_user" Type="Int32" />
           <Property Name="billofentry_product" Type="Int32" />
-          <Property Name="billofentry_origin" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="billofentry_origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_invoice" Type="Int32" />
           <NavigationProperty Name="invoice" Relationship="Self.billofentry_invoice" FromRole="billofentry" ToRole="invoice" />
           <NavigationProperty Name="product" Relationship="Self.billofentry_product" FromRole="billofentry" ToRole="product" />
@@ -657,14 +672,17 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="countryrelation_id" />
           </Key>
           <Property Name="countryrelation_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="countryrelation_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="countryrelation_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="countryrelation_hscode" Type="Int32" />
+          <NavigationProperty Name="hscode" Relationship="Self.countryrelation_hscode" FromRole="countryrelation" ToRole="hscode" />
         </EntityType>
         <EntityType Name="hscode">
           <Key>
             <PropertyRef Name="hscode_id" />
           </Key>
-          <Property Name="hscode_id" Type="Int32" Nullable="false" />
-          <Property Name="hscode_percentage" Type="Decimal" />
+          <Property Name="hscode_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hscode_percentage" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="countryrelations" Relationship="Self.countryrelation_hscode" FromRole="hscode" ToRole="countryrelation" />
           <NavigationProperty Name="products" Relationship="Self.product_hscode" FromRole="hscode" ToRole="product" />
         </EntityType>
         <EntityType Name="invoice">
@@ -683,8 +701,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </Key>
           <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="location_isle" Type="Int32" />
-          <Property Name="location_column" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
+          <Property Name="location_column" Type="Int32" />
+          <Property Name="location_reserve" Type="Int32" />
           <Property Name="location_size" Type="Int32" />
           <Property Name="location_product" Type="Int32" />
           <Property Name="location_warehouse" Type="Int32" />
@@ -692,9 +711,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="location_width" Type="Int32" />
           <Property Name="location_length" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.location_product" FromRole="location" ToRole="product" />
-          <NavigationProperty Name="product1" Relationship="Self.location_reserve" FromRole="location" ToRole="product" />
           <NavigationProperty Name="warehouse" Relationship="Self.location_warehouse" FromRole="location" ToRole="warehouse" />
-          <Property Name="location_reserve" Type="Int32" />
         </EntityType>
         <EntityType Name="message">
           <Key>
@@ -702,7 +719,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </Key>
           <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="message_convoid" Type="Int32" />
-          <Property Name="message_subject" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="message_subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="message_to" Type="Int32" />
           <Property Name="message_from" Type="Int32" />
           <Property Name="message_message" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
@@ -717,22 +734,22 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="ownershiprequest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ownershiprequest_owner" Type="Int32" />
           <Property Name="ownershiprequest_newowner" Type="Int32" />
-          <Property Name="ownershiprequest_acceptance" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ownershiprequest_acceptance" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ownershiprequest_product" Type="Int32" />
           <NavigationProperty Name="user" Relationship="Self.ownershiprequest_newowner" FromRole="ownershiprequest" ToRole="user" />
           <NavigationProperty Name="user1" Relationship="Self.ownershiprequest_owner" FromRole="ownershiprequest" ToRole="user" />
-          <NavigationProperty Name="product" Relationship="Self.ownsershiprequest_product" FromRole="ownershiprequest" ToRole="product" />
+          <NavigationProperty Name="product" Relationship="Self.ownershiprequest_product" FromRole="ownershiprequest" ToRole="product" />
         </EntityType>
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="product_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="product_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_price" Type="Decimal" />
           <Property Name="product_quantity" Type="Int32" />
           <Property Name="product_size" Type="Int32" />
-          <Property Name="product_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="product_location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_arrivalDate" Type="DateTime" />
           <Property Name="product_width" Type="Int32" />
           <Property Name="product_height" Type="Int32" />
@@ -741,22 +758,20 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <Property Name="product_hscode" Type="Int32" />
           <Property Name="product_image" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
           <Property Name="product_exitdate" Type="DateTime" />
-          <Property Name="product_Expired" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="product_insured" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="product_reciept" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="product_Expired" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_receipt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="product_expirationDate" Type="DateTime" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_product" FromRole="product" ToRole="billofentry" />
           <NavigationProperty Name="hscode" Relationship="Self.product_hscode" FromRole="product" ToRole="hscode" />
           <NavigationProperty Name="locations" Relationship="Self.location_product" FromRole="product" ToRole="location" />
-          <NavigationProperty Name="locations1" Relationship="Self.location_reserve" FromRole="product" ToRole="location" />
-          <NavigationProperty Name="ownershiprequests" Relationship="Self.ownsershiprequest_product" FromRole="product" ToRole="ownershiprequest" />
+          <NavigationProperty Name="ownershiprequests" Relationship="Self.ownershiprequest_product" FromRole="product" ToRole="ownershiprequest" />
           <NavigationProperty Name="producttype" Relationship="Self.product_producttype" FromRole="product" ToRole="producttype" />
           <NavigationProperty Name="productlogs" Relationship="Self.productlog_product" FromRole="product" ToRole="productlog" />
           <NavigationProperty Name="releaserequests" Relationship="Self.releaserequest_product" FromRole="product" ToRole="releaserequest" />
           <NavigationProperty Name="transferlists" Relationship="Self.transferlist_product" FromRole="product" ToRole="transferlist" />
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_product" FromRole="product" ToRole="transferrequest" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_product" FromRole="product" ToRole="warehousestock" />
-          <Property Name="product_expirationDate" Type="DateTime" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -764,11 +779,11 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </Key>
           <Property Name="productlog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="productlog_product" Type="Int32" />
-          <Property Name="productlog_warehouse" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_warehouse" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="productlog_user" Type="Int32" />
-          <Property Name="productlog_dscription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="productlog_dateLogged" Type="DateTime" />
-          <Property Name="productlog_image" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="productlog_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="productlog_type" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.productlog_product" FromRole="productlog" ToRole="product" />
           <NavigationProperty Name="productlogtype" Relationship="Self.productlog_type" FromRole="productlog" ToRole="productlogtype" />
@@ -779,7 +794,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="productlogtype_id" />
           </Key>
           <Property Name="productlogtype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="productlogtype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="productlogtype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="productlogs" Relationship="Self.productlog_type" FromRole="productlogtype" ToRole="productlog" />
         </EntityType>
         <EntityType Name="producttype">
@@ -787,7 +802,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="producttype_id" />
           </Key>
           <Property Name="producttype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="producttype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="producttype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="products" Relationship="Self.product_producttype" FromRole="producttype" ToRole="product" />
         </EntityType>
         <EntityType Name="releaserequest">
@@ -795,9 +810,12 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="releaserequest_id" />
           </Key>
           <Property Name="releaserequest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="releaserequest_verdict" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="releaserequest_verdict" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="releaserequest_user" Type="Int32" />
           <Property Name="releaserequest_product" Type="Int32" />
+          <Property Name="releaserequest_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="releaserequest_requestDate" Type="DateTime" />
+          <Property Name="releaserequest_approvalDate" Type="DateTime" />
           <NavigationProperty Name="product" Relationship="Self.releaserequest_product" FromRole="releaserequest" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.releaserequest_user" FromRole="releaserequest" ToRole="user" />
         </EntityType>
@@ -806,8 +824,8 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="transferlist_id" />
           </Key>
           <Property Name="transferlist_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="transferlist_to" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="transferlist_from" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="transferlist_to" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="transferlist_from" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="transferlist_product" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.transferlist_product" FromRole="transferlist" ToRole="product" />
         </EntityType>
@@ -816,14 +834,14 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="transferrequest_id" />
           </Key>
           <Property Name="transferrequest_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="transferrequest_from" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="transferrequest_to" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="transferrequest_verdict" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="transferrequest_from" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="transferrequest_to" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="transferrequest_verdict" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="transferrequest_user" Type="Int32" />
           <Property Name="transferrequest_product" Type="Int32" />
           <Property Name="transferrequest_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="transferrequestc_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="transferrequest_requestDate" Type="DateTime" />
+          <Property Name="transferrequest_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="transferrequestc_requsetDate" Type="DateTime" />
           <Property Name="transferrequest_approvalDate" Type="DateTime" />
           <NavigationProperty Name="product" Relationship="Self.transferrequest_product" FromRole="transferrequest" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.transferrequest_user" FromRole="transferrequest" ToRole="user" />
@@ -833,11 +851,11 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="user_fname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="user_sname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="user_email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_fname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_sname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="user_password" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-          <Property Name="usertype_id" Type="Int32" Nullable="false" />
+          <Property Name="usertype_id" Type="Int32" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_user" FromRole="user" ToRole="billofentry" />
           <NavigationProperty Name="messages" Relationship="Self.message_from" FromRole="user" ToRole="message" />
           <NavigationProperty Name="messages1" Relationship="Self.message_to" FromRole="user" ToRole="message" />
@@ -854,7 +872,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="usertype_id" />
           </Key>
           <Property Name="usertype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usertype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="users" Relationship="Self.usertype_id" FromRole="usertype" ToRole="user" />
         </EntityType>
         <EntityType Name="warehouse">
@@ -862,14 +880,14 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="warehouse_id" />
           </Key>
           <Property Name="warehouse_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="warehouse_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="warehouse_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="warehouse_established" Type="DateTime" />
+          <Property Name="warehouse_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="warehouse_location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="warehouse_size" Type="Int32" />
           <Property Name="warehouse_user" Type="Int32" />
           <Property Name="warehouse_warehousetype" Type="Int32" />
           <Property Name="warehouse_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="warehouse_description" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="warehouse_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="warehouse_established" Type="DateTime" />
           <NavigationProperty Name="locations" Relationship="Self.location_warehouse" FromRole="warehouse" ToRole="location" />
           <NavigationProperty Name="user" Relationship="Self.warehouse_user" FromRole="warehouse" ToRole="user" />
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
@@ -891,7 +909,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <PropertyRef Name="warehousetype_id" />
           </Key>
           <Property Name="warehousetype_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="warehousetype_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="warehousetype_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="warehouses" Relationship="Self.warehouse_warehousetype" FromRole="warehousetype" ToRole="warehouse" />
         </EntityType>
         <Association Name="billofentry_invoice">
@@ -930,6 +948,18 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="countryrelation_hscode">
+          <End Role="hscode" Type="Self.hscode" Multiplicity="0..1" />
+          <End Role="countryrelation" Type="Self.countryrelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hscode">
+              <PropertyRef Name="hscode_id" />
+            </Principal>
+            <Dependent Role="countryrelation">
+              <PropertyRef Name="countryrelation_hscode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="product_hscode">
           <End Role="hscode" Type="Self.hscode" Multiplicity="0..1" />
           <End Role="product" Type="Self.product" Multiplicity="*" />
@@ -951,18 +981,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Principal>
             <Dependent Role="location">
               <PropertyRef Name="location_product" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="location_reserve">
-          <End Role="product" Type="Self.product" Multiplicity="0..1" />
-          <End Role="location" Type="Self.location" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="product">
-              <PropertyRef Name="product_id" />
-            </Principal>
-            <Dependent Role="location">
-              <PropertyRef Name="location_reserve" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1026,7 +1044,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ownsershiprequest_product">
+        <Association Name="ownershiprequest_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="ownershiprequest" Type="Self.ownershiprequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1159,7 +1177,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           </ReferentialConstraint>
         </Association>
         <Association Name="usertype_id">
-          <End Role="usertype" Type="Self.usertype" Multiplicity="1" />
+          <End Role="usertype" Type="Self.usertype" Multiplicity="0..1" />
           <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usertype">
@@ -1238,15 +1256,15 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="user" EntitySet="users" />
             <End Role="billofentry" EntitySet="billofentries" />
           </AssociationSet>
+          <AssociationSet Name="countryrelation_hscode" Association="Self.countryrelation_hscode">
+            <End Role="hscode" EntitySet="hscodes" />
+            <End Role="countryrelation" EntitySet="countryrelations" />
+          </AssociationSet>
           <AssociationSet Name="product_hscode" Association="Self.product_hscode">
             <End Role="hscode" EntitySet="hscodes" />
             <End Role="product" EntitySet="products" />
           </AssociationSet>
           <AssociationSet Name="location_product" Association="Self.location_product">
-            <End Role="product" EntitySet="products" />
-            <End Role="location" EntitySet="locations" />
-          </AssociationSet>
-          <AssociationSet Name="location_reserve" Association="Self.location_reserve">
             <End Role="product" EntitySet="products" />
             <End Role="location" EntitySet="locations" />
           </AssociationSet>
@@ -1270,7 +1288,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
             <End Role="user" EntitySet="users" />
             <End Role="ownershiprequest" EntitySet="ownershiprequests" />
           </AssociationSet>
-          <AssociationSet Name="ownsershiprequest_product" Association="Self.ownsershiprequest_product">
+          <AssociationSet Name="ownershiprequest_product" Association="Self.ownershiprequest_product">
             <End Role="product" EntitySet="products" />
             <End Role="ownershiprequest" EntitySet="ownershiprequests" />
           </AssociationSet>
@@ -1354,6 +1372,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
               <MappingFragment StoreEntitySet="countryrelation">
                 <ScalarProperty Name="countryrelation_id" ColumnName="countryrelation_id" />
                 <ScalarProperty Name="countryrelation_name" ColumnName="countryrelation_name" />
+                <ScalarProperty Name="countryrelation_hscode" ColumnName="countryrelation_hscode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1378,11 +1397,11 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="locations">
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
-                <ScalarProperty Name="location_reserve" ColumnName="location_reserve" />
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
-                <ScalarProperty Name="location_column" ColumnName="location_column" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
+                <ScalarProperty Name="location_column" ColumnName="location_column" />
+                <ScalarProperty Name="location_reserve" ColumnName="location_reserve" />
                 <ScalarProperty Name="location_size" ColumnName="location_size" />
                 <ScalarProperty Name="location_product" ColumnName="location_product" />
                 <ScalarProperty Name="location_warehouse" ColumnName="location_warehouse" />
@@ -1419,7 +1438,6 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
           <EntitySetMapping Name="products">
             <EntityTypeMapping TypeName="custommandbModel.product">
               <MappingFragment StoreEntitySet="product">
-                <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="product_price" ColumnName="product_price" />
@@ -1435,9 +1453,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="product_image" ColumnName="product_image" />
                 <ScalarProperty Name="product_exitdate" ColumnName="product_exitdate" />
                 <ScalarProperty Name="product_Expired" ColumnName="product_Expired" />
-                <ScalarProperty Name="product_insured" ColumnName="product_insured" />
-                <ScalarProperty Name="product_reciept" ColumnName="product_reciept" />
+                <ScalarProperty Name="product_receipt" ColumnName="product_receipt" />
                 <ScalarProperty Name="product_description" ColumnName="product_description" />
+                <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1448,7 +1466,7 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="productlog_product" ColumnName="productlog_product" />
                 <ScalarProperty Name="productlog_warehouse" ColumnName="productlog_warehouse" />
                 <ScalarProperty Name="productlog_user" ColumnName="productlog_user" />
-                <ScalarProperty Name="productlog_dscription" ColumnName="productlog_dscription" />
+                <ScalarProperty Name="productlog_description" ColumnName="productlog_description" />
                 <ScalarProperty Name="productlog_dateLogged" ColumnName="productlog_dateLogged" />
                 <ScalarProperty Name="productlog_image" ColumnName="productlog_image" />
                 <ScalarProperty Name="productlog_type" ColumnName="productlog_type" />
@@ -1478,6 +1496,9 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="releaserequest_verdict" ColumnName="releaserequest_verdict" />
                 <ScalarProperty Name="releaserequest_user" ColumnName="releaserequest_user" />
                 <ScalarProperty Name="releaserequest_product" ColumnName="releaserequest_product" />
+                <ScalarProperty Name="releaserequest_reason" ColumnName="releaserequest_reason" />
+                <ScalarProperty Name="releaserequest_requestDate" ColumnName="releaserequest_requestDate" />
+                <ScalarProperty Name="releaserequest_approvalDate" ColumnName="releaserequest_approvalDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1501,8 +1522,8 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="transferrequest_user" ColumnName="transferrequest_user" />
                 <ScalarProperty Name="transferrequest_product" ColumnName="transferrequest_product" />
                 <ScalarProperty Name="transferrequest_description" ColumnName="transferrequest_description" />
-                <ScalarProperty Name="transferrequestc_reason" ColumnName="transferrequestc_reason" />
-                <ScalarProperty Name="transferrequest_requestDate" ColumnName="transferrequest_requestDate" />
+                <ScalarProperty Name="transferrequest_reason" ColumnName="transferrequest_reason" />
+                <ScalarProperty Name="transferrequestc_requsetDate" ColumnName="transferrequestc_requsetDate" />
                 <ScalarProperty Name="transferrequest_approvalDate" ColumnName="transferrequest_approvalDate" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1533,12 +1554,12 @@ warning 6035: The relationship 'productlog_warehouse' has columns that are not p
                 <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
                 <ScalarProperty Name="warehouse_name" ColumnName="warehouse_name" />
                 <ScalarProperty Name="warehouse_location" ColumnName="warehouse_location" />
-                <ScalarProperty Name="warehouse_established" ColumnName="warehouse_established" />
                 <ScalarProperty Name="warehouse_size" ColumnName="warehouse_size" />
                 <ScalarProperty Name="warehouse_user" ColumnName="warehouse_user" />
                 <ScalarProperty Name="warehouse_warehousetype" ColumnName="warehouse_warehousetype" />
                 <ScalarProperty Name="warehouse_image" ColumnName="warehouse_image" />
                 <ScalarProperty Name="warehouse_description" ColumnName="warehouse_description" />
+                <ScalarProperty Name="warehouse_established" ColumnName="warehouse_established" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

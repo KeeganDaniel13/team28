@@ -16,5 +16,8 @@ namespace CiroService.EFDatabase
     {
         public int countryrelation_id { get; set; }
         public string countryrelation_name { get; set; }
+        public Nullable<int> countryrelation_hscode { get; set; }
+    
+        public virtual hscode hscode { get; set; }
     }
 }

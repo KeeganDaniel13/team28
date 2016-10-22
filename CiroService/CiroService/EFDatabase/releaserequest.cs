@@ -18,6 +18,9 @@ namespace CiroService.EFDatabase
         public string releaserequest_verdict { get; set; }
         public Nullable<int> releaserequest_user { get; set; }
         public Nullable<int> releaserequest_product { get; set; }
+        public string releaserequest_reason { get; set; }
+        public Nullable<System.DateTime> releaserequest_requestDate { get; set; }
+        public Nullable<System.DateTime> releaserequest_approvalDate { get; set; }
     
         public virtual product product { get; set; }
         public virtual user user { get; set; }
