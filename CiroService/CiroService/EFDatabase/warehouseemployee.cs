@@ -12,17 +12,13 @@ namespace CiroService.EFDatabase
     using System;
     using System.Collections.Generic;
     
-    public partial class billofentry
+    public partial class warehouseemployee
     {
-        public int billofentry_id { get; set; }
-        public string billofentry_code { get; set; }
-        public Nullable<int> billofentry_user { get; set; }
-        public Nullable<int> billofentry_product { get; set; }
-        public string billofentry_origin { get; set; }
-        public string billofentry_invoice { get; set; }
+        public int warehouseemployee_id { get; set; }
+        public Nullable<int> warehouseemployee_employee { get; set; }
+        public Nullable<int> warehouseemployee_warehouse { get; set; }
     
-        public virtual invoice invoice { get; set; }
-        public virtual product product { get; set; }
         public virtual user user { get; set; }
+        public virtual warehouse warehouse { get; set; }
     }
 }

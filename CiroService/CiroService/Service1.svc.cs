@@ -71,9 +71,9 @@ namespace CiroService
         /// Gets the data.
         /// </summary>
         /// <returns>System.String.</returns>
-        public string GetData()
+        public string GetData(string id)
         {
-            var userAccess = new userController();
+            /*var userAccess = new userController();
             List<UserDemo> users = new List<UserDemo>();
             List<user> userTable = userAccess.getTable().ToList<user>();
             foreach (user u in userTable)
@@ -84,8 +84,32 @@ namespace CiroService
                     Name = u.user_fname
 
                 });
+            }*/
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(id));
+            if (warehouseExists == null)
+            {
+                return null;
             }
-            return JsonConvert.SerializeObject(users);
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+            }
+            return JsonConvert.SerializeObject(inventory);
+
+            //return JsonConvert.SerializeObject(users);
         }
 
         /// <summary>
@@ -283,7 +307,6 @@ namespace CiroService
                 transferList.Add(new TransferDetails { productName = productExists.product_name, currentLocation = t.transferlist_from, destination = t.transferlist_to });
             }
             return transferList;
-
         }
 
         //Add Method to update table of stock take 
@@ -441,10 +464,8 @@ namespace CiroService
                 transferListkAccess.addRecord(new transferlist { transferlist_to = p.transferLocation, transferlist_product = addToBill.product_id, transferlist_from = p.currentLocation });
 
                 //create qrcode
-
-                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images";
-                MessageBox.Show("Before Save");
-                //string path = "images";
+                
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -466,7 +487,7 @@ namespace CiroService
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>IEnumerable&lt;jsonTask&gt;.</returns>
-        public IEnumerable<jsonTask> taskList(string id)
+        public IEnumerable<JsonTask> taskList(string id)
         {
             return null;
         }
@@ -488,7 +509,7 @@ namespace CiroService
             }
             else
             {
-                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\incidents\\";
                 byte[] newImage = Convert.FromBase64String(newIncident.image);
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                 memoStream.Write(newImage, 0, newImage.Length);
@@ -496,9 +517,8 @@ namespace CiroService
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
                 incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse, productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
-
-                return;
             }
+            return;
         }
 
         //return all warehpuse info for that specific warehouse
@@ -1350,6 +1370,62 @@ namespace CiroService
         /// <summary>
         /// Gets the warehouse inventory.
         /// </summary>
+        /// <param name="id">The warehouses.</param>
+        /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
+        public IEnumerable<JsonInventory> WarehouseInventory(string id)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(id));
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+            }
+            return inventory;
+            /*var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower() || w.warehouse_id == warehouses.id);
+
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name=billExists .product .product_name}, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner =new JsonUser {fname =billExists.user.user_fname,lname=billExists.user.user_sname ,email=billExists.user.user_email}});
+            }
+            return inventory;*/
+        }
+
+        /// <summary>
+        /// Gets the warehouse inventory.
+        /// </summary>
         /// <param name="warehouses">The warehouses.</param>
         /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
         public IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses)
@@ -1521,10 +1597,10 @@ namespace CiroService
 
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             var invoiceAccess = new invoiceController();
-            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
+            invoice _invoice = new invoice { invoice_id = invoiceNo, invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
 
             invoiceAccess.addRecord(_invoice);
-            billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
+            billExists.billofentry_invoice = invoiceNo;
             billAccess.updateRecord(billExists.billofentry_id, billExists);
             //billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
 
@@ -1649,6 +1725,14 @@ namespace CiroService
             var locationaccess = new LocationController();
             location loc = new location { location_isle = loca.isle, location_row = loca.row, location_column = loca.col, location_size = loca.size, location_product = loca.product, location_warehouse = loca.warehouse, location_height = loca.height, location_length = loca.length, location_width = loca.width };
             locationaccess.addRecord(loc);
+
+            var section = updateSection(new JsonWarehouse { id = loca.warehouse });
+
+            if(section == "Section Error")
+            {
+                return "Allocating Section Error";
+            }
+
             return "location added.";
         }
 
@@ -1733,7 +1817,7 @@ namespace CiroService
 
             foreach (location l in locationlist)
             {
-                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse) });
+                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse), section = l.location_section });
             }
             return locations;
         }
@@ -1797,6 +1881,7 @@ namespace CiroService
                 List<location> locationfits = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
 
                 if (locationfits.Count == 0)
+
                 {
                     return "Package Does Not Fit In Any Locations In The Warehouse";
                 }
@@ -2152,29 +2237,47 @@ namespace CiroService
         /// <returns>IEnumerable&lt;TransferDetails&gt;.</returns>
         public IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse)
         {
-            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            var warehouseName = new warehouseController().getTable().First<warehouse>(w => w.warehouse_id == warehouse.id).warehouse_name ;
+            var transferList = new transferlistController().getTable();
+            var transfer = transferList.Where<transferlist>(c => c.transferlist_to == warehouseName || c.transferlist_from == warehouseName);
+            
             List<TransferDetails> items = new List<TransferDetails>();
+            foreach(var i in transfer)
+            {
+                var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
+                items.Add(new TransferDetails { currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name});
+            }
+            /*var stock = warehouseStock.First<warehousestock>().warehouse .warehouse_location;
+            
             MessageBox.Show(warehouseStock.Count() + "");
             var transferList = new transferrequestsController().getTable();
-            MessageBox.Show(transferList.Count() + "");
+            
             foreach (var item in warehouseStock)
             {
-
+                
                 try
                 {
+                    var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == stock || c.transferrequest_from == stock);
+                    if(transfer.transferrequest_from == stock)
+                    {
+                        MessageBox.Show("Leaving here");
+                    }
+                    else if (transfer.transferrequest_to == stock)
+                    {
+                        MessageBox.Show("Coming here");
+                    }
 
-                    // var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == item.warehouse .warehouse_location  || c.transferrequest_from == item.warehouse.warehouse_location);
-                    MessageBox.Show(item.warehouse.warehouse_location + "");
+
                     // if (release != null)
                     //{
                     //  items.Add(new TransferDetails ());
                     //}
                 }
-                catch (Exception) { }
-            }
+                catch (Exception e) { MessageBox.Show(e.ToString()); }
+            }*/
 
             return items;
-
+            
         }
 
         /// <summary>
@@ -2226,6 +2329,195 @@ namespace CiroService
             JsonTax tax = new JsonTax { vat = averageVAT, penalty = averagePenalty, total = averageTotal };
 
             return tax;
+        }
+        
+        public string updateSection(JsonWarehouse _warehouse)
+        {
+            var locationAccess = new LocationController();
+            List<location> locationExists = locationAccess.getTable().Where<location>(s => s.location_warehouse == _warehouse.id).ToList<location>();
+
+            if(locationExists.Count() == 0 || locationExists == null)
+            {
+                return "Section Error";
+            }
+
+            double isleCount = locationExists.Select(i => i.location_isle).Distinct().Count();
+
+            char[] section = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+            int count = 0;
+            int r = 0;
+
+            return "Section Updated";
+        }
+
+        public string addTask(JsonTask _task)
+        {
+            var taskAccess = new warehousetaskController();
+            taskAccess.addRecord(new warehousetask { warehousetask_employee = _task.employee, warehousetask_section = _task.section, warehousetask_type = _task.type, warehousetask_description = _task.description, warehousetask_timestamp = _task.timestamp, warehousetask_warehouse = _task.warehouse });
+            return "Task added";
+        }
+
+        public IEnumerable<JsonTask> getTasks(JsonUser _user)
+        {
+            var taskAccess = new warehousetaskController();
+            List<warehousetask> tasksExists = taskAccess.getTable().Where<warehousetask>(t => t.warehousetask_employee == _user.id).ToList<warehousetask>();
+
+            if(tasksExists == null || tasksExists.Count == 0)
+            {
+                return null;
+            }
+
+            List<JsonTask> tasks = new List<JsonTask>();
+
+            foreach(warehousetask t in tasksExists)
+            {
+                if(t.warehousetask_endtime == null)
+                {
+                    tasks.Add(new JsonTask { employee = (int)t.warehousetask_employee, section = t.warehousetask_section, description = t.warehousetask_description, timestamp = (DateTime)t.warehousetask_timestamp, type = t.warehousetask_type });
+                }
+            }
+            return tasks;
+        }
+
+        public string completeTask(JsonTask _task)
+        {
+            var userAccess = new userController();
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == _task.employee);
+
+            if(userExists == null)
+            {
+                return "Employee does not exist.";
+            }
+
+            var employeeAccess = new warehouseemployeeController();
+            var employeeExists = employeeAccess.getTable().FirstOrDefault<warehouseemployee>(e => e.warehouseemployee_employee == userExists.user_id);
+
+            if(employeeExists == null)
+            {
+                return "Employe does not exist.";
+            }
+
+            var taskAccess = new warehousetaskController();
+            var taskExists = taskAccess.getTable().FirstOrDefault<warehousetask>(t => t.warehousetask_id == _task.id && t.warehousetask_employee == employeeExists.warehouseemployee_employee && t.warehousetask_warehouse == employeeExists.warehouseemployee_warehouse);
+
+            if(taskExists == null)
+            {
+                return "Error, task does not exist.";
+            }
+
+            DateTime date = DateTime.Now;
+            taskExists.warehousetask_endtime = date;
+
+            taskAccess.updateRecord(taskExists.warehousetask_id, taskExists);
+            return "Task has been completed.";
+        }
+
+        public IEnumerable<IEnumerable<jsonlocation>> getWarehouseSection(JsonWarehouse _warehouse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string addEmployee(JsonUser _user, JsonWarehouse _warehouse)
+        {
+
+            var userAccess = new userController();
+
+            var check = userAccess.getTable().FirstOrDefault<user>(c => c.user_email.Equals(_user.email));
+
+            if (check != null)
+            {
+                return "Email Already Registered";
+            }
+
+            user newUser = new user { user_fname = _user.fname, user_email = _user.email, user_sname = _user.lname, user_password = _user.password, usertype_id = 5 };
+
+            userAccess.addRecord(newUser);
+
+            var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_email == newUser.user_email);
+
+            if(userExists == null)
+            {
+                return "User failed to add.";
+            }
+
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == _warehouse.id);
+
+            if(warehouseExists == null)
+            {
+                return "Warehouse does not exist.";
+            }
+
+            var employeeAccess = new warehouseemployeeController();
+            employeeAccess.addRecord(new warehouseemployee { warehouseemployee_employee = userExists.user_id, warehouseemployee_warehouse = warehouseExists.warehouse_id });
+            return "Employee has been added to the warehouse.";
+        }
+
+        public IEnumerable<JsonTask> getWarehouseTask(JsonWarehouse _warehouse)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == _warehouse.id);
+
+            if(warehouseExists == null)
+            {
+                return null;
+            }
+
+            var taskAccess = new warehousetaskController();
+            List<warehousetask> tasksExists = taskAccess.getTable().Where<warehousetask>(t => t.warehousetask_warehouse == warehouseExists.warehouse_id).ToList<warehousetask>();
+
+            if(tasksExists.Count == 0 || tasksExists == null)
+            {
+                return null;
+            }
+
+            List<JsonTask> tasks = new List<JsonTask>();
+
+            foreach(warehousetask t in tasksExists)
+            {
+                if(t.warehousetask_endtime == null)
+                {
+                    tasks.Add(new JsonTask { employee = (int)t.warehousetask_employee, section = t.warehousetask_section, description = t.warehousetask_description, type = t.warehousetask_type, timestamp = (DateTime)t.warehousetask_timestamp });
+                }
+            }
+            return tasks;
+        }
+
+        public IEnumerable<JsonUser> getEmployees(JsonWarehouse _warehouse)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == _warehouse.id);
+
+            if(warehouseExists == null)
+            {
+                return null;
+            }
+
+            var employeeAccess = new warehouseemployeeController();
+            List<warehouseemployee> employeesExists = employeeAccess.getTable().Where<warehouseemployee>(e => e.warehouseemployee_warehouse == warehouseExists.warehouse_id).ToList<warehouseemployee>();
+
+            if(employeesExists.Count() == 0 || employeesExists == null)
+            {
+                return null;
+            }
+
+            var userAccess = new userController();
+            List<user> userExists = new List<user>();
+
+            foreach(warehouseemployee e in employeesExists)
+            {
+                userExists.Add(userAccess.getTable().FirstOrDefault<user>(u => u.user_id == e.warehouseemployee_employee));
+            }
+
+            List<JsonUser> employee = new List<JsonUser>();
+
+            foreach(user u in userExists)
+            {
+                employee.Add(new JsonUser { id = u.user_id, fname = u.user_fname, lname = u.user_sname, email = u.user_email });
+            }
+
+            return employee;
         }
 
         /// <summary>
@@ -2333,7 +2625,7 @@ namespace CiroService
             return storages;
         }
 
-
+        
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();

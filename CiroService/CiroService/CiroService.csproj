@@ -166,7 +166,9 @@
     <Compile Include="DAL\userController.cs" />
     <Compile Include="DAL\usertypeController.cs" />
     <Compile Include="DAL\warehouseController.cs" />
+    <Compile Include="DAL\warehouseemployeeController.cs" />
     <Compile Include="DAL\warehousestockController.cs" />
+    <Compile Include="DAL\warehousetaskController.cs" />
     <Compile Include="DAL\warehousetypeController.cs" />
     <Compile Include="EFDatabase\billofentry.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
@@ -234,7 +236,13 @@
     <Compile Include="EFDatabase\warehouse.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="EFDatabase\warehouseemployee.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="EFDatabase\warehousestock.cs">
+      <DependentUpon>CiroDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDatabase\warehousetask.cs">
       <DependentUpon>CiroDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="EFDatabase\warehousetype.cs">
@@ -254,7 +262,7 @@
     <Compile Include="JsonObjects\jsonProduct.cs" />
     <Compile Include="JsonObjects\jsonLogin.cs" />
     <Compile Include="JsonObjects\jsonStockTake.cs" />
-    <Compile Include="JsonObjects\jsonTask.cs" />
+    <Compile Include="JsonObjects\JsonTask.cs" />
     <Compile Include="JsonObjects\JsonTax.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
@@ -275,6 +283,7 @@
     <Compile Include="JsonObjects\JsonProducts.cs" />
     <Compile Include="JsonObjects\JsonUser.cs" />
     <Compile Include="JsonObjects\UserDemo.cs" />
+    <Compile Include="JsonObjects\ware.cs" />
     <Compile Include="JsonObjects\WarehouseIncidentsGraph.cs" />
     <Compile Include="JsonObjects\WarehouseReleasescs.cs" />
     <Compile Include="JsonObjects\WarehousesStorageRates.cs" />
