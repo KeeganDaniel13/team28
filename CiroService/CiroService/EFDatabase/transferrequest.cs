@@ -21,8 +21,8 @@ namespace CiroService.EFDatabase
         public Nullable<int> transferrequest_user { get; set; }
         public Nullable<int> transferrequest_product { get; set; }
         public string transferrequest_description { get; set; }
-        public string transferrequestc_reason { get; set; }
-        public Nullable<System.DateTime> transferrequest_requestDate { get; set; }
+        public string transferrequest_reason { get; set; }
+        public Nullable<System.DateTime> transferrequestc_requsetDate { get; set; }
         public Nullable<System.DateTime> transferrequest_approvalDate { get; set; }
     
         public virtual product product { get; set; }

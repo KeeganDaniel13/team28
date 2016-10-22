@@ -46,7 +46,7 @@
                                    <input type="text" runat="server" class="form-control" id="WarehouseName" placeholder="Warehouse"/></a>
 					        </div> 
 							</div>
-                            <div>
+                            <!--<div>
                                 <label for="insuredBox" class="col-sm-3 control-label">Is The Product Insured</label>
 								<div class="col-sm-9">
 								</div> 
@@ -57,7 +57,7 @@
 									<textarea id="reason" runat="server" rows="4" cols="50"></textarea>
 								</div> 
                               </div>
-                                  <br /><br /><br /><br /><br /><br /><br /><br />   
+                                  <br /><br /><br /><br />--><br /><br /><br /><br />   
 
 							<button type="submit"  class="btn btn-primary btn-xs btn-outline" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Add Package</button>
                               

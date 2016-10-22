@@ -42,8 +42,7 @@ namespace CiroService.EFDatabase
         public string product_image { get; set; }
         public Nullable<System.DateTime> product_exitdate { get; set; }
         public string product_Expired { get; set; }
-        public string product_insured { get; set; }
-        public string product_reciept { get; set; }
+        public string product_receipt { get; set; }
         public string product_description { get; set; }
         public Nullable<System.DateTime> product_expirationDate { get; set; }
     
