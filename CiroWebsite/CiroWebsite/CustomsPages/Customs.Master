@@ -214,7 +214,7 @@
 	<script src="../infinity/libs/bower/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 	<script src="../infinity/libs/bower/superfish/dist/js/hoverIntent.js"></script>
 	<script src="../infinity/libs/bower/superfish/dist/js/superfish.js"></script>
-
+    <script src="../infinity/libs/misc/flot/jquery.flot.min.js"></script>
 	<script src="../infinity/libs/bower/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
 	<script src="../infinity/libs/bower/PACE/pace.min.js"></script>
 	<!-- endbuild -->

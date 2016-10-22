@@ -550,7 +550,6 @@
     </Compile>
     <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
       <DependentUpon>ApproveTransfers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
       <DependentUpon>ApproveTransfers.aspx</DependentUpon>

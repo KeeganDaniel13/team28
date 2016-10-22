@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CiroWebsite.ClientPages {
+namespace CiroWebsite.WarehousePages {
     
     
-    public partial class ApproveTransfers {
+    public partial class warehousehome {
     }
 }
