@@ -25,7 +25,7 @@ namespace CiroWebsite
             {
                 var requests = Session["releases"] as List<CiroService.JsonReleaseRequest>;
                 var request = requests.First<CiroService.JsonReleaseRequest>(c => c.product_id == Convert.ToInt32(Request.QueryString["info"]));
-                var invoice = CiroSingleton.ServerCalls.getInvoice(new CiroService .JsonInvoice {id= 0 },new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["info"])});
+                var invoice = CiroSingleton.ServerCalls.getInvoice(new CiroService .JsonInvoice {},new CiroService.jsonProduct { ID = Convert.ToInt32(Request.QueryString["info"])});
                 name.InnerHtml = request.userInfo.email;
                 var body = "<td>"+request .productInfo .name+"</td>";
                 body += "<td>"+request .productInfo .quantity+"</td>";

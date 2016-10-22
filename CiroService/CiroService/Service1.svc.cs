@@ -530,7 +530,7 @@ namespace CiroService
             }
             else
             {
-                string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\incidents\\";
                 byte[] newImage = Convert.FromBase64String(newIncident.image);
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                 memoStream.Write(newImage, 0, newImage.Length);

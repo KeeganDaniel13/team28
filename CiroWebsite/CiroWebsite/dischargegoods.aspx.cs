@@ -19,7 +19,7 @@ namespace CiroWebsite
             body += "<td>" + prod.name + "</td><td>" + prod.quantity + "</td><td>CalculateAccess</td><td>" + prod.bill + "</td><td>Exit date</td><td>" + prod.cosigner + "</td>" + "<td><a type='button' class='btn btn-danger'><i class='fa fa-minus-square-o'></i></a></td>";
             body += "</tr>";
             var list = Convert.ToInt32(Session["declare"]);
-            var invoice = CiroSingleton.ServerCalls.getInvoice(new CiroService.JsonInvoice { id = 0 }, new CiroService.jsonProduct { ID = list });
+            var invoice = CiroSingleton.ServerCalls.getInvoice(new CiroService.JsonInvoice {}, new CiroService.jsonProduct { ID = list });
             Session["invoice"] = invoice;
             val.InnerHtml = (invoice.vat + invoice.penalty) + " ZAR";
             Release.InnerHtml = body;
