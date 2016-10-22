@@ -37,10 +37,20 @@ namespace CiroService.DAL
 
         public bool exists(int id)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool exists(string id)
+        {
             return db.invoices.Count(e => e.invoice_id == id) > 0;
         }
 
         public invoice getRecord(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public invoice getRecord(string id)
         {
 
             invoice nuser = null;
@@ -61,7 +71,12 @@ namespace CiroService.DAL
             return db.invoices;
         }
 
-        public invoice updateRecord(int id, invoice invoice)
+        public invoice updateRecord(int id, invoice item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public invoice updateRecord(string id, invoice invoice)
         {
             invoice newInvoice = invoice;
             if (id != newInvoice.invoice_id)

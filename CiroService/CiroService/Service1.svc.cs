@@ -365,7 +365,7 @@ namespace CiroService
 
                 //create qrcode
 
-                string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images";
+                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -1361,10 +1361,10 @@ namespace CiroService
 
             string invoiceNo = "" + date.Day + date.Month + date.Year + billExists.billofentry_user + count;
             var invoiceAccess = new invoiceController();
-            invoice _invoice = new invoice { invoice_id = Convert.ToInt32(invoiceNo), invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
+            invoice _invoice = new invoice { invoice_id = invoiceNo, invoice_vat = Convert.ToDecimal(addedVAT), invoice_penalty = Convert.ToDecimal(addedPenalty), invoice_paid = 0 };
             
             invoiceAccess.addRecord(_invoice);
-            billExists.billofentry_invoice = Convert.ToInt32(invoiceNo);
+            billExists.billofentry_invoice = invoiceNo;
             billAccess.updateRecord(billExists.billofentry_id, billExists);
             //billAccess.addRecord(new billofentry { billofentry_origin = _bill.origin, billofentry_product = productExists.product_id, billofentry_user = _bill.user, billofentry_code = _bill.billCode, billofentry_invoice = Convert.ToInt32(invoiceNo) });
 

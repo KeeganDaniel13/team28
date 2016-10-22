@@ -112,7 +112,7 @@ CREATE TABLE `custommandb`.`product` (
   
   
 CREATE TABLE `custommandb`.`invoice` (
-  `invoice_id` INT(45) NOT NULL,
+  `invoice_id` VARCHAR(255) NOT NULL,
   `invoice_vat` DECIMAL(10,2) NULL,
   `invoice_penalty` DECIMAL(10,2) NULL,
   `invoice_paid` DECIMAL(10,2) NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `custommandb`.`billofentry` (
   `billofentry_user` INT NULL,
   `billofentry_product` INT NULL,
   `billofentry_origin` VARCHAR(45) NULL,
-  `billofentry_invoice` INT(45) NULL,
+  `billofentry_invoice` VARCHAR(255) NULL,
   PRIMARY KEY (`billofentry_id`),
   INDEX `billofentry_user_idx` (`billofentry_user` ASC),
   INDEX `billofentry_product_idx` (`billofentry_product` ASC),

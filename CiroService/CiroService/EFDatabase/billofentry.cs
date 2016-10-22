@@ -19,7 +19,7 @@ namespace CiroService.EFDatabase
         public Nullable<int> billofentry_user { get; set; }
         public Nullable<int> billofentry_product { get; set; }
         public string billofentry_origin { get; set; }
-        public Nullable<int> billofentry_invoice { get; set; }
+        public string billofentry_invoice { get; set; }
     
         public virtual invoice invoice { get; set; }
         public virtual product product { get; set; }

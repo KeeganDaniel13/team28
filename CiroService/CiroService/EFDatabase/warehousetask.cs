@@ -15,13 +15,13 @@ namespace CiroService.EFDatabase
     public partial class warehousetask
     {
         public int warehousetask_id { get; set; }
+        public Nullable<int> warehousetask_warehouse { get; set; }
         public Nullable<int> warehousetask_employee { get; set; }
+        public string warehousetask_type { get; set; }
         public string warehousetask_description { get; set; }
         public string warehousetask_section { get; set; }
         public Nullable<System.DateTime> warehousetask_timestamp { get; set; }
         public Nullable<System.DateTime> warehousetask_endtime { get; set; }
-        public string warehousetask_type { get; set; }
-        public Nullable<int> warehousetask_warehouse { get; set; }
     
         public virtual user user { get; set; }
         public virtual warehouse warehouse { get; set; }
