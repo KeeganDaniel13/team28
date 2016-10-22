@@ -1942,47 +1942,6 @@ namespace CiroService
             int count = 0;
             int r = 0;
 
-            if (isleCount > 26)
-            {
-                if(isleCount % 26 == 0)
-                {
-                    for(int i = 0; i < isleCount; i++)
-                    {
-                        if(i % 26 == 0)
-                        {
-                            count++;
-                        }
-                    }
-                    MessageBox.Show("Number of Iterations: " + count);
-                }
-                else
-                {
-                    for (int i = 1; i < isleCount + 1; i++)
-                    {
-                        if (i % 26 == 0)
-                        {
-                            count++;
-                        }
-                    }
-                    MessageBox.Show("Number of iterations: " + count);
-                    MessageBox.Show("Rem: " + isleCount % 26);
-                }
-
-                for(int i = 0; i < isleCount; i++)
-                {
-                    locationExists[i].location_section = section[i].ToString();
-                    locationAccess.updateRecord(locationExists[i].location_id, locationExists[i]);
-                }
-            }
-            else
-            {
-                for(int i = 0; i < locationExists.Count(); i++)
-                {
-                    locationExists[i].location_section = section[((int)locationExists[i].location_isle) - 1].ToString();
-                    locationAccess.updateRecord(locationExists[i].location_id, locationExists[i]);
-                }
-            }
-
             return "Section Updated";
         }
 

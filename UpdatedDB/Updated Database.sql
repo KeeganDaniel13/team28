@@ -609,3 +609,31 @@ INSERT INTO `custommandb`.`warehouseemployee` (`warehouseemployee_employee`, `wa
 
 INSERT INTO `custommandb`.`warehousetask` (`warehousetask_warehouse`, `warehousetask_employee`, `warehousetask_type`, `warehousetask_description`, `warehousetask_section`, `warehousetask_timestamp`) VALUES ('1', '12', 'Stock Take', 'Stock take Section A in warehouse', 'Section A', '2016/09/20 12:01:00');
 
+
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '2', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '3', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('2', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('3', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('4', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('5', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('6', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('7', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('8', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('9', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('10', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '1', '2');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('11', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('12', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('13', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('14', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('15', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('16', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('17', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('18', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('19', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('20', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('21', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('22', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('23', '1', '1', '1');
+INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('24', '1', '1', '1');
