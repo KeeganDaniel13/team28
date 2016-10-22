@@ -402,6 +402,13 @@ namespace CiroService
         void addCountry(JsonCountry country);
 
         /// <summary>
+        /// Adds the country.
+        /// </summary>
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseItems")]
+        List<JsonInventory> items(string id);
+
+        /// <summary>
         /// Gets the warehouse inventory.
         /// </summary>
         /// <param name="warehouses">The warehouses.</param>
