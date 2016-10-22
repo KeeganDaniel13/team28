@@ -283,6 +283,7 @@
     <Compile Include="JsonObjects\JsonProducts.cs" />
     <Compile Include="JsonObjects\JsonUser.cs" />
     <Compile Include="JsonObjects\UserDemo.cs" />
+    <Compile Include="JsonObjects\ware.cs" />
     <Compile Include="JsonObjects\WarehouseIncidentsGraph.cs" />
     <Compile Include="JsonObjects\WarehouseReleasescs.cs" />
     <Compile Include="JsonObjects\WarehousesStorageRates.cs" />

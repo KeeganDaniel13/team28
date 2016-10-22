@@ -33,8 +33,8 @@ namespace CiroService
         /// Gets the data.
         /// </summary>
         /// <returns>System.String.</returns>
-        [WebGet(UriTemplate = "data", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
-        string GetData();
+        [WebGet(UriTemplate = "data/{id}", BodyStyle = WebMessageBodyStyle.Wrapped, ResponseFormat = WebMessageFormat.Json)]
+        string GetData(string id);
 
         /// <summary>
         /// Logins the specified login.
@@ -42,6 +42,7 @@ namespace CiroService
         /// <param name="login">The login.</param>
         /// <returns>JsonUser.</returns>
         [OperationContract]
+        //[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
         JsonUser login(jsonLoginUser login);
 
@@ -409,6 +410,15 @@ namespace CiroService
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseInventory")]
         IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses);
+
+        /// <summary>
+        /// Gets the warehouse inventory.
+        /// </summary>
+        /// <param name="id">The warehouses.</param>
+        /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseInventory/{id}")]
+        IEnumerable<JsonInventory> WarehouseInventory(string id);
 
         /// <summary>
         /// Adds the warehouse man.

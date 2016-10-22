@@ -26,45 +26,8 @@
 							
 						</div><!-- .list-group -->
 
-						<hr class="m-0 m-b-md" style="border-color: #ddd;">
+						<hr class="m-0 m-b-md" style="border-color: #ddd;"/>
 
-						<!-- mail label list -->
-						<div class="list-group">
-							<h4>Labels</h4>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-warning"></i>
-								<span>Personal</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-primary"></i>
-								<span>Work</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-danger"></i>
-								<span>Business</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-success"></i>
-								<span>Clients</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item text-color" data-toggle="modal" data-target="#labelModal"><i class="fa fa-plus m-r-sm"></i> Add New Label</a>
-						</div><!-- .list-group -->
 					</div><!-- .app-actions-list -->
 				</div><!-- .app-action-panel -->
 			</div><!-- END column -->

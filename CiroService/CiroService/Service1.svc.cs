@@ -71,9 +71,9 @@ namespace CiroService
         /// Gets the data.
         /// </summary>
         /// <returns>System.String.</returns>
-        public string GetData()
+        public string GetData(string id)
         {
-            var userAccess = new userController();
+            /*var userAccess = new userController();
             List<UserDemo> users = new List<UserDemo>();
             List<user> userTable = userAccess.getTable().ToList<user>();
             foreach (user u in userTable)
@@ -84,8 +84,32 @@ namespace CiroService
                     Name = u.user_fname
 
                 });
+            }*/
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(id));
+            if (warehouseExists == null)
+            {
+                return null;
             }
-            return JsonConvert.SerializeObject(users);
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+            }
+            return JsonConvert.SerializeObject(inventory);
+
+            //return JsonConvert.SerializeObject(users);
         }
 
         /// <summary>
@@ -95,9 +119,10 @@ namespace CiroService
         /// <returns>JsonUser.</returns>
         public JsonUser login(jsonLoginUser login)
         {
+            MessageBox.Show("");
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-
+            
             var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name)) && c.user_password.Equals(login.password));
             if (user == null)
             {
@@ -1345,6 +1370,62 @@ namespace CiroService
         /// <summary>
         /// Gets the warehouse inventory.
         /// </summary>
+        /// <param name="id">The warehouses.</param>
+        /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
+        public IEnumerable<JsonInventory> WarehouseInventory(string id)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(id));
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+            }
+            return inventory;
+            /*var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_name.ToLower() == warehouses.name.ToLower() || w.warehouse_id == warehouses.id);
+
+            if (warehouseExists == null)
+            {
+                return null;
+            }
+
+            var warehouseStockAccess = new warehousestockController();
+            List<warehousestock> warehouseStockExists = warehouseStockAccess.getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouseExists.warehouse_id).ToList<warehousestock>();
+            if (warehouseStockExists == null)
+            {
+                return null;
+            }
+
+            List<JsonInventory> inventory = new List<JsonInventory>();
+
+            foreach (warehousestock w in warehouseStockExists)
+            {
+                var billAccess = new billofentryController();
+                var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name=billExists .product .product_name}, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner =new JsonUser {fname =billExists.user.user_fname,lname=billExists.user.user_sname ,email=billExists.user.user_email}});
+            }
+            return inventory;*/
+        }
+
+        /// <summary>
+        /// Gets the warehouse inventory.
+        /// </summary>
         /// <param name="warehouses">The warehouses.</param>
         /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
         public IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses)
@@ -1800,6 +1881,7 @@ namespace CiroService
                 List<location> locationfits = locationaccess.getTable().Where<location>(l => l.location_warehouse == w.id && l.location_height > p.height && l.location_width > p.width && l.location_length > p.length).ToList<location>();
 
                 if (locationfits.Count == 0)
+
                 {
                     return "Package Does Not Fit In Any Locations In The Warehouse";
                 }

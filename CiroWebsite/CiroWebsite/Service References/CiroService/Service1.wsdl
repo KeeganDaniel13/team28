@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_PackageHeightCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackageHeightCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackageHeightCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackageHeightCategoriesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_PackagewidthCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:PackagewidthCategories" />
   </wsdl:message>
@@ -373,6 +379,12 @@
   <wsdl:message name="IService1_getWarehouseInventory_OutputMessage">
     <wsdl:part name="parameters" element="tns:getWarehouseInventoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_WarehouseInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseInventory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WarehouseInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseInventoryResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_addWarehouseMan_InputMessage">
     <wsdl:part name="parameters" element="tns:addWarehouseMan" />
   </wsdl:message>
@@ -505,13 +517,11 @@
   <wsdl:message name="IService1_PackageLengthCategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:PackageLengthCategoriesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_PackageHeightCategories_InputMessage">
-    <wsdl:part name="parameters" element="tns:PackageHeightCategories" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackageHeightCategories_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PackageHeightCategoriesResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="PackageHeightCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageHeightCategories" message="tns:IService1_PackageHeightCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageHeightCategoriesResponse" message="tns:IService1_PackageHeightCategories_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PackagewidthCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackagewidthCategories" message="tns:IService1_PackagewidthCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackagewidthCategoriesResponse" message="tns:IService1_PackagewidthCategories_OutputMessage" />
@@ -756,6 +766,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getWarehouseInventory" message="tns:IService1_getWarehouseInventory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getWarehouseInventoryResponse" message="tns:IService1_getWarehouseInventory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="WarehouseInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseInventory" message="tns:IService1_WarehouseInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseInventoryResponse" message="tns:IService1_WarehouseInventory_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="addWarehouseMan">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addWarehouseMan" message="tns:IService1_addWarehouseMan_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addWarehouseManResponse" message="tns:IService1_addWarehouseMan_OutputMessage" />
@@ -844,13 +858,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageLengthCategories" message="tns:IService1_PackageLengthCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageLengthCategoriesResponse" message="tns:IService1_PackageLengthCategories_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PackageHeightCategories">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageHeightCategories" message="tns:IService1_PackageHeightCategories_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageHeightCategoriesResponse" message="tns:IService1_PackageHeightCategories_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SOAPEndPoint" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PackageHeightCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/PackageHeightCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PackagewidthCategories">
       <soap:operation soapAction="http://tempuri.org/IService1/PackagewidthCategories" style="document" />
       <wsdl:input>
@@ -1400,6 +1419,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="WarehouseInventory">
+      <soap:operation soapAction="http://tempuri.org/IService1/WarehouseInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="addWarehouseMan">
       <soap:operation soapAction="http://tempuri.org/IService1/addWarehouseMan" style="document" />
       <wsdl:input>
@@ -1591,15 +1619,6 @@
     </wsdl:operation>
     <wsdl:operation name="PackageLengthCategories">
       <soap:operation soapAction="http://tempuri.org/IService1/PackageLengthCategories" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PackageHeightCategories">
-      <soap:operation soapAction="http://tempuri.org/IService1/PackageHeightCategories" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

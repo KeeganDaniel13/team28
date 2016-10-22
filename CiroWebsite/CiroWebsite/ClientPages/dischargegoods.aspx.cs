@@ -11,6 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             var declare = Convert.ToInt32(Session["declare"]);
             var server = new CiroService.Service1Client();
             string body = "";
@@ -22,6 +23,7 @@ namespace CiroWebsite
                 body += "</tr>";
                 var list = Convert.ToInt32(Session["declare"]);
                 var invoice = CiroSingleton.ServerCalls.getInvoice(new CiroService.JsonInvoice {}, new CiroService.jsonProduct { ID = list });
+
                 Session["invoice"] = invoice;
                 val.InnerHtml = (invoice.vat + invoice.penalty) + " ZAR";
             }

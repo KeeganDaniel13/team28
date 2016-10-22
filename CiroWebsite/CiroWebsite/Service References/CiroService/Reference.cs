@@ -3793,6 +3793,12 @@ namespace CiroWebsite.CiroService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CiroService.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageHeightCategories", ReplyAction="http://tempuri.org/IService1/PackageHeightCategoriesResponse")]
+        CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageHeightCategories", ReplyAction="http://tempuri.org/IService1/PackageHeightCategoriesResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageHeightCategoriesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackagewidthCategories", ReplyAction="http://tempuri.org/IService1/PackagewidthCategoriesResponse")]
         CiroWebsite.CiroService.PackageSizeCategory[] PackagewidthCategories();
         
@@ -3920,10 +3926,10 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonUser[]> GetUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData();
+        string GetData(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync();
+        System.Threading.Tasks.Task<string> GetDataAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/login", ReplyAction="http://tempuri.org/IService1/loginResponse")]
         CiroWebsite.CiroService.JsonUser login([System.ServiceModel.MessageParameterAttribute(Name="login")] CiroWebsite.CiroService.jsonLoginUser login1);
@@ -4159,6 +4165,12 @@ namespace CiroWebsite.CiroService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarehouseInventory", ReplyAction="http://tempuri.org/IService1/getWarehouseInventoryResponse")]
         System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> getWarehouseInventoryAsync(CiroWebsite.CiroService.JsonWarehouse warehouses);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseInventory", ReplyAction="http://tempuri.org/IService1/WarehouseInventoryResponse")]
+        CiroWebsite.CiroService.JsonInventory[] WarehouseInventory(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseInventory", ReplyAction="http://tempuri.org/IService1/WarehouseInventoryResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> WarehouseInventoryAsync(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addWarehouseMan", ReplyAction="http://tempuri.org/IService1/addWarehouseManResponse")]
         string addWarehouseMan(CiroWebsite.CiroService.JsonUser user);
         
@@ -4290,12 +4302,6 @@ namespace CiroWebsite.CiroService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageLengthCategories", ReplyAction="http://tempuri.org/IService1/PackageLengthCategoriesResponse")]
         System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageHeightCategories", ReplyAction="http://tempuri.org/IService1/PackageHeightCategoriesResponse")]
-        CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageHeightCategories", ReplyAction="http://tempuri.org/IService1/PackageHeightCategoriesResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageHeightCategoriesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4323,6 +4329,14 @@ namespace CiroWebsite.CiroService {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories() {
+            return base.Channel.PackageHeightCategories();
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageHeightCategoriesAsync() {
+            return base.Channel.PackageHeightCategoriesAsync();
         }
         
         public CiroWebsite.CiroService.PackageSizeCategory[] PackagewidthCategories() {
@@ -4493,12 +4507,12 @@ namespace CiroWebsite.CiroService {
             return base.Channel.GetUsersAsync();
         }
         
-        public string GetData() {
-            return base.Channel.GetData();
+        public string GetData(string id) {
+            return base.Channel.GetData(id);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync() {
-            return base.Channel.GetDataAsync();
+        public System.Threading.Tasks.Task<string> GetDataAsync(string id) {
+            return base.Channel.GetDataAsync(id);
         }
         
         public CiroWebsite.CiroService.JsonUser login(CiroWebsite.CiroService.jsonLoginUser login1) {
@@ -4813,6 +4827,14 @@ namespace CiroWebsite.CiroService {
             return base.Channel.getWarehouseInventoryAsync(warehouses);
         }
         
+        public CiroWebsite.CiroService.JsonInventory[] WarehouseInventory(string id) {
+            return base.Channel.WarehouseInventory(id);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> WarehouseInventoryAsync(string id) {
+            return base.Channel.WarehouseInventoryAsync(id);
+        }
+        
         public string addWarehouseMan(CiroWebsite.CiroService.JsonUser user) {
             return base.Channel.addWarehouseMan(user);
         }
@@ -4987,14 +5009,6 @@ namespace CiroWebsite.CiroService {
         
         public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync() {
             return base.Channel.PackageLengthCategoriesAsync();
-        }
-        
-        public CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories() {
-            return base.Channel.PackageHeightCategories();
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageHeightCategoriesAsync() {
-            return base.Channel.PackageHeightCategoriesAsync();
         }
     }
 }

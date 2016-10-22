@@ -503,6 +503,7 @@
     <Content Include="CustomsPages\transfers.aspx" />
     <Content Include="viewpackage.aspx" />
     <Content Include="WarehousePages\Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\warehousehome.aspx" />
     <Content Include="WarehousePages\warehouseinventory.aspx" />
     <Content Include="WarehousePages\warehouseinvoices.aspx" />
     <Content Include="WarehousePages\warehouserelease.aspx" />
@@ -822,6 +823,13 @@
     <Compile Include="WarehousePages\warehouse.Master.designer.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
     </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.designer.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WarehousePages\warehouseinventory.aspx.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -880,6 +888,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\roslyn\" />
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
     <Folder Include="trader\" />
