@@ -494,8 +494,8 @@ namespace CiroService
                 string fileName = path + newIncident.productID + ".jpg";
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
-                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now,productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse,productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
-            
+                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse, productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
+            }
             return;
         }
 
@@ -2150,29 +2150,47 @@ namespace CiroService
         /// <returns>IEnumerable&lt;TransferDetails&gt;.</returns>
         public IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse)
         {
-            var warehouseStock = new warehousestockController().getTable().Where<warehousestock>(w => w.warehousestock_warehouse == warehouse.id);
+            var warehouseName = new warehouseController().getTable().First<warehouse>(w => w.warehouse_id == warehouse.id).warehouse_name ;
+            var transferList = new transferlistController().getTable();
+            var transfer = transferList.Where<transferlist>(c => c.transferlist_to == warehouseName || c.transferlist_from == warehouseName);
+            
             List<TransferDetails> items = new List<TransferDetails>();
+            foreach(var i in transfer)
+            {
+                var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
+                items.Add(new TransferDetails { currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name});
+            }
+            /*var stock = warehouseStock.First<warehousestock>().warehouse .warehouse_location;
+            
             MessageBox.Show(warehouseStock.Count() + "");
             var transferList = new transferrequestsController().getTable();
-            MessageBox.Show(transferList.Count() + "");
+            
             foreach (var item in warehouseStock)
             {
-
+                
                 try
                 {
+                    var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == stock || c.transferrequest_from == stock);
+                    if(transfer.transferrequest_from == stock)
+                    {
+                        MessageBox.Show("Leaving here");
+                    }
+                    else if (transfer.transferrequest_to == stock)
+                    {
+                        MessageBox.Show("Coming here");
+                    }
 
-                    // var transfer = transferList.First<transferrequest>(c => c.transferrequest_to == item.warehouse .warehouse_location  || c.transferrequest_from == item.warehouse.warehouse_location);
-                    MessageBox.Show(item.warehouse.warehouse_location + "");
+
                     // if (release != null)
                     //{
                     //  items.Add(new TransferDetails ());
                     //}
                 }
-                catch (Exception) { }
-            }
+                catch (Exception e) { MessageBox.Show(e.ToString()); }
+            }*/
 
             return items;
-
+            
         }
 
         /// <summary>

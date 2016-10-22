@@ -61,6 +61,7 @@ CREATE TABLE `newdb`.`usertype` (
   `product_receipt` VARCHAR(255) NULL,
   `product_description` VARCHAR(255) NULL,
   `product_expirationDate` DATETIME NULL,
+  `product_Insured` INT NULL,
   PRIMARY KEY (`product_id`),
   INDEX `product_producttype_idx` (`product_producttype` ASC),
   INDEX `product_hscode_idx` (`product_hscode` ASC),
@@ -112,7 +113,7 @@ CREATE TABLE `newdb`.`warehouse` (
     ON UPDATE NO ACTION);
 
 	CREATE TABLE `newdb`.`invoice` (
-  `invoice_id` INT(45) NOT NULL,
+  `invoice_id` VARCHAR(255) NOT NULL,
   `invoice_vat` DECIMAL(10,2) NULL,
   `invoice_penalty` DECIMAL(10,2) NULL,
   `invoice_paid` DECIMAL(10,2) NULL,
@@ -124,7 +125,7 @@ CREATE TABLE `newdb`.`warehouse` (
   `billofentry_user` INT NULL,
   `billofentry_product` INT NULL,
   `billofentry_origin` VARCHAR(255) NULL,
-  `billofentry_invoice` INT NULL,
+  `billofentry_invoice` VARCHAR(255) NULL,
   PRIMARY KEY (`billofentry_id`),
   INDEX `billofentry_invoice_idx` (`billofentry_invoice` ASC),
   INDEX `billofentry_product_idx` (`billofentry_product` ASC),
