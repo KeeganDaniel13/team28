@@ -256,6 +256,7 @@ CREATE TABLE `newdb`.`warehouse` (
 
 	CREATE TABLE `newdb`.`location` (
   `location_id` INT NOT NULL AUTO_INCREMENT,
+  `location_section` VARCHAR(50) NULL,
   `location_isle` INT NULL,
   `location_row` INT NULL,
   `location_column` INT NULL,
@@ -327,11 +328,58 @@ CREATE TABLE `newdb`.`warehouse` (
     REFERENCES `newdb`.`product` (`product_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+	
+	
+	
+  CREATE TABLE `newdb`.`warehouseemployee` (
+  `warehouseemployee_id` INT NOT NULL AUTO_INCREMENT,
+  `warehouseemployee_employee` INT NULL,
+  `warehouseemployee_warehouse` INT NULL,
+  PRIMARY KEY (`warehouseemployee_id`),
+  INDEX `warehouseemployee_employee_idx` (`warehouseemployee_employee` ASC),
+  INDEX `warehouseemployee_warehouse_idx` (`warehouseemployee_warehouse` ASC),
+  CONSTRAINT `warehouseemployee_employee`
+    FOREIGN KEY (`warehouseemployee_employee`)
+    REFERENCES `newdb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `warehouseemployee_warehouse`
+    FOREIGN KEY (`warehouseemployee_warehouse`)
+    REFERENCES `newdb`.`warehouse` (`warehouse_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+	CREATE TABLE `newdb`.`warehousetask` (
+  `warehousetask_id` INT NOT NULL AUTO_INCREMENT,
+  `warehousetask_warehouse` INT NULL,
+  `warehousetask_employee` INT NULL,
+  `warehousetask_type` VARCHAR(50) NULL,
+  `warehousetask_description` LONGTEXT NULL,
+  `warehousetask_section` VARCHAR(45) NULL,
+  `warehousetask_timestamp` DATETIME NULL,
+  `warehousetask_endtime` DATETIME NULL,
+  PRIMARY KEY (`warehousetask_id`),
+  INDEX `warehousetask_employee_idx` (`warehousetask_employee` ASC),
+    INDEX `warehousetask_warehouse_idx` (`warehousetask_warehouse` ASC), 
+  CONSTRAINT `warehousetask_employee`
+    FOREIGN KEY (`warehousetask_employee`)
+    REFERENCES `newdb`.`user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `warehousetask_warehouse`
+    FOREIGN KEY (`warehousetask_warehouse`)
+    REFERENCES `newdb`.`warehouse` (`warehouse_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
 
 	
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
+INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('4', 'Warehouse Employee');
 
 INSERT INTO `newdb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('1', 'Duty Free');
 INSERT INTO `newdb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('2', 'Duty');
@@ -365,6 +413,8 @@ INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_pass
 INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse1@gmail', 'Warehouse1', 'warehouse1', 'warehouse1', '3');
 INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse2@gmail', 'Warehouse2', 'warehouse2', 'warehouse2', '3');
 INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse3@gmail', 'Warehouse3', 'warehouse3', 'warehouse3', '3');
+INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee@gmail', 'Employee', 'employee', 'employee', '4');
+INSERT INTO `newdb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee1@gmail', 'Employee1', 'employee1', 'employee1', '4');
 
 INSERT INTO `newdb`.`warehouse` (`warehouse_name`, `warehouse_location`, `warehouse_size`, `warehouse_user`, `warehouse_warehousetype`,`warehouse_description`,`warehouse_established`) VALUES ('DS Space', '11 Eva Road, Benoni, 1512', '500', '6', '1','Safe and secure Industrial Park with 24/7 security and visitor controlled access. Central to Midrand, Or Tambo and Pretoria. 3464 sqm warehouse, double volume 380 sqm office with balcony. Stand alone. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.','2014-01-02 15:05:41');
 INSERT INTO `newdb`.`warehouse` (`warehouse_name`, `warehouse_location`, `warehouse_size`, `warehouse_user`, `warehouse_warehousetype`,`warehouse_description`,`warehouse_established`) VALUES ('DHL Express Warehouse', '48 Hoylake Road, Randburg, 2034', '650', '7', '2','Prominent position with excellent exposure onto the M13.This top floor unit offers clear span factory floor in 2 sections with good height and abundant natural light. The unit may divided into 2 x 720m2 units @ R38/m2. Ample office space and staff ablutions. Excellent access to M13/M19/M7. We are a national brokerage that specialises in the industrial property sector. We focus mainly on sales, leasing and development in the industrial and logistics sector. Great customer service is one of our main priorities, which is why we offer our clients tailored industrial solutions to suit all their business needs. We currently perform a wide range of services for various major industrial corporates and investors. Our dedicated team has a wealth of experience and expertise to support, develop, and implement your industrial property strategy.','2010-01-02 15:05:41');
@@ -501,3 +551,41 @@ UPDATE `newdb`.`billofentry` SET `billofentry_invoice`='9' WHERE `billofentry_id
 UPDATE `newdb`.`billofentry` SET `billofentry_invoice`='10' WHERE `billofentry_id`='10';
 UPDATE `newdb`.`billofentry` SET `billofentry_invoice`='11' WHERE `billofentry_id`='11';
 UPDATE `newdb`.`billofentry` SET `billofentry_invoice`='12' WHERE `billofentry_id`='12';
+
+
+
+INSERT INTO `newdb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('10', '1');
+INSERT INTO `newdb`.`warehouseemployee` (`warehouseemployee_employee`, `warehouseemployee_warehouse`) VALUES ('11', '1');
+
+
+INSERT INTO `newdb`.`warehousetask` (`warehousetask_warehouse`, `warehousetask_employee`, `warehousetask_type`, `warehousetask_description`, `warehousetask_section`, `warehousetask_timestamp`) VALUES ('1', '10', 'Stock Take', 'Stock take Section A in warehouse', 'Section A', '2016/09/20 12:01:00');
+
+
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '2', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '3', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('2', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('3', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('4', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('5', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('6', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('7', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('8', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('9', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('10', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('1', '1', '1', '2');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('11', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('12', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('13', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('14', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('15', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('16', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('17', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('18', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('19', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('20', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('21', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('22', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('23', '1', '1', '1');
+INSERT INTO `newdb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('24', '1', '1', '1');
+

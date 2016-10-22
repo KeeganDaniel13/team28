@@ -73,7 +73,6 @@
     <Content Include="AdminPages\AdminReports.aspx" />
     <Content Include="ClientPages\AllTransfers.aspx" />
     <Content Include="ClientPages\Approve.aspx" />
-    <Content Include="ClientPages\ApproveTransfers.aspx" />
     <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="AdminPages\dashboard.aspx" />
     <Content Include="AdminPages\licensewarehouse.aspx" />
@@ -348,7 +347,7 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource"/>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource" />
     <Content Include="ClientPages\Client.Master" />
     <Content Include="AdminPages\admin.Master" />
     <Content Include="CustomsPages\Customs.Master" />
@@ -359,6 +358,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask11.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CiroService\Service1.disco" />
@@ -545,12 +547,6 @@
     </Compile>
     <Compile Include="ClientPages\Approve.aspx.designer.cs">
       <DependentUpon>Approve.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
-      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
-      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
     </Compile>
     <Compile Include="approveTransfers.aspx.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>

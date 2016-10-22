@@ -13,7 +13,7 @@
           <Property Name="billofentry_code" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
-          <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
+          <Property Name="billofentry_origin" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_invoice" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="countryrelation">
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="invoice_id" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
@@ -596,27 +596,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
-          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="location" EntityType="Self.location" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="message" EntityType="Self.message" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="custommandb" store:Type="Tables" />
-          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="location" EntityType="Self.location" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="message" EntityType="Self.message" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="newdb" store:Type="Tables" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -751,7 +751,7 @@
           <Property Name="billofentry_code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_user" Type="Int32" />
           <Property Name="billofentry_product" Type="Int32" />
-          <Property Name="billofentry_origin" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="billofentry_origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_invoice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="invoice" Relationship="Self.billofentry_invoice" FromRole="billofentry" ToRole="invoice" />
           <NavigationProperty Name="product" Relationship="Self.billofentry_product" FromRole="billofentry" ToRole="product" />
@@ -779,7 +779,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="invoice_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="invoice_vat" Type="Decimal" />
           <Property Name="invoice_penalty" Type="Decimal" />
           <Property Name="invoice_paid" Type="Decimal" />

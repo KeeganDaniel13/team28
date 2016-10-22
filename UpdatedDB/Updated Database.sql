@@ -154,7 +154,7 @@ CREATE TABLE `custommandb`.`productlog` (
   `productlog_product` INT NULL,
   `productlog_warehouse` varchar(45) NULL,
   `productlog_user` INT NULL,
-  `productlog_dscription` VARCHAR(255) NULL,
+  `productlog_description` VARCHAR(255) NULL,
   `productlog_dateLogged` DATETIME NULL,
   `productlog_image` LONGTEXT NULL,
   `productlog_type` INT NULL,
@@ -547,9 +547,9 @@ INSERT INTO `custommandb`.`ownershiprequest` (`ownershiprequest_owner`, `ownersh
 INSERT INTO `custommandb`.`ownershiprequest` (`ownershiprequest_owner`, `ownershiprequest_newowner`, `ownershiprequest_acceptance`, `ownershiprequest_product`) VALUES ('1', '9', 'Pending', '10');
 
 
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Transfer Request : A Transfer Request was issued by the owner of the package', '2016-08-08 18:01:25', '2');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-08 18:05:22', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Transfer Request : A Transfer Request was issued by the owner of the package', '2016-08-08 18:01:25', '2');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-08 18:05:22', '3');
 
 
 INSERT INTO `custommandb`.`releaserequest` (`releaserequest_verdict`, `releaserequest_user`, `releaserequest_product`) VALUES ('Pending', '1', '1');
@@ -558,7 +558,7 @@ INSERT INTO `custommandb`.`releaserequest` (`releaserequest_verdict`, `releasere
 INSERT INTO `custommandb`.`transferrequest` (`transferrequest_from`, `transferrequest_to`, `transferrequest_verdict`, `transferrequest_user`, `transferrequest_product`) VALUES ('11 Eva Road, Benoni, 1512', '48 Hoylake Road, Randburg, 2034', 'Pending', '1', '1');
 
 
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', '3', 'Transfer: Package has been transfered to DHL Express Warehouse at 48 Hoylake Road, Randburg, 2034', '2016-07-03 11:14:02', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', '3', 'Transfer: Package has been transfered to DHL Express Warehouse at 48 Hoylake Road, Randburg, 2034', '2016-07-03 11:14:02', '4');
 
 
 INSERT INTO `custommandb`.`transferlist` (`transferlist_to`, `transferlist_from`, `transferlist_product`) VALUES ('48 Hoylake Road, Randburg, 2034', '11 Eva Road, Benoni, 1512', '2');
@@ -611,12 +611,12 @@ UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog
 UPDATE `custommandb`.`productlog` SET `productlog_product`='5' WHERE `productlog_id`='14';
 
 
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Water Damage', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Fire Damage', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Incident : Wild Dog Tore The Package', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_dscription`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I am running out of things to say', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Water Damage', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'DHL Express Warehouse', '3', 'Incident : Fire Damage', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'DHL Express Warehouse', '3', 'Incident : Wild Dog Tore The Package', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Rat Attacks', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('2', 'Old Storage', '3', 'Incident : Bowling Ball Now Has Four Holes', '2016-08-03 11:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', 'Mount Warehousing', '3', 'Incident : I am running out of things to say', '2016-08-03 11:14:02', '1');
 
 
 
