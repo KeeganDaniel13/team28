@@ -70,8 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPages\addofficial.aspx" />
+    <Content Include="AdminPages\adminhome.aspx" />
     <Content Include="AdminPages\AdminReports.aspx" />
-    <Content Include="ClientPages\ApproveTransfers.aspx" />
+    <Content Include="ClientPages\AllTransfers.aspx" />
+    <Content Include="ClientPages\Approve.aspx" />
     <Content Include="AdminPages\CustomsReports.aspx" />
     <Content Include="AdminPages\dashboard.aspx" />
     <Content Include="AdminPages\licensewarehouse.aspx" />
@@ -104,6 +106,7 @@
     <Content Include="CustomsPages\customstransfers.aspx" />
     <Content Include="ClientPages\declareownershiptransfer.aspx" />
     <Content Include="ClientPages\dischargegoods.aspx" />
+    <Content Include="event.css" />
     <Content Include="index.aspx" />
     <Content Include="infinity\assets\css\font-awesome.css" />
     <Content Include="infinity\assets\css\jquery.fancybox.css" />
@@ -186,6 +189,7 @@
     <Content Include="infinity\libs\misc\echarts\build\dist\echarts-all.js" />
     <Content Include="CustomsPages\messages.aspx" />
     <Content Include="CustomsPages\messageview.aspx" />
+    <Content Include="infinity\libs\misc\flot\jquery.flot.min.js" />
     <Content Include="packages.config" />
     <Content Include="ciro.Master" />
     <Content Include="infinity\assets\.DS_Store" />
@@ -497,6 +501,7 @@
     <Content Include="CustomsPages\transfers.aspx" />
     <Content Include="viewpackage.aspx" />
     <Content Include="WarehousePages\Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\warehousehome.aspx" />
     <Content Include="WarehousePages\warehouseinventory.aspx" />
     <Content Include="WarehousePages\warehouseinvoices.aspx" />
     <Content Include="WarehousePages\warehouserelease.aspx" />
@@ -521,6 +526,13 @@
     <Compile Include="AdminPages\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\adminhome.aspx.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\adminhome.aspx.designer.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\AdminReports.aspx.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -528,12 +540,19 @@
     <Compile Include="AdminPages\AdminReports.aspx.designer.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ClientPages\ApproveTransfers.aspx.cs">
-      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+    <Compile Include="ClientPages\AllTransfers.aspx.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPages\ApproveTransfers.aspx.designer.cs">
-      <DependentUpon>ApproveTransfers.aspx</DependentUpon>
+    <Compile Include="ClientPages\AllTransfers.aspx.designer.cs">
+      <DependentUpon>AllTransfers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages\Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
     </Compile>
     <Compile Include="approveTransfers.aspx.cs">
       <DependentUpon>approveTransfers.aspx</DependentUpon>
@@ -808,6 +827,13 @@
     </Compile>
     <Compile Include="WarehousePages\warehouse.Master.designer.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.designer.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\warehouseinventory.aspx.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>

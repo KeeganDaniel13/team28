@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CiroWebsite.AdminPages
+namespace CiroWebsite.ClientPages
 {
-    public partial class ApproveTransfers : System.Web.UI.Page
+    public partial class Approve : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

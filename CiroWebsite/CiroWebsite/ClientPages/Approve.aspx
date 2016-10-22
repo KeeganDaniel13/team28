@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ClientPages/Client.Master" AutoEventWireup="true" CodeBehind="ApproveTransfers.aspx.cs" Inherits="CiroWebsite.ClientPages.ApproveTransfers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ClientPages/Client.Master" AutoEventWireup="true" CodeBehind="Approve.aspx.cs" Inherits="CiroWebsite.ClientPages.Approve" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
   @font-face {
@@ -9,7 +9,6 @@
 }
 
 body {text-rendering: optimizeLegibility;
-  font-family: 'open sans';
   margin: 0;
 }
 
@@ -161,7 +160,7 @@ input.cmn-toggle-round-flat:checked + label {
 }
 input.cmn-toggle-round-flat:checked + label:after {
   margin-left: 20px;
-  background-color: #2b5875;
+  background-color: #188ae2;
 }
 .hide-days {display:none;}
 .show-days {display:none;}
@@ -171,27 +170,23 @@ input.cmn-toggle-round-flat:checked + label:after {
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="wrapper">
-<div class="list-header"><h1>Tuesday</h1><div class="view-date">January 1, 2015</div>
+    <div class="wrapper">
+<div class="list-header"><h1>Transfers</h1><div class="view-date">January 1, 2015</div>
   
-  </div>
-  <div class="switch">
-  <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
-    <label for="cmn-toggle-4"></label><span class="toggle-label-static">Toggle List View</span>
 </div>
 <div class="list-column-label">
-  <h2>Today</h2></div>
+  <h2>Past Resolved</h2></div>
 <div class="list-column-label">
-  <h2>Past Unresolved</h2></div>
+  <h2>Unresolved Transfers</h2></div>
 <div class="list-column-label">
-  <h2>Tomorrow</h2></div>
+  <h2>Pending Transfers</h2></div> 
 <div class="list-flex">
   <div class="list-column">
     <div class="list-available">
-      <h3>Location Name A<br />9:00 AM - 5:00 PM</h3>
+      <h3>Location Name A<br /></h3>
       <div class="list-block">
 
-        <div class="list-time">9:00 AM - 9:30 AM</div>
+        <div class="list-time">12/09/16 9:00 AM </div>
         <div class="list-type">Membership Tour</div>
         <div class="list-name">Alan Gardner</div>
         <div class="list-state">Completed</div>
@@ -199,7 +194,7 @@ input.cmn-toggle-round-flat:checked + label:after {
       </div>
       <div class="list-block">
 
-        <div class="list-time">10:30 AM - 11:30 AM</div>
+        <div class="list-time">12/09/16 10:30 AM </div>
         <div class="list-type">Massage</div>
         <div class="list-name">Naomi Jones</div>
         <div class="list-state">Completed</div>
@@ -207,7 +202,7 @@ input.cmn-toggle-round-flat:checked + label:after {
       </div>
       <div class="rescheduled list-block">
 
-        <div class="list-time">1:00 PM - 2:00 PM</div>
+        <div class="list-time">12/09/16 1:00 PM </div>
         <div class="list-type">Massage</div>
         <div class="list-name">Carol Miller</div>
         <div class="list-state">Rescheduled</div>
@@ -215,7 +210,7 @@ input.cmn-toggle-round-flat:checked + label:after {
       </div>
       <div class="list-block">
 
-        <div class="list-time">2:00 PM - 3:30 PM</div>
+        <div class="list-time">12/09/16 3:30 PM</div>
         <div class="list-type">Tennis 90 Minutes</div>
         <div class="list-name">John Smith</div>
         <div class="list-state">Unresolved</div>
@@ -223,7 +218,7 @@ input.cmn-toggle-round-flat:checked + label:after {
       </div>
       <div class="list-block">
 
-        <div class="list-time">2:00 PM - 3:30 PM</div>
+        <div class="list-time">12/09/16 3:30 PM</div>
         <div class="list-type">Tennis 90 Minutes</div>
         <div class="list-name">John Smith</div>
         <div class="list-state">Unresolved</div>
@@ -232,18 +227,12 @@ input.cmn-toggle-round-flat:checked + label:after {
     </div>
   </div>
   <div class="list-column">
-    <div class="list-flex" style="float:right;">
-      <span class="toggle-label">Hide Days</span><span class="toggle-label" style="display:none;">Show Days</span>
-<div class="switch date-toggle">
- 
-  <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" checked>
-  <label for="cmn-toggle-1"></label>
-      </div></div>
+  
     <div class="clearfix"></div>
     <div class="list-date-toggle"><h3>Yesterday</h3></div>
     <div class="list-block">
 
-      <div class="list-time">2:00 PM - 3:30 PM</div>
+      <div class="list-time">12/09/16 3:30 PM</div>
       <div class="list-type">Tennis 90 Minutes</div>
       <div class="list-name">John Smith</div>
       <div class="list-state">Unresolved</div>
@@ -251,7 +240,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     </div>
     <div class="list-block">
 
-      <div class="list-time">2:00 PM - 3:30 PM</div>
+      <div class="list-time">12/09/16 2:00 PM </div>
       <div class="list-type">Tennis 90 Minutes</div>
       <div class="list-name">John Smith</div>
       <div class="list-state">Unresolved</div>
@@ -261,7 +250,7 @@ input.cmn-toggle-round-flat:checked + label:after {
         <div class="list-date-toggle"><h3>December 30, 2014</h3></div>
     <div class="list-block">
 
-      <div class="list-time">2:00 PM - 3:30 PM</div>
+      <div class="list-time">12/09/16 3:30 PM</div>
       <div class="list-type">Tennis 90 Minutes</div>
       <div class="list-name">John Smith</div>
       <div class="list-state">Unresolved</div>
@@ -270,7 +259,7 @@ input.cmn-toggle-round-flat:checked + label:after {
         <div class="list-date-toggle"><h3>December 28, 2014</h3></div>
     <div class="list-block">
 
-      <div class="list-time">2:00 PM - 3:30 PM</div>
+      <div class="list-time">12/09/16 3:30 PM</div>
       <div class="list-type">Tennis 90 Minutes</div>
       <div class="list-name">John Smith</div>
       <div class="list-state">Unresolved</div>
@@ -278,43 +267,46 @@ input.cmn-toggle-round-flat:checked + label:after {
     </div>
     <div class="list-block">
 
-      <div class="list-time">2:00 PM - 3:30 PM</div>
+      <div class="list-time">12/09/16 3:30 PM</div>
       <div class="list-type">Tennis 90 Minutes</div>
       <div class="list-name">John Smith</div>
       <div class="list-state">Unresolved</div>
       <div class="clearfix"></div>
     </div>
+      <div class="pull-right">
+          <button type="submit"  class="btn btn-success btn-xs" runat="server">View Transfers</button>
+       </div>
   </div>
   <div class="list-column">
     <div class="list-available">
-      <h3>Location Name A<br />10:00 AM - 4:00 PM</h3>
-      <div class="list-block">
+      <h3>Location Name A<br />12/09/16</h3>
+      <div class=" rescheduled list-block">
 
-        <div class="list-time">2:00 PM - 3:30 PM</div>
+        <div class="list-time">12/09/16 3:30 PM</div>
         <div class="list-type">Tennis 90 Minutes</div>
         <div class="list-name">John Smith</div>
         <div class="list-state">Unresolved</div>
         <div class="clearfix"></div>
       </div>
-      <div class="list-block">
+      <div class="rescheduled list-block">
 
-        <div class="list-time">2:00 PM - 3:00 PM</div>
+        <div class="list-time">12/09/16 3:00 PM</div>
         <div class="list-type">Massage</div>
         <div class="list-name">Carol Miller</div>
         <div class="list-state">Unresolved</div>
         <div class="clearfix"></div>
       </div>
-      <div class="list-block">
+      <div class="rescheduled list-block">
 
-        <div class="list-time">2:00 PM - 3:30 PM</div>
+        <div class="list-time">12/09/16 3:30 PM</div>
         <div class="list-type">Tennis 90 Minutes</div>
         <div class="list-name">John Smith</div>
         <div class="list-state">Unresolved</div>
         <div class="clearfix"></div>
       </div>
-      <div class="list-block">
+      <div class="rescheduled list-block">
 
-        <div class="list-time">2:00 PM - 3:30 PM</div>
+        <div class="list-time">12/09/16 3:30 PM</div>
         <div class="list-type">Tennis 90 Minutes</div>
         <div class="list-name">John Smith</div>
         <div class="list-state">Unresolved</div>
@@ -325,6 +317,4 @@ input.cmn-toggle-round-flat:checked + label:after {
   </div>
 </div>
 </div>
-</div>
 </asp:Content>
-  
