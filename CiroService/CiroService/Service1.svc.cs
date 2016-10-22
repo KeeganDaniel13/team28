@@ -95,9 +95,10 @@ namespace CiroService
         /// <returns>JsonUser.</returns>
         public JsonUser login(jsonLoginUser login)
         {
+            MessageBox.Show("");
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-
+            
             var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name)) && c.user_password.Equals(login.password));
             if (user == null)
             {
@@ -494,9 +495,10 @@ namespace CiroService
                 string fileName = path + newIncident.productID + ".jpg";
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
-                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now,productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse,productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
-            
-            return;
+                incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse, productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
+
+                return;
+            }
         }
 
         //return all warehpuse info for that specific warehouse

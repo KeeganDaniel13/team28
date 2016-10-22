@@ -42,6 +42,7 @@ namespace CiroService
         /// <param name="login">The login.</param>
         /// <returns>JsonUser.</returns>
         [OperationContract]
+        //[WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "login")]
         JsonUser login(jsonLoginUser login);
 
