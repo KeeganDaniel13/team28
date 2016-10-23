@@ -403,10 +403,17 @@ namespace CiroService
         void addCountry(JsonCountry country);
 
         /// <summary>
+        /// Adds the country.
+        /// </summary>
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseItems")]
+        List<JsonInventory> items(string id);
+
+        /// <summary>
         /// Gets the warehouse inventory.
         /// </summary>
         /// <param name="warehouses">The warehouses.</param>
-        /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
+        /// 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseInventory")]
         IEnumerable<JsonInventory> getWarehouseInventory(JsonWarehouse warehouses);
@@ -418,7 +425,7 @@ namespace CiroService
         /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
         [OperationContract]
         [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "WarehouseInventory/{id}")]
-        IEnumerable<JsonInventory> WarehouseInventory(string id);
+        IEnumerable<JsonProductInfo> WarehouseInventory(string id);
 
         /// <summary>
         /// Adds the warehouse man.

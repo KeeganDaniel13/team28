@@ -43,7 +43,7 @@ namespace CiroWebsite
         protected void proceed(object sender, EventArgs e)
         {
             var userID = (CiroService .JsonUser )Session["user"] ;
-           // Session["changeUser"] = new ChangeUser { tranferer = userID.id, tranfereeName = transfereeName.Value, transfereeEmail = transfereeEmail.Value, reason = changeReason.Value };
+            Session["changeUser"] = new ChangeUser { tranferer = userID.id, tranfereeName = transfereeName.Value, transfereeEmail = transfereeEmail.Value/*, reason = changeReason.Value*/ };
             Response.Redirect("changeofownership.aspx");
         }
         
@@ -56,7 +56,7 @@ namespace CiroWebsite
                 var body = "";
                 foreach (var re in requests)
                 {
-                    body += "<tr><td><a href='productlog.aspx?id=" + re.product + "'>" + re.prodInfo.name + "</a></td><td>" + re.prevInfo.email + "</td><td>Add Origin</td><td>" + re.prodInfo.arrivalDate + "</td><td>Date of Request</td><td>Reason</td><td><a href='declareownershiptransfer.aspx?accpet=" + re.prodInfo.id + "' class='btn btn-success btn-xs'><i class='fa fa-thumbs-up'></i></button><a href='declareownershiptransfer.aspx?reject=" + re.prodInfo.id + "' class='btn btn-danger btn-xs'><i class='fa fa-thumbs-down'></i></button></td></tr>";
+                    body += "<tr><td><a href='productlog.aspx?id=" + re.product + "'>" + re.prodInfo.name + "</a></td><td>" + re.prevInfo.email + "</td><td>" + re.prodInfo.arrivalDate + "</td><td>Reason</td><td><a href='declareownershiptransfer.aspx?accpet=" + re.prodInfo.id + "' class='btn btn-success btn-xs'><i class='fa fa-thumbs-up'></i></button><a href='declareownershiptransfer.aspx?reject=" + re.prodInfo.id + "' class='btn btn-danger btn-xs'><i class='fa fa-thumbs-down'></i></button></td></tr>";
                 }
                 Response.Write(body);
             }

@@ -45,7 +45,6 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="location_section" Type="varchar" MaxLength="50" />
           <Property Name="location_isle" Type="int" />
           <Property Name="location_row" Type="int" />
           <Property Name="location_column" Type="int" />
@@ -790,7 +789,6 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="location_section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="location_isle" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
           <Property Name="location_column" Type="Int32" />
@@ -1585,7 +1583,6 @@
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
-                <ScalarProperty Name="location_section" ColumnName="location_section" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
                 <ScalarProperty Name="location_column" ColumnName="location_column" />

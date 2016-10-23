@@ -264,6 +264,7 @@
     <Compile Include="JsonObjects\jsonStockTake.cs" />
     <Compile Include="JsonObjects\JsonTask.cs" />
     <Compile Include="JsonObjects\JsonTax.cs" />
+    <Compile Include="JsonObjects\JsonProductInfo.cs" />
     <Compile Include="JsonObjects\jsonTRequest.cs" />
     <Compile Include="JsonObjects\jsonWarehouse.cs" />
     <Compile Include="JsonObjects\jsonWarehouseAvailabilty.cs" />
