@@ -13,7 +13,7 @@
           <Property Name="billofentry_code" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
-          <Property Name="billofentry_origin" Type="varchar" MaxLength="45" />
+          <Property Name="billofentry_origin" Type="varchar" MaxLength="255" />
           <Property Name="billofentry_invoice" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="countryrelation">
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="invoice_id" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
@@ -45,7 +45,6 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="location_section" Type="varchar" MaxLength="50" />
           <Property Name="location_isle" Type="int" />
           <Property Name="location_row" Type="int" />
           <Property Name="location_column" Type="int" />
@@ -751,7 +750,7 @@
           <Property Name="billofentry_code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_user" Type="Int32" />
           <Property Name="billofentry_product" Type="Int32" />
-          <Property Name="billofentry_origin" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="billofentry_origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="billofentry_invoice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="invoice" Relationship="Self.billofentry_invoice" FromRole="billofentry" ToRole="invoice" />
           <NavigationProperty Name="product" Relationship="Self.billofentry_product" FromRole="billofentry" ToRole="product" />
@@ -779,7 +778,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="invoice_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="invoice_vat" Type="Decimal" />
           <Property Name="invoice_penalty" Type="Decimal" />
           <Property Name="invoice_paid" Type="Decimal" />
@@ -790,7 +789,6 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="location_section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="location_isle" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
           <Property Name="location_column" Type="Int32" />
@@ -1585,7 +1583,6 @@
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
-                <ScalarProperty Name="location_section" ColumnName="location_section" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
                 <ScalarProperty Name="location_column" ColumnName="location_column" />

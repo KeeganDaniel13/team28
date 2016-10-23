@@ -148,7 +148,7 @@ namespace CiroService
         {
             var userAccess = new userController();
             IEnumerable<user> users = userAccess.getTable();
-
+            
             var user = users.FirstOrDefault<user>(c => (c.user_fname.Equals(login.name) || c.user_email.Equals(login.name)) && c.user_password.Equals(login.password));
             if (user == null)
             {
@@ -348,7 +348,12 @@ namespace CiroService
             //if item is on the tansferlist add it to the warehouse
             string message = "Failed";
             transferlistController tlistAccess = new transferlistController();
-            var inList = tlistAccess.getTable().First<transferlist>(c => c.transferlist_product == stockTake.id);
+            transferlist inList = null;
+            try
+            {
+                inList = tlistAccess.getTable().First<transferlist>(c => c.transferlist_product == stockTake.id);
+            }
+            catch (Exception) { }
             var productTable = new productController();
             var stockTable = new warehousestockController();
             var warehouseTable = new warehouseController();
@@ -1398,7 +1403,7 @@ namespace CiroService
         /// </summary>
         /// <param name="id">The warehouses.</param>
         /// <returns>IEnumerable&lt;JsonInventory&gt;.</returns>
-        public IEnumerable<JsonInventory> WarehouseInventory(string id)
+        public IEnumerable<JsonProductInfo> WarehouseInventory(string id)
         {
             var warehouseAccess = new warehouseController();
             var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(id));
@@ -1414,13 +1419,14 @@ namespace CiroService
                 return null;
             }
 
-            List<JsonInventory> inventory = new List<JsonInventory>();
+            List<JsonProductInfo> inventory = new List<JsonProductInfo>();
 
             foreach (warehousestock w in warehouseStockExists)
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
-                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+                var product = new productController().getTable().First<product>(p => p.product_id == billExists.billofentry_product);
+                inventory.Add(new JsonProductInfo {name=product.product_name,date=(DateTime)product .product_arrivalDate,id=product.product_id });
             }
             return inventory;
             /*var warehouseAccess = new warehouseController();
@@ -1843,7 +1849,7 @@ namespace CiroService
 
             foreach (location l in locationlist)
             {
-                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse), section = l.location_section });
+                locations.Add(new jsonlocation { ID = l.location_id, col = Convert.ToInt32(l.location_column), isle = Convert.ToInt32(l.location_isle), product = Convert.ToInt32(l.location_product), row = Convert.ToInt32(l.location_row), size = Convert.ToInt32(l.location_size), warehouse = Convert.ToInt32(l.location_warehouse)/*, section = l.location_section*/ });
             }
             return locations;
         }

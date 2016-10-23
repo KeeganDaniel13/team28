@@ -16,7 +16,7 @@
 				</div>
             </div>
 			
-			<button type="submit" runat="server" class="btn btn-info btn-sm">Select</button>
+			<button type="submit" runat="server" onserverclick="proceed" class="btn btn-info btn-sm">Select</button>
 		</form>
 	
 	</div><!-- END column -->
@@ -33,7 +33,7 @@
 		</tr>
 	</thead>					
 	<tbody>
-       <!--  listRequests(); -->					
+       <% listRequests(); %>					
 	</tbody>
 </table>
         <br/>
@@ -61,7 +61,7 @@
                        <th>Location</th>
                       <th>Value</th>
                     </tr>  
-                       <!--  ListPackages(); -->
+                       <!--ListPackages(); -->
                   </table>                                
                     <br/>
                    <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->

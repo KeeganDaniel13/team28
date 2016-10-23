@@ -1,136 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfWarehouseIncidentsGraph">
+  <xs:complexType name="ArrayOfJsonUser">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseIncidentsGraph" nillable="true" type="tns:WarehouseIncidentsGraph" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonUser" nillable="true" type="tns:JsonUser" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfWarehouseIncidentsGraph" nillable="true" type="tns:ArrayOfWarehouseIncidentsGraph" />
-  <xs:complexType name="WarehouseIncidentsGraph">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="incidents" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehouseIncidentsGraph" nillable="true" type="tns:WarehouseIncidentsGraph" />
-  <xs:complexType name="ArrayOfWarehouseReleasescs">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseReleasescs" nillable="true" type="tns:WarehouseReleasescs" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWarehouseReleasescs" nillable="true" type="tns:ArrayOfWarehouseReleasescs" />
-  <xs:complexType name="WarehouseReleasescs">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="releases" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehouseReleasescs" nillable="true" type="tns:WarehouseReleasescs" />
-  <xs:complexType name="ArrayOfPackagePerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackagePerMonth" nillable="true" type="tns:PackagePerMonth" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPackagePerMonth" nillable="true" type="tns:ArrayOfPackagePerMonth" />
-  <xs:complexType name="PackagePerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="packages" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PackagePerMonth" nillable="true" type="tns:PackagePerMonth" />
-  <xs:complexType name="ArrayOfOutgoingRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutgoingRate" nillable="true" type="tns:OutgoingRate" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOutgoingRate" nillable="true" type="tns:ArrayOfOutgoingRate" />
-  <xs:complexType name="OutgoingRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="leaving" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OutgoingRate" nillable="true" type="tns:OutgoingRate" />
-  <xs:complexType name="ArrayOfJsonCountryPercentage">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonCountryPercentage" nillable="true" type="tns:ArrayOfJsonCountryPercentage" />
-  <xs:complexType name="JsonCountryPercentage">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="percentage" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
-  <xs:complexType name="JsonTax">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="penalty" type="xs:double" />
-      <xs:element minOccurs="0" name="total" type="xs:double" />
-      <xs:element minOccurs="0" name="vat" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonTax" nillable="true" type="tns:JsonTax" />
-  <xs:complexType name="JsonWarehouse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="available" type="xs:double" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="user" type="xs:int" />
-      <xs:element minOccurs="0" name="warehousetype" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonWarehouse" nillable="true" type="tns:JsonWarehouse" />
-  <xs:complexType name="ArrayOfReleaseProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfReleaseProduct" nillable="true" type="tns:ArrayOfReleaseProduct" />
-  <xs:complexType name="ReleaseProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="invoiceTotal" type="xs:double" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="requested" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
-  <xs:complexType name="ArrayOfTransferDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransferDetails" nillable="true" type="tns:TransferDetails" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTransferDetails" nillable="true" type="tns:ArrayOfTransferDetails" />
-  <xs:complexType name="TransferDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="destination" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productid" type="xs:int" />
-      <xs:element minOccurs="0" name="transferName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TransferDetails" nillable="true" type="tns:TransferDetails" />
-  <xs:complexType name="JsonTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="employee" type="xs:int" />
-      <xs:element minOccurs="0" name="endtime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonTask" nillable="true" type="tns:JsonTask" />
+  <xs:element name="ArrayOfJsonUser" nillable="true" type="tns:ArrayOfJsonUser" />
   <xs:complexType name="JsonUser">
     <xs:sequence>
       <xs:element minOccurs="0" name="convo_id" type="xs:int" />
@@ -146,46 +21,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonUser" nillable="true" type="tns:JsonUser" />
-  <xs:complexType name="ArrayOfJsonTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonTask" nillable="true" type="tns:JsonTask" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonTask" nillable="true" type="tns:ArrayOfJsonTask" />
-  <xs:complexType name="ArrayOfArrayOfjsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfArrayOfjsonlocation" nillable="true" type="tns:ArrayOfArrayOfjsonlocation" />
-  <xs:complexType name="ArrayOfjsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonlocation" nillable="true" type="tns:jsonlocation" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
-  <xs:complexType name="jsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="col" type="xs:int" />
-      <xs:element minOccurs="0" name="height" type="xs:int" />
-      <xs:element minOccurs="0" name="isle" type="xs:int" />
-      <xs:element minOccurs="0" name="length" type="xs:int" />
-      <xs:element minOccurs="0" name="product" type="xs:int" />
-      <xs:element minOccurs="0" name="row" type="xs:int" />
-      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
-      <xs:element minOccurs="0" name="width" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonlocation" nillable="true" type="tns:jsonlocation" />
-  <xs:complexType name="ArrayOfJsonUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonUser" nillable="true" type="tns:JsonUser" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonUser" nillable="true" type="tns:ArrayOfJsonUser" />
   <xs:complexType name="jsonLoginUser">
     <xs:sequence>
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
@@ -219,8 +54,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="jsonProduct" nillable="true" type="tns:jsonProduct" />
-<<<<<<< HEAD
-=======
   <xs:complexType name="ArrayOfTransferDetails">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TransferDetails" nillable="true" type="tns:TransferDetails" />
@@ -243,7 +76,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfjsonTRequest" nillable="true" type="tns:ArrayOfjsonTRequest" />
->>>>>>> 3caf1a1abd3c1d1b2946a44459156683331ac9d2
   <xs:complexType name="jsonTRequest">
     <xs:sequence>
       <xs:element minOccurs="0" name="date" type="xs:dateTime" />
@@ -263,6 +95,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="stockTakeInfo" nillable="true" type="tns:stockTakeInfo" />
+  <xs:complexType name="ArrayOfJsonTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonTask" nillable="true" type="tns:JsonTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJsonTask" nillable="true" type="tns:ArrayOfJsonTask" />
+  <xs:complexType name="JsonTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="employee" type="xs:int" />
+      <xs:element minOccurs="0" name="endtime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JsonTask" nillable="true" type="tns:JsonTask" />
   <xs:complexType name="jsonIncident">
     <xs:sequence>
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
@@ -274,8 +125,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="jsonIncident" nillable="true" type="tns:jsonIncident" />
-<<<<<<< HEAD
-=======
   <xs:complexType name="JsonWarehouse">
     <xs:sequence>
       <xs:element minOccurs="0" name="available" type="xs:double" />
@@ -289,7 +138,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonWarehouse" nillable="true" type="tns:JsonWarehouse" />
->>>>>>> 3caf1a1abd3c1d1b2946a44459156683331ac9d2
   <xs:complexType name="ArrayOfJsonWarehouse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonWarehouse" nillable="true" type="tns:JsonWarehouse" />
@@ -466,6 +314,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonMessage" nillable="true" type="tns:JsonMessage" />
+  <xs:complexType name="jsonlocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="col" type="xs:int" />
+      <xs:element minOccurs="0" name="height" type="xs:int" />
+      <xs:element minOccurs="0" name="isle" type="xs:int" />
+      <xs:element minOccurs="0" name="length" type="xs:int" />
+      <xs:element minOccurs="0" name="product" type="xs:int" />
+      <xs:element minOccurs="0" name="row" type="xs:int" />
+      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="size" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+      <xs:element minOccurs="0" name="width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="jsonlocation" nillable="true" type="tns:jsonlocation" />
+  <xs:complexType name="ArrayOfjsonlocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonlocation" nillable="true" type="tns:jsonlocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
   <xs:complexType name="ArrayOfjsonWarehouseAvailabilty">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonWarehouseAvailabilty" nillable="true" type="tns:jsonWarehouseAvailabilty" />
@@ -493,8 +363,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PackageSizeCategory" nillable="true" type="tns:PackageSizeCategory" />
-<<<<<<< HEAD
-=======
   <xs:complexType name="ArrayOfWarehouseIncidentsGraph">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseIncidentsGraph" nillable="true" type="tns:WarehouseIncidentsGraph" />
@@ -626,5 +494,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
->>>>>>> 3caf1a1abd3c1d1b2946a44459156683331ac9d2
+  <xs:complexType name="ArrayOfArrayOfjsonlocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfjsonlocation" nillable="true" type="tns:ArrayOfArrayOfjsonlocation" />
 </xs:schema>
