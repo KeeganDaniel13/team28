@@ -278,9 +278,6 @@
     <Content Include="infinity\landing\libs\bower\smooth-scroll\dist\._js" />
     <Content Include="infinity\landing\libs\bower\waypoints\._lib" />
     <Content Include="infinity\landing\libs\misc\._owl-carousel" />
-    <Content Include="ClientPages\Client.Master" />
-    <Content Include="AdminPages\admin.Master" />
-    <Content Include="CustomsPages\Customs.Master" />
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonBillofEntry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -314,9 +311,6 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonReleaseRequest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTax.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -341,9 +335,6 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.ReleaseProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.TransferDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -356,10 +347,20 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseReleasescs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask1.datasource" />
+    <Content Include="ClientPages\Client.Master" />
+    <Content Include="AdminPages\admin.Master" />
+    <Content Include="CustomsPages\Customs.Master" />
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehousesStorageRates.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask11.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CiroService\Service1.disco" />
@@ -371,7 +372,6 @@
     </None>
     <Content Include="WarehousePages\Warehouse Reports.aspx" />
     <Content Include="WarehousePages\warehouse.Master" />
-    <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
@@ -382,6 +382,7 @@
     <None Include="Service References\CiroService\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -502,6 +503,7 @@
     <Content Include="CustomsPages\transfers.aspx" />
     <Content Include="viewpackage.aspx" />
     <Content Include="WarehousePages\Warehouse Reports.aspx" />
+    <Content Include="WarehousePages\warehousehome.aspx" />
     <Content Include="WarehousePages\warehouseinventory.aspx" />
     <Content Include="WarehousePages\warehouseinvoices.aspx" />
     <Content Include="WarehousePages\warehouserelease.aspx" />
@@ -821,6 +823,13 @@
     <Compile Include="WarehousePages\warehouse.Master.designer.cs">
       <DependentUpon>warehouse.Master</DependentUpon>
     </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\warehousehome.aspx.designer.cs">
+      <DependentUpon>warehousehome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WarehousePages\warehouseinventory.aspx.cs">
       <DependentUpon>warehouseinventory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -879,6 +888,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\roslyn\" />
     <Folder Include="customs\" />
     <Folder Include="depositor\" />
     <Folder Include="trader\" />
