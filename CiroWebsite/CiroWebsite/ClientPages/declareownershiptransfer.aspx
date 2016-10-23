@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ownership Transfer" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="declareownershiptransfer.aspx.cs" Inherits="CiroWebsite.ClientPages.declareownershiptransfer" %>
+﻿<%@ Page Title="Ownership Transfer" Language="C#" MasterPageFile="Client.Master" AutoEventWireup="true" CodeBehind="declareownershiptransfer.aspx.cs" Inherits="CiroWebsite.declareownershiptransfer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <script src="../infinity/assets/myjs/mode.js"></script>  
 </asp:Content>
@@ -16,7 +16,7 @@
 				</div>
             </div>
 			
-			<button type="submit" runat="server" class="btn btn-info btn-sm">Select</button>
+			<button type="submit" runat="server" onserverclick="proceed" class="btn btn-info btn-sm">Select</button>
 		</form>
 	
 	</div><!-- END column -->
@@ -33,7 +33,7 @@
 		</tr>
 	</thead>					
 	<tbody>
-       <!--  listRequests(); -->					
+       <% listRequests(); %>					
 	</tbody>
 </table>
         <br/>
@@ -61,7 +61,7 @@
                        <th>Location</th>
                       <th>Value</th>
                     </tr>  
-                       <!--  ListPackages(); -->
+                       <!--ListPackages(); -->
                   </table>                                
                     <br/>
                    <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->

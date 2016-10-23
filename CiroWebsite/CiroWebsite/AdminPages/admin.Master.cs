@@ -11,7 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user =(CiroService.JsonUser) Session["user"];
+           // var user =(CiroService.JsonUser) Session["user"];
             //name.InnerHtml = user.fname + " " + user.lname;
             //title.InnerHtml = user.usertypename;
         }

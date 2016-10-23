@@ -14,7 +14,7 @@
           <Property Name="billofentry_user" Type="int" />
           <Property Name="billofentry_product" Type="int" />
           <Property Name="billofentry_origin" Type="varchar" MaxLength="255" />
-          <Property Name="billofentry_invoice" Type="int" />
+          <Property Name="billofentry_invoice" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="countryrelation">
           <Key>
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="int" Nullable="false" />
+          <Property Name="invoice_id" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="invoice_vat" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_penalty" Type="decimal" Precision="10" Scale="2" />
           <Property Name="invoice_paid" Type="decimal" Precision="10" Scale="2" />
@@ -100,6 +100,7 @@
           <Property Name="product_receipt" Type="varchar" MaxLength="255" />
           <Property Name="product_description" Type="varchar" MaxLength="255" />
           <Property Name="product_expirationDate" Type="datetime" Precision="0" />
+          <Property Name="product_Insured" Type="int" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -198,6 +199,14 @@
           <Property Name="warehouse_description" Type="longtext" />
           <Property Name="warehouse_established" Type="datetime" Precision="0" />
         </EntityType>
+        <EntityType Name="warehouseemployee">
+          <Key>
+            <PropertyRef Name="warehouseemployee_id" />
+          </Key>
+          <Property Name="warehouseemployee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="warehouseemployee_employee" Type="int" />
+          <Property Name="warehouseemployee_warehouse" Type="int" />
+        </EntityType>
         <EntityType Name="warehousestock">
           <Key>
             <PropertyRef Name="warehousestock_id" />
@@ -206,6 +215,19 @@
           <Property Name="warehousestock_lastchecked" Type="datetime" Precision="0" />
           <Property Name="warehousestock_warehouse" Type="int" />
           <Property Name="warehousestock_product" Type="int" />
+        </EntityType>
+        <EntityType Name="warehousetask">
+          <Key>
+            <PropertyRef Name="warehousetask_id" />
+          </Key>
+          <Property Name="warehousetask_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="warehousetask_warehouse" Type="int" />
+          <Property Name="warehousetask_employee" Type="int" />
+          <Property Name="warehousetask_type" Type="varchar" MaxLength="50" />
+          <Property Name="warehousetask_description" Type="longtext" />
+          <Property Name="warehousetask_section" Type="varchar" MaxLength="45" />
+          <Property Name="warehousetask_timestamp" Type="datetime" Precision="0" />
+          <Property Name="warehousetask_endtime" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="warehousetype">
           <Key>
@@ -502,6 +524,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehouseemployee_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehouseemployee_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="warehousestock_product">
           <End Role="product" Type="Self.product" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
@@ -526,7 +572,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehousetask_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousetask_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
+<<<<<<< HEAD
           <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
@@ -546,6 +617,29 @@
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
+=======
+          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="location" EntityType="Self.location" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="message" EntityType="Self.message" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="newdb" store:Type="Tables" />
+>>>>>>> a0d99747796bf95dbdb721767e30ec4a726226cb
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -642,6 +736,14 @@
             <End Role="warehousetype" EntitySet="warehousetype" />
             <End Role="warehouse" EntitySet="warehouse" />
           </AssociationSet>
+          <AssociationSet Name="warehouseemployee_employee" Association="Self.warehouseemployee_employee">
+            <End Role="user" EntitySet="user" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployee" />
+          </AssociationSet>
+          <AssociationSet Name="warehouseemployee_warehouse" Association="Self.warehouseemployee_warehouse">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployee" />
+          </AssociationSet>
           <AssociationSet Name="warehousestock_product" Association="Self.warehousestock_product">
             <End Role="product" EntitySet="product" />
             <End Role="warehousestock" EntitySet="warehousestock" />
@@ -649,6 +751,14 @@
           <AssociationSet Name="warehousestock_warehouse" Association="Self.warehousestock_warehouse">
             <End Role="warehouse" EntitySet="warehouse" />
             <End Role="warehousestock" EntitySet="warehousestock" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_employee" Association="Self.warehousetask_employee">
+            <End Role="user" EntitySet="user" />
+            <End Role="warehousetask" EntitySet="warehousetask" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_warehouse" Association="Self.warehousetask_warehouse">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="warehousetask" EntitySet="warehousetask" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -665,7 +775,7 @@
           <Property Name="billofentry_user" Type="Int32" />
           <Property Name="billofentry_product" Type="Int32" />
           <Property Name="billofentry_origin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="billofentry_invoice" Type="Int32" />
+          <Property Name="billofentry_invoice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="invoice" Relationship="Self.billofentry_invoice" FromRole="billofentry" ToRole="invoice" />
           <NavigationProperty Name="product" Relationship="Self.billofentry_product" FromRole="billofentry" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.billofentry_user" FromRole="billofentry" ToRole="user" />
@@ -692,7 +802,7 @@
           <Key>
             <PropertyRef Name="invoice_id" />
           </Key>
-          <Property Name="invoice_id" Type="Int32" Nullable="false" />
+          <Property Name="invoice_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="invoice_vat" Type="Decimal" />
           <Property Name="invoice_penalty" Type="Decimal" />
           <Property Name="invoice_paid" Type="Decimal" />
@@ -765,6 +875,7 @@
           <Property Name="product_receipt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_expirationDate" Type="DateTime" />
+          <Property Name="product_Insured" Type="Int32" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_product" FromRole="product" ToRole="billofentry" />
           <NavigationProperty Name="hscode" Relationship="Self.product_hscode" FromRole="product" ToRole="hscode" />
           <NavigationProperty Name="locations" Relationship="Self.location_product" FromRole="product" ToRole="location" />
@@ -870,6 +981,8 @@
           <NavigationProperty Name="transferrequests" Relationship="Self.transferrequest_user" FromRole="user" ToRole="transferrequest" />
           <NavigationProperty Name="usertype" Relationship="Self.usertype_id" FromRole="user" ToRole="usertype" />
           <NavigationProperty Name="warehouses" Relationship="Self.warehouse_user" FromRole="user" ToRole="warehouse" />
+          <NavigationProperty Name="warehouseemployees" Relationship="Self.warehouseemployee_employee" FromRole="user" ToRole="warehouseemployee" />
+          <NavigationProperty Name="warehousetasks" Relationship="Self.warehousetask_employee" FromRole="user" ToRole="warehousetask" />
         </EntityType>
         <EntityType Name="usertype">
           <Key>
@@ -896,7 +1009,19 @@
           <NavigationProperty Name="locations" Relationship="Self.location_warehouse" FromRole="warehouse" ToRole="location" />
           <NavigationProperty Name="user" Relationship="Self.warehouse_user" FromRole="warehouse" ToRole="user" />
           <NavigationProperty Name="warehousetype" Relationship="Self.warehouse_warehousetype" FromRole="warehouse" ToRole="warehousetype" />
+          <NavigationProperty Name="warehouseemployees" Relationship="Self.warehouseemployee_warehouse" FromRole="warehouse" ToRole="warehouseemployee" />
           <NavigationProperty Name="warehousestocks" Relationship="Self.warehousestock_warehouse" FromRole="warehouse" ToRole="warehousestock" />
+          <NavigationProperty Name="warehousetasks" Relationship="Self.warehousetask_warehouse" FromRole="warehouse" ToRole="warehousetask" />
+        </EntityType>
+        <EntityType Name="warehouseemployee">
+          <Key>
+            <PropertyRef Name="warehouseemployee_id" />
+          </Key>
+          <Property Name="warehouseemployee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehouseemployee_employee" Type="Int32" />
+          <Property Name="warehouseemployee_warehouse" Type="Int32" />
+          <NavigationProperty Name="user" Relationship="Self.warehouseemployee_employee" FromRole="warehouseemployee" ToRole="user" />
+          <NavigationProperty Name="warehouse" Relationship="Self.warehouseemployee_warehouse" FromRole="warehouseemployee" ToRole="warehouse" />
         </EntityType>
         <EntityType Name="warehousestock">
           <Key>
@@ -908,6 +1033,21 @@
           <Property Name="warehousestock_product" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.warehousestock_product" FromRole="warehousestock" ToRole="product" />
           <NavigationProperty Name="warehouse" Relationship="Self.warehousestock_warehouse" FromRole="warehousestock" ToRole="warehouse" />
+        </EntityType>
+        <EntityType Name="warehousetask">
+          <Key>
+            <PropertyRef Name="warehousetask_id" />
+          </Key>
+          <Property Name="warehousetask_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="warehousetask_warehouse" Type="Int32" />
+          <Property Name="warehousetask_employee" Type="Int32" />
+          <Property Name="warehousetask_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_section" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="warehousetask_timestamp" Type="DateTime" />
+          <Property Name="warehousetask_endtime" Type="DateTime" />
+          <NavigationProperty Name="user" Relationship="Self.warehousetask_employee" FromRole="warehousetask" ToRole="user" />
+          <NavigationProperty Name="warehouse" Relationship="Self.warehousetask_warehouse" FromRole="warehousetask" ToRole="warehouse" />
         </EntityType>
         <EntityType Name="warehousetype">
           <Key>
@@ -1205,6 +1345,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehouseemployee_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousetask_employee">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="warehouse_warehousetype">
           <End Role="warehousetype" Type="Self.warehousetype" Multiplicity="0..1" />
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="*" />
@@ -1217,6 +1381,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="warehouseemployee_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehouseemployee" Type="Self.warehouseemployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehouseemployee">
+              <PropertyRef Name="warehouseemployee_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="warehousestock_warehouse">
           <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
           <End Role="warehousestock" Type="Self.warehousestock" Multiplicity="*" />
@@ -1226,6 +1402,18 @@
             </Principal>
             <Dependent Role="warehousestock">
               <PropertyRef Name="warehousestock_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="warehousetask_warehouse">
+          <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+          <End Role="warehousetask" Type="Self.warehousetask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="warehousetask">
+              <PropertyRef Name="warehousetask_warehouse" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1247,7 +1435,9 @@
           <EntitySet Name="users" EntityType="Self.user" />
           <EntitySet Name="usertypes" EntityType="Self.usertype" />
           <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+          <EntitySet Name="warehouseemployees" EntityType="Self.warehouseemployee" />
           <EntitySet Name="warehousestocks" EntityType="Self.warehousestock" />
+          <EntitySet Name="warehousetasks" EntityType="Self.warehousetask" />
           <EntitySet Name="warehousetypes" EntityType="Self.warehousetype" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoices" />
@@ -1345,13 +1535,29 @@
             <End Role="user" EntitySet="users" />
             <End Role="warehouse" EntitySet="warehouses" />
           </AssociationSet>
+          <AssociationSet Name="warehouseemployee_employee" Association="Self.warehouseemployee_employee">
+            <End Role="user" EntitySet="users" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployees" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_employee" Association="Self.warehousetask_employee">
+            <End Role="user" EntitySet="users" />
+            <End Role="warehousetask" EntitySet="warehousetasks" />
+          </AssociationSet>
           <AssociationSet Name="warehouse_warehousetype" Association="Self.warehouse_warehousetype">
             <End Role="warehousetype" EntitySet="warehousetypes" />
             <End Role="warehouse" EntitySet="warehouses" />
           </AssociationSet>
+          <AssociationSet Name="warehouseemployee_warehouse" Association="Self.warehouseemployee_warehouse">
+            <End Role="warehouse" EntitySet="warehouses" />
+            <End Role="warehouseemployee" EntitySet="warehouseemployees" />
+          </AssociationSet>
           <AssociationSet Name="warehousestock_warehouse" Association="Self.warehousestock_warehouse">
             <End Role="warehouse" EntitySet="warehouses" />
             <End Role="warehousestock" EntitySet="warehousestocks" />
+          </AssociationSet>
+          <AssociationSet Name="warehousetask_warehouse" Association="Self.warehousetask_warehouse">
+            <End Role="warehouse" EntitySet="warehouses" />
+            <End Role="warehousetask" EntitySet="warehousetasks" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1461,6 +1667,7 @@
                 <ScalarProperty Name="product_receipt" ColumnName="product_receipt" />
                 <ScalarProperty Name="product_description" ColumnName="product_description" />
                 <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
+                <ScalarProperty Name="product_Insured" ColumnName="product_Insured" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1570,6 +1777,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="warehouseemployees">
+            <EntityTypeMapping TypeName="custommandbModel.warehouseemployee">
+              <MappingFragment StoreEntitySet="warehouseemployee">
+                <ScalarProperty Name="warehouseemployee_id" ColumnName="warehouseemployee_id" />
+                <ScalarProperty Name="warehouseemployee_employee" ColumnName="warehouseemployee_employee" />
+                <ScalarProperty Name="warehouseemployee_warehouse" ColumnName="warehouseemployee_warehouse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="warehousestocks">
             <EntityTypeMapping TypeName="custommandbModel.warehousestock">
               <MappingFragment StoreEntitySet="warehousestock">
@@ -1577,6 +1793,20 @@
                 <ScalarProperty Name="warehousestock_lastchecked" ColumnName="warehousestock_lastchecked" />
                 <ScalarProperty Name="warehousestock_warehouse" ColumnName="warehousestock_warehouse" />
                 <ScalarProperty Name="warehousestock_product" ColumnName="warehousestock_product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehousetasks">
+            <EntityTypeMapping TypeName="custommandbModel.warehousetask">
+              <MappingFragment StoreEntitySet="warehousetask">
+                <ScalarProperty Name="warehousetask_id" ColumnName="warehousetask_id" />
+                <ScalarProperty Name="warehousetask_warehouse" ColumnName="warehousetask_warehouse" />
+                <ScalarProperty Name="warehousetask_employee" ColumnName="warehousetask_employee" />
+                <ScalarProperty Name="warehousetask_type" ColumnName="warehousetask_type" />
+                <ScalarProperty Name="warehousetask_description" ColumnName="warehousetask_description" />
+                <ScalarProperty Name="warehousetask_section" ColumnName="warehousetask_section" />
+                <ScalarProperty Name="warehousetask_timestamp" ColumnName="warehousetask_timestamp" />
+                <ScalarProperty Name="warehousetask_endtime" ColumnName="warehousetask_endtime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

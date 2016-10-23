@@ -24,9 +24,10 @@
 							<input type="text" class="form-control" runat="server" id="cosignee" placeholder="Location of Goods" style="width: 300px;"/>
 						</div>
 						<div class="form-group ">
-							<label  for="exampleInputEmail3">Name of Goods</label><br />
+							<label  for="exampleInputEmail3">Select Good</label><br />
 							<!--<input type="text" class="form-control" id="goodsContainer" placeholder="Name of Good(s)" style="width: 300px;">-->
-                            <input type="text" class="form-control" runat="server" id="nameofgoods" placeholder="Package Name" style="width: 400px;"/>
+                            
+                            <a href="#" data-toggle="modal" data-target="#composeModal" type="button"><input type="text" class="form-control" runat="server" id="nameofgoods" placeholder="Package Name" style="width: 400px;"/></a>
 						</div>
 						</div>
                         <div class="form-inline" >
@@ -78,4 +79,34 @@
              </ul>
         </div>
 </div>
+
+        <!-- Compose modal -->
+<div class="modal fade" id="composeModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Select Product</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+                <tr>
+                  <th>Select</th>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                   <th>Location</th>
+                  <th>Value</th>
+                </tr>  
+                   <%listPackages(); %>   
+              </table>                                
+                <br/>
+               <!-- <a href="#" onclick="saveWarehouse(name)" type="button" class="btn btn-primary">Accept</a>                -->
+                <br/>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>function bingo(id) {
+    $(id).modal('show');
+}</script>
 </asp:Content>

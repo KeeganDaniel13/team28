@@ -20,7 +20,7 @@ namespace CiroService.EFDatabase
             this.billofentries = new HashSet<billofentry>();
         }
     
-        public int invoice_id { get; set; }
+        public string invoice_id { get; set; }
         public Nullable<decimal> invoice_vat { get; set; }
         public Nullable<decimal> invoice_penalty { get; set; }
         public Nullable<decimal> invoice_paid { get; set; }

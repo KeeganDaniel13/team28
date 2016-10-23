@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CiroWebsite.AdminPages
 {
-    public partial class ApproveTransfers : System.Web.UI.Page
+    public partial class adminhome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

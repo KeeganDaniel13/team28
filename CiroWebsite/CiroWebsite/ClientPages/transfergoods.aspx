@@ -327,19 +327,8 @@ span.round-tab:hover {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Carolina Biggleswade</td>
-                    <td>23</td>
-                    <td>65</td>
-                    <td>Jockey</td>
-                    <td> 
-                        <div class="row">
-                        <button type="button" class="btn rounded btn-sm btn-danger">Release</button>
-                         <button type="button" class="btn  btn-sm btn-success">Transfer</button>
-                            </div>
-                    </td>
-                </tr>
-                 <tr>
+
+                 <!--<tr>
                     <td>Carolina Biggleswade</td>
                     <td>23</td>
                     <td>65</td>
@@ -350,7 +339,7 @@ span.round-tab:hover {
                          <button type="button" class="btn  btn-sm btn-success">Transfer</button>
                             </div>
                     </td> 
-                </tr>
+                </tr>-->
                  <%displayTransferList(); %>
             </tbody>
         </table>

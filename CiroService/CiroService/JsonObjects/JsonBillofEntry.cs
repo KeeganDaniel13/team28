@@ -15,6 +15,6 @@ namespace CiroService.JsonObjects
         public string origin { get; set; }
         public string productName { get; set; }
         public string ownerEmail { get; set; }
-        public int invoice { get; set; }
+        public string invoice { get; set; }
     }
 }

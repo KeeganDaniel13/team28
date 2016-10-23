@@ -22,19 +22,20 @@ namespace CiroWebsite
 
         protected void getOutstanding()
         {
-            var service = new CiroService.Service1Client();
+            //var service = new CiroService.Service1Client();
             double outstandingTax = 0.00;
-            outstandingTax = service.getOutstandingTax();
+            //outstandingTax = service.getOutstandingTax();
             Response.Write(outstandingTax);
         }
 
         protected void getAverageTax()
         {
+            /*
             var service = new CiroService.Service1Client();
             CiroService.JsonTax averageTax = service.getAverageTax();
             chargedVAT = averageTax.vat;
             chargedPenalty = averageTax.penalty;
-            chargedTotal = averageTax.total;
+            chargedTotal = averageTax.total;*/
         }
 
         protected void getVAT()
@@ -54,6 +55,7 @@ namespace CiroWebsite
 
         protected void getCountryP()
         {
+            /*
             var service = new CiroService.Service1Client();
             List<CiroService.JsonCountryPercentage> cp = new List<CiroService.JsonCountryPercentage>();
             var countryP = service.getCountryP();
@@ -72,6 +74,7 @@ namespace CiroWebsite
             countryData = countryData.Remove(countryData.Length - 1);
             MessageBox.Show(countryName);
             MessageBox.Show(countryData);
+            */
         }
 
         protected void getCountry()
