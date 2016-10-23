@@ -87,7 +87,7 @@
                 trigger: 'axis'
               },
               legend: {
-                data:['Sale','Market']
+                data:['Days']
               },
               calculable : true,
               xAxis : [
@@ -103,7 +103,7 @@
               ],
               series : [
                 {
-                  name:'Sale',
+                  name:'Days',
                   type:'bar',
                   data:[<%days(); %>],
                   markPoint : {

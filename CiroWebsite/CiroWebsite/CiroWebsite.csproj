@@ -363,6 +363,15 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.StorageFilledBy.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.incidentsperisle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="WarehousePages\PackagesReceivedPastYear.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.ReleasesPerMonth.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -370,6 +379,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="WarehousePages\MostCommonIsleIncidents.aspx" />
     <Content Include="WarehousePages\Warehouse Reports.aspx" />
     <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
@@ -383,6 +393,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="WarehousePages\warehouse.Master" />
+    <Content Include="WarehousePages\Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -815,6 +826,27 @@
     <Compile Include="viewpackage.aspx.designer.cs">
       <DependentUpon>viewpackage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WarehousePages\MostCommonIsleIncidents.aspx.cs">
+      <DependentUpon>MostCommonIsleIncidents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\MostCommonIsleIncidents.aspx.designer.cs">
+      <DependentUpon>MostCommonIsleIncidents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarehousePages\PackagesReceivedPastYear.aspx.cs">
+      <DependentUpon>PackagesReceivedPastYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\PackagesReceivedPastYear.aspx.designer.cs">
+      <DependentUpon>PackagesReceivedPastYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarehousePages\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
     <Compile Include="WarehousePages\Warehouse Reports.aspx.cs">
       <DependentUpon>Warehouse Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -884,6 +916,20 @@
     </Compile>
     <Compile Include="WarehousePages\wareMessages.aspx.designer.cs">
       <DependentUpon>wareMessages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

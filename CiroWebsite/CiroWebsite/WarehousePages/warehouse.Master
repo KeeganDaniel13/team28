@@ -1,4 +1,4 @@
-﻿B <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="warehouse.master.cs" Inherits="CiroWebsite.AdminPages.warehouse" %>
+﻿B <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="warehouse.master.cs" Inherits="CiroWebsite.warehouse" %>
 
 <!DOCTYPE html>
 

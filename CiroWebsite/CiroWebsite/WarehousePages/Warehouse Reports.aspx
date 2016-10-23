@@ -62,7 +62,7 @@
       <div class="col-md-6" style="width:100%">
         <div class="widget">
           <header class="widget-header">
-            <h4 class="widget-title">Common Size Categories For Lenght</h4>
+            <h4 class="widget-title">Common Size Categories For Length</h4>
           </header><!-- .widget-header -->
           <hr class="widget-separator">
           <div class="widget-body">
