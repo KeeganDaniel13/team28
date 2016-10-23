@@ -184,7 +184,7 @@ CREATE TABLE `newdb`.`warehouse` (
   `transferrequest_product` INT NULL,
   `transferrequest_description` VARCHAR(255) NULL,
   `transferrequest_reason` VARCHAR(255) NULL,
-  `transferrequestc_requsetDate` DATETIME NULL,
+  `transferrequest_requestDate` DATETIME NULL,
   `transferrequest_approvalDate` DATETIME NULL,
   PRIMARY KEY (`transferrequest_id`),
   INDEX `transferrequest_user_idx` (`transferrequest_user` ASC),
@@ -378,7 +378,7 @@ CREATE TABLE `newdb`.`warehouse` (
 	
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
-INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
+INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse Manager');
 INSERT INTO `newdb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('4', 'Warehouse Employee');
 
 INSERT INTO `newdb`.`producttype` (`producttype_id`, `producttype_name`) VALUES ('1', 'Duty Free');
@@ -472,7 +472,7 @@ INSERT INTO `newdb`.`productlog` (`productlog_product`, `productlog_user`, `prod
 INSERT INTO `newdb`.`productlog` (`productlog_product`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('1', '3', 'Release Request: A release request has been issued by the owner of the package', '2016-08-08 18:05:22', '3');
 
 INSERT INTO `newdb`.`releaserequest` (`releaserequest_verdict`, `releaserequest_user`, `releaserequest_product`) VALUES ('Pending', '1', '1');
-INSERT INTO `newdb`.`transferrequest` (`transferrequest_from`, `transferrequest_to`, `transferrequest_verdict`, `transferrequest_user`, `transferrequest_product`) VALUES ('11 Eva Road, Benoni, 1512', '48 Hoylake Road, Randburg, 2034', 'Pending', '1', '1');
+INSERT INTO `newdb`.`transferrequest` (`transferrequest_from`, `transferrequest_to`, `transferrequest_verdict`, `transferrequest_user`, `transferrequest_product`, `transferrequest_requestDate`) VALUES ('11 Eva Road, Benoni, 1512', '48 Hoylake Road, Randburg, 2034', 'Pending', '1', '1', '2016-08-08 13:40:32');
 
 UPDATE `newdb`.`product` SET `product_width`='23', `product_height`='65', `product_length`='78' WHERE `product_id`='1';
 UPDATE `newdb`.`product` SET `product_width`='315', `product_height`='123', `product_length`='138' WHERE `product_id`='2';

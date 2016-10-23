@@ -850,6 +850,9 @@ namespace CiroWebsite.CiroService {
         private string ownerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int productIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime requestedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -918,6 +921,19 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int productID {
+            get {
+                return this.productIDField;
+            }
+            set {
+                if ((this.productIDField.Equals(value) != true)) {
+                    this.productIDField = value;
+                    this.RaisePropertyChanged("productID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime requested {
             get {
                 return this.requestedField;
@@ -966,7 +982,13 @@ namespace CiroWebsite.CiroService {
         private string currentLocationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateIssuedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string destinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string productNameField;
@@ -1001,6 +1023,19 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime dateIssued {
+            get {
+                return this.dateIssuedField;
+            }
+            set {
+                if ((this.dateIssuedField.Equals(value) != true)) {
+                    this.dateIssuedField = value;
+                    this.RaisePropertyChanged("dateIssued");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string destination {
             get {
                 return this.destinationField;
@@ -1009,6 +1044,19 @@ namespace CiroWebsite.CiroService {
                 if ((object.ReferenceEquals(this.destinationField, value) != true)) {
                     this.destinationField = value;
                     this.RaisePropertyChanged("destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
                 }
             }
         }
@@ -3154,6 +3202,9 @@ namespace CiroWebsite.CiroService {
         private int owneridField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CiroWebsite.CiroService.jsonlocation prodLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CiroWebsite.CiroService.JsonProducts productField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3161,6 +3212,9 @@ namespace CiroWebsite.CiroService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int productTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productTypeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int quantityField;
@@ -3234,6 +3288,19 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public CiroWebsite.CiroService.jsonlocation prodLocation {
+            get {
+                return this.prodLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.prodLocationField, value) != true)) {
+                    this.prodLocationField = value;
+                    this.RaisePropertyChanged("prodLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public CiroWebsite.CiroService.JsonProducts product {
             get {
                 return this.productField;
@@ -3268,6 +3335,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.productTypeField.Equals(value) != true)) {
                     this.productTypeField = value;
                     this.RaisePropertyChanged("productType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string productTypeName {
+            get {
+                return this.productTypeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productTypeNameField, value) != true)) {
+                    this.productTypeNameField = value;
+                    this.RaisePropertyChanged("productTypeName");
                 }
             }
         }
