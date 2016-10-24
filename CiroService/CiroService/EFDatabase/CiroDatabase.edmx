@@ -45,6 +45,7 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="location_section" Type="varchar" MaxLength="50" />
           <Property Name="location_isle" Type="int" />
           <Property Name="location_row" Type="int" />
           <Property Name="location_column" Type="int" />
@@ -595,27 +596,27 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
-          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="location" EntityType="Self.location" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="message" EntityType="Self.message" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="user" EntityType="Self.user" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="newdb" store:Type="Tables" />
+          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="location" EntityType="Self.location" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="message" EntityType="Self.message" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -789,6 +790,7 @@
             <PropertyRef Name="location_id" />
           </Key>
           <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="location_section" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="location_isle" Type="Int32" />
           <Property Name="location_row" Type="Int32" />
           <Property Name="location_column" Type="Int32" />
@@ -1583,6 +1585,7 @@
             <EntityTypeMapping TypeName="custommandbModel.location">
               <MappingFragment StoreEntitySet="location">
                 <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_section" ColumnName="location_section" />
                 <ScalarProperty Name="location_isle" ColumnName="location_isle" />
                 <ScalarProperty Name="location_row" ColumnName="location_row" />
                 <ScalarProperty Name="location_column" ColumnName="location_column" />

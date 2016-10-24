@@ -1425,8 +1425,9 @@ namespace CiroService
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                var user = new userController().getTable().First<user>(c => c.user_id == billExists.billofentry_user) ;
                 var product = new productController().getTable().First<product>(p => p.product_id == billExists.billofentry_product);
-                inventory.Add(new JsonProductInfo {name=product.product_name,date=(DateTime)product .product_arrivalDate,id=product.product_id });
+                inventory.Add(new JsonProductInfo {name=product.product_name,date=(DateTime)product .product_arrivalDate,id=product.product_id,price=Convert.ToDouble( product.product_price),quantity=Convert.ToInt32(product .product_quantity),owner =user.user_fname,url=product.product_image });
             }
             return inventory;
             /*var warehouseAccess = new warehouseController();
