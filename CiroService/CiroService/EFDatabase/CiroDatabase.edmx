@@ -162,7 +162,7 @@
           <Property Name="transferrequest_product" Type="int" />
           <Property Name="transferrequest_description" Type="varchar" MaxLength="255" />
           <Property Name="transferrequest_reason" Type="varchar" MaxLength="255" />
-          <Property Name="transferrequestc_requsetDate" Type="datetime" Precision="0" />
+          <Property Name="transferrequest_requestDate" Type="datetime" Precision="0" />
           <Property Name="transferrequest_approvalDate" Type="datetime" Precision="0" />
         </EntityType>
         <EntityType Name="user">
@@ -932,7 +932,7 @@
           <Property Name="transferrequest_product" Type="Int32" />
           <Property Name="transferrequest_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="transferrequest_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="transferrequestc_requsetDate" Type="DateTime" />
+          <Property Name="transferrequest_requestDate" Type="DateTime" />
           <Property Name="transferrequest_approvalDate" Type="DateTime" />
           <NavigationProperty Name="product" Relationship="Self.transferrequest_product" FromRole="transferrequest" ToRole="product" />
           <NavigationProperty Name="user" Relationship="Self.transferrequest_user" FromRole="transferrequest" ToRole="user" />
@@ -1711,7 +1711,7 @@
                 <ScalarProperty Name="transferrequest_product" ColumnName="transferrequest_product" />
                 <ScalarProperty Name="transferrequest_description" ColumnName="transferrequest_description" />
                 <ScalarProperty Name="transferrequest_reason" ColumnName="transferrequest_reason" />
-                <ScalarProperty Name="transferrequestc_requsetDate" ColumnName="transferrequestc_requsetDate" />
+                <ScalarProperty Name="transferrequest_requestDate" ColumnName="transferrequest_requestDate" />
                 <ScalarProperty Name="transferrequest_approvalDate" ColumnName="transferrequest_approvalDate" />
               </MappingFragment>
             </EntityTypeMapping>

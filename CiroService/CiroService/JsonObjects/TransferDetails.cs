@@ -12,6 +12,10 @@ namespace CiroService.JsonObjects
         [DataMember]
         public string currentLocation { get; set; }
         [DataMember]
+        public int id { get; set; }
+        [DataMember]
+        public DateTime dateIssued { get; set; }
+        [DataMember]
         public string destination { get; set; }
         [DataMember]
         public string productName{ get; set; }

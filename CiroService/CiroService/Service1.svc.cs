@@ -163,7 +163,7 @@ namespace CiroService
             inUser.usertypename = user.usertype.usertype_name;
             inUser.warehouseID = 0;
             inUser.warehouseName = "";
-            if (user.usertype.usertype_name == "Warehouse")
+            if (user.usertype.usertype_name == "Warehouse Manager")
             {
                 var warehouse = user.warehouses.First<warehouse>(c => c.warehouse_user == user.user_id);
                 inUser.warehouseID = warehouse.warehouse_id;
@@ -285,6 +285,7 @@ namespace CiroService
                             return "User does not exist";
                         }
 
+<<<<<<< HEAD
                         newTransfer.transferrequest_verdict = "Pending";
                         newTransfer.transferrequest_user = newRequest.userID;
                         newTransfer.transferrequest_product = newRequest.productID;
@@ -299,6 +300,22 @@ namespace CiroService
                         {
                             trans.addRecord(newTransfer);
                         }
+=======
+                newTransfer.transferrequest_verdict = "Pending";
+                newTransfer.transferrequest_user = newRequest.userID;
+                newTransfer.transferrequest_product = newRequest.productID;
+                newTransfer.transferrequest_to = warehouseName.warehouse_location;
+                newTransfer.transferrequest_from = productExists.product_location;
+                newTransfer.transferrequest_description = newRequest.description;
+                newTransfer.transferrequest_requestDate = newRequest.date;
+                newTransfer.transferrequest_reason = newRequest.reason;
+                //DateTime date = new DateTime();
+                //newTransfer.= date.Year + date.Month + date.Day + newRequest.userID +newRequest.productID;
+                try
+                {
+                    trans.addRecord(newTransfer);
+                }
+>>>>>>> 107d3b90a488b07aa8fa48b3ddb670fd5bc4c654
 
                         catch (Exception e)
                         {
@@ -1488,7 +1505,17 @@ namespace CiroService
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
-                inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+                var locationAccess = new LocationController();
+                var locationExists = locationAccess.getTable().FirstOrDefault<location>(l => l.location_product == w.warehousestock_product);
+                if(locationExists == null)
+                {
+                    inventory.Add(new JsonInventory {productID = (int)w.warehousestock_product, warehouseID = Convert.ToInt32(w.warehousestock_warehouse), prodLocation = new jsonlocation { isle = 0, row = 0, col = 0 }, productTypeName = w.product.producttype.producttype_name, product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+
+                }
+                else
+                {
+                    inventory.Add(new JsonInventory { productID = (int)w.warehousestock_product, warehouseID = Convert.ToInt32(w.warehousestock_warehouse), prodLocation = new jsonlocation { isle = (int)locationExists.location_isle, row = (int)locationExists.location_row, col = (int)locationExists.location_column }, productTypeName = w.product.producttype.producttype_name, product = new JsonProducts { name = billExists.product.product_name }, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner = new JsonUser { fname = billExists.user.user_fname, lname = billExists.user.user_sname, email = billExists.user.user_email } });
+                }
             }
             return inventory;
             /*var warehouseAccess = new warehouseController();
@@ -1550,7 +1577,7 @@ namespace CiroService
                 return null;
             }
 
-            JsonUser nUser = new JsonUser { id = userExists.user_id, fname = userExists.user_fname, lname = userExists.user_sname, email = userExists.user_email, usertype = Convert.ToInt32(userExists.usertype_id )};
+            JsonUser nUser = new JsonUser { id = userExists.user_id, fname = userExists.user_fname, lname = userExists.user_sname, email = userExists.user_email, usertype = Convert.ToInt32(userExists.usertype_id ), usertypename = userExists.usertype.usertype_name};
             return nUser;
         }
 
@@ -2259,7 +2286,11 @@ namespace CiroService
                     var release = requestList.First<releaserequest>(c => c.releaserequest_product == item.warehousestock_product);
                     if (release != null)
                     {
-                        items.Add(new ReleaseProduct { id = release.releaserequest_id, invoiceTotal = 0.00, requested = DateTime.Now, owner = release.user.user_email, status = release.releaserequest_verdict, name = release.product.product_name });
+                        var billAccess = new billofentryController();
+                        var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == item.warehousestock_product);
+                        var invoiceAccess = new invoiceController();
+                        var invoiceExists = invoiceAccess.getTable().FirstOrDefault<invoice>(i => i.invoice_id == billExists.billofentry_invoice);
+                        items.Add(new ReleaseProduct { id = release.releaserequest_id, invoiceTotal = Convert.ToDouble(invoiceExists.invoice_penalty + invoiceExists.invoice_vat), requested = DateTime.Now, owner = release.user.user_email, status = release.releaserequest_verdict, name = release.product.product_name, productID = (int)item.warehousestock_product });
                     }
                 }
                 catch (Exception) { }
@@ -2282,8 +2313,10 @@ namespace CiroService
             List<TransferDetails> items = new List<TransferDetails>();
             foreach(var i in transfer)
             {
+                var transferAccess = new transferrequestsController();
+                var transferExists = transferAccess.getTable().FirstOrDefault<transferrequest>(t => t.transferrequest_product == i.transferlist_product);
                 var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
-                items.Add(new TransferDetails { currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name});
+                items.Add(new TransferDetails {id = i.transferlist_id, dateIssued = (DateTime)transferExists.transferrequest_requestDate, currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name, productid = (int)i.transferlist_product,  });
             }
             /*var stock = warehouseStock.First<warehousestock>().warehouse .warehouse_location;
             

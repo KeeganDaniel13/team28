@@ -211,24 +211,17 @@
                   <header class="panel-heading">
                       Inventory
                   </header>
-                  <div class="panel-body">
-                      <div class="row">
-                          <div class="col-md-4">
-                              <div class="input-group"><input type="text" placeholder="Search Here" class="input-sm form-control"> <span class="input-group-btn">
-                              <button type="button" class="btn btn-sm btn-success"> Go!</button> </span></div>
-                          </div>
-                      </div>
-                  </div>
                   <table class="table table-hover p-table">
                       <thead>
                       <tr>
                           <th>Name</th>
                           <th>Owner</th>
                           <th>Package Type</th>
-                          <th>Available</th>
+                          <th>Isle</th>
+                          <th>Row</th>
+                          <th>Column</th>
                           <th>Status</th>
 						  <th>Last Modified</th>
-                           <th>Action</th>
 
                       </tr>
                       </thead>

@@ -397,6 +397,7 @@
     <Content Include="WarehousePages\warehouse.Master" />
     <Content Include="WarehousePages\warehouse.Master" />
     <Content Include="WarehousePages\Site1.Master" />
+    <Content Include="WarehousePages\warehouse.Master" />
     <None Include="Service References\CiroService\Service1.wsdl" />
     <None Include="Service References\CiroService\Service1.xsd">
       <SubType>Designer</SubType>
