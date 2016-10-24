@@ -378,9 +378,6 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.WarehouseStorageRate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductInfo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />

@@ -22,7 +22,6 @@ namespace CiroService.EFDatabase
         public Nullable<System.DateTime> productlog_dateLogged { get; set; }
         public string productlog_image { get; set; }
         public Nullable<int> productlog_type { get; set; }
-        public Nullable<int> productlog_incidentisle { get; set; }
     
         public virtual product product { get; set; }
         public virtual productlogtype productlogtype { get; set; }

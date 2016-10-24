@@ -101,6 +101,7 @@
           <Property Name="product_receipt" Type="varchar" MaxLength="255" />
           <Property Name="product_description" Type="varchar" MaxLength="255" />
           <Property Name="product_expirationDate" Type="datetime" Precision="0" />
+          <Property Name="product_Insured" Type="int" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -114,7 +115,6 @@
           <Property Name="productlog_dateLogged" Type="datetime" Precision="0" />
           <Property Name="productlog_image" Type="varchar" MaxLength="255" />
           <Property Name="productlog_type" Type="int" />
-          <Property Name="productlog_incidentisle" Type="int" />
         </EntityType>
         <EntityType Name="productlogtype">
           <Key>
@@ -193,7 +193,6 @@
           <Property Name="warehouse_location" Type="varchar" MaxLength="255" />
           <Property Name="warehouse_size" Type="int" />
           <Property Name="warehouse_user" Type="int" />
-          <Property Name="warehouse_isles" Type="int" />
           <Property Name="warehouse_warehousetype" Type="int" />
           <Property Name="warehouse_image" Type="varchar" MaxLength="255" />
           <Property Name="warehouse_description" Type="longtext" />
@@ -854,6 +853,7 @@
           <Property Name="product_receipt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_expirationDate" Type="DateTime" />
+          <Property Name="product_Insured" Type="Int32" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_product" FromRole="product" ToRole="billofentry" />
           <NavigationProperty Name="hscode" Relationship="Self.product_hscode" FromRole="product" ToRole="hscode" />
           <NavigationProperty Name="locations" Relationship="Self.location_product" FromRole="product" ToRole="location" />
@@ -877,7 +877,6 @@
           <Property Name="productlog_dateLogged" Type="DateTime" />
           <Property Name="productlog_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="productlog_type" Type="Int32" />
-          <Property Name="productlog_incidentisle" Type="Int32" />
           <NavigationProperty Name="product" Relationship="Self.productlog_product" FromRole="productlog" ToRole="product" />
           <NavigationProperty Name="productlogtype" Relationship="Self.productlog_type" FromRole="productlog" ToRole="productlogtype" />
           <NavigationProperty Name="user" Relationship="Self.productlog_user" FromRole="productlog" ToRole="user" />
@@ -979,7 +978,6 @@
           <Property Name="warehouse_location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="warehouse_size" Type="Int32" />
           <Property Name="warehouse_user" Type="Int32" />
-          <Property Name="warehouse_isles" Type="Int32" />
           <Property Name="warehouse_warehousetype" Type="Int32" />
           <Property Name="warehouse_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="warehouse_description" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
@@ -1646,6 +1644,7 @@
                 <ScalarProperty Name="product_receipt" ColumnName="product_receipt" />
                 <ScalarProperty Name="product_description" ColumnName="product_description" />
                 <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
+                <ScalarProperty Name="product_Insured" ColumnName="product_Insured" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1660,7 +1659,6 @@
                 <ScalarProperty Name="productlog_dateLogged" ColumnName="productlog_dateLogged" />
                 <ScalarProperty Name="productlog_image" ColumnName="productlog_image" />
                 <ScalarProperty Name="productlog_type" ColumnName="productlog_type" />
-                <ScalarProperty Name="productlog_incidentisle" ColumnName="productlog_incidentisle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1747,7 +1745,6 @@
                 <ScalarProperty Name="warehouse_location" ColumnName="warehouse_location" />
                 <ScalarProperty Name="warehouse_size" ColumnName="warehouse_size" />
                 <ScalarProperty Name="warehouse_user" ColumnName="warehouse_user" />
-                <ScalarProperty Name="warehouse_isles" ColumnName="warehouse_isles" />
                 <ScalarProperty Name="warehouse_warehousetype" ColumnName="warehouse_warehousetype" />
                 <ScalarProperty Name="warehouse_image" ColumnName="warehouse_image" />
                 <ScalarProperty Name="warehouse_description" ColumnName="warehouse_description" />

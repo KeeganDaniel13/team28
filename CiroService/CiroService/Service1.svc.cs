@@ -961,7 +961,7 @@ namespace CiroService
         /// <returns>System.String.</returns>
         public string addProductLog(string code, JsonProductLog productlog)
         {
-            /*      var billAccess = new billofentryController();
+               var billAccess = new billofentryController();
                   var billExists = billAccess.getTable().FirstOrDefault<billofentry>(c => c.billofentry_product == productlog.product_id);
                   if (billExists == null)
                   {
@@ -1028,8 +1028,6 @@ namespace CiroService
                   {
                       return "No such code";
                   }
-                  */
-            return null;
         }
 
         /// <summary>
@@ -1039,7 +1037,7 @@ namespace CiroService
         /// <returns>IEnumerable&lt;JsonProductLog&gt;.</returns>
         public IEnumerable<JsonProductLog> getProductLog(jsonProduct product)
         {
-            /*       var logAccess = new productlogController();
+               var logAccess = new productlogController();
                    var logTypes = new productlogtypeController();
                    IEnumerable<productlog> logExists = null;
                    try
@@ -1061,7 +1059,7 @@ namespace CiroService
                        productLogList.Add(new JsonProductLog { product_id = Convert.ToInt32(log.productlog_product), description = log.productlog_description, date = DateTime.Parse(log.productlog_dateLogged.ToString()),logtypename = logTypes.getTable().First<productlogtype>(c => c.productlogtype_id == log.productlog_type).productlogtype_name});
                    }
                    productLogList.OrderByDescending(c => c.date);
-                   return productLogList; */
+                   return productLogList; 
             return null;
         }
 
@@ -2703,7 +2701,7 @@ namespace CiroService
         /// <returns>Number of incidents per isle</returns>
         public IEnumerable<incidentsperisle> IncidentsPerIsle(string warehouseID)
         {
-            productlogController logaccess = new productlogController();
+            /*productlogController logaccess = new productlogController();
             warehouseController warehouseaccess = new warehouseController();            
             
             List<incidentsperisle> ipi = new List<incidentsperisle>();
@@ -2726,7 +2724,8 @@ namespace CiroService
                     ipi.Add(new incidentsperisle { isle = k, incidents = counter });
             }
            
-            return ipi;
+            return ipi;*/
+            return null;
         }
 
         public IEnumerable<ReleasesPerMonth> releasespermonth(string warehouseID)
