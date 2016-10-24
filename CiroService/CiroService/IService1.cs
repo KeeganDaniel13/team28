@@ -756,6 +756,18 @@ namespace CiroService
 
 
         /// <summary>
+        /// Customsdashas this instance.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "customsdasha")]
+        int customsdasha();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "customsdashb")]
+        int customsdashb();
+
+        /// <summary>
         /// Releases the ware house.
         /// </summary>
         /// <param name="warehouse">The warehouse.</param>

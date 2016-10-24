@@ -7,38 +7,37 @@ using System.Web.UI.WebControls;
 
 namespace CiroWebsite.WarehousePages
 {
-    public partial class SuggestedSizes : System.Web.UI.Page
+    public partial class Commonwidth : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void Isles()
+        protected void getwidth()
         {
             var serve = new CiroService.Service1Client();
-            var incidents = serve.IncidentsPerIsle("2");
+            var warehouses = serve.PackagewidthCategories();
 
             string list = "";
 
-            foreach (CiroService.incidentsperisle r in incidents)
+            foreach (CiroService.PackageSizeCategory a in warehouses)
             {
-                list += "'" + r.isle + "',";
+                list += " {value:" + a.count + ", name:'" + a.category + "'},";
             }
+
             list = list.Remove(list.Length - 1);
             Response.Write(list);
         }
-
-        protected void incidents()
+        protected void getCategories()
         {
             var serve = new CiroService.Service1Client();
-            var incidents = serve.IncidentsPerIsle("2");
+            var warehouses = serve.PackageHeightCategories();
 
             string list = "";
 
-            foreach (CiroService.incidentsperisle r in incidents)
+            foreach (CiroService.PackageSizeCategory a in warehouses)
             {
-                list += "'" + r.incidents + "',";
+                list += "'" + a.category + "',";
             }
             list = list.Remove(list.Length - 1);
             Response.Write(list);

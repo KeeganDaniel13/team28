@@ -1,27 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomsPages/Customs.Master" AutoEventWireup="true" CodeBehind="tempreports.aspx.cs" Inherits="CiroWebsite.CustomsPages.tempreports" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WarehousePages/warehouse.Master" AutoEventWireup="true" CodeBehind="IvsOpermonth.aspx.cs" Inherits="CiroWebsite.WarehousePages.IvsOpermonth" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>For Admin</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <h1>For Admin</h1>
- 
-
-
-    
-    <h1>For warehouse</h1>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
       <div class="col-md-6" style="width:100%">
         <div class="widget">
           <header class="widget-header">
@@ -81,7 +61,4 @@
           </div><!-- .widget-body -->
         </div><!-- .widget -->
       </div><!-- END column -->
-
-  
-
 </asp:Content>

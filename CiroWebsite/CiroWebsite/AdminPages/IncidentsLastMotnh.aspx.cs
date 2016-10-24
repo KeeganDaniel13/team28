@@ -5,40 +5,38 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CiroWebsite.WarehousePages
+namespace CiroWebsite.AdminPages
 {
-    public partial class SuggestedSizes : System.Web.UI.Page
+    public partial class IncidentsLastMotnh : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void Isles()
+        protected void getwarehousesrate()
         {
             var serve = new CiroService.Service1Client();
-            var incidents = serve.IncidentsPerIsle("2");
+            var warehouses = serve.WarehouseIncidents();
 
             string list = "";
 
-            foreach (CiroService.incidentsperisle r in incidents)
+            foreach (CiroService.WarehouseIncidentsGraph a in warehouses)
             {
-                list += "'" + r.isle + "',";
+                list += "'" + a.warehouse + "',";
             }
             list = list.Remove(list.Length - 1);
             Response.Write(list);
         }
-
-        protected void incidents()
+        protected void getrateValues()
         {
             var serve = new CiroService.Service1Client();
-            var incidents = serve.IncidentsPerIsle("2");
+            var warehouses = serve.WarehouseIncidents();
 
             string list = "";
 
-            foreach (CiroService.incidentsperisle r in incidents)
+            foreach (CiroService.WarehouseIncidentsGraph a in warehouses)
             {
-                list += "'" + r.incidents + "',";
+                list += "'" + a.incidents + "',";
             }
             list = list.Remove(list.Length - 1);
             Response.Write(list);

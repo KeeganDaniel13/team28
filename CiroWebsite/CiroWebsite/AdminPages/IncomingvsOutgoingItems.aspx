@@ -1,31 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomsPages/Customs.Master" AutoEventWireup="true" CodeBehind="tempreports.aspx.cs" Inherits="CiroWebsite.CustomsPages.tempreports" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/admin.Master" AutoEventWireup="true" CodeBehind="IncomingvsOutgoingItems.aspx.cs" Inherits="CiroWebsite.AdminPages.IncomingvsOutgoingItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>For Admin</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <h1>For Admin</h1>
- 
-
-
-    
-    <h1>For warehouse</h1>
-      <div class="col-md-6" style="width:100%">
+          <div class="col-md-6" style="width:100%">
         <div class="widget">
           <header class="widget-header">
-            <h4 class="widget-title">Incoming vs Outgoing Items per Month</h4>
+            <h4 class="widget-title">Incoming vs Outgoing Items</h4>
           </header><!-- .widget-header -->
           <hr class="widget-separator">
           <div class="widget-body">
@@ -46,7 +26,7 @@
                 {
                   type : 'category',
                   axisTick : {show: false},
-                  data : [<%month(); %>]
+                  data : [<%warehouse(); %>]
                 }
               ],
               series : [
@@ -54,7 +34,7 @@
                   name:'Rate',
                   type:'bar',
                   itemStyle : { normal: {label : {show: true, position: 'inside'}}},
-                  data:[<%mRate();%>]
+                  data:[<%Rate();%>]
                 },
                 {
                   name:'In',
@@ -64,7 +44,7 @@
                   itemStyle: {normal: {
                       label : {show: true}
                   }},
-                  data:[<%mincoming();%>]
+                  data:[<%incoming();%>]
                 },
                 {
                   name:'Out',
@@ -73,15 +53,12 @@
                   itemStyle: {normal: {
                       label : {show: true, position: 'left'}
                   }},
-                  data:[<%mOutgoing();%>]
+                  data:[<%Outgoing();%>]
                 }
               ]
-            }" style="height:600px">
+            }" style="height:300px">
             </div>
           </div><!-- .widget-body -->
         </div><!-- .widget -->
       </div><!-- END column -->
-
-  
-
 </asp:Content>

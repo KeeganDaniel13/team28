@@ -105,24 +105,22 @@
 						<span class="menu-text foldable">Messges</span>
 					</a>
 					
-				</li><!-- .menu-item -->
-				
-
-				<li class="menu-item has-submenu">
-					<a href="Warehouse Reports.aspx" class="menu-link">
+				</li><!-- .menu-item -->	
+                <li class="menu-item has-submenu">
+					<a href="javascript:void(0)" class="menu-link submenu-toggle">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
 					</a>
 					<ul class="submenu">
-						<li><a href="">Report 1</a></li>
-						<li><a href="">Report 2</a></li>
-						<li><a href="">Report 3</a></li>
-						<li><a href="">Report 4</a></li>
-						<li><a href="">Report 5</a></li>
-						<li><a href="">Report 6</a></li>
-						<li><a href="">Report 7</a></li>
-					</ul>
+                        <li><a href="CommonHeight.aspx">Most Common Height</a></li>
+                   <li>     <a href="CommonLength.aspx">Most Common Length</a></li>
+                        <li><a href="Commonwidth.aspx">Most Common Width</a></li>
+                       <li> <a href="IvsOpermonth.aspx">Incoming vs Outgoing Items</a></li>
+                       <li> <a href="MostCommonIsleIncidents.aspx">Most Common Incident Isle</a></li>
+                      <li>  <a href="PackagesReceivedPastYear.aspx">Packages Received Past Year</a></li>
+                     <li>   <a href="PackagesReleasedPerMonth.aspx">Packages Released Per Month</a></li>
+					</ul>                   
 				</li><!-- .menu-item -->
 			<hr/>
 		</div><!-- .aside-scroll-inner -->

@@ -100,7 +100,6 @@
           <Property Name="product_receipt" Type="varchar" MaxLength="255" />
           <Property Name="product_description" Type="varchar" MaxLength="255" />
           <Property Name="product_expirationDate" Type="datetime" Precision="0" />
-          <Property Name="product_Insured" Type="int" />
         </EntityType>
         <EntityType Name="productlog">
           <Key>
@@ -597,7 +596,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="custommandbModelStoreContainer">
-<<<<<<< HEAD
           <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="hscode" EntityType="Self.hscode" Schema="custommandb" store:Type="Tables" />
@@ -615,31 +613,10 @@
           <EntitySet Name="user" EntityType="Self.user" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="usertype" EntityType="Self.usertype" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="custommandb" store:Type="Tables" />
+          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="custommandb" store:Type="Tables" />
           <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="custommandb" store:Type="Tables" />
-=======
-          <EntitySet Name="billofentry" EntityType="Self.billofentry" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="countryrelation" EntityType="Self.countryrelation" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="hscode" EntityType="Self.hscode" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="location" EntityType="Self.location" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="message" EntityType="Self.message" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="ownershiprequest" EntityType="Self.ownershiprequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="product" EntityType="Self.product" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="productlog" EntityType="Self.productlog" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="productlogtype" EntityType="Self.productlogtype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="producttype" EntityType="Self.producttype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="releaserequest" EntityType="Self.releaserequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="transferlist" EntityType="Self.transferlist" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="transferrequest" EntityType="Self.transferrequest" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="user" EntityType="Self.user" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="usertype" EntityType="Self.usertype" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehouseemployee" EntityType="Self.warehouseemployee" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousestock" EntityType="Self.warehousestock" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousetask" EntityType="Self.warehousetask" Schema="newdb" store:Type="Tables" />
-          <EntitySet Name="warehousetype" EntityType="Self.warehousetype" Schema="newdb" store:Type="Tables" />
->>>>>>> a0d99747796bf95dbdb721767e30ec4a726226cb
           <AssociationSet Name="billofentry_invoice" Association="Self.billofentry_invoice">
             <End Role="invoice" EntitySet="invoice" />
             <End Role="billofentry" EntitySet="billofentry" />
@@ -875,7 +852,6 @@
           <Property Name="product_receipt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="product_expirationDate" Type="DateTime" />
-          <Property Name="product_Insured" Type="Int32" />
           <NavigationProperty Name="billofentries" Relationship="Self.billofentry_product" FromRole="product" ToRole="billofentry" />
           <NavigationProperty Name="hscode" Relationship="Self.product_hscode" FromRole="product" ToRole="hscode" />
           <NavigationProperty Name="locations" Relationship="Self.location_product" FromRole="product" ToRole="location" />
@@ -1667,7 +1643,6 @@
                 <ScalarProperty Name="product_receipt" ColumnName="product_receipt" />
                 <ScalarProperty Name="product_description" ColumnName="product_description" />
                 <ScalarProperty Name="product_expirationDate" ColumnName="product_expirationDate" />
-                <ScalarProperty Name="product_Insured" ColumnName="product_Insured" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

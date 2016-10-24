@@ -3,9 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
 
-
-        <h1 align="center" id="download" class="glyphicon glyphicon-download" 
-style="cursor:pointer;" title="Click to Download"></h1>
 <section id="posts-landing">
       <div class="col-md-6" style="width:100%">
         <div class="widget">

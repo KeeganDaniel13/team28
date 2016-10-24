@@ -2724,6 +2724,24 @@ namespace CiroService
             return rpm;
         }
 
+        /// <summary>
+        /// Customsdashes this instance.
+        /// </summary>
+        /// <returns>System.String.</returns>
+        public int customsdasha()
+        {
+            productController paccess = new productController();
+            var pacakgestoday = paccess.getTable().Where<product>(p => ((DateTime)p.product_arrivalDate).Month == DateTime.Now.Month && ((DateTime)p.product_arrivalDate).Day == DateTime.Now.Day && ((DateTime)p.product_arrivalDate).Year == DateTime.Now.Year).Count<product>();
+            return pacakgestoday;
+        }
+
+        public int customsdashb()
+        {
+            productController paccess = new productController();
+            var pacakgestoday = paccess.getTable().Count<product>();
+            return pacakgestoday;
+        }
+
         /*public string getPackageNotification(JsonUser user)
         {
             var userAccess = new userController();
