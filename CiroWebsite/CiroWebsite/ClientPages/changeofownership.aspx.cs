@@ -54,7 +54,6 @@ namespace CiroWebsite
             quantity.Value = good.quantity+"";
             bill.Value = good.bill;
 
-
         }
         protected void listPackages()
         {

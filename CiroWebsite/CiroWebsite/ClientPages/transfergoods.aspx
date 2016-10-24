@@ -281,7 +281,7 @@ span.round-tab:hover {
 			        <th>Unit(s)</th>
 			        <th>Location</th> 
 			        <th>Destination</th>
-                    <th>Transfer Date</th>
+                    <th>Arrival Date</th>
                     
                 </tr>
             </thead>

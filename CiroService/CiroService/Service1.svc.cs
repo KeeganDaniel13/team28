@@ -506,7 +506,6 @@ namespace CiroService
 
                 Bitmap qrcode = qrcodeMaker.Encode(qrcodeInfo);
                 qrcode.Save(path + qrcodeInfo + ".jpg", ImageFormat.Jpeg);
-                MessageBox.Show("After Save");
             }
 
 
@@ -1130,6 +1129,7 @@ namespace CiroService
                 return "No request found for this package";
             }
             requestExists.releaserequest_verdict = verdict;
+            requestExists.releaserequest_approvalDate = DateTime.Now;
             requestAccess.updateRecord(requestExists.releaserequest_id, requestExists);
             var userAccess = new userController();
             var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == prod.userid);

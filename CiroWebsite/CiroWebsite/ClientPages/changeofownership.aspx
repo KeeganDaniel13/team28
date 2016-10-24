@@ -48,7 +48,7 @@
 							<input type="email" class="form-control" runat="server" id="Locationgoods" placeholder="Location of Goods" style="width: 300px;"/>
 						</div>
 						<div class="form-group ">
-							<label  for="exampleInputEmail3">Entry Number</label><br />
+							<label  for="exampleInputEmail3">Goods Destination</label><br />
 							<input type="email" class="form-control" runat="server" id="Destinationgoods" placeholder="Destination of Goods" style="width: 400px;"/>
 						</div>
 						</div>
@@ -58,8 +58,8 @@
 							<textarea name="control-demo-5" runat="server" id="desc" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
 							<div class="form-group ">
-							<label  for="exampleInputEmail3">Kind of Package</label><br />
-							<input type="text" class="form-control" runat="server" id="packagekind" placeholder="Type of Package" style="width: 400px;"/>
+							<label  for="exampleInputEmail3">Bill Of Entry</label><br />
+							<input type="text" class="form-control" runat="server" id="bill" placeholder="Type of Package" style="width: 400px;"/>
 						</div>
 						</div>
                         <div class="form-inline" >
