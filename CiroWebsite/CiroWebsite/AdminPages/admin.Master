@@ -114,22 +114,21 @@
 					
 				</li><!-- .menu-item -->
 				
-
-				<li class="menu-item has-submenu">
-					<a href="CustomsReports.aspx" class="menu-link">
+                <li class="menu-item has-submenu">
+					<a href="javascript:void(0)" class="menu-link submenu-toggle">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
 					</a>
 					<ul class="submenu">
-						<li><a href="">Report 1</a></li>
-						<li><a href="">Report 2</a></li>
-						<li><a href="">Report 3</a></li>
-						<li><a href="">Report 4</a></li>
-						<li><a href="">Report 5</a></li>
-						<li><a href="">Report 6</a></li>
-						<li><a href="">Report 7</a></li>
-					</ul>
+                       <li><a href="DaysUntilFull.aspx">Days Until Storage Is Full</a></li>
+                       <li> <a href="IncidentsLastMotnh.aspx">Incidents Last Month</a></li>
+                        <li><a href="IncomingvsOutgoingItems.aspx">Incoming Vs Outgoing Items</a></li>
+                       <li> <a href="MostCommonCountries.aspx">Origin Of Packages</a></li>
+                       <li> <a href="MostCommonReleaseLocation.aspx">Most Common Releases</a></li>
+                       <li> <a href="TotalIncidents.aspx">Total Incidents</a></li>
+                       <li> <a href="WarehouseSpaceVSCapacity.aspx">Warehouse Space vs Capacity</a></li>
+					</ul>                   
 				</li><!-- .menu-item -->
 			<hr>
 			<footer id="aside-footer">

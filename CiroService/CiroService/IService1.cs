@@ -714,6 +714,20 @@ namespace CiroService
         IEnumerable<StorageFilledBy> StorageFilledBy();
 
         /// <summary>
+        /// finds the number of incidents per isle.
+        /// </summary>
+        /// <param name="warehouseID">The warehouse identifier.</param>
+        /// <returns>Number of incidents per isle</returns>
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "IncidentsPerIsle/{warehouseID}")]
+        IEnumerable<incidentsperisle> IncidentsPerIsle(string warehouseID);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "releasespermonth/{warehouseID}")]
+        IEnumerable<ReleasesPerMonth> releasespermonth(string warehouseID);
+
+        /// <summary>
         /// Gets the country p.
         /// </summary>
         /// <returns>IEnumerable&lt;JsonCountryPercentage&gt;.</returns>
@@ -740,6 +754,18 @@ namespace CiroService
         //REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS REPORTS 
         //================================================ ================================================ ================================================ ================================================ ================================================ 
 
+
+        /// <summary>
+        /// Customsdashas this instance.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "customsdasha")]
+        int customsdasha();
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "customsdashb")]
+        int customsdashb();
 
         /// <summary>
         /// Releases the ware house.

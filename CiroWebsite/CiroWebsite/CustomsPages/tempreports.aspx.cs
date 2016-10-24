@@ -78,17 +78,24 @@ namespace CiroWebsite.CustomsPages
 
         protected void days()
         {
-          /*  var serve = new CiroService.Service1Client();
+           var serve = new CiroService.Service1Client();
             var days = serve.StorageFilledBy();
 
             string list = "";
 
             foreach (CiroService.StorageFilledBy d in days)
             {
-                list += "'" + d.DaysTilFull + "',";
+                if(d.DaysTilFull != -1)
+                {
+                    list += "'" + d.DaysTilFull + "',";
+                }
+                else
+                {
+                    list += "'" + 0 + "',";
+                }               
             }
             list = list.Remove(list.Length - 1);
-            Response.Write(list);*/
+            Response.Write(list);
         }
 
         //storage rate for warehouse===================================================================================================

@@ -14,5 +14,20 @@ namespace CiroWebsite
 
         }
 
+        protected void customsa()
+        {
+            var serve = new CiroService.Service1Client();
+            var content = serve.customsdasha();
+
+            Response.Write(content);
+        }
+
+        protected void customsb()
+        {
+            var serve = new CiroService.Service1Client();
+            var content = serve.customsdashb();
+
+            Response.Write(content);
+        }
     }
 }

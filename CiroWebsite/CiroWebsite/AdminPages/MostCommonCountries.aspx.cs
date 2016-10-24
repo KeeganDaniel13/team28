@@ -136,16 +136,18 @@ namespace CiroWebsite
 
             for (int i = 0; i < cp.Count(); i++)
             {
-                countryName += "'" + cp[i].name + "',";
+                countryName += "{name : '" + cp[i].name + "',value : " + cp[i].percentage + ".00},";
                 countryData += "'" + Math.Round(cp[i].percentage) + "',";
             }
-
+            
             countryName = countryName.Remove(countryName.Length - 1);
             countryData = countryData.Remove(countryData.Length - 1);
         }
-
+   //      {name : 'Saudi Arabia', value : 28397.812},
         protected void getCountryName()
         {
+            getCountry();
+            //MessageBox.Show(countryName);
             Response.Write(countryName);
         }
 

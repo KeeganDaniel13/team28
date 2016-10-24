@@ -106,6 +106,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
+  <xs:complexType name="ArrayOfincidentsperisle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfincidentsperisle" nillable="true" type="tns:ArrayOfincidentsperisle" />
+  <xs:complexType name="incidentsperisle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="incidents" type="xs:int" />
+      <xs:element minOccurs="0" name="isle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
+  <xs:complexType name="ArrayOfReleasesPerMonth">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReleasesPerMonth" nillable="true" type="tns:ArrayOfReleasesPerMonth" />
+  <xs:complexType name="ReleasesPerMonth">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="releases" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
   <xs:complexType name="ArrayOfJsonCountryPercentage">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />

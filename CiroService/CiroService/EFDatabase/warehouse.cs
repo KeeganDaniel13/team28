@@ -28,6 +28,7 @@ namespace CiroService.EFDatabase
         public string warehouse_location { get; set; }
         public Nullable<int> warehouse_size { get; set; }
         public Nullable<int> warehouse_user { get; set; }
+        public Nullable<int> warehouse_isles { get; set; }
         public Nullable<int> warehouse_warehousetype { get; set; }
         public string warehouse_image { get; set; }
         public string warehouse_description { get; set; }

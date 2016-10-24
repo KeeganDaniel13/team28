@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// T4 code generation is enabled for model 'C:\Program Files\Git\team28\CiroService\CiroService\EFDatabase\CiroDatabase.edmx'. 
+=======
+﻿// T4 code generation is enabled for model 'C:\Users\Owner\team28\CiroService\CiroService\EFDatabase\CiroDatabase.edmx'. 
+>>>>>>> 9601b3012c7b2f70383e18cf6314d0cd62272bb9
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
