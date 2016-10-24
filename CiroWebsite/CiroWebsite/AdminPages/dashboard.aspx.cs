@@ -75,7 +75,6 @@ namespace CiroWebsite
         protected void getCountryName()
         {
             getCountry();
-            MessageBox.Show(countryName);
             Response.Write(countryName);
         }
 

@@ -37,8 +37,8 @@ namespace CiroWebsite
                 }
                 else if(user.usertypename.ToLower ().Equals("admin"))
                 {
-                    Response.Redirect("WarehousePages/warehousehome.aspx");
-                    //Response.Redirect("AdminPages/adminhome.aspx");
+                    //Response.Redirect("WarehousePages/warehousehome.aspx");
+                    Response.Redirect("AdminPages/adminhome.aspx");
                 }
                 else if(user.usertypename.ToLower().Equals("warehouse"))
                 {
