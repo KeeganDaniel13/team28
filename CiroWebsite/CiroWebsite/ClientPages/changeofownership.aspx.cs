@@ -82,7 +82,7 @@ namespace CiroWebsite
 
             var toUser = (ChangeUser)Session["changeUser"];
             var changeItem = (CiroService.jsonProduct)Session["changeItem"];
-            MessageBox.Show(CiroSingleton.ServerCalls.OwnershipRequest(new CiroService.JsonUser { id = toUser.tranferer }, new CiroService.JsonUser { email = toUser.transfereeEmail }, new CiroService.JsonProducts { id = changeItem.ID }));
+            CiroSingleton.ServerCalls.OwnershipRequest(new CiroService.JsonUser { id = toUser.tranferer }, new CiroService.JsonUser { email = toUser.transfereeEmail }, new CiroService.JsonProducts { id = changeItem.ID });
         }
     }
 }

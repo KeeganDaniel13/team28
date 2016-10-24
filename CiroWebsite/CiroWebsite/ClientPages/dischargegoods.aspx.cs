@@ -42,6 +42,7 @@ namespace CiroWebsite
                 Session["declare"] = null;
                 CiroSingleton.ServerCalls.payTax(new CiroService.JsonInvoice { id = invoice.id,paid = invoice .penalty +invoice.vat  });
                 CiroSingleton.ServerCalls.releaseRequest(new CiroService.JsonUser { id = user.id }, new CiroService.jsonProduct { ID = list }, "");
+                Response.Redirect("inventory.aspx");
             }
             catch (Exception ) { }
 

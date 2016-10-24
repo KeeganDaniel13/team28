@@ -15,7 +15,7 @@
 					<table runat="server" class="table mail-list">
 						<tr>
 							<td>
-								<%listTransfers(); %>
+								<%listTransfers();%>
 							</td>
 						</tr>
 					</table>
