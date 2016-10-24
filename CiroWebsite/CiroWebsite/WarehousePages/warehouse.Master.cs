@@ -12,7 +12,7 @@ namespace CiroWebsite
         protected void Page_Load(object sender, EventArgs e)
         {
             var user =(CiroService .JsonUser) Session["user"];
-            if(user == null || user.usertypename != "Warehouse Manager")
+            if(user == null || user.usertypename != "Warehouse")
             {
                 Session["user"] = null;
                 Response.Redirect("../signin.aspx");

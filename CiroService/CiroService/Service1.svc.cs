@@ -163,7 +163,7 @@ namespace CiroService
             inUser.usertypename = user.usertype.usertype_name;
             inUser.warehouseID = 0;
             inUser.warehouseName = "";
-            if (user.usertype.usertype_name == "Warehouse Manager")
+            if (user.usertype.usertype_name == "Warehouse")
             {
                 var warehouse = user.warehouses.First<warehouse>(c => c.warehouse_user == user.user_id);
                 inUser.warehouseID = warehouse.warehouse_id;

@@ -3403,6 +3403,83 @@ namespace CiroWebsite.CiroService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JsonProductInfo", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
+    [System.SerializableAttribute()]
+    public partial class JsonProductInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                if ((this.dateField.Equals(value) != true)) {
+                    this.dateField = value;
+                    this.RaisePropertyChanged("date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="JsonBillofEntry", Namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects")]
     [System.SerializableAttribute()]
     public partial class JsonBillofEntry : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3873,6 +3950,12 @@ namespace CiroWebsite.CiroService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CiroService.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageLengthCategories", ReplyAction="http://tempuri.org/IService1/PackageLengthCategoriesResponse")]
+        CiroWebsite.CiroService.PackageSizeCategory[] PackageLengthCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageLengthCategories", ReplyAction="http://tempuri.org/IService1/PackageLengthCategoriesResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageHeightCategories", ReplyAction="http://tempuri.org/IService1/PackageHeightCategoriesResponse")]
         CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories();
         
@@ -4239,6 +4322,12 @@ namespace CiroWebsite.CiroService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addCountry", ReplyAction="http://tempuri.org/IService1/addCountryResponse")]
         System.Threading.Tasks.Task addCountryAsync(CiroWebsite.CiroService.JsonCountry country);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/items", ReplyAction="http://tempuri.org/IService1/itemsResponse")]
+        CiroWebsite.CiroService.JsonInventory[] items(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/items", ReplyAction="http://tempuri.org/IService1/itemsResponse")]
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> itemsAsync(string id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getWarehouseInventory", ReplyAction="http://tempuri.org/IService1/getWarehouseInventoryResponse")]
         CiroWebsite.CiroService.JsonInventory[] getWarehouseInventory(CiroWebsite.CiroService.JsonWarehouse warehouses);
         
@@ -4246,10 +4335,10 @@ namespace CiroWebsite.CiroService {
         System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> getWarehouseInventoryAsync(CiroWebsite.CiroService.JsonWarehouse warehouses);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseInventory", ReplyAction="http://tempuri.org/IService1/WarehouseInventoryResponse")]
-        CiroWebsite.CiroService.JsonInventory[] WarehouseInventory(string id);
+        CiroWebsite.CiroService.JsonProductInfo[] WarehouseInventory(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseInventory", ReplyAction="http://tempuri.org/IService1/WarehouseInventoryResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> WarehouseInventoryAsync(string id);
+        System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProductInfo[]> WarehouseInventoryAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addWarehouseMan", ReplyAction="http://tempuri.org/IService1/addWarehouseManResponse")]
         string addWarehouseMan(CiroWebsite.CiroService.JsonUser user);
@@ -4376,12 +4465,6 @@ namespace CiroWebsite.CiroService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehouseAvailabilityGraph", ReplyAction="http://tempuri.org/IService1/WarehouseAvailabilityGraphResponse")]
         System.Threading.Tasks.Task<CiroWebsite.CiroService.jsonWarehouseAvailabilty[]> WarehouseAvailabilityGraphAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageLengthCategories", ReplyAction="http://tempuri.org/IService1/PackageLengthCategoriesResponse")]
-        CiroWebsite.CiroService.PackageSizeCategory[] PackageLengthCategories();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PackageLengthCategories", ReplyAction="http://tempuri.org/IService1/PackageLengthCategoriesResponse")]
-        System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4409,6 +4492,14 @@ namespace CiroWebsite.CiroService {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public CiroWebsite.CiroService.PackageSizeCategory[] PackageLengthCategories() {
+            return base.Channel.PackageLengthCategories();
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync() {
+            return base.Channel.PackageLengthCategoriesAsync();
         }
         
         public CiroWebsite.CiroService.PackageSizeCategory[] PackageHeightCategories() {
@@ -4899,6 +4990,14 @@ namespace CiroWebsite.CiroService {
             return base.Channel.addCountryAsync(country);
         }
         
+        public CiroWebsite.CiroService.JsonInventory[] items(string id) {
+            return base.Channel.items(id);
+        }
+        
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> itemsAsync(string id) {
+            return base.Channel.itemsAsync(id);
+        }
+        
         public CiroWebsite.CiroService.JsonInventory[] getWarehouseInventory(CiroWebsite.CiroService.JsonWarehouse warehouses) {
             return base.Channel.getWarehouseInventory(warehouses);
         }
@@ -4907,11 +5006,11 @@ namespace CiroWebsite.CiroService {
             return base.Channel.getWarehouseInventoryAsync(warehouses);
         }
         
-        public CiroWebsite.CiroService.JsonInventory[] WarehouseInventory(string id) {
+        public CiroWebsite.CiroService.JsonProductInfo[] WarehouseInventory(string id) {
             return base.Channel.WarehouseInventory(id);
         }
         
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonInventory[]> WarehouseInventoryAsync(string id) {
+        public System.Threading.Tasks.Task<CiroWebsite.CiroService.JsonProductInfo[]> WarehouseInventoryAsync(string id) {
             return base.Channel.WarehouseInventoryAsync(id);
         }
         
@@ -5081,14 +5180,6 @@ namespace CiroWebsite.CiroService {
         
         public System.Threading.Tasks.Task<CiroWebsite.CiroService.jsonWarehouseAvailabilty[]> WarehouseAvailabilityGraphAsync() {
             return base.Channel.WarehouseAvailabilityGraphAsync();
-        }
-        
-        public CiroWebsite.CiroService.PackageSizeCategory[] PackageLengthCategories() {
-            return base.Channel.PackageLengthCategories();
-        }
-        
-        public System.Threading.Tasks.Task<CiroWebsite.CiroService.PackageSizeCategory[]> PackageLengthCategoriesAsync() {
-            return base.Channel.PackageLengthCategoriesAsync();
         }
     }
 }

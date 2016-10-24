@@ -445,6 +445,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonInventory" nillable="true" type="tns:JsonInventory" />
+  <xs:complexType name="ArrayOfJsonProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonProductInfo" nillable="true" type="tns:JsonProductInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJsonProductInfo" nillable="true" type="tns:ArrayOfJsonProductInfo" />
+  <xs:complexType name="JsonProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JsonProductInfo" nillable="true" type="tns:JsonProductInfo" />
   <xs:complexType name="JsonBillofEntry">
     <xs:sequence>
       <xs:element minOccurs="0" name="billCode" nillable="true" type="xs:string" />
