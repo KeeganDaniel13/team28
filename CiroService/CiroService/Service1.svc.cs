@@ -2321,7 +2321,7 @@ namespace CiroService
                 var transferAccess = new transferrequestsController();
                 var transferExists = transferAccess.getTable().FirstOrDefault<transferrequest>(t => t.transferrequest_product == i.transferlist_product);
                 var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
-                items.Add(new TransferDetails {id = i.transferlist_id, dateIssued = (DateTime)transferExists.transferrequestc_requsetDate, currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name, productid = (int)i.transferlist_product,  });
+                items.Add(new TransferDetails {id = i.transferlist_id, dateIssued = (DateTime)transferExists.transferrequest_requestDate, currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name, productid = (int)i.transferlist_product,  });
             }
             /*var stock = warehouseStock.First<warehousestock>().warehouse .warehouse_location;
             
