@@ -53,7 +53,7 @@ namespace CiroWebsite
         protected void sendMail(object sender, EventArgs e)
         {
             var user = (CiroService.JsonUser)Session["user"];
-            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email, to = to.Value, stamp = DateTime.Now, message = message.Value });
+            CiroSingleton.ServerCalls.sendMessage(new CiroService.JsonMessage { from = user.email, to = to.Value, stamp = DateTime.Now, message = body.Value, subject = subject.Value });
         }
     }
 }

@@ -19,10 +19,6 @@
 						<!-- mail category list -->
 						<div class="list-group">
 							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Inbox</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-star"></i>Starred</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-bookmark"></i>Important</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-paper-plane"></i>Sent</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-folder"></i>All Mail</a>
 							
 						</div><!-- .list-group -->
 
@@ -49,7 +45,7 @@
 								<a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
 								<a href="#" class="btn btn-default"><i class="fa fa-exclamation-circle"></i></a>
 							</div>
-							<a href="#" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+							<a href="ClientMessages.aspx" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 						</div>
 					</div>
 				</div><!-- END toolbar -->

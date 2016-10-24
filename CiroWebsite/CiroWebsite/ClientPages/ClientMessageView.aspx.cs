@@ -13,7 +13,7 @@ namespace CiroWebsite
         {
             var messages = (List<CiroService.JsonMessage>)Session["messages"];
             CiroService.JsonMessage message = messages.First(c => c.id == Convert.ToInt32(Request.QueryString["id"]));
-            var body = "< div class='mail-view'>";
+            var body = "";
             body += "<h4 class='m-0'>" + message.subject + "</h4>";
             body += "<div class='divid'></div>";
             body += "<div class='media'>";
