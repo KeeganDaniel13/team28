@@ -11,7 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             var declare = Convert.ToInt32(Session["declare"]);
             var server = new CiroService.Service1Client();
             string body = "";

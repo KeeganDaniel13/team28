@@ -33,7 +33,7 @@
                         <div class="form-inline" >
 						<div class="form-group " >
 							<label  for="exampleInputPassword3">Quantity</label><br />
-							<input type="text" class="form-control" runat="server" id="quantity" placeholder="Country Of Orgin" style="width: 300px;"/>
+							<input type="text" class="form-control" runat="server" id="quantity" placeholder="Quanti" style="width: 300px;"/>
                                                       
 						</div>
 						<div class="form-group ">
@@ -67,11 +67,7 @@
 							<label  for="exampleInputEmail3">Reason for Transfer</label><br />
 							<textarea name="control-demo-5" runat="server" id="reasontrans" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
-                            <div class="form-group ">
-							<label  for="exampleInputEmail3">Addition Information</label><br />
-							<textarea name="control-demo-5" runat="server" id="additional" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
-						</div>
-						</div>
+                      </div>
 					</form>
             <br />
              <ul class="list-inline ">

@@ -321,7 +321,7 @@ span.round-tab:hover {
                 <tr>
                     <th>Package Name</th>
 			        <th>Unit(s)</th>
-			        <th>Transfer Date</th> 
+			        <th>Current Location</th> 
 			        <th>Status</th>
                     <th>Action</th>
                 </tr>

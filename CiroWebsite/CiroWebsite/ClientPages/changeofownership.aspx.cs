@@ -37,6 +37,7 @@ namespace CiroWebsite
 
             var fillGoods = (List<CiroService.jsonProduct>)Session["userList"];
             var good = fillGoods.First<CiroService.jsonProduct>(c => c.ID == Convert.ToInt32(var));
+            var toUser = (ChangeUser)Session["changeUser"];
             Session["changeItem"] = good;
             origincountry.Value = "Get Country Origin from database";
             Locationgoods.Value = good.currentLocation;
@@ -48,6 +49,11 @@ namespace CiroWebsite
             {
                 Destinationgoods.Value = "Not Scheduled for transfer";
             }
+            cosignee.Value = toUser.tranfereeName;
+            origincountry.Value = good.origin;
+            quantity.Value = good.quantity+"";
+            bill.Value = good.bill;
+
 
         }
         protected void listPackages()

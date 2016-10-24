@@ -15,12 +15,14 @@ namespace CiroWebsite
             {
                 var warehouses = (List<CiroService.JsonWarehouse>)Session["warehouses"];
                 CiroService.JsonWarehouse warehouse = warehouses.First<CiroService.JsonWarehouse>(c => c.id == Convert.ToInt32(Request.QueryString["w"]));
-                //name.InnerHtml += warehouse.name;
+                description.InnerHtml = warehouse.descrption;
+                imgDiv.InnerHtml = "<img src='../infinity/assets/images/11.jpg' alt='img'>";
+                wName.InnerHtml += warehouse.name;
                 //type.InnerHtml += "" + warehouse.warehousetype;
-                //loaction.InnerHtml += warehouse.location;
+                loc.InnerHtml += warehouse.location;
             }
             else
-            { Response.Redirect(""); }
+            { Response.Redirect("/viewware.aspx"); }
         }
     }
 }

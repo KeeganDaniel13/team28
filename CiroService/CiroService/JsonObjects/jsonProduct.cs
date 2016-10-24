@@ -20,6 +20,7 @@ namespace CiroService.JsonObjects
         public string bill{ get; set; }
         public string description { get; set; }
 
+        public string origin { get; set; }
 
         public int height { set; get; }
         public int length { get; set; }

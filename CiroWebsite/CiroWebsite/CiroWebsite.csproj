@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPages\addofficial.aspx" />
+    <Content Include="AdminPages\adminhome.aspx" />
     <Content Include="AdminPages\AdminReports.aspx" />
     <Content Include="ClientPages\AllTransfers.aspx" />
     <Content Include="ClientPages\Approve.aspx" />
@@ -363,6 +364,9 @@
     <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonTask11.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\CiroService\CiroWebsite.CiroService.JsonProductInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\CiroService\Service1.disco" />
     <None Include="Service References\CiroService\configuration91.svcinfo" />
     <None Include="Service References\CiroService\configuration.svcinfo" />
@@ -527,6 +531,13 @@
     </Compile>
     <Compile Include="AdminPages\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\adminhome.aspx.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\adminhome.aspx.designer.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\AdminReports.aspx.cs">
       <DependentUpon>AdminReports.aspx</DependentUpon>

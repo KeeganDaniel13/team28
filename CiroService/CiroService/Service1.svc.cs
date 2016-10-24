@@ -191,7 +191,7 @@ namespace CiroService
             List<jsonProduct> sendProducts = new List<jsonProduct>();
             foreach (billofentry p in products)
             {
-                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size), description = p.product.product_description });
+                sendProducts.Add(new jsonProduct { ID = p.product.product_id, Name = p.product.product_name, value = Convert.ToDecimal(p.product.product_price), bill = p.billofentry_code, arrivalDate = Convert.ToDateTime(p.product.product_arrivalDate), quantity = Convert.ToInt32(p.product.product_quantity), currentLocation = p.product.product_location, size = Convert.ToInt32(p.product.product_size), description = p.product.product_description,origin=p.billofentry_origin });
             }
             return sendProducts;
         }
@@ -363,11 +363,12 @@ namespace CiroService
                 tlistAccess.deleteRecord(inList.transferlist_id);
                 if (stockTake.image != null || !stockTake.image.Equals(""))
                 {
-                    string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                    //string path = "C:\\Users\\Tshenolo\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                    string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\incidents";
                     byte[] newImage = Convert.FromBase64String(stockTake.image);
                     MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                     memoStream.Write(newImage, 0, newImage.Length);
-                    string fileName = path + stockTake.id + ".jpg";
+                    string fileName = path + stockTake.id+DateTime.Now + ".jpg";
                     System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                     saveImage.Save(fileName);
                     productTable.updateRecord(stockTake.id, new product { product_image = fileName });
@@ -496,7 +497,8 @@ namespace CiroService
 
                 //create qrcode
                 
-                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
+                //string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
+                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images";
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -540,11 +542,13 @@ namespace CiroService
             }
             else
             {
-                string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                //string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images\\incidents\\";
+                //string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService";
+                string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService";
                 byte[] newImage = Convert.FromBase64String(newIncident.image);
                 MemoryStream memoStream = new MemoryStream(newImage, 0, newImage.Length);
                 memoStream.Write(newImage, 0, newImage.Length);
-                string fileName = path + newIncident.productID + ".jpg";
+                string fileName = path + incidents.Count()+1 + ".jpg";
                 System.Drawing.Image saveImage = System.Drawing.Image.FromStream(memoStream);
                 saveImage.Save(fileName);
                 incidentTable.addRecord(new productlog { productlog_dateLogged = DateTime.Now, productlog_type = newIncident.type, productlog_warehouse = newIncident.warehouse, productlog_product = newIncident.productID, productlog_image = fileName, productlog_description = newIncident.description, productlog_id = incidents.Count(), productlog_user = newIncident.userID });
@@ -577,7 +581,7 @@ namespace CiroService
             foreach (var warehouse in warehouses)
             {
                 var warehouseType = new warehousetypeController().getRecord(Convert.ToInt32(warehouse.warehouse_warehousetype)).warehousetype_name;
-                warehouseList.Add(new JsonWarehouse { id = warehouse.warehouse_id, location = warehouse.warehouse_location, name = warehouse.warehouse_name, size = Convert.ToInt32(warehouse.warehouse_size) });
+                warehouseList.Add(new JsonWarehouse { id = warehouse.warehouse_id, location = warehouse.warehouse_location, name = warehouse.warehouse_name, size = Convert.ToInt32(warehouse.warehouse_size),descrption =warehouse .warehouse_description });
             }
 
             return warehouseList;
@@ -1451,7 +1455,7 @@ namespace CiroService
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
                 inventory.Add(new JsonInventory { warehouseID = Convert.ToInt32(w.warehousestock_warehouse), product = new JsonProducts { name=billExists .product .product_name}, lastChecked = Convert.ToDateTime(w.warehousestock_lastchecked), size = Convert.ToInt32(w.product.product_size), quantity = Convert.ToInt32(w.product.product_quantity), arrivalDate = Convert.ToDateTime(w.product.product_arrivalDate), owner =new JsonUser {fname =billExists.user.user_fname,lname=billExists.user.user_sname ,email=billExists.user.user_email}});
-            }
+            add
             return inventory;*/
         }
 
