@@ -2317,7 +2317,6 @@ namespace CiroService
             List<TransferDetails> items = new List<TransferDetails>();
             foreach(var i in transfer)
             {
-                MessageBox.Show("");
                 //var transferAccess = new transferrequestsController();
                 //var transferExists = transferAccess.getTable().FirstOrDefault<transferrequest>(t => t.transferrequest_product == i.transferlist_product);
                 var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
