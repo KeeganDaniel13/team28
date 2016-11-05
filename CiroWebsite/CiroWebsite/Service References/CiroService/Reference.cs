@@ -291,7 +291,13 @@ namespace CiroWebsite.CiroService {
         private string descriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime expDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int heightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int insuredField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int lengthField;
@@ -409,6 +415,19 @@ namespace CiroWebsite.CiroService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime expDate {
+            get {
+                return this.expDateField;
+            }
+            set {
+                if ((this.expDateField.Equals(value) != true)) {
+                    this.expDateField = value;
+                    this.RaisePropertyChanged("expDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int height {
             get {
                 return this.heightField;
@@ -417,6 +436,19 @@ namespace CiroWebsite.CiroService {
                 if ((this.heightField.Equals(value) != true)) {
                     this.heightField = value;
                     this.RaisePropertyChanged("height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int insured {
+            get {
+                return this.insuredField;
+            }
+            set {
+                if ((this.insuredField.Equals(value) != true)) {
+                    this.insuredField = value;
+                    this.RaisePropertyChanged("insured");
                 }
             }
         }

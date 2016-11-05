@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="form-group">
-			<input id="email" runat="server" type="email" class="form-control" placeholder="Email"/>
+			<input id="email" runat="server" type="input" class="form-control" placeholder="Email"/>
 		</div>
 
 		<div class="form-group">

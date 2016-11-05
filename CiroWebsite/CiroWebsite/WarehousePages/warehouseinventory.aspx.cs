@@ -13,6 +13,7 @@ namespace CiroWebsite
         {
             var user = (CiroService.JsonUser)Session["user"];
             var goods = CiroSingleton.ServerCalls.getWarehouseInventory(new CiroService.JsonWarehouse { id = user.warehouseID});
+            
             var body = "";
             if (goods != null)
             {
