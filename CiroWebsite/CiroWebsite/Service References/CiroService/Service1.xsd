@@ -102,7 +102,9 @@
       <xs:element minOccurs="0" name="bill" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="expDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="height" type="xs:int" />
+      <xs:element minOccurs="0" name="insured" type="xs:int" />
       <xs:element minOccurs="0" name="length" type="xs:int" />
       <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="productType" type="xs:int" />

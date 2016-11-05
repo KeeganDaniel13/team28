@@ -17,6 +17,7 @@ namespace CiroWebsite
         protected void login(object sender, EventArgs e)
         {
             var server = new CiroService.Service1Client();
+            //try
             var user = server.login(new CiroService.jsonLoginUser { name = email.Value, password = pass.Value });
 
             if (user == null)

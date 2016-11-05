@@ -20,6 +20,7 @@ namespace CiroWebsite
             {
                 var item = Convert.ToInt32(Request.QueryString["add"]);
                 Session["declare"] = item;
+                Response.Redirect("dischargegoods.aspx");
             }
             try
             {
@@ -31,7 +32,7 @@ namespace CiroWebsite
                     {
                         //adding items to the inventory table
                         table += "<tr>";
-                        table += "<td  onclick='bingo(modal"+item.ID+")'>" + item.Name + "</td>" + "<td>" + item.quantity + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>";
+                        table += "<td  onclick='bingo(modal"+item.ID+")'>" + item.Name + "</td>" + "<td>" + item.quantity + "</td>" + "<td>" + item.arrivalDate + "</td>" + "<td>" + (item.expDate -item.arrivalDate).Days + " Days Left</td>" + "<td>";
                         table += "<td>";
                         table += "<ul class='list-inline'>";
                         table += "<li><a href='inventory.aspx?add=" + item.ID + "' type='button'  class='btn rounded btn-sm btn-danger' runat='server' onserverclick=''>Release</a></li>";

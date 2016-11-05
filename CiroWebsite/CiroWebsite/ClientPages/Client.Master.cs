@@ -12,8 +12,14 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user = Session["user"] as CiroService .JsonUser;
-            welcome.InnerHtml = user.fname + ", " + user.lname;
+            if (Session["user"] != null)
+            {
+                var user = Session["user"] as CiroService.JsonUser;
+                welcome.InnerHtml = user.fname + ", " + user.lname;
+                return;
+            }
+            Response.Redirect("../signin.aspx");
+            
         }
     }
 }

@@ -40,13 +40,13 @@ namespace CiroWebsite {
         protected global::System.Web.UI.HtmlControls.HtmlInputText productValue;
         
         /// <summary>
-        /// WarehouseName control.
+        /// select control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText WarehouseName;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect select;
         
         /// <summary>
         /// reason control.
@@ -56,6 +56,15 @@ namespace CiroWebsite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea reason;
+        
+        /// <summary>
+        /// WarehouseName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText WarehouseName;
         
         /// <summary>
         /// country control.

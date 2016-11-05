@@ -634,6 +634,18 @@ INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `locat
 
 
 
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('C5256', '1', '1', 'China');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('D4569', '4', '2', 'USA');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('CC785', '6', '3', 'UK');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('AD456', '9', '4', 'Korea');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('EE778', '4', '5', 'Australia');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('CD456', '1', '6', 'UK');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('C5256', '1', '7', 'USA');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('CC785', '6', '8', 'USA');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('EE778', '1', '9', 'China');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('C5256', '1', '10', 'China');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('CC785', '6', '11', 'USA');
+INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('AD456', '9', '12', 'UK');
 INSERT INTO `custommandb`.`billofentry` (`billofentry_id`, `billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`, `billofentry_invoice`) VALUES ('14', 'CC785', '2', '14', 'Korea', '14');
 INSERT INTO `custommandb`.`billofentry` (`billofentry_id`, `billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`, `billofentry_invoice`) VALUES ('15', 'AD456', '2', '15', 'Australia', '15');
 INSERT INTO `custommandb`.`billofentry` (`billofentry_id`, `billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`, `billofentry_invoice`) VALUES ('16', 'CC785', '2', '16', 'China', '16');
