@@ -18,52 +18,12 @@
 					<div class="app-actions-list scrollable-container">
 						<!-- mail category list -->
 						<div class="list-group">
-							<a href="wareMessages.aspx" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Inbox</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-bookmark"></i>Important</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-paper-plane"></i>Sent</a>
-							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-folder"></i>All Mail</a>
+							<a href="javascript:void(0)" class="text-color list-group-item"><i class="m-r-sm fa fa-envelope"></i>Inbox</a>
 							
 						</div><!-- .list-group -->
 
-						<hr class="m-0 m-b-md" style="border-color: #ddd;">
+						<hr class="m-0 m-b-md" style="border-color: #ddd;"/>
 
-						<!-- mail label list -->
-						<div class="list-group">
-							<h4>Labels</h4>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-warning"></i>
-								<span>Personal</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-primary"></i>
-								<span>Work</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-danger"></i>
-								<span>Business</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item">
-								<i class="m-r-sm fa fa-circle text-success"></i>
-								<span>Clients</span>
-								<div class="item-actions">
-									<i class="item-action fa fa-edit" data-toggle="modal" data-target="#labelModal"></i>
-									<i class="item-action fa fa-trash" data-toggle="modal" data-target="#deleteItemModal"></i>
-								</div>
-							</a>
-							<a href="#" class="list-group-item text-color" data-toggle="modal" data-target="#labelModal"><i class="fa fa-plus m-r-sm"></i> Add New Label</a>
-						</div><!-- .list-group -->
 					</div><!-- .app-actions-list -->
 				</div><!-- .app-action-panel -->
 			</div><!-- END column -->
@@ -85,7 +45,7 @@
 								<a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
 								<a href="#" class="btn btn-default"><i class="fa fa-exclamation-circle"></i></a>
 							</div>
-							<a href="#" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+							<a href="wareMessages.aspx" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 						</div>
 					</div>
 				</div><!-- END toolbar -->
@@ -117,9 +77,7 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-success"><i class="fa fa-save"></i></button>
-				<button type="button" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
+                <button type="button" runat="server" onserverclick="sendMail" data-dismiss="modal" class="btn btn-primary">Send <i class="fa fa-send"></i></button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->

@@ -33,7 +33,7 @@
                         <div class="form-inline" >
 						<div class="form-group " >
 							<label  for="exampleInputPassword3">Quantity</label><br />
-							<input type="text" class="form-control" runat="server" id="quantity" placeholder="Country Of Orgin" style="width: 300px;"/>
+							<input type="text" class="form-control" runat="server" id="quantity" placeholder="Quanti" style="width: 300px;"/>
                                                       
 						</div>
 						<div class="form-group ">
@@ -48,7 +48,7 @@
 							<input type="email" class="form-control" runat="server" id="Locationgoods" placeholder="Location of Goods" style="width: 300px;"/>
 						</div>
 						<div class="form-group ">
-							<label  for="exampleInputEmail3">Entry Number</label><br />
+							<label  for="exampleInputEmail3">Goods Destination</label><br />
 							<input type="email" class="form-control" runat="server" id="Destinationgoods" placeholder="Destination of Goods" style="width: 400px;"/>
 						</div>
 						</div>
@@ -58,8 +58,8 @@
 							<textarea name="control-demo-5" runat="server" id="desc" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
 							<div class="form-group ">
-							<label  for="exampleInputEmail3">Kind of Package</label><br />
-							<input type="text" class="form-control" runat="server" id="packagekind" placeholder="Type of Package" style="width: 400px;"/>
+							<label  for="exampleInputEmail3">Bill Of Entry</label><br />
+							<input type="text" class="form-control" runat="server" id="bill" placeholder="Type of Package" style="width: 400px;"/>
 						</div>
 						</div>
                         <div class="form-inline" >
@@ -67,11 +67,7 @@
 							<label  for="exampleInputEmail3">Reason for Transfer</label><br />
 							<textarea name="control-demo-5" runat="server" id="reasontrans" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
 						</div>
-                            <div class="form-group ">
-							<label  for="exampleInputEmail3">Addition Information</label><br />
-							<textarea name="control-demo-5" runat="server" id="additional" class="form-control" cols="30" rows="3" style="width: 300px;"></textarea>
-						</div>
-						</div>
+                      </div>
 					</form>
             <br />
              <ul class="list-inline ">

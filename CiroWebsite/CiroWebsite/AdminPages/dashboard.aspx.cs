@@ -22,20 +22,19 @@ namespace CiroWebsite
 
         protected void getOutstanding()
         {
-            //var service = new CiroService.Service1Client();
+            var service = new CiroService.Service1Client();
             double outstandingTax = 0.00;
-            //outstandingTax = service.getOutstandingTax();
+            outstandingTax = service.getOutstandingTax();
             Response.Write(outstandingTax);
         }
 
         protected void getAverageTax()
-        {
-            /*
+        {            
             var service = new CiroService.Service1Client();
             CiroService.JsonTax averageTax = service.getAverageTax();
             chargedVAT = averageTax.vat;
             chargedPenalty = averageTax.penalty;
-            chargedTotal = averageTax.total;*/
+            chargedTotal = averageTax.total;
         }
 
         protected void getVAT()
@@ -53,9 +52,8 @@ namespace CiroWebsite
             Response.Write(chargedTotal.ToString("#.##"));
         }
 
-        protected void getCountryP()
+        protected void getCountry()
         {
-            /*
             var service = new CiroService.Service1Client();
             List<CiroService.JsonCountryPercentage> cp = new List<CiroService.JsonCountryPercentage>();
             var countryP = service.getCountryP();
@@ -66,25 +64,65 @@ namespace CiroWebsite
 
             for (int i = 0; i < cp.Count(); i++)
             {
-                countryName += "'" + cp[i].name + "',";
+                countryName += "{name : '" + cp[i].name + "',value : " + cp[i].percentage + ".00},";
                 countryData += "'" + Math.Round(cp[i].percentage) + "',";
             }
 
             countryName = countryName.Remove(countryName.Length - 1);
             countryData = countryData.Remove(countryData.Length - 1);
-            MessageBox.Show(countryName);
-            MessageBox.Show(countryData);
-            */
         }
-
-        protected void getCountry()
+        //      {name : 'Saudi Arabia', value : 28397.812},
+        protected void getCountryName()
         {
+            getCountry();
             Response.Write(countryName);
         }
 
         protected void getData()
         {
             Response.Write(countryData);
+        }
+        protected void getsizeused()
+        {
+            var serve = new CiroService.Service1Client();
+            var warehouses = serve.WarehouseAvailabilityGraph();
+
+            string list = "";
+
+            foreach (CiroService.jsonWarehouseAvailabilty a in warehouses)
+            {
+                list += "'" + a.size + "',";
+            }
+            list = list.Remove(list.Length - 1);
+            Response.Write(list);
+        }
+        protected void getCapacity()
+        {
+            var serve = new CiroService.Service1Client();
+            var warehouses = serve.WarehouseAvailabilityGraph();
+
+            string list = "";
+
+            foreach (CiroService.jsonWarehouseAvailabilty a in warehouses)
+            {
+                list += "'" + a.capacity + "',";
+            }
+            list = list.Remove(list.Length - 1);
+            Response.Write(list);
+        }
+        protected void getwarehouses()
+        {
+            var serve = new CiroService.Service1Client();
+            var warehouses = serve.WarehouseAvailabilityGraph();
+
+            string list = "";
+
+            foreach (CiroService.jsonWarehouseAvailabilty a in warehouses)
+            {
+                list += "'" + a.warehouse + "',";
+            }
+            list = list.Remove(list.Length - 1);
+            Response.Write(list);
         }
     }
 }

@@ -44,6 +44,7 @@
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="height" type="xs:int" />
       <xs:element minOccurs="0" name="length" type="xs:int" />
+      <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="productType" type="xs:int" />
       <xs:element minOccurs="0" name="quantity" type="xs:int" />
       <xs:element minOccurs="0" name="size" type="xs:int" />
@@ -63,7 +64,9 @@
   <xs:complexType name="TransferDetails">
     <xs:sequence>
       <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dateIssued" type="xs:dateTime" />
       <xs:element minOccurs="0" name="destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="productid" type="xs:int" />
       <xs:element minOccurs="0" name="transferName" nillable="true" type="xs:string" />
@@ -259,15 +262,33 @@
       <xs:element minOccurs="0" name="lastChecked" type="xs:dateTime" />
       <xs:element minOccurs="0" name="owner" nillable="true" type="tns:JsonUser" />
       <xs:element minOccurs="0" name="ownerid" type="xs:int" />
+      <xs:element minOccurs="0" name="prodLocation" nillable="true" type="tns:jsonlocation" />
       <xs:element minOccurs="0" name="product" nillable="true" type="tns:JsonProducts" />
       <xs:element minOccurs="0" name="productID" type="xs:int" />
       <xs:element minOccurs="0" name="productType" type="xs:int" />
+      <xs:element minOccurs="0" name="productTypeName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="quantity" type="xs:int" />
       <xs:element minOccurs="0" name="size" type="xs:int" />
       <xs:element minOccurs="0" name="warehouseID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonInventory" nillable="true" type="tns:JsonInventory" />
+  <xs:complexType name="jsonlocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="col" type="xs:int" />
+      <xs:element minOccurs="0" name="height" type="xs:int" />
+      <xs:element minOccurs="0" name="isle" type="xs:int" />
+      <xs:element minOccurs="0" name="length" type="xs:int" />
+      <xs:element minOccurs="0" name="product" type="xs:int" />
+      <xs:element minOccurs="0" name="row" type="xs:int" />
+      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="size" type="xs:int" />
+      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
+      <xs:element minOccurs="0" name="width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="jsonlocation" nillable="true" type="tns:jsonlocation" />
   <xs:complexType name="ArrayOfJsonProductInfo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonProductInfo" nillable="true" type="tns:JsonProductInfo" />
@@ -332,22 +353,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="JsonMessage" nillable="true" type="tns:JsonMessage" />
-  <xs:complexType name="jsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="col" type="xs:int" />
-      <xs:element minOccurs="0" name="height" type="xs:int" />
-      <xs:element minOccurs="0" name="isle" type="xs:int" />
-      <xs:element minOccurs="0" name="length" type="xs:int" />
-      <xs:element minOccurs="0" name="product" type="xs:int" />
-      <xs:element minOccurs="0" name="row" type="xs:int" />
-      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
-      <xs:element minOccurs="0" name="width" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonlocation" nillable="true" type="tns:jsonlocation" />
   <xs:complexType name="ArrayOfjsonlocation">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonlocation" nillable="true" type="tns:jsonlocation" />
@@ -474,6 +479,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
+  <xs:complexType name="ArrayOfincidentsperisle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfincidentsperisle" nillable="true" type="tns:ArrayOfincidentsperisle" />
+  <xs:complexType name="incidentsperisle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="incidents" type="xs:int" />
+      <xs:element minOccurs="0" name="isle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
+  <xs:complexType name="ArrayOfReleasesPerMonth">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReleasesPerMonth" nillable="true" type="tns:ArrayOfReleasesPerMonth" />
+  <xs:complexType name="ReleasesPerMonth">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="releases" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
   <xs:complexType name="ArrayOfJsonCountryPercentage">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
@@ -507,6 +538,7 @@
       <xs:element minOccurs="0" name="invoiceTotal" type="xs:double" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productID" type="xs:int" />
       <xs:element minOccurs="0" name="requested" type="xs:dateTime" />
       <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
     </xs:sequence>

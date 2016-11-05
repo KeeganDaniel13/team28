@@ -37,11 +37,12 @@ namespace CiroWebsite
                 }
                 else if(user.usertypename.ToLower ().Equals("admin"))
                 {
-                    Response.Redirect("CustomsReports.aspx");
+                    //Response.Redirect("WarehousePages/warehousehome.aspx");
+                    Response.Redirect("AdminPages/adminhome.aspx");
                 }
-                else
+                else if(user.usertypename.ToLower().Equals("warehouse"))
                 {
-                    Response.Redirect("warehouseinventory.aspx");
+                    Response.Redirect("WarehousePages/warehousehome.aspx");
                 }
             }
         }

@@ -444,7 +444,7 @@ CHANGE COLUMN `transferrequest_to` `transferrequest_to` VARCHAR(255) NULL DEFAUL
 
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
-INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
+INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'warehouse');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('4', 'Admin');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('5', 'Warehouse Employee');
 

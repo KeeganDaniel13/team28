@@ -11,17 +11,17 @@
 						<h3 class="widget-title">Welcome Customs Official</h3>
 						<small class="text-color">Number of Goods Today</small>
 					</div>
-					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp">102</span>
+					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp"><%customsa();%></span>
 				</div><!-- .widget -->
 			</div>
 
 			<div class="col-md-6 col-sm-6">
 				<div class="widget p-md clearfix">
 					<div class="pull-left">
-						<h3 class="widget-title">Active Warehoused Goods</h3>
-						<small class="text-color">Loads / Temp Storage</small>
+						<h3 class="widget-title">Total Goods</h3>
+						<small class="text-color">Currently Stored</small>
 					</div>
-					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp">325</span>
+					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp"><%customsb();%></span>
 				</div><!-- .widget -->
 			</div>
     </div>
@@ -103,7 +103,7 @@
 							<div class="sl-item sl-primary">
 								<div class="sl-content">
 									<small class="text-muted">23 mins ago</small>
-									<p>John has just started working on the project</p>
+									<p></p>
 								</div>
 							</div><!-- .sl-item -->
 

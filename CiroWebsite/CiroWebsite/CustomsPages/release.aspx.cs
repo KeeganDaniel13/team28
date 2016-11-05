@@ -27,7 +27,7 @@ namespace CiroWebsite
                     body += "<div class='widget-body text-center'>";
                     body += "<div class='big-icon m-b-md watermark'><i class='fa fa-5x fa-exclamation-circle'></i></div>";
                     body += "<h4 class='m-b-md'>" + request.userInfo.email + "</h4>";
-                    body += "<p class='text-muted m-b-lg'>" + request.productInfo.name + "<br/>" + request.productInfo.bill + "<br/>" + request.productInfo.arrivalDate + "</p><a class='btn p-v-xl btn-info btn-xs btn-outline' href='viewreleaseinfo.aspx?info=" + request.product_id + "'>View Request</a></div>";
+                    body += "<p class='text-muted m-b-lg'>" + request.productInfo.name + "<br/>" + request.productInfo.bill + "<br/>" + request.productInfo.arrivalDate + "</p><a class='btn p-v-xl btn-info btn-xs btn-outline' href='viewreleaseinfo2.aspx?info=" + request.product_id + "'>View Request</a></div>";
                     body += "</div>";
                     body += "</div>";
                 }

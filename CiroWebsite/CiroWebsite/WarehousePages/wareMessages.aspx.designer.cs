@@ -31,12 +31,21 @@ namespace CiroWebsite {
         protected global::System.Web.UI.HtmlControls.HtmlInputText to;
         
         /// <summary>
-        /// message control.
+        /// subject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea message;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText subject;
+        
+        /// <summary>
+        /// body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea body;
     }
 }

@@ -29,7 +29,7 @@
 <aside id="app-aside" class="app-aside left light">
 	<header class="aside-header">
 		<div class="animated">
-			<a href="http://envato.rathemes.com/infinity/index.html" id="app-brand" class="app-brand">
+			<a href="../index.aspx" id="app-brand" class="app-brand">
 				<span id="brand-icon" class="brand-icon"><i class="fa fa-gg"></i></span>
 				<span id="brand-name" class="brand-icon foldable">CIRO</span>
 			</a>
@@ -46,19 +46,19 @@
 			</div>
 			<div class="media-body">
 				<div class="foldable">
-					<h5><a href="javascript:void(0)" runat="server" id="name" class="username">John Doe</a></h5>
+					<h5><a href="javascript:void(0)" runat="server" id="name" class="username"></a></h5>
 					<ul>
 						<li class="dropdown">
 							<a href="javascript:void(0)" class="dropdown-toggle usertitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<small id="title" runat="server">System Admin</small>
+								<small id="title" runat="server"></small>
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu animated flipInY">
 								<li>
-									<a class="text-color" href="signin.aspx">
+									<button runat="server" onserverclick="signout" role="button">
 										<span class="m-r-xs"><i class="fa fa-power-off"></i></span>
 										<span>Sign out</span>
-									</a>
+									</button>
 								</li>
 							</ul>
 						</li>
@@ -82,7 +82,7 @@
 				</li><!-- .menu-item -->
 				
 				<li class="menu-item has-submenu">
-					<a href="users.aspx" class="menu-link">
+					<a href="warehousetransfers.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-user zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Transfers(transfer page)</span>
 						
@@ -102,27 +102,25 @@
 				<li class="menu-item has-submenu">
 					<a href="wareMessages.aspx" class="menu-link">
 						<span class="menu-icon"><i class="fa fa-envelope zmdi-hc-lg"></i></span>
-						<span class="menu-text foldable">Messges</span>
+						<span class="menu-text foldable">Messages</span>
 					</a>
 					
-				</li><!-- .menu-item -->
-				
-
-				<li class="menu-item has-submenu">
-					<a href="Warehouse Reports.aspx" class="menu-link">
+				</li><!-- .menu-item -->	
+                <li class="menu-item has-submenu">
+					<a href="javascript:void(0)" class="menu-link submenu-toggle">
 						<span class="menu-icon"><i class="fa fa-pie-chart zmdi-hc-lg"></i></span>
 						<span class="menu-text foldable">Reports</span>
 						<span class="menu-caret foldable"><i class="zmdi zmdi-hc-sm zmdi-chevron-right"></i></span>
 					</a>
 					<ul class="submenu">
-						<li><a href="">Report 1</a></li>
-						<li><a href="">Report 2</a></li>
-						<li><a href="">Report 3</a></li>
-						<li><a href="">Report 4</a></li>
-						<li><a href="">Report 5</a></li>
-						<li><a href="">Report 6</a></li>
-						<li><a href="">Report 7</a></li>
-					</ul>
+                        <li><a href="CommonHeight.aspx">Most Common Height</a></li>
+                   <li>     <a href="CommonLength.aspx">Most Common Length</a></li>
+                        <li><a href="Commonwidth.aspx">Most Common Width</a></li>
+                       <li> <a href="IvsOpermonth.aspx">Incoming vs Outgoing Items</a></li>
+                       <li> <a href="MostCommonIsleIncidents.aspx">Most Common Incident Isle</a></li>
+                      <li>  <a href="PackagesReceivedPastYear.aspx">Packages Received Past Year</a></li>
+                     <li>   <a href="PackagesReleasedPerMonth.aspx">Packages Released Per Month</a></li>
+					</ul>                   
 				</li><!-- .menu-item -->
 			<hr/>
 		</div><!-- .aside-scroll-inner -->
@@ -146,99 +144,7 @@
 		<h5 id="page-title" class="visible-md-inline-block visible-lg-inline-block m-l-md">Dashboard</h5>
 	</div>
 
-	<div>
-		<ul id="top-nav" class="pull-right">
-			<li class="nav-item dropdown">
-				<a href="javascript:void(0)" id="navbar-search-open" class="navbar-search-open">
-					<i class="zmdi zmdi-hc-lg zmdi-search"></i>
-				</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
-				<div class="media-group dropdown-menu animated flipInY">
-					<a href="javascript:void(0)" class="media-group-item">
-						<div class="media">
-							<div class="media-left">
-								<div class="avatar avatar-xs avatar-circle">
-									<img src="../assets/images/221.jpg" alt="">
-									<i class="status status-online"></i>
-								</div>
-							</div>
-							<div class="media-body">
-								<h5 class="media-heading">John Doe</h5>
-								<small class="media-meta">Active now</small>
-							</div>
-						</div>
-					</a><!-- .media-group-item -->
 
-					<a href="javascript:void(0)" class="media-group-item">
-						<div class="media">
-							<div class="media-left">
-								<div class="avatar avatar-xs avatar-circle">
-									<img src="../assets/images/205.jpg" alt="">
-									<i class="status status-offline"></i>
-								</div>
-							</div>
-							<div class="media-body">
-								<h5 class="media-heading">John Doe</h5>
-								<small class="media-meta">2 hours ago</small>
-							</div>
-						</div>
-					</a><!-- .media-group-item -->
-
-					<a href="javascript:void(0)" class="media-group-item">
-						<div class="media">
-							<div class="media-left">
-								<div class="avatar avatar-xs avatar-circle">
-									<img src="../assets/images/207.jpg" alt="">
-									<i class="status status-away"></i>
-								</div>
-							</div>
-							<div class="media-body">
-								<h5 class="media-heading">Sara Smith</h5>
-								<small class="media-meta">idle 5 min ago</small>
-							</div>
-						</div>
-					</a><!-- .media-group-item -->
-
-					<a href="javascript:void(0)" class="media-group-item">
-						<div class="media">
-							<div class="media-left">
-								<div class="avatar avatar-xs avatar-circle">
-									<img src="../assets/images/211.jpg" alt="">
-									<i class="status status-away"></i>
-								</div>
-							</div>
-							<div class="media-body">
-								<h5 class="media-heading">Donia Dyab</h5>
-								<small class="media-meta">idle 5 min ago</small>
-							</div>
-						</div>
-					</a><!-- .media-group-item -->
-				</div>
-			</li>
-			<li class="nav-item dropdown">
-				<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-settings"></i></a>
-				<ul class="dropdown-menu animated flipInY">
-					<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-account-box"></i>My Profile</a></li>
-					<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-balance-wallet"></i>Balance</a></li>
-					<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-phone-msg"></i>Connection<span class="label _bgtext-primary">3</span></a></li>
-					<li><a href="javascript:void(0)"><i class="zmdi m-r-md zmdi-hc-lg zmdi-info"></i>privacy</a></li>
-				</ul>
-			</li>
-         </ul>
-	</div>
-
-	<!-- navbar search -->
-	<div id="navbar-search" class="navbar-search">
-		<form action="#">
-			<span class="search-icon"><i class="fa fa-search"></i></span>
-			<input class="search-field" type="search" placeholder="search..."/>
-		</form>
-		<button id="search-close" class="search-close">
-			<i class="fa fa-close"></i>
-		</button>
-	</div><!-- END navbar search -->
 </nav>
 <!--========== END app navbar -->
 

@@ -11,7 +11,7 @@ namespace CiroService.JsonObjects
         public string Name { get; set; }
         public decimal value   { get; set; }
         public int userID { get; set; }
-        public int productType { set;get; }
+        public int productType { set; get; }
         public int quantity { get; set; }
         public int size { get; set; }
         public DateTime arrivalDate { get; set; }
@@ -20,6 +20,7 @@ namespace CiroService.JsonObjects
         public string bill{ get; set; }
         public string description { get; set; }
 
+        public string origin { get; set; }
 
         public int height { set; get; }
         public int length { get; set; }

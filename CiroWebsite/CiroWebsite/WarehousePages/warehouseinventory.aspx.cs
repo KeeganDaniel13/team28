@@ -14,21 +14,36 @@ namespace CiroWebsite
             var user = (CiroService.JsonUser)Session["user"];
             var goods = CiroSingleton.ServerCalls.getWarehouseInventory(new CiroService.JsonWarehouse { id = user.warehouseID});
             var body = "";
-            foreach (var stock in goods)
+            if (goods != null)
             {
-                body += "<tr>";
-                body += "<td class='p-name'>";
-                body += "<a href=''>" + stock.product.name + "</a>";
-                body += "</td>";
-                body += "<td>" + stock.owner.email + "</td>";
-                body += "<td>type ?</td>";
-                body += "<td><span class='label label-success'>3</span><i>Variants</i></td>";
-                body += "<td><span class='label label-primary'>Active</span></td>";
-                body += "<td><small>" + stock.lastChecked + "</small></td>";
-                body += "<td>";
-                body += "<a href='project_details.html' class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a><a href='#' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit</a>";
-                body += "</td>";
-                body += "</tr>";
+                foreach (var stock in goods)
+                {
+                    body += "<tr>";
+                    body += "<td class='p-name'>";
+                    body += "<a href='../ClientPages/productlog.aspx?id=" + stock.productID + "'>" + stock.product.name + "</a>";
+                    body += "</td>";
+                    body += "<td>" + stock.owner.email + "</td>";
+                    body += "<td>" + stock.productTypeName + "</td>";
+                    if(stock.prodLocation.isle == 0 && stock.prodLocation.row == 0 && stock.prodLocation.col == 0)
+                    {
+                        body += "<td>Good not stored yet</td>";
+                        body += "<td>Good not stored yet</td>";
+                        body += "<td>Good not stored yet</td>";
+                    }
+                    else
+                    {
+                        body += "<td>" + stock.prodLocation.isle + "</td>";
+                        body += "<td>" + stock.prodLocation.row + "</td>";
+                        body += "<td>" + stock.prodLocation.col + "</td>";
+                    }
+                    body += "<td><span class='label label-primary'>Active</span></td>";
+                    body += "<td><small>" + stock.lastChecked + "</small></td>";
+                    body += "</tr>";
+                }
+            }
+            else
+            {
+                body += "<tr><td>No Data to Show.</td></tr>";
             }
             warehouseStock.InnerHtml = body;
         }

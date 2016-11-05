@@ -138,7 +138,7 @@
 										
 										</div>
 									</div>
-								</a><!-- .media-group-item -->
+								</a><!-- .media-group-item >
                                 <a href="ClientMessages.aspx" class="media-group-item">
 									<div class="media">
 									
@@ -179,7 +179,7 @@
                 </div> 
                 <div class="col-md-6  ar lpad " style="background:white;">
                   Welcome,
-                  <a href="#">Robin Brons</a>
+                  <a href="#" id="welcome" runat="server">Robin Brons</a>
                 </div>
      
        </aside>

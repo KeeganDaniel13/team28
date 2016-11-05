@@ -11,7 +11,7 @@ namespace CiroWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             var declare = Convert.ToInt32(Session["declare"]);
             var server = new CiroService.Service1Client();
             string body = "";
@@ -42,6 +42,7 @@ namespace CiroWebsite
                 Session["declare"] = null;
                 CiroSingleton.ServerCalls.payTax(new CiroService.JsonInvoice { id = invoice.id,paid = invoice .penalty +invoice.vat  });
                 CiroSingleton.ServerCalls.releaseRequest(new CiroService.JsonUser { id = user.id }, new CiroService.jsonProduct { ID = list }, "");
+                Response.Redirect("inventory.aspx");
             }
             catch (Exception ) { }
 
