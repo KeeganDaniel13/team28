@@ -2416,7 +2416,24 @@ namespace CiroService
 
             int count = 0;
             int r = 0;
-
+            
+            for(int i = 0; i < isleCount; i++)
+            {
+                if(i % 10 == 0)
+                {
+                    count++;
+                }
+                if (locationExists[i].location_row == i - 1)
+                {
+                    locationExists[i].location_section = section[count - 1].ToString();
+                    locationAccess.updateRecord(locationExists[i].location_id, locationExists[i]);
+                }
+                else
+                {
+                    locationExists[i].location_section = section[count].ToString();
+                    locationAccess.updateRecord(locationExists[i].location_id, locationExists[i]);
+                }
+            }
             return "Section Updated";
         }
 
