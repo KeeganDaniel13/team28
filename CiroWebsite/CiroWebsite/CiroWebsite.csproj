@@ -48,6 +48,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -105,6 +109,7 @@
     <Content Include="CustomsPages\release.aspx" />
     <Content Include="CustomsPages\tempreports.aspx" />
     <Content Include="CustomsPages\viewreleaseinfo.aspx" />
+    <Content Include="CustomsPages\viewreleaseinfo2.aspx" />
     <Content Include="CustomsPages\viewtransfer.aspx" />
     <Content Include="CustomsPages\warehouseoverview.aspx" />
     <Content Include="CustomsPages\warehouseview.aspx" />
@@ -527,7 +532,6 @@
     <Content Include="signup.aspx" />
     <Content Include="CustomsPages\transfers.aspx" />
     <Content Include="viewpackage.aspx" />
-    <Content Include="WarehousePages\Warehouse Reports.aspx" />
     <Content Include="WarehousePages\warehousehome.aspx" />
     <Content Include="WarehousePages\warehouseinventory.aspx" />
     <Content Include="WarehousePages\warehouseinvoices.aspx" />
@@ -536,7 +540,9 @@
     <Content Include="WarehousePages\warehousevariants.aspx" />
     <Content Include="WarehousePages\wareMessage.aspx" />
     <Content Include="WarehousePages\wareMessages.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPages\addofficial.aspx.cs">
@@ -807,6 +813,13 @@
     <Compile Include="CustomsPages\transfers.aspx.designer.cs">
       <DependentUpon>transfers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomsPages\viewreleaseinfo2.aspx.cs">
+      <DependentUpon>viewreleaseinfo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomsPages\viewreleaseinfo2.aspx.designer.cs">
+      <DependentUpon>viewreleaseinfo2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomsPages\viewtransfer.aspx.cs">
       <DependentUpon>viewtransfer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -882,6 +895,9 @@
     </Compile>
     <Compile Include="viewpackage.aspx.designer.cs">
       <DependentUpon>viewpackage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomsPages\viewreleaseinfo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WarehousePages\CommonHeight.aspx.cs">
       <DependentUpon>CommonHeight.aspx</DependentUpon>

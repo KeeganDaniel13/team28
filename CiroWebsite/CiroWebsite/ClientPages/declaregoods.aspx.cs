@@ -19,20 +19,16 @@ namespace CiroWebsite
             List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
             if (Request.QueryString["id"] != null)
             {
-                remove(Request.QueryString["id"]);
                
-                if (declared != null)
+               /* if (declared != null)
                 {
-                    declaredItems = null;
                     declaredItems = new List<CiroService.jsonProduct>();
                     foreach (CiroService.jsonProduct item in declared)
                     {
                         declaredItems.Add(item);
                     }
-                }
+                }*/
             }
-
-            //List<CiroService.jsonProduct> declared = Session["declared"] as List<CiroService.jsonProduct>;
             if (declared != null)
             {
                 declaredItems = null;
@@ -47,7 +43,12 @@ namespace CiroWebsite
         protected void SaveItem(object sender, EventArgs e)
         {
             var user = (CiroService.JsonUser)Session["user"];
-            declaredItems.Add(new CiroService.jsonProduct { userID = user.id , Name = productName.Value, value = Convert.ToDecimal(productValue.Value), transferLocation = WarehouseName.Value, ID = declaredItems.Count() + 1, size = 1, quantity = Convert.ToInt32(quantity .Value ) });
+            int insure = 0;
+            if(select.Value .ToLower()=="yes")
+            {
+                insure = 1;
+            }
+            declaredItems.Add(new CiroService.jsonProduct { userID = user.id ,Name = productName.Value, value = Convert.ToDecimal(productValue.Value), transferLocation = WarehouseName.Value, ID = declaredItems.Count() + 1, size = 1, quantity = Convert.ToInt32(quantity .Value ),insured =insure,description=reason.Value });
             Session["declared"] = declaredItems;
             WarehouseName.Value = "";
             productValue.Value = "";
@@ -64,12 +65,6 @@ namespace CiroWebsite
                 count++;
             }
             Response.Write(table);
-        }
-
-        protected void remove(string id)
-        {
-            
-            //Response.Redirect("declaregoods.aspx");
         }
 
         protected void ListWarehouses()
@@ -109,7 +104,8 @@ namespace CiroWebsite
 
             }
             server.stockAdd(country.Value, items);
-            declaredItems.Clear();
+            declaredItems = null;
+            Response.Redirect("inventory.aspx");
         }
     }
 }

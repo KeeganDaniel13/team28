@@ -38,7 +38,24 @@
 									<input type="text" runat="server" class="form-control" id="productValue" placeholder="Product Value"/>
 								</div>
 							</div>
-                              <br/>
+                              <br />
+                               <div class="form-group">
+                                <label for="insuredBox" class="col-sm-3 control-label">Insured</label>
+								<div class="col-sm-9">
+                                    <select  type="text" runat="server" class="form-control" id="select" placeholder="">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+								</div> 
+                              </div>
+                              <br />
+                                <div class="form-group">
+                                <label for="reasonInput" class="col-sm-3 control-label">Importation Reason</label>
+								<div class="col-sm-9">
+									<textarea id="reason" class="form-control" runat="server" rows="3" cols="50"></textarea>
+								</div> 
+                              </div>
+                              <br/><br /><br />
 							<div class="form-group">
 								<label for="Warehouse" class="col-sm-3 control-label">Select Warehouse</label>
 						<div class="col-sm-9"">
@@ -46,21 +63,11 @@
                                    <input type="text" runat="server" class="form-control" id="WarehouseName" placeholder="Warehouse"/></a>
 					        </div> 
 							</div>
-                            <!--<div>
-                                <label for="insuredBox" class="col-sm-3 control-label">Is The Product Insured</label>
-								<div class="col-sm-9">
-								</div> 
-                              </div>	
-                              <div>
-                                <label for="reasonInput" class="col-sm-3 control-label">Reason For Importation</label>
-								<div class="col-sm-9">
-									<textarea id="reason" runat="server" rows="4" cols="50"></textarea>
-								</div> 
+                          <br/>
+                              <div class="form-group">
+                                  <button type="submit"  class="form-label col-sm-3  btn btn-primary btn-xs btn-outline" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Add Package</button>
                               </div>
-                                  <br /><br /><br /><br />--><br /><br /><br /><br />   
-
-							<button type="submit"  class="btn btn-primary btn-xs btn-outline" onserverclick="SaveItem" runat="server" style="margin-left:-23%">Add Package</button>
-                              
+                                          
 						</form>						
 					</div>
 			

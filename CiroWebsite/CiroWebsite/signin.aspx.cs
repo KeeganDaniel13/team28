@@ -17,6 +17,7 @@ namespace CiroWebsite
         protected void login(object sender, EventArgs e)
         {
             var server = new CiroService.Service1Client();
+            //try
             var user = server.login(new CiroService.jsonLoginUser { name = email.Value, password = pass.Value });
 
             if (user == null)
@@ -37,11 +38,12 @@ namespace CiroWebsite
                 }
                 else if(user.usertypename.ToLower ().Equals("admin"))
                 {
+                    //Response.Redirect("WarehousePages/warehousehome.aspx");
                     Response.Redirect("AdminPages/adminhome.aspx");
                 }
-                else
+                else if(user.usertypename.ToLower().Equals("warehouse"))
                 {
-                    Response.Redirect("WarehousePages/warehouseinventory.aspx");
+                    Response.Redirect("WarehousePages/warehousehome.aspx");
                 }
             }
         }

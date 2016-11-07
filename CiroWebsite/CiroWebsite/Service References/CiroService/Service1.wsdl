@@ -7,132 +7,6 @@
       <xsd:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_PackageLengthCategories_InputMessage">
-    <wsdl:part name="parameters" element="tns:PackageLengthCategories" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackageLengthCategories_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PackageLengthCategoriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackageHeightCategories_InputMessage">
-    <wsdl:part name="parameters" element="tns:PackageHeightCategories" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackageHeightCategories_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PackageHeightCategoriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackagewidthCategories_InputMessage">
-    <wsdl:part name="parameters" element="tns:PackagewidthCategories" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackagewidthCategories_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PackagewidthCategoriesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_WarehouseIncidents_InputMessage">
-    <wsdl:part name="parameters" element="tns:WarehouseIncidents" />
-  </wsdl:message>
-  <wsdl:message name="IService1_WarehouseIncidents_OutputMessage">
-    <wsdl:part name="parameters" element="tns:WarehouseIncidentsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_WarehouseReleases_InputMessage">
-    <wsdl:part name="parameters" element="tns:WarehouseReleases" />
-  </wsdl:message>
-  <wsdl:message name="IService1_WarehouseReleases_OutputMessage">
-    <wsdl:part name="parameters" element="tns:WarehouseReleasesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackagesPerMonth_InputMessage">
-    <wsdl:part name="parameters" element="tns:PackagesPerMonth" />
-  </wsdl:message>
-  <wsdl:message name="IService1_PackagesPerMonth_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PackagesPerMonthResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IncidentsLastMonth_InputMessage">
-    <wsdl:part name="parameters" element="tns:IncidentsLastMonth" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IncidentsLastMonth_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IncidentsLastMonthResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageRates_InputMessage">
-    <wsdl:part name="parameters" element="tns:StorageRates" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageRates_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StorageRatesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageRate_InputMessage">
-    <wsdl:part name="parameters" element="tns:StorageRate" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageRate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StorageRateResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageFilledBy_InputMessage">
-    <wsdl:part name="parameters" element="tns:StorageFilledBy" />
-  </wsdl:message>
-  <wsdl:message name="IService1_StorageFilledBy_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StorageFilledByResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IncidentsPerIsle_InputMessage">
-    <wsdl:part name="parameters" element="tns:IncidentsPerIsle" />
-  </wsdl:message>
-  <wsdl:message name="IService1_IncidentsPerIsle_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IncidentsPerIsleResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_releasespermonth_InputMessage">
-    <wsdl:part name="parameters" element="tns:releasespermonth" />
-  </wsdl:message>
-  <wsdl:message name="IService1_releasespermonth_OutputMessage">
-    <wsdl:part name="parameters" element="tns:releasespermonthResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getCountryP_InputMessage">
-    <wsdl:part name="parameters" element="tns:getCountryP" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getCountryP_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getCountryPResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getOutstandingTax_InputMessage">
-    <wsdl:part name="parameters" element="tns:getOutstandingTax" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getOutstandingTax_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getOutstandingTaxResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getAverageTax_InputMessage">
-    <wsdl:part name="parameters" element="tns:getAverageTax" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getAverageTax_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getAverageTaxResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_customsdasha_InputMessage">
-    <wsdl:part name="parameters" element="tns:customsdasha" />
-  </wsdl:message>
-  <wsdl:message name="IService1_customsdasha_OutputMessage">
-    <wsdl:part name="parameters" element="tns:customsdashaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_customsdashb_InputMessage">
-    <wsdl:part name="parameters" element="tns:customsdashb" />
-  </wsdl:message>
-  <wsdl:message name="IService1_customsdashb_OutputMessage">
-    <wsdl:part name="parameters" element="tns:customsdashbResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_releaseWareHouse_InputMessage">
-    <wsdl:part name="parameters" element="tns:releaseWareHouse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_releaseWareHouse_OutputMessage">
-    <wsdl:part name="parameters" element="tns:releaseWareHouseResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_transferWareHouse_InputMessage">
-    <wsdl:part name="parameters" element="tns:transferWareHouse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_transferWareHouse_OutputMessage">
-    <wsdl:part name="parameters" element="tns:transferWareHouseResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_addTask_InputMessage">
-    <wsdl:part name="parameters" element="tns:addTask" />
-  </wsdl:message>
-  <wsdl:message name="IService1_addTask_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addTaskResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getTasks_InputMessage">
-    <wsdl:part name="parameters" element="tns:getTasks" />
-  </wsdl:message>
-  <wsdl:message name="IService1_getTasks_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getTasksResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_completeTask_InputMessage">
     <wsdl:part name="parameters" element="tns:completeTask" />
   </wsdl:message>
@@ -547,91 +421,133 @@
   <wsdl:message name="IService1_WarehouseAvailabilityGraph_OutputMessage">
     <wsdl:part name="parameters" element="tns:WarehouseAvailabilityGraphResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_PackageLengthCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackageLengthCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackageLengthCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackageLengthCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackageHeightCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackageHeightCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackageHeightCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackageHeightCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackagewidthCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackagewidthCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackagewidthCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackagewidthCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WarehouseIncidents_InputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseIncidents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WarehouseIncidents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseIncidentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WarehouseReleases_InputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseReleases" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WarehouseReleases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WarehouseReleasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackagesPerMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackagesPerMonth" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PackagesPerMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackagesPerMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncidentsLastMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncidentsLastMonth" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncidentsLastMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncidentsLastMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRates" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageFilledBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorageFilledBy" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StorageFilledBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorageFilledByResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncidentsPerIsle_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncidentsPerIsle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IncidentsPerIsle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncidentsPerIsleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releasespermonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:releasespermonth" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releasespermonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:releasespermonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getCountryP_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCountryP" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getCountryP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCountryPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOutstandingTax_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOutstandingTax" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getOutstandingTax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOutstandingTaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAverageTax_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAverageTax" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAverageTax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAverageTaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_customsdasha_InputMessage">
+    <wsdl:part name="parameters" element="tns:customsdasha" />
+  </wsdl:message>
+  <wsdl:message name="IService1_customsdasha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:customsdashaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_customsdashb_InputMessage">
+    <wsdl:part name="parameters" element="tns:customsdashb" />
+  </wsdl:message>
+  <wsdl:message name="IService1_customsdashb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:customsdashbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releaseWareHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:releaseWareHouse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_releaseWareHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:releaseWareHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transferWareHouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:transferWareHouse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_transferWareHouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:transferWareHouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTask" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTasks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTasksResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="PackageLengthCategories">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageLengthCategories" message="tns:IService1_PackageLengthCategories_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageLengthCategoriesResponse" message="tns:IService1_PackageLengthCategories_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PackageHeightCategories">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageHeightCategories" message="tns:IService1_PackageHeightCategories_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageHeightCategoriesResponse" message="tns:IService1_PackageHeightCategories_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PackagewidthCategories">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackagewidthCategories" message="tns:IService1_PackagewidthCategories_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackagewidthCategoriesResponse" message="tns:IService1_PackagewidthCategories_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="WarehouseIncidents">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseIncidents" message="tns:IService1_WarehouseIncidents_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseIncidentsResponse" message="tns:IService1_WarehouseIncidents_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="WarehouseReleases">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseReleases" message="tns:IService1_WarehouseReleases_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseReleasesResponse" message="tns:IService1_WarehouseReleases_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PackagesPerMonth">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackagesPerMonth" message="tns:IService1_PackagesPerMonth_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackagesPerMonthResponse" message="tns:IService1_PackagesPerMonth_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="IncidentsLastMonth">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonth" message="tns:IService1_IncidentsLastMonth_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonthResponse" message="tns:IService1_IncidentsLastMonth_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StorageRates">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRates" message="tns:IService1_StorageRates_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRatesResponse" message="tns:IService1_StorageRates_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StorageRate">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRate" message="tns:IService1_StorageRate_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRateResponse" message="tns:IService1_StorageRate_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="StorageFilledBy">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageFilledBy" message="tns:IService1_StorageFilledBy_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageFilledByResponse" message="tns:IService1_StorageFilledBy_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="IncidentsPerIsle">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsPerIsle" message="tns:IService1_IncidentsPerIsle_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsPerIsleResponse" message="tns:IService1_IncidentsPerIsle_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="releasespermonth">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/releasespermonth" message="tns:IService1_releasespermonth_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/releasespermonthResponse" message="tns:IService1_releasespermonth_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getCountryP">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCountryP" message="tns:IService1_getCountryP_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCountryPResponse" message="tns:IService1_getCountryP_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getOutstandingTax">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getOutstandingTax" message="tns:IService1_getOutstandingTax_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getOutstandingTaxResponse" message="tns:IService1_getOutstandingTax_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getAverageTax">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAverageTax" message="tns:IService1_getAverageTax_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAverageTaxResponse" message="tns:IService1_getAverageTax_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="customsdasha">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/customsdasha" message="tns:IService1_customsdasha_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/customsdashaResponse" message="tns:IService1_customsdasha_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="customsdashb">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/customsdashb" message="tns:IService1_customsdashb_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/customsdashbResponse" message="tns:IService1_customsdashb_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="releaseWareHouse">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/releaseWareHouse" message="tns:IService1_releaseWareHouse_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/releaseWareHouseResponse" message="tns:IService1_releaseWareHouse_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="transferWareHouse">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/transferWareHouse" message="tns:IService1_transferWareHouse_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/transferWareHouseResponse" message="tns:IService1_transferWareHouse_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="addTask">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addTask" message="tns:IService1_addTask_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addTaskResponse" message="tns:IService1_addTask_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="getTasks">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTasks" message="tns:IService1_getTasks_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTasksResponse" message="tns:IService1_getTasks_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="completeTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/completeTask" message="tns:IService1_completeTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/completeTaskResponse" message="tns:IService1_completeTask_OutputMessage" />
@@ -908,198 +824,93 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseAvailabilityGraph" message="tns:IService1_WarehouseAvailabilityGraph_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseAvailabilityGraphResponse" message="tns:IService1_WarehouseAvailabilityGraph_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="PackageLengthCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageLengthCategories" message="tns:IService1_PackageLengthCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageLengthCategoriesResponse" message="tns:IService1_PackageLengthCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PackageHeightCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackageHeightCategories" message="tns:IService1_PackageHeightCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackageHeightCategoriesResponse" message="tns:IService1_PackageHeightCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PackagewidthCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackagewidthCategories" message="tns:IService1_PackagewidthCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackagewidthCategoriesResponse" message="tns:IService1_PackagewidthCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseIncidents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseIncidents" message="tns:IService1_WarehouseIncidents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseIncidentsResponse" message="tns:IService1_WarehouseIncidents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseReleases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WarehouseReleases" message="tns:IService1_WarehouseReleases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WarehouseReleasesResponse" message="tns:IService1_WarehouseReleases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PackagesPerMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PackagesPerMonth" message="tns:IService1_PackagesPerMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PackagesPerMonthResponse" message="tns:IService1_PackagesPerMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncidentsLastMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonth" message="tns:IService1_IncidentsLastMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsLastMonthResponse" message="tns:IService1_IncidentsLastMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRates" message="tns:IService1_StorageRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRatesResponse" message="tns:IService1_StorageRates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageRate" message="tns:IService1_StorageRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageRateResponse" message="tns:IService1_StorageRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StorageFilledBy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StorageFilledBy" message="tns:IService1_StorageFilledBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StorageFilledByResponse" message="tns:IService1_StorageFilledBy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncidentsPerIsle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IncidentsPerIsle" message="tns:IService1_IncidentsPerIsle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IncidentsPerIsleResponse" message="tns:IService1_IncidentsPerIsle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="releasespermonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/releasespermonth" message="tns:IService1_releasespermonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/releasespermonthResponse" message="tns:IService1_releasespermonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCountryP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCountryP" message="tns:IService1_getCountryP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCountryPResponse" message="tns:IService1_getCountryP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOutstandingTax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getOutstandingTax" message="tns:IService1_getOutstandingTax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getOutstandingTaxResponse" message="tns:IService1_getOutstandingTax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAverageTax">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAverageTax" message="tns:IService1_getAverageTax_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAverageTaxResponse" message="tns:IService1_getAverageTax_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="customsdasha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/customsdasha" message="tns:IService1_customsdasha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/customsdashaResponse" message="tns:IService1_customsdasha_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="customsdashb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/customsdashb" message="tns:IService1_customsdashb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/customsdashbResponse" message="tns:IService1_customsdashb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseWareHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/releaseWareHouse" message="tns:IService1_releaseWareHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/releaseWareHouseResponse" message="tns:IService1_releaseWareHouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="transferWareHouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/transferWareHouse" message="tns:IService1_transferWareHouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/transferWareHouseResponse" message="tns:IService1_transferWareHouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addTask" message="tns:IService1_addTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addTaskResponse" message="tns:IService1_addTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTasks" message="tns:IService1_getTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTasksResponse" message="tns:IService1_getTasks_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SOAPEndPoint" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="PackageLengthCategories">
-      <soap:operation soapAction="http://tempuri.org/IService1/PackageLengthCategories" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PackageHeightCategories">
-      <soap:operation soapAction="http://tempuri.org/IService1/PackageHeightCategories" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PackagewidthCategories">
-      <soap:operation soapAction="http://tempuri.org/IService1/PackagewidthCategories" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WarehouseIncidents">
-      <soap:operation soapAction="http://tempuri.org/IService1/WarehouseIncidents" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WarehouseReleases">
-      <soap:operation soapAction="http://tempuri.org/IService1/WarehouseReleases" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PackagesPerMonth">
-      <soap:operation soapAction="http://tempuri.org/IService1/PackagesPerMonth" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IncidentsLastMonth">
-      <soap:operation soapAction="http://tempuri.org/IService1/IncidentsLastMonth" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StorageRates">
-      <soap:operation soapAction="http://tempuri.org/IService1/StorageRates" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StorageRate">
-      <soap:operation soapAction="http://tempuri.org/IService1/StorageRate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="StorageFilledBy">
-      <soap:operation soapAction="http://tempuri.org/IService1/StorageFilledBy" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IncidentsPerIsle">
-      <soap:operation soapAction="http://tempuri.org/IService1/IncidentsPerIsle" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="releasespermonth">
-      <soap:operation soapAction="http://tempuri.org/IService1/releasespermonth" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getCountryP">
-      <soap:operation soapAction="http://tempuri.org/IService1/getCountryP" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getOutstandingTax">
-      <soap:operation soapAction="http://tempuri.org/IService1/getOutstandingTax" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getAverageTax">
-      <soap:operation soapAction="http://tempuri.org/IService1/getAverageTax" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="customsdasha">
-      <soap:operation soapAction="http://tempuri.org/IService1/customsdasha" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="customsdashb">
-      <soap:operation soapAction="http://tempuri.org/IService1/customsdashb" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="releaseWareHouse">
-      <soap:operation soapAction="http://tempuri.org/IService1/releaseWareHouse" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="transferWareHouse">
-      <soap:operation soapAction="http://tempuri.org/IService1/transferWareHouse" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addTask">
-      <soap:operation soapAction="http://tempuri.org/IService1/addTask" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getTasks">
-      <soap:operation soapAction="http://tempuri.org/IService1/getTasks" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="completeTask">
       <soap:operation soapAction="http://tempuri.org/IService1/completeTask" style="document" />
       <wsdl:input>
@@ -1714,6 +1525,195 @@
     </wsdl:operation>
     <wsdl:operation name="WarehouseAvailabilityGraph">
       <soap:operation soapAction="http://tempuri.org/IService1/WarehouseAvailabilityGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackageLengthCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/PackageLengthCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackageHeightCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/PackageHeightCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackagewidthCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/PackagewidthCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseIncidents">
+      <soap:operation soapAction="http://tempuri.org/IService1/WarehouseIncidents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WarehouseReleases">
+      <soap:operation soapAction="http://tempuri.org/IService1/WarehouseReleases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackagesPerMonth">
+      <soap:operation soapAction="http://tempuri.org/IService1/PackagesPerMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncidentsLastMonth">
+      <soap:operation soapAction="http://tempuri.org/IService1/IncidentsLastMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageRates">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageRate">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StorageFilledBy">
+      <soap:operation soapAction="http://tempuri.org/IService1/StorageFilledBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncidentsPerIsle">
+      <soap:operation soapAction="http://tempuri.org/IService1/IncidentsPerIsle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releasespermonth">
+      <soap:operation soapAction="http://tempuri.org/IService1/releasespermonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountryP">
+      <soap:operation soapAction="http://tempuri.org/IService1/getCountryP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOutstandingTax">
+      <soap:operation soapAction="http://tempuri.org/IService1/getOutstandingTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAverageTax">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAverageTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customsdasha">
+      <soap:operation soapAction="http://tempuri.org/IService1/customsdasha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="customsdashb">
+      <soap:operation soapAction="http://tempuri.org/IService1/customsdashb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseWareHouse">
+      <soap:operation soapAction="http://tempuri.org/IService1/releaseWareHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transferWareHouse">
+      <soap:operation soapAction="http://tempuri.org/IService1/transferWareHouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTask">
+      <soap:operation soapAction="http://tempuri.org/IService1/addTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTasks">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTasks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

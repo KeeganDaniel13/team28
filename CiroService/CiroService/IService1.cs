@@ -21,7 +21,6 @@ namespace CiroService
     [ServiceContract]
     public interface IService1
     {
-
         /// <summary>
         /// Gets the users.
         /// </summary>

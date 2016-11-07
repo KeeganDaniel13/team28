@@ -27,8 +27,8 @@
 </tbody>
 </table>
        
-  <a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="btn btn-outline mw-md btn-success">Proceed</a>
-
+  <!--<a href="#" data-toggle="modal" data-target="#composeModal" type="button" class="btn btn-outline mw-md btn-success">Proceed</a>-->
+    <button  runat="server" onserverclick="sumbitRelease" class="btn btn-outline mw-md btn-success" role="button">Proceed</button>
                
   <div class="clearfix"></div>
     <!-- Compose modal -->

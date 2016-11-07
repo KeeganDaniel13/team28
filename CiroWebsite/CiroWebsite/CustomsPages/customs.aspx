@@ -103,7 +103,7 @@
 							<div class="sl-item sl-primary">
 								<div class="sl-content">
 									<small class="text-muted">23 mins ago</small>
-									<p>John has just started working on the project</p>
+									<p></p>
 								</div>
 							</div><!-- .sl-item -->
 

@@ -13,7 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-  <!-- Start Proerty header  -->
+  <!-- Start Proerty header  s>
 
   <section id="aa-property-header">
     <div class="container">
@@ -30,41 +30,28 @@
       </div>
     </div>
   </section> 
-  <!-- End Proerty header  -->
+  < End Proerty header  -->
 
   <!-- Start Properties  -->
   <section id="aa-properties">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <div class="aa-properties-content">            
+          <div class="aa-properties-content"> 
+                        
             <!-- Start properties content body -->
             <div class="aa-properties-details">
-             <div class="aa-properties-details-img">
-               <img src="../infinity/assets/images/11.jpg" alt="img">
-              
+             <h2>Name</h2> 
+                <p id="wName" runat="server"></p>
+            <h3>Location</h3>
+                <p id="loc" runat="server"></p>
+             <div runat="server" id="imgDiv" class="aa-properties-details-img">
              </div>
              <div class="aa-properties-info" runat="server" id="warehouseInfo">
-               <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, alias!</h2>
-               <span class="aa-price">$65000</span>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptatibus veniam non voluptate, ipsa eius magni aliquid ratione sit, odio reprehenderit in quis repudiandae dolor.</p>
-               <h4>Warehouse Features</h4>
-               <ul>
-                 <li>4 Bedroom</li>
-                 <li>3 Baths</li>
-                 <li>Kitchen</li>
-                 <li>Air Condition</li>
-                 <li>Belcony</li>
-                 <li>Gym</li>
-                 <li>Garden</li>
-                 <li>CCTV</li>
-                 <li>Children Play Ground</li>
-                 <li>Comunity Center</li>
-                 <li>Security System</li>
-               </ul>
-              
+               <h2>Warehouse Description</h2>
+               <p runat="server" id="description"></p>
                <h4>Warehouse Map</h4>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6851.201919469417!2d-86.11773906635584!3d33.47324776828677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888bdb60cc49c571%3A0x40451ca6baf275c7!2s36008+AL-77%2C+Talladega%2C+AL+35160%2C+USA!5e0!3m2!1sbn!2sbd!4v1460452919256" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+               <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6851.201919469417!2d-86.11773906635584!3d33.47324776828677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888bdb60cc49c571%3A0x40451ca6baf275c7!2s36008+AL-77%2C+Talladega%2C+AL+35160%2C+USA!5e0!3m2!1sbn!2sbd!4v1460452919256" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
              </div>
              
 

@@ -444,7 +444,7 @@ CHANGE COLUMN `transferrequest_to` `transferrequest_to` VARCHAR(255) NULL DEFAUL
 
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('1', 'Client');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('2', 'Custom');
-INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'Warehouse');
+INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('3', 'warehouse');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('4', 'Admin');
 INSERT INTO `custommandb`.`usertype` (`usertype_id`, `usertype_name`) VALUES ('5', 'Warehouse Employee');
 
@@ -485,8 +485,8 @@ INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `use
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('client3@gmail', 'Client3', 'client3', 'client3', '1');
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('warehouse3@gmail', 'Warehouse3', 'warehouse3', 'warehouse3', '3');
 INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('admin@gmail', 'Admin', 'admin', 'admin', '4');
-INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee@gmail', 'Employee', 'employee', 'employee', '4');
-INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee1@gmail', 'Employee1', 'employee1', 'employee1', '4');
+INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee@gmail', 'Employee', 'employee', 'employee', '5');
+INSERT INTO `custommandb`.`user` (`user_email`, `user_fname`, `user_sname`, `user_password`, `usertype_id`) VALUES ('employee1@gmail', 'Employee1', 'employee1', 'employee1', '5');
 
 
 
