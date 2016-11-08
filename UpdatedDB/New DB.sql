@@ -860,3 +860,126 @@ UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-0
 UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-07-08 13:40:32' WHERE `transferrequest_id`='17';
 UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-06-08 13:40:32' WHERE `transferrequest_id`='20';
 UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-09-08 13:40:32' WHERE `transferrequest_id`='22';
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('18', '3', 'DS Space', '3', 'Incident: Water damage', '2016-06-02 10:14:02', '1');
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DS Space' WHERE `productlog_id`='16';
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DS Space' WHERE `productlog_id`='17';
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('19', '3', 'DS Space', '3', 'Incident: Fire damage', '2016-03-02 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('20', '3', 'DS Space', '3', 'Incident: Fire damage', '2016-02-02 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('21', '3', 'DS Space', '3', 'Incident: Fire damage', '2016-06-15 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('17', '3', 'DS Space', '3', 'Incident: Package damaged during carriage', '2016-04-02 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('16', '2', 'DS Space', '3', 'Incident: Carl stepped on the package', '2016-04-02 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('18', '3', 'DS Space', '3', 'Incident: Water damage', '2016-06-02 10:14:02', '1');
+
+ALTER TABLE `custommandb`.`warehouse` 
+ADD COLUMN `warehouse_isles` INT NULL DEFAULT NULL AFTER `warehouse_established`;
+
+
+UPDATE `custommandb`.`warehouse` SET `warehouse_isles`='12' WHERE `warehouse_id`='1';
+UPDATE `custommandb`.`warehouse` SET `warehouse_isles`='12' WHERE `warehouse_id`='2';
+UPDATE `custommandb`.`warehouse` SET `warehouse_isles`='12' WHERE `warehouse_id`='3';
+UPDATE `custommandb`.`warehouse` SET `warehouse_isles`='12' WHERE `warehouse_id`='4';
+
+
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DHL Express Warehouse' WHERE `productlog_id`='1';
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DHL Express Warehouse' WHERE `productlog_id`='2';
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='Old Storage' WHERE `productlog_id`='3';
+
+
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='4';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='3' WHERE `productlog_id`='5';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='2' WHERE `productlog_id`='6';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='1' WHERE `productlog_id`='7';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='8';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='9';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='3' WHERE `productlog_id`='10';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='8' WHERE `productlog_id`='16';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='8' WHERE `productlog_id`='17';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='8' WHERE `productlog_id`='18';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='19';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='20';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='2' WHERE `productlog_id`='21';
+
+
+UPDATE `custommandb`.`productlog` SET `productlog_type`='7' WHERE `productlog_id`='3';
+
+UPDATE `custommandb`.`productlog` SET `productlog_type`='7' WHERE `productlog_id`='11';
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('22', '2', 'DS Space', '3', 'Release from warehouse', '2016-04-03 11:14:02', '7');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('23', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('24', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('25', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('26', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('27', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('28', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('29', '2', 'DS Space', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DHL Express Warehouse' WHERE `productlog_id`='26';
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DHL Express Warehouse' WHERE `productlog_id`='27';
+UPDATE `custommandb`.`productlog` SET `productlog_warehouse`='DHL Express Warehouse' WHERE `productlog_id`='28';
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('30', '2', 'DHL Express Warehouse', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('31', '2', 'DHL Express Warehouse', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('32', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('33', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('34', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('35', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('36', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('37', '2', 'Mount Warehousing', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('38', '2', 'Old Storage', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('39', '2', 'Old Storage', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('40', '2', 'Old Storage', '3', 'Release from warehouse', '2016-02-03 11:14:02', '7');
+
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('41', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('42', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('43', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('44', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('45', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('46', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('47', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('48', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('49', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('50', '1', 'DHL Express Warehouse', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('51', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('52', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('53', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('54', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('55', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('56', '1', 'Mount Warehousing', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('57', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('58', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('59', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('60', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('61', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('62', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('63', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('64', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('65', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('66', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('67', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('68', '1', 'Old Storage', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('69', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('70', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('71', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('72', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('73', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('74', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('75', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
+

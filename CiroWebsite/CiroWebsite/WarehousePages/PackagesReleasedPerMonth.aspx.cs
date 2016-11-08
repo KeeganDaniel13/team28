@@ -79,9 +79,9 @@ namespace CiroWebsite
         protected void getMonths()
         {
             var serve = new CiroService.Service1Client();
-            //   CiroService.jsonLoginUser user = (CiroService.jsonLoginUser)Session["User"];
-            //   var warehouses = serve.PackagesPerMonth(user.name);
-            var warehouses = serve.PackagesPerMonth("Warehouse");
+               CiroService.JsonUser user = (CiroService.JsonUser)Session["User"];
+               var warehouses = serve.PackagesPerMonth(user.fname);
+           // var warehouses = serve.PackagesPerMonth("Warehouse");
 
             string list = "";
 
@@ -96,9 +96,9 @@ namespace CiroWebsite
         protected void getMonthValues()
         {
             var serve = new CiroService.Service1Client();
-           // CiroService.jsonLoginUser user = (CiroService.jsonLoginUser)Session["User"];
-            // var warehouses = serve.PackagesPerMonth(user.name);
-             var warehouses = serve.PackagesPerMonth("Warehouse");
+            CiroService.JsonUser user = (CiroService.JsonUser)Session["User"];
+             var warehouses = serve.PackagesPerMonth(user.fname);
+            // var warehouses = serve.PackagesPerMonth("Warehouse");
 
 
             string list = "";

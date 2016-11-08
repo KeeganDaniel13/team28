@@ -80,6 +80,15 @@
 					</a>
 					
 				</li><!-- .menu-item -->
+
+				<li class="menu-item has-submenu">
+					<a href="Incidents.aspx" class="menu-link">
+						<span class="menu-icon"><i class="zmdi zmdi-view-dashboard zmdi-hc-lg"></i></span>
+						<span class="menu-text foldable">Warehouse Incidents</span>
+						
+					</a>
+					
+				</li><!-- .menu-item -->
 				
 				<li class="menu-item has-submenu">
 					<a href="warehousetransfers.aspx" class="menu-link">

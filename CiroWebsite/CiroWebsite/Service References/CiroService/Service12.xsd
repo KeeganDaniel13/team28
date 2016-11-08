@@ -1,555 +1,1258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfJsonUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonUser" nillable="true" type="tns:JsonUser" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonUser" nillable="true" type="tns:ArrayOfJsonUser" />
-  <xs:complexType name="JsonUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="convo_id" type="xs:int" />
-      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="fname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="lname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="usertype" type="xs:int" />
-      <xs:element minOccurs="0" name="usertypename" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warehouseID" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouseName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonUser" nillable="true" type="tns:JsonUser" />
-  <xs:complexType name="jsonLoginUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonLoginUser" nillable="true" type="tns:jsonLoginUser" />
-  <xs:complexType name="ArrayOfjsonProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonProduct" nillable="true" type="tns:jsonProduct" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfjsonProduct" nillable="true" type="tns:ArrayOfjsonProduct" />
-  <xs:complexType name="jsonProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="bill" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="expDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="height" type="xs:int" />
-      <xs:element minOccurs="0" name="insured" type="xs:int" />
-      <xs:element minOccurs="0" name="length" type="xs:int" />
-      <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productType" type="xs:int" />
-      <xs:element minOccurs="0" name="quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="transferLocation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="userID" type="xs:int" />
-      <xs:element minOccurs="0" name="value" type="xs:decimal" />
-      <xs:element minOccurs="0" name="width" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonProduct" nillable="true" type="tns:jsonProduct" />
-  <xs:complexType name="ArrayOfTransferDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransferDetails" nillable="true" type="tns:TransferDetails" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTransferDetails" nillable="true" type="tns:ArrayOfTransferDetails" />
-  <xs:complexType name="TransferDetails">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="currentLocation" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dateIssued" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="destination" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productid" type="xs:int" />
-      <xs:element minOccurs="0" name="transferName" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TransferDetails" nillable="true" type="tns:TransferDetails" />
-  <xs:complexType name="ArrayOfjsonTRequest">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonTRequest" nillable="true" type="tns:jsonTRequest" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfjsonTRequest" nillable="true" type="tns:ArrayOfjsonTRequest" />
-  <xs:complexType name="jsonTRequest">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="endWarehouse" type="xs:int" />
-      <xs:element minOccurs="0" name="productID" type="xs:int" />
-      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="userID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonTRequest" nillable="true" type="tns:jsonTRequest" />
-  <xs:complexType name="stockTakeInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="stockTakeInfo" nillable="true" type="tns:stockTakeInfo" />
-  <xs:complexType name="ArrayOfJsonTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonTask" nillable="true" type="tns:JsonTask" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonTask" nillable="true" type="tns:ArrayOfJsonTask" />
-  <xs:complexType name="JsonTask">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="employee" type="xs:int" />
-      <xs:element minOccurs="0" name="endtime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonTask" nillable="true" type="tns:JsonTask" />
-  <xs:complexType name="jsonIncident">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productID" type="xs:int" />
-      <xs:element minOccurs="0" name="type" type="xs:int" />
-      <xs:element minOccurs="0" name="userID" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonIncident" nillable="true" type="tns:jsonIncident" />
-  <xs:complexType name="JsonWarehouse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="available" type="xs:double" />
-      <xs:element minOccurs="0" name="descrption" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="user" type="xs:int" />
-      <xs:element minOccurs="0" name="warehousetype" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonWarehouse" nillable="true" type="tns:JsonWarehouse" />
-  <xs:complexType name="ArrayOfJsonWarehouse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonWarehouse" nillable="true" type="tns:JsonWarehouse" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonWarehouse" nillable="true" type="tns:ArrayOfJsonWarehouse" />
-  <xs:complexType name="ArrayOftransferStock">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="transferStock" nillable="true" type="tns:transferStock" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOftransferStock" nillable="true" type="tns:ArrayOftransferStock" />
-  <xs:complexType name="transferStock">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="value" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="transferStock" nillable="true" type="tns:transferStock" />
-  <xs:complexType name="JsonProducts">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="bill" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cosigner" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="destination" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="hscode" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="producttype" type="xs:int" />
-      <xs:element minOccurs="0" name="quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="tax" type="xs:double" />
-      <xs:element minOccurs="0" name="userid" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonProducts" nillable="true" type="tns:JsonProducts" />
-  <xs:complexType name="ArrayOfJsonProducts">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonProducts" nillable="true" type="tns:JsonProducts" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonProducts" nillable="true" type="tns:ArrayOfJsonProducts" />
-  <xs:complexType name="ArrayOfJsonReleaseRequest">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonReleaseRequest" nillable="true" type="tns:JsonReleaseRequest" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonReleaseRequest" nillable="true" type="tns:ArrayOfJsonReleaseRequest" />
-  <xs:complexType name="JsonReleaseRequest">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productInfo" nillable="true" type="tns:JsonProducts" />
-      <xs:element minOccurs="0" name="product_id" type="xs:int" />
-      <xs:element minOccurs="0" name="userInfo" nillable="true" type="tns:JsonUser" />
-      <xs:element minOccurs="0" name="user_id" type="xs:int" />
-      <xs:element minOccurs="0" name="verdict" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonReleaseRequest" nillable="true" type="tns:JsonReleaseRequest" />
-  <xs:complexType name="JsonProductLog">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="logtype" type="xs:int" />
-      <xs:element minOccurs="0" name="logtypename" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="product_id" type="xs:int" />
-      <xs:element minOccurs="0" name="userID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonProductLog" nillable="true" type="tns:JsonProductLog" />
-  <xs:complexType name="ArrayOfJsonProductLog">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonProductLog" nillable="true" type="tns:JsonProductLog" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonProductLog" nillable="true" type="tns:ArrayOfJsonProductLog" />
-  <xs:complexType name="ArrayOfJsonOwnershipReq">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonOwnershipReq" nillable="true" type="tns:JsonOwnershipReq" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonOwnershipReq" nillable="true" type="tns:ArrayOfJsonOwnershipReq" />
-  <xs:complexType name="JsonOwnershipReq">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="acceptance" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="newOwner" type="xs:int" />
-      <xs:element minOccurs="0" name="newOwnerInfo" nillable="true" type="tns:JsonUser" />
-      <xs:element minOccurs="0" name="prevInfo" nillable="true" type="tns:JsonUser" />
-      <xs:element minOccurs="0" name="prevOwner" type="xs:int" />
-      <xs:element minOccurs="0" name="prodInfo" nillable="true" type="tns:JsonProducts" />
-      <xs:element minOccurs="0" name="product" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonOwnershipReq" nillable="true" type="tns:JsonOwnershipReq" />
-  <xs:complexType name="JsonCountry">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonCountry" nillable="true" type="tns:JsonCountry" />
-  <xs:complexType name="ArrayOfJsonInventory">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonInventory" nillable="true" type="tns:JsonInventory" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonInventory" nillable="true" type="tns:ArrayOfJsonInventory" />
-  <xs:complexType name="JsonInventory">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arrivalDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="lastChecked" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="owner" nillable="true" type="tns:JsonUser" />
-      <xs:element minOccurs="0" name="ownerid" type="xs:int" />
-      <xs:element minOccurs="0" name="prodLocation" nillable="true" type="tns:jsonlocation" />
-      <xs:element minOccurs="0" name="product" nillable="true" type="tns:JsonProducts" />
-      <xs:element minOccurs="0" name="productID" type="xs:int" />
-      <xs:element minOccurs="0" name="productType" type="xs:int" />
-      <xs:element minOccurs="0" name="productTypeName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouseID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonInventory" nillable="true" type="tns:JsonInventory" />
-  <xs:complexType name="jsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="col" type="xs:int" />
-      <xs:element minOccurs="0" name="height" type="xs:int" />
-      <xs:element minOccurs="0" name="isle" type="xs:int" />
-      <xs:element minOccurs="0" name="length" type="xs:int" />
-      <xs:element minOccurs="0" name="product" type="xs:int" />
-      <xs:element minOccurs="0" name="row" type="xs:int" />
-      <xs:element minOccurs="0" name="section" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" type="xs:int" />
-      <xs:element minOccurs="0" name="width" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonlocation" nillable="true" type="tns:jsonlocation" />
-  <xs:complexType name="ArrayOfJsonProductInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonProductInfo" nillable="true" type="tns:JsonProductInfo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonProductInfo" nillable="true" type="tns:ArrayOfJsonProductInfo" />
-  <xs:complexType name="JsonProductInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="price" type="xs:double" />
-      <xs:element minOccurs="0" name="quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonProductInfo" nillable="true" type="tns:JsonProductInfo" />
-  <xs:complexType name="JsonBillofEntry">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="billCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="invoice" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ownerEmail" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="product" type="xs:int" />
-      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="user" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonBillofEntry" nillable="true" type="tns:JsonBillofEntry" />
-  <xs:complexType name="ArrayOfJsonBillofEntry">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonBillofEntry" nillable="true" type="tns:JsonBillofEntry" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonBillofEntry" nillable="true" type="tns:ArrayOfJsonBillofEntry" />
-  <xs:complexType name="JsonInvoice">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="paid" type="xs:double" />
-      <xs:element minOccurs="0" name="penalty" type="xs:double" />
-      <xs:element minOccurs="0" name="vat" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonInvoice" nillable="true" type="tns:JsonInvoice" />
-  <xs:complexType name="ArrayOfJsonMessage">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonMessage" nillable="true" type="tns:JsonMessage" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonMessage" nillable="true" type="tns:ArrayOfJsonMessage" />
-  <xs:complexType name="JsonMessage">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="convo_id" type="xs:int" />
-      <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="stamp" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonMessage" nillable="true" type="tns:JsonMessage" />
-  <xs:complexType name="ArrayOfjsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonlocation" nillable="true" type="tns:jsonlocation" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
-  <xs:complexType name="ArrayOfjsonWarehouseAvailabilty">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="jsonWarehouseAvailabilty" nillable="true" type="tns:jsonWarehouseAvailabilty" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfjsonWarehouseAvailabilty" nillable="true" type="tns:ArrayOfjsonWarehouseAvailabilty" />
-  <xs:complexType name="jsonWarehouseAvailabilty">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="capacity" type="xs:int" />
-      <xs:element minOccurs="0" name="size" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="jsonWarehouseAvailabilty" nillable="true" type="tns:jsonWarehouseAvailabilty" />
-  <xs:complexType name="ArrayOfPackageSizeCategory">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackageSizeCategory" nillable="true" type="tns:PackageSizeCategory" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPackageSizeCategory" nillable="true" type="tns:ArrayOfPackageSizeCategory" />
-  <xs:complexType name="PackageSizeCategory">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="count" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PackageSizeCategory" nillable="true" type="tns:PackageSizeCategory" />
-  <xs:complexType name="ArrayOfWarehouseIncidentsGraph">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseIncidentsGraph" nillable="true" type="tns:WarehouseIncidentsGraph" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWarehouseIncidentsGraph" nillable="true" type="tns:ArrayOfWarehouseIncidentsGraph" />
-  <xs:complexType name="WarehouseIncidentsGraph">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="incidents" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehouseIncidentsGraph" nillable="true" type="tns:WarehouseIncidentsGraph" />
-  <xs:complexType name="ArrayOfWarehouseReleasescs">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseReleasescs" nillable="true" type="tns:WarehouseReleasescs" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWarehouseReleasescs" nillable="true" type="tns:ArrayOfWarehouseReleasescs" />
-  <xs:complexType name="WarehouseReleasescs">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="releases" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehouseReleasescs" nillable="true" type="tns:WarehouseReleasescs" />
-  <xs:complexType name="ArrayOfPackagePerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PackagePerMonth" nillable="true" type="tns:PackagePerMonth" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPackagePerMonth" nillable="true" type="tns:ArrayOfPackagePerMonth" />
-  <xs:complexType name="PackagePerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="packages" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PackagePerMonth" nillable="true" type="tns:PackagePerMonth" />
-  <xs:complexType name="ArrayOfOutgoingRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutgoingRate" nillable="true" type="tns:OutgoingRate" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOutgoingRate" nillable="true" type="tns:ArrayOfOutgoingRate" />
-  <xs:complexType name="OutgoingRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="leaving" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OutgoingRate" nillable="true" type="tns:OutgoingRate" />
-  <xs:complexType name="ArrayOfWarehousesStorageRates">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehousesStorageRates" nillable="true" type="tns:WarehousesStorageRates" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWarehousesStorageRates" nillable="true" type="tns:ArrayOfWarehousesStorageRates" />
-  <xs:complexType name="WarehousesStorageRates">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="incoming" type="xs:int" />
-      <xs:element minOccurs="0" name="outgoing" type="xs:int" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehousesStorageRates" nillable="true" type="tns:WarehousesStorageRates" />
-  <xs:complexType name="ArrayOfWarehouseStorageRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseStorageRate" nillable="true" type="tns:WarehouseStorageRate" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfWarehouseStorageRate" nillable="true" type="tns:ArrayOfWarehouseStorageRate" />
-  <xs:complexType name="WarehouseStorageRate">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="incoming" type="xs:int" />
-      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="outgoing" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="WarehouseStorageRate" nillable="true" type="tns:WarehouseStorageRate" />
-  <xs:complexType name="ArrayOfStorageFilledBy">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfStorageFilledBy" nillable="true" type="tns:ArrayOfStorageFilledBy" />
-  <xs:complexType name="StorageFilledBy">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="DaysTilFull" type="xs:double" />
-      <xs:element minOccurs="0" name="warehouse" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="StorageFilledBy" nillable="true" type="tns:StorageFilledBy" />
-  <xs:complexType name="ArrayOfincidentsperisle">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfincidentsperisle" nillable="true" type="tns:ArrayOfincidentsperisle" />
-  <xs:complexType name="incidentsperisle">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="incidents" type="xs:int" />
-      <xs:element minOccurs="0" name="isle" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="incidentsperisle" nillable="true" type="tns:incidentsperisle" />
-  <xs:complexType name="ArrayOfReleasesPerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfReleasesPerMonth" nillable="true" type="tns:ArrayOfReleasesPerMonth" />
-  <xs:complexType name="ReleasesPerMonth">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="releases" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ReleasesPerMonth" nillable="true" type="tns:ReleasesPerMonth" />
-  <xs:complexType name="ArrayOfJsonCountryPercentage">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfJsonCountryPercentage" nillable="true" type="tns:ArrayOfJsonCountryPercentage" />
-  <xs:complexType name="JsonCountryPercentage">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="percentage" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonCountryPercentage" nillable="true" type="tns:JsonCountryPercentage" />
-  <xs:complexType name="JsonTax">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="penalty" type="xs:double" />
-      <xs:element minOccurs="0" name="total" type="xs:double" />
-      <xs:element minOccurs="0" name="vat" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="JsonTax" nillable="true" type="tns:JsonTax" />
-  <xs:complexType name="ArrayOfReleaseProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfReleaseProduct" nillable="true" type="tns:ArrayOfReleaseProduct" />
-  <xs:complexType name="ReleaseProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="invoiceTotal" type="xs:double" />
-      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="productID" type="xs:int" />
-      <xs:element minOccurs="0" name="requested" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ReleaseProduct" nillable="true" type="tns:ReleaseProduct" />
-  <xs:complexType name="ArrayOfArrayOfjsonlocation">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfjsonlocation" nillable="true" type="tns:ArrayOfjsonlocation" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfArrayOfjsonlocation" nillable="true" type="tns:ArrayOfArrayOfjsonlocation" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50983/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" />
+  <xs:element name="PackageLengthCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackageLengthCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="PackageLengthCategoriesResult" nillable="true" type="q1:ArrayOfPackageSizeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackageHeightCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackageHeightCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="PackageHeightCategoriesResult" nillable="true" type="q2:ArrayOfPackageSizeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackagewidthCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackagewidthCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="PackagewidthCategoriesResult" nillable="true" type="q3:ArrayOfPackageSizeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseIncidents">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseIncidentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="WarehouseIncidentsResult" nillable="true" type="q4:ArrayOfWarehouseIncidentsGraph" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseReleases">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseReleasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="WarehouseReleasesResult" nillable="true" type="q5:ArrayOfWarehouseReleasescs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackagesPerMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackagesPerMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="PackagesPerMonthResult" nillable="true" type="q6:ArrayOfPackagePerMonth" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncidentsLastMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncidentsLastMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="IncidentsLastMonthResult" nillable="true" type="q7:ArrayOfOutgoingRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageRates">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageRatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="StorageRatesResult" nillable="true" type="q8:ArrayOfWarehousesStorageRates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouseID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="StorageRateResult" nillable="true" type="q9:ArrayOfWarehouseStorageRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageFilledBy">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StorageFilledByResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="StorageFilledByResult" nillable="true" type="q10:ArrayOfStorageFilledBy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncidentsPerIsle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouseID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncidentsPerIsleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="IncidentsPerIsleResult" nillable="true" type="q11:ArrayOfincidentsperisle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releasespermonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehouseID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releasespermonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="releasespermonthResult" nillable="true" type="q12:ArrayOfReleasesPerMonth" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCountryP">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCountryPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getCountryPResult" nillable="true" type="q13:ArrayOfJsonCountryPercentage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOutstandingTax">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOutstandingTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getOutstandingTaxResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAverageTax">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAverageTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getAverageTaxResult" nillable="true" type="q14:JsonTax" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customsdasha">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customsdashaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customsdashaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customsdashb">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customsdashbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customsdashbResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releaseWareHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouse" nillable="true" type="q15:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releaseWareHouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="releaseWareHouseResult" nillable="true" type="q16:ArrayOfReleaseProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferWareHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouse" nillable="true" type="q17:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferWareHouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="transferWareHouseResult" nillable="true" type="q18:ArrayOfTransferDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="transferResult" nillable="true" type="q19:ArrayOfWareTrans" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_task" nillable="true" type="q20:JsonTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addTaskResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_user" nillable="true" type="q21:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getTasksResult" nillable="true" type="q22:ArrayOfJsonTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="completeTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_task" nillable="true" type="q23:JsonTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="completeTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="completeTaskResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_warehouse" nillable="true" type="q24:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseSectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseSectionResult" nillable="true" type="q25:ArrayOfArrayOfjsonlocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_user" nillable="true" type="q26:JsonUser" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_warehouse" nillable="true" type="q27:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addEmployeeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_warehouse" nillable="true" type="q28:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseTaskResult" nillable="true" type="q29:ArrayOfJsonTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEmployees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_warehouse" nillable="true" type="q30:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEmployeesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getEmployeesResult" nillable="true" type="q31:ArrayOfJsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseIncident">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_warehouse" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseIncidentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseIncidentResult" nillable="true" type="q32:ArrayOfjsonIncident" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="GetUsersResult" nillable="true" type="q33:ArrayOfJsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="login" nillable="true" type="q34:jsonLoginUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="loginResult" nillable="true" type="q35:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="clientProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q36:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="clientProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="clientProductsResult" nillable="true" type="q37:ArrayOfjsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listTransferTRequests">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listTransferTRequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="listTransferTRequestsResult" nillable="true" type="q38:ArrayOfTransferDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transeferRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="newRequest" nillable="true" type="q39:ArrayOfjsonTRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transeferRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transeferRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="transferListResult" nillable="true" type="q40:ArrayOfTransferDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockTake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="stockTake" nillable="true" type="q41:stockTakeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockTakeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stockTakeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="origin" nillable="true" type="xs:string" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="newProduct" nillable="true" type="q42:ArrayOfjsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockAddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="taskList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="taskListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="taskListResult" nillable="true" type="q43:ArrayOfJsonTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addIncident">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="newIncident" nillable="true" type="q44:jsonIncident" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addIncidentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="warehouseInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="warehouseInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouseInfoResult" nillable="true" type="q45:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="warehouses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="warehousesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehousesResult" nillable="true" type="q46:ArrayOfJsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockleavingWarehouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stockleavingWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="stockleavingWarehouseResult" nillable="true" type="q47:ArrayOftransferStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="regUser" nillable="true" type="q48:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="updateUsr" nillable="true" type="q49:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getPackageIDResult" nillable="true" type="q50:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getPackageTypeResult" nillable="true" type="q51:ArrayOfJsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageOwner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageOwnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getPackageOwnerResult" nillable="true" type="q52:ArrayOfJsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPackageDateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageDest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageDestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPackageDestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPackageLocationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="prod" nillable="true" type="q53:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addPackageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addPackageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="prod" nillable="true" type="q54:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePackageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updatePackageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePackageWLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="location" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePackageWLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updatePackageWLocationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releaseRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="owner" nillable="true" type="q55:JsonUser" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="product" nillable="true" type="q56:jsonProduct" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="releaseRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="releaseRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRelease">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q57:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReleaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getReleaseResult" nillable="true" type="q58:ArrayOfJsonReleaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReleaseRequests">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReleaseRequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getReleaseRequestsResult" nillable="true" type="q59:ArrayOfJsonReleaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addProductLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="productlog" nillable="true" type="q60:JsonProductLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addProductLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addProductLogResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="product" nillable="true" type="q61:jsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getProductLogResult" nillable="true" type="q62:ArrayOfJsonProductLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseResult" nillable="true" type="q63:ArrayOfJsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="product" nillable="true" type="q64:jsonProduct" />
+        <xs:element minOccurs="0" name="verdict" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="approveTransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verdict" nillable="true" type="xs:string" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="prod" nillable="true" type="q65:JsonProducts" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="approveRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paypal">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paypalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OwnershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="currentOwner" nillable="true" type="q66:JsonUser" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="newOwner" nillable="true" type="q67:JsonUser" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="prod" nillable="true" type="q68:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OwnershipRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OwnershipRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveOwnershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="verdict" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q69:JsonUser" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="prod" nillable="true" type="q70:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="approveOwnershipRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="approveOwnershipRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOwnershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q71:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOwnershipRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getOwnershipRequestResult" nillable="true" type="q72:ArrayOfJsonOwnershipReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTraderInStock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouses" nillable="true" type="q73:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTraderInStockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getTraderInStockResult" nillable="true" type="q74:ArrayOfJsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addWarehouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouse" nillable="true" type="q75:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="country" nillable="true" type="q76:JsonCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCountryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="items">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="itemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="itemsResult" nillable="true" type="q77:ArrayOfJsonInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouses" nillable="true" type="q78:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseInventoryResult" nillable="true" type="q79:ArrayOfJsonInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="WarehouseInventoryResult" nillable="true" type="q80:ArrayOfJsonProductInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addWarehouseMan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q81:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addWarehouseManResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addWarehouseManResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="warehouses" nillable="true" type="q82:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseIResult" nillable="true" type="q83:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="users" nillable="true" type="q84:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getUserResult" nillable="true" type="q85:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="bill" nillable="true" type="q86:JsonBillofEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getBillResult" nillable="true" type="q87:ArrayOfJsonBillofEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="bill" nillable="true" type="q88:JsonBillofEntry" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="product" nillable="true" type="q89:JsonProducts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addInvoiceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="invoiceNum" nillable="true" type="q90:JsonInvoice" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="products" nillable="true" type="q91:jsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getInvoiceResult" nillable="true" type="q92:JsonInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTax">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="products" nillable="true" type="q93:JsonProducts" />
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="newBill" nillable="true" type="q94:JsonBillofEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addTaxResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="users" nillable="true" type="q95:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getMessageResult" nillable="true" type="q96:ArrayOfJsonMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserOwnershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="user" nillable="true" type="q97:JsonUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserOwnershipRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getUserOwnershipRequestResult" nillable="true" type="q98:ArrayOfJsonOwnershipReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="messages" nillable="true" type="q99:JsonMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendMessageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="payTax">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="invoices" nillable="true" type="q100:JsonInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="payTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payTaxResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findavailablelocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="w" nillable="true" type="q101:JsonWarehouse" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="p" nillable="true" type="q102:jsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findavailablelocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="findavailablelocationResult" nillable="true" type="q103:jsonlocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findlocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="w" nillable="true" type="q104:JsonWarehouse" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="p" nillable="true" type="q105:jsonProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="findlocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="findlocationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addlocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="loca" nillable="true" type="q106:jsonlocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addlocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addlocationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageInWarehouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="packageID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPackageInWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getPackageInWarehouseResult" nillable="true" type="q107:jsonlocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="occupylocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="occupylocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reservelocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="jloc" nillable="true" type="q108:jsonlocation" />
+        <xs:element minOccurs="0" name="packageid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReservelocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vacatelocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="packageID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vacatelocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="warehousesID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWarehouseLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="getWarehouseLocationsResult" nillable="true" type="q109:ArrayOfjsonlocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="_warehouse" nillable="true" type="q110:JsonWarehouse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateSectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateSectionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseAvailabilityGraph">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WarehouseAvailabilityGraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/CiroService.JsonObjects" minOccurs="0" name="WarehouseAvailabilityGraphResult" nillable="true" type="q111:ArrayOfjsonWarehouseAvailabilty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

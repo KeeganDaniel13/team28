@@ -2497,6 +2497,16 @@ namespace CiroService
             int count = 0;
             int r = 0;
 
+            for(int i = 1; i <= isleCount; i++)
+            {
+                if(i % 10 == 0)
+                {
+                    count++;
+                }
+            }
+
+
+
             return "Section Updated";
         }
 
@@ -2790,7 +2800,7 @@ namespace CiroService
             var log = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == warehouse.warehouse_name);
             DateTime now = DateTime.Now;
             var prev = now.AddMonths(-1).Month;
-                for (int k = 1; k <= warehouse.warehouse_isles; k++)
+                for (int k = 1; k <= warehouse.is; k++)
                 {
                     int counter = 0;
                     foreach (productlog p in log)
@@ -2804,8 +2814,8 @@ namespace CiroService
                     ipi.Add(new incidentsperisle { isle = k, incidents = counter });
             }
            
-            return ipi;*/
-            return null;
+            return ipi; */
+            return null;           
         }
 
         public IEnumerable<ReleasesPerMonth> releasespermonth(string warehouseID)

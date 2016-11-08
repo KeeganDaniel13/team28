@@ -15,9 +15,10 @@ namespace CiroWebsite.WarehousePages
         }
 
         protected void getMonths()
-        {               
+        {
             var serve = new CiroService.Service1Client();
-            var warehouses = serve.releasespermonth("3");
+            CiroService.JsonUser user = (CiroService.JsonUser)Session["User"];
+            var warehouses = serve.releasespermonth((user.warehouseID).ToString());
 
             string list = "";
 
@@ -32,11 +33,12 @@ namespace CiroWebsite.WarehousePages
         protected void getreleases()
         {
             var serve = new CiroService.Service1Client();
-            var warehouses = serve.releasespermonth("3");
+            CiroService.JsonUser user = (CiroService.JsonUser)Session["User"];
+            var warehouses = serve.releasespermonth((user.warehouseID).ToString());
 
             string list = "";
 
-            foreach (CiroService.ReleasesPerMonth a in warehouses)
+            foreach(CiroService.ReleasesPerMonth a in warehouses)
             {
                 list += "'" + a.releases + "',";
             }
