@@ -633,7 +633,6 @@ INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `locat
 INSERT INTO `custommandb`.`location` (`location_isle`, `location_column`, `location_row`, `location_warehouse`) VALUES ('24', '1', '1', '1');
 
 
-
 INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('C5256', '1', '1', 'China');
 INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('D4569', '4', '2', 'USA');
 INSERT INTO `custommandb`.`billofentry` (`billofentry_code`, `billofentry_user`, `billofentry_product`, `billofentry_origin`) VALUES ('CC785', '6', '3', 'UK');
@@ -827,3 +826,29 @@ UPDATE `custommandb`.`productlog` SET `productlog_product`='2' WHERE `productlog
 
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('14', '2', 'DS Space', '3', 'Delivered to warehouse', '2016-06-03 11:14:02', '5');
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('15', '2', 'DS Space', '3', 'Delivered to warehouse', '2016-06-03 11:14:02', '5');
+
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-01-08 13:40:32' WHERE `transferrequest_id`='3';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-11-08 13:40:32' WHERE `transferrequest_id`='7';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-01-08 13:40:32' WHERE `transferrequest_id`='30';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-08-10 13:40:32' WHERE `transferrequest_id`='29';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-09-08 13:40:32' WHERE `transferrequest_id`='28';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-07-08 13:40:32' WHERE `transferrequest_id`='27';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-08-08 13:40:32' WHERE `transferrequest_id`='26';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-03-08 13:40:32' WHERE `transferrequest_id`='25';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-06-08 13:40:32' WHERE `transferrequest_id`='24';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-08-08 13:40:32' WHERE `transferrequest_id`='23';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-07-08 13:40:32' WHERE `transferrequest_id`='19';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-06-08 13:40:32' WHERE `transferrequest_id`='21';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-07-08 13:40:32' WHERE `transferrequest_id`='18';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_verdict`='Pending', `transferrequest_requestDate`='2016-11-08 13:40:32' WHERE `transferrequest_id`='8';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-08-08 13:40:32' WHERE `transferrequest_id`='2';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-10-08 13:40:32' WHERE `transferrequest_id`='4';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-10-08 13:40:32' WHERE `transferrequest_id`='6';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-11-08 13:40:32' WHERE `transferrequest_id`='9';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-11-08 13:40:32' WHERE `transferrequest_id`='10';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-05-08 13:40:32' WHERE `transferrequest_id`='11';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-05-08 13:40:32' WHERE `transferrequest_id`='12';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-05-08 13:40:32' WHERE `transferrequest_id`='16';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-07-08 13:40:32' WHERE `transferrequest_id`='17';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-06-08 13:40:32' WHERE `transferrequest_id`='20';
+UPDATE `custommandb`.`transferrequest` SET `transferrequest_requestDate`='2016-09-08 13:40:32' WHERE `transferrequest_id`='22';

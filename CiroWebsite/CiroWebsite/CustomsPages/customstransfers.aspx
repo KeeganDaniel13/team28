@@ -275,7 +275,7 @@
     <div class="col-md-12">
       
       
-      <div class="toggleview">
+      <div id ="info" runat="server" class="toggleview">
         <div class="col-md-12 forum-head">
           <div class="col-md-8 col-sm-8 column lpad">
             Description
@@ -291,117 +291,18 @@
           </div>
         </div>
         
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-file"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Title of package</a>
-            </span>
-            <span class="overflow-control">
-              Description of the package
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">Que Kia</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">23</span>
-          </div>
-          <div class="col-md-2 small-4 column pad">
-            <span>
-              From:<a href="#"> Old Storage</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>To:<a href="#"> Mount Warehouse</a></span>
-          </div>
-        </div>
         
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-tablet"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Title of package</a>
-            </span>
-            <span class="overflow-control">
-               Description of the package
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">Sofi Toi</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">253</span>
-          </div>
-          <div class="col-md-2 col-sm-4 column pad">
-            <span>
-              From:<a href="#"> Old Storage</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
-          </div>
-        </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-ellipsis-horizontal"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Title of package</a>
-            </span>
-            <span class="overflow-control">
-             Description of the package
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">Joe Pozo</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">215</span>
-          </div>
-          <div class="col-md-2 small-4 column pad">
-            <span>
-              From:<a href="#"> Old Storage</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
-          </div>
-        </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-bug"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Title of package</a>
-            </span>
-            <span class="overflow-control">
-            Description of the package
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">Joe Mack</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">285</span>
-          </div>
-          <div class="col-md-2 col-sm-4 column pad">
-            <span>
-              From:<a href="#">  Old Storage</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>To: <a href="#"> Mount Warehouse</a></span>
-          </div>
-        </div>
       </div>
     </div>
+      
   </div>
   </div>
 </div>
-  
+    <div id="modalInfo" runat="server">
+        
+     </div>
+
+       <script>function bingo(id) {
+    $(id).modal('show');
+}</script>
 </asp:Content>

@@ -268,129 +268,19 @@
     <div class="col-md-12">
       
       
-      <div class="toggleview">
+      <div id ="releases" runat="server"  class="toggleview">
         <div class="col-md-12 forum-head">
           <div class="col-md-8 col-sm-8 column lpad">
-            Forums
+            Name
           </div>
           <div class="col-md-1  column lpad">
-            Threads
-          </div>
-          <div class="col-md-1 column lpad">
-            Post
+            Owner
           </div>
           <div class="col-md-2 col-sm-4 column lpad">
-            Freshness
+            Date
           </div>
         </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-file"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Title of the title</a>
-            </span>
-            <span class="overflow-control">
-              Description of the title of the topic(?)
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">96587</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">678</span>
-          </div>
-          <div class="col-md-2 small-4 column pad">
-            <span>
-              <a href="#">Some sub-topic</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>by <a href="#">Some user</a></span>
-          </div>
-        </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-tablet"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">Oops.. Foundation is supposed to be responsive</a>
-            </span>
-            <span class="overflow-control">
-              But it's not (yet) working here
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">25</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">2523</span>
-          </div>
-          <div class="col-md-2 col-sm-4 column pad">
-            <span>
-              <a href="#">Some sub-topic</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>by <a href="#">Some user</a></span>
-          </div>
-        </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-ellipsis-horizontal"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">text-overflow: ellipsis;</a>
-            </span>
-            <span class="overflow-control">
-              You can type as many things as you want but the text will be shorter than bla bla bla
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">355</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">215</span>
-          </div>
-          <div class="col-md-2 small-4 column pad">
-            <span>
-              <a href="#">Some sub-topic</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>by <a href="#">Some user</a></span>
-          </div>
-        </div>
-        
-        <div class="col-md-12 forum-topic">
-          <div class="col-md-1 column lpad">
-            <i class="icon-bug"></i>
-          </div>
-          <div class="col-md-7 col-sm-8 column lpad">
-            <span class="overflow-control">
-              <a href="#">If you find any bugs is this pen...</a>
-            </span>
-            <span class="overflow-control">
-              ... please tell me in the comments :)
-            </span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">255</span>
-          </div>
-          <div class="col-md-1 column lpad">
-            <span class="center">285</span>
-          </div>
-          <div class="col-md-2 col-sm-4 column pad">
-            <span>
-              <a href="#">Some sub-topic</a>
-            </span>
-            <span>08-29-2013 7:29PM</span>
-            <span>by <a href="#">Some user</a></span>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
