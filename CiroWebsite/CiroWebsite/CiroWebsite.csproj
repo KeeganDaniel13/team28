@@ -393,6 +393,7 @@
     <Content Include="WarehousePages\CommonHeight.aspx" />
     <Content Include="WarehousePages\CommonLength.aspx" />
     <Content Include="WarehousePages\Commonwidth.aspx" />
+    <Content Include="WarehousePages\Incidents.aspx" />
     <Content Include="WarehousePages\IvsOpermonth.aspx" />
     <Content Include="WarehousePages\PackagesReceivedPastYear.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -920,6 +921,13 @@
     </Compile>
     <Compile Include="WarehousePages\Commonwidth.aspx.designer.cs">
       <DependentUpon>Commonwidth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarehousePages\Incidents.aspx.cs">
+      <DependentUpon>Incidents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehousePages\Incidents.aspx.designer.cs">
+      <DependentUpon>Incidents.aspx</DependentUpon>
     </Compile>
     <Compile Include="WarehousePages\IvsOpermonth.aspx.cs">
       <DependentUpon>IvsOpermonth.aspx</DependentUpon>

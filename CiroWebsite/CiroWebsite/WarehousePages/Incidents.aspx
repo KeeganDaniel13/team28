@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Customs.Master" AutoEventWireup="true" CodeBehind="customsrelease.aspx.cs" Inherits="CiroWebsite.customsrelease" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WarehousePages/warehouse.Master" AutoEventWireup="true" CodeBehind="Incidents.aspx.cs" Inherits="CiroWebsite.WarehousePages.Incidents" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
+     <style>
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Open+Sans+Condensed:300,700);
         header {
           background-image: url('http://subtlepatterns.com/patterns/use_your_illusion.png');
@@ -264,50 +264,50 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="row mt">
+       <div class="row mt">
     <div class="col-md-12">
       
       
       <div class="toggleview">
         <div class="col-md-12 forum-head">
           <div class="col-md-8 col-sm-8 column lpad">
-            Forums
+            Incident
           </div>
           <div class="col-md-1  column lpad">
-            Threads
+            Occurence(s)
           </div>
           <div class="col-md-1 column lpad">
-            Post
+            Owner
           </div>
           <div class="col-md-2 col-sm-4 column lpad">
-            Freshness
+            Details
           </div>
         </div>
         
         <div class="col-md-12 forum-topic">
           <div class="col-md-1 column lpad">
-            <i class="icon-file"></i>
+            <i class="fa fa-file-o"></i>
           </div>
           <div class="col-md-7 col-sm-8 column lpad">
             <span class="overflow-control">
-              <a href="#">Title of the title</a>
+              <a href="#">Tubes and Pipes</a>
             </span>
             <span class="overflow-control">
-              Description of the title of the topic(?)
+              The Tubes and pipes feel and broke, and its just fucked.
             </span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">96587</span>
+            <span class="center">2</span>
           </div>
           <div class="col-md-1 column lpad">
-            <span class="center">678</span>
+            <span class="center">Que Mei</span>
           </div>
           <div class="col-md-2 small-4 column pad">
             <span>
               <a href="#">Some sub-topic</a>
             </span>
             <span>08-29-2013 7:29PM</span>
-            <span>by <a href="javascript:void(0)"  data-toggle="modal" data-target="#deleteItemModal">Some user</a></span>
+            <span>by <a href="#">Old Storage</a></span>
           </div>
         </div>
         
@@ -394,23 +394,6 @@
       </div>
     </div>
   </div>
-  <!-- delete item Modal -->
-<div id="deleteItemModal" class="modal fade" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Package Release</h4>
-			</div>
-			<div class="modal-body">
-				<h5>Are you going to release the item or decline the package</h5>
-			</div><!-- .modal-body -->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-success" data-dismiss="modal">Accept</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Decline</button>
-			</div><!-- .modal-footer -->
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-   
+  
+
 </asp:Content>
