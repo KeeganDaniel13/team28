@@ -11,5 +11,17 @@ namespace CiroWebsite {
     
     
     public partial class customsrelease {
+<<<<<<< HEAD
+=======
+        
+        /// <summary>
+        /// releases control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl releases;
+>>>>>>> c33f80e0ea5590e77121ff5ffda737ae82e19e05
     }
 }

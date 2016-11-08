@@ -59,9 +59,9 @@
           </div>
         </div>
         <div class="col-md-4">
-          <aside class="aa-properties-sidebar">
+         <!--  <aside class="aa-properties-sidebar">
            
-            <!-- Start Single properties sidebar -->
+            Start Single properties sidebar 
             <div class="aa-properties-single-sidebar">
               <h3>Other Warehouses</h3>
               <div class="media">
@@ -100,7 +100,7 @@
                 </div>              
               </div>
             </div>
-          </aside>
+          </aside>-->
         </div>
       </div>
            <!-- jQuery library -->

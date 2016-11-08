@@ -268,16 +268,13 @@
     <div class="col-md-12">
       
       
-      <div class="toggleview">
+      <div id ="releases" runat="server"  class="toggleview">
         <div class="col-md-12 forum-head">
           <div class="col-md-8 col-sm-8 column lpad">
-            Forums
+            Name
           </div>
           <div class="col-md-1  column lpad">
-            Threads
-          </div>
-          <div class="col-md-1 column lpad">
-            Post
+            Owner
           </div>
           <div class="col-md-2 col-sm-4 column lpad">
             Freshness
@@ -389,8 +386,10 @@
             </span>
             <span>08-29-2013 7:29PM</span>
             <span>by <a href="#">Some user</a></span>
+
           </div>
         </div>
+
       </div>
     </div>
   </div>
