@@ -812,6 +812,10 @@ namespace CiroService
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getEmployees")]
         IEnumerable<JsonUser> getEmployees(JsonWarehouse _warehouse);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "getWarehouseIncident/{_warehouse}")]
+        IEnumerable<jsonIncident> getWarehouseIncident(string _warehouse);
+
 
 
 

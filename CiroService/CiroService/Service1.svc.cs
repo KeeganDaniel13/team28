@@ -537,7 +537,7 @@ namespace CiroService
         //Test With Andriod Streaming
         //Add Image upload imp
         /// <summary>
-        /// Adds the incident.
+        /// Adds the incident
         /// </summary>
         /// <param name="newIncident">The new incident.</param>
         public void addIncident(jsonIncident newIncident)
@@ -2778,6 +2778,84 @@ namespace CiroService
             productController paccess = new productController();
             var pacakgestoday = paccess.getTable().Count<product>();
             return pacakgestoday;
+        }
+
+        public IEnumerable<jsonIncident> getWarehouseIncident(string _warehouse)
+        {
+            var warehouseAccess = new warehouseController();
+            var warehouseExists = warehouseAccess.getTable().FirstOrDefault<warehouse>(w => w.warehouse_id == Convert.ToInt32(_warehouse));
+
+            if(warehouseExists == null)
+            {
+                return null;
+            }
+
+            var incidentAccess = new productlogController();
+            List<productlog> incidentExists = incidentAccess.getTable().Where<productlog>(p => p.productlog_warehouse.ToLower() == warehouseExists.warehouse_name.ToLower()).ToList<productlog>();
+
+            if(incidentExists == null || incidentExists.Count() == 0)
+            {
+                return null;
+            }
+
+            List<jsonIncident> incidents = new List<jsonIncident>();
+
+            foreach(productlog i in incidentExists)
+            {
+                var productAccess = new productController();
+                var productExists = productAccess.getTable().FirstOrDefault<product>(p => p.product_id == i.productlog_product);
+
+                if(productExists == null)
+                {
+                    return null;
+                }
+
+                var typeAccess = new productlogtypeController();
+                var typeExists = typeAccess.getTable().FirstOrDefault<productlogtype>(t => t.productlogtype_id == i.productlog_type);
+
+                if(typeExists == null)
+                {
+                    return null;
+                }
+
+                string code = typeExists.productlogtype_name;
+                string typeString = "";
+                if (code == "I9")
+                {
+                    typeString = "Incident";
+                }
+                else if (code == "TR7")
+                {
+                    typeString = "Transfer Request";
+                }
+                else if (code == "RR6")
+                {
+                    typeString = "Release Request";
+                }
+                else if (code == "T2")
+                {
+                    typeString = "Transfer";
+                }
+                else if (code == "D3")
+                {
+                    typeString = "Delivered";
+                }
+                else if (code == "CO2")
+                {
+                    typeString = "Change of Ownership";
+                }
+
+                var userAccess = new userController();
+                var userExists = userAccess.getTable().FirstOrDefault<user>(u => u.user_id == i.productlog_user);
+
+                if(userExists == null)
+                {
+                    return null;
+                }
+
+                incidents.Add(new jsonIncident { warehouse = i.productlog_warehouse, dateLogged = (DateTime)i.productlog_dateLogged, description = i.productlog_description, prodName = productExists.product_name, productID = (int)i.productlog_product, userName = userExists.user_fname, logType = typeString });
+            }
+            return incidents;
         }
 
         /*public string getPackageNotification(JsonUser user)
