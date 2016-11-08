@@ -785,6 +785,10 @@ namespace CiroService
         IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse);
 
         [OperationContract]
+        [WebInvoke(Method = "GET", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "listTransfer/{id}")]
+        List<WareTrans> transfer(string id);
+
+        [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "addTask")]
         string addTask(JsonTask _task);
 

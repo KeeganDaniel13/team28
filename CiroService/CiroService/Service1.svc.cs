@@ -246,7 +246,27 @@ namespace CiroService
                 {
                     var prod = productinfo.getRecord(Convert.ToInt32(requets.transferrequest_product));
                     var use = userInfo.getRecord(Convert.ToInt32(requets.transferrequest_user));
-                    transfers.Add(new TransferDetails { productid = Convert.ToInt32(requets.transferrequest_product), currentLocation = requets.transferrequest_from, transferName = use.user_fname, productName = prod.product_name, destination = requets.transferrequest_to });
+                    string from = "";
+                    try
+                    {
+                        from = new warehouseController().getTable().First(c => c.warehouse_location == requets.transferrequest_from).warehouse_name;
+                    }
+                    catch (Exception c)
+                    {
+                        from = "In Transit";
+                    }
+                    string to = "";
+                    try
+                    {
+                         to = new warehouseController().getTable().First(c => c.warehouse_location == requets.transferrequest_to).warehouse_name;
+                    }
+                    catch(Exception c)
+                    {
+                        to = "Owner";
+                    }
+                       
+                    
+                    transfers.Add(new TransferDetails { productid = Convert.ToInt32(requets.transferrequest_product), currentLocation = from, transferName = use.user_fname, productName = prod.product_name, destination = to ,dateIssued =(DateTime) requets .transferrequest_requestDate});
                 }
                 return transfers;
 
@@ -506,8 +526,15 @@ namespace CiroService
                 transferlistController transferListkAccess = new transferlistController();
                 transferListkAccess.addRecord(new transferlist { transferlist_to = p.transferLocation, transferlist_product = addToBill.product_id, transferlist_from = p.currentLocation });
 
+                //create qrcode
+
+                //string path = "C:\\Program Files\\Git\\team28\\CiroService\\CiroService\\images";
+                //string path = "C:\\Users\\Chuck\\team28\\CiroService\\CiroService\\images";
+                //string path = "C:\\Users\\Kgomotso\\team28\\CiroService\\CiroService\\images\\";
+
                //Change to store on any hosted project releative to current hosted location
                 string path = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath + "\\images\\";
+
                 string qrcodeInfo = addToBill.product_id + "";
                 QRCodeEncoder qrcodeMaker = new QRCodeEncoder();
                 qrcodeMaker.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.H;
@@ -1443,8 +1470,9 @@ namespace CiroService
             {
                 var billAccess = new billofentryController();
                 var billExists = billAccess.getTable().FirstOrDefault<billofentry>(b => b.billofentry_product == w.warehousestock_product);
+                var user = new userController().getTable().First<user>(c => c.user_id == billExists.billofentry_user) ;
                 var product = new productController().getTable().First<product>(p => p.product_id == billExists.billofentry_product);
-                inventory.Add(new JsonProductInfo {name=product.product_name,date=(DateTime)product .product_arrivalDate,id=product.product_id });
+                inventory.Add(new JsonProductInfo {name=product.product_name,date=(DateTime)product .product_arrivalDate,id=product.product_id,price=Convert.ToDouble( product.product_price),quantity=Convert.ToInt32(product .product_quantity),owner =user.user_fname,url=product.product_image });
             }
             return inventory;
             /*var warehouseAccess = new warehouseController();
@@ -2303,6 +2331,36 @@ namespace CiroService
             return items;
         }
 
+        public List<WareTrans> transfer(string id)
+        {
+            
+            var warehouseName = new warehouseController().getTable().First<warehouse>(w => w.warehouse_id == Convert.ToInt32(id)).warehouse_location;
+            
+            var transferList = new transferlistController().getTable();
+            
+            var transfer = transferList.Where<transferlist>(c => c.transferlist_to == warehouseName || c.transferlist_from == warehouseName);
+            
+            List<WareTrans> items = new List<WareTrans>();
+            foreach(transferlist i in transfer)
+            {
+                var transferAccess = new transferrequestsController();
+                var transferExists = transferAccess.getTable().FirstOrDefault<transferrequest>(t => t.transferrequest_product == i.transferlist_product);
+                var from = new warehouseController().getTable().First(c => c.warehouse_location == i.transferlist_from).warehouse_name;
+                if (from == null || from == "")
+                {
+                    from = "In Transit";
+                }
+                var to = new warehouseController().getTable().First(c => c.warehouse_location == i.transferlist_to).warehouse_name;
+                if (to == null || to == "")
+                {
+                    to = "Owner";
+                }
+                var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
+                items.Add(new WareTrans { ID = Convert.ToInt32(i.transferlist_id),currentLocation =from, destination = to, productName = product.product_name /*, issue = (DateTime)transferExists.transferrequest_requestDate/*, productid = product.product_id */});
+            }
+               
+            return items;
+        }
         /// <summary>
         /// Transfers the ware house.
         /// </summary>
@@ -2310,17 +2368,33 @@ namespace CiroService
         /// <returns>IEnumerable&lt;TransferDetails&gt;.</returns>
         public IEnumerable<TransferDetails> transferWareHouse(JsonWarehouse warehouse)
         {
-            var warehouseName = new warehouseController().getTable().First<warehouse>(w => w.warehouse_id == warehouse.id).warehouse_name ;
+            
+            var warehouseName = new warehouseController().getTable().First<warehouse>(w => w.warehouse_id == warehouse .id).warehouse_location;
+            
             var transferList = new transferlistController().getTable();
+            
             var transfer = transferList.Where<transferlist>(c => c.transferlist_to == warehouseName || c.transferlist_from == warehouseName);
             
             List<TransferDetails> items = new List<TransferDetails>();
+
+            
             foreach(var i in transfer)
             {
+                
                 var transferAccess = new transferrequestsController();
                 var transferExists = transferAccess.getTable().FirstOrDefault<transferrequest>(t => t.transferrequest_product == i.transferlist_product);
+                var from = new warehouseController().getTable().First(c => c.warehouse_location == i.transferlist_from).warehouse_name;
+                if (from == null || from == "")
+                {
+                    from = "In Transit";
+                }
+                var to = new warehouseController().getTable().First(c => c.warehouse_location == i.transferlist_to).warehouse_name;
+                if (to == null || to == "")
+                {
+                    to = "Owner";
+                }
                 var product = new productController().getTable().First<product>(p => p.product_id == i.transferlist_product);
-                items.Add(new TransferDetails {id = i.transferlist_id, dateIssued = (DateTime)transferExists.transferrequest_requestDate, currentLocation = i.transferlist_from, destination = i.transferlist_to ,productName = product .product_name, productid = (int)i.transferlist_product,  });
+                items.Add(new TransferDetails {id = i.transferlist_id,/* dateIssued = (DateTime)transferExists.transferrequest_requestDate,*/ currentLocation = from, destination = to ,productName = product.product_name, productid = product.product_id });
             }
             /*var stock = warehouseStock.First<warehousestock>().warehouse .warehouse_location;
             
