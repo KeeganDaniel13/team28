@@ -2791,6 +2791,7 @@ namespace CiroService
         /// <returns>Number of incidents per isle</returns>
         public IEnumerable<incidentsperisle> IncidentsPerIsle(string warehouseID)
         {
+
             /*productlogController logaccess = new productlogController();
             warehouseController warehouseaccess = new warehouseController();            
             
@@ -2815,7 +2816,31 @@ namespace CiroService
             }
            
             return ipi; */
-            return null;           
+            productlogController logaccess = new productlogController();
+            warehouseController warehouseaccess = new warehouseController();
+
+            List<incidentsperisle> ipi = new List<incidentsperisle>();
+
+            var warehouse = warehouseaccess.getRecord((Convert.ToInt32(warehouseID)));
+            var log = logaccess.getTable().Where<productlog>(p => p.productlog_warehouse == warehouse.warehouse_name);
+            DateTime now = DateTime.Now;
+            var prev = now.AddMonths(-1).Month;
+            for (int k = 1; k <= warehouse.warehouse_isles; k++)
+            {
+                int counter = 0;
+                foreach (productlog p in log)
+                {
+                    DateTime when = (DateTime)p.productlog_dateLogged;
+                    if (p.productlog_incidentisle == k && when.Month == prev && (when.Year == now.Year || (when.Year == (now.Year - 1) && now.Month == 1)))
+                    {
+                        counter++;
+                    }
+                }
+                ipi.Add(new incidentsperisle { isle = k, incidents = counter });
+            }
+
+            return ipi;
+
         }
 
         public IEnumerable<ReleasesPerMonth> releasespermonth(string warehouseID)

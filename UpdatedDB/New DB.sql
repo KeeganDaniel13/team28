@@ -983,3 +983,111 @@ INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('74', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('75', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-08-08 13:40:32', '5');
 
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('76', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('77', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('78', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('79', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('80', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('81', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '3');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('82', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '2');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('83', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '2');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('84', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '2');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('85', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '2');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('86', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '2');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('87', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('88', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '5');
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='81';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='4' WHERE `productlog_id`='80';
+
+
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='11' WHERE `productlog_id`='78';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='11' WHERE `productlog_id`='79';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='11' WHERE `productlog_id`='84';
+UPDATE `custommandb`.`productlog` SET `productlog_incidentisle`='11' WHERE `productlog_id`='85';
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('89', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '11');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('90', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '11');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`, `productlog_incidentisle`) VALUES ('91', '1', 'DS Space', '3', 'Incident : Fire Damage', '2016-10-03 11:14:02', '1', '11');
+
+
+UPDATE `custommandb`.`product` SET `product_height`='126' WHERE `product_id`='1';
+UPDATE `custommandb`.`product` SET `product_height`='155' WHERE `product_id`='8';
+UPDATE `custommandb`.`product` SET `product_height`='188' WHERE `product_id`='16';
+UPDATE `custommandb`.`product` SET `product_height`='124' WHERE `product_id`='17';
+UPDATE `custommandb`.`product` SET `product_height`='174' WHERE `product_id`='26';
+UPDATE `custommandb`.`product` SET `product_height`='610', `product_length`='120' WHERE `product_id`='27';
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='32';
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='25';
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='23';
+UPDATE `custommandb`.`product` SET `product_length`='88' WHERE `product_id`='24';
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='43';
+UPDATE `custommandb`.`product` SET `product_height`='120' WHERE `product_id`='48';
+UPDATE `custommandb`.`product` SET `product_width`='120', `product_height`='120' WHERE `product_id`='56';
+UPDATE `custommandb`.`product` SET `product_width`='100' WHERE `product_id`='53';
+UPDATE `custommandb`.`product` SET `product_width`='120' WHERE `product_id`='61';
+UPDATE `custommandb`.`product` SET `product_width`='120', `product_height`='120' WHERE `product_id`='65';
+
+
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='56';
+UPDATE `custommandb`.`product` SET `product_length`='120' WHERE `product_id`='57';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='58';
+UPDATE `custommandb`.`product` SET `product_height`='120', `product_length`='122' WHERE `product_id`='59';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='60';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='61';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='62';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='63';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='66';
+UPDATE `custommandb`.`product` SET `product_height`='122', `product_length`='122' WHERE `product_id`='67';
+UPDATE `custommandb`.`product` SET `product_height`='122', `product_length`='122' WHERE `product_id`='68';
+UPDATE `custommandb`.`product` SET `product_height`='122', `product_length`='122' WHERE `product_id`='70';
+UPDATE `custommandb`.`product` SET `product_width`='122', `product_length`='122' WHERE `product_id`='72';
+UPDATE `custommandb`.`product` SET `product_height`='122', `product_length`='122' WHERE `product_id`='74';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='75';
+UPDATE `custommandb`.`product` SET `product_width`='122', `product_height`='5122', `product_length`='122' WHERE `product_id`='79';
+UPDATE `custommandb`.`product` SET `product_width`='122', `product_length`='122' WHERE `product_id`='78';
+UPDATE `custommandb`.`product` SET `product_height`='122' WHERE `product_id`='76';
+UPDATE `custommandb`.`product` SET `product_width`='122', `product_height`='122' WHERE `product_id`='73';
+UPDATE `custommandb`.`product` SET `product_height`='122' WHERE `product_id`='71';
+UPDATE `custommandb`.`product` SET `product_height`='122' WHERE `product_id`='69';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='83';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='84';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='85';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='87';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='88';
+UPDATE `custommandb`.`product` SET `product_width`='122' WHERE `product_id`='90';
+UPDATE `custommandb`.`product` SET `product_width`='122', `product_length`='122' WHERE `product_id`='92';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='97';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='95';
+UPDATE `custommandb`.`product` SET `product_length`='122' WHERE `product_id`='94';
+
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('92', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('93', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('94', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('95', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('96', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('97', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-01-08 13:40:32', '5');
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('98', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-02-08 13:40:32', '5');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('99', '1', 'DS Space', '3', 'Delivered : Package was delivered to the warehouse', '2016-02-08 13:40:32', '5');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('100', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-08-08 13:40:32', '4');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('101', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-08-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('102', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-08-08 13:40:32', '4');
+
+
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('103', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('104', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('105', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('106', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('107', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('108', '1', 'DS Space', '3', 'Transfer : To Old Storage', '2016-11-08 13:40:32', '4');
