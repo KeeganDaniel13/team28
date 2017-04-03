@@ -871,7 +871,7 @@ INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('21', '3', 'DS Space', '3', 'Incident: Fire damage', '2016-06-15 10:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('17', '3', 'DS Space', '3', 'Incident: Package damaged during carriage', '2016-04-02 10:14:02', '1');
 INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('16', '2', 'DS Space', '3', 'Incident: Carl stepped on the package', '2016-04-02 10:14:02', '1');
-INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('18', '3', 'DS Space', '3', 'Incident: Water damage', '2016-06-02 10:14:02', '1');
+INSERT INTO `custommandb`.`productlog` (`productlog_id`, `productlog_product`, `productlog_warehouse`, `productlog_user`, `productlog_description`, `productlog_dateLogged`, `productlog_type`) VALUES ('109', '3', 'DS Space', '3', 'Incident: Water damage', '2016-06-02 10:14:02', '1');
 
 ALTER TABLE `custommandb`.`warehouse` 
 ADD COLUMN `warehouse_isles` INT NULL DEFAULT NULL AFTER `warehouse_established`;
